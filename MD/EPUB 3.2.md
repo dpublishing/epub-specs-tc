@@ -27,11 +27,9 @@ EPUB® 3定義了供數位出版品及文件用以傳遞、交換使用的格式
 
 EPUB 3廣泛地作為數位書籍（電子書）規格被採納，這次的改版持續增加本格式的能力來提供更廣泛為對出版品需求的支援，包括複雜版面、富媒體及互動性，和全球排版功能。可期待EPUB 3格式將被應用於更廣範圍的內容，如書籍、雜誌、教育、專業以及科學出版品上。
 
-EPUB 3
+EPUB 3以模組化制定：其包含了一系列的規格來定義標準的核心特色與功能。本規格為本標準的主要開始點，但列於本規格中的所有規格都屬於EPUB 3的一部分。對於這些規格關鍵概念與定義的索引提供於本規格文末。
 
-EPUB 3 is modular in nature: it consists of a family of specifications that define the core features and functionality of the standard. This specification represents the primary entry point to standard, but the specifications listed in Specifications are all a part of EPUB 3. An index to key concepts and definitions defined across these specifications is provided at the end of this specification.
-
-The informative [EPUB3Overview] provides a general introduction to EPUB 3. A list of technical changes from the previous revision is also available in the informative [EPUB32Changes].
+參考性的[EPUB3Overview]提供了EPUB 3的一般性導論。對於前版本的技術變更點則列於另一份參考性的[EPUB32Changes]。
 
 ## 本文件狀態
 
