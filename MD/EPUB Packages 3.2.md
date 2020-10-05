@@ -499,9 +499,9 @@ rendition | http://www.idpf.org/vocab/rendition/#
 為了維持這項哲學，包裝文件僅需要以下最小限度的詮釋資料：**必需**包含 [DC11] *title*、*identifier*及*language*元素加上 [DCTERMS] *modified*特性，所有其他的詮釋資料都為*選擇性*。
 
 > ###### 範例1
-
-以下範例呈現詮釋資料最小限度的組合，作者必須加在包裝文件中。
-
+> 
+> 以下範例呈現詮釋資料最小限度的組合，作者必須加在包裝文件中。
+> 
 > <package … unique-identifier="pub-id">
 >     …
 >     <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
