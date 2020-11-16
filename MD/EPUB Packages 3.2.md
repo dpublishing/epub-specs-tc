@@ -1265,7 +1265,7 @@ rendition | http://www.idpf.org/vocab/rendition/#
 > *id [選擇性]*
 > 
 > *page-progression-direction [選擇性]*
-> 
+>  
 > *toc [選擇性] (遺存)*
 > 
 > ###### 內容模型
