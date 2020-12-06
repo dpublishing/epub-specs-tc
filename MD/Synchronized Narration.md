@@ -1,102 +1,110 @@
 # 同步旁白
+社群小組報告草稿 24 August 2020
 
-Synchronized Narration
-Draft Community Group Report 24 August 2020
+**最新編輯草稿：**
+    https://w3c.github.io/sync-media-pub/synchronized-narration.html
+**編輯：**:
+    Marisa DeMeglio (DAISY Consortium)
+    Daniel Weck (DAISY Consortium)
+**協助參與：**
+    GitHub w3c/sync-media-pub
+    提出問題
+    版本紀錄
+    修改要求
 
-Latest editor's draft:
-https://w3c.github.io/sync-media-pub/synchronized-narration.html
-Editors:
-Marisa DeMeglio (DAISY Consortium)
-Daniel Weck (DAISY Consortium)
-Participate:
-GitHub w3c/sync-media-pub
-File a bug
-Commit history
-Pull requests
-Copyright © 2019-2020 the Contributors to the Synchronized Narration Specification, published by the Synchronized Media for Publications Community Group under the W3C Community Contributor License Agreement (CLA). A human-readable summary is available.
+Copyright © 2019-2020 同步旁白規格貢獻者，由供出版品使用的同步媒體社群小組基於W3C社群貢獻授權協議(CLA)所發表。另有供人讀的摘要。
 
-Abstract
+## 概要
 
-This document provides a draft version of Synchronized Narration.
+本文件提供同步旁白的草稿版本。
 
-Status of This Document
+## 本文件狀態
 
-This specification was published by the Synchronized Media for Publications Community Group. It is not a W3C Standard nor is it on the W3C Standards Track. Please note that under the W3C Community Contributor License Agreement (CLA) there is a limited opt-out and other conditions apply. Learn more about W3C Community and Business Groups.
+本規格由供出版品使用的同步媒體社群小組所發表。並非W3C標準也不在W3C標準程序上。請注意，基於W3C社群貢獻授權協議(CLA)，適用於有限制的退出與其他狀態。可由W3C社群與業界小組了解更多。
 
-This draft is still under consideration within the Synchronized Media for Publications Community Group and is subject to change. The most prominent issues will be referenced in the document with links provided.
+本草稿依然基於供出版品的同步媒體社群小組之考量而可能有所變更。最突出的問題將會在文件所提供的連結所參照。
 
-If you wish to make comments regarding this document, please send them to public-sync-media-pub@w3.org (subscribe, archives).
+如果你想要對本文件提供建議，請將他們送到 public-sync-media-pub@w3.org（訂閱，存檔）。
 
-Table of Contents
+## 目錄
 
-1. Introduction
-1.1 Terminology
-2. Specification
-2.1 The Synchronized Narration Format
-2.1.1 Document Format
-2.1.2 Properties
-2.1.3 Referencing from an HTML document
-2.1.3.1 Linking
-2.1.3.2 Playback Styling
-2.1.4 User Agent Processing
-1. Introduction
+1. 導論
+1.1 術語
+2. 規格
+2.1 同步旁白格式
+2.1.1 文件格式
+2.1.2 特性
+2.1.3 由HTML文件進行參照
+2.1.3.1 連結
+2.1.3.2 播放樣式
+2.1.4 使用者代理處理
 
-Synchronized Narration provides a multimodal reading experience for a document by augmenting the document's primary format (e.g. text) with additional external media (e.g. audio). This augmentation is represented as a series of synchronization points which correlate the different media with each other (e.g. "this audio phrase goes with this HTML paragraph"). This document defines Synchronized Narration for use with standalone HTML documents. However, as this work has been developed with Web Publications as a primary use case, there is an accompanying document called Incorporating Synchronized Narration into a Publication Manifest, which covers integration with publications, such as Audiobooks.
+<hr />
 
-1.1 Terminology
+## 1. 導論
 
-The following terminology is defined for use in this specification:
+同步旁白對一份文件提供了多模式的閱讀體驗，在該文件的主要格式（例如，文字）外擴增了額外的外部媒體（例如，聲音）。這項擴增透過一系列的同步點呈現，同步點讓不同媒體能夠彼此關聯（例如，這一段聲音與本HTML段落一起播放）。本文件定義同步旁白供獨立HTML文件使用。然而，由於本成果在開發上以網頁出版品（Web Publications）作為主要使用案例，而有一份伴隨的文件稱為「將同步旁白整合進出版品宣告」，其包含了與出版品的整合，例如有聲書。
 
-Audio Clip
-A contiguous portion of an audio file, defined by time offsets.
+### 1.1 術語
 
-Text Fragment
-An element in an HTML document
+以下術語定義供本規格使用：
 
-Playback Styling
-Highlight or other style provided for text fragments as they are being played.
+**聲音片段（Audio Clip）**
+    聲音檔案的連續部分，由時間偏差（time offsets）所定義。
 
-Skip
-Enable skipping playback of content, based on role. E.g. skip audio playback of page number announcements or footnote references.
+**文字斷片（Text Fragment）**
+    HTML文件中的一個元素。
 
-Escape
-Move playback out of a structure and back into the parent container's sequence. E.g. stop playing a complex table and resume playing main body content.
+**播放樣式（Playback Styling）**
+    強調，或其他樣式，在文字斷片正在播放時顯示。
 
-2. Specification
+**跳過（Skip）**
+    能夠跳過內容播放，主要基於role。例如，跳過頁碼宣告或者腳註參照的聲音播放。
 
-2.1 The Synchronized Narration Format
+**跳出（Escape）**
+    從播放一組結構中移出，並且回到其母容器的序列。例如，停止播放一個複雜表格並且繼續播放其主要內容。
 
-2.1.1 Document Format
+## 2. 規格
 
-Synchronized Narration is defined as a JSON document representing the in-order playback of media objects.
+### 2.1 同步旁白格式
 
-No more than one Synchronized Narration document may be associated with an HTML document.
+#### 2.1.1 文件格式
 
-ISSUE 1
-Issue #10: mime/media type
-A Synchronized Narration document has a media type of application/vnd.syncnarr+json.
+同步旁白以一份JSON文件定義，以表達依序播放的媒體物件。
 
-2.1.2 Properties
+一份HTML文件僅能與一份同步旁白文件相關連。
 
-narration
-Container for an array of playback objects, each containing media properties.
+> 問題 1
+> 
+> [Issue #10: mime/媒體類型](https://github.com/w3c/sync-media-pub/issues/10)
 
-audio
-Media property for audio. Value is a Media Fragment URL that points to an audio resource, referenced via a begin/end tuple of time values, such as audio.mp3#t=123.45,678.9 (see https://www.w3.org/TR/media-frags/#naming-time ).
+同步旁白文件其媒體類型為*application/vnd.syncnarr+json*。
 
-text
-Media property for text. Value is a URL "fragment" which is typically a unique identifier that references a document element (e.g. #section2.3).
+#### 2.1.2 特性
 
-ISSUE 2
-Issue #11: Define more options for text references
-role
-Semantic information for a narration container or text/audio pair.
+- narration 供一組播放物件的容器，每一個都包含了媒體特性。
 
-ISSUE 3
-Issue #12: role values
-ISSUE 4
-Issue #9: Define restrictions on parallel media properties
-Example of audio and text synchronization:
+- audio 供聲音的媒體特性。值為一個媒體斷片URL其指向一個聲音資源，透過一個開始/結束時間值所參照，例如audio.mp3#t=123.45,678.9（請見https://www.w3.org/TR/media-frags/#naming-time）。
+
+- text
+    文字的媒體特性。值為一個URL「片段」其一般為一個獨特識別碼其參照到一個文件元素（例如，#section2.3）。
+
+> 問題 1
+> 
+> [Issue #11:定義更多供文字參照的選項](https://github.com/w3c/sync-media-pub/issues/11)
+
+- role
+    供旁白容器或者文字/聲音匹配的語意資訊
+
+> 問題 3
+> 
+> [Issue #12: role的值](https://github.com/w3c/sync-media-pub/issues/12)
+
+> 問題 4
+> 
+> [Issue #9: 定義對平行媒體特性的限制](https://github.com/w3c/sync-media-pub/issues/9)
+
+聲音與文字同步的範本：
 
 {
   "role": "body",
@@ -154,9 +162,10 @@ Example of audio and text synchronization:
     }
   ]
 }
-2.1.3 Referencing from an HTML document
 
-2.1.3.1 Linking
+#### 2.1.3 由HTML文件進行參照
+
+##### 2.1.3.1 連結
 
 <head>
   <link
@@ -164,23 +173,28 @@ Example of audio and text synchronization:
     href="sync-media/index.json"
     type="application/vnd.syncnarr+json">
 </head>
-2.1.3.2 Playback Styling
 
-Playing narration synchronized with HTML content introduces the idea of playback styling, so that authors can provide styling information to reading systems. For example, whenever an HTML element is being "narrated" (i.e. audio playback synchronized with this particular DOM fragment), the reading system injects a CSS class name into this HTML element so that the authored styles are applied dynamically for the currently-playing (aka "active") element.
+##### 2.1.3.2 播放樣式
 
-ISSUE 5
-Issue #8: Possible to use pseudoclasses for synchronized highlight?
-Here we propose two descriptive properties for playback styling:
+與HTML內容同步播放旁白，將帶出播放樣式的概念，如此作者可以對閱讀系統提供樣式資訊。例如，當一個HTML元素被「唸出」（例如，聲音與該指定的DOM片段同步播放），閱讀系統可以插入一個CSS Class名稱到該HTML元素中使得作者指定的樣式可以動態適用於現在正播放（又稱為「啟動」）的元素。
 
-css-class-active: Applied to the HTML element whose corresponding audio is being played. Authors may use this to highlight narrated content.
-css-class-playing: Applied to the entire HTML document being played. Authors may use this to de-emphasize content that is not currently being narrated.
-This recommendation does not specify actual classname values for these properties. Authors must define values as follows:
+> 問題 5
+> 
+> [Issue #8：可否使用偽Class（pseudoclasses）供同步強調？](https://github.com/w3c/sync-media-pub/issues/8)
+
+於此，我們提出兩個描述特性供播放樣式：
+
+- *css-class-active*：可適用於HTML元素其呼應的聲音正在播放。作者可以用這個來強調正在朗讀的內容。
+- *css-class-playing*：可適用於整份正在播放的HTML文件。作者可以用這個來讓目前沒有被唸到的內容不被強調。
+
+本推薦不指定實際的Class名稱值供這些特性使用。作者必需按以下方式定義值：
 
 <head>
   <meta name="sync-media-css-class-active" content="-my-active-element">
   <meta name="sync-media-css-class-playing" content="-my-document-playing">
 </head>
-The author then defines styles for these classnames in the corresponding CSS:
+
+作者可以為這些Class名稱在對應的CSS中定義樣式：
 
 /* emphasize the active element */
 .-my-active-element {
@@ -192,12 +206,11 @@ The author then defines styles for these classnames in the corresponding CSS:
 html.-my-document-playing * {
     color: gray;
 }
-2.1.4 User Agent Processing
 
-narration: each object in the array is played in sequence. Media properties on a single object are rendered in parallel.
+#### 2.1.4 使用者代理處理
 
-audio: Play clip from begin to end
+*narration*：在此陣列中的每個物件都要依序播放。在單一物件中的媒體特性要被平行處理。
 
-text: Render the text by bringing focus to the element in the browser. Apply playback classnames while the element is active.
+*audio*: 從開始到結束播放片段。
 
-↑
+*text*: 在瀏覽器中將元素提到焦點處理。當元素啟動時，套用播放Class名稱。

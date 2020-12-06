@@ -1,67 +1,74 @@
 # 將同步旁白整合進出版品宣告
+社群小組報告草稿 24 August 2020
 
-Incorporating Synchronized Narration into a Publication Manifest
-Draft Community Group Report 24 August 2020
+**最新編輯草稿：**
+    https://w3c.github.io/sync-media-pub/incorporating-synchronized-narration.html
+**編輯：**
+    Marisa DeMeglio (DAISY Consortium)
+    Daniel Weck (DAISY Consortium)
+**協助參與：**
+    GitHub w3c/sync-media-pub
+    提出問題
+    版本紀錄
+    修改要求
 
-Latest editor's draft:
-https://w3c.github.io/sync-media-pub/incorporating-synchronized-narration.html
-Editors:
-Marisa DeMeglio (DAISY Consortium)
-Daniel Weck (DAISY Consortium)
-Participate:
-GitHub w3c/sync-media-pub
-File a bug
-Commit history
-Pull requests
-Copyright © 2019-2020 the Contributors to the Incorporating Synchronized Narration into a Publication Manifest Specification, published by the Synchronized Media for Publications Community Group under the W3C Community Contributor License Agreement (CLA). A human-readable summary is available.
+Copyright © 2019-2020 將同步旁白整合進出版品宣告規格貢獻者，由供出版品使用的同步媒體社群小組基於W3C社群貢獻授權協議(CLA)所發表。另有供人讀的摘要。
 
-Abstract
+<hr />
 
-This document provides a draft version of Incorporating Synchronized Narration into a Publication Manifest.
+## 概要
 
-Status of This Document
+本文件提供將同步旁白整合進出版品宣告的草稿版本。
 
-This specification was published by the Synchronized Media for Publications Community Group. It is not a W3C Standard nor is it on the W3C Standards Track. Please note that under the W3C Community Contributor License Agreement (CLA) there is a limited opt-out and other conditions apply. Learn more about W3C Community and Business Groups.
+## 本文件狀態
 
-This draft is still under consideration within the Synchronized Media for Publications Community Group and is subject to change. The most prominent issues will be referenced in the document with links provided.
+本規格由供出版品使用的同步媒體社群小組所發表。並非W3C標準也不在W3C標準程序上。請注意，基於W3C社群貢獻授權協議(CLA)，適用於有限制的退出與其他狀態。可由W3C社群與業界小組了解更多。
 
-If you wish to make comments regarding this document, please send them to public-sync-media-pub@w3.org (subscribe, archives).
+本草稿依然基於供出版品的同步媒體社群小組之考量而可能有所變更。最突出的問題將會在文件所提供的連結所參照。
 
-Table of Contents
+如果你想要對本文件提供建議，請將他們送到 public-sync-media-pub@w3.org（訂閱，存檔）。
 
-1. Introduction
-1.1 Terminology
-2. Specification
-2.1 Inclusion in a Publication Manifest
-2.2 Publication Manifest Examples
-A. References
-A.1 Informative references
-1. Introduction
+## 目錄
 
-The Synchronized Narration document covers how to associate Synchronized Narration with an HTML document, by pointing to it from within the HTML document itself. This document shows how to incorporate Synchronized Narration at the Publication Manifest level. Reasons for wanting to do this include:
+1. 導論
+1.1 術語Terminology
+2. 規格Specification
+2.1 包含進出版品宣告Inclusion in a Publication Manifest
+2.2 出版品宣告範本Publication Manifest Examples
+A. 參考資料
+A.1 參考性文件
 
-The primary resource with which Synchronized Narration is being associated may be an audio file and cannot contain a reference to an external document.
-It is more convenient for Reading Systems to discover alternative formats at the manifest level rather than to introspect every HTML document.
-1.1 Terminology
+<hr />
 
-Terms with meanings specific to the publishing industry are capitalized in this document (e.g., "Reading System"). A complete list of these terms and definitions is provided in [wpub].
+## 1. 導論
 
-Only the first instance of a term in a section is linked to its definition.
+同步旁白文件涵蓋了如何讓一份HTML文件與同步旁白產生關聯，透過在HTML文件自身中指向的方式進行。本文件展示如何將同步旁白在出版品宣告層次上整合。這麼做的理由包括了：
 
-In addition, the following terminology is defined for use in this specification:
+- 有同步旁白的主要資源可能會與一個聲音檔案相關連，且無法包含對外部文件的參照。
+- 對閱讀系統而言，在宣告層級會更容易找到替代格式，相對於在每一個HTML文件中反覆查找。
 
-Issue #16: add packaging terminology
+### 1.1 術語Terminology
 
-VOCAB
-TODO: what terms do we need to define that are specific to incorporation into web publications?
-2. Specification
+特別供出版界使用具有特殊意涵的術語在本文件中為首字大寫（中文版則加上括號，如「閱讀系統」）。這些術語及其定義的完整清單則提供在[pub-manifest]中。
 
-2.1 Inclusion in a Publication Manifest
+每一章節術語僅在第一次出現時，連結到其定義。
 
-ISSUE 1
-Issue #15: clarify packaging rules
-A Synchronized Narration document may be associated with a reading order entry in a Publication Manifest. This is done by creating a LinkedResource object for the Synchronized Narration document and adding it to the reading order entry's alternate property:
+此外，以下術語定義供本規格使用：
 
+[Issue #16: 添加包裝術語](https://github.com/w3c/sync-media-pub/issues/16)
+
+**VOCAB**
+    待辦事項：我們需要定義何種術語以特別供整合到網頁出版品使用？
+
+## 2. 規格Specification
+
+### 2.1 包含進出版品宣告Inclusion in a Publication Manifest
+
+> 問題 1
+> 
+> [Issue #15: 澄清包裝規則](https://github.com/w3c/sync-media-pub/issues/15)
+
+同步旁白文件可以與出版品宣告中的閱讀順序項目產生關聯。可以透過創立一個LinkedResource物件供同步旁白並且加入閱讀順序項目的替代特性中辦到：
 
 {
   "readingOrder": [
@@ -78,22 +85,26 @@ A Synchronized Narration document may be associated with a reading order entry i
     ]
     ...
 }
-A synchronized narration document is a LinkedResource and uses the following properties:
 
-duration: as in Audiobooks
-encodingFormat: [application/vnd.syncnarr+json](narration.html#mimetype)
-readBy: as in Audiobooks
-url: as in pub manifest
-2.2 Publication Manifest Examples
+同步旁白文件為一個LinkedResource並且使用以下特性：
 
-This section is non-normative.
+- duration: 如有聲書
+- encodingFormat: application/vnd.syncnarr+json
+- readBy: 如有聲書
+- url: 如出版品宣告
 
-ISSUE 2
-Issue #17: Add more manifest examples
-Audiobook
+### 2.2 出版品宣告範本Publication Manifest Examples
 
-An audio book can add Synchronized Media resources to enable phrase-by-phrase playback:
+本章節為非規範性。
 
+> 問題 1
+> 
+> [Issue #17: 添加更多宣告範本](https://github.com/w3c/sync-media-pub/issues/17)
+
+
+## 有聲書
+
+有聲書可以添加同步媒體資源來啟動逐段落播放：
 
 {
 	"@context" : ["https://schema.org", "https://www.w3.org/ns/pub-context"],
@@ -124,10 +135,10 @@ An audio book can add Synchronized Media resources to enable phrase-by-phrase pl
     }
 	}]
 }
-Multi-document web publication
 
-This is a hypothetical example based on TODO
+## 多重文件網頁出版品
 
+此為基於待辦事項的假設範例
 
 {
   "@context": ["https://schema.org", "https://www.w3.org/ns/wp-context"],
@@ -162,10 +173,10 @@ This is a hypothetical example based on TODO
     }
   ]
 }
-A. References
 
-A.1 Informative references
+## A. 參考資料
 
-[wpub]
-Web Publications. Matt Garrish; Ivan Herman. W3C. 13 August 2019. W3C Note. URL: https://www.w3.org/TR/wpub/
-↑
+### A.1 參考性文件
+
+**[wpub]**
+    [Web Publications](https://www.w3.org/TR/wpub/). Matt Garrish; Ivan Herman. W3C. 13 August 2019. W3C Note. URL: https://www.w3.org/TR/wpub/
