@@ -1,0 +1,254 @@
+<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 25.6.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>.issue-label{text-transform:initial}.warning>p:first-child{margin-top:0}.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}span.warning{padding:.1em .5em .15em}.issue.closed span.issue-number{text-decoration:line-through}.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}li.task-list-item{list-style:none}input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}</style>
+  
+  <title>將同步旁白整合進出版品宣告</title>
+  
+  
+<style id="respec-mainstyle">@keyframes pop{0%{transform:scale(1,1)}25%{transform:scale(1.25,1.25);opacity:.75}100%{transform:scale(1,1)}}.hljs{background:0 0!important}a abbr,h1 abbr,h2 abbr,h3 abbr,h4 abbr,h5 abbr,h6 abbr{border:none}dfn{font-weight:700}a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}a.bibref{text-decoration:none}.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}@supports not (text-decoration:red wavy underline){.respec-offending-element:not(pre){display:inline-block}.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}}#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}cite .bibref{font-style:normal}code{color:#c63501}th code{color:inherit}a[href].orcid{padding-left:4px;padding-right:4px}a[href].orcid>svg{margin-bottom:-2px}.toc a,.tof a{text-decoration:none}a .figno,a .secno{color:#000}ol.tof,ul.tof{list-style:none outside none}.caption{margin-top:.5em;font-style:italic}table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}.simple th a{color:#fff;padding:3px 5px;text-align:left}.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}.simple td{padding:3px 10px;border-top:1px solid #ddd}.simple tr:nth-child(even){background:#f0f6ff}.section dd>p:first-child{margin-top:0}.section dd>p:last-child{margin-bottom:0}.section dd{margin-bottom:1em}.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}#issue-summary>ul,.respec-dfn-list{column-count:2}#issue-summary li,.respec-dfn-list li{list-style:none}details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}details.respec-tests-details>*{padding-right:2em}details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}details.respec-tests-details>ul{width:100%;margin-top:-.3em}details.respec-tests-details>li{padding-left:1em}a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}h2,h3,h4,h5,h6{position:relative}aside.example .marker>a.self-link{color:inherit}h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}h2>a.self-link::before,h3>a.self-link::before,h4>a.self-link::before,h5>a.self-link::before,h6>a.self-link::before{content:"§";display:block}@media (max-width:767px){dd{margin-left:0}h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:auto;top:auto}}@media print{.removeOnSave{display:none}}</style><meta name="description" content="This document provides a draft version of Incorporating Synchronized Narration into a Publication Manifest."><style>.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}.hljs-comment,.hljs-quote{color:#717277;font-style:italic}.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}.hljs-literal{color:#0b76c5}.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-link{text-decoration:underline}</style><style>var{position:relative;cursor:pointer}var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}</style><script id="initialUserConfig" type="application/json">{
+  "specStatus": "CG-DRAFT",
+  "wg": "Synchronized Media for Publications Community Group",
+  "wgURI": "https://www.w3.org/community/sync-media-pub/",
+  "wgPublicList": "public-sync-media-pub",
+  "editors": [
+    {
+      "name": "Marisa DeMeglio",
+      "company": "DAISY Consortium",
+      "companyURL": "http://www.daisy.org",
+      "w3cid": 35713
+    },
+    {
+      "name": "Daniel Weck",
+      "company": "DAISY Consortium",
+      "companyURL": "http://www.daisy.org",
+      "w3cid": 45653
+    }
+  ],
+  "edDraftURI": "https://w3c.github.io/sync-media-pub/incorporating-synchronized-narration.html",
+  "shortName": "incorporating-syncnarr",
+  "noRecTrack": true,
+  "copyrightStart": "2019",
+  "includePermalinks": true,
+  "permalinkEdge": true,
+  "permalinkHide": false,
+  "diffTool": "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
+  "github": {
+    "repoURL": "https://github.com/w3c/sync-media-pub",
+    "branch": "master"
+  },
+  "localBiblio": {},
+  "publishISODate": "2020-08-24T00:00:00.000Z",
+  "generatedSubtitle": "Draft Community Group Report 24 August 2020"
+}</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/cg-draft"></head>
+
+<body class="h-entry informative toc-inline"><div class="head">
+    <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title">將同步旁白整合進出版品宣告</h1>
+    
+    <h2>
+      社群小組報告草稿
+      <time class="dt-published" datetime="2020-08-24">24 August 2020</time>
+    </h2>
+    <dl>
+      
+      
+      <dt>最新編輯草稿：</dt><dd><a href="https://w3c.github.io/sync-media-pub/incorporating-synchronized-narration.html">https://w3c.github.io/sync-media-pub/incorporating-synchronized-narration.html</a></dd>
+      
+      
+      
+      
+      <dt>編輯：</dt>
+      <dd class="p-author h-card vcard" data-editor-id="35713"><span class="p-name fn">Marisa DeMeglio</span>
+            (<a class="p-org org h-org h-card" href="http://www.daisy.org">DAISY Consortium</a>)
+          </dd><dd class="p-author h-card vcard" data-editor-id="45653"><span class="p-name fn">Daniel Weck</span>
+            (<a class="p-org org h-org h-card" href="http://www.daisy.org">DAISY Consortium</a>)
+          </dd>
+      
+      
+      <dt>協助參與：</dt><dd>
+    <a href="https://github.com/w3c/sync-media-pub/">GitHub w3c/sync-media-pub</a>
+  </dd><dd>
+    <a href="https://github.com/w3c/sync-media-pub/issues/">提出問題</a>
+  </dd><dd>
+    <a href="https://github.com/w3c/sync-media-pub/commits/master">版本紀錄</a>
+  </dd><dd>
+    <a href="https://github.com/w3c/sync-media-pub/pulls/">修改要求</a>
+  </dd>
+    </dl>
+    
+    <p class="copyright">
+          <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+          ©
+          2019-2020
+          將同步旁白整合進出版品宣告規格貢獻者，由<a href="https://www.w3.org/community/sync-media-pub/">供出版品使用的同步媒體社群小組</a>基於<a href="https://www.w3.org/community/about/agreements/cla/">W3C社群貢獻授權協議(CLA)</a>所發表。另有供人讀的<a href="https://www.w3.org/community/about/agreements/cla-deed/">摘要</a>。        </p>
+    <hr title="Separator for header">
+  </div>
+  <section id="abstract" class="introductory"><h2>概要</h2>
+    <p>本文件提供將同步旁白整合進出版品宣告的草稿版本。</p>
+  </section>
+
+  <section id="sotd" class="introductory"><h2>本文件狀態</h2><p>
+      本規格由<a href="https://www.w3.org/community/sync-media-pub/">供出版品使用的同步媒體社群小組</a>所發表。並非W3C標準也不在W3C標準程序上。請注意，基於<a href="https://www.w3.org/community/about/agreements/cla/">W3C社群貢獻授權協議(CLA)</a>，適用於有限制的退出與其他狀態。可由<a href="https://www.w3.org/community/">W3C社群與業界小組</a>了解更多。</p>
+    <p>本草稿依然基於供出版品的同步媒體社群小組之考量而可能有所變更。最突出的問題將會在文件所提供的連結所參照。</p>
+  <p>
+          如果你想要對本文件提供建議，請將他們送到
+          <a href="mailto:public-sync-media-pub@w3.org">public-sync-media-pub@w3.org</a>
+          （<a href="mailto:public-sync-media-pub-request@w3.org?subject=subscribe">訂閱</a>，
+          <a href="https://lists.w3.org/Archives/Public/public-sync-media-pub/">存檔</a>）。
+        </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">目錄</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#syncnarr-incorporation-introduction"><bdi class="secno">1. </bdi>導論</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#syncnarr-incorporation-terminology"><bdi class="secno">1.1 </bdi>術語</a></li></ol></li><li class="tocline"><a class="tocxref" href="#specification"><bdi class="secno">2. </bdi>規格</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#with-webpub"><bdi class="secno">2.1 </bdi>包含進出版品宣告</a></li><li class="tocline"><a class="tocxref" href="#syncmediapub-manifest-examples"><bdi class="secno">2.2 </bdi>出版品宣告範本</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>參考資料</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.1 </bdi>參考性文件</a></li></ol></li></ol></nav>
+
+  <section id="syncnarr-incorporation-introduction">
+    <h2 id="x1-introduction"><bdi class="secno">1. </bdi>導論<a class="self-link" aria-label="§" href="#syncnarr-incorporation-introduction"></a></h2>
+
+    <p>同步旁白文件涵蓋了如何讓一份HTML文件與同步旁白產生關聯，透過在HTML文件自身中指向的方式進行。本文件展示如何將同步旁白在出版品宣告層次上整合。這麼做的理由包括了：</p>
+    <ul>
+      <li>有同步旁白的主要資源可能會與一個聲音檔案相關連，且無法包含對外部文件的參照。</li>
+      <li>對閱讀系統而言，在宣告層級會更容易找到替代格式，相對於在每一個HTML文件中反覆查找。</li>
+    </ul>
+
+
+    <section id="syncnarr-incorporation-terminology">
+      <h3 id="x1-1-terminology"><bdi class="secno">1.1 </bdi>術語<a class="self-link" aria-label="§" href="#syncnarr-incorporation-terminology"></a></h3>
+
+      <p>特別供出版界使用具有特殊意涵的術語在本文件中為首字大寫（中文版則加上括號，如「閱讀系統」）。這些<a href="epub-spec.html#audio-terminology">術語及其定義</a>的完整清單則提供在[<cite><a class="bibref" data-link-type="biblio" href="#bib-wpub" title="Web Publications">wpub</a></cite>中。</p>
+
+      <p>每一章節術語僅在第一次出現時，連結到其定義。</p>
+
+      <p>此外，以下術語定義供本規格使用：</p>
+
+      <p><a href="https://github.com/w3c/sync-media-pub/issues/16">Issue #16：添加包裝術語</a></p>
+
+      <dl class="termlist">
+        <dt><dfn id="dfn-file-name" data-lt="File Names|VOCAB" data-dfn-type="dfn">VOCAB</dfn></dt>
+        <dd>
+          待辦事項：我們需要定義何種術語以特別供整合到網頁出版品使用？
+        </dd>
+      </dl>
+
+    </section>
+  </section>
+
+  <section id="specification">
+    <h2 id="x2-specification"><bdi class="secno">2. </bdi>規格<a class="self-link" aria-label="§" href="#specification"></a></h2>
+
+    <section id="with-webpub">
+      <h3 id="x2-1-inclusion-in-a-publication-manifest"><bdi class="secno">2.1 </bdi>包含進出版品宣告<a class="self-link" aria-label="§" href="#with-webpub"></a></h3>
+
+      <div class="issue" id="issue-container-number-1"><div role="heading" class="issue-title marker" id="h-issue" aria-level="4"><span>Issue 1</span></div><p class=""><a href="https://github.com/w3c/sync-media-pub/issues/15">Issue #15：澄清包裝規則</a>
+      </p></div>
+
+      <p>「同步旁白」文件可以與「出版品宣告」中的閱讀順序項目產生關聯。可以透過創立一個LinkedResource物件供同步旁白並且加入閱讀順序項目的<code>alternate</code>特性中辦到：</p>
+
+      <div class="example">
+        <pre aria-busy="false"><code class="hljs json">{
+  <span class="hljs-attr">"readingOrder"</span>: [
+      {
+        <span class="hljs-attr">"url"</span>: <span class="hljs-string">"html/c001.html"</span>,
+        <span class="hljs-attr">"alternate"</span>: {
+          <span class="hljs-attr">"type"</span>: <span class="hljs-string">"LinkedResource"</span>,
+          <span class="hljs-attr">"url"</span>: <span class="hljs-string">"narration1.json"</span>,
+          <span class="hljs-attr">"encodingFormat"</span>: <span class="hljs-string">"application/vnd.syncnarr+json"</span>,
+          <span class="hljs-attr">"duration"</span>: <span class="hljs-string">"10000s"</span>
+        }
+      },
+      ...
+    ]
+    ...
+}</code></pre>
+      </div
+
+      <p>同步旁白文件為一個LinkedResource並且使用以下特性：</p>
+      <ul>
+        <li><code>duration</code>: 如<a href="https://w3c.github.io/audiobooks/index.html#audio-duration">有聲書</a></li>
+        <li><code>encodingFormat</code>: <a href="synchronized-narration.html#mimetype"><code>application/vnd.syncnarr+json</code></a></li>
+        <li><code>readBy</code>: 如<a href="https://w3c.github.io/audiobooks/#audio-creators">有聲書</a></li>
+        <li><code>url</code>: 如出版品宣告</li>
+      </ul>
+    </section>
+
+    <section id="syncmediapub-manifest-examples" class="appendix informative">
+      <h3 id="x2-2-publication-manifest-examples"><bdi class="secno">2.2 </bdi>出版品宣告範本<a class="self-link" aria-label="§" href="#syncmediapub-manifest-examples"></a></h3><p><em>本章節為非規範性。</em></p>
+      <div class="issue" id="issue-container-number-2"><div role="heading" class="issue-title marker" id="h-issue-0" aria-level="4"><span>問題 2</span></div><p class=""><a href="https://github.com/w3c/sync-media-pub/issues/17">Issue #17：添加更多宣告範本</a></p></div>
+
+      <h2 id="audiobook">有聲書<a class="self-link" aria-label="§" href="#syncmediapub-manifest-examples"></a></h2>
+      <p>有聲書可以添加同步媒體資源來啟動逐段落播放：</p>
+      <div class="example">
+        <pre aria-busy="false"><code class="hljs json">{
+	<span class="hljs-attr">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>],
+	<span class="hljs-attr">"type"</span>		 : <span class="hljs-string">"Audiobook"</span>,
+	<span class="hljs-attr">"url"</span>      : <span class="hljs-string">"https://publisher.example.org/janeeyre"</span>,
+	<span class="hljs-attr">"name"</span>     : <span class="hljs-string">"Jane Eyre"</span>,
+	<span class="hljs-attr">"readingOrder"</span> : [{
+		<span class="hljs-attr">"type"</span>	: <span class="hljs-string">"LinkedResource"</span>,
+		<span class="hljs-attr">"url"</span>   : <span class="hljs-string">"audio/part001.wav#0"</span>,
+		<span class="hljs-attr">"encodingFormat"</span> : <span class="hljs-string">"audio/vnd-wav"</span>,
+		<span class="hljs-attr">"name"</span>  : <span class="hljs-string">"Chapter 1"</span>,
+		<span class="hljs-attr">"duration"</span> : <span class="hljs-string">"457.931"</span>,
+		<span class="hljs-attr">"alternate"</span> : {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"LinkedResource"</span>,
+      <span class="hljs-attr">"url"</span>: <span class="hljs-string">"sync-media/part001-1.json"</span>,
+      <span class="hljs-attr">"encodingFormat"</span> : <span class="hljs-string">"application/vnd.syncnarr+json"</span>
+    }
+	}, {
+		<span class="hljs-attr">"type"</span>  : <span class="hljs-string">"LinkedResource"</span>,
+		<span class="hljs-attr">"url"</span>   : <span class="hljs-string">"audio/part001.wav#457.932"</span>,
+		<span class="hljs-attr">"encodingFormat"</span> : <span class="hljs-string">"audio/vnd-wav"</span>,
+		<span class="hljs-attr">"name"</span>  : <span class="hljs-string">"Chapter 2"</span>,
+		<span class="hljs-attr">"duration"</span> : <span class="hljs-string">"234.245"</span>,
+		<span class="hljs-attr">"alternate"</span> : {
+      <span class="hljs-attr">"type"</span>: <span class="hljs-string">"LinkedResource"</span>,
+      <span class="hljs-attr">"url"</span> : <span class="hljs-string">"sync-media/part001-2.json"</span>,
+      <span class="hljs-attr">"encodingFormat"</span> : <span class="hljs-string">"application/vnd.syncnarr+json"</span>
+    }
+	}]
+}</code></pre>
+      </div>
+
+      <h2 id="multi-document-web-publication">多重文件網頁出版品<a class="self-link" aria-label="§" href="#syncmediapub-manifest-examples"></a></h2>
+      <p>此為基於待辦事項的假設範例</p>
+      <div class="example">
+        <pre aria-busy="false"><code class="hljs json">{
+  <span class="hljs-attr">"@context"</span>: [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/wp-context"</span>],
+  <span class="hljs-attr">"url"</span>: <span class="hljs-string">"https://publisher.example.org/mobydick"</span>,
+  <span class="hljs-attr">"author"</span>: <span class="hljs-string">"Herman Melville"</span>,
+  <span class="hljs-attr">"dateModified"</span>: <span class="hljs-string">"2018-02-10T17:00:00Z"</span>,
+
+  <span class="hljs-attr">"readBy"</span>: <span class="hljs-string">"Someone"</span>,
+  <span class="hljs-attr">"duration"</span>: <span class="hljs-string">"20000s"</span>,
+
+  <span class="hljs-attr">"sync-media-css-class-active"</span>: <span class="hljs-string">"-my-active-element"</span>,
+  <span class="hljs-attr">"sync-media-css-class-playing"</span>: <span class="hljs-string">"-my-document-playing"</span>,
+
+  <span class="hljs-attr">"readingOrder"</span>: [
+    {
+      <span class="hljs-attr">"url"</span>: <span class="hljs-string">"html/c001.html"</span>,
+      <span class="hljs-attr">"alternate"</span>: [{
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"LinkedResource"</span>,
+        <span class="hljs-attr">"url"</span>: <span class="hljs-string">"narration1.json"</span>,
+        <span class="hljs-attr">"encodingFormat"</span>: <span class="hljs-string">"application/vnd.syncnarr+json"</span>,
+        <span class="hljs-attr">"length"</span>: <span class="hljs-string">"10000s"</span>
+      }]
+    },
+    {
+      <span class="hljs-attr">"url"</span>: <span class="hljs-string">"html/c002.html"</span>,
+      <span class="hljs-attr">"alternative"</span>: [{
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"LinkedResource"</span>,
+        <span class="hljs-attr">"url"</span>: <span class="hljs-string">"narration2.json"</span>,
+        <span class="hljs-attr">"encodingFormat"</span>: <span class="hljs-string">"application/vnd.syncnarr+json"</span>,
+        <span class="hljs-attr">"length"</span>: <span class="hljs-string">"10000s"</span>
+      }]
+    }
+  ]
+}</code></pre>
+      </div>
+
+
+    </section>
+
+
+</section><section id="references" class="appendix"><h2 id="a-references"><bdi class="secno">A. </bdi>參考資料<a class="self-link" aria-label="§" href="#references"></a></h2><section id="informative-references">
+      <h3 id="a-1-informative-references"><bdi class="secno">A.1 </bdi>
+        參考性文件
+      <a class="self-link" aria-label="§" href="#informative-references"></a></h3>
+    <dl class="bibliography">
+      <dt id="bib-wpub">[wpub]</dt><dd><a href="https://www.w3.org/TR/wpub/"><cite>Web Publications</cite></a>. Matt Garrish; Ivan Herman.  W3C. 13 August 2019. W3C Note. URL: <a href="https://www.w3.org/TR/wpub/">https://www.w3.org/TR/wpub/</a></dd>
+    </dl></section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>

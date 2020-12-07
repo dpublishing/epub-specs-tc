@@ -1,0 +1,302 @@
+<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 25.6.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>.issue-label{text-transform:initial}.warning>p:first-child{margin-top:0}.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}span.warning{padding:.1em .5em .15em}.issue.closed span.issue-number{text-decoration:line-through}.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}li.task-list-item{list-style:none}input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}</style>
+  
+  <title>同步旁白</title>
+  
+  
+<style id="respec-mainstyle">@keyframes pop{0%{transform:scale(1,1)}25%{transform:scale(1.25,1.25);opacity:.75}100%{transform:scale(1,1)}}.hljs{background:0 0!important}a abbr,h1 abbr,h2 abbr,h3 abbr,h4 abbr,h5 abbr,h6 abbr{border:none}dfn{font-weight:700}a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}a.bibref{text-decoration:none}.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}@supports not (text-decoration:red wavy underline){.respec-offending-element:not(pre){display:inline-block}.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}}#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}cite .bibref{font-style:normal}code{color:#c63501}th code{color:inherit}a[href].orcid{padding-left:4px;padding-right:4px}a[href].orcid>svg{margin-bottom:-2px}.toc a,.tof a{text-decoration:none}a .figno,a .secno{color:#000}ol.tof,ul.tof{list-style:none outside none}.caption{margin-top:.5em;font-style:italic}table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}.simple th a{color:#fff;padding:3px 5px;text-align:left}.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}.simple td{padding:3px 10px;border-top:1px solid #ddd}.simple tr:nth-child(even){background:#f0f6ff}.section dd>p:first-child{margin-top:0}.section dd>p:last-child{margin-bottom:0}.section dd{margin-bottom:1em}.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}#issue-summary>ul,.respec-dfn-list{column-count:2}#issue-summary li,.respec-dfn-list li{list-style:none}details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}details.respec-tests-details>*{padding-right:2em}details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}details.respec-tests-details>ul{width:100%;margin-top:-.3em}details.respec-tests-details>li{padding-left:1em}a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}h2,h3,h4,h5,h6{position:relative}aside.example .marker>a.self-link{color:inherit}h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}h2>a.self-link::before,h3>a.self-link::before,h4>a.self-link::before,h5>a.self-link::before,h6>a.self-link::before{content:"§";display:block}@media (max-width:767px){dd{margin-left:0}h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:auto;top:auto}}@media print{.removeOnSave{display:none}}</style><meta name="description" content="This document provides a draft version of Synchronized Narration."><style>.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}.hljs-comment,.hljs-quote{color:#717277;font-style:italic}.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}.hljs-literal{color:#0b76c5}.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-link{text-decoration:underline}</style><style>var{position:relative;cursor:pointer}var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}</style><script id="initialUserConfig" type="application/json">{
+  "specStatus": "CG-DRAFT",
+  "wg": "Synchronized Media for Publications Community Group",
+  "wgURI": "https://www.w3.org/community/sync-media-pub/",
+  "wgPublicList": "public-sync-media-pub",
+  "editors": [
+    {
+      "name": "Marisa DeMeglio",
+      "company": "DAISY Consortium",
+      "companyURL": "http://www.daisy.org",
+      "w3cid": 35713
+    },
+    {
+      "name": "Daniel Weck",
+      "company": "DAISY Consortium",
+      "companyURL": "http://www.daisy.org",
+      "w3cid": 45653
+    }
+  ],
+  "edDraftURI": "https://w3c.github.io/sync-media-pub/synchronized-narration.html",
+  "shortName": "syncnarr",
+  "noRecTrack": true,
+  "copyrightStart": "2019",
+  "includePermalinks": true,
+  "permalinkEdge": true,
+  "permalinkHide": false,
+  "diffTool": "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
+  "github": {
+    "repoURL": "https://github.com/w3c/sync-media-pub",
+    "branch": "master"
+  },
+  "localBiblio": {},
+  "publishISODate": "2020-08-24T00:00:00.000Z",
+  "generatedSubtitle": "Draft Community Group Report 24 August 2020"
+}</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/cg-draft"></head>
+
+<body class="h-entry informative toc-inline"><div class="head">
+    <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title">同步旁白</h1>
+    
+    <h2>
+      社群小組報告草稿
+      <time class="dt-published" datetime="2020-08-24">24 August 2020</time>
+    </h2>
+    <dl>
+      
+      
+      <dt>最新編輯草稿：</dt><dd><a href="https://w3c.github.io/sync-media-pub/synchronized-narration.html">https://w3c.github.io/sync-media-pub/synchronized-narration.html</a></dd>
+      
+      
+      
+      
+      <dt>編輯：</dt>
+      <dd class="p-author h-card vcard" data-editor-id="35713"><span class="p-name fn">Marisa DeMeglio</span>
+            (<a class="p-org org h-org h-card" href="http://www.daisy.org">DAISY Consortium</a>)
+          </dd><dd class="p-author h-card vcard" data-editor-id="45653"><span class="p-name fn">Daniel Weck</span>
+            (<a class="p-org org h-org h-card" href="http://www.daisy.org">DAISY Consortium</a>)
+          </dd>
+      
+      
+      <dt>協助參與：</dt><dd>
+    <a href="https://github.com/w3c/sync-media-pub/">GitHub w3c/sync-media-pub</a>
+  </dd><dd>
+    <a href="https://github.com/w3c/sync-media-pub/issues/">提出問題</a>
+  </dd><dd>
+    <a href="https://github.com/w3c/sync-media-pub/commits/master">版本紀錄</a>
+  </dd><dd>
+    <a href="https://github.com/w3c/sync-media-pub/pulls/">修改要求</a>
+  </dd>
+    </dl>
+    
+    <p class="copyright">
+          <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+          ©
+          2019-2020
+          同步旁白規格貢獻者，由<a href="https://www.w3.org/community/sync-media-pub/">供出版品使用的同步媒體社群小組</a>基於<a href="https://www.w3.org/community/about/agreements/cla/">W3C社群貢獻授權協議(CLA)</a>所發表。另有供人讀的<a href="https://www.w3.org/community/about/agreements/cla-deed/">摘要</a>。              
+        </p>
+    <hr title="Separator for header">
+  </div>
+  <section id="abstract" class="introductory"><h2>概要</h2>
+    <p>本文件提供同步旁白的草稿版本。</p>
+  </section>
+
+  <section id="sotd" class="introductory"><h2>本文件狀態</h2><p>
+      本規格由<a href="https://www.w3.org/community/sync-media-pub/">供出版品使用的同步媒體社群小組</a>所發表。並非W3C標準也不在W3C標準程序上。請注意，基於<a href="https://www.w3.org/community/about/agreements/cla/">W3C社群貢獻授權協議(CLA)</a>，適用於有限制的退出與其他狀態。可由<a href="https://www.w3.org/community/">W3C社群與業界小組</a>了解更多。
+    </p>
+    <p>本草稿依然基於供出版品的同步媒體社群小組之考量而可能有所變更。最突出的問題將會在文件所提供的連結所參照。</p>
+  <p>
+          如果你想要對本文件提供建議，請將他們送到<a href="mailto:public-sync-media-pub@w3.org">public-sync-media-pub@w3.org</a>
+          （<a href="mailto:public-sync-media-pub-request@w3.org?subject=subscribe">訂閱</a>，
+          <a href="https://lists.w3.org/Archives/Public/public-sync-media-pub/">存檔</a>）。
+        </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">目錄</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#syncnarr-introduction"><bdi class="secno">1. </bdi>導論</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#syncnarr-terminology"><bdi class="secno">1.1 </bdi>術語</a></li></ol></li><li class="tocline"><a class="tocxref" href="#specification"><bdi class="secno">2. </bdi>規格</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#the-synchronized-narration-format"><bdi class="secno">2.1 </bdi>同步旁白格式</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#document-format"><bdi class="secno">2.1.1 </bdi>文件格式</a></li><li class="tocline"><a class="tocxref" href="#properties"><bdi class="secno">2.1.2 </bdi>特性</a></li><li class="tocline"><a class="tocxref" href="#with-html"><bdi class="secno">2.1.3 </bdi>由HTML文件進行參照</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#linking"><bdi class="secno">2.1.3.1 </bdi>連結</a></li><li class="tocline"><a class="tocxref" href="#playback-styling"><bdi class="secno">2.1.3.2 </bdi>播放樣式</a></li></ol></li><li class="tocline"><a class="tocxref" href="#syncnarr-uaprocessing"><bdi class="secno">2.1.4 </bdi>使用者代理處理</a></li></ol></li></ol></li></ol></nav>
+
+  <section id="syncnarr-introduction">
+    <h2 id="x1-introduction"><bdi class="secno">1. </bdi>導論<a class="self-link" aria-label="§" href="#syncnarr-introduction"></a></h2>
+
+    <p>同步旁白對一份文件提供了多模式的閱讀體驗，在該文件的主要格式（例如，文字）外擴增了額外的外部媒體（例如，聲音）。這項擴增透過一系列的同步點呈現，同步點讓不同媒體能夠彼此關聯（例如，這一段聲音與本HTML段落一起播放）。本文件定義同步旁白供獨立HTML文件使用。然而，由於本成果在開發上以網頁出版品（Web Publications）作為主要使用案例，而有一份伴隨的文件稱為<a href="incorporating-synchronized-narration.html">將同步旁白整合進出版品宣告</a>，其包含了與出版品的整合，例如有聲書。</p>
+
+    <section id="syncnarr-terminology">
+      <h3 id="x1-1-terminology"><bdi class="secno">1.1 </bdi>術語<a class="self-link" aria-label="§" href="#syncnarr-terminology"></a></h3>
+
+      <p>以下術語定義供本規格使用：</p>
+
+      <dl class="termlist">
+        <dt><dfn id="dfn-audio-clip" data-lt="Audio Clip" data-dfn-type="dfn">聲音片段（Audio Clip）</dfn></dt>
+        <dd>
+          <p>聲音檔案的連續部分，由時間偏差（time offsets）所定義。</p>
+        </dd>
+        <dt><dfn id="dfn-text-fragment" data-lt="Text Fragment" data-dfn-type="dfn">文字斷片（Text Fragment）</dfn></dt>
+        <dd>
+          <p>HTML文件中的一個元素。</p>
+        </dd>
+        <dt><dfn id="dfn-highlight" data-lt="Highlight|Playback Styling" data-dfn-type="dfn">播放樣式（Playback Styling）</dfn></dt>
+        <dd>
+          <p>強調，或其他樣式，在文字斷片正在播放時顯示。</p>
+        </dd>
+        <dt><dfn id="dfn-skip" data-lt="Skip" data-dfn-type="dfn">跳過（Skip）</dfn></dt>
+        <dd>
+          <p>能夠跳過內容播放，主要基於role。例如，跳過頁碼宣告或者腳註參照的聲音播放。</p>
+        </dd>
+        <dt><dfn id="dfn-escape" data-lt="Escape" data-dfn-type="dfn">跳出（Escape）</dfn></dt>
+        <dd>
+          <p>從播放一組結構中移出，並且回到其母容器的序列。例如，停止播放一個複雜表格並且繼續播放其主要內容。</p>
+        </dd>
+      </dl>
+
+    </section>
+  </section>
+
+  <section id="specification">
+    <h2 id="x2-specification"><bdi class="secno">2. </bdi>規格<a class="self-link" aria-label="§" href="#specification"></a></h2>
+
+    <section id="the-synchronized-narration-format">
+      <h3 id="x2-1-the-synchronized-narration-format"><bdi class="secno">2.1 </bdi>同步旁白格式<a class="self-link" aria-label="§" href="#the-synchronized-narration-format"></a></h3>
+
+      <section id="document-format">
+        <h4 id="x2-1-1-document-format"><bdi class="secno">2.1.1 </bdi>文件格式<a class="self-link" aria-label="§" href="#document-format"></a></h4>
+
+        <p>同步旁白以一份JSON文件定義，以表達依序播放的媒體物件。</p>
+
+        <p>一份HTML文件僅能與一份同步旁白文件相關連。</p>
+
+        <div class="issue" id="issue-container-number-1"><div role="heading" class="issue-title marker" id="h-issue" aria-level="5"><span>問題 1</span></div><p class=""><a href="https://github.com/w3c/sync-media-pub/issues/10">Issue #10：mime/媒體類型</a></p></div>
+        <p id="mimetype">同步旁白文件其媒體類型為
+          <code>application/vnd.syncnarr+json</code>.</p>
+
+      </section>
+
+      <section id="properties">
+        <h4 id="x2-1-2-properties"><bdi class="secno">2.1.2 </bdi>特性<a class="self-link" aria-label="§" href="#properties"></a></h4>
+
+        <ul>
+          <li>
+            <a href="https://w3c.github.io/sync-media-pub/narration.html#TODO">narration</a>
+            <p>供一組播放物件的容器，每一個都包含了媒體特性。</p>
+          </li>
+          <li>
+            <a href="https://w3c.github.io/sync-media-pub/narration.html#TODO">audio</a>
+            <p>供聲音的媒體特性。值為一個媒體斷片URL其指向一個聲音資源，透過一個開始/結束時間值所參照，例如<code>audio.mp3#t=123.45,678.9</code>（請見https://www.w3.org/TR/media-frags/#naming-time）。</p>
+          </li>
+          <li>
+            <a href="https://w3c.github.io/sync-media-pub/narration.html#TODO">text</a>
+            <p>文字的媒體特性。值為一個URL「片段」其一般為一個獨特識別碼其參照到一個文件元素（例如，<code>#section2.3</code>）。</p>
+            <div class="issue" id="issue-container-number-2"><div role="heading" class="issue-title marker" id="h-issue-0" aria-level="5"><span>問題 2</span></div><p class=""><a href="https://github.com/w3c/sync-media-pub/issues/11">Issue #11：定義更多供文字參照的選項</a></p></div>
+          </li>
+          <li>
+            <a href="https://w3c.github.io/sync-media-pub/narration.html#TODO">role</a>
+            <p>供<code>narration</code>容器或者<code>text</code>/聲音匹配的語意資訊。</p>
+            <div class="issue" id="issue-container-number-3"><div role="heading" class="issue-title marker" id="h-issue-1" aria-level="5"><span>問題 3</span></div><p class=""><a href="https://github.com/w3c/sync-media-pub/issues/12">Issue #12：role的值</a></p></div>
+          </li>
+        </ul>
+
+        <div class="issue" id="issue-container-number-4"><div role="heading" class="issue-title marker" id="h-issue-2" aria-level="5"><span>問題 4</span></div><p class=""><a href="https://github.com/w3c/sync-media-pub/issues/9">Issue #9：定義對平行媒體特性的限制</a></p></div>
+
+        <p>聲音與文字同步的範本：</p>
+
+        <pre aria-busy="false"><code class="hljs json">{
+  <span class="hljs-attr">"role"</span>: <span class="hljs-string">"body"</span>,
+  <span class="hljs-attr">"narration"</span>: [
+    {
+      <span class="hljs-attr">"text"</span>: <span class="hljs-string">"#id1"</span>,
+      <span class="hljs-attr">"audio"</span>: <span class="hljs-string">"audio.mp3#t=0.0,1.2"</span>
+    },
+    {
+      <span class="hljs-attr">"text"</span>: <span class="hljs-string">"#id2"</span>,
+      <span class="hljs-attr">"audio"</span>: <span class="hljs-string">"audio.mp3#t=1.2,3.4"</span>
+    },
+    {
+      <span class="hljs-attr">"role"</span>: <span class="hljs-string">"footnote-ref"</span>,
+      <span class="hljs-attr">"text"</span>: <span class="hljs-string">"#id3"</span>,
+      <span class="hljs-attr">"audio"</span>: <span class="hljs-string">"audio.mp3#t=3.4,5.6"</span>
+    },
+    {
+      <span class="hljs-attr">"role"</span>: <span class="hljs-string">"aside"</span>,
+      <span class="hljs-attr">"narration"</span>: [
+        {
+          <span class="hljs-attr">"text"</span>: <span class="hljs-string">"#id4"</span>,
+          <span class="hljs-attr">"audio"</span>: <span class="hljs-string">"audio.mp3#t=5.6,7.8"</span>
+        },
+        {
+          <span class="hljs-attr">"text"</span>: <span class="hljs-string">"#id5"</span>,
+          <span class="hljs-attr">"audio"</span>: <span class="hljs-string">"audio.mp3#t=7.8,9.1"</span>
+        },
+        {
+          <span class="hljs-attr">"text"</span>: <span class="hljs-string">"#id6"</span>,
+          <span class="hljs-attr">"audio"</span>: <span class="hljs-string">"audio.mp3#t=9.1,10.1"</span>
+        }
+      ]
+    },
+    {
+      <span class="hljs-attr">"text"</span>: <span class="hljs-string">"#id7"</span>,
+      <span class="hljs-attr">"audio"</span>: <span class="hljs-string">"audio.mp3#t=10.1,11.2"</span>
+    },
+    {
+      <span class="hljs-attr">"text"</span>: <span class="hljs-string">"#id8"</span>,
+      <span class="hljs-attr">"audio"</span>: <span class="hljs-string">"audio.mp3#t=11.2,13.3"</span>
+    },
+    {
+      <span class="hljs-attr">"role"</span>: <span class="hljs-string">"footnote"</span>,
+      <span class="hljs-attr">"narration"</span>: [
+        {
+          <span class="hljs-attr">"text"</span>: <span class="hljs-string">"#id9"</span>,
+          <span class="hljs-attr">"audio"</span>: <span class="hljs-string">"audio.mp3#t=13.3,14.4"</span>
+        },
+        {
+          <span class="hljs-attr">"text"</span>: <span class="hljs-string">"#id10"</span>,
+          <span class="hljs-attr">"audio"</span>: <span class="hljs-string">"audio.mp3#t=14.4,17.4"</span>
+        },
+      ]
+    }
+  ]
+}</code></pre>
+      </section>
+
+      <section id="with-html">
+        <h4 id="x2-1-3-referencing-from-an-html-document"><bdi class="secno">2.1.3 </bdi>由HTML文件進行參照<a class="self-link" aria-label="§" href="#with-html"></a></h4>
+
+        <section id="linking">
+          <h5 id="x2-1-3-1-linking"><bdi class="secno">2.1.3.1 </bdi>連結<a class="self-link" aria-label="§" href="#linking"></a></h5>
+
+          <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span>
+    <span class="hljs-attr">rel</span>=<span class="hljs-string">"sync-media"</span>
+    <span class="hljs-attr">href</span>=<span class="hljs-string">"sync-media/index.json"</span>
+    <span class="hljs-attr">type</span>=<span class="hljs-string">"application/vnd.syncnarr+json"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></pre>
+
+        </section>
+
+        <section id="playback-styling">
+          <h5 id="x2-1-3-2-playback-styling"><bdi class="secno">2.1.3.2 </bdi>播放樣式<a class="self-link" aria-label="§" href="#playback-styling"></a></h5>
+
+          <p>與HTML內容同步播放旁白，將帶出播放樣式的概念，如此作者可以對閱讀系統提供樣式資訊。例如，當一個HTML元素被「唸出」（例如，聲音與該指定的DOM片段同步播放），閱讀系統可以插入一個CSS Class名稱到該HTML元素中使得作者指定的樣式可以動態適用於現在正播放（又稱為「啟動」）的元素。</p>
+
+          <div class="issue" id="issue-container-number-5"><div role="heading" class="issue-title marker" id="h-issue-3" aria-level="6"><span>問題 5</span></div><p class=""><a href="https://github.com/w3c/sync-media-pub/issues/8">Issue #8：可否使用偽Class（pseudoclasses）供同步強調？</a></p></div>
+
+          <p>於此，我們提出兩個描述特性供播放樣式：</p>
+          <ul>
+            <li><code>css-class-active</code>：可適用於HTML元素其呼應的聲音正在播放。作者可以用這個來強調正在朗讀的內容。</li>
+            <li><code>css-class-playing</code>：可適用於整份正在播放的HTML文件。作者可以用這個來讓目前沒有被唸到的內容不被強調。</li>
+          </ul>
+
+          <p>本推薦不指定實際的Class名稱值供這些特性使用。作者必需按以下方式定義值：</p>
+
+          <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"sync-media-css-class-active"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"-my-active-element"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"sync-media-css-class-playing"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"-my-document-playing"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></pre>
+
+          <p>作者可以為這些Class名稱在對應的CSS中定義樣式：</p>
+          <pre aria-busy="false"><code class="hljs css"><span class="hljs-comment">/* emphasize the active element */</span>
+<span class="hljs-selector-class">.-my-active-element</span> {
+    <span class="hljs-attribute">background-color</span>: yellow;
+    <span class="hljs-attribute">color</span>: black <span class="hljs-meta">!important</span>;
+}
+
+<span class="hljs-comment">/* fade out the inactive text */</span>
+<span class="hljs-selector-tag">html</span><span class="hljs-selector-class">.-my-document-playing</span> * {
+    <span class="hljs-attribute">color</span>: gray;
+}</code></pre>
+
+        </section>
+
+      </section>
+      <section id="syncnarr-uaprocessing">
+        <h4 id="x2-1-4-user-agent-processing"><bdi class="secno">2.1.4 </bdi>使用者代理處理<a class="self-link" aria-label="§" href="#syncnarr-uaprocessing"></a></h4>
+        <p><code>narration</code>：在此陣列中的每個物件都要依序播放。在單一物件中的媒體特性要被平行處理。</p>
+
+        <p><code>audio</code>：從開始到結束播放片段。</p>
+
+        <p><code>text</code>：在瀏覽器中將元素提到焦點處理。當元素啟動時，套用播放Class名稱。</p>
+
+      </section>
+
+
+</section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
