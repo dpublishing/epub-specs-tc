@@ -25,7 +25,7 @@
 ## 有聲書規格
 
 - [x]  [Audiobook](https://www.w3.org/TR/audiobooks/)
-    - [https://github.com/bobbytung/EPUB32forTC/blob/master/MD/audiobooks.md](https://github.com/bobbytung/EPUB32forTC/blob/master/MD/audiobooks.md)
+    - [有聲書](https://bobbytung.github.io/EPUB32forTC/HTML/Audiobooks.html)
 - [x]  [Lightweight Packaging Format](https://www.w3.org/TR/lpf/)
     - [輕量包裝格式](https://bobbytung.github.io/EPUB32forTC/HTML/Lightweight%20Packaging%20Format%20(LPF).html)
 - [x]  [Synchronized Media for Publications:Overview](https://w3c.github.io/sync-media-pub/)
