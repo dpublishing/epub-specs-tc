@@ -26,10 +26,10 @@
 
 - [x]  [Audiobook](https://www.w3.org/TR/audiobooks/)
     - [https://github.com/bobbytung/EPUB32forTC/blob/master/MD/audiobooks.md](https://github.com/bobbytung/EPUB32forTC/blob/master/MD/audiobooks.md)
-- [x]  [LPF](https://www.w3.org/TR/lpf/](https://www.w3.org/TR/lpf/)) [Lightweight Packaging Format](https://www.w3.org/TR/2020/NOTE-lpf-20200319/)
-    - [https://github.com/bobbytung/EPUB32forTC/blob/master/MD/lpf.md](https://github.com/bobbytung/EPUB32forTC/blob/master/MD/lpf.md)
+- [x]  [Lightweight Packaging Format](https://www.w3.org/TR/lpf/)
+    - [輕量包裝格式](https://bobbytung.github.io/EPUB32forTC/HTML/Lightweight%20Packaging%20Format%20(LPF).html)
 - [x]  [Synchronized Media for Publications:Overview](https://w3c.github.io/sync-media-pub/)
-    - [供出版品使用的同步媒體：總覽](https://github.com/bobbytung/EPUB32forTC/blob/master/MD/Synchronized%20Media%20for%20Publications.md)
+    - [供出版品使用的同步媒體：總覽](https://bobbytung.github.io/EPUB32forTC/HTML/Synchronized%20Media%20for%20Publications.html)
 - [x]  [Synchronized Narration](https://w3c.github.io/sync-media-pub/synchronized-narration.html)
     - [同步旁白](https://bobbytung.github.io/EPUB32forTC/HTML/synchronized-narration.html)
 - [x]  [Incorporating Synchronized Narration into a Publication Manifest](https://w3c.github.io/sync-media-pub/incorporating-synchronized-narration)
