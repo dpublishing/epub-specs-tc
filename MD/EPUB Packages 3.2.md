@@ -1,5 +1,5 @@
 # EPUB包裝 3.2
-社群小組規範完整版 08 May 2019
+最終社群小組規格 08 May 2019
 
 **最新編輯草稿**：
     https://w3c.github.io/publ-epub-revision/epub32/spec/epub-packages.html
@@ -1108,7 +1108,7 @@ rendition | http://www.idpf.org/vocab/rendition/#
 
 **必需**要有唯一一個*item*使用*nav*特性宣告為EPUB導覽文件。
 
-*media-overlay*屬性使用IDREF [XML]來識別用以解釋該*item*資源的媒體覆蓋文件。請參考包裝[MediaOverlay32]以了解更多資訊。
+*media-overlay*屬性使用IDREF [XML]來識別用以解釋該*item*資源的媒體層疊文件。請參考包裝[MediaOverlay32]以了解更多資訊。
 
 > ##### 注意事項
 > 
@@ -2901,7 +2901,7 @@ EPUB導覽文件**可以**在前章節所定義的*toc*、*page-list*及*landmar
 名稱： | *remote-resources*
 ------- | -------
 說明： | *remote-resources*特性說明了該出版品資源包含一或多個內部參照，指向外於EPUB容器的其他出版品資源。要了解更多資訊，請參考出版品資源位置[EPUB32]。
-適用： | 所有能夠做內部參照的出版品資源（例如，XHTML內容文件、SVG內容文件、CSS樣式表以及媒體覆蓋文件）。
+適用： | 所有能夠做內部參照的出版品資源（例如，XHTML內容文件、SVG內容文件、CSS樣式表以及媒體層疊文件）。
 基數： | *零或多*
 用法： | 僅有在符合說明中指定的範疇時，**必需**指定。
 

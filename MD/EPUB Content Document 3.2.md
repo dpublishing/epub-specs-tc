@@ -1,5 +1,5 @@
 # EPUB內容文件 3.2
-社群小組規範完整版 08 May 2019
+最終社群小組規格 08 May 2019
 
 **最新編輯草稿**：
     https://w3c.github.io/publ-epub-revision/epub32/spec/epub-contentdocs.html
@@ -377,15 +377,15 @@ EPUB閱讀系統對於屬性處理模型[RDFA-CORE]的支援為**選擇性**，�
 
 ##### 2.4.3.1 導論
 
-W3C語音合成標注語言[SSML]是一種用來協助文字轉語音（Text-to-Speech, TTS）引擎用來合成朗讀的語言。由於SSML設計上作為獨立的文件類型，其也定義了適用在其他標記語言中的語意。
+W3C語音合成標注語言[SSML]是一種用來協助文字轉換語音（Text-to-Speech, TTS）引擎用來合成朗讀的語言。由於SSML設計上作為獨立的文件類型，其也定義了適用在其他標記語言中的語意。
 
 本規格重編[SSML]*phoneme*元素為兩種屬性） — *ssml:ph*與*ssml:alphabet* — 並讓他們可以與XHTML內容文件共用。
 
-具備文字轉語音相容性的閱讀系統**應該**支援SSML屬性其定義如下：
+具備文字轉換語音相容性的閱讀系統**應該**支援SSML屬性其定義如下：
 
 > ##### 注意事項
 > 
-> 要了解更多EPUB 3與合成朗讀相關的功能，請參考文字轉語音[EPUB3Overview]。
+> 要了解更多EPUB 3與合成朗讀相關的功能，請參考文字轉換語音[EPUB3Overview]。
 
 ##### 2.4.3.2 ssml:ph屬性
 
@@ -1004,13 +1004,13 @@ This specification defines two contexts in which scripts MAY appear:
 
 本章節為非規範性。
 
-W3C發音辭典規格（Pronunciation Lexicon Specification, PLS) [PRONUNCIATION-LEXICON]定義了基於XML的發音辭典的語法與語意，可供自動語音辨識以及文字轉語音（Text-to-Speech, TTS) 引擎使用。
+W3C發音辭典規格（Pronunciation Lexicon Specification, PLS) [PRONUNCIATION-LEXICON]定義了基於XML的發音辭典的語法與語意，可供自動語音辨識以及文字轉換語音（Text-to-Speech, TTS) 引擎使用。
 
 以下章節定義了當PLS文件包含在EPUB出版品時的適用性領域，以及PLS文件與XHTML內容文件建立關聯的規則。
 
 > ##### 注意事項
 > 
-> 若想要了解更多EPUB 3與語音合成相關的資訊，請參照文字轉語音[EPUB3Overview]。
+> 若想要了解更多EPUB 3與語音合成相關的資訊，請參照文字轉換語音[EPUB3Overview]。
 
 ### 7.2 EPUB出版品適用性
 
@@ -1052,11 +1052,11 @@ W3C發音辭典規格（Pronunciation Lexicon Specification, PLS) [PRONUNCIATION
 
 ### 7.4 閱讀系統適用性
 
-閱讀系統具備文字轉語音（TTS）能力**應該**支援PLS文件。
+閱讀系統具備文字轉換語音（TTS）能力**應該**支援PLS文件。
 
 合規的EPUB閱讀系統處理PLS文件時**必需**符合以下領域需求：
 
-- 閱讀系統支援文字轉語音（TTS）**應該**支援[PRONUNCIATION-LEXICON]。
+- 閱讀系統支援文字轉換語音（TTS）**應該**支援[PRONUNCIATION-LEXICON]。
 - 其**必需**如[PRONUNCIATION-LEXICON]之定義處理PLS文件
 - 其**必需**套用提供的發音程序給所有該XHTML內容文件中其語言[HTML]符合該發音辭典關聯[PRONUNCIATION-LEXICON]的文字節點。語言標籤的配對演算法定義在[BCP47]。
 - 當在提供的語言中對提供的字串目標指定多於一個的發音規則，其**必需**給予最後出現的規則優先順序，如此一來任何預先定義的發音規則能被覆蓋。

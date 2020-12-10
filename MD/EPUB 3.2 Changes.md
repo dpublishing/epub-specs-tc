@@ -1,5 +1,5 @@
 # EPUB 3.2 變更點
-社群小組規範完整版 08 May 2019
+最終社群小組規格 08 May 2019
 
 **最新編輯草稿**：
     https://w3c.github.io/publ-epub-revision/epub32/spec/epub-changes.html

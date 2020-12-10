@@ -1,5 +1,5 @@
 # EPUB 3.2
-社群小組規範完整版 08 May 2019
+最終社群小組規格 08 May 2019
 
 **最新編輯草稿**：
     https://w3c.github.io/publ-epub-revision/epub32/spec/epub-spec.html
@@ -237,7 +237,7 @@ EPUB出版品的一種內容顯示方式，如EPUB包裝中所解釋。
 
 在設備螢幕上持續排版顯示兩個相鄰接的頁面。
 
-#### 文字轉語音（Text-to-Speech,TTS）
+#### 文字轉換語音（Text-to-Speech,TTS）
 
 透過合成語音，將EPUB出版品的文字內容處理成人工聲音朗讀出來。
 
@@ -304,7 +304,7 @@ XHTML內容文件中所使用的XHTML語法定義於[HTML]。
 - 若提供顯示範圍，則**必需**以定義在CSS樣式表——閱讀系統適用性[ContentDocs32]的方式支援XHTML內容文件的視覺排版。
 - 若提供顯示範圍，則**必需**支援圖片類的核心媒體類型資源。
 - 若能夠播放預錄的聲音，則**必需**支援聲音核心媒體類型資源，且**應該**支援媒體層疊[MediaOverlays32]。
-- 若支援文字轉語音（TTS, text-to-Speech）功能，則**應該**支援XHTML內容文件中的發音辭典[ContentDocs32]、[CSS3Speech]以及SSML屬性[ContentDocs32]。
+- 若支援文字轉換語音（TTS, text-to-Speech）功能，則**應該**支援XHTML內容文件中的發音辭典[ContentDocs32]、[CSS3Speech]以及SSML屬性[ContentDocs32]。
 
 > ##### 注意事項
 > 
@@ -384,7 +384,7 @@ font/woff2 | [WOFF2] | WOFF2 fonts
 application/xhtml+xml | XHTML Content Documents<br />[ContentDocs32]	 | XHTML內容文件使用XHTML語法 [HTML].
 application/javascript<br />text/javascript | [RFC4329] | 腳本
 application/x-dtbncx+xml | [OPF2] | 過去舊有的NCX
-application/smil+xml | [MediaOverlays32] | EPUB媒體層疊文件application/pls+xml | [PRONUNCIATION-LEXICON] | 文字轉語音 (TTS) 發音辭典
+application/smil+xml | [MediaOverlays32] | EPUB媒體層疊文件application/pls+xml | [PRONUNCIATION-LEXICON] | 文字轉換語音 (TTS) 發音辭典
 
 #### 3.1.3 外部資源
 
