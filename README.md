@@ -6,7 +6,7 @@
 ## EPUB 3.2規格
 
 - [x]  [EPUB 3 Overview](https://www.w3.org/publishing/epub3/epub-overview.html)
-    - [https://github.com/bobbytung/EPUB32forTC/blob/master/MD/EPUB 3 Overview.md](https://github.com/bobbytung/EPUB32forTC/blob/master/MD/EPUB%203%20Overview.md)
+    - [EPUB 3 總覽](https://bobbytung.github.io/EPUB32forTC/HTML/EPUB%203%20Overview.html)
 - [x]  [EPUB 3.2 Specification](https://www.w3.org/publishing/epub3/epub-spec.html)
     - [https://github.com/bobbytung/EPUB32forTC/blob/master/MD/EPUB 3.2.md](https://github.com/bobbytung/EPUB32forTC/blob/master/MD/EPUB%203.2.md)
 - [x]  [EPUB 3.2 Changes](https://www.w3.org/publishing/epub3/epub-changes.html)
