@@ -20,7 +20,7 @@
 - [x]  [EPUB Media Overlays 3.2](https://www.w3.org/publishing/epub3/epub-mediaoverlays.html)
     - [https://github.com/bobbytung/EPUB32forTC/blob/master/MD/EPUB Media Overlay 3.2.md](https://github.com/bobbytung/EPUB32forTC/blob/master/MD/EPUB%20Media%20Overlay%203.2.md)
 - [x]  [EPUB Accessibility](https://www.w3.org/Submission/epub-a11y/)
-    - [https://github.com/bobbytung/EPUB32forTC/blob/master/MD/EPUB Accessibility 1.0.md](https://github.com/bobbytung/EPUB32forTC/blob/master/MD/EPUB%20Accessibility%201.0.md)
+    - [EPUB無障礙輔助性](https://bobbytung.github.io/EPUB32forTC/HTML/EPUB%20Accessibility%201.0.html)
 
 ## 有聲書規格
 
