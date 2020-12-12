@@ -8,7 +8,7 @@
 - [x]  [EPUB 3 Overview](https://www.w3.org/publishing/epub3/epub-overview.html)
     - [EPUB 3 總覽](https://bobbytung.github.io/EPUB32forTC/HTML/epub-overview.html)
 - [x]  [EPUB 3.2 Specification](https://www.w3.org/publishing/epub3/epub-spec.html)
-    - [EPUB 3.2](https://bobbytung.github.io/EPUB32forTC/HTML/epub-spec.html))
+    - [EPUB 3.2](https://bobbytung.github.io/EPUB32forTC/HTML/epub-spec.html)
 - [x]  [EPUB 3.2 Changes](https://www.w3.org/publishing/epub3/epub-changes.html)
     - [https://github.com/bobbytung/EPUB32forTC/blob/master/MD/EPUB 3.2 Changes.md](https://github.com/bobbytung/EPUB32forTC/blob/master/MD/EPUB%203.2%20Changes.md)
 - [x]  [EPUB Packages 3.2](https://www.w3.org/publishing/epub3/epub-packages.html)
