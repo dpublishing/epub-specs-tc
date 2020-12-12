@@ -10,7 +10,7 @@
 - [x]  [EPUB 3.2 Specification](https://www.w3.org/publishing/epub3/epub-spec.html)
     - [EPUB 3.2](https://bobbytung.github.io/EPUB32forTC/HTML/epub-spec.html)
 - [x]  [EPUB 3.2 Changes](https://www.w3.org/publishing/epub3/epub-changes.html)
-    - [https://github.com/bobbytung/EPUB32forTC/blob/master/MD/EPUB 3.2 Changes.md](https://github.com/bobbytung/EPUB32forTC/blob/master/MD/EPUB%203.2%20Changes.md)
+    - [EPUB 3.2 變更點](https://bobbytung.github.io/EPUB32forTC/HTML/epub-spec.html)
 - [x]  [EPUB Packages 3.2](https://www.w3.org/publishing/epub3/epub-packages.html)
     - [https://github.com/bobbytung/EPUB32forTC/blob/master/MD/EPUB Packages 3.2.md](https://github.com/bobbytung/EPUB32forTC/blob/master/MD/EPUB%20Packages%203.2.md)
 - [x]  [EPUB Content Documents 3.2](https://www.w3.org/publishing/epub3/epub-contentdocs.html)
