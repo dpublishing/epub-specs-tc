@@ -153,7 +153,7 @@ a.bibref {
 }
 
 /* TODO: Remove once https://github.com/w3c/tr-design/pull/176 is merged. */
-.respec-offending-element a[href] {
+.respec-offending-element a [href] {
   margin: 0;
 }
 
@@ -190,12 +190,12 @@ th code {
   color: inherit;
 }
 
-a[href].orcid {
+a [href] .orcid {
     padding-left: 4px;
     padding-right: 4px;
 }
 
-a[href].orcid > svg {
+a [href] .orcid > svg {
     margin-bottom: -2px;
 }
 
@@ -236,7 +236,7 @@ table.simple {
   text-align: left;
 }
 
-.simple th[scope="row"] {
+.simple th [scope="row"] {
   background: inherit;
   color: inherit;
   border-top: 1px solid #ddd;
@@ -290,7 +290,7 @@ details.respec-tests-details > * {
   padding-right: 2em;
 }
 
-details.respec-tests-details[open] {
+details.respec-tests-details [open] {
   z-index: 999999;
   position: absolute;
   border: thin solid #cad3e2;
@@ -299,7 +299,7 @@ details.respec-tests-details[open] {
   padding-bottom: 0.5em;
 }
 
-details.respec-tests-details[open] > summary {
+details.respec-tests-details [open] > summary {
   border-bottom: thin solid #cad3e2;
   padding-left: 1em;
   margin-bottom: 1em;
@@ -315,7 +315,7 @@ details.respec-tests-details > li {
   padding-left: 1em;
 }
 
-a[href].self-link:hover {
+a [href] .self-link:hover {
   opacity: 1;
   text-decoration: none;
   background-color: transparent;
@@ -494,8 +494,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   display: inline-block;
 }
 
-var[data-type]::before,
-var[data-type]::after {
+var [data-type] ::before,
+var [data-type] ::after {
   position: absolute;
   left: 50%;
   top: -6px;
@@ -505,7 +505,7 @@ var[data-type]::after {
 }
 
 /* the triangle or arrow or caret or whatever */
-var[data-type]::before {
+var [data-type] ::before {
   content: "";
   transform: translateX(-50%);
   border-width: 4px 6px 0 6px;
@@ -515,7 +515,7 @@ var[data-type]::before {
 }
 
 /* actual text */
-var[data-type]::after {
+var [data-type] ::after {
   content: attr(data-type);
   transform: translateX(-50%) translateY(-100%);
   background: #000;
@@ -528,8 +528,8 @@ var[data-type]::after {
   color: #daca88;
 }
 
-var[data-type]:hover::after,
-var[data-type]:hover::before {
+var [data-type] :hover::after,
+var [data-type] :hover::before {
   opacity: 1;
 }
 </style><script id="initialUserConfig" type="application/json">{
@@ -553,7 +553,7 @@ var[data-type]:hover::before {
       "company": "Hachette Livre",
       "companyURL": "https://www.hachettebookgroup.com"
     }
-  ],
+  ] ,
   "formerEditors": [
     {
       "name": "Markus Gylling",
@@ -565,7 +565,7 @@ var[data-type]:hover::before {
       "company": "John Wiley & Sons",
       "companyURL": "https://www.wiley.com"
     }
-  ],
+  ] ,
   "processVersion": 2017,
   "includePermalinks": true,
   "permalinkEdge": true,
@@ -593,7 +593,7 @@ var[data-type]:hover::before {
       "href": "http://www.idpf.org/epub/altss-tags/",
       "authors": [
         "Elika J. Etemad"
-      ]
+      ] 
     },
     "AttributeExtensions": {
       "title": "EPUB Custom Attribute Extensions for Content Documents",
@@ -647,7 +647,7 @@ var[data-type]:hover::before {
       "href": "https://drafts.csswg.org/date/2016-01-19T17:23:23/css-text/",
       "authors": [
         "Elika J. Etemad"
-      ],
+      ] ,
       "etAl": true
     },
     "DAISYAudio": {
@@ -948,7 +948,7 @@ var[data-type]:hover::before {
       "href": "https://www.w3.org/2015/Process-20150901/",
       "authors": [
         "Charles McCathie-Nevile"
-      ],
+      ] ,
       "date": "1 September 2015"
     },
     "XPTRSH": {
@@ -960,10 +960,10 @@ var[data-type]:hover::before {
   "preProcess": [
     null,
     null
-  ],
+  ] ,
   "postProcess": [
     null
-  ],
+  ] ,
   "publishISODate": "2019-05-08T00:00:00.000Z",
   "generatedSubtitle": "Final Community Group Specification 08 May 2019"
 }</script><meta name="description" content="EPUB® 3 defines a distribution and interchange format for digital publications and documents. The EPUB
@@ -1022,7 +1022,7 @@ var[data-type]:hover::before {
 
 			<p>EPUB 3以模組化制定：其包含了一系列的規格來定義標準的核心特色與功能。本規格為本標準的主要開始點，但列於<a href="#sec-intro-epub-specs">本規格</a>中的所有規格都屬於EPUB 3的一部分。對於這些規格<a href="#index">關鍵概念與定義的索引</a>提供於本規格文末。</p>
 
-			<p>參考性的[<cite><a class="bibref" href="#bib-epub3overview">EPUB3Overview</a></cite>]提供了EPUB 3的一般性導論。對於前版本的技術變更點則列於另一份參考性的[<cite><a class="bibref" href="#bib-epub32changes">EPUB32Changes</a></cite>]。</p>
+			<p>參考性的 [<cite><a class="bibref" href="#bib-epub3overview">EPUB3Overview</a></cite>] 提供了EPUB 3的一般性導論。對於前版本的技術變更點則列於另一份參考性的 [<cite><a class="bibref" href="#bib-epub32changes">EPUB32Changes</a></cite>] 。</p>
 		</section>
 		<section id="sotd" class="introductory"><h2>本文件狀態</h2><p>本規格由 <a href="https://www.w3.org/community/epub3/">EPUB 3社群小組</a>所發表。並非W3C標準也不在W3C標準程序上。請注意本規格適用於<a href="https://www.w3.org/community/about/agreements/final/">W3C社群完整規範協議（FSA）</a>。可進一步了解<a href="https://www.w3.org/community/">W3C社群與業界小組</a>。
     </p><p>如果你想要對本文件提出意見，請寄送到<a href="mailto:public-epub3@w3.org">public-epub3@w3.org</a>（<a href="mailto:public-epub3-request@w3.org?subject=subscribe">訂閱</a>，<a href="https://lists.w3.org/Archives/Public/public-epub3/">存檔</a>）。
@@ -1061,7 +1061,7 @@ var[data-type]:hover::before {
 					</li>
 					<li>
 						<p><a href="http://www.idpf.org/epub/latest/accessibility">EPUB無障礙輔助性</a>
-							[<cite><a class="bibref" href="#bib-epubaccessibility">EPUBAccessibility</a></cite>] — 定義了EPUB出版品無障礙功能的適用範圍與發現性需求。</p>
+							 [<cite><a class="bibref" href="#bib-epubaccessibility">EPUBAccessibility</a></cite>] — 定義了EPUB出版品無障礙功能的適用範圍與發現性需求。</p>
 					</li>
 				</ul>
 
@@ -1077,13 +1077,13 @@ var[data-type]:hover::before {
 
 				<p>一份EPUB包裝也包含了另一個關鍵檔案稱為<a href="epub-spec.html#dfn-epub-navigation-document">EPUB導覽文件</a>。該文件提供了關鍵導覽能力，像是目錄，能讓使用者迅速且輕鬆地巡覽內容。</p>
 
-				<p>EPUB包裝的需求定義在[<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]中。</p>
+				<p>EPUB包裝的需求定義在 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 中。</p>
 
 				<p>EPUB出版品的資源以ZIP技術為基礎封存，其副檔名為<code>.epub</code>，用於傳遞使用。作為通用的ZIP封存檔，EPUB出版品可以被多種軟體程式解壓縮，簡化製作與使用的程序。</p>
 
 				<p>該容器格式不僅提供判斷ZIP壓縮後的內容是否為EPUB出版品（透過<code>mimetype</code>檔案）的手段，也提供了對於資訊性資源的通用命名目錄（<code>/META-INF</code>）。這些資源的關鍵是<code>container.xml</code>檔案，用於告知閱讀系統包裝文件所在。</p>
 
-				<p>容器格式定義於[<cite><a class="bibref" href="#bib-ocf32">OCF32</a></cite>]。</p>
+				<p>容器格式定義於 [<cite><a class="bibref" href="#bib-ocf32">OCF32</a></cite>] 。</p>
 
 				<figure id="fig-the-following-example-visually-represents-the-structure-of-the-epub-format">
 					<figcaption>圖片<span class="figno">1</span> 
@@ -1096,18 +1096,18 @@ var[data-type]:hover::before {
 
 				<p>EPUB出版品的結構與容器只是整體格式的一半，另一半則是該如何將內容顯示給使用者。本格是基於開放網頁平台而能得惠於：<a data-lt="XHTML Content Document" href="epub-spec.html#dfn-xhtml-content-document">XHTML</a>與<a data-lt="SVG Content Document" href="epub-spec.html#dfn-svg-content-document">SVG</a>兩項，稱為<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>，這些文件通常會指向其他更多的資源用於正確地排版顯示，包括影像、聲音與影片片段、腳本與樣式表。</p>
 
-				<p>關於製作EPUB內容文件的規則與基本需求，詳細資訊在[<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>]。而無障礙功能的需求則定義在[<cite><a class="bibref" href="#bib-epubaccessibility">EPUBAccessibility</a></cite>]。</p>
+				<p>關於製作EPUB內容文件的規則與基本需求，詳細資訊在 [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] 。而無障礙功能的需求則定義在 [<cite><a class="bibref" href="#bib-epubaccessibility">EPUBAccessibility</a></cite>] 。</p>
 
-				<p><a href="epub-spec.html#dfn-media-overlay-document">媒體層疊文件</a>需匹配EPUB內容文件。其提供了宣告性的標注來讓EPUB內容文件中的文字可以和預錄好的聲音同步播放，結果可以提供文字會隨著朗讀進度被強調的伴讀體驗。媒體層疊文件定義在[<cite><a class="bibref" href="#bib-mediaoverlays32">MediaOverlays32</a></cite>]。</p>
+				<p><a href="epub-spec.html#dfn-media-overlay-document">媒體層疊文件</a>需匹配EPUB內容文件。其提供了宣告性的標注來讓EPUB內容文件中的文字可以和預錄好的聲音同步播放，結果可以提供文字會隨著朗讀進度被強調的伴讀體驗。媒體層疊文件定義在 [<cite><a class="bibref" href="#bib-mediaoverlays32">MediaOverlays32</a></cite>] 。</p>
 
-				<p>概念上非常簡單，一個EPUB出版品就只是一系列HTML頁面和其他獨立素材以ZIP包裝封存。關於EPUB出版品的主要功能與特色，可用提升閱讀體驗的額外資訊可由其他參考規格取得，而更一般性的EPUB 3功能導論請見資訊性質的[<cite><a class="bibref" href="#bib-epub3overview">EPUB3Overview</a></cite>]。</p>
+				<p>概念上非常簡單，一個EPUB出版品就只是一系列HTML頁面和其他獨立素材以ZIP包裝封存。關於EPUB出版品的主要功能與特色，可用提升閱讀體驗的額外資訊可由其他參考規格取得，而更一般性的EPUB 3功能導論請見資訊性質的 [<cite><a class="bibref" href="#bib-epub3overview">EPUB3Overview</a></cite>] 。</p>
 
 			</section>
 
 			<section id="sec-terminology">
 				<h3 id="x1-3-terminology"><span class="secno">1.3 </span>術語<a class="self-link" aria-label="§" href="#sec-terminology"></a></h3>
 
-				<p>專屬於EPUB 3的術語在本文件中以括號（譯注：英文版為首字大寫。範例如「作者」，「閱讀系統」）。術語與定義的完整清單提供於[EPUB32]。</p>
+				<p>專屬於EPUB 3的術語在本文件中以括號（譯注：英文版為首字大寫。範例如「作者」，「閱讀系統」）。術語與定義的完整清單提供於 [EPUB32] 。</p>
 
 				<p>每章節術語第一次出現時才會連結至其定義。</p>
 
@@ -1127,7 +1127,7 @@ var[data-type]:hover::before {
 					</dd>
 					<dt><dfn id="dfn-epub-container" data-lt="epub containers|epub container" data-dfn-type="dfn">EPUB容器（EPUB Container）</dfn></dt>
 					<dd>
-						<p>基於ZIP的<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>包裝與配送格式，定義在<a href="epub-ocf.html#sec-container-zip">OCF ZIP容器</a> [<cite><a class="bibref" href="#bib-ocf32">OCF32</a></cite>]。</p>
+						<p>基於ZIP的<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>包裝與配送格式，定義在<a href="epub-ocf.html#sec-container-zip">OCF ZIP容器</a> [<cite><a class="bibref" href="#bib-ocf32">OCF32</a></cite>] 。</p>
 					</dd>
 					<dt><dfn id="dfn-epub-content-document" data-lt="epub content documents|epub content document" data-dfn-type="dfn">EPUB內容文件（EPUB Content Document）</dfn></dt>
 					<dd>
@@ -1136,7 +1136,7 @@ var[data-type]:hover::before {
 					</dd>
 					<dt><dfn id="dfn-epub-navigation-document" data-lt="epub navigation documents|epub navigation document" data-dfn-type="dfn">EPUB導覽文件（EPUB Navigation Document）</dfn></dt>
 					<dd>
-						<p>一份特化的<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>，其中包含人讀與機讀的全域導覽資訊。EPUB導覽文件必須嚴格地符合<a href="epub-packages.html#sec-package-nav">EPUB導覽文件</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]的規格。</p>
+						<p>一份特化的<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>，其中包含人讀與機讀的全域導覽資訊。EPUB導覽文件必須嚴格地符合<a href="epub-packages.html#sec-package-nav">EPUB導覽文件</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 的規格。</p>
 					</dd>
 					<dt><dfn id="dfn-epub-package" data-lt="epub packages|epub package" data-dfn-type="dfn">EPUB包裝（EPUB Package）</dfn></dt>
 					<dd>
@@ -1153,8 +1153,8 @@ var[data-type]:hover::before {
 					</dd>
 					<dt><dfn id="dfn-fixed-layout-document" data-lt="fixed-layout documents|fixed-layout document" data-dfn-type="dfn">固定版面文件（Fixed-Layout Document）</dfn></dt>
 					<dd>
-						<p>一份<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>在<a href="epub-spec.html#dfn-package-document">包裝文件</a>的<a href="epub-spec.html#dfn-spine">書脊</a>中直接被指定成<code>pre-paginated</code>，如同<a href="epub-packages.html#layout"><code>rendition:layout</code>特性</a>之定義[<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]。</p>
-						<p>另一個面向是用於如何排列固定版面文件，如<a href="epub-contentdocs.html#sec-fixed-layouts">固定版面</a>所定義[<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>]。</p>
+						<p>一份<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>在<a href="epub-spec.html#dfn-package-document">包裝文件</a>的<a href="epub-spec.html#dfn-spine">書脊</a>中直接被指定成<code>pre-paginated</code>，如同<a href="epub-packages.html#layout"><code>rendition:layout</code>特性</a>之定義 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。</p>
+						<p>另一個面向是用於如何排列固定版面文件，如<a href="epub-contentdocs.html#sec-fixed-layouts">固定版面</a>所定義 [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] 。</p>
 											</dd>
 					<dt><dfn id="dfn-foreign-resource" data-lt="foreign resources|foreign resource" data-dfn-type="dfn">外部資源（Foreign Resource）</dfn></dt>
 					<dd>
@@ -1168,26 +1168,26 @@ var[data-type]:hover::before {
 					<dt><dfn id="dfn-manifest" data-lt="manifests|manifest" data-dfn-type="dfn">宣告（Manifest）</dfn></dt>
 					<dd>
 						<p>所有<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>的列表，用於建構一本<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的<a href="epub-spec.html#dfn-rendition">內容解釋</a>。</p>
-						<p>想了解更多請參考<a href="epub-packages.html#sec-manifest-elem">宣告</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]。</p>
+						<p>想了解更多請參考<a href="epub-packages.html#sec-manifest-elem">宣告</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。</p>
 					</dd>
 					<dt><dfn id="dfn-media-overlay-document" data-lt="media overlay documents|media overlay document" data-dfn-type="dfn">媒體層疊文件（Media Overlay Document）</dfn></dt>
 					<dd>
-						<p>一份XML文件，讓<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>以及預錄的聲音旁白產生關聯，以提供同步播放體驗，定義在[<cite><a class="bibref" href="#bib-mediaoverlays32">MediaOverlays32</a></cite>]。</p>
+						<p>一份XML文件，讓<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>以及預錄的聲音旁白產生關聯，以提供同步播放體驗，定義在 [<cite><a class="bibref" href="#bib-mediaoverlays32">MediaOverlays32</a></cite>] 。</p>
 					</dd>
 					<dt><dfn id="dfn-package-document" data-lt="package documents|package document" data-dfn-type="dfn">包裝文件（Package Document）</dfn></dt>
 					<dd>
-						<p>一個<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>，用以描述一份<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的A Publication Resource</a> that describes one <a href="epub-spec.html#dfn-rendition">內容解釋</a>，如<a href="epub-packages.html#sec-package-doc">包裝文件</a>所定義[<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]。包裝文件乘載了關於內容解釋的詮釋資訊，提供資源的宣告以及定義了預設閱讀順序。</p>
+						<p>一個<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>，用以描述一份<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的A Publication Resource</a> that describes one <a href="epub-spec.html#dfn-rendition">內容解釋</a>，如<a href="epub-packages.html#sec-package-doc">包裝文件</a>所定義 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。包裝文件乘載了關於內容解釋的詮釋資訊，提供資源的宣告以及定義了預設閱讀順序。</p>
 					</dd>
 					<dt><dfn id="dfn-publication-resource" data-lt="publication resources|publication resource" data-dfn-type="dfn">出版品資源（Publication Resource）</dfn></dt>
 					<dd>
 						<p>在一本<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>中的資源，其中包含內容，或者能助於至少一份<a href="epub-spec.html#dfn-rendition">內容解釋</a>用以排列顯示內容使用。若缺少這份資源，EPUB出版品可能無法如<a href="epub-spec.html#dfn-author">作者</a>意圖一般顯示內容。出版資源可包括：內容解釋的<a href="epub-spec.html#dfn-package-document">包裝文件</a>、<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>、CSS樣式表、聲音、影片、圖片、嵌入字型與腳本。</p>
-						<p>除去包裝文件自身，用於顯示內容解釋的出版品資源均列於內容解釋的<a href="epub-packages.html#sec-manifest-elem">宣告</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]，並且置放到<a href="epub-spec.html#dfn-epub-container">EPUB容器</a>檔案指定的位置中（除非指定到其他<a href="#sec-resource-locations">出版品資源位置</a>）。</p>
-						<p>不屬於出版品資源的資源，例如：包裝文件<a href="epub-packages.html#sec-link-elem">link</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]元素，以及被視為外連超連結或者被解析為<a href="epub-spec.html#dfn-remote-resource">遠端資源</a>（例如在[<cite><a class="bibref" href="#bib-html">HTML</a></cite>]中<a href="https://www.w3.org/TR/html/textlevel-semantics.html#the-a-element"><code>a</code></a>元素裡<code>href</code>屬性所指定的連結）。</p>
+						<p>除去包裝文件自身，用於顯示內容解釋的出版品資源均列於內容解釋的<a href="epub-packages.html#sec-manifest-elem">宣告</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，並且置放到<a href="epub-spec.html#dfn-epub-container">EPUB容器</a>檔案指定的位置中（除非指定到其他<a href="#sec-resource-locations">出版品資源位置</a>）。</p>
+						<p>不屬於出版品資源的資源，例如：包裝文件<a href="epub-packages.html#sec-link-elem">link</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 元素，以及被視為外連超連結或者被解析為<a href="epub-spec.html#dfn-remote-resource">遠端資源</a>（例如在 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 中<a href="https://www.w3.org/TR/html/textlevel-semantics.html#the-a-element"><code>a</code></a>元素裡<code>href</code>屬性所指定的連結）。</p>
 					</dd>
 					<dt><dfn id="dfn-release-identifier" data-lt="release identifiers|release identifier" data-dfn-type="dfn">發佈識別碼（Release Identifier）</dfn></dt>
 					<dd>
 						<p>發布識別碼在任何狀況下都可以讓<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>彼此做出比對，以確定是否為一致、為不同版本，或者沒有關聯。</p>
-						<p>想了解更多資訊，請參照<a href="epub-packages.html#sec-metadata-elem-identifiers-pid">發佈識別碼</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]。</p>
+						<p>想了解更多資訊，請參照<a href="epub-packages.html#sec-metadata-elem-identifiers-pid">發佈識別碼</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。</p>
 					</dd>
 					<dt><dfn id="dfn-remote-resource" data-lt="remote resources|remote resource" data-dfn-type="dfn">遠端資源（Remote Resource）</dfn></dt>
 					<dd>
@@ -1200,17 +1200,17 @@ var[data-type]:hover::before {
 					</dd>
 					<dt><dfn id="dfn-scripted-content-document" data-lt="scripted content documents|scripted content document" data-dfn-type="dfn">腳本化內容文件（Scripted Content Document）</dfn></dt>
 					<dd>
-						<p>包含腳本的<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>，或者<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>包含[<cite><a class="bibref" href="#bib-html">HTML</a></cite>]<a href="https://www.w3.org/TR/html/sec-forms.html#sec-forms">表單</a>。</p>
-						<p>想了解更多資訊，請參照<a href="epub-contentdocs.html#sec-scripted-content">腳本</a>[<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>]。</p>
+						<p>包含腳本的<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>，或者<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>包含 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/sec-forms.html#sec-forms">表單</a>。</p>
+						<p>想了解更多資訊，請參照<a href="epub-contentdocs.html#sec-scripted-content">腳本</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] 。</p>
 					</dd>
 					<dt><dfn id="dfn-spine" data-lt="spines|spine" data-dfn-type="dfn">書脊（Spine）</dfn></dt>
 					<dd>
-						<p>一份<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>的順序清單，一般資源為<a href="epub-packages.html#confreq-spine-itemtypes">EPUB內容文件</a>[<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]，表現了該份EPUB出版品<a href="epub-spec.html#dfn-rendition">內容解釋</a>的預設閱讀順序。</p>
-						<p>想了解更多資訊，請參照<a href="epub-packages.html#sec-spine-elem">書脊</a>[<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]。</p>
+						<p>一份<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>的順序清單，一般資源為<a href="epub-packages.html#confreq-spine-itemtypes">EPUB內容文件</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，表現了該份EPUB出版品<a href="epub-spec.html#dfn-rendition">內容解釋</a>的預設閱讀順序。</p>
+						<p>想了解更多資訊，請參照<a href="epub-packages.html#sec-spine-elem">書脊</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。</p>
 					</dd>
 					<dt><dfn id="dfn-svg-content-document" data-lt="svg content documents|svg content document" data-dfn-type="dfn">SVG內容文件（SVG Content Document）</dfn></dt>
 					<dd>
-						<p>一份符合<a href="epub-contentdocs.html#sec-svg">SVG內容文件</a>限制的<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>[<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>]。</p>
+						<p>一份符合<a href="epub-contentdocs.html#sec-svg">SVG內容文件</a>限制的<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] 。</p>
 					</dd>
 					<dt><dfn id="dfn-synthetic-spread" data-lt="synthetic spreads|synthetic spread" data-dfn-type="dfn">同步跨頁（Synthetic Spread）</dfn></dt>
 					<dd>
@@ -1223,11 +1223,11 @@ var[data-type]:hover::before {
 					<dt><dfn id="dfn-top-level-content-document" data-lt="top-level content documents|top-level content document" data-dfn-type="dfn">主要層級內容文件（Top-level Content Document）</dfn></dt>
 					<dd>
 						<p>在<a href="epub-spec.html#dfn-spine">書脊</a>內被指定的<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>，不管是直接指定或者透過<a href="epub-packages.html#sec-foreign-restrictions-manifest">回退鍊</a>
-							[<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]。</p>
+							 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。</p>
 					</dd>
 					<dt><dfn id="dfn-unique-identifier" data-lt="unique identifiers|unique identifier" data-dfn-type="dfn">獨特識別碼（Unique Identifier）</dfn></dt>
 					<dd>
-						<p>獨特識別碼是<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的主要識別碼，定義於<a href="epub-packages.html#attrdef-package-unique-identifier"><code>unique-identifier</code>屬性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]。獨特識別碼可由同一本EPUB出版品中的一或多個<a href="epub-spec.html#dfn-rendition">內容解釋</a>所共有。</p>
+						<p>獨特識別碼是<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的主要識別碼，定義於<a href="epub-packages.html#attrdef-package-unique-identifier"><code>unique-identifier</code>屬性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。獨特識別碼可由同一本EPUB出版品中的一或多個<a href="epub-spec.html#dfn-rendition">內容解釋</a>所共有。</p>
 						<p>內容明顯的改版、摘要等，則需要新的獨特識別碼。</p>
 					</dd>
 					<dt><dfn id="dfn-viewport" data-lt="viewports|viewport" data-dfn-type="dfn">顯示範圍（Viewport）</dfn></dt>
@@ -1236,8 +1236,8 @@ var[data-type]:hover::before {
 					</dd>
 					<dt><dfn id="dfn-xhtml-content-document" data-lt="xhtml content documents|xhtml content document" data-dfn-type="dfn">XHTML內容文件（XHTML Content Document）</dfn></dt>
 					<dd>
-						<p>一份符合[<cite><a class="bibref" href="#bib-html">HTML</a></cite>]中定義<a href="epub-contentdocs.html#sec-xhtml">XHTML內容文件</a>規範的<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>[<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>]。</p>
-						<p>XHTML內容文件中所使用的<a href="https://www.w3.org/TR/html/xhtml.html#xhtml">XHTML語法</a>定義於[<cite><a class="bibref" href="#bib-html">HTML</a></cite>]。</p>
+						<p>一份符合 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 中定義<a href="epub-contentdocs.html#sec-xhtml">XHTML內容文件</a>規範的<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] 。</p>
+						<p>XHTML內容文件中所使用的<a href="https://www.w3.org/TR/html/xhtml.html#xhtml">XHTML語法</a>定義於 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 。</p>
 					</dd>
 				</dl>
 
@@ -1245,7 +1245,7 @@ var[data-type]:hover::before {
 
 			<section id="conformance"><h3 id="x1-4-conformance"><span class="secno">1.4 </span>適用性<a class="self-link" aria-label="§" href="#conformance"></a></h3><p>
       除了標註為非規範性的章節，本規格中所有製作指針、圖表、範本與注意事項都為非規範性。其餘本規格中的內容皆為規範性。
-    </p><p>關鍵字：<em class="rfc2119">可以（MAY）</em>、<em class="rfc2119">必需（MUST）</em>、<em class="rfc2119">不得（MUST NOT）</em>、<em class="rfc2119">推薦（RECOMMENDED）</em>、<em class="rfc2119">應該（SHOULD）</em>、<em class="rfc2119">不應（SHOULD NOT）</em>應該以[<cite><a class="bibref" href="#bib-rfc2119">RFC2119</a></cite>]之記述解釋。</p></section>
+    </p><p>關鍵字：<em class="rfc2119">可以（MAY）</em>、<em class="rfc2119">必需（MUST）</em>、<em class="rfc2119">不得（MUST NOT）</em>、<em class="rfc2119">推薦（RECOMMENDED）</em>、<em class="rfc2119">應該（SHOULD）</em>、<em class="rfc2119">不應（SHOULD NOT）</em>應該以 [<cite><a class="bibref" href="#bib-rfc2119">RFC2119</a></cite>] 之記述解釋。</p></section>
 		</section>
 		<section id="sec-epub-conf">
 			<!--OddPage--><h2 id="x2-conformance-criteria"><span class="secno">2. </span>適用需求<a class="self-link" aria-label="§" href="#sec-epub-conf"></a></h2>
@@ -1258,19 +1258,19 @@ var[data-type]:hover::before {
 				<dl class="conformance-list">
 					<dt id="sec-epub-package-conformance">包裝（Packages）</dt>
 					<dd>
-						<p id="confreq-renditions"><span class="link-marker"><a href="#confreq-rs-epub3-ocf" class="hidden-reveal"><span>&nbsp;</span></a> <em class="rfc2119" title="MUST">必需</em>包含一個以上的<a href="epub-spec.html#dfn-epub-package">EPUB包裝</a>，每一個包裝都<em class="rfc2119" title="MUST">必需</em>符合定義於[<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]的要求。</p>
+						<p id="confreq-renditions"><span class="link-marker"><a href="#confreq-rs-epub3-ocf" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>包含一個以上的<a href="epub-spec.html#dfn-epub-package">EPUB包裝</a>，每一個包裝都<em class="rfc2119" title="MUST">必需</em>符合定義於 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 的要求。</p>
 					</dd>
 					<dt id="sec-epub-a11y">無障礙輔助功能（Accessibility）</dt>
 					<dd>
-						<p id="confreq-a11y"><span class="link-marker"><a href="#confreq-rs-epub3-ocf" class="hidden-reveal"><span>&nbsp;</span></a> <em class="rfc2119" title="SHOULD">應該</em>符合定義於[<cite><a class="bibref" href="#bib-epubaccessibility">EPUBAccessibility</a></cite>]的無障礙功能需求。</p>
+						<p id="confreq-a11y"><span class="link-marker"><a href="#confreq-rs-epub3-ocf" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="SHOULD">應該</em>符合定義於 [<cite><a class="bibref" href="#bib-epubaccessibility">EPUBAccessibility</a></cite>] 的無障礙功能需求。</p>
 					</dd>
 					<dt id="sec-epub-pub-conformance-all">出版品資源（Publication Resources）</dt>
 					<dd>
-						<p id="confreq-manifest">所有出版品資源<em class="rfc2119" title="MUST">必需</em>符合對核心媒體類型和外部資源的規定，並且放置在指定的<a href="#sec-resource-locations">出版品資源位置</a>。</p>
+						<p id="confreq-manifest"><span class="link-marker"><a href="#confreq-rs-epub3-ocf" class="hidden-reveal"><span>&nbsp;</span></a> </span>所有出版品資源<em class="rfc2119" title="MUST">必需</em>符合對核心媒體類型和外部資源的規定，並且放置在指定的<a href="#sec-resource-locations">出版品資源位置</a>。</p>
 					</dd>
 					<dt id="sec-epub-pub-conformance-container">容器（Container）</dt>
 					<dd>
-						<p id="confreq-ocf"><span class="link-marker"><a href="#confreq-rs-epub3-ocf" class="hidden-reveal"><span>&nbsp;</span></a> <em class="rfc2119" title="MUST">必需</em>以定義於[<cite><a class="bibref" href="#bib-ocf32">OCF32</a></cite>]的<a href="epub-spec.html#dfn-epub-container">EPUB容器</a>格式打包。</p>
+						<p id="confreq-ocf"><span class="link-marker"><a href="#confreq-rs-epub3-ocf" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>以定義於 [<cite><a class="bibref" href="#bib-ocf32">OCF32</a></cite>] 的<a href="epub-spec.html#dfn-epub-container">EPUB容器</a>格式打包。</p>
 					</dd>
 				</dl>
 
@@ -1284,23 +1284,23 @@ var[data-type]:hover::before {
 				<dl class="conformance-list">
 					<dt id="sec-epub-rs-conf-epub3">處理EPUB 3</dt>
 					<dd>
-						<p id="confreq-rs-epub3-ocf"><span class="link-marker"><a href="#confreq-rs-epub3-ocf" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>以定義於[<cite><a class="bibref" href="#bib-ocf32">OCF32</a></cite>]的方式處理<a href="epub-spec.html#dfn-epub-container">EPUB容器</a>。</p>
-						<p id="confreq-rs-epub3-package"><span class="link-marker"><a href="#confreq-rs-epub3-package" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>以定義於[<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]的方式處理<a href="epub-spec.html#dfn-epub-package">EPUB包裝</a>。</p>
+						<p id="confreq-rs-epub3-ocf"><span class="link-marker"><a href="#confreq-rs-epub3-ocf" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>以定義於 [<cite><a class="bibref" href="#bib-ocf32">OCF32</a></cite>] 的方式處理<a href="epub-spec.html#dfn-epub-container">EPUB容器</a>。</p>
+						<p id="confreq-rs-epub3-package"><span class="link-marker"><a href="#confreq-rs-epub3-package" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>以定義於 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 的方式處理<a href="epub-spec.html#dfn-epub-package">EPUB包裝</a>。</p>
 						<p id="confreq-rs-foreign"><span class="link-marker"><a href="#confreq-rs-foreign" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MAY">可以</em>隨意支援各種<a href="epub-spec.html#dfn-foreign-resource">外部資源</a>類型，但<em class="rfc2119" title="MUST">必需</em>為不支援的外部資源提供回退，如<a href="#sec-foreign-restrictions">外部資源</a>中的定義。</p>
 						<p id="confreq-rs-remote"><span class="link-marker"><a href="#confreq-rs-remote" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="SHOULD">應該</em>支援<a href="#dfn-remote-resource">遠端資源</a>，如<a href="#sec-resource-locations">資源位置</a>所定義。</p>
-						<p id="confreq-rs-epub3-xhtml"><span class="link-marker"><a href="#confreq-rs-epub3-xhtml" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>以定義於<a href="epub-contentdocs.html#sec-xhtml-conf-rs">XHTML內容文件 - 閱讀系統適用性</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>]的方式處理<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>。</p>
-						<p id="confreq-rs-epub3-svg"><span class="link-marker"><a href="#confreq-rs-epub3-svg" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>以定義於<a href="epub-contentdocs.html#sec-svg-rs-conf">SVG內容文件 - 閱讀系統適用性</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>]的方式處理<a href="epub-spec.html#dfn-svg-content-document">SVG內容文件</a>。</p>
-						<p id="confreq-rs-epub3-css"><span class="link-marker"><a href="#confreq-rs-epub3-css" class="hidden-reveal"><span>&nbsp;</span></a> </span>若提供<a href="epub-spec.html#dfn-viewport">顯示範圍</a>，則<em class="rfc2119" title="MUST">必需</em>以定義在<a href="epub-contentdocs.html#sec-css-rs-conf">CSS樣式表 - 閱讀系統適用性</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>]的方式支援<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>的視覺排版。</p>
+						<p id="confreq-rs-epub3-xhtml"><span class="link-marker"><a href="#confreq-rs-epub3-xhtml" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>以定義於<a href="epub-contentdocs.html#sec-xhtml-conf-rs">XHTML內容文件 - 閱讀系統適用性</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] 的方式處理<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>。</p>
+						<p id="confreq-rs-epub3-svg"><span class="link-marker"><a href="#confreq-rs-epub3-svg" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>以定義於<a href="epub-contentdocs.html#sec-svg-rs-conf">SVG內容文件 - 閱讀系統適用性</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] 的方式處理<a href="epub-spec.html#dfn-svg-content-document">SVG內容文件</a>。</p>
+						<p id="confreq-rs-epub3-css"><span class="link-marker"><a href="#confreq-rs-epub3-css" class="hidden-reveal"><span>&nbsp;</span></a> </span>若提供<a href="epub-spec.html#dfn-viewport">顯示範圍</a>，則<em class="rfc2119" title="MUST">必需</em>以定義在<a href="epub-contentdocs.html#sec-css-rs-conf">CSS樣式表 - 閱讀系統適用性</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] 的方式支援<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>的視覺排版。</p>
 						<p id="confreq-rs-epub3-images"><span class="link-marker"><a href="#confreq-rs-epub3-images" class="hidden-reveal"><span>&nbsp;</span></a> </span>若提供顯示範圍，則<em class="rfc2119" title="MUST">必需</em>支援<a href="#cmt-grp-image">圖片類核心媒體類型資源</a>。</p>
-						<p id="confreq-rs-epub3-mp3-aac"><span class="link-marker"><a href="#confreq-rs-epub3-mp3-aac" class="hidden-reveal"><span>&nbsp;</span></a> </span>若能夠播放預錄的聲音，則<em class="rfc2119" title="MUST">必需</em>支援<a href="#cmt-grp-audio">聲音類核心媒體類型資源</a>，且<em class="rfc2119" title="SHOULD">應該</em>支援媒體層疊[<cite><a class="bibref" href="#bib-mediaoverlays32">MediaOverlays32</a></cite>]。</p>
+						<p id="confreq-rs-epub3-mp3-aac"><span class="link-marker"><a href="#confreq-rs-epub3-mp3-aac" class="hidden-reveal"><span>&nbsp;</span></a> </span>若能夠播放預錄的聲音，則<em class="rfc2119" title="MUST">必需</em>支援<a href="#cmt-grp-audio">聲音類核心媒體類型資源</a>，且<em class="rfc2119" title="SHOULD">應該</em>支援媒體層疊 [<cite><a class="bibref" href="#bib-mediaoverlays32">MediaOverlays32</a></cite>] 。</p>
 						<p id="confreq-rs-epub3-tts"><span class="link-marker"><a href="#confreq-rs-epub3-tts" class="hidden-reveal"><span>&nbsp;</span></a> </span>若支援文字轉換語音（TTS, text-to-Speech）功能，則<em class="rfc2119" title="SHOULD">應該</em>支援<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>中的<a href="epub-contentdocs.html#sec-pls">發音辭典</a>
-							[<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>]、[<cite><a class="bibref" href="#bib-css3speech">CSS3Speech</a></cite>]以及<a href="epub-contentdocs.html#sec-xhtml-ssml-attrib">SSML屬性</a>
-							[<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>]。</p>
-						<div class="note" role="note" id="note-video-codecs"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>注意事項</span></div><p class=""><span class="link-marker"><a href="#note-video-codecs" class="hidden-reveal"><span>&nbsp;</span></a> </span>推薦閱讀系統至少支援H.264[<cite><a class="bibref" href="#bib-h264">H264</a></cite>]與VP8[<cite><a class="bibref" href="#bib-rfc6386">RFC6386</a></cite>]影片編碼之一，但這並非為支援性需求 - 一個閱讀程式可能支援其他影片編碼，或者完全不支援。作者與閱讀系統哎發者需要考量格式被接受的廣度、影片播放品質，以及使用該項技術的授權費，已做出瘸定該包含、實作那一種影片支援，或者兩者兼備</p></div>
+							 [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] 、 [<cite><a class="bibref" href="#bib-css3speech">CSS3Speech</a></cite>] 以及<a href="epub-contentdocs.html#sec-xhtml-ssml-attrib">SSML屬性</a>
+							 [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] 。</p>
+						<div class="note" role="note" id="note-video-codecs"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>注意事項</span></div><p class=""><span class="link-marker"><a href="#note-video-codecs" class="hidden-reveal"><span>&nbsp;</span></a> </span>推薦閱讀系統至少支援H.264 [<cite><a class="bibref" href="#bib-h264">H264</a></cite>] 與VP8 [<cite><a class="bibref" href="#bib-rfc6386">RFC6386</a></cite>] 影片編碼之一，但這並非為支援性需求 - 一個閱讀程式可能支援其他影片編碼，或者完全不支援。作者與閱讀系統哎發者需要考量格式被接受的廣度、影片播放品質，以及使用該項技術的授權費，已做出瘸定該包含、實作那一種影片支援，或者兩者兼備</p></div>
 					</dd>
 					<dt id="sec-epub-rs-conf-a11y">無障礙輔助性</dt>
 					<dd>
-						<p id="confreq-rs-a11y"><span class="link-marker"><a href="#confreq-rs-a11y" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="SHOULD">應該</em>符合對閱讀系統在[<cite><a class="bibref" href="#bib-epubaccessibility">EPUBAccessibility</a></cite>]中的無障礙功能需求。</p>
+						<p id="confreq-rs-a11y"><span class="link-marker"><a href="#confreq-rs-a11y" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="SHOULD">應該</em>符合對閱讀系統在 [<cite><a class="bibref" href="#bib-epubaccessibility">EPUBAccessibility</a></cite>] 中的無障礙功能需求。</p>
 					</dd>
 					<dt id="sec-epub-rs-conf-backward">向後支援性</dt>
 					<dd>
@@ -1313,10 +1313,10 @@ var[data-type]:hover::before {
 					</dd>
 					<dt id="sec-epub-rs-conf-xml">XML處理</dt>
 					<dd>
-						<p id="confreq-rs-xml-nval"><span class="link-marker"><a href="#confreq-rs-xml-nval" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>為<a href="https://www.w3.org/TR/2008/REC-xml-20081126/#proc-types">適用的非驗證處理器</a>[<cite><a class="bibref" href="#bib-xml">XML</a></cite>]。</p>
-						<p id="confreq-rs-xml-ns"><span class="link-marker"><a href="#confreq-rs-xml-ns" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>為<a href="https://www.w3.org/TR/2009/REC-XML-NAMES-20091208/#ProcessorConformance">適用的處理器</a>，如[<cite><a class="bibref" href="#bib-xml-names">XML-NAMES</a></cite>]所定義。</p>
-						<p id="confreq-rs-xml-base"><span class="link-marker"><a href="#confreq-rs-xml-base" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>為適用的應用程式，如[<cite><a class="bibref" href="#bib-xmlbase">XMLBase</a></cite>]所定義。						
-						<span class="note">注意事項：[<cite><a class="bibref" href="#bib-html">HTML</a></cite>]與[<cite><a class="bibref" href="#bib-svg">SVG</a></cite>]移除了對[<cite><a class="bibref" href="#bib-xmlbase">XMLBase</a></cite>]的支援，作者建議避免使用這項功能。</span></p>
+						<p id="confreq-rs-xml-nval"><span class="link-marker"><a href="#confreq-rs-xml-nval" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>為<a href="https://www.w3.org/TR/2008/REC-xml-20081126/#proc-types">適用的非驗證處理器</a> [<cite><a class="bibref" href="#bib-xml">XML</a></cite>] 。</p>
+						<p id="confreq-rs-xml-ns"><span class="link-marker"><a href="#confreq-rs-xml-ns" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>為<a href="https://www.w3.org/TR/2009/REC-XML-NAMES-20091208/#ProcessorConformance">適用的處理器</a>，如 [<cite><a class="bibref" href="#bib-xml-names">XML-NAMES</a></cite>] 所定義。</p>
+						<p id="confreq-rs-xml-base"><span class="link-marker"><a href="#confreq-rs-xml-base" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>為適用的應用程式，如 [<cite><a class="bibref" href="#bib-xmlbase">XMLBase</a></cite>] 所定義。						
+						<span class="note">注意事項： [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 與 [<cite><a class="bibref" href="#bib-svg">SVG</a></cite>] 移除了對 [<cite><a class="bibref" href="#bib-xmlbase">XMLBase</a></cite>] 的支援，作者建議避免使用這項功能。</span></p>
 					</dd>
 				</dl>
 
@@ -1347,12 +1347,12 @@ var[data-type]:hover::before {
 				<section id="sec-cmt-supported">
 					<h4 id="x3-1-2-supported-media-types"><span class="secno">3.1.2 </span>支援的媒體類型<a class="self-link" aria-label="§" href="#sec-cmt-supported"></a></h4>
 
-					<p><a href="epub-spec.html#dfn-publication-resource">出版品資源</a>符合以下MIME媒體類型[<cite><a class="bibref" href="#bib-rfc2046">RFC2046</a></cite>]規格者可以被包含在EPUB出版品中而無需回退。</p>
+					<p><a href="epub-spec.html#dfn-publication-resource">出版品資源</a>符合以下MIME媒體類型 [<cite><a class="bibref" href="#bib-rfc2046">RFC2046</a></cite>] 規格者可以被包含在EPUB出版品中而無需回退。</p>
 
 					<p>以下表格各欄位呈現這些資訊：</p>
 
 					<ul>
-						<li><p><strong>媒體類型</strong> - MIME媒體類型[<cite><a class="bibref" href="#bib-rfc2046">RFC2046</a></cite>]用於在<a href="epub-packages.html#sec-manifest-elem">宣告</a>中呈現出版品資源[<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]。</p>
+						<li><p><strong>媒體類型</strong> - MIME媒體類型 [<cite><a class="bibref" href="#bib-rfc2046">RFC2046</a></cite>] 用於在<a href="epub-packages.html#sec-manifest-elem">宣告</a>中呈現出版品資源 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。</p>
 							<p>如果列出一個以上的媒體類型時，第一個是偏好的媒體類型，建議使用偏好的媒體類型於所有新的EPUB出版品中。</p>
 						</li>
 
@@ -1418,7 +1418,7 @@ var[data-type]:hover::before {
 								<td id="cmt-mp4-aac">
 									<code>audio/mp4</code>
 								</td>
-								<td> [<cite><a class="bibref" href="#bib-mpeg4-audio">MPEG4-Audio</a></cite>], [<cite><a class="bibref" href="#bib-mp4">MP4</a></cite>] </td>
+								<td> [<cite><a class="bibref" href="#bib-mpeg4-audio">MPEG4-Audio</a></cite>] , [<cite><a class="bibref" href="#bib-mp4">MP4</a></cite>] </td>
 								<td>使用MP4容器的AAC LC聲音</td>
 							</tr>
 							<tr>
@@ -1449,7 +1449,7 @@ var[data-type]:hover::before {
 									<code>font/ttf</code><br>
 									<code>application/font-sfnt</code>
 								</td>
-								<td>[<cite><a class="bibref" href="#bib-truetype">TrueType</a></cite>] </td>
+								<td> [<cite><a class="bibref" href="#bib-truetype">TrueType</a></cite>] </td>
 								<td>TrueType fonts</td>
 							</tr>
 							<tr>
@@ -1458,7 +1458,7 @@ var[data-type]:hover::before {
 									<code>application/font-sfnt</code><br>
 									<code>application/vnd.ms-opentype</code>
 								</td>
-								<td>[<cite><a class="bibref" href="#bib-opentype">OpenType</a></cite>]</td>
+								<td> [<cite><a class="bibref" href="#bib-opentype">OpenType</a></cite>] </td>
 								<td>OpenType fonts</td>
 
 							</tr>
@@ -1487,8 +1487,8 @@ var[data-type]:hover::before {
 								</td>
 								<td>
 									<a href="epub-contentdocs.html#sec-xhtml">XHTML Content Documents</a>
-									[<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] </td>
-								<td><a href="#dfn-xhtml-content-document">XHTML內容文件</a>使用<a href="https://www.w3.org/TR/html/xhtml.html#xhtml">XHTML語法</a> [<cite><a class="bibref" href="#bib-html">HTML</a></cite>]
+									 [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] </td>
+								<td><a href="#dfn-xhtml-content-document">XHTML內容文件</a>使用<a href="https://www.w3.org/TR/html/xhtml.html#xhtml">XHTML語法</a> [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 
 								</td>
 							</tr>
 							<tr>
@@ -1511,7 +1511,7 @@ var[data-type]:hover::before {
 								<td id="cmt-smil">
 									<code>application/smil+xml</code>
 								</td>
-								<td>[<cite><a class="bibref" href="#bib-mediaoverlays32">MediaOverlays32</a></cite>]</td>
+								<td> [<cite><a class="bibref" href="#bib-mediaoverlays32">MediaOverlays32</a></cite>] </td>
 								<td>EPUB媒體層疊文件</td>
 							</tr>
 							<tr>
@@ -1528,7 +1528,7 @@ var[data-type]:hover::before {
 				<section id="sec-foreign-restrictions">
 					<h4 id="x3-1-3-foreign-resources"><span class="secno">3.1.3 </span>外部資源<a class="self-link" aria-label="§" href="#sec-foreign-restrictions"></a></h4>
 
-					<p id="confreq-foreign-no-fallback">EPUB出版品中的外部資源如果不列在<a href="epub-packages.html#sec-itemref-elem">書脊的<code>itemref</code>元素</a>[<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]，或者可以直接以原生格式顯示在EPUB內容文件中（例如，使用[<cite><a class="bibref" href="#bib-html">HTML</a></cite>]<a href="https://www.w3.org/TR/html/dom.html#embedded-content">嵌入內容</a>或者[<cite><a class="bibref" href="#bib-svg">SVG</a></cite>]<a href="https://www.w3.org/TR/SVG/struct.html#ImageElement"><code>image</code></a>以及<a href="https://www.w3.org/TR/SVG/extend.html#ForeignObjectElement"><code>foreignObject</code></a>元素），<em class="rfc2119" title="MAY">可以</em>被包含卻無需提供回退。</p>
+					<p id="confreq-foreign-no-fallback">EPUB出版品中的外部資源如果不列在<a href="epub-packages.html#sec-itemref-elem">書脊的<code>itemref</code>元素</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，或者可以直接以原生格式顯示在EPUB內容文件中（例如，使用 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/dom.html#embedded-content">嵌入內容</a>或者 [<cite><a class="bibref" href="#bib-svg">SVG</a></cite>] <a href="https://www.w3.org/TR/SVG/struct.html#ImageElement"><code>image</code></a>以及<a href="https://www.w3.org/TR/SVG/extend.html#ForeignObjectElement"><code>foreignObject</code></a>元素），<em class="rfc2119" title="MAY">可以</em>被包含卻無需提供回退。</p>
 
 					<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>注意事項</span></div><p class="">這項例外讓作者可以在<a href="epub-spec.html#dfn-epub-container">EPUB容器</a>內包含EPUB閱讀系統不會使用的資源。這項例外的主要案例可讓資料檔案隨著EPUB出版品移動，無論是供腳本在其所構成的EPUB內容文件使用，還是供外部程式使用（例如：科學期刊可能包含資料組，配合教學告知如何將其從EPUB容器中取出）。</p></div>
 
@@ -1539,13 +1539,13 @@ var[data-type]:hover::before {
 							<p>採該格式固有的回退機制（例如能夠提供多於一種的媒體類型，或者在該媒體類型無法顯示時，顯示取代的嵌入訊息）；</p>
 						</li>
 						<li>
-							<p><a href="epub-packages.html#sec-foreign-restrictions-manifest">宣告回退</a>[<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]。</p>
+							<p><a href="epub-packages.html#sec-foreign-restrictions-manifest">宣告回退</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。</p>
 						</li>
 					</ul>
 
-					<p>宣告回退是<a href="epub-spec.html#dfn-package-document">包裝文件</a>的一項功能，可以創建回退鍊指向核心媒體類型資源。主要應用在創建對列於<a href="epub-packages.html#sec-spine-elem">書脊</a>中的外部資源的回退[<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]，尤其在缺少固有回退機制時（例如[<cite><a class="bibref" href="#bib-html">HTML</a></cite>]的<a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-img-element"><code>img</code></a>元素）。</p>
+					<p>宣告回退是<a href="epub-spec.html#dfn-package-document">包裝文件</a>的一項功能，可以創建回退鍊指向核心媒體類型資源。主要應用在創建對列於<a href="epub-packages.html#sec-spine-elem">書脊</a>中的外部資源的回退 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，尤其在缺少固有回退機制時（例如 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 的<a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-img-element"><code>img</code></a>元素）。</p>
 
-					<p>請參考[<cite><a class="bibref" href="#bib-html">HTML</a></cite>]及[<cite><a class="bibref" href="#bib-svg">SVG</a></cite>]規格確認各種元素提供的固有回退機制。</p>
+					<p>請參考 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 及 [<cite><a class="bibref" href="#bib-svg">SVG</a></cite>] 規格確認各種元素提供的固有回退機制。</p>
 
 				</section>
 
@@ -1594,7 +1594,7 @@ var[data-type]:hover::before {
 				</div></div>
 
 				<div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-4" aria-level="4"><span>注意事項</span></div><div class="">
-					<p>將遠端資源包含在<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的方式需要在<a href="epub-spec.html#dfn-manifest">宣告</a>中<a href="epub-packages.html#sec-item-elem"><code>item</code>元素</a>中使用<a href="epub-packages.html#remote-resources"><code>remote-resources</code>特性</a>來指明[<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]。</p>
+					<p>將遠端資源包含在<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的方式需要在<a href="epub-spec.html#dfn-manifest">宣告</a>中<a href="epub-packages.html#sec-item-elem"><code>item</code>元素</a>中使用<a href="epub-packages.html#remote-resources"><code>remote-resources</code>特性</a>來指明 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。</p>
 				</div></div>
 
 			</section>
@@ -1606,18 +1606,18 @@ var[data-type]:hover::before {
 
 				<ul class="conformance-list">
 					<li>
-						<p id="confreq-xml-wellformed"><span class="link-marker"><a href="#confreq-xml-wellformed" class="hidden-reveal"><span>&nbsp;</span></a> </span> <em class="rfc2119" title="MUST">必需</em>符合定義於<a href="https://www.w3.org/TR/2009/REC-XML-NAMES-20091208/#Conformance">文件適用性</a> [<cite><a class="bibref" href="#bib-xml-names">XML-NAMES</a></cite>]的XML 1.0文件。</p>
+						<p id="confreq-xml-wellformed"><span class="link-marker"><a href="#confreq-xml-wellformed" class="hidden-reveal"><span>&nbsp;</span></a> </span> <em class="rfc2119" title="MUST">必需</em>符合定義於<a href="https://www.w3.org/TR/2009/REC-XML-NAMES-20091208/#Conformance">文件適用性</a> [<cite><a class="bibref" href="#bib-xml-names">XML-NAMES</a></cite>] 的XML 1.0文件。</p>
 					</li>
 					<li>
 						<p id="confreq-xml-extmarkupdecl"><span class="link-marker"><a href="#confreq-xml-extmarkupdecl" class="hidden-reveal"><span>&nbsp;</span></a> </span>
 							<a href="https://www.w3.org/TR/2008/REC-xml-20081126/#NT-ExternalID">
-								外部識別碼<em class="rfc2119" title="MUST NOT">不得</em>出現在文件類別宣告[<cite><a class="bibref" href="#bib-xml">XML</a></cite>]。</p>
+								外部識別碼<em class="rfc2119" title="MUST NOT">不得</em>出現在文件類別宣告 [<cite><a class="bibref" href="#bib-xml">XML</a></cite>] 。</p>
 					</li>
 					<li>
-						<p id="confreq-xml-xinc"><span class="link-marker"><a href="#confreq-xml-xinc" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST NOT">不得</em>使用XInclude[<cite><a class="bibref" href="#bib-xinclude">XInclude</a></cite>]。</p>
+						<p id="confreq-xml-xinc"><span class="link-marker"><a href="#confreq-xml-xinc" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST NOT">不得</em>使用XInclude [<cite><a class="bibref" href="#bib-xinclude">XInclude</a></cite>] 。</p>
 					</li>
 					<li>
-						<p id="confreq-xml-enc"><span class="link-marker"><a href="#confreq-xml-enc" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>以UTF-8或UTF-16編碼[<cite><a class="bibref" href="#bib-unicode">Unicode</a></cite>]。</p>
+						<p id="confreq-xml-enc"><span class="link-marker"><a href="#confreq-xml-enc" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>以UTF-8或UTF-16編碼 [<cite><a class="bibref" href="#bib-unicode">Unicode</a></cite>] 。</p>
 					</li>
 				</ul>
 
@@ -1665,7 +1665,7 @@ var[data-type]:hover::before {
 			<p>本索引指出EPUB 3中各項關鍵概念之定義所在，包含元素、屬性、特性之定義。</p>
 			<ul>
 				<li id="idx-a11y">
-					<p><a href="http://www.idpf.org/epub/latest/accessibility/#sec-overview">accessibility</a> [<cite><a class="bibref" href="#bib-epubaccessibility">EPUBAccessibility</a></cite>]</p>
+					<p><a href="http://www.idpf.org/epub/latest/accessibility/#sec-overview">accessibility</a> [<cite><a class="bibref" href="#bib-epubaccessibility">EPUBAccessibility</a></cite>] </p>
 					<ul>
 						<li>
 							<p><a href="http://www.idpf.org/epub/latest/accessibility/#sec-access-pub">accessible publications</a></p>
@@ -1692,7 +1692,7 @@ var[data-type]:hover::before {
 						</li>
 						<li>
 							<p><a href="epub-packages.html#sec-foreign-restrictions-manifest">manifest fallbacks</a>
-								[<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]</p>
+								 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] </p>
 						</li>
 						<li>
 							<p><a href="#sec-core-media-types">supported media types</a></p>
@@ -1703,7 +1703,7 @@ var[data-type]:hover::before {
 					<p><a href="#sec-intro-epub-specs">core specifications</a></p>
 				</li>
 				<li id="idx-css">
-					<p><a href="epub-contentdocs.html#sec-css">CSS style sheets</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>]</p>
+					<p><a href="epub-contentdocs.html#sec-css">CSS style sheets</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] </p>
 					<ul>
 						<li>
 							<p><a href="epub-contentdocs.html#confreq-css-rs-support">CSS snapshot support</a></p>
@@ -1717,7 +1717,7 @@ var[data-type]:hover::before {
 					</ul>
 				</li>
 				<li id="idx-navdoc">
-					<p><a href="epub-packages.html#sec-package-nav">EPUB Navigation Document</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]</p>
+					<p><a href="epub-packages.html#sec-package-nav">EPUB Navigation Document</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] </p>
 					<ul>
 						<li>
 							<p><a href="epub-packages.html#sec-package-nav-def-types-other">custom nav elements</a></p>
@@ -1740,11 +1740,11 @@ var[data-type]:hover::before {
 					</ul>
 				</li>
 				<li id="idx-fxl">
-					<p><a href="epub-packages.html#fxl-intro">fixed layouts</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]</p>
+					<p><a href="epub-packages.html#fxl-intro">fixed layouts</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] </p>
 					<ul>
 						<li>
 							<p><a href="epub-contentdocs.html#sec-fxl-html-svg-dimensions">content dimensions</a>
-								[<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>]</p>
+								 [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] </p>
 							<ul>
 								<li>
 									<p><a href="epub-contentdocs.html#sec-fxl-icb-svg">SVG initial containing block</a>
@@ -1784,13 +1784,13 @@ var[data-type]:hover::before {
 						</li>
 						<li>
 							<p><a href="epub-contentdocs.html#sec-fxl-viewport">viewport rendering</a>
-								[<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>]</p>
+								 [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] </p>
 						</li>
 					</ul>
 				</li>
 				<li id="idx-mo">
 					<p><a href="epub-mediaoverlays.html#sec-media-overlays-document-definition">Media Overlays
-							Documents</a> [<cite><a class="bibref" href="#bib-mediaoverlays32">MediaOverlays32</a></cite>]</p>
+							Documents</a> [<cite><a class="bibref" href="#bib-mediaoverlays32">MediaOverlays32</a></cite>] </p>
 					<ul>
 						<li>
 							<p><a href="epub-mediaoverlays.html#sec-overlay-behaviors">basic playback behaviors</a></p>
@@ -1932,7 +1932,7 @@ var[data-type]:hover::before {
 					</ul>
 				</li>
 				<li id="idx-ocf-abstract">
-					<p><a href="epub-ocf.html#sec-container-abstract">OCF abstract container</a> [<cite><a class="bibref" href="#bib-ocf32">OCF32</a></cite>]</p>
+					<p><a href="epub-ocf.html#sec-container-abstract">OCF abstract container</a> [<cite><a class="bibref" href="#bib-ocf32">OCF32</a></cite>] </p>
 					<ul>
 						<li>
 							<p><a href="epub-ocf.html#sec-container-file-and-dir-structure">file and directory
@@ -2023,7 +2023,7 @@ var[data-type]:hover::before {
 					</ul>
 				</li>
 				<li id="idx-ocf-zip">
-					<p><a href="epub-ocf.html#sec-container-zip">OCF ZIP container</a> [<cite><a class="bibref" href="#bib-ocf32">OCF32</a></cite>]</p>
+					<p><a href="epub-ocf.html#sec-container-zip">OCF ZIP container</a> [<cite><a class="bibref" href="#bib-ocf32">OCF32</a></cite>] </p>
 					<ul>
 						<li>
 							<p><a href="epub-ocf.html#sec-container-metainf-encryption.xml">encryption</a></p>
@@ -2059,7 +2059,7 @@ var[data-type]:hover::before {
 					</ul>
 				</li>
 				<li id="idx-pkg">
-					<p><a href="epub-packages.html#sec-package-doc">Package Document</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>]</p>
+					<p><a href="epub-packages.html#sec-package-doc">Package Document</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] </p>
 					<ul>
 						<li>
 							<p><a href="epub-packages.html#sec-collection-elem">collection element</a></p>
@@ -2296,7 +2296,7 @@ var[data-type]:hover::before {
 					<p><a href="#sec-resource-locations">remote resources</a></p>
 				</li>
 				<li id="idx-script">
-					<p><a href="epub-contentdocs.html#sec-scripted-content">scripting</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>]</p>
+					<p><a href="epub-contentdocs.html#sec-scripted-content">scripting</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] </p>
 					<ul>
 						<li>
 							<p><a href="epub-contentdocs.html#sec-scripted-context">contexts</a> (container-constrained
@@ -2336,7 +2336,7 @@ var[data-type]:hover::before {
 					</ul>
 				</li>
 				<li id="idx-svg">
-					<p><a href="epub-contentdocs.html#sec-svg">SVG Content Documents</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>]</p>
+					<p><a href="epub-contentdocs.html#sec-svg">SVG Content Documents</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] </p>
 					<ul>
 						<li>
 							<p><a href="epub-contentdocs.html#sec-svg-restrictions">restrictions</a></p>
@@ -2384,7 +2384,7 @@ var[data-type]:hover::before {
 					</ul>
 				</li>
 				<li id="idx-xhtml">
-					<p><a href="epub-contentdocs.html#sec-xhtml">XHTML Content Documents</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>]</p>
+					<p><a href="epub-contentdocs.html#sec-xhtml">XHTML Content Documents</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] </p>
 					<ul>
 						<li>
 							<p><a href="epub-contentdocs.html#sec-xhtml-custom-attributes">custom attributes</a></p>
@@ -2553,9 +2553,9 @@ var[data-type]:hover::before {
     <section id="normative-references">
         <h3 id="d-1-normative-references"><span class="secno">D.1 </span>規範性文件<a class="self-link" aria-label="§" href="#normative-references"></a></h3>
       <dl class="bibliography">
-        <dt id="bib-contentdocs32">[ContentDocs32]</dt><dd><a href="epub-contentdocs.html"><cite>EPUB Content Documents 3.2</cite></a>. URL: <a href="epub-contentdocs.html">epub-contentdocs.html</a></dd><dt id="bib-css3speech">[CSS3Speech]</dt><dd><a href="https://www.w3.org/TR/css3-speech/"><cite>CSS Speech Module</cite></a>. Daniel Weck. W3C. 5 June 2018. W3C Note. URL: <a href="https://www.w3.org/TR/css3-speech/">https://www.w3.org/TR/css3-speech/</a></dd><dt id="bib-epubaccessibility">[EPUBAccessibility]</dt><dd><a href="http://www.idpf.org/epub/latest/accessibility"><cite>EPUB Accessibility</cite></a>. URL: <a href="http://www.idpf.org/epub/latest/accessibility">http://www.idpf.org/epub/latest/accessibility</a></dd><dt id="bib-gif">[GIF]</dt><dd><a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt"><cite>Graphics Interchange Format</cite></a>.  CompuServe Incorporated. 31 July 1990. URL: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a></dd><dt id="bib-html">[HTML]</dt><dd><a href="https://www.w3.org/TR/html/"><cite>HTML</cite></a>.  W3C. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html/">https://www.w3.org/TR/html/</a></dd><dt id="bib-jpeg">[JPEG]</dt><dd><a href="https://www.w3.org/Graphics/JPEG/jfif3.pdf"><cite>JPEG File Interchange Format</cite></a>. Eric Hamilton. C-Cube Microsystems. Milpitas, CA, USA. September 1992. URL: <a href="https://www.w3.org/Graphics/JPEG/jfif3.pdf">https://www.w3.org/Graphics/JPEG/jfif3.pdf</a></dd><dt id="bib-mediaoverlays32">[MediaOverlays32]</dt><dd><a href="epub-mediaoverlays.html"><cite>EPUB Media Overlays 3.2</cite></a>. URL: <a href="epub-mediaoverlays.html">epub-mediaoverlays.html</a></dd><dt id="bib-mp3">[MP3]</dt><dd><a href="https://www.iso.org/standard/22412.html"><cite>Information technology -- Coding of moving pictures and associated audio for digital storage media at up to about 1,5 Mbit/s -- Part 3: Audio</cite></a>.  ISO/IEC. August 1993. Published. URL: <a href="https://www.iso.org/standard/22412.html">https://www.iso.org/standard/22412.html</a></dd><dt id="bib-mp4">[MP4]</dt><dd><a href="https://www.iso.org/standard/75929.html"><cite>Information technology -- Coding of audio-visual objects -- Part 14: MP4 file format</cite></a>.  ISO/IEC. November 2018. Published. URL: <a href="https://www.iso.org/standard/75929.html">https://www.iso.org/standard/75929.html</a></dd><dt id="bib-mpeg4-audio">[MPEG4-Audio]</dt><dd><a href="https://www.iso.org/standard/53943.html"><cite>Information technology -- Coding of audio-visual objects -- Part 3: Audio</cite></a>.  ISO/IEC. September 2009. Published. URL: <a href="https://www.iso.org/standard/53943.html">https://www.iso.org/standard/53943.html</a></dd><dt id="bib-ocf32">[OCF32]</dt><dd><a href="epub-ocf.html"><cite>Open Container Format (OCF) 3.2</cite></a>. URL: <a href="epub-ocf.html">epub-ocf.html</a></dd><dt id="bib-opentype">[OpenType]</dt><dd><a href="http://www.microsoft.com/typography/otspec/default.htm"><cite>OpenType specification</cite></a>.  Microsoft. URL: <a href="http://www.microsoft.com/typography/otspec/default.htm">http://www.microsoft.com/typography/otspec/default.htm</a></dd><dt id="bib-opf2">[OPF2]</dt><dd><a href="http://www.idpf.org/epub/20/spec/OPF_2.0.1_draft.htm"><cite>Open Packaging Format 2.0.1</cite></a>. URL: <a href="http://www.idpf.org/epub/20/spec/OPF_2.0.1_draft.htm">http://www.idpf.org/epub/20/spec/OPF_2.0.1_draft.htm</a></dd><dt id="bib-packages32">[Packages32]</dt><dd><a href="epub-packages.html"><cite>EPUB Packages 3.2</cite></a>. URL: <a href="epub-packages.html">epub-packages.html</a></dd><dt id="bib-png">[PNG]</dt><dd><a href="https://www.w3.org/TR/PNG/"><cite>Portable Network Graphics (PNG) Specification (Second Edition)</cite></a>. Tom Lane. W3C. 10 November 2003. W3C Recommendation. URL: <a href="https://www.w3.org/TR/PNG/">https://www.w3.org/TR/PNG/</a></dd><dt id="bib-pronunciation-lexicon">[PRONUNCIATION-LEXICON]</dt><dd><a href="https://www.w3.org/TR/pronunciation-lexicon/"><cite>Pronunciation Lexicon Specification (PLS) Version 1.0</cite></a>. Paolo Baggia. W3C. 14 October 2008. W3C Recommendation. URL: <a href="https://www.w3.org/TR/pronunciation-lexicon/">https://www.w3.org/TR/pronunciation-lexicon/</a></dd><dt id="bib-rfc2046">[RFC2046]</dt><dd><a href="https://tools.ietf.org/html/rfc2046"><cite>Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types</cite></a>. N. Freed; N. Borenstein. IETF. November 1996. Draft Standard. URL: <a href="https://tools.ietf.org/html/rfc2046">https://tools.ietf.org/html/rfc2046</a></dd><dt id="bib-rfc2119">[RFC2119]</dt><dd><a href="https://tools.ietf.org/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner. IETF. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a></dd><dt id="bib-rfc4329">[RFC4329]</dt><dd><a href="https://tools.ietf.org/html/rfc4329"><cite>Scripting Media Types</cite></a>. B. Hoehrmann. IETF. April 2006. Informational. URL: <a href="https://tools.ietf.org/html/rfc4329">https://tools.ietf.org/html/rfc4329</a></dd><dt id="bib-svg">[SVG]</dt><dd><a href="https://www.w3.org/TR/SVG/"><cite>SVG</cite></a>.  W3C. URL: <a href="https://www.w3.org/TR/SVG/">https://www.w3.org/TR/SVG/</a></dd><dt id="bib-truetype">[TrueType]</dt><dd><a href="https://developer.apple.com/fonts/TrueType-Reference-Manual/"><cite>Apple TrueType Reference Manual</cite></a>.  Apple. 2002. URL: <a href="https://developer.apple.com/fonts/TrueType-Reference-Manual/">https://developer.apple.com/fonts/TrueType-Reference-Manual/</a></dd><dt id="bib-unicode">[Unicode]</dt><dd><a href="https://www.unicode.org/versions/latest/"><cite>The Unicode Standard</cite></a>.  Unicode Consortium. URL: <a href="https://www.unicode.org/versions/latest/">https://www.unicode.org/versions/latest/</a></dd><dt id="bib-woff">[WOFF]</dt><dd><a href="https://www.w3.org/TR/WOFF/"><cite>WOFF File Format 1.0</cite></a>. Jonathan Kew; Tal Leming; Erik van Blokland. W3C. 13 December 2012. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WOFF/">https://www.w3.org/TR/WOFF/</a></dd><dt id="bib-woff2">[WOFF2]</dt><dd><a href="https://www.w3.org/TR/WOFF2/"><cite>WOFF File Format 2.0</cite></a>. Vladimir Levantovsky; Raph Levien. W3C. 1 March 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WOFF2/">https://www.w3.org/TR/WOFF2/</a></dd><dt id="bib-xinclude">[XInclude]</dt><dd><a href="https://www.w3.org/TR/xinclude/"><cite>XML Inclusions (XInclude) Version 1.0 (Second Edition)</cite></a>. Jonathan Marsh; David Orchard; Daniel Veillard. W3C. 15 November 2006. W3C Recommendation. URL: <a href="https://www.w3.org/TR/xinclude/">https://www.w3.org/TR/xinclude/</a></dd><dt id="bib-xml">[XML]</dt><dd><a href="https://www.w3.org/TR/xml/"><cite>Extensible Markup Language (XML) 1.0 (Fifth Edition)</cite></a>. Tim Bray; Jean Paoli; Michael Sperberg-McQueen; Eve Maler; François Yergeau et al. W3C. 26 November 2008. W3C Recommendation. URL: <a href="https://www.w3.org/TR/xml/">https://www.w3.org/TR/xml/</a></dd><dt id="bib-xml-names">[XML-NAMES]</dt><dd><a href="https://www.w3.org/TR/xml-names/"><cite>Namespaces in XML 1.0 (Third Edition)</cite></a>. Tim Bray; Dave Hollander; Andrew Layman; Richard Tobin; Henry Thompson et al. W3C. 8 December 2009. W3C Recommendation. URL: <a href="https://www.w3.org/TR/xml-names/">https://www.w3.org/TR/xml-names/</a></dd><dt id="bib-xmlbase">[XMLBase]</dt><dd><a href="https://www.w3.org/TR/xmlbase/"><cite>XML Base (Second Edition)</cite></a>. Jonathan Marsh. W3C. 28 January 2009. W3C Recommendation. URL: <a href="https://www.w3.org/TR/xmlbase/">https://www.w3.org/TR/xmlbase/</a></dd>
+        <dt id="bib-contentdocs32"> [ContentDocs32] </dt><dd><a href="epub-contentdocs.html"><cite>EPUB Content Documents 3.2</cite></a>. URL: <a href="epub-contentdocs.html">epub-contentdocs.html</a></dd><dt id="bib-css3speech"> [CSS3Speech] </dt><dd><a href="https://www.w3.org/TR/css3-speech/"><cite>CSS Speech Module</cite></a>. Daniel Weck. W3C. 5 June 2018. W3C Note. URL: <a href="https://www.w3.org/TR/css3-speech/">https://www.w3.org/TR/css3-speech/</a></dd><dt id="bib-epubaccessibility"> [EPUBAccessibility] </dt><dd><a href="http://www.idpf.org/epub/latest/accessibility"><cite>EPUB Accessibility</cite></a>. URL: <a href="http://www.idpf.org/epub/latest/accessibility">http://www.idpf.org/epub/latest/accessibility</a></dd><dt id="bib-gif"> [GIF] </dt><dd><a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt"><cite>Graphics Interchange Format</cite></a>.  CompuServe Incorporated. 31 July 1990. URL: <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt">https://www.w3.org/Graphics/GIF/spec-gif89a.txt</a></dd><dt id="bib-html"> [HTML] </dt><dd><a href="https://www.w3.org/TR/html/"><cite>HTML</cite></a>.  W3C. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html/">https://www.w3.org/TR/html/</a></dd><dt id="bib-jpeg"> [JPEG] </dt><dd><a href="https://www.w3.org/Graphics/JPEG/jfif3.pdf"><cite>JPEG File Interchange Format</cite></a>. Eric Hamilton. C-Cube Microsystems. Milpitas, CA, USA. September 1992. URL: <a href="https://www.w3.org/Graphics/JPEG/jfif3.pdf">https://www.w3.org/Graphics/JPEG/jfif3.pdf</a></dd><dt id="bib-mediaoverlays32"> [MediaOverlays32] </dt><dd><a href="epub-mediaoverlays.html"><cite>EPUB Media Overlays 3.2</cite></a>. URL: <a href="epub-mediaoverlays.html">epub-mediaoverlays.html</a></dd><dt id="bib-mp3"> [MP3] </dt><dd><a href="https://www.iso.org/standard/22412.html"><cite>Information technology -- Coding of moving pictures and associated audio for digital storage media at up to about 1,5 Mbit/s -- Part 3: Audio</cite></a>.  ISO/IEC. August 1993. Published. URL: <a href="https://www.iso.org/standard/22412.html">https://www.iso.org/standard/22412.html</a></dd><dt id="bib-mp4"> [MP4] </dt><dd><a href="https://www.iso.org/standard/75929.html"><cite>Information technology -- Coding of audio-visual objects -- Part 14: MP4 file format</cite></a>.  ISO/IEC. November 2018. Published. URL: <a href="https://www.iso.org/standard/75929.html">https://www.iso.org/standard/75929.html</a></dd><dt id="bib-mpeg4-audio"> [MPEG4-Audio] </dt><dd><a href="https://www.iso.org/standard/53943.html"><cite>Information technology -- Coding of audio-visual objects -- Part 3: Audio</cite></a>.  ISO/IEC. September 2009. Published. URL: <a href="https://www.iso.org/standard/53943.html">https://www.iso.org/standard/53943.html</a></dd><dt id="bib-ocf32"> [OCF32] </dt><dd><a href="epub-ocf.html"><cite>Open Container Format (OCF) 3.2</cite></a>. URL: <a href="epub-ocf.html">epub-ocf.html</a></dd><dt id="bib-opentype"> [OpenType] </dt><dd><a href="http://www.microsoft.com/typography/otspec/default.htm"><cite>OpenType specification</cite></a>.  Microsoft. URL: <a href="http://www.microsoft.com/typography/otspec/default.htm">http://www.microsoft.com/typography/otspec/default.htm</a></dd><dt id="bib-opf2"> [OPF2] </dt><dd><a href="http://www.idpf.org/epub/20/spec/OPF_2.0.1_draft.htm"><cite>Open Packaging Format 2.0.1</cite></a>. URL: <a href="http://www.idpf.org/epub/20/spec/OPF_2.0.1_draft.htm">http://www.idpf.org/epub/20/spec/OPF_2.0.1_draft.htm</a></dd><dt id="bib-packages32"> [Packages32] </dt><dd><a href="epub-packages.html"><cite>EPUB Packages 3.2</cite></a>. URL: <a href="epub-packages.html">epub-packages.html</a></dd><dt id="bib-png"> [PNG] </dt><dd><a href="https://www.w3.org/TR/PNG/"><cite>Portable Network Graphics (PNG) Specification (Second Edition)</cite></a>. Tom Lane. W3C. 10 November 2003. W3C Recommendation. URL: <a href="https://www.w3.org/TR/PNG/">https://www.w3.org/TR/PNG/</a></dd><dt id="bib-pronunciation-lexicon"> [PRONUNCIATION-LEXICON] </dt><dd><a href="https://www.w3.org/TR/pronunciation-lexicon/"><cite>Pronunciation Lexicon Specification (PLS) Version 1.0</cite></a>. Paolo Baggia. W3C. 14 October 2008. W3C Recommendation. URL: <a href="https://www.w3.org/TR/pronunciation-lexicon/">https://www.w3.org/TR/pronunciation-lexicon/</a></dd><dt id="bib-rfc2046"> [RFC2046] </dt><dd><a href="https://tools.ietf.org/html/rfc2046"><cite>Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types</cite></a>. N. Freed; N. Borenstein. IETF. November 1996. Draft Standard. URL: <a href="https://tools.ietf.org/html/rfc2046">https://tools.ietf.org/html/rfc2046</a></dd><dt id="bib-rfc2119"> [RFC2119] </dt><dd><a href="https://tools.ietf.org/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner. IETF. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a></dd><dt id="bib-rfc4329"> [RFC4329] </dt><dd><a href="https://tools.ietf.org/html/rfc4329"><cite>Scripting Media Types</cite></a>. B. Hoehrmann. IETF. April 2006. Informational. URL: <a href="https://tools.ietf.org/html/rfc4329">https://tools.ietf.org/html/rfc4329</a></dd><dt id="bib-svg"> [SVG] </dt><dd><a href="https://www.w3.org/TR/SVG/"><cite>SVG</cite></a>.  W3C. URL: <a href="https://www.w3.org/TR/SVG/">https://www.w3.org/TR/SVG/</a></dd><dt id="bib-truetype"> [TrueType] </dt><dd><a href="https://developer.apple.com/fonts/TrueType-Reference-Manual/"><cite>Apple TrueType Reference Manual</cite></a>.  Apple. 2002. URL: <a href="https://developer.apple.com/fonts/TrueType-Reference-Manual/">https://developer.apple.com/fonts/TrueType-Reference-Manual/</a></dd><dt id="bib-unicode"> [Unicode] </dt><dd><a href="https://www.unicode.org/versions/latest/"><cite>The Unicode Standard</cite></a>.  Unicode Consortium. URL: <a href="https://www.unicode.org/versions/latest/">https://www.unicode.org/versions/latest/</a></dd><dt id="bib-woff"> [WOFF] </dt><dd><a href="https://www.w3.org/TR/WOFF/"><cite>WOFF File Format 1.0</cite></a>. Jonathan Kew; Tal Leming; Erik van Blokland. W3C. 13 December 2012. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WOFF/">https://www.w3.org/TR/WOFF/</a></dd><dt id="bib-woff2"> [WOFF2] </dt><dd><a href="https://www.w3.org/TR/WOFF2/"><cite>WOFF File Format 2.0</cite></a>. Vladimir Levantovsky; Raph Levien. W3C. 1 March 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WOFF2/">https://www.w3.org/TR/WOFF2/</a></dd><dt id="bib-xinclude"> [XInclude] </dt><dd><a href="https://www.w3.org/TR/xinclude/"><cite>XML Inclusions (XInclude) Version 1.0 (Second Edition)</cite></a>. Jonathan Marsh; David Orchard; Daniel Veillard. W3C. 15 November 2006. W3C Recommendation. URL: <a href="https://www.w3.org/TR/xinclude/">https://www.w3.org/TR/xinclude/</a></dd><dt id="bib-xml"> [XML] </dt><dd><a href="https://www.w3.org/TR/xml/"><cite>Extensible Markup Language (XML) 1.0 (Fifth Edition)</cite></a>. Tim Bray; Jean Paoli; Michael Sperberg-McQueen; Eve Maler; François Yergeau et al. W3C. 26 November 2008. W3C Recommendation. URL: <a href="https://www.w3.org/TR/xml/">https://www.w3.org/TR/xml/</a></dd><dt id="bib-xml-names"> [XML-NAMES] </dt><dd><a href="https://www.w3.org/TR/xml-names/"><cite>Namespaces in XML 1.0 (Third Edition)</cite></a>. Tim Bray; Dave Hollander; Andrew Layman; Richard Tobin; Henry Thompson et al. W3C. 8 December 2009. W3C Recommendation. URL: <a href="https://www.w3.org/TR/xml-names/">https://www.w3.org/TR/xml-names/</a></dd><dt id="bib-xmlbase"> [XMLBase] </dt><dd><a href="https://www.w3.org/TR/xmlbase/"><cite>XML Base (Second Edition)</cite></a>. Jonathan Marsh. W3C. 28 January 2009. W3C Recommendation. URL: <a href="https://www.w3.org/TR/xmlbase/">https://www.w3.org/TR/xmlbase/</a></dd>
       </dl></section><section id="informative-references">
         <h3 id="d-2-informative-references"><span class="secno">D.2 </span>參考性文件<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
       <dl class="bibliography">
-        <dt id="bib-epub32changes">[EPUB32Changes]</dt><dd><a href="epub-changes.html"><cite>EPUB 3.2 Changes</cite></a>. URL: <a href="epub-changes.html">epub-changes.html</a></dd><dt id="bib-epub3overview">[EPUB3Overview]</dt><dd><a href="epub-overview.html"><cite>EPUB 3 Overview</cite></a>. URL: <a href="epub-overview.html">epub-overview.html</a></dd><dt id="bib-h264">[H264]</dt><dd><a href="https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=13189"><cite>H.264 : Advanced video coding for generic audiovisual services</cite></a>. 2017-04-13. URL: <a href="https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=13189">https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=13189</a></dd><dt id="bib-rfc6386">[RFC6386]</dt><dd><a href="https://tools.ietf.org/html/rfc6386"><cite>VP8 Data Format and Decoding Guide</cite></a>. J. Bankoski; J. Koleszar; L. Quillio; J. Salonen; P. Wilkins; Y. Xu. IETF. November 2011. Informational. URL: <a href="https://tools.ietf.org/html/rfc6386">https://tools.ietf.org/html/rfc6386</a></dd>
+        <dt id="bib-epub32changes"> [EPUB32Changes] </dt><dd><a href="epub-changes.html"><cite>EPUB 3.2 Changes</cite></a>. URL: <a href="epub-changes.html">epub-changes.html</a></dd><dt id="bib-epub3overview"> [EPUB3Overview] </dt><dd><a href="epub-overview.html"><cite>EPUB 3 Overview</cite></a>. URL: <a href="epub-overview.html">epub-overview.html</a></dd><dt id="bib-h264"> [H264] </dt><dd><a href="https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=13189"><cite>H.264 : Advanced video coding for generic audiovisual services</cite></a>. 2017-04-13. URL: <a href="https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=13189">https://www.itu.int/ITU-T/recommendations/rec.aspx?rec=13189</a></dd><dt id="bib-rfc6386"> [RFC6386] </dt><dd><a href="https://tools.ietf.org/html/rfc6386"><cite>VP8 Data Format and Decoding Guide</cite></a>. J. Bankoski; J. Koleszar; L. Quillio; J. Salonen; P. Wilkins; Y. Xu. IETF. November 2011. Informational. URL: <a href="https://tools.ietf.org/html/rfc6386">https://tools.ietf.org/html/rfc6386</a></dd>
       </dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
