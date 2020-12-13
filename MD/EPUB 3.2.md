@@ -217,7 +217,7 @@ EPUB出版品的結構與容器只是整體格式的一半，另一半則是該�
 
 EPUB出版品的一種內容顯示方式，如EPUB包裝中所解釋。
 
-#### 腳本化內容文件（Scripted Content Document）
+#### 有腳本的內容文件（Scripted Content Document）
 
 包含腳本的EPUB內容文件，或者XHTML內容文件包含[HTML]表單。
 

@@ -644,7 +644,7 @@ XHTML內容文件支援嵌入SVG文件斷片[SVG]，可透過參照（透過參�
 
 - 除非在本規格中額外定義為可覆蓋，其**必需**使用定義在[SVG]規格中的語意來處理SVG內容文件，並且推薦符合所有在該規格中表述的適用性限制。
 
-- 其**必需**符合在腳本化內容文件 - 閱讀系統適用性中定義的適用性規定。
+- 其**必需**符合在有腳本的內容文件 - 閱讀系統適用性中定義的適用性規定。
 
 - 當有Viewport時，其**必需**按照定義如樣式[SVG]，使用CSS來支援SVG的排版，以及其**應該**支援所有定義在特性索引[SVG]中的特性。對嵌入SVG而言，其**必需**符合定義在嵌入SVG與CSS中的限制。
 
@@ -867,7 +867,7 @@ This specification defines two contexts in which scripts MAY appear:
 
 > ##### 注意事項
 > 
-> 宣告*item*元素中的*scripted*特性指出一份EPUB內容文件為腳本化內容文件
+> 宣告*item*元素中的*scripted*特性指出一份EPUB內容文件為有腳本的內容文件
 
 ### 5.3 閱讀系統適用性
 
@@ -877,18 +877,18 @@ This specification defines two contexts in which scripts MAY appear:
 - 其**應該**在固定版面文件中支援書脊層級腳本。
 - 其**應該**在重排EPUB內容文件中支援書脊層級腳本，而該文件使用定義在[Packages32]中*rendition:flow*特性的"*scrolled-doc*"或"*scrolled-continuous*"顯示模式。相同地，如果其在重排EPUB內容文件中支援書脊層級腳本，其**必需**實作"*scrolled-doc*"顯示模式，並且**應該**實作"*scrolled-continuous*"顯示模式。
 - 其**可以**在其他脈絡下支援腳本，但本規格對這樣的腳本不另外敘述。結果來說在其他脈絡下使用腳本可能在跨閱讀系統時不會保持一致。
-- 其**可以**依據[HTML]腳本客戶端將腳本化內容文件排版成具互動性。
+- 其**可以**依據[HTML]腳本客戶端將有腳本的內容文件排版成具互動性。
 - 其**不得**允許容器限制腳本修改該EPUB出版品之其他內容，或其母內容文件的DOM，以及**不得**允許其操弄其包含的矩形尺寸（注意，儘管腳本並非為容器限制腳本，閱讀系統**可以**對操弄施予限制（可參照DOM操弄功能））。
 - 其**可以**在執行腳本時，對其行為提供額外的限制（例如，限制網路存取）。
 - 其**必需**實作JavaScript *navigator*延伸物件*epubReadingSystem*，如附錄A所定義的JavaScript epubReadingSystem Object。其也**必需**支援DOM操弄與版面變更功能，定義在容器限制腳本脈絡下的功能。
 
 一個不支援腳本的閱讀系統**必需**符合以下領域的需求：
 
-- 其**必需**處理腳本化內容的回退，如腳本化內容文件中回退所定義。
+- 其**必需**處理腳本化內容的回退，如有腳本的內容文件中回退所定義。
 
 > ##### 注意事項
 > 
-> 閱讀系統可以在排版腳本化內容文件的同時，關閉其他EPUB功能及/或提供不同的排版與使用者體驗（例如，關閉分頁）
+> 閱讀系統可以在排版有腳本的內容文件的同時，關閉其他EPUB功能及/或提供不同的排版與使用者體驗（例如，關閉分頁）
 > 
 > 作者對使用容器限制模型腳本的選擇可以進一步確保在腳本化與無腳本內容間使用者經驗一致（例如翻頁行為一致）。
 > 
@@ -1089,7 +1089,7 @@ W3C發音辭典規格（Pronunciation Lexicon Specification, PLS) [PRONUNCIATION
 
 ### A.2 說明
 
-*Navigator.epubReadingSystem*物件提供了一個介面，可以讓腳本化內容文件能夠查詢使用者閱讀系統的資訊。
+*Navigator.epubReadingSystem*物件提供了一個介面，可以讓有腳本的內容文件能夠查詢使用者閱讀系統的資訊。
 
 該物件顯露閱讀系統的特性（名稱與版本），並且提供*hasFeature*手段能用於決定功能是否受到支援。
 
@@ -1099,11 +1099,11 @@ W3C發音辭典規格（Pronunciation Lexicon Specification, PLS) [PRONUNCIATION
 > 
 > alert("Reading System name: " + navigator.epubReadingSystem.name);
 
-閱讀系統**必需**在所有載入的腳本化內容文件的*navigator*物件中顯露*epubReadingSystem*物件，包含任何巢狀容器限制腳本脈絡。閱讀系統**必需**確保*epubReadingSystem*物件可被使用，不晚於*DOMContentLoaded*事件被啟動[HTML]。
+閱讀系統**必需**在所有載入的有腳本的內容文件的*navigator*物件中顯露*epubReadingSystem*物件，包含任何巢狀容器限制腳本脈絡。閱讀系統**必需**確保*epubReadingSystem*物件可被使用，不晚於*DOMContentLoaded*事件被啟動[HTML]。
 
 > ##### 注意事項
 > 
-> 閱讀系統實作可以在腳本化內容文件中創建複製的*epubReadingSystem*物件副本，以助於技術上實現的理由。在這些狀況中，閱讀系統需要確保該物件的狀態 — 如反映其特性與手段的值 — 在跨所有複製的副本中維持一致。
+> 閱讀系統實作可以在有腳本的內容文件中創建複製的*epubReadingSystem*物件副本，以助於技術上實現的理由。在這些狀況中，閱讀系統需要確保該物件的狀態 — 如反映其特性與手段的值 — 在跨所有複製的副本中維持一致。
 
 ### A.3 特性
 
