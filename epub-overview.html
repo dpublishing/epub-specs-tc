@@ -879,11 +879,11 @@ var [data-type] :hover::before {
 
 				<p>每一本EPUB出版品都包含了至少一份<a href="epub-spec.html#dfn-rendition">「內容解釋（Rendition）」</a>，這些內容解釋以<a href="epub-spec.html#dfn-package-document">「包裝文件」</a>呈現。</p>
 
-				<p>包裝文件列出了所有內容排版處理時所需要的諮詢。內容文件也定義了線性使用時的閱讀順序，以及讓詮釋資料和導覽資訊與內容解釋相互關聯。</p>
+				<p>包裝文件列出了所有內容排版處理時所需要的資源。也定義了線性使用時的閱讀順序，以及讓詮釋資料和導覽資訊與內容解釋相互關聯。</p>
 
-				<p>包裝文件與一般的網頁相較，呈現出顯著的進展。以網頁為例，在內容裡嵌入了對資源的連結，雖然是簡單且具彈性的連結資源方式，卻也難以排列整理出所有排版呈現時所需的資源。此外，也沒有標準化的方式能讓網站定義某組網頁作為大型出版品的一部分，這就是EPUB <a href="epub-packages.html#sec-spine-elem"><code>spine</code>元素</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 的功能所在（換句話說，它提供了一個外部宣告的方式來強化對一系列文件的導覽順序）。最後，包裝文件以標準化的方式制定了詮釋資料如何通用地適於一系列文件上頭。</p>
+				<p>包裝文件和一般的網站相較，做出了重大改進。以網頁為例，在內容裡嵌入了對資源的參照，雖然是簡單且具彈性的連結資源方式，卻也難以列舉整理出所有排版呈現時所需的資源。此外，也沒有標準化的方式能讓網站定義某組網頁作為大型出版品的一部分，這就是EPUB <a href="epub-packages.html#sec-spine-elem"><code>spine</code>元素</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 的功能所在（換句話說，它提供了一個外部宣告的方式來明確指定對一系列文件的導覽順序）。最後，包裝文件以標準化的方式制定了詮釋資料如何全域地套用於一系列文件上頭。</p>
 
-				<p>包裝文件也包含了<a href="epub-packages.html#sec-collection-elem"><code>collection</code>元素</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，允許將一群邏輯上相關的<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>包為一組。套用這項元素可應用於定義內容識別、處理以及排列功能，像是能夠用於定義嵌入的預覽內容，或者由構成的XHTML內容文件中取出索引或者字辭典定義。</p>
+				<p>包裝文件也包含了<a href="epub-packages.html#sec-collection-elem"><code>collection</code>元素</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，允許將一群邏輯上相關的<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>包為一組。套用這項元素可應用於定義內容識別、處理以及排列功能，像是能用於定義嵌入的預覽內容，或者由構成的XHTML內容文件中取出索引或者字辭典定義。</p>
 
 				<p>包裝文件以及其他專用於解釋內容的說明，都定義在 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。</p>
 
@@ -897,20 +897,20 @@ var [data-type] :hover::before {
 
 					<p>EPUB的關鍵概念為，EPUB出版品包含多種資源，而能被人、以及機器，<em>按照某些指定順序</em>來完整導覽及閱讀。</p>
 
-					<p>各式各類的出版品都有明確的閱讀順序，或者整個內容有著邏輯上的進程。以小說為例，就是高度有順序性的文件——通常會有開頭、承續、結尾——但不是所有出版品都這麼依序閱讀：例如食譜與攝影集就可能更像是一個資料庫。但所有的文件都至少有一個最主要層級的邏輯閱讀順序內容項目，可以按照日期、主題、地點或者其它範疇（例如，食譜一般會按照烹煮方式排序）。</p>
+					<p>各式各類的出版品都有明確的閱讀順序，或者整個內容有著邏輯上的推進。以小說為例，就是高度有順序性的文件——通常會有開頭、承續、結尾——但不是所有出版品都會按照順序被閱讀：例如食譜與攝影集就可能更像是一個資料庫。但所有的文件都至少有一個最主要層級的邏輯閱讀順序內容項目，可以按照日期、主題、地點或者其它範疇（例如，食譜一般會按照烹煮方式排序）。</p>
 
-					<p>每一份EPUB出版品的內容解釋都定義了至少一個最主要層級內容的邏輯順序（即為<a href="epub-packages.html#sec-spine-elem">spine</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ），以及宣告性的目錄（即為<a href="epub-spec.html#dfn-epub-navigation-document">EPUB導覽文件</a> [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] ）。EPUB出版品令這些資料結構化，而在內容<em>外部</em>透過機器可讀取的方式得以讓內容易於被發現及被使用。</p>
+					<p>每一份EPUB出版品的內容解釋都定義了至少一個最主要層級內容的邏輯順序（即為<a href="epub-packages.html#sec-spine-elem">spine</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ），以及宣告式的目錄（即為<a href="epub-spec.html#dfn-epub-navigation-document">EPUB導覽文件</a> [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] ）。EPUB出版品令這些資料在內容<em>外部</em>透過機器可讀取的方式結構化，而得以讓內容易於被發現及被使用。</p>
 
-					<p>EPUB出版品並不僅限於以線性順序閱讀內容，也可以使用預先包含的連結，以任意跳躍的方式來讀——如同網頁一般，而EPUB出版品以超文本技術打造——其所具備的基礎閱讀以及導覽方式以能被信任的方式建構，這是HTML頁面所不具備的。</p>
+					<p>EPUB出版品並不僅限於以線性順序閱讀內容，也可以使用預先包含的連結，以任意跳躍的方式來讀——如同網頁一般，EPUB出版品基以超文本技術打造——其所具備的基礎閱讀以及導覽方式以能被可靠的方式建構，這是HTML頁面所不具備的。</p>
 
 				</section>
 
 				<section id="sec-nav-nav-doc">
 					<h4 id="x1-2-2-navigation-document"><span class="secno">1.2.2 </span>導覽文件<a class="self-link" aria-label="§" href="#sec-nav-nav-doc"></a></h4>
 
-					<p>每一份EPUB出版品的內容解釋都包含了一個特殊的XHTML內容文件，稱為<a href="epub-spec.html#dfn-epub-navigation-document">EPUB導覽文件</a>，該文件使用了 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <code>nav</code>元素來定義人類可讀且機器也可讀的導覽資訊。</p>
+					<p>每一份EPUB出版品的內容解釋都包含了一個特殊的XHTML內容文件，稱為<a href="epub-spec.html#dfn-epub-navigation-document">EPUB導覽文件</a>，該文件使用了 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <code>nav</code>元素來定義人類與機器皆可讀的導覽資訊。</p>
 
-					<p>導覽文件取代EPUB 2中的NCX文件 [<cite><a class="bibref" href="#bib-ops2">OPS2</a></cite>] 。導覽文件提供最底限無障礙輔助功能，並且具備NCX的導覽協助與各項功能，並且提供新的機能以及透過排版功能能夠為所有使用者提供強化的導覽。最重要的對於國際化（例如導覽文件採用XHTML文件格式，原生支援Ruby註釋）的較佳支援，以及支援嵌入式語法（MathML與SVG都可以包含在導覽連結之中）。</p>
+					<p>導覽文件取代了EPUB 2中的NCX文件 [<cite><a class="bibref" href="#bib-ops2">OPS2</a></cite>] 。導覽文件除了維持最基本無障礙輔助功能，以及導覽協助等NCX所具備的各項功能之外，也導入了新的機能，並且透過排版，為所有使用者提供強化的導覽。最重要的對於國際化（例如導覽文件採用XHTML文件格式，原生支援Ruby註釋）的較佳支援，以及支援嵌入式語法（MathML與SVG都可以包含在導覽連結之中）。</p>
 
 					<p>作為XHTML內容文件，導覽文件也提供了更大的彈性，可以使用CSS以及<a href="epub-packages.html#sec-package-nav-def-hidden"><code>hidden</code>屬性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 來設計導覽的顯示，同時不會影響到閱讀系統存取這些資訊。</p>
 
@@ -923,9 +923,9 @@ var [data-type] :hover::before {
 			<section id="sec-metadata">
 				<h3 id="x1-3-metadata"><span class="secno">1.3 </span>詮釋資料<a class="self-link" aria-label="§" href="#sec-metadata"></a></h3>
 
-				<p>EPUB出版品提供了一堆豐富的選項讓你添加詮釋資料。每一個內容解釋的包裝文件都包含了專門的<a href="epub-packages.html#sec-metadata-elem"><code>metadata</code>區塊</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 用來提供關於該EPUB出版品的一般性資訊，令該本EPUB出版品的書名、作者、識別碼以及其他資訊能夠輕易被存取。也提供了能夠使用<a href="epub-packages.html#sec-link-elem"><code>link</code>元素</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 附加完整書目紀錄的方法。</p>
+				<p>EPUB出版品提供了許多豐富的選項讓你添加詮釋資料。每一個內容解釋的包裝文件都包含了專門的<a href="epub-packages.html#sec-metadata-elem"><code>metadata</code>區塊</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 用來提供關於該EPUB出版品的一般性資訊，令該本EPUB出版品的書名、作者、識別碼以及其他資訊能夠輕易被存取。也提供了能夠使用<a href="epub-packages.html#sec-link-elem"><code>link</code>元素</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 附加完整書目紀錄的方法。</p>
 				
-				<p>包裝文件也能透過 <a href="epub-packages.html#attrdef-package-unique-identifier"><code>unique-identifier</code>屬性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 為EPUB出版品建立<a href="epub-spec.html#dfn-unique-identifier">獨有的識別碼</a>。也需要在包裝的metadata區塊中加入最後修改日期，以配合獨有識別碼來作為<a href="epub-spec.html#dfn-release-identifier">發布識別碼</a>。這提供了用來辨識同一EPUB出版品不同版本的手段（請見<a href="epub-packages.html#sec-package-metadata-identifiers">出版品識別碼</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ）。包裝識別碼解釋了如何在不修改獨有識別碼的狀況下發布EPUB出版品的新版並且識別為新版本的做法。</p>
+				<p>包裝文件也能透過 <a href="epub-packages.html#attrdef-package-unique-identifier"><code>unique-identifier</code>屬性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 為EPUB出版品建立<a href="epub-spec.html#dfn-unique-identifier">獨有的識別碼</a>。在包裝的metadata區塊中要求加入最後修改日期，能搭配這個獨有識別碼來作為<a href="epub-spec.html#dfn-release-identifier">發布識別碼</a>。這提供了用來辨識同一EPUB出版品不同版本的手段（請見<a href="epub-packages.html#sec-package-metadata-identifiers">出版品識別碼</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ）。包裝識別碼解釋了如何在不修改獨有識別碼的狀況下發布EPUB出版品的新版並且識別為新版本的做法。</p>
 
 				<p>XHTML內容文件也包含了以完善的詮釋資料為文件增加註解的方法，讓資料能夠更具語意上的意義並且對於資訊處理以及無障礙協助做出貢獻（<a href="epub-contentdocs.html#sec-xhtml-semantic-inflection">XHTML語意變化</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] ）。XHTML內容文件可以使用RDFa以及Microdata屬性，提供內容層級的詮釋資料敘述（<a href="epub-contentdocs.html#sec-xhtml-semantic-enrichment">XHTML語意豐富性</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] ）。</p>
 
@@ -943,11 +943,11 @@ var [data-type] :hover::before {
 			<section id="sec-fxl">
 				<h3 id="x1-5-fixed-layouts"><span class="secno">1.5 </span>固定版面<a class="self-link" aria-label="§" href="#sec-fxl"></a></h3>
 
-				<p>儘管EPUB的歷史就是致力於推動可重排的內容，但並非所有出版品都可以輕易地以重排的方式處理。童書、漫畫與圖文書、雜誌與其他多種內容形式，都需要透過精準分頁的排版能力才能夠完整表現其內容。</p>
+				<p>儘管EPUB的歷史就是致力於推動可重排的內容，並非所有出版品都可以輕易地被重排。童書、漫畫與圖文書、雜誌與其他多種內容形式，都需要透過能精準分頁的排版才能夠完整表現其內容。</p>
 
 				<p>EPUB 3可以在詮釋資料中允許使用<a href="epub-packages.html#sec-package-metadata-fxl">固定版面的XHTML內容文件</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，以擴張原來使用SVG技術製作固定版面的表現性。這些詮釋資料可以讓<a href="epub-contentdocs.html#sec-fxl-html-svg-dimensions">頁面空間</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] 受到控制，以打造出讓各元素能夠精準定位的畫布。</p>
 
-				<p>詮釋資料不僅用於指定哪些內容該是固定版面或者重排，也讓作者能夠在<a href="epub-packages.html#spread">同時跨頁顯示</a>時 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，指定想要的<a href="epub-packages.html#orientation">頁面方向</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，以及頁面在分頁中該<a href="epub-packages.html#page-spread">如何定位</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，為EPUB出版品的表現提供了更廣泛的控制功能。</p>
+				<p>詮釋資料不僅用於指定哪些內容該是固定版面或者重排，也讓作者能夠指定想要的<a href="epub-packages.html#orientation">頁面方向</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，何時<a href="epub-packages.html#spread">跨頁顯示</a>時 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，以及頁面在分頁中該<a href="epub-packages.html#page-spread">如何定位</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，為EPUB出版品的表現提供了更廣泛的控制功能。</p>
 
 			</section>
 
