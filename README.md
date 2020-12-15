@@ -31,6 +31,6 @@
 - 原文：[Synchronized Media for Publications:Overview](https://w3c.github.io/sync-media-pub/)
     - 翻譯：[供出版品使用的同步媒體：總覽](https://bobbytung.github.io/EPUB32forTC/synchronized-media-for-publications.html)
 - 原文：[Synchronized Narration](https://w3c.github.io/sync-media-pub/synchronized-narration.html)
-    - [同步旁白](https://bobbytung.github.io/EPUB32forTC/synchronized-narration.html)
+    - 翻譯：[同步旁白](https://bobbytung.github.io/EPUB32forTC/synchronized-narration.html)
 - 原文：[Incorporating Synchronized Narration into a Publication Manifest](https://w3c.github.io/sync-media-pub/incorporating-synchronized-narration)
     - 翻譯：[將同步旁白整合進出版品宣告](https://bobbytung.github.io/EPUB32forTC/incorporating-synchronized-narration.html)
