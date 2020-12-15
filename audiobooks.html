@@ -18,6 +18,11 @@
 				clear: both
 			}
 			
+			em.rfc2119 {
+				font-style: normal;
+				font-weight: bold;
+			}
+
 			div.illegal-example {
 				color: red
 			}
@@ -152,7 +157,7 @@
 				margin-top: .25em
 			}
 			
-			.dfn-panel ul a[href] {
+			.dfn-panel ul a [href] {
 				color: #333
 			}
 			
@@ -190,7 +195,7 @@
 				border-bottom: none !important
 			}
 			
-			.dfn-panel a[href]:hover {
+			.dfn-panel a [href] :hover {
 				border-bottom-width: 1px
 			}
 			
@@ -266,7 +271,7 @@
 			}
 			
 			.respec-offending-element,
-			a[href].respec-offending-element {
+			a [href] .respec-offending-element {
 				text-decoration: red wavy underline
 			}
 			
@@ -291,12 +296,12 @@
 				color: inherit
 			}
 			
-			a[href].orcid {
+			a [href] .orcid {
 				padding-left: 4px;
 				padding-right: 4px
 			}
 			
-			a[href].orcid > svg {
+			a [href] .orcid > svg {
 				margin-bottom: -2px
 			}
 			
@@ -339,7 +344,7 @@
 				text-align: left
 			}
 			
-			.simple th[scope = row] {
+			.simple th [scope = row] {
 				background: inherit;
 				color: inherit;
 				border-top: 1px solid #ddd
@@ -390,7 +395,7 @@
 				padding-right: 2em
 			}
 			
-			details.respec-tests-details[open] {
+			details.respec-tests-details [open] {
 				z-index: 999999;
 				position: absolute;
 				border: thin solid #cad3e2;
@@ -399,7 +404,7 @@
 				padding-bottom: .5em
 			}
 			
-			details.respec-tests-details[open] > summary {
+			details.respec-tests-details [open] > summary {
 				border-bottom: thin solid #cad3e2;
 				padding-left: 1em;
 				margin-bottom: 1em;
@@ -415,7 +420,7 @@
 				padding-left: 1em
 			}
 			
-			a[href].self-link:hover {
+			a [href] .self-link:hover {
 				opacity: 1;
 				text-decoration: none;
 				background-color: transparent
@@ -569,8 +574,8 @@
 				cursor: pointer
 			}
 			
-			var[data-type]::after,
-			var[data-type]::before {
+			var [data-type] ::after,
+			var [data-type] ::before {
 				position: absolute;
 				left: 50%;
 				top: -6px;
@@ -579,7 +584,7 @@
 				pointer-events: none
 			}
 			
-			var[data-type]::before {
+			var [data-type] ::before {
 				content: "";
 				transform: translateX(-50%);
 				border-width: 4px 6px 0 6px;
@@ -588,7 +593,7 @@
 				border-top-color: #000
 			}
 			
-			var[data-type]::after {
+			var [data-type] ::after {
 				content: attr(data-type);
 				transform: translateX(-50%) translateY(-100%);
 				background: #000;
@@ -602,8 +607,8 @@
 				font-weight: 400
 			}
 			
-			var[data-type]:hover::after,
-			var[data-type]:hover::before {
+			var [data-type] :hover::after,
+			var [data-type] :hover::before {
 				opacity: 1
 			}</style>
 		<script id="initialUserConfig" type="application/json">{
@@ -634,7 +639,7 @@
       "companyURL": "https://daisy.org",
       "w3cid": 51655
     }
-  ],
+  ] ,
   "processVersion": 2020,
   "includePermalinks": true,
   "permalinkEdge": true,
@@ -653,7 +658,7 @@
         "G. Bilder",
         "J. Kunze",
         "S. Warner"
-      ],
+      ] ,
       "rawDate": "2017-08",
       "publisher": "IETF",
       "href": "https://tools.ietf.org/html/draft-vandesompel-identifier-00"
@@ -668,7 +673,7 @@
         "Kevin Ballard",
         "Alastair Fettes",
         "Daniel Weck"
-      ],
+      ] ,
       "title": "EPUB Canonical Fragment Identifiers 1.1",
       "href": "http://www.idpf.org/epub/linking/cfi/epub-cfi.html",
       "publisher": "IDPF",
@@ -681,7 +686,7 @@
         "Tab Atkins Jr.",
         "Elika J. Etemad",
         "Florian Rivoal"
-      ],
+      ] ,
       "status": "W3C Working Group Note",
       "href": "https://www.w3.org/TR/CSS/",
       "publisher": "W3C"
@@ -702,7 +707,7 @@
       "authors": [
         "Timothy W. Cole",
         "Ivan Herman"
-      ],
+      ] ,
       "date": "2018-01-04"
     },
     "pwpub": {
@@ -710,7 +715,7 @@
       "href": "https://www.w3.org/TR/pwpub/",
       "authors": [
         "David Wood"
-      ],
+      ] ,
       "date": "2018-01-04"
     },
     "wpub": {
@@ -719,7 +724,7 @@
       "authors": [
         "Matt Garrish",
         "Ivan Herman"
-      ],
+      ] ,
       "date": "2018-01-04"
     },
     "pub-manifest": {
@@ -728,7 +733,7 @@
       "authors": [
         "Matt Garrish",
         "Ivan Herman"
-      ],
+      ] ,
       "date": "2018-08-16",
       "id": "pub-manifest"
     },
@@ -737,7 +742,7 @@
       "href": "https://w3c.github.io/lpf/",
       "authors": [
         "Laurent Le Meur"
-      ],
+      ] ,
       "date": "2018-08-07",
       "id": "lpf"
     },
@@ -747,7 +752,7 @@
       "authors": [
         "Marisa DeMeglio",
         "Daniel Weck"
-      ],
+      ] ,
       "date": "2019-07-12"
     },
     "string-meta": {
@@ -756,7 +761,7 @@
       "authors": [
         "Addison Phillips",
         "Richard Ishida"
-      ],
+      ] ,
       "date": "2017-12-01"
     },
     "schema.org": {
@@ -778,7 +783,7 @@
       "uri": "audiobooks.epub",
       "label": "EPUB"
     }
-  ],
+  ] ,
   "publishDate": "2020-11-10",
   "publishISODate": "2020-11-10T00:00:00.000Z",
   "generatedSubtitle": "Recommendation 10 November 2020"
@@ -1042,15 +1047,15 @@
 
 			<p>本規格目的為對有聲書在網頁以及在企業間的遞送模型進行標準化。其應該促進於不同的為了供消費有聲書的使用者代理架構間通用。主要的目標是協助目前少受到標準化助力的出版界能夠更為明確，無論是在開放網頁平台或者新的使用者代理上開啟有聲書。本規格不描繪何種檔案類別或者格式應該受到內容創作者所使用，僅提供宣告格式供遞送使用。</p>
 
-			<p>本規格不定義使用者代理如何去處理有聲書。關於使用者代理該提供何種努力以提供對使用者閱讀經驗的強化細節，則定義在[<cite><a class="bibref" data-link-type="biblio" href="#bib-pwp-ucr"
-						title="Web Publications Use Cases and Requirements">pwp-ucr</a></cite>]中。</p>
+			<p>本規格不定義使用者代理如何去處理有聲書。關於使用者代理該提供何種努力以提供對使用者閱讀經驗的強化細節，則定義在 [<cite><a class="bibref" data-link-type="biblio" href="#bib-pwp-ucr"
+						title="Web Publications Use Cases and Requirements">pwp-ucr</a></cite>] 中。</p>
 		</section>
 		<section id="audio-terminology">
 			<h2 id="x2-terminology"><bdi class="secno">2. </bdi>術語<a class="self-link" aria-label="§"
 					href="#audio-terminology"></a></h2>
 
-			<p>特別供出版界使用具有特殊意涵的術語在本文件中為首字大寫（中文版則加上括號，如「閱讀系統」）。這些<a href="https://www.w3.org/TR/pub-manifest/#terminology">術語及其定義</a>的完整清單則提供在[<cite><a class="bibref" data-link-type="biblio"
-						href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>]中。</p>
+			<p>特別供出版界使用具有特殊意涵的術語在本文件中為首字大寫（中文版則加上括號，如「閱讀系統」）。這些<a href="https://www.w3.org/TR/pub-manifest/#terminology">術語及其定義</a>的完整清單則提供在 [<cite><a class="bibref" data-link-type="biblio"
+						href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>] 中。</p>
 
 			<p>每一章節術語僅在第一次出現時，連結到其定義。</p>
 
@@ -1073,7 +1078,7 @@
 					href="https://tools.ietf.org/html/bcp14">BCP 14</a> [<cite><a class="bibref" data-link-type="biblio"
 						href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels"
 					>RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174"
-						title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]之記述解釋，同時也僅於在出現時以全大寫（中文為斜體）顯示。</p>
+						title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>] 之記述解釋，同時也僅於在出現時以全大寫（中文為斜體）顯示。</p>
 		</section>
 		<section id="audio-construction">
 			<h2 id="x4-construction"><bdi class="secno">4. </bdi>建構程序<a class="self-link" aria-label="§"
@@ -1087,9 +1092,9 @@
 						href="#audio-resourcelist">資源</a>，其表示有聲書期盼的開始資源，以及在其宣告中提供被發現性。一般用於介紹該有聲書並且提供對內容的存取。</p>
 
 				<p>主要進入頁面<em class="rfc2119">必需</em>包含對宣告或者<a
-						href="https://www.w3.org/TR/pub-manifest/#manifest-embed">嵌入宣告</a>[<cite><a
+						href="https://www.w3.org/TR/pub-manifest/#manifest-embed">嵌入宣告</a> [<cite><a
 							class="bibref" data-link-type="biblio" href="#bib-pub-manifest" title="Publication Manifest"
-							>pub-manifest</a></cite>]的<a
+							>pub-manifest</a></cite>] 的<a
 						href="https://www.w3.org/TR/pub-manifest/#manifest-link">連結</a>。其也<em class="rfc2119">應該</em>包含目錄。</p>
 
 				<p>有聲書<em class="rfc2119">必需</em>包含一份主要進入頁面，除非在<a
@@ -1102,10 +1107,10 @@
 
 				<p>目錄提供了一份階層清單的連結，可供反應有聲書及其任何可能包含補充內容之主要章節的結構大綱。</p>
 
-				<p>目錄透過其資源之一中的[<cite><a class="bibref" data-link-type="biblio"
-							href="#bib-html" title="HTML Standard">html</a></cite>]元素（一般為nav元素）表述。該元素<em class="rfc2119">必需</em>透過其role屬性[<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>]值&quot;<code>doc-toc</code>&quot; [<cite><a class="bibref" data-link-type="biblio" href="#bib-dpub-aria-1.0" title="Digital Publishing WAI-ARIA Module 1.0">dpub-aria-1.0</a></cite>]作為識別。</p>
+				<p>目錄透過其資源之一中的 [<cite><a class="bibref" data-link-type="biblio"
+							href="#bib-html" title="HTML Standard">html</a></cite>] 元素（一般為nav元素）表述。該元素<em class="rfc2119">必需</em>透過其role屬性 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>] 值&quot;<code>doc-toc</code>&quot; [<cite><a class="bibref" data-link-type="biblio" href="#bib-dpub-aria-1.0" title="Digital Publishing WAI-ARIA Module 1.0">dpub-aria-1.0</a></cite>] 作為識別。</p>
 
-				<p>當目錄位於<a href="#audio-pep">主要進入頁面</a>時，目錄<em class="rfc2119">必需</em>為該文件的第一個元素—在文件樹狀順序[<cite><a class="bibref" data-link-type="biblio" href="#bib-dom" title="DOM Standard">dom</a></cite>]中—及其role值。此外，宣告<em class="rfc2119">應該</em>識別出包含該結構的資源。</p>
+				<p>當目錄位於<a href="#audio-pep">主要進入頁面</a>時，目錄<em class="rfc2119">必需</em>為該文件的第一個元素—在文件樹狀順序 [<cite><a class="bibref" data-link-type="biblio" href="#bib-dom" title="DOM Standard">dom</a></cite>] 中—及其role值。此外，宣告<em class="rfc2119">應該</em>識別出包含該結構的資源。</p>
 
 				<p>當目錄不位於<a href="#audio-pep">主要進入頁面</a>時，宣告<em class="rfc2119">應該</em>識別在結構中包含目錄的資源。</p>
 
@@ -1121,8 +1126,8 @@
 					</li>
 					<li>
 						<p>所有連結<em class="rfc2119">應該</em>參照到<a
-								href="https://www.w3.org/TR/pub-manifest/#publication-resources">出版品資源</a>[<cite><a class="bibref" data-link-type="biblio"
-									href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>]。</p>
+								href="https://www.w3.org/TR/pub-manifest/#publication-resources">出版品資源</a> [<cite><a class="bibref" data-link-type="biblio"
+									href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>] 。</p>
 					</li>
 				</ul>
 
@@ -1139,7 +1144,7 @@
 					</div>
 					<p class="">若要了解更多供目錄結構與格式的指南，請參考<a
 							href="https://w3c.github.io/pub-manifest/#app-toc-structure">出版品宣告 - 機讀目錄</a> [<cite><a class="bibref" data-link-type="biblio"
-								href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>]。</p>
+								href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>] 。</p>
 				</div>
 
 			</section>
@@ -1155,13 +1160,13 @@
 					<em>本章節為非規範性。</em>
 				</p>
 
-				<p>有聲書宣告由一組特性所定義，其解釋了使用者代理所需要用於處理以及呈現有聲書的基本資訊。這些特性在出版品宣告[<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>]中進行分類。這些特性於本章節中為來自出版品宣告中的延伸。</p>
+				<p>有聲書宣告由一組特性所定義，其解釋了使用者代理所需要用於處理以及呈現有聲書的基本資訊。這些特性在出版品宣告 [<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>] 中進行分類。這些特性於本章節中為來自出版品宣告中的延伸。</p>
 
 				<div class="note" role="note" id="issue-container-generatedID-1">
 					<div role="heading" class="note-title marker" id="h-note-1" aria-level="4">
 						<span>注意事項</span>
 					</div>
-					<p class="">有聲書宣告由特別「型態」的[<cite><a class="bibref" data-link-type="biblio" href="#bib-json-ld11" title="JSON-LD 1.1">json-ld11</a></cite>]所定義。其型態也非正式地透過一個JSON綱要[<cite><a class="bibref" data-link-type="biblio" href="#bib-json-schema" title="JSON Schema: core definitions and terminology">json-schema</a></cite>]所定義，其表達了定義於本規格中的限制。該綱要維護於<a href="https://www.w3.org/ns/pub-schema/audiobooks/">https://www.w3.org/ns/pub-schema/audiobooks/</a>。</p>
+					<p class="">有聲書宣告由特別「型態」的 [<cite><a class="bibref" data-link-type="biblio" href="#bib-json-ld11" title="JSON-LD 1.1">json-ld11</a></cite>] 所定義。其型態也非正式地透過一個JSON綱要 [<cite><a class="bibref" data-link-type="biblio" href="#bib-json-schema" title="JSON Schema: core definitions and terminology">json-schema</a></cite>] 所定義，其表達了定義於本規格中的限制。該綱要維護於<a href="https://www.w3.org/ns/pub-schema/audiobooks/">https://www.w3.org/ns/pub-schema/audiobooks/</a>。</p>
 				</div>
 			</section>
 
@@ -1174,11 +1179,11 @@
 					<div role="heading" class="note-title marker" id="h-note-2" aria-level="4">
 						<span>注意事項</span>
 					</div>
-					<p class="">特性清單使用於[<cite><a　class="bibref" data-link-type="biblio" href="#bib-schema.org" title="Schema.org">schema.org</a></cite>]與[<cite><a class="bibref" data-link-type="biblio"　href="#bib-pub-manifest" </p>
+					<p class="">特性清單使用於 [<cite><a　class="bibref" data-link-type="biblio" href="#bib-schema.org" title="Schema.org">schema.org</a></cite>]與[<cite><a class="bibref" data-link-type="biblio"　href="#bib-pub-manifest">pub-manifest</a></cite>]解釋的特性正式名稱。也包含了在括號中的描述性標籤，當這些特性不明確時用以說明。</p>
 				</div>
 
 				<dl>
-					<dt><em class="rfc2119">需要</em>：</dt>
+					<dt><em class="rfc2119">必要</em>：</dt>
 					<dd>
 						<ul>
 							<li>
@@ -1297,8 +1302,8 @@
 						<span>注意事項</span>
 					</div>
 					<p class="">有些特性為潛性需求，他們可能在沒有明確被寫出時可由替代資訊所取得。請參考<a
-							href="https://www.w3.org/TR/pub-manifest/#app-internal-rep-data-model">內在表述資料模型</a>[<cite><a class="bibref" data-link-type="biblio"
-								href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>]以獲得更多資訊（有聲書呈現在<code>type</code>術語上僅有預設值不同）。</p>
+							href="https://www.w3.org/TR/pub-manifest/#app-internal-rep-data-model">內在表述資料模型</a> [<cite><a class="bibref" data-link-type="biblio"
+								href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>] 以獲得更多資訊（有聲書呈現在<code>type</code>術語上僅有預設值不同）。</p>
 				</div>
 			</section>
 
@@ -1306,10 +1311,10 @@
 				<h3 id="x5-3-manifest-contexts"><bdi class="secno">5.3 </bdi>宣告脈絡<a class="self-link"
 						aria-label="§" href="#audio-context"></a></h3>
 
-				<p>有聲書宣告必須由設定JSON-LD脈絡[<cite><a class="bibref" data-link-type="biblio" href="#bib-json-ld" title="JSON-LD 1.0">json-ld</a></cite>]開始。其脈絡由以下主要元件所構成：</p>
+				<p>有聲書宣告必須由設定JSON-LD脈絡 [<cite><a class="bibref" data-link-type="biblio" href="#bib-json-ld" title="JSON-LD 1.0">json-ld</a></cite>] 開始。其脈絡由以下主要元件所構成：</p>
 
 				<ul>
-					<li>[<cite><a class="bibref" data-link-type="biblio" href="#bib-schema.org" title="Schema.org"
+					<li> [<cite><a class="bibref" data-link-type="biblio" href="#bib-schema.org" title="Schema.org"
 								>schema.org</a></cite>] 脈絡：<code>https://schema.org</code></li>
 					<li>出版品脈絡：<code>https://www.w3.org/ns/pub-context</code></li>
 				</ul>
@@ -1320,14 +1325,14 @@
 						<span class="example-title">：脈絡宣告。</span>
 					</div>
 					<pre aria-busy="false"><code class="hljs javascript">{
-    <span class="hljs-string">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>],
+    <span class="hljs-string">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>] ,
     …
 }</code></pre>
 				</div>
 
 				<p>為了在宣告詮釋資料中支援全球語言與書寫方向，也可以在脈絡中加入<a
-						href="https://www.w3.org/TR/pub-manifest/#manifest-lang-dir">語言與方向</a>宣告[<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest"
-							title="Publication Manifest">pub-manifest</a></cite>]：</p>
+						href="https://www.w3.org/TR/pub-manifest/#manifest-lang-dir">語言與方向</a>宣告 [<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest"
+							title="Publication Manifest">pub-manifest</a></cite>] ：</p>
 
 				<div class="example" id="example-2-declaring-french-as-the-default-language-for-the-manifest">
 					<div class="marker">
@@ -1340,7 +1345,7 @@
         <span class="hljs-string">"https://schema.org"</span>,
         <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>,
         {<span class="hljs-attr">"language"</span>:<span class="hljs-string">"fr"</span>}
-    ]
+    ] 
     …
 }</code></pre>
 				</div>
@@ -1351,8 +1356,8 @@
 				<h3 id="x5-4-publication-conformance"><bdi class="secno">5.4 </bdi>出版品適用性<a
 						class="self-link" aria-label="§" href="#audio-conformance"></a></h3>
 
-				<p>在<a href="https://www.w3.org/TR/pub-manifest/#profile-conformance"><code>conformsTo</code>術語</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest"
-							title="Publication Manifest">pub-manifest</a></cite>]中表述適用性的URL<em class="rfc2119">必需</em>為&quot;<code>https://www.w3.org/TR/audiobooks/</code>&quot;。</p>
+				<p>在<a href="https://www.w3.org/TR/pub-manifest/#profile-conformance"><code>conformsTo</code>術語</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest"
+							title="Publication Manifest">pub-manifest</a></cite>] 中表述適用性的URL<em class="rfc2119">必需</em>為&quot;<code>https://www.w3.org/TR/audiobooks/</code>&quot;。</p>
 
 				<div class="example" id="example-3-setting-a-publication-s-conformance-to-audiobook">
 					<div class="marker">
@@ -1361,7 +1366,7 @@
 						<span class="example-title">：設定出版品適用於有聲書。</span>
 					</div>
 					<pre aria-busy="false"><code class="hljs json">{
-    <span class="hljs-attr">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>],
+    <span class="hljs-attr">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>] ,
     <span class="hljs-attr">"conformsTo"</span> : <span class="hljs-string">"https://www.w3.org/TR/audiobooks/"</span>
     …
 }</code></pre>
@@ -1373,8 +1378,8 @@
 				<h3 id="x5-5-publication-type"><bdi class="secno">5.5 </bdi>出版品類型<a class="self-link"
 						aria-label="§" href="#audio-type"></a></h3>
 
-				<p><dfn id="dfn-publication-type">出版品類型</dfn>由<code>type</code>術語[<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest"
-							title="Publication Manifest">pub-manifest</a></cite>]所定義。</p>
+				<p><dfn id="dfn-publication-type">出版品類型</dfn>由<code>type</code>術語 [<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest"
+							title="Publication Manifest">pub-manifest</a></cite>] 所定義。</p>
 
 				<div class="example" id="example-4-setting-a-publication-s-type-to-audiobook">
 					<div class="marker">
@@ -1383,14 +1388,14 @@
 						<span class="example-title">：設定出版品的類型為有聲書。</span>
 					</div>
 					<pre aria-busy="false"><code class="hljs json">{
-    <span class="hljs-attr">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>],
+    <span class="hljs-attr">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>] ,
     <span class="hljs-attr">"type"</span>     : <span class="hljs-string">"Audiobook"</span>
 		…
 }</code></pre>
 				</div>
 
-				<p>如果未定義<code>type</code>，則預設值推測為<a href="https://schema.org/Audiobook"><code><code>Audiobook</code></code>[[<cite><a class="bibref" data-link-type="biblio"
-							href="#bib-schema.org" title="Schema.org">schema.org</a></cite>]。</p>
+				<p>如果未定義<code>type</code>，則預設值推測為<a href="https://schema.org/Audiobook"><code><code>Audiobook</code></code> [ [<cite><a class="bibref" data-link-type="biblio"
+							href="#bib-schema.org" title="Schema.org">schema.org</a></cite>] 。</p>
 			</section>
 
 			<section id="audio-properties">
@@ -1401,9 +1406,9 @@
 					<h4 id="x5-6-1-creators"><bdi class="secno">5.6.1 </bdi>創作者<a class="self-link" aria-label="§"
 							href="#audio-creators"></a></h4>
 
-					<p><dfn id="dfn-creator">創作者</dfn>為對製作該有聲書的個人或負責的單位。有聲書子規格可使用定義在[<cite><a
+					<p><dfn id="dfn-creator">創作者</dfn>為對製作該有聲書的個人或負責的單位。有聲書子規格可使用定義在 [<cite><a
 								class="bibref" data-link-type="biblio" href="#bib-pub-manifest"
-								title="Publication Manifest">pub-manifest</a></cite>]的<a href="https://www.w3.org/TR/pub-manifest/#creators">創作者</a>完整清單。</p>
+								title="Publication Manifest">pub-manifest</a></cite>] 的<a href="https://www.w3.org/TR/pub-manifest/#creators">創作者</a>完整清單。</p>
 
 					<p>創作者清單包含兩個推薦的有聲書創作者：</p>
 
@@ -1423,7 +1428,7 @@
 						</div>
 						<pre aria-busy="false"><code class="hljs javascript">{
     <span class="hljs-string">"conformsTo"</span> : <span class="hljs-string">"https://www.w3.org/TR/audiobooks/"</span>,
-    <span class="hljs-string">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>,<span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>],
+    <span class="hljs-string">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>,<span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>] ,
     <span class="hljs-string">"type"</span> : <span class="hljs-string">"Audiobook"</span>,
     …
     <span class="hljs-string">"url"</span> : <span class="hljs-string">"https://publisher.example.org/janeeyre"</span>,
@@ -1442,7 +1447,7 @@
 						</div>
 						<pre aria-busy="false"><code class="hljs javascript">{
     <span class="hljs-string">"conformsTo"</span> : <span class="hljs-string">"https://www.w3.org/TR/audiobooks/"</span>;
-    <span class="hljs-string">"@context"</span>: [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>],
+    <span class="hljs-string">"@context"</span>: [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>] ,
     …
     <span class="hljs-string">"url"</span>	: <span class="hljs-string">"https://publisher.example.org/janeeyre"</span>,
     <span class="hljs-string">"author"</span> : {
@@ -1462,7 +1467,7 @@
 					<h4 id="x5-6-2-duration"><bdi class="secno">5.6.2 </bdi>長度<a class="self-link" aria-label="§"
 							href="#audio-duration"></a></h4>
 
-					<p><dfn id="dfn-duration">長度</dfn>是有聲書中聲音資源的時長。duration特性完整定義於<a href="https://www.w3.org/TR/pub-manifest/#duration">出版品宣告</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>]。</p>
+					<p><dfn id="dfn-duration">長度</dfn>是有聲書中聲音資源的時長。duration特性完整定義於<a href="https://www.w3.org/TR/pub-manifest/#duration">出版品宣告</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>] 。</p>
 
 					<p>長度<em class="rfc2119">應該</em>要作為宣告的一部分表述整個有聲書的長度，並且<em class="rfc2119">應該</em>在<a href="#audio-readingorder">預設閱讀順序</a>中以項目等級呈現。</p>
 					
@@ -1476,7 +1481,7 @@
 						</div>
 						<pre aria-busy="false"><code class="hljs javascript">{
     <span class="hljs-string">"conformsTo"</span> : <span class="hljs-string">"https://www.w3.org/TR/audiobooks/"</span>,
-    <span class="hljs-string">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>,<span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>],
+    <span class="hljs-string">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>,<span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>] ,
     …
     <span class="hljs-string">"url"</span> : <span class="hljs-string">"https://publisher.example.org/janeeyre"</span>,
     <span class="hljs-string">"author"</span> : {
@@ -1498,12 +1503,12 @@
 				<p><a href="https://www.w3.org/TR/pub-manifest/#default-reading-order"><dfn
 							id="dfn-default-reading-order">預設閱讀順序</dfn></a> [<cite><a class="bibref"
 							data-link-type="biblio" href="#bib-pub-manifest" title="Publication Manifest"
-							>pub-manifest</a></cite>]為有聲書中所有聲音資源的指定進行順序。</p>
+							>pub-manifest</a></cite>] 為有聲書中所有聲音資源的指定進行順序。</p>
 
-				<p>預設閱讀順序<em class="rfc2119">必需</em>包含至少一個聲音資源，其<em class="rfc2119">可以</em>透過<code>type</code>指定為<a href="https://www.w3.org/TR/pub-manifest/#value-linked-resource"><code>LinkedResource</code></a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest"
-							title="Publication Manifest">pub-manifest</a></cite>]。預設閱讀順序<em class="rfc2119">不得</em>包含非聲音的資源。</p>
+				<p>預設閱讀順序<em class="rfc2119">必需</em>包含至少一個聲音資源，其<em class="rfc2119">可以</em>透過<code>type</code>指定為<a href="https://www.w3.org/TR/pub-manifest/#value-linked-resource"><code>LinkedResource</code></a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest"
+							title="Publication Manifest">pub-manifest</a></cite>] 。預設閱讀順序<em class="rfc2119">不得</em>包含非聲音的資源。</p>
 
-				<p>聲音資源整體可透過一個URL[<cite><a class="bibref" data-link-type="biblio" href="#bib-url" title="URL Standard">url</a></cite>]所參照，或者對於內容其多數章節在單一檔案中，可以使用<a href="https://www.w3.org/TR/media-frags/">媒體斷片（Media Fragments）</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-media-frags" title="Media Fragments URI 1.0 (basic)">media-frags</a></cite>]來指定精確的開始與結束點。</p>
+				<p>聲音資源整體可透過一個URL [<cite><a class="bibref" data-link-type="biblio" href="#bib-url" title="URL Standard">url</a></cite>] 所參照，或者對於內容其多數章節在單一檔案中，可以使用<a href="https://www.w3.org/TR/media-frags/">媒體斷片（Media Fragments）</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-media-frags" title="Media Fragments URI 1.0 (basic)">media-frags</a></cite>] 來指定精確的開始與結束點。</p>
 
 				<div class="note" role="note" id="issue-container-generatedID-4">
 					<div role="heading" class="note-title marker" id="h-note-4" aria-level="4">
@@ -1527,7 +1532,7 @@
 						<span class="example-title">：單一資源的有聲書閱讀順序。</span>
 					</div>
 					<pre aria-busy="false"><code class="hljs json">{
-    <span class="hljs-attr">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>],
+    <span class="hljs-attr">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>] ,
     <span class="hljs-attr">"conformsTo"</span> : <span class="hljs-string">"https://www.w3.org/TR/audiobooks/"</span>,
     <span class="hljs-attr">"url"</span> : <span class="hljs-string">"https://publisher.example.org/janeeyre"</span>,
     <span class="hljs-attr">"name"</span> : <span class="hljs-string">"Jane Eyre"</span>,
@@ -1537,7 +1542,7 @@
         <span class="hljs-attr">"encodingFormat"</span> : <span class="hljs-string">"audio/mp3"</span>,
         <span class="hljs-attr">"name"</span> : <span class="hljs-string">"Jane Eyre"</span>,
         <span class="hljs-attr">"duration"</span> : <span class="hljs-string">"PT124503.123S"</span>
-    }]
+    }] 
 }</code></pre>
 				</div>
 
@@ -1549,7 +1554,7 @@
 						<span class="example-title">：多重資源使用媒體斷片的有聲書閱讀順序。</span>
 					</div>
 					<pre aria-busy="false"><code class="hljs json">{
-    <span class="hljs-attr">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>],
+    <span class="hljs-attr">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>] ,
     <span class="hljs-attr">"conformsTo"</span> : <span class="hljs-string">"https://www.w3.org/TR/audiobooks/"</span>,
     <span class="hljs-attr">"url"</span> : <span class="hljs-string">"https://publisher.example.org/janeeyre"</span>,
     <span class="hljs-attr">"name"</span> : <span class="hljs-string">"Jane Eyre"</span>,
@@ -1565,7 +1570,7 @@
         <span class="hljs-attr">"encodingFormat"</span> : <span class="hljs-string">"audio/vnd-wav"</span>,
         <span class="hljs-attr">"name"</span> : <span class="hljs-string">"Chapter 2"</span>,
         <span class="hljs-attr">"duration"</span> : <span class="hljs-string">"PT234.245S"</span>
-    }]
+    }] 
 }</code></pre>
 				</div>
 
@@ -1586,7 +1591,7 @@
 						<span class="example-title">：有補充內容的有聲書</span>
 					</div>
 					<pre aria-busy="false"><code class="hljs json">{
-    <span class="hljs-attr">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>],
+    <span class="hljs-attr">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>] ,
     <span class="hljs-attr">"conformsTo"</span> : <span class="hljs-string">"https://www.w3.org/TR/audiobooks/"</span>,
     <span class="hljs-attr">"url"</span> : <span class="hljs-string">"https://publisher.example.org/janeeyre"</span>,
     <span class="hljs-attr">"name"</span> : <span class="hljs-string">"Jane Eyre"</span>,
@@ -1594,7 +1599,7 @@
         <span class="hljs-string">"cover.jpg"</span>,
         <span class="hljs-string">"portrait_CB.jpg"</span>,
         <span class="hljs-string">"supplement.pdf"</span>
-    ]
+    ] 
 }</code></pre>
 				</div>
 			</section>
@@ -1605,8 +1610,8 @@
 
 				<p>預覽為讓使用者在購買或者下載完整有聲書之前，能夠提供體驗內容的常見方式。</p>
 
-				<p><a href="https://www.w3.org/TR/pub-manifest/#preview">預覽</a>透過<code>preview</code>連結關係來指定，如[<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest" title="Publication Manifest"
-							>pub-manifest</a></cite>]中所定義。</p>
+				<p><a href="https://www.w3.org/TR/pub-manifest/#preview">預覽</a>透過<code>preview</code>連結關係來指定，如 [<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest" title="Publication Manifest"
+							>pub-manifest</a></cite>] 中所定義。</p>
 
 				<p>預覽<em class="rfc2119">可以</em>位於外部，或者包含在有聲書的資源中。</p>
 
@@ -1617,7 +1622,7 @@
 						<span class="example-title">：有著外部預覽的有聲書。</span>
 					</div>
 					<pre aria-busy="false"><code class="hljs json">{
-    <span class="hljs-attr">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>],
+    <span class="hljs-attr">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>] ,
     <span class="hljs-attr">"conformsTo"</span> : <span class="hljs-string">"https://www.w3.org/TR/audiobooks/"</span>,
     <span class="hljs-attr">"url"</span>	: <span class="hljs-string">"https://publisher.example.org/janeeyre"</span>,
     <span class="hljs-attr">"name"</span> : <span class="hljs-string">"Jane Eyre"</span>,
@@ -1626,7 +1631,7 @@
         <span class="hljs-attr">"url"</span> : <span class="hljs-string">"https://publisher.example.org/jane-eyre-preview.wav"</span>,
         <span class="hljs-attr">"encodingFormat"</span> : <span class="hljs-string">"audio/wav"</span>,
         <span class="hljs-attr">"rel"</span> : <span class="hljs-string">"preview"</span>
-    }]
+    }] 
 }</code></pre>
 				</div>
 
@@ -1637,7 +1642,7 @@
 						<span class="example-title">：有著內部預覽的有聲書。</span>
 					</div>
 					<pre aria-busy="false"><code class="hljs json">{
-    <span class="hljs-attr">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>],
+    <span class="hljs-attr">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>] ,
     <span class="hljs-attr">"conformsTo"</span> : <span class="hljs-string">"https://www.w3.org/TR/audiobooks/"</span>,
     <span class="hljs-attr">"url"</span>	: <span class="hljs-string">"https://publisher.example.org/janeeyre"</span>,
     <span class="hljs-attr">"name"</span> : <span class="hljs-string">"Jane Eyre"</span>,
@@ -1646,7 +1651,7 @@
         <span class="hljs-attr">"url"</span>	: <span class="hljs-string">"preview.wav"</span>,
         <span class="hljs-attr">"encodingFormat"</span> : <span class="hljs-string">"audio/wav"</span>,
         <span class="hljs-attr">"rel"</span>	: <span class="hljs-string">"preview"</span>
-    }]
+    }] 
 }</code></pre>
 				</div>
 			</section>
@@ -1660,7 +1665,7 @@
 
 				<p>有聲書可以使用解釋於<a href="https://www.w3.org/TR/lpf/"
 						>輕量包裝格式（Lightweight Packaging Format）</a> [<cite><a class="bibref" data-link-type="biblio"
-							href="#bib-lpf" title="Lightweight Packaging Format (LPF)">lpf</a></cite>]注意事項中的方式來進行包裝。</p>
+							href="#bib-lpf" title="Lightweight Packaging Format (LPF)">lpf</a></cite>] 注意事項中的方式來進行包裝。</p>
 
 			</section>
 
@@ -1678,8 +1683,8 @@
 
 	
 
-				<p>作為替代，內容創作者可以在<a href="#audio-resourcelist">資源</a>中以HTML[<cite><a class="bibref"
-							data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>]資源提供相同的文字內容。</p>
+				<p>作為替代，內容創作者可以在<a href="#audio-resourcelist">資源</a>中以HTML [<cite><a class="bibref"
+							data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>] 資源提供相同的文字內容。</p>
 
 				<div class="example" id="example-13-audiobook-with-alternate-text">
 					<div class="marker">
@@ -1687,7 +1692,7 @@
 						<span class="example-title">：有著替代文字的有聲書。</span>
 					</div>
 					<pre aria-busy="false"><code class="hljs json">{
-    <span class="hljs-attr">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>],
+    <span class="hljs-attr">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>] ,
     <span class="hljs-attr">"conformsTo"</span> : <span class="hljs-string">"https://www.w3.org/TR/audiobooks/"</span>,
     <span class="hljs-attr">"url"</span> : <span class="hljs-string">"https://publisher.example.org/janeeyre"</span>,
     <span class="hljs-attr">"name"</span> : <span class="hljs-string">"Jane Eyre"</span>,
@@ -1707,7 +1712,7 @@
          <span class="hljs-attr">"url"</span>: <span class="hljs-string">"text/part001-1.html"</span>,
          <span class="hljs-attr">"encodingFormat"</span> : <span class="hljs-string">"text/html"</span>
      }…
-    ]
+    ] 
 }</code></pre>
 				</div>
 			</section>
@@ -1718,13 +1723,13 @@
 					aria-label="§" href="#audio-manifest-processing"></a></h2>
 
 			<p>
-				<em>本章節依賴於Infra標準[<cite><a class="bibref" data-link-type="biblio"
-							href="#bib-infra" title="Infra Standard">infra</a></cite>]。</em>
+				<em>本章節依賴於Infra標準 [<cite><a class="bibref" data-link-type="biblio"
+							href="#bib-infra" title="Infra Standard">infra</a></cite>] 。</em>
 			</p>
 
 			<p>本規格延伸出版品宣告<a
-					href="https://www.w3.org/TR/pub-manifest/#manifest-processing">處理演算法</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest"
-						title="Publication Manifest">pub-manifest</a></cite>]如下：</p>
+					href="https://www.w3.org/TR/pub-manifest/#manifest-processing">處理演算法</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest"
+						title="Publication Manifest">pub-manifest</a></cite>] 如下：</p>
 
 			<dl>
 				<dt>計算內部表述（Generating the Internal Representation）</dt>
@@ -1739,28 +1744,28 @@
 									<p>讓<var>resourceDuration</var>持有個別資源的總長度。</p>
 								</li>
 								<li id="processing-duration-iterate">
-									<p>對每一個<var>resource</var>的<var>data[&quot;readingOrder&quot;]<a href="https://infra.spec.whatwg.org/#list-iterate">For each</a>
-										<var>resource</var> of <var>data["readingOrder"]</var>：</p>
+									<p>對每一個<var>resource</var>的<var>data [&quot;readingOrder&quot;] <a href="https://infra.spec.whatwg.org/#list-iterate">For each</a>
+										<var>resource</var> of <var>data ["readingOrder"] </var>：</p>
 									<ol>
 										<li id="processing-duration-res-none">
-											<p>如果<var>resource[&quot;duration&quot;]</var>未定義，<a
+											<p>如果<var>resource [&quot;duration&quot;] </var>未定義，<a
 													href="https://www.w3.org/TR/pub-manifest/#dfn-validation-errors"
 													>驗證為錯誤M</a>。</p>
 										</li>
 										<li id="processing-duration-add">
-											<p>以外，如果<var>resource[&quot;duration&quot;]</var>，則新增<var>resource[&quot;duration&quot;]</var>為<var>resourceDuration</var>。</p>
+											<p>以外，如果<var>resource [&quot;duration&quot;] </var>，則新增<var>resource [&quot;duration&quot;] </var>為<var>resourceDuration</var>。</p>
 										</li>
 									</ol>
 								</li>
 								<li id="processing-duration-total">
-									<p>如果未設定<var>data[&quot;duration&quot;]</var>以至於值無法被比較，<a href="https://www.w3.org/TR/pub-manifest/#dfn-validation-errors">驗證為錯誤</a>。</p>
-									<p>以外，如果<var>resourceDuration</var>和<var>data[&quot;duration&quot;]</var>代表的整體長度不一致，驗證為錯誤。</p>
+									<p>如果未設定<var>data [&quot;duration&quot;] </var>以至於值無法被比較，<a href="https://www.w3.org/TR/pub-manifest/#dfn-validation-errors">驗證為錯誤</a>。</p>
+									<p>以外，如果<var>resourceDuration</var>和<var>data [&quot;duration&quot;] </var>代表的整體長度不一致，驗證為錯誤。</p>
 								</li>
 							</ol>
 							<details>
 								<summary>解釋</summary>
 								<p>本步驟同時檢驗在閱讀順序中指定長度的所有資源，並且加總所有這些長度以匹配該出版品的總長度。</p>
-								<p>驗證錯誤僅會在確認每一個資源時，如果資源沒有指定長度時發出。<a href="https://www.w3.org/TR/pub-manifest/#validate-duration">長度的有效性</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>]已經在出版品宣告演算法中檢查過了所以沒有重複進行的必要。</p>
+								<p>驗證錯誤僅會在確認每一個資源時，如果資源沒有指定長度時發出。<a href="https://www.w3.org/TR/pub-manifest/#validate-duration">長度的有效性</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>] 已經在出版品宣告演算法中檢查過了所以沒有重複進行的必要。</p>
 							</details>
 						</li>
 					</ol>
@@ -1775,15 +1780,15 @@
 							<p>（<a href="#audio-readingorder" class="sec-ref">§<bdi class="secno">5.7</bdi>預設閱讀順序</a>）依以下方式確認閱讀順序：</p>
 							<ol>
 								<li id="validate-ro-none">
-									<p>如果未設定<var>data[&quot;readingOrder&quot;]</var>，則為<a
+									<p>如果未設定<var>data [&quot;readingOrder&quot;] </var>，則為<a
 											href="https://www.w3.org/TR/pub-manifest/#dfn-fatal-errors">嚴重錯誤</a>。</p>
 								</li>
 								<li id="validate-ro-audio">
-									<p><a href="https://infra.spec.whatwg.org/#list-iterate">對每一個</a><var>data[&quot;readingOrder&quot;]</var>中的<var>resource</var>，如果<var>resource</var>不是聲音資源，<a
-											href="https://www.w3.org/TR/pub-manifest/#dfn-validation-errors">驗證為錯誤</a>，由<var>data[&quot;readingOrder&quot;]</var>中<a href="https://infra.spec.whatwg.org/#list-remove">移除</a><var>resource</var>。</p>
+									<p><a href="https://infra.spec.whatwg.org/#list-iterate">對每一個</a><var>data [&quot;readingOrder&quot;] </var>中的<var>resource</var>，如果<var>resource</var>不是聲音資源，<a
+											href="https://www.w3.org/TR/pub-manifest/#dfn-validation-errors">驗證為錯誤</a>，由<var>data [&quot;readingOrder&quot;] </var>中<a href="https://infra.spec.whatwg.org/#list-remove">移除</a><var>resource</var>。</p>
 								</li>
 								<li id="validate-ro-empty">
-									<p>如果<var>data[&quot;readingOrder&quot;]</var>為空白<a
+									<p>如果<var>data [&quot;readingOrder&quot;] </var>為空白<a
 											href="https://infra.spec.whatwg.org/#list">清單</a>，則為<a
 											href="https://www.w3.org/TR/pub-manifest/#dfn-fatal-errors">嚴重錯誤</a>。</p>
 								</li>
@@ -1796,7 +1801,7 @@
 						</li>
 						<li id="validate-type">
 							<p>（<a href="#audio-type" class="sec-ref">§&#160;<bdi class="secno">5.5 </bdi>出版品類別</a>）
-							如果<var>data[&quot;type&quot;]</var>未設定或者為空白<a
+							如果<var>data [&quot;type&quot;] </var>未設定或者為空白<a
 									href="https://infra.spec.whatwg.org/#list">清單</a>，<a
 									href="https://www.w3.org/TR/pub-manifest/#dfn-validation-errors">驗證為錯誤</a>，設定為<code>« &quot;Audiobook&quot; »</code>。</p>
 							<details>
@@ -1809,52 +1814,52 @@
 									</bdi>需求</a>）確認以下每一個特性都有設定。如果沒有，為每一個<a href="https://www.w3.org/TR/pub-manifest/#dfn-validation-errors">驗證為錯誤</a>。</p>
 							<ul>
 								<li>
-									<var>data["abridged"]</var>
+									<var>data ["abridged"] </var>
 								</li>
 								<li>
-									<var>data["accessMode"]</var>
+									<var>data ["accessMode"] </var>
 								</li>
 								<li>
-									<var>data["accessModeSufficient"]</var>
+									<var>data ["accessModeSufficient"] </var>
 								</li>
 								<li>
-									<var>data["accessibilityFeature"]</var>
+									<var>data ["accessibilityFeature"] </var>
 								</li>
 								<li>
-									<var>data["accessibilityHazard"]</var>
+									<var>data ["accessibilityHazard"] </var>
 								</li>
 								<li>
-									<var>data["accessibilitySummary"]</var>
+									<var>data ["accessibilitySummary"] </var>
 								</li>
 								<li>
-									<var>data["author"]</var>
+									<var>data ["author"] </var>
 								</li>
 								<li>
-									<var>data["dateModified"]</var>
+									<var>data ["dateModified"] </var>
 								</li>
 								<li>
-									<var>data["datePublished"]</var>
+									<var>data ["datePublished"] </var>
 								</li>
 								<li>
-									<var>data["id"]</var>
+									<var>data ["id"] </var>
 								</li>
 								<li>
-									<var>data["inLanguage"]</var>
+									<var>data ["inLanguage"] </var>
 								</li>
 								<li>
-									<var>data["name"]</var>
+									<var>data ["name"] </var>
 								</li>
 								<li>
-									<var>data["readBy"]</var>
+									<var>data ["readBy"] </var>
 								</li>
 								<li>
-									<var>data["readingProgression"]</var>
+									<var>data ["readingProgression"] </var>
 								</li>
 								<li>
-									<var>data["resources"]</var>
+									<var>data ["resources"] </var>
 								</li>
 								<li>
-									<var>data["url"]</var>
+									<var>data ["url"] </var>
 								</li>
 							</ul>
 							<details>
@@ -1864,7 +1869,7 @@
 						</li>
 						<li id="validate-rec-relations">
 							<p>（<a href="#audio-requirements" class="sec-ref">§&#160;<bdi class="secno">5.2
-									</bdi>需求</a>） 如果在<var>data[&quot;readingOrder&quot;]</var>中沒有任何資源，或者<var>data[&quot;readingOrder&quot;]</var>中沒有任何擁有<var>rel</var>資料<a href="https://infra.spec.whatwg.org/#list-contain">包含</a><code>cover</code>關聯，則<a href="https://www.w3.org/TR/pub-manifest/#dfn-validation-errors">驗證為錯誤</a>。</p>
+									</bdi>需求</a>） 如果在<var>data [&quot;readingOrder&quot;] </var>中沒有任何資源，或者<var>data [&quot;readingOrder&quot;] </var>中沒有任何擁有<var>rel</var>資料<a href="https://infra.spec.whatwg.org/#list-contain">包含</a><code>cover</code>關聯，則<a href="https://www.w3.org/TR/pub-manifest/#dfn-validation-errors">驗證為錯誤</a>。</p>
 							<details>
 								<summary>解釋</summary>
 								<p>本步驟確認閱讀順序與資源列表已確認封面有被指定（即為一個資源在其<code>rel</code>特性中有其值為<code>cover</code>）</p>
@@ -1881,12 +1886,12 @@
 				<em>本章節為非規範性。</em>
 			</p>
 
-			<p>本規格延伸出版品宣告之<a href="https://www.w3.org/TR/pub-manifest/#app-toc-ua">使用者代理處理演算法</a>供機讀目錄[<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>]以確定目錄元素的位置如下：</p>
+			<p>本規格延伸出版品宣告之<a href="https://www.w3.org/TR/pub-manifest/#app-toc-ua">使用者代理處理演算法</a>供機讀目錄 [<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>] 以確定目錄元素的位置如下：</p>
 
 			<ol>
 				<li>如果有<a href="#dfn-primary-entry-page" class="internalDFN" data-link-type="dfn"
 						id="ref-for-dfn-primary-entry-page-1">主要進入頁面</a>，就執行其演算法以確認在主要進入頁面中目錄元素的位置。 </li>
-				<li>如果前一步沒有成功，尋找相關資源，如果有，如在[<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>]中<a href="https://www.w3.org/TR/pub-manifest/#contents">§4.8.1.3目錄</a>所解釋的宣告，則對該資源執行相同演算法。</li>
+				<li>如果前一步沒有成功，尋找相關資源，如果有，如在 [<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>] 中<a href="https://www.w3.org/TR/pub-manifest/#contents">§4.8.1.3目錄</a>所解釋的宣告，則對該資源執行相同演算法。</li>
 			</ol>
 
 			<p>請見<a href="#audio-toc" class="sec-ref">§<bdi class="secno">4.2</bdi>目錄</a>以取得進一步的細節。</p>
@@ -1895,8 +1900,8 @@
 		<section id="security-privacy">
 			<h2 id="x8-security-and-privacy-considerations"><bdi class="secno">8. </bdi>安全與隱私考量<a class="self-link" aria-label="§" href="#security-privacy"></a></h2>
 
-			<p>有聲書為出版品宣告[<cite><a class="bibref" data-link-type="biblio"
-						href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>]的子規格，所有在該規格中對<a href="https://www.w3.org/TR/pub-manifest/#security-privacy">安全與隱私</a>的考量都是用於本子規格。</p>
+			<p>有聲書為出版品宣告 [<cite><a class="bibref" data-link-type="biblio"
+						href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>] 的子規格，所有在該規格中對<a href="https://www.w3.org/TR/pub-manifest/#security-privacy">安全與隱私</a>的考量都是用於本子規格。</p>
 
 			<p>本子規格認知到以下考量：</p>
 
@@ -1911,27 +1916,27 @@
 				<em>本章節為非規範性。</em>
 			</p>
 
-			<p>本章節勾勒預期的使用者代理對有聲書實裝的行為。對處理程序而言，使用者代理應該參考出版品宣告規格[<cite><a class="bibref"
+			<p>本章節勾勒預期的使用者代理對有聲書實裝的行為。對處理程序而言，使用者代理應該參考出版品宣告規格 [<cite><a class="bibref"
 						data-link-type="biblio" href="#bib-pub-manifest" title="Publication Manifest"
-					>pub-manifest</a></cite>]中的<a
+					>pub-manifest</a></cite>] 中的<a
 					href="https://www.w3.org/TR/pub-manifest/#manifest-processing"><code>處理宣告</code></a>章節，並且合乎以下說明的所有行為。</p>
 
 			<p>所有於本章節中說明的使用者代理行為目的為提供實作者一份指南，而非嚴格要求。本文件中的行為主要來自由工作小組所發表之<a
-					href="https://www.w3.org/TR/pwp-ucr/">使用案例與需求</a>[<cite><a class="bibref"
+					href="https://www.w3.org/TR/pwp-ucr/">使用案例與需求</a> [<cite><a class="bibref"
 						data-link-type="biblio" href="#bib-pwp-ucr" title="Web Publications Use Cases and Requirements"
-						>pwp-ucr</a></cite>]注意事項。</p>
+						>pwp-ucr</a></cite>] 注意事項。</p>
 
 			<section id="audio-ua-navigation">
 				<h3 id="x9-1-opening-and-navigating-the-contents-of-an-audiobook"><bdi class="secno">9.1 </bdi>開啟及導覽有聲書的內容<a class="self-link" aria-label="§"
 						href="#audio-ua-navigation"></a></h3>
 
-				<p>當使用者代理開啟有聲書時，其宣告處理程序按照<a href="https://www.w3.org/TR/pub-manifest/#manifest-processing">出版品宣告</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest"
-							title="Publication Manifest">pub-manifest</a></cite>]中的規則進行，其應該由使用者代理所開啟。<a href="#audio-readingorder">閱讀順序</a>，或者，如果有<a href="#audio-toc"
+				<p>當使用者代理開啟有聲書時，其宣告處理程序按照<a href="https://www.w3.org/TR/pub-manifest/#manifest-processing">出版品宣告</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest"
+							title="Publication Manifest">pub-manifest</a></cite>] 中的規則進行，其應該由使用者代理所開啟。<a href="#audio-readingorder">閱讀順序</a>，或者，如果有<a href="#audio-toc"
 						>目錄</a>的話，應該要對使用者提供無障礙輔助。使用者代理應該能夠在使用者要求時提供有聲書的內容列表。如果在閱讀順序中要呈現非聲音的資源時，使用者代理可以選擇呈現給使用者或者忽略之。</p>
 
 				<p>使用者代理應該提供處理在閱讀順序以及資源清單中非聲音資源的手段。如果內容無法被使用者代理所顯示，則推薦使用者代理告知使用者有該內容但無法顯示。</p>
 
-				<p>當使用者代理開啟有聲書時，其宣告處理程序按照出版品宣告[pub-manifest]中的規則進行，其應該由使用者代理所開啟。閱讀順序，或者，如果有目錄的話，應該要對使用者提供無障礙輔助。使用者代理應該能夠在使用者要求時提供有聲書的內容列表。如果在閱讀順序中要呈現非聲音的資源時，使用者代理可以選擇呈現給使用者或者忽略之。</p>
+				<p>當使用者代理開啟有聲書時，其宣告處理程序按照出版品宣告 [pub-manifest] 中的規則進行，其應該由使用者代理所開啟。閱讀順序，或者，如果有目錄的話，應該要對使用者提供無障礙輔助。使用者代理應該能夠在使用者要求時提供有聲書的內容列表。如果在閱讀順序中要呈現非聲音的資源時，使用者代理可以選擇呈現給使用者或者忽略之。</p>
 				<p>當有<a href="#audio-pep">主要進入頁面</a>時，其預期應該是有聲書的進入點。如果內容製作者提供了主要進入頁面，並且使用者代理能夠顯示或者處理HTML內容，其應該為第一個呈現給使用者的東西。該處要進入頁面可以或者可以不包含目錄，如果包含的話，並使用<code>role=&quot;doc-toc&quot;</code>時，其應該要被處理作為目錄。如果目錄為分開的文件，其應該被處理，使用者代理應該挑選無論其是否符合以上需求。如果在主要進入頁面或者其他地方都未包含目錄的話，使用者代理應該參考閱讀順序。</p>
 
 			</section>
@@ -1940,27 +1945,27 @@
 				<h3 id="x9-2-audiobook-playability"><bdi class="secno">9.2 </bdi>有聲書的播放性<a
 						class="self-link" aria-label="§" href="#audio-ua-playback"></a></h3>
 
-				<p>如同<a href="https://www.w3.org/TR/pwp-ucr/">使用案例與需求</a>[<cite><a
+				<p>如同<a href="https://www.w3.org/TR/pwp-ucr/">使用案例與需求</a> [<cite><a
 							class="bibref" data-link-type="biblio" href="#bib-pwp-ucr"
-							title="Web Publications Use Cases and Requirements">pwp-ucr</a></cite>]注意事項所勾勒，有聲書必需在使用者代理中能被導覽。這意味著使用者代理必需提供使用者方法來有聲書中透過線性或者非線性的方式來在<a
+							title="Web Publications Use Cases and Requirements">pwp-ucr</a></cite>] 注意事項所勾勒，有聲書必需在使用者代理中能被導覽。這意味著使用者代理必需提供使用者方法來有聲書中透過線性或者非線性的方式來在<a
 						href="#audio-readingorder">閱讀順序</a>或者透過存取<a href="#audio-toc"
 						>目錄</a>間無縫移動。使用者代理應該也允許使用者在短時間間隔內切換單獨聲音檔案。</p>
 
 				<p>對有聲書來說，使用者代理應該提供<a href="https://www.w3.org/TR/pwp-ucr/#player"
-						>播放器介面</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-pwp-ucr"
-							title="Web Publications Use Cases and Requirements">pwp-ucr</a></cite>]其允許使用者以導覽、播放或者暫停該有聲書。該介面可以以任何方式呈現給使用者（例如，物理按鍵、視覺介面、鍵盤輸入或者聲音指令），但應該在聆聽體驗的任何點都提供無障礙輔助。</p>
+						>播放器介面</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-pwp-ucr"
+							title="Web Publications Use Cases and Requirements">pwp-ucr</a></cite>] 其允許使用者以導覽、播放或者暫停該有聲書。該介面可以以任何方式呈現給使用者（例如，物理按鍵、視覺介面、鍵盤輸入或者聲音指令），但應該在聆聽體驗的任何點都提供無障礙輔助。</p>
 
 			</section>
 
 			<section id="audio-ua-packaging">
 				<h3 id="x9-3-audiobook-packaging-and-offlining"><bdi class="secno">9.3 </bdi>有聲書包裝以及離線<a class="self-link" aria-label="§" href="#audio-ua-packaging"></a></h3>
 
-				<p><a href="https://www.w3.org/TR/pwp-ucr/">使用案例與需求</a>[<cite><a class="bibref"
+				<p><a href="https://www.w3.org/TR/pwp-ucr/">使用案例與需求</a> [<cite><a class="bibref"
 							data-link-type="biblio" href="#bib-pwp-ucr"
-							title="Web Publications Use Cases and Requirements">pwp-ucr</a></cite>]注意事項推薦內容應該能離線取得，以及任何包裝格式不應造成出版品的重複出現。這意味著儘管內容被複製很多次透過多重使用者代理給多數使用者，其核心宣告與其識別碼都不該被改變。</p>
+							title="Web Publications Use Cases and Requirements">pwp-ucr</a></cite>] 注意事項推薦內容應該能離線取得，以及任何包裝格式不應造成出版品的重複出現。這意味著儘管內容被複製很多次透過多重使用者代理給多數使用者，其核心宣告與其識別碼都不該被改變。</p>
 
-				<p>本規格推薦<a href="https://www.w3.org/TR/lpf/">輕量包裝格式</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-lpf"
-							title="Lightweight Packaging Format (LPF)">lpf</a></cite>]用於包裝有聲書內容，但這不是需求。有聲書使用者代理應該能夠接受LPF檔案供播放，以及應該按照本文件中的需求與推薦顯示內容。</p>
+				<p>本規格推薦<a href="https://www.w3.org/TR/lpf/">輕量包裝格式</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-lpf"
+							title="Lightweight Packaging Format (LPF)">lpf</a></cite>] 用於包裝有聲書內容，但這不是需求。有聲書使用者代理應該能夠接受LPF檔案供播放，以及應該按照本文件中的需求與推薦顯示內容。</p>
 
 				<p>如果使用者代理直接由其服務提供內容（例如，作為內容的零售商或者內容的儲存處），推薦該提供離線或者下載內容給使用者的手段。可以為他們所挑選的任何格式，但有聲書需要為完整並且合規，及其列於宣告中的內容應該以整體的方式提供。儘管使用者代理不支援對某一項資源的顯示（例如一個影像檔或者資料表格），其依然應該能讓使用者下載。</p>
 
@@ -2025,7 +2030,7 @@
 						<a class="self-link" href="#example-14">範例<bdi> 14</bdi></a>
 					</div>
 					<pre aria-busy="false"><code class="hljs json">{
-  <span class="hljs-attr">"@context"</span>: [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>],
+  <span class="hljs-attr">"@context"</span>: [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>] ,
   <span class="hljs-attr">"conformsTo"</span> : <span class="hljs-string">"https://www.w3.org/TR/audiobooks/"</span>,
   <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Audiobook"</span>,
   <span class="hljs-attr">"id"</span>: <span class="hljs-string">"https://librivox.org/flatland-a-romance-of-many-dimensions-by-edwin-abbott-abbott/"</span>,
@@ -2050,7 +2055,7 @@
       <span class="hljs-attr">"url"</span>: <span class="hljs-string">"toc.html"</span>,
       <span class="hljs-attr">"encodingFormat"</span>: <span class="hljs-string">"text/html"</span>
     }
-  ],
+  ] ,
 
   <span class="hljs-attr">"readingOrder"</span>: [
     {
@@ -2099,7 +2104,7 @@
       <span class="hljs-attr">"duration"</span>: <span class="hljs-number">1659</span>,
       <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Part 2, Sections 21 - 22"</span>
     }
-  ]
+  ] 
 }</code></pre>
 				</div>
 			</section>
@@ -2114,7 +2119,7 @@
 						<a class="self-link" href="#example-15">範例<bdi> 15</bdi></a>
 					</div>
 					<pre aria-busy="false"><code class="hljs json">{
-    <span class="hljs-attr">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3/org/ns/pub-context"</span>],
+    <span class="hljs-attr">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>, <span class="hljs-string">"https://www.w3/org/ns/pub-context"</span>] ,
     <span class="hljs-attr">"conformsTo"</span> : <span class="hljs-string">"https://www.w3.org/TR/audiobooks/"</span>,
     <span class="hljs-attr">"id"</span> : <span class="hljs-string">"https://publisher.example.com/janeeyre"</span>,
     <span class="hljs-attr">"url"</span> : <span class="hljs-string">"https://publisher.example.com/janeeyre"</span>,
@@ -2133,13 +2138,13 @@
         {<span class="hljs-attr">"url"</span>: <span class="hljs-string">"audio/chapter003.aac"</span>, <span class="hljs-attr">"encodingFormat"</span>: <span class="hljs-string">"audio/aac"</span>, <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Chapter 3"</span>, <span class="hljs-attr">"duration"</span>: <span class="hljs-string">"PT456.789S"</span>},
         {<span class="hljs-attr">"url"</span>: <span class="hljs-string">"audio/chapter004.aac"</span>, <span class="hljs-attr">"encodingFormat"</span>: <span class="hljs-string">"audio/aac"</span>, <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Chapter 4"</span>, <span class="hljs-attr">"duration"</span>: <span class="hljs-string">"PT987.654S"</span>},
         {<span class="hljs-attr">"url"</span>: <span class="hljs-string">"audio/chapter005.aac"</span>, <span class="hljs-attr">"encodingFormat"</span>: <span class="hljs-string">"audio/aac"</span>, <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Chapter 5"</span>, <span class="hljs-attr">"duration"</span>: <span class="hljs-string">"PT321.987S"</span>}
-    ],
+    ] ,
 
      <span class="hljs-attr">"resources"</span>: [
         {<span class="hljs-attr">"rel"</span>: <span class="hljs-string">"cover"</span>, <span class="hljs-attr">"url"</span>: <span class="hljs-string">"images/cover.jpg"</span>, <span class="hljs-attr">"encordingFormat"</span>: <span class="hljs-string">"image/jpeg"</span>},
         {<span class="hljs-attr">"rel"</span>: <span class="hljs-string">"contents"</span>, <span class="hljs-attr">"url"</span>: <span class="hljs-string">"toc.html"</span>, <span class="hljs-attr">"encodingFormat"</span>: <span class="hljs-string">"text/html"</span>},
         {<span class="hljs-attr">"url"</span>: <span class="hljs-string">"haworth_house.pdf"</span>, <span class="hljs-attr">"encodingFormat"</span>: <span class="hljs-string">"application/pdf"</span>}
-    ]
+    ] 
 }</code></pre>
 				</div>
 			</section>
@@ -2163,7 +2168,7 @@
         …
         <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"application/ld+json"</span>&gt;</span><span class="javascript">
     {
-        <span class="hljs-string">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>,<span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>],
+        <span class="hljs-string">"@context"</span> : [<span class="hljs-string">"https://schema.org"</span>,<span class="hljs-string">"https://www.w3.org/ns/pub-context"</span>] ,
         <span class="hljs-string">"conformsTo"</span> : <span class="hljs-string">"https://www.w3.org/TR/audiobooks/"</span>,
         …
         <span class="hljs-string">"url"</span> : <span class="hljs-string">"https://publisher.example.org/janeeyre"</span>,
@@ -2341,49 +2346,49 @@
 				<h3 id="d-1-normative-references"><bdi class="secno">D.1 </bdi>規範性文件<a class="self-link"
 						aria-label="§" href="#normative-references"></a></h3>
 				<dl class="bibliography">
-					<dt id="bib-dom">[dom]</dt>
+					<dt id="bib-dom"> [dom] </dt>
 					<dd><a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Anne van Kesteren. WHATWG.
 						Living Standard. URL: <a href="https://dom.spec.whatwg.org/"
 						>https://dom.spec.whatwg.org/</a></dd>
-					<dt id="bib-dpub-aria-1.0">[dpub-aria-1.0]</dt>
+					<dt id="bib-dpub-aria-1.0"> [dpub-aria-1.0] </dt>
 					<dd><a href="https://www.w3.org/TR/dpub-aria-1.0/"><cite>Digital Publishing WAI-ARIA Module
 								1.0</cite></a>. Matt Garrish; Tzviya Siegman; Markus Gylling; Shane McCarron. W3C. 14
 						December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/dpub-aria-1.0/"
 							>https://www.w3.org/TR/dpub-aria-1.0/</a></dd>
-					<dt id="bib-html">[html]</dt>
+					<dt id="bib-html"> [html] </dt>
 					<dd><a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Anne van
 						Kesteren; Domenic Denicola; Ian Hickson; Philip Jägenstedt; Simon Pieters. WHATWG. Living
 						Standard. URL: <a href="https://html.spec.whatwg.org/multipage/"
 							>https://html.spec.whatwg.org/multipage/</a></dd>
-					<dt id="bib-infra">[infra]</dt>
+					<dt id="bib-infra"> [infra] </dt>
 					<dd><a href="https://infra.spec.whatwg.org/"><cite>Infra Standard</cite></a>. Anne van Kesteren;
 						Domenic Denicola. WHATWG. Living Standard. URL: <a href="https://infra.spec.whatwg.org/"
 							>https://infra.spec.whatwg.org/</a></dd>
-					<dt id="bib-json-ld">[json-ld]</dt>
+					<dt id="bib-json-ld"> [json-ld] </dt>
 					<dd><a href="https://www.w3.org/TR/json-ld/"><cite>JSON-LD 1.0</cite></a>. Manu Sporny; Gregg
 						Kellogg; Markus Lanthaler. W3C. 16 January 2014. W3C Recommendation. URL: <a
 							href="https://www.w3.org/TR/json-ld/">https://www.w3.org/TR/json-ld/</a></dd>
-					<dt id="bib-media-frags">[media-frags]</dt>
+					<dt id="bib-media-frags"> [media-frags] </dt>
 					<dd><a href="https://www.w3.org/TR/media-frags/"><cite>Media Fragments URI 1.0 (basic)</cite></a>.
 						Raphaël Troncy; Erik Mannens; Silvia Pfeiffer; Davy Van Deursen. W3C. 25 September 2012. W3C
 						Recommendation. URL: <a href="https://www.w3.org/TR/media-frags/"
 							>https://www.w3.org/TR/media-frags/</a></dd>
-					<dt id="bib-pub-manifest">[pub-manifest]</dt>
+					<dt id="bib-pub-manifest"> [pub-manifest] </dt>
 					<dd><a href="https://www.w3.org/TR/pub-manifest/"><cite>Publication Manifest</cite></a>. Matt
 						Garrish; Ivan Herman. W3C. 10 November 2020. W3C Recommendation. URL: <a
 							href="https://www.w3.org/TR/pub-manifest/">https://www.w3.org/TR/pub-manifest/</a></dd>
-					<dt id="bib-rfc2119">[RFC2119]</dt>
+					<dt id="bib-rfc2119"> [RFC2119] </dt>
 					<dd><a href="https://tools.ietf.org/html/rfc2119"><cite>Key words for use in RFCs to Indicate
 								Requirement Levels</cite></a>. S. Bradner. IETF. March 1997. Best Current Practice. URL:
 							<a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a></dd>
-					<dt id="bib-rfc8174">[RFC8174]</dt>
+					<dt id="bib-rfc8174"> [RFC8174] </dt>
 					<dd><a href="https://tools.ietf.org/html/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC
 								2119 Key Words</cite></a>. B. Leiba. IETF. May 2017. Best Current Practice. URL: <a
 							href="https://tools.ietf.org/html/rfc8174">https://tools.ietf.org/html/rfc8174</a></dd>
-					<dt id="bib-schema.org">[schema.org]</dt>
+					<dt id="bib-schema.org"> [schema.org] </dt>
 					<dd><a href="https://schema.org"><cite>Schema.org</cite></a>. URL: <a href="https://schema.org"
 							>https://schema.org</a></dd>
-					<dt id="bib-url">[url]</dt>
+					<dt id="bib-url"> [url] </dt>
 					<dd><a href="https://url.spec.whatwg.org/"><cite>URL Standard</cite></a>. Anne van Kesteren. WHATWG.
 						Living Standard. URL: <a href="https://url.spec.whatwg.org/"
 						>https://url.spec.whatwg.org/</a></dd>
@@ -2393,20 +2398,20 @@
 				<h3 id="d-2-informative-references"><bdi class="secno">D.2 </bdi>參考性文件<a
 						class="self-link" aria-label="§" href="#informative-references"></a></h3>
 				<dl class="bibliography">
-					<dt id="bib-json-ld11">[json-ld11]</dt>
+					<dt id="bib-json-ld11"> [json-ld11] </dt>
 					<dd><a href="https://www.w3.org/TR/json-ld11/"><cite>JSON-LD 1.1</cite></a>. Gregg Kellogg;
 						Pierre-Antoine Champin; Dave Longley. W3C. 7 May 2020. W3C Proposed Recommendation. URL: <a
 							href="https://www.w3.org/TR/json-ld11/">https://www.w3.org/TR/json-ld11/</a></dd>
-					<dt id="bib-json-schema">[json-schema]</dt>
+					<dt id="bib-json-schema"> [json-schema] </dt>
 					<dd><a href="https://tools.ietf.org/html/draft-zyp-json-schema"><cite>JSON Schema: core definitions
 								and terminology</cite></a>. K. Zyp. Internet Engineering Task Force (IETF). 31 January
 						2013. Internet-Draft. URL: <a href="https://tools.ietf.org/html/draft-zyp-json-schema"
 							>https://tools.ietf.org/html/draft-zyp-json-schema</a></dd>
-					<dt id="bib-lpf">[lpf]</dt>
+					<dt id="bib-lpf"> [lpf] </dt>
 					<dd><a href="https://w3c.github.io/lpf/"><cite>Lightweight Packaging Format (LPF)</cite></a>.
 						Laurent Le Meur. 2018-08-07. URL: <a href="https://w3c.github.io/lpf/"
 							>https://w3c.github.io/lpf/</a></dd>
-					<dt id="bib-pwp-ucr">[pwp-ucr]</dt>
+					<dt id="bib-pwp-ucr"> [pwp-ucr] </dt>
 					<dd><a href="https://www.w3.org/TR/pwp-ucr/"><cite>Web Publications Use Cases and
 								Requirements</cite></a>. Franco Alvarado; Joshua Pyle. W3C. 13 August 2019. W3C Note.
 						URL: <a href="https://www.w3.org/TR/pwp-ucr/">https://www.w3.org/TR/pwp-ucr/</a></dd>
@@ -2510,7 +2515,7 @@
 			</ul>
 		</aside>
 		<script id="respec-dfn-panel">
-    	// <![CDATA[
+    	// <! [CDATA [
     	(() => {
 // @ts-check
 if (document.respecIsReady) {
@@ -2566,7 +2571,7 @@ function deriveAction(clickTarget) {
     const panel = clickTarget.closest(".dfn-panel");
     return panel.classList.contains("docked") ? "hide" : null;
   }
-  if (document.querySelector(".dfn-panel:not([hidden])")) {
+  if (document.querySelector(".dfn-panel:not( [hidden] )")) {
     return "hide";
   }
   return null;
@@ -2595,7 +2600,7 @@ function displayPanel(dfn, panel, { x, y }) {
     }
   }
 
-  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const top = window.scrollY + closestTop + dfnRects [0] .height;
   const left = x - MARGIN;
   panel.style.left = `${left}px`;
   panel.style.top = `${top}px`;
@@ -2619,7 +2624,7 @@ function hidePanel(panel) {
   panel.classList.remove("docked");
 }
 })()
-// ]]>
+// ] ] >
 </script>
 		<script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
 	</body>
