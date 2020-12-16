@@ -2,6 +2,7 @@
 
 - 台灣數位出版聯盟
 - 譯者：董福興
+- 校閱：[Xatier](mailto:xatierlike@gmail.com)
 
 ## EPUB 3.2規格
 
