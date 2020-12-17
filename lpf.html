@@ -116,7 +116,7 @@ dfn {
   display: block;
 }
 
-.dfn-panel ul a[href] {
+.dfn-panel ul a [href] {
   color: black;
 }
 
@@ -125,7 +125,7 @@ dfn {
   border-bottom: none !important;
 }
 
-.dfn-panel a[href]:hover {
+.dfn-panel a [href] :hover {
   border-bottom-width: 1px;
 }
 
@@ -218,7 +218,7 @@ a.bibref {
 }
 
 .respec-offending-element,
-a[href].respec-offending-element {
+a [href] .respec-offending-element {
   text-decoration: red wavy underline;
 }
 @supports not (text-decoration: red wavy underline) {
@@ -249,12 +249,12 @@ th code {
   color: inherit;
 }
 
-a[href].orcid {
+a [href] .orcid {
     padding-left: 4px;
     padding-right: 4px;
 }
 
-a[href].orcid > svg {
+a [href] .orcid > svg {
     margin-bottom: -2px;
 }
 
@@ -301,7 +301,7 @@ table.simple {
   text-align: left;
 }
 
-.simple th[scope="row"] {
+.simple th [scope="row"] {
   background: inherit;
   color: inherit;
   border-top: 1px solid #ddd;
@@ -355,7 +355,7 @@ details.respec-tests-details > * {
   padding-right: 2em;
 }
 
-details.respec-tests-details[open] {
+details.respec-tests-details [open] {
   z-index: 999999;
   position: absolute;
   border: thin solid #cad3e2;
@@ -364,7 +364,7 @@ details.respec-tests-details[open] {
   padding-bottom: 0.5em;
 }
 
-details.respec-tests-details[open] > summary {
+details.respec-tests-details [open] > summary {
   border-bottom: thin solid #cad3e2;
   padding-left: 1em;
   margin-bottom: 1em;
@@ -380,7 +380,7 @@ details.respec-tests-details > li {
   padding-left: 1em;
 }
 
-a[href].self-link:hover {
+a [href] .self-link:hover {
   opacity: 1;
   text-decoration: none;
   background-color: transparent;
@@ -546,8 +546,8 @@ hue-6-2: #c18401
   cursor: pointer;
 }
 
-var[data-type]::before,
-var[data-type]::after {
+var [data-type] ::before,
+var [data-type] ::after {
   position: absolute;
   left: 50%;
   top: -6px;
@@ -557,7 +557,7 @@ var[data-type]::after {
 }
 
 /* the triangle or arrow or caret or whatever */
-var[data-type]::before {
+var [data-type] ::before {
   content: "";
   transform: translateX(-50%);
   border-width: 4px 6px 0 6px;
@@ -567,7 +567,7 @@ var[data-type]::before {
 }
 
 /* actual text */
-var[data-type]::after {
+var [data-type] ::after {
   content: attr(data-type);
   transform: translateX(-50%) translateY(-100%);
   background: #000;
@@ -582,23 +582,23 @@ var[data-type]::after {
   font-weight: normal;
 }
 
-var[data-type]:hover::after,
-var[data-type]:hover::before {
+var [data-type] :hover::after,
+var [data-type] :hover::before {
   opacity: 1;
 }
 </style><link rel="publication" href="#wp_manifest"><script type="application/ld+json" id="wp_manifest">{
     "@context": [
         "https://schema.org",
         "https://www.w3.org/ns/wp-context"
-    ],
+    ] ,
     "type": "TechArticle",
     "accessMode": [
         "textual",
         "diagramOnVisual"
-    ],
+    ] ,
     "accessModeSufficient": [
         "textual"
-    ],
+    ] ,
     "resources": [
         {
             "type": "LinkedResource",
@@ -626,7 +626,7 @@ var[data-type]:hover::before {
             "encodingFormat": "image/svg+xml",
             "description": "Sidebar logo reflecting the status of the document"
         }
-    ],
+    ] ,
     "links": [
         {
             "type": "LinkedResource",
@@ -646,7 +646,7 @@ var[data-type]:hover::before {
             "encodingFormat": "text/html",
             "rel": "copyright"
         }
-    ],
+    ] ,
     "id": "https://www.w3.org/TR/lpf/",
     "url": "https://www.w3.org/TR/2020/NOTE-lpf-20200319/",
     "datePublished": "2020-03-19",
@@ -660,12 +660,12 @@ var[data-type]:hover::before {
                 "url": "https://www.edrlab.org"
             }
         }
-    ]
+    ] 
 }</script><script id="initialUserConfig" type="application/json">{
   "postProcess": [
     null,
     null
-  ],
+  ] ,
   "wg": "Publishing Working Group",
   "wgURI": "https://www.w3.org/publishing/groups/publ-wg/",
   "wgPublicList": "public-publ-wg",
@@ -681,8 +681,8 @@ var[data-type]:hover::before {
       "companyURL": "https://www.edrlab.org",
       "w3cid": 91888
     }
-  ],
-  "formerEditors": [],
+  ] ,
+  "formerEditors": [] ,
   "processVersion": 2018,
   "includePermalinks": true,
   "permalinkEdge": true,
@@ -807,7 +807,7 @@ var[data-type]:hover::before {
 		<section class="informative" id="sec-terminology">
 			<h2 id="x2-terminology"><bdi class="secno">2. </bdi>術語<a class="self-link" aria-label="§" href="#sec-terminology"></a></h2><p><em>本章節為非規範性。</em></p>
 
-			<p>本文件使用的術語定義於<abbr title="World Wide Web Consortium">W3C</abbr>備忘「Web上的出版與連結」[<cite><a class="bibref" data-link-type="biblio" href="#bib-publishing-linking" title="Publishing and Linking on the Web">publishing-linking</a></cite>]，尤其包含了<a class="externalDFN" href="https://www.w3.org/TR/publishing-linking/#dfn-user">使用者</a>與<a class="externalDFN" href="https://www.w3.org/TR/publishing-linking/#dfn-user-agent">使用者代理</a>。</p>
+			<p>本文件使用的術語定義於<abbr title="World Wide Web Consortium">W3C</abbr>備忘「Web上的出版與連結」 [<cite><a class="bibref" data-link-type="biblio" href="#bib-publishing-linking" title="Publishing and Linking on the Web">publishing-linking</a></cite>] ，尤其包含了<a class="externalDFN" href="https://www.w3.org/TR/publishing-linking/#dfn-user">使用者</a>與<a class="externalDFN" href="https://www.w3.org/TR/publishing-linking/#dfn-user-agent">使用者代理</a>。</p>
 
 			<p>此外，以下術語定義專供本規格所使用：:</p>
 
@@ -834,7 +834,7 @@ var[data-type]:hover::before {
 				</dd>
 				<dt><dfn id="dfn-web-publication-manifest" data-lt="Publication Manifests|Publication Manifest" data-dfn-type="dfn" data-plurals="publication manifests">出版品宣告（Publication Manifest）</dfn></dt>
 				<dd>
-					<p>如定義在[<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>]中，採[<cite><a class="bibref" data-link-type="biblio" href="#bib-json-ld" title="JSON-LD 1.0">JSON-LD</a></cite>]的數位出版品表述。</p>
+					<p>如定義在 [<cite><a class="bibref" data-link-type="biblio" href="#bib-pub-manifest" title="Publication Manifest">pub-manifest</a></cite>] 中，採 [<cite><a class="bibref" data-link-type="biblio" href="#bib-json-ld" title="JSON-LD 1.0">JSON-LD</a></cite>] 的數位出版品表述。</p>
 				</dd>
 				<dt><dfn id="dfn-root-directory" data-lt="Root Directories|Root Directory" data-dfn-type="dfn">根目錄（Root Directory）</dfn></dt>
 				<dd>
@@ -847,7 +847,7 @@ var[data-type]:hover::before {
 		</section>
 
 		<section class="informative" id="conformance"><h2 id="x3-conformance"><bdi class="secno">3. </bdi>適用性<a class="self-link" aria-label="§" href="#conformance"></a></h2><p><em>本章節為非規範性。</em></p><p>除了標註為非規範性的章節，本規格中所有製作指針、圖表、範本與注意事項都為非規範性。其餘本規格中的內容皆為規範性。</p>
-		<p>關鍵字：<em class="rfc2119">可以（MAY）</em>、<em class="rfc2119">必需（MUST）</em>、<em class="rfc2119">應該（SHOULD）</em>應該以<a href="https://tools.ietf.org/html/bcp14">BCP 14</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>][<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]之記述解釋，同時也僅於在出現時以全大寫（中文為斜體）顯示。</p>
+		<p>關鍵字：<em class="rfc2119">可以（MAY）</em>、<em class="rfc2119">必需（MUST）</em>、<em class="rfc2119">應該（SHOULD）</em>應該以<a href="https://tools.ietf.org/html/bcp14">BCP 14</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>] 之記述解釋，同時也僅於在出現時以全大寫（中文為斜體）顯示。</p>
 			
 		</section>
 
@@ -855,7 +855,7 @@ var[data-type]:hover::before {
 
 				<h2 id="x4-packaging-format"><bdi class="secno">4. </bdi>包裝格式<a class="self-link" aria-label="§" href="#sec-zip"></a></h2><p><em>本章節為非規範性。</em></p>
 
-				<p>為了將一組構成的資源與相關的詮釋資料組成數位出版品，本規格採用ZIP格式，其定義在ISO/IEC 21320-1:2015 ([<cite><a class="bibref" data-link-type="biblio" href="#bib-iso21320" title="Document Container File - ISO/IEC 21320">ISO21320</a></cite>] 與 [<cite><a class="bibref" data-link-type="biblio" href="#bib-zip" title=".ZIP File Format Specification">zip</a></cite>])中。</p>
+				<p>為了將一組構成的資源與相關的詮釋資料組成數位出版品，本規格採用ZIP格式，其定義在ISO/IEC 21320-1:2015 ( [<cite><a class="bibref" data-link-type="biblio" href="#bib-iso21320" title="Document Container File - ISO/IEC 21320">ISO21320</a></cite>] 與 [<cite><a class="bibref" data-link-type="biblio" href="#bib-zip" title=".ZIP File Format Specification">zip</a></cite>] )中。</p>
 
 		</section>
 
@@ -892,10 +892,10 @@ var[data-type]:hover::before {
 
 				<p>這些資源檔案<em class="rfc2119" title="MAY">可以</em>置放在根目錄下的任何子資料夾位置，或者放在根目錄中。</p>
 
-				<p>包裝中的內容<em class="rfc2119" title="MUST">必需</em>透過相對URL字串[<cite><a class="bibref" data-link-type="biblio" href="#bib-url" title="URL Standard">url</a></cite>]以參照到這些內容。</p>
+				<p>包裝中的內容<em class="rfc2119" title="MUST">必需</em>透過相對URL字串 [<cite><a class="bibref" data-link-type="biblio" href="#bib-url" title="URL Standard">url</a></cite>] 以參照到這些內容。</p>
 	
 				<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="3"><span>注意事項</span></div><div class="">
-						<p>[<cite><a class="bibref" data-link-type="biblio" href="#bib-zip" title=".ZIP File Format Specification">zip</a></cite>]規格對允許使用的檔案與資料夾名稱字元有一些限制。當使用這些名稱時，作者必須小心使用這些字元，使在跨作業系統時能得到廣泛的互通性。</p>
+						<p> [<cite><a class="bibref" data-link-type="biblio" href="#bib-zip" title=".ZIP File Format Specification">zip</a></cite>] 規格對允許使用的檔案與資料夾名稱字元有一些限制。當使用這些名稱時，作者必須小心使用這些字元，使在跨作業系統時能得到廣泛的互通性。</p>
 				</div></div>
 
 		</section>
@@ -951,9 +951,9 @@ var[data-type]:hover::before {
 			<aside class="example" id="example-1"><div class="marker">
       <a class="self-link" href="#example-1">範例<bdi> 1</bdi></a>
     </div>
-				<p>這裡是一份出版品宣告，其位置位於根目錄，簡單地在主要進入頁面中透過[<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">HTML</a></cite>] <code>link</code>元素參照。</p>
+				<p>這裡是一份出版品宣告，其位置位於根目錄，簡單地在主要進入頁面中透過 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">HTML</a></cite>] <code>link</code>元素參照。</p>
 				<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"publication.json"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"publication"</span>/&gt;</span></code></pre>
-				<p>An example of a Primary Entry Page embedding a Publication Manifest is given in [<cite><a class="bibref" data-link-type="biblio" href="#bib-audiobooks" title="Audiobooks">audiobooks</a></cite>].
+				<p>An example of a Primary Entry Page embedding a Publication Manifest is given in [<cite><a class="bibref" data-link-type="biblio" href="#bib-audiobooks" title="Audiobooks">audiobooks</a></cite>] .
 			</p></aside>
 
 		</section>
@@ -963,7 +963,7 @@ var[data-type]:hover::before {
 
 			<p>本附錄註冊了<code>application/lpf+zip</code>媒體類型供輕量包裝格式使用。</p>
 
-			<p>輕量包裝格式（Lightweight Packaging Format, LPF）為一個容器技術其基於[<cite><a class="bibref" data-link-type="biblio" href="#bib-zip" title=".ZIP File Format Specification">zip</a></cite>]封存格式，用於將一組關聯的資源以及相關的詮釋資料包裝為單一檔案容器以組成數位出版品。LPF以其相關標準由<abbr title="World Wide Web Consortium">W3C</abbr>所維護並且定義。</p>
+			<p>輕量包裝格式（Lightweight Packaging Format, LPF）為一個容器技術其基於 [<cite><a class="bibref" data-link-type="biblio" href="#bib-zip" title=".ZIP File Format Specification">zip</a></cite>] 封存格式，用於將一組關聯的資源以及相關的詮釋資料包裝為單一檔案容器以組成數位出版品。LPF以其相關標準由<abbr title="World Wide Web Consortium">W3C</abbr>所維護並且定義。</p>
 
 			<dl class="variablelist">
 				<dt>MIME媒體類型名稱：</dt>
@@ -1143,9 +1143,9 @@ var[data-type]:hover::before {
 <section id="references" class="appendix"><h2 id="c-references"><bdi class="secno">C. </bdi>參考資料<a class="self-link" aria-label="§" href="#references"></a></h2><section id="normative-references">
         <h3 id="c-1-normative-references"><bdi class="secno">C.1 </bdi>規範性文件<a class="self-link" aria-label="§" href="#normative-references"></a></h3>
       <dl class="bibliography">
-        <dt id="bib-rfc2119">[RFC2119]</dt><dd><a href="https://tools.ietf.org/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a></dd><dt id="bib-rfc8174">[RFC8174]</dt><dd><a href="https://tools.ietf.org/html/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc8174">https://tools.ietf.org/html/rfc8174</a></dd>
+        <dt id="bib-rfc2119"> [RFC2119] </dt><dd><a href="https://tools.ietf.org/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a></dd><dt id="bib-rfc8174"> [RFC8174] </dt><dd><a href="https://tools.ietf.org/html/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc8174">https://tools.ietf.org/html/rfc8174</a></dd>
       </dl></section><section id="informative-references">
         <h3 id="c-2-informative-references"><bdi class="secno">C.2 </bdi>參考性文件<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
       <dl class="bibliography">
-        <dt id="bib-audiobooks">[audiobooks]</dt><dd><a href="https://www.w3.org/TR/audiobooks/"><cite>Audiobooks</cite></a>. Wendy Reid; Matt Garrish.  W3C. 28 January 2020. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/audiobooks/">https://www.w3.org/TR/audiobooks/</a></dd><dt id="bib-dom">[dom]</dt><dd><a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Anne van Kesteren.  WHATWG. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a></dd><dt id="bib-html">[HTML]</dt><dd><a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Anne van Kesteren; Domenic Denicola; Ian Hickson; Philip Jägenstedt; Simon Pieters.  WHATWG. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a></dd><dt id="bib-iso21320">[ISO21320]</dt><dd><a href="https://www.iso.org/standard/60101.html"><cite>Document Container File - ISO/IEC 21320</cite></a>.  ISO. 2015. International Standard. URL: <a href="https://www.iso.org/standard/60101.html">https://www.iso.org/standard/60101.html</a></dd><dt id="bib-json-ld">[JSON-LD]</dt><dd><a href="https://www.w3.org/TR/json-ld/"><cite>JSON-LD 1.0</cite></a>. Manu Sporny; Gregg Kellogg; Markus Lanthaler.  W3C. 16 January 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/json-ld/">https://www.w3.org/TR/json-ld/</a></dd><dt id="bib-pub-manifest">[pub-manifest]</dt><dd><a href="https://www.w3.org/TR/pub-manifest/"><cite>Publication Manifest</cite></a>. Matt Garrish; Ivan Herman.  W3C. 28 January 2020. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/pub-manifest/">https://www.w3.org/TR/pub-manifest/</a></dd><dt id="bib-publishing-linking">[publishing-linking]</dt><dd><a href="https://www.w3.org/TR/publishing-linking/"><cite>Publishing and Linking on the Web</cite></a>. Ashok Malhotra; Larry Masinter; Jeni Tennison; Daniel Appelquist.  W3C. 30 April 2013. W3C Note. URL: <a href="https://www.w3.org/TR/publishing-linking/">https://www.w3.org/TR/publishing-linking/</a></dd><dt id="bib-url">[url]</dt><dd><a href="https://url.spec.whatwg.org/"><cite>URL Standard</cite></a>. Anne van Kesteren.  WHATWG. Living Standard. URL: <a href="https://url.spec.whatwg.org/">https://url.spec.whatwg.org/</a></dd><dt id="bib-zip">[zip]</dt><dd><a href="https://www.pkware.com/documents/casestudies/APPNOTE.TXT"><cite>.ZIP File Format Specification</cite></a>. 1 September 2012. Final. URL: <a href="https://www.pkware.com/documents/casestudies/APPNOTE.TXT">https://www.pkware.com/documents/casestudies/APPNOTE.TXT</a></dd>
+        <dt id="bib-audiobooks"> [audiobooks] </dt><dd><a href="https://www.w3.org/TR/audiobooks/"><cite>Audiobooks</cite></a>. Wendy Reid; Matt Garrish.  W3C. 28 January 2020. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/audiobooks/">https://www.w3.org/TR/audiobooks/</a></dd><dt id="bib-dom"> [dom] </dt><dd><a href="https://dom.spec.whatwg.org/"><cite>DOM Standard</cite></a>. Anne van Kesteren.  WHATWG. Living Standard. URL: <a href="https://dom.spec.whatwg.org/">https://dom.spec.whatwg.org/</a></dd><dt id="bib-html"> [HTML] </dt><dd><a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Anne van Kesteren; Domenic Denicola; Ian Hickson; Philip Jägenstedt; Simon Pieters.  WHATWG. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a></dd><dt id="bib-iso21320"> [ISO21320] </dt><dd><a href="https://www.iso.org/standard/60101.html"><cite>Document Container File - ISO/IEC 21320</cite></a>.  ISO. 2015. International Standard. URL: <a href="https://www.iso.org/standard/60101.html">https://www.iso.org/standard/60101.html</a></dd><dt id="bib-json-ld"> [JSON-LD] </dt><dd><a href="https://www.w3.org/TR/json-ld/"><cite>JSON-LD 1.0</cite></a>. Manu Sporny; Gregg Kellogg; Markus Lanthaler.  W3C. 16 January 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/json-ld/">https://www.w3.org/TR/json-ld/</a></dd><dt id="bib-pub-manifest"> [pub-manifest] </dt><dd><a href="https://www.w3.org/TR/pub-manifest/"><cite>Publication Manifest</cite></a>. Matt Garrish; Ivan Herman.  W3C. 28 January 2020. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/pub-manifest/">https://www.w3.org/TR/pub-manifest/</a></dd><dt id="bib-publishing-linking"> [publishing-linking] </dt><dd><a href="https://www.w3.org/TR/publishing-linking/"><cite>Publishing and Linking on the Web</cite></a>. Ashok Malhotra; Larry Masinter; Jeni Tennison; Daniel Appelquist.  W3C. 30 April 2013. W3C Note. URL: <a href="https://www.w3.org/TR/publishing-linking/">https://www.w3.org/TR/publishing-linking/</a></dd><dt id="bib-url"> [url] </dt><dd><a href="https://url.spec.whatwg.org/"><cite>URL Standard</cite></a>. Anne van Kesteren.  WHATWG. Living Standard. URL: <a href="https://url.spec.whatwg.org/">https://url.spec.whatwg.org/</a></dd><dt id="bib-zip"> [zip] </dt><dd><a href="https://www.pkware.com/documents/casestudies/APPNOTE.TXT"><cite>.ZIP File Format Specification</cite></a>. 1 September 2012. Final. URL: <a href="https://www.pkware.com/documents/casestudies/APPNOTE.TXT">https://www.pkware.com/documents/casestudies/APPNOTE.TXT</a></dd>
       </dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
