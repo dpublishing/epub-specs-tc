@@ -2,7 +2,7 @@
 
 ## 文件說明
 
-本清單中之文件是台灣數位出版聯盟基於W3C EPUB3 正式社群小組規格（Final Community Group Specification）2019年05月08日公告版本之中文翻譯版。
+本清單中之文件是台灣數位出版聯盟基於W3C EPUB3 最終社群小組規格（Final Community Group Specification）2019年05月08日公告版本之中文翻譯版。
 
 ### 注意
 - 以下規格文件清單之正式版本請以括弧內W3C網站連結公布之英文版為準。
