@@ -6,7 +6,7 @@
 
 ### 注意
 - 以下規格文件清單之正式版本請以括弧內W3C網站連結公布之英文版為準。
-- 這是一份由台灣數位出版聯盟自願翻譯之文件，本文件可能會因翻譯出現錯誤或語句不通順之處。如有發現錯誤或不妥之處，歡迎與台灣數位出版聯盟聯繫或直接於GitHub建立issue。
+- 這是一份由台灣數位出版聯盟自願翻譯之文件，本文件可能會因翻譯出現錯誤或語句不通順之處。如有發現錯誤或不妥之處，歡迎與台灣數位出版聯盟聯繫或直接於此GitHub儲存庫建立issue。
 
 ## 文件清單
 - [EPUB 3 總覽](https://dpublishing.github.io/epub-specs-tc/epub-overview.html)（原文：[EPUB 3 Overview](https://www.w3.org/publishing/epub3/epub-overview.html)）
