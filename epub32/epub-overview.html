@@ -855,9 +855,9 @@ var [data-type] :hover::before {
       <hr title="Separator for header">
     </div>
 		<section id="abstract" class="introductory"><h2>概要</h2>
-			<p>本文件提供內容製作者與軟體開發者一個認識EPUB® 3規格的起點。包含了所有資訊上的概要材料以說明EPUB 3的所有功能。</p>
+			<p>本文件提供內容製作者與軟體開發者認識EPUB® 3規格的起點。包含了所有資訊上的概要材料，以說明EPUB 3的所有功能。</p>
 
-			<p>現在使用的EPUB 3版本定義於 [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] ，為此項標準的第二次小型修訂。最新版本的變更點記述於另一份資料性文件EPUB 3.2變更 [<cite><a class="bibref" href="#bib-epub32changes">EPUB32Changes</a></cite>] 上。</p>
+			<p>現在使用的EPUB 3版本定義於 [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] ，為此項標準的第二次小型修訂。最新版本的變更點記述於另一份資訊性文件EPUB 3.2變更 [<cite><a class="bibref" href="#bib-epub32changes">EPUB32Changes</a></cite>] 上。</p>
 		</section>
 		<section id="sotd" class="introductory"><h2>本文件狀態</h2><p>
       本規格由<a href="https://www.w3.org/community/epub3/">EPUB 3社群小組</a>所發表。並非W3C標準也不在W3C標準程序上。請注意本規格適用於<a href="https://www.w3.org/community/about/agreements/final/">W3C社群完整規範協議（FSA）</a>。可進一步了解<a href="https://www.w3.org/community/">W3C社群與業界小組</a>。</a>.
@@ -872,20 +872,20 @@ var [data-type] :hover::before {
 		<section id="sec-features">
 			<!--OddPage--><h2 id="x1-features"><span class="secno">1. </span>功能<a class="self-link" aria-label="§" href="#sec-features"></a></h2>
 
-			<p>本章涵蓋了EPUB的主要功能，包含整體能應用在製作<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的各項重要元件與主題。</p>
+			<p>本章涵蓋了EPUB的主要功能，包含整體能應用在製作<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的各項重要元件與要點。</p>
 
 			<section id="sec-package-file">
 				<h3 id="x1-1-package-document"><span class="secno">1.1 </span>包裝文件<a class="self-link" aria-label="§" href="#sec-package-file"></a></h3>
 
 				<p>每一本EPUB出版品都包含了至少一份<a href="epub-spec.html#dfn-rendition">「內容釋義（Rendition）」</a>，這些內容釋義以<a href="epub-spec.html#dfn-package-document">「包裝文件」</a>呈現。</p>
 
-				<p>包裝文件列出了所有內容排版處理時所需要的資源。也定義了線性使用時的閱讀順序，以及讓詮釋資料和導覽資訊與內容釋義相互關聯。</p>
+				<p>包裝文件列出了所有內容排版處理時所需要的資源。也定義了線性消費時的閱讀順序，以及讓詮釋資料和導覽資訊與內容釋義相互關聯。</p>
 
 				<p>包裝文件和一般的網站相較，做出了重大改進。以網頁為例，在內容裡嵌入了對資源的參照，雖然是簡單且具彈性的連結資源方式，卻也難以列舉整理出所有排版呈現時所需的資源。此外，也沒有標準化的方式能讓網站定義某組網頁作為大型出版品的一部分，這就是EPUB <a href="epub-packages.html#sec-spine-elem"><code>spine</code>元素</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 的功能所在（換句話說，它提供了一個外部宣告的方式來明確指定對一系列文件的導覽順序）。最後，包裝文件以標準化的方式制定了詮釋資料如何全域地套用於一系列文件上頭。</p>
 
 				<p>包裝文件也包含了<a href="epub-packages.html#sec-collection-elem"><code>collection</code>元素</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，允許將一群邏輯上相關的<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>包為一組。套用這項元素可應用於定義內容識別、處理以及排列功能，像是能用於定義嵌入的預覽內容，或者由構成的XHTML內容文件中取出索引或者字辭典定義。</p>
 
-				<p>包裝文件以及其他專用於解釋內容的說明，都定義在 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。</p>
+				<p>包裝文件以及其他專用於內容釋義專屬的概念，都定義在 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。</p>
 
 			</section>
 
@@ -895,7 +895,7 @@ var [data-type] :hover::before {
 				<section id="sec-nav-order">
 					<h4 id="x1-2-1-reading-order"><span class="secno">1.2.1 </span>閱讀順序<a class="self-link" aria-label="§" href="#sec-nav-order"></a></h4>
 
-					<p>EPUB的關鍵概念為，EPUB出版品包含多種資源，而能被人、以及機器，<em>按照某些指定順序</em>來完整導覽及閱讀。</p>
+					<p>EPUB的關鍵概念為：EPUB出版品中包含了多種資源，而能被人、以及機器，<em>按照某些指定順序</em>來完整導覽及閱讀。</p>
 
 					<p>各式各類的出版品都有明確的閱讀順序，或者整個內容有著邏輯上的推進。以小說為例，就是高度有順序性的文件——通常會有開頭、承續、結尾——但不是所有出版品都會按照順序被閱讀：例如食譜與攝影集就可能更像是一個資料庫。但所有的文件都至少有一個最主要層級的邏輯閱讀順序內容項目，可以按照日期、主題、地點或者其它範疇（例如，食譜一般會按照烹煮方式排序）。</p>
 
@@ -910,7 +910,7 @@ var [data-type] :hover::before {
 
 					<p>每一份EPUB出版品的內容釋義都包含了一個特殊的XHTML內容文件，稱為<a href="epub-spec.html#dfn-epub-navigation-document">EPUB導覽文件</a>，該文件使用了 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <code>nav</code>元素來定義人類與機器皆可讀的導覽資訊。</p>
 
-					<p>導覽文件取代了EPUB 2中的NCX文件 [<cite><a class="bibref" href="#bib-ops2">OPS2</a></cite>] 。導覽文件除了維持最基本無障礙輔助功能，以及導覽協助等NCX所具備的各項功能之外，也導入了新的機能，並且透過排版，為所有使用者提供強化的導覽。最重要的對於國際化（例如導覽文件採用XHTML文件格式，原生支援Ruby註釋）的較佳支援，以及支援嵌入式語法（MathML與SVG都可以包含在導覽連結之中）。</p>
+					<p>導覽文件取代了EPUB 2中的NCX文件 [<cite><a class="bibref" href="#bib-ops2">OPS2</a></cite>] 。導覽文件除了維持最基本的無障礙輔助性，以及導覽協助等NCX所具備的各項功能之外，也導入了新的機能，並且透過排版能為所有使用者提供強化的導覽。最重要的對於國際化（例如導覽文件採用XHTML文件格式，原生支援Ruby註釋）的較佳支援，以及支援嵌入式語法（MathML與SVG都可以包含在導覽連結之中）。</p>
 
 					<p>作為XHTML內容文件，導覽文件也提供了更大的彈性，可以使用CSS以及<a href="epub-packages.html#sec-package-nav-def-hidden"><code>hidden</code>屬性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 來設計導覽的顯示，同時不會影響到閱讀系統存取這些資訊。</p>
 
