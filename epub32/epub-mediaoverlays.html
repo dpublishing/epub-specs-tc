@@ -1697,7 +1697,7 @@ var [data-type] :hover::before {
 					</div>
 
 					<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>注意事項</span></div><div class="">
-						<p>群組化結構，如章節、圖說、表格與腳註於同一個<code>seq</code>元素的原因是如此一來他們開始與結束位置可以在播放時被識別。閱讀系統可以透過此針對該內容解釋的版面提供播放選項，例如跳過一段長圖說、關閉對換頁的處理（請見<a href="#sec-behaviors-skip-escape">可跳過性與可跳出性</a>），或者客製化閱讀模式也適應結構，如表格。</p>
+						<p>群組化結構，如章節、圖說、表格與腳註於同一個<code>seq</code>元素的原因是如此一來他們開始與結束位置可以在播放時被識別。閱讀系統可以透過此針對該內容釋義的版面提供播放選項，例如跳過一段長圖說、關閉對換頁的處理（請見<a href="#sec-behaviors-skip-escape">可跳過性與可跳出性</a>），或者客製化閱讀模式也適應結構，如表格。</p>
 					</div></div>
 
 					<aside class="example" id="example-3"><div class="marker">
@@ -1804,7 +1804,7 @@ var [data-type] :hover::before {
 
 				<p>正在播放的<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>元素之視覺表現資訊<em class="rfc2119" title="MAY">可以</em>透過CSS樣式表中作者定義的class來表述。這些作者定義的class名稱<em class="rfc2119" title="SHOULD">應該</em>在<a href="epub-spec.html#dfn-package-document">包裝文件</a>的詮釋資料中使用詮釋資料特性<a href="#active-class"><code>active-class</code></a>及<a href="#playback-active-class"><code>playback-active-class</code></a>來進行宣告。這些class名稱才可被閱讀系統發現。</p>
 
-				<p><code>active-class</code>與<code>playback-active-class</code>特性<em class="rfc2119" title="MUST NOT">不得</em>與<a href="epub-packages.html#attrdef-refines"><code>refines</code>屬性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 一起使用，由於這些通常會被套用於整份<a href="epub-spec.html#dfn-rendition">內容解釋</a>。</p>
+				<p><code>active-class</code>與<code>playback-active-class</code>特性<em class="rfc2119" title="MUST NOT">不得</em>與<a href="epub-packages.html#attrdef-refines"><code>refines</code>屬性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 一起使用，由於這些通常會被套用於整份<a href="epub-spec.html#dfn-rendition">內容釋義</a>。</p>
 
 				<p>本範例展示作者如何連結樣式資訊與正在播放的EPUB內容文件。</p>
 
@@ -1881,7 +1881,7 @@ var [data-type] :hover::before {
 				<section id="sec-package-metadata">
 					<h4 id="x3-5-2-package-metadata"><span class="secno">3.5.2 </span>包裝詮釋資料<a class="self-link" aria-label="§" href="#sec-package-metadata"></a></h4>
 
-					<p><a href="epub-spec.html#dfn-package-document">包裝文件</a><em class="rfc2119" title="MUST">必需</em>在<a href="epub-packages.html#elemdef-package-item"><code>meta</code>元素</a>以<a href="#duration"><code>duration</code>特性</a>中包含整個<a href="epub-spec.html#dfn-rendition">內容解釋</a>的音檔長度。</p>
+					<p><a href="epub-spec.html#dfn-package-document">包裝文件</a><em class="rfc2119" title="MUST">必需</em>在<a href="epub-packages.html#elemdef-package-item"><code>meta</code>元素</a>以<a href="#duration"><code>duration</code>特性</a>中包含整個<a href="epub-spec.html#dfn-rendition">內容釋義</a>的音檔長度。</p>
 
 					<p>此外每一個EPUB內容文件與相關媒體層疊的音檔長度也<em class="rfc2119" title="MUST">必需</em>提供。<a href="epub-packages.html#attrdef-refines"><code>refines</code>屬性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 用於連結每一段長度宣告到呼應的<a href="epub-spec.html#dfn-manifest">宣告</a><a href="epub-packages.html#elemdef-package-item"><code>item</code></a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。</p>
 
@@ -2374,7 +2374,7 @@ var [data-type] :hover::before {
 					</tr>
 					<tr>
 						<th>說明：</th>
-						<td>全部或者指定的媒體層疊之播放長度。指定的播放長度由聲音片段在製作時計算，所以需排除從外部資源而來的直播以及語音合成。</td>
+						<td>全部或者指定的媒體層疊之播放長度。指定的播放長度由聲音片段在製作時計算，所以需排除從外圍資源而來的直播以及語音合成。</td>
 					</tr>
 					<tr>
 						<th>允許的值：</th>
@@ -2384,7 +2384,7 @@ var [data-type] :hover::before {
 					</tr>
 					<tr>
 						<th>基數：</th>
-						<td>對整個<span class="phrase"><a href="epub-spec.html#dfn-rendition">內容解釋</a></span> ，或對每個媒體層疊都為唯一。</td>
+						<td>對整個<span class="phrase"><a href="epub-spec.html#dfn-rendition">內容釋義</a></span> ，或對每個媒體層疊都為唯一。</td>
 					</tr>
 					<tr>
 						<th>範例：</th>

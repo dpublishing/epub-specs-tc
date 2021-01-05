@@ -1038,7 +1038,7 @@ var [data-type] :hover::before {
 <li class="tocline"><a class="tocxref" href="#sec-intro-epub-specs"><span class="secno">1.1 </span>規格</a></li><li class="tocline"><a class="tocxref" href="#sec-intro-spec-org"><span class="secno">1.2 </span>結構</a></li><li class="tocline"><a class="tocxref" href="#sec-terminology"><span class="secno">1.3 </span>術語</a></li><li class="tocline"><a class="tocxref" href="#conformance"><span class="secno">1.4 </span>適用性</a></li></ol></li><li class="tocline"><a class="tocxref" href="#sec-epub-conf"><span class="secno">2. </span>適用需求</a><ol class="toc">
 <li class="tocline"><a class="tocxref" href="#sec-epub-pub-conf"><span class="secno">2.1 </span>EPUB出版品</a></li><li class="tocline"><a class="tocxref" href="#sec-epub-rs-conf"><span class="secno">2.2 </span>EPUB閱讀系統</a></li></ol></li><li class="tocline"><a class="tocxref" href="#sec-publication-resources"><span class="secno">3. </span>出版資源</a><ol class="toc">
 <li class="tocline"><a class="tocxref" href="#sec-core-media-types"><span class="secno">3.1 </span>核心媒體類型</a><ol class="toc">
-<li class="tocline"><a class="tocxref" href="#sec-cmt-intro"><span class="secno">3.1.1 </span>導論</a></li><li class="tocline"><a class="tocxref" href="#sec-cmt-supported"><span class="secno">3.1.2 </span>支援的媒體類型</a></li><li class="tocline"><a class="tocxref" href="#sec-foreign-restrictions"><span class="secno">3.1.3 </span>外部資源</a></li></ol></li><li class="tocline"><a class="tocxref" href="#sec-resource-locations"><span class="secno">3.2 </span>資源位置</a></li><li class="tocline"><a class="tocxref" href="#sec-xml-constraints"><span class="secno">3.3 </span>XML適用性</a></li></ol></li><li class="tocline"><a class="tocxref" href="#sec-overview-unsupported"><span class="secno">A. </span>不支援的功能</a><ol class="toc">
+<li class="tocline"><a class="tocxref" href="#sec-cmt-intro"><span class="secno">3.1.1 </span>導論</a></li><li class="tocline"><a class="tocxref" href="#sec-cmt-supported"><span class="secno">3.1.2 </span>支援的媒體類型</a></li><li class="tocline"><a class="tocxref" href="#sec-foreign-restrictions"><span class="secno">3.1.3 </span>外圍資源</a></li></ol></li><li class="tocline"><a class="tocxref" href="#sec-resource-locations"><span class="secno">3.2 </span>資源位置</a></li><li class="tocline"><a class="tocxref" href="#sec-xml-constraints"><span class="secno">3.3 </span>XML適用性</a></li></ol></li><li class="tocline"><a class="tocxref" href="#sec-overview-unsupported"><span class="secno">A. </span>不支援的功能</a><ol class="toc">
 <li class="tocline"><a class="tocxref" href="#deprecated"><span class="secno">A.1 </span>不再支援的功能</a></li><li class="tocline"><a class="tocxref" href="#legacy"><span class="secno">A.2 </span>遺存功能</a></li></ol></li><li class="tocline"><a class="tocxref" href="#index"><span class="secno">B. </span>索引</a></li><li class="tocline"><a class="tocxref" href="#app-contributors"><span class="secno">C. </span>謝詞與貢獻者</a></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">D. </span>參考資料</a><ol class="toc">
 <li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">D.1 </span>規範性文件</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><span class="secno">D.2 </span>參考性文件</a></li></ol></li></ol></nav>
 		<section id="sec-introduction">
@@ -1055,7 +1055,7 @@ var [data-type] :hover::before {
 
 				<ul>
 					<li>
-						<p><a href="epub-packages.html">EPUB包裝</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] — 定義了每一份<a href="epub-spec.html#dfn-rendition">內容解釋</a>的必要項目。</p>
+						<p><a href="epub-packages.html">EPUB包裝</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] — 定義了每一份<a href="epub-spec.html#dfn-rendition">內容釋義</a>的必要項目。</p>
 					</li>
 					<li>
 						<p><a href="epub-contentdocs.html">EPUB內容文件</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] — 定義了EPUB出版品中XHTML、SVG與CSS的規格。</p>
@@ -1080,7 +1080,7 @@ var [data-type] :hover::before {
 
 				<p>本章節透過EPUB規範所定義的中心產品：<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>，來檢視EPUB規範的結構。</p>
 
-				<p>一本EPUB出版品包含一或多個<a href="epub-spec.html#dfn-rendition">內容解釋（Renditions）</a>，每一份都由稱為<a href="epub-spec.html#dfn-epub-package">EPUB包裝（Package）</a>所呈現。一份EPUB包裝包含所有內容排版所必要的資源。這些的關鍵檔案則是<a href="epub-spec.html#dfn-package-document">包裝文件</a>，其中包括所有詮釋資料，<a href="epub-spec.html#dfn-epub-reading-system">閱讀系統</a>可以用來對使用者顯示（例如在書架上顯示書名與作者名，或者處理詮釋資料來顯示該書是固定版面或者能夠重排）。其也包含了完整資源的宣告，也包括一份<a href="epub-spec.html#dfn-spine">s書脊（Spine）</a>作為使用者依序閱讀內容時，該如何排列文件的順序清單。</p>
+				<p>一本EPUB出版品包含一或多個<a href="epub-spec.html#dfn-rendition">內容釋義（Renditions）</a>，每一份都由稱為<a href="epub-spec.html#dfn-epub-package">EPUB包裝（Package）</a>所呈現。一份EPUB包裝包含所有內容排版所必要的資源。這些的關鍵檔案則是<a href="epub-spec.html#dfn-package-document">包裝文件</a>，其中包括所有詮釋資料，<a href="epub-spec.html#dfn-epub-reading-system">閱讀系統</a>可以用來對使用者顯示（例如在書架上顯示書名與作者名，或者處理詮釋資料來顯示該書是固定版面或者能夠重排）。其也包含了完整資源的宣告，也包括一份<a href="epub-spec.html#dfn-spine">s書脊（Spine）</a>作為使用者依序閱讀內容時，該如何排列文件的順序清單。</p>
 
 				<p>一份EPUB包裝也包含了另一個關鍵檔案稱為<a href="epub-spec.html#dfn-epub-navigation-document">EPUB導覽文件</a>。該文件提供了關鍵導覽能力，像是目錄，能讓使用者迅速且輕鬆地巡覽內容。</p>
 
@@ -1130,7 +1130,7 @@ var [data-type] :hover::before {
 					</dd>
 					<dt><dfn id="dfn-core-media-type-resource" data-lt="core media type resources|core media type resource" data-dfn-type="dfn">核心媒體類型資源（Core Media Type Resource）</dfn></dt>
 					<dd>
-						<p>不需要提出<a href="#sec-foreign-restrictions">回退</a>的<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>（相對於<a href="epub-spec.html#dfn-foreign-resource">外部資源</a>）。</p>
+						<p>不需要提出<a href="#sec-foreign-restrictions">回退</a>的<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>（相對於<a href="epub-spec.html#dfn-foreign-resource">外圍資源</a>）。</p>
 					</dd>
 					<dt><dfn id="dfn-epub-container" data-lt="epub containers|epub container" data-dfn-type="dfn">EPUB容器（EPUB Container）</dfn></dt>
 					<dd>
@@ -1147,11 +1147,11 @@ var [data-type] :hover::before {
 					</dd>
 					<dt><dfn id="dfn-epub-package" data-lt="epub packages|epub package" data-dfn-type="dfn">EPUB包裝（EPUB Package）</dfn></dt>
 					<dd>
-						<p>一個邏輯文件實體，包含了一系列有相互關係的<a data-lt="Publication Resource" href="epub-spec.html#dfn-publication-resource">資源</a>以呈現一本<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的<a href="epub-spec.html#dfn-rendition">內容解釋</a>，如<a href="epub-spec.html#dfn-package-document">包裝文件</a>所定義。</p>
+						<p>一個邏輯文件實體，包含了一系列有相互關係的<a data-lt="Publication Resource" href="epub-spec.html#dfn-publication-resource">資源</a>以呈現一本<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的<a href="epub-spec.html#dfn-rendition">內容釋義</a>，如<a href="epub-spec.html#dfn-package-document">包裝文件</a>所定義。</p>
 					</dd>
 					<dt><dfn id="dfn-epub-publication" data-lt="epub publications|epub publication" data-dfn-type="dfn">EPUB出版品（EPUB Publication）</dfn></dt>
 					<dd>
-						<p>一個或多個<a href="epub-spec.html#dfn-rendition">內容解釋</a>的集合，須符合規格，以EPUB容器包裝。</p>
+						<p>一個或多個<a href="epub-spec.html#dfn-rendition">內容釋義</a>的集合，須符合規格，以EPUB容器包裝。</p>
 						<p>一本EPUB出版品一般代表了單一智慧財產或者藝術作品，但規格本身卻不限制內容的本質。</p>
 					</dd>
 					<dt><dfn id="dfn-epub-reading-system" data-lt="epub reading systems|reading system|reading systems|epub reading system" data-dfn-type="dfn">EPUB閱讀系統或閱讀系統（EPUB Reading System）</dt>
@@ -1163,9 +1163,9 @@ var [data-type] :hover::before {
 						<p>一份<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>在<a href="epub-spec.html#dfn-package-document">包裝文件</a>的<a href="epub-spec.html#dfn-spine">書脊</a>中直接被指定成<code>pre-paginated</code>，如同<a href="epub-packages.html#layout"><code>rendition:layout</code>特性</a>之定義 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。</p>
 						<p>另一個面向是用於如何排列固定版面文件，如<a href="epub-contentdocs.html#sec-fixed-layouts">固定版面</a>所定義 [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] 。</p>
 											</dd>
-					<dt><dfn id="dfn-foreign-resource" data-lt="foreign resources|foreign resource" data-dfn-type="dfn">外部資源（Foreign Resource）</dfn></dt>
+					<dt><dfn id="dfn-foreign-resource" data-lt="foreign resources|foreign resource" data-dfn-type="dfn">外圍資源（Foreign Resource）</dfn></dt>
 					<dd>
-						<p>非<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a>的<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>。外部資源需要提供如<a href="#sec-foreign-restrictions">外部資源</a>中所定義的回退。</p>
+						<p>非<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a>的<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>。外圍資源需要提供如<a href="#sec-foreign-restrictions">外圍資源</a>中所定義的回退。</p>
 					</dd>
 					<dt><dfn id="dfn-local-resource" data-lt="local resources|local resource" data-dfn-type="dfn">本地資源（Local Resource）</dfn></dt>
 					<dd>
@@ -1174,7 +1174,7 @@ var [data-type] :hover::before {
 					</dd>
 					<dt><dfn id="dfn-manifest" data-lt="manifests|manifest" data-dfn-type="dfn">宣告（Manifest）</dfn></dt>
 					<dd>
-						<p>所有<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>的列表，用於建構一本<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的<a href="epub-spec.html#dfn-rendition">內容解釋</a>。</p>
+						<p>所有<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>的列表，用於建構一本<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的<a href="epub-spec.html#dfn-rendition">內容釋義</a>。</p>
 						<p>想了解更多請參考<a href="epub-packages.html#sec-manifest-elem">宣告</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。</p>
 					</dd>
 					<dt><dfn id="dfn-media-overlay-document" data-lt="media overlay documents|media overlay document" data-dfn-type="dfn">媒體層疊文件（Media Overlay Document）</dfn></dt>
@@ -1183,12 +1183,12 @@ var [data-type] :hover::before {
 					</dd>
 					<dt><dfn id="dfn-package-document" data-lt="package documents|package document" data-dfn-type="dfn">包裝文件（Package Document）</dfn></dt>
 					<dd>
-						<p>一個<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>，用以描述一份<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的A Publication Resource</a> that describes one <a href="epub-spec.html#dfn-rendition">內容解釋</a>，如<a href="epub-packages.html#sec-package-doc">包裝文件</a>所定義 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。包裝文件乘載了關於內容解釋的詮釋資訊，提供資源的宣告以及定義了預設閱讀順序。</p>
+						<p>一個<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>，用以描述一份<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的A Publication Resource</a> that describes one <a href="epub-spec.html#dfn-rendition">內容釋義</a>，如<a href="epub-packages.html#sec-package-doc">包裝文件</a>所定義 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。包裝文件乘載了關於內容釋義的詮釋資訊，提供資源的宣告以及定義了預設閱讀順序。</p>
 					</dd>
 					<dt><dfn id="dfn-publication-resource" data-lt="publication resources|publication resource" data-dfn-type="dfn">出版品資源（Publication Resource）</dfn></dt>
 					<dd>
-						<p>在一本<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>中的資源，其中包含內容，或者能助於至少一份<a href="epub-spec.html#dfn-rendition">內容解釋</a>用以排列顯示內容使用。若缺少這份資源，EPUB出版品可能無法如<a href="epub-spec.html#dfn-author">作者</a>意圖一般顯示內容。出版資源可包括：內容解釋的<a href="epub-spec.html#dfn-package-document">包裝文件</a>、<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>、CSS樣式表、聲音、影片、圖片、嵌入字型與腳本。</p>
-						<p>除去包裝文件自身，用於顯示內容解釋的出版品資源均列於內容解釋的<a href="epub-packages.html#sec-manifest-elem">宣告</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，並且置放到<a href="epub-spec.html#dfn-epub-container">EPUB容器</a>檔案指定的位置中（除非指定到其他<a href="#sec-resource-locations">出版品資源位置</a>）。</p>
+						<p>在一本<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>中的資源，其中包含內容，或者能助於至少一份<a href="epub-spec.html#dfn-rendition">內容釋義</a>用以排列顯示內容使用。若缺少這份資源，EPUB出版品可能無法如<a href="epub-spec.html#dfn-author">作者</a>意圖一般顯示內容。出版資源可包括：內容釋義的<a href="epub-spec.html#dfn-package-document">包裝文件</a>、<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>、CSS樣式表、聲音、影片、圖片、嵌入字型與腳本。</p>
+						<p>除去包裝文件自身，用於顯示內容釋義的出版品資源均列於內容釋義的<a href="epub-packages.html#sec-manifest-elem">宣告</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，並且置放到<a href="epub-spec.html#dfn-epub-container">EPUB容器</a>檔案指定的位置中（除非指定到其他<a href="#sec-resource-locations">出版品資源位置</a>）。</p>
 						<p>不屬於出版品資源的資源，例如：包裝文件<a href="epub-packages.html#sec-link-elem">link</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 元素，以及被視為外連超連結或者被解析為<a href="epub-spec.html#dfn-remote-resource">遠端資源</a>（例如在 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 中<a href="https://www.w3.org/TR/html/textlevel-semantics.html#the-a-element"><code>a</code></a>元素裡<code>href</code>屬性所指定的連結）。</p>
 					</dd>
 					<dt><dfn id="dfn-release-identifier" data-lt="release identifiers|release identifier" data-dfn-type="dfn">發佈識別碼（Release Identifier）</dfn></dt>
@@ -1201,7 +1201,7 @@ var [data-type] :hover::before {
 						<p>位置位於<a href="epub-spec.html#dfn-epub-container">EPUB容器</a>之外的資源，一般位於線上。</p>
 						<p>請參考<a href="#sec-resource-locations">出版品資源位置</a>已獲得媒體類型對資源位置的特殊規則。</p>
 					</dd>
-					<dt><dfn id="dfn-rendition" data-lt="renditions|rendition" data-dfn-type="dfn">內容解釋（Rendition）</dfn></dt>
+					<dt><dfn id="dfn-rendition" data-lt="renditions|rendition" data-dfn-type="dfn">內容釋義（Rendition）</dfn></dt>
 					<dd>
 						<p><a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的一種內容顯示方式，如<a href="epub-spec.html#dfn-epub-package">EPUB包裝</a>中所解釋。</p>
 					</dd>
@@ -1212,7 +1212,7 @@ var [data-type] :hover::before {
 					</dd>
 					<dt><dfn id="dfn-spine" data-lt="spines|spine" data-dfn-type="dfn">書脊（Spine）</dfn></dt>
 					<dd>
-						<p>一份<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>的順序清單，一般資源為<a href="epub-packages.html#confreq-spine-itemtypes">EPUB內容文件</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，表現了該份EPUB出版品<a href="epub-spec.html#dfn-rendition">內容解釋</a>的預設閱讀順序。</p>
+						<p>一份<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>的順序清單，一般資源為<a href="epub-packages.html#confreq-spine-itemtypes">EPUB內容文件</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，表現了該份EPUB出版品<a href="epub-spec.html#dfn-rendition">內容釋義</a>的預設閱讀順序。</p>
 						<p>想了解更多資訊，請參照<a href="epub-packages.html#sec-spine-elem">書脊</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。</p>
 					</dd>
 					<dt><dfn id="dfn-svg-content-document" data-lt="svg content documents|svg content document" data-dfn-type="dfn">SVG內容文件（SVG Content Document）</dfn></dt>
@@ -1234,7 +1234,7 @@ var [data-type] :hover::before {
 					</dd>
 					<dt><dfn id="dfn-unique-identifier" data-lt="unique identifiers|unique identifier" data-dfn-type="dfn">獨特識別碼（Unique Identifier）</dfn></dt>
 					<dd>
-						<p>獨特識別碼是<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的主要識別碼，定義於<a href="epub-packages.html#attrdef-package-unique-identifier"><code>unique-identifier</code>屬性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。獨特識別碼可由同一本EPUB出版品中的一或多個<a href="epub-spec.html#dfn-rendition">內容解釋</a>所共有。</p>
+						<p>獨特識別碼是<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的主要識別碼，定義於<a href="epub-packages.html#attrdef-package-unique-identifier"><code>unique-identifier</code>屬性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。獨特識別碼可由同一本EPUB出版品中的一或多個<a href="epub-spec.html#dfn-rendition">內容釋義</a>所共有。</p>
 						<p>內容明顯的改版、摘要等，則需要新的獨特識別碼。</p>
 					</dd>
 					<dt><dfn id="dfn-viewport" data-lt="viewports|viewport" data-dfn-type="dfn">顯示範圍（Viewport）</dfn></dt>
@@ -1273,7 +1273,7 @@ var [data-type] :hover::before {
 					</dd>
 					<dt id="sec-epub-pub-conformance-all">出版品資源（Publication Resources）</dt>
 					<dd>
-						<p id="confreq-manifest"><span class="link-marker"><a href="#confreq-rs-epub3-ocf" class="hidden-reveal"><span>&nbsp;</span></a> </span>所有出版品資源<em class="rfc2119" title="MUST">必需</em>符合對核心媒體類型和外部資源的規定，並且放置在指定的<a href="#sec-resource-locations">出版品資源位置</a>。</p>
+						<p id="confreq-manifest"><span class="link-marker"><a href="#confreq-rs-epub3-ocf" class="hidden-reveal"><span>&nbsp;</span></a> </span>所有出版品資源<em class="rfc2119" title="MUST">必需</em>符合對核心媒體類型和外圍資源的規定，並且放置在指定的<a href="#sec-resource-locations">出版品資源位置</a>。</p>
 					</dd>
 					<dt id="sec-epub-pub-conformance-container">容器（Container）</dt>
 					<dd>
@@ -1293,7 +1293,7 @@ var [data-type] :hover::before {
 					<dd>
 						<p id="confreq-rs-epub3-ocf"><span class="link-marker"><a href="#confreq-rs-epub3-ocf" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>以定義於 [<cite><a class="bibref" href="#bib-ocf32">OCF32</a></cite>] 的方式處理<a href="epub-spec.html#dfn-epub-container">EPUB容器</a>。</p>
 						<p id="confreq-rs-epub3-package"><span class="link-marker"><a href="#confreq-rs-epub3-package" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>以定義於 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 的方式處理<a href="epub-spec.html#dfn-epub-package">EPUB包裝</a>。</p>
-						<p id="confreq-rs-foreign"><span class="link-marker"><a href="#confreq-rs-foreign" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MAY">可以</em>隨意支援各種<a href="epub-spec.html#dfn-foreign-resource">外部資源</a>類型，但<em class="rfc2119" title="MUST">必需</em>為不支援的外部資源提供回退，如<a href="#sec-foreign-restrictions">外部資源</a>中的定義。</p>
+						<p id="confreq-rs-foreign"><span class="link-marker"><a href="#confreq-rs-foreign" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MAY">可以</em>隨意支援各種<a href="epub-spec.html#dfn-foreign-resource">外圍資源</a>類型，但<em class="rfc2119" title="MUST">必需</em>為不支援的外圍資源提供回退，如<a href="#sec-foreign-restrictions">外圍資源</a>中的定義。</p>
 						<p id="confreq-rs-remote"><span class="link-marker"><a href="#confreq-rs-remote" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="SHOULD">應該</em>支援<a href="#dfn-remote-resource">遠端資源</a>，如<a href="#sec-resource-locations">資源位置</a>所定義。</p>
 						<p id="confreq-rs-epub3-xhtml"><span class="link-marker"><a href="#confreq-rs-epub3-xhtml" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>以定義於<a href="epub-contentdocs.html#sec-xhtml-conf-rs">XHTML內容文件 - 閱讀系統適用性</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] 的方式處理<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>。</p>
 						<p id="confreq-rs-epub3-svg"><span class="link-marker"><a href="#confreq-rs-epub3-svg" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>以定義於<a href="epub-contentdocs.html#sec-svg-rs-conf">SVG內容文件 - 閱讀系統適用性</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] 的方式處理<a href="epub-spec.html#dfn-svg-content-document">SVG內容文件</a>。</p>
@@ -1311,12 +1311,12 @@ var [data-type] :hover::before {
 					</dd>
 					<dt id="sec-epub-rs-conf-backward">向後支援性</dt>
 					<dd>
-						<p id="confreq-rs-backward-epub"><span class="link-marker"><a href="#confreq-rs-backward-epub" class="hidden-reveal"><span>&nbsp;</span></a> </span>在包裝文件<code>version</code>屬性小於「<code>3.0</code>」時，<em class="rfc2119" title="MUST">必需</em>嘗試處理EPUB出版品中任何提供的內容解釋。</p>
+						<p id="confreq-rs-backward-epub"><span class="link-marker"><a href="#confreq-rs-backward-epub" class="hidden-reveal"><span>&nbsp;</span></a> </span>在包裝文件<code>version</code>屬性小於「<code>3.0</code>」時，<em class="rfc2119" title="MUST">必需</em>嘗試處理EPUB出版品中任何提供的內容釋義。</p>
 						<p id="confreq-rs-backward-conf"><span class="link-marker"><a href="#confreq-rs-backward-conf" class="hidden-reveal"><span>&nbsp;</span></a> </span>版本號較舊的EPUB出版品不會一直如同預期一般顯示，除非以當時的規格進行處理。閱讀系統<em class="rfc2119" title="SHOULD">應該</em>支援已那些規格定義的EPUB出版品。</p>
 					</dd>
 					<dt id="sec-epub-rs-conf-forward">向前支援性</dt>
 					<dd>
-						<p id="confreq-rs-forward-epubn"><span class="link-marker"><a href="#confreq-rs-forward-epubn" class="hidden-reveal"><span>&nbsp;</span></a> </span>在包裝文件<code>version</code>屬性大於「<code>3.0</code>」時，<em class="rfc2119" title="MUST">必需</em>嘗試處理EPUB出版品中任何提供的內容解釋。</p>
+						<p id="confreq-rs-forward-epubn"><span class="link-marker"><a href="#confreq-rs-forward-epubn" class="hidden-reveal"><span>&nbsp;</span></a> </span>在包裝文件<code>version</code>屬性大於「<code>3.0</code>」時，<em class="rfc2119" title="MUST">必需</em>嘗試處理EPUB出版品中任何提供的內容釋義。</p>
 					</dd>
 					<dt id="sec-epub-rs-conf-xml">XML處理</dt>
 					<dd>
@@ -1343,11 +1343,11 @@ var [data-type] :hover::before {
 				<section id="sec-cmt-intro">
 					<h4 id="x3-1-1-introduction"><span class="secno">3.1.1 </span>導論<a class="self-link" aria-label="§" href="#sec-cmt-intro"></a></h4>
 
-					<p><a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>中的每個<a href="epub-spec.html#dfn-rendition">內容解釋</a>一般包含許多<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>。這些資源可以分為兩項範疇：能被包含而無須提供回退（<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a>），以及不能的（<a href="epub-spec.html#dfn-foreign-resource">外部資源</a>）。</p>
+					<p><a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>中的每個<a href="epub-spec.html#dfn-rendition">內容釋義</a>一般包含許多<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>。這些資源可以分為兩項範疇：能被包含而無須提供回退（<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a>），以及不能的（<a href="epub-spec.html#dfn-foreign-resource">外圍資源</a>）。</p>
 
-					<p><a href="epub-spec.html#dfn-author">作者</a>可自由使用這兩種類型的資源來建構EPUB出版品，但是必須注意到一些閱讀系統可能不會處理所使用到的外部資源。</p>
+					<p><a href="epub-spec.html#dfn-author">作者</a>可自由使用這兩種類型的資源來建構EPUB出版品，但是必須注意到一些閱讀系統可能不會處理所使用到的外圍資源。</p>
 
-					<p>EPUB出版品設計供完善的閱讀系統處理使用，是故需要一套回退機制來確保使用外部資源不會對使用者消費資源造成影響。本章節列出<a href="#sec-cmt-supported">一系列核心媒體類型資源</a>以及用以保障內容完整性的<a href="#sec-foreign-restrictions">回退機制</a>。</p>
+					<p>EPUB出版品設計供完善的閱讀系統處理使用，是故需要一套回退機制來確保使用外圍資源不會對使用者消費資源造成影響。本章節列出<a href="#sec-cmt-supported">一系列核心媒體類型資源</a>以及用以保障內容完整性的<a href="#sec-foreign-restrictions">回退機制</a>。</p>
 
 				</section>
 
@@ -1533,13 +1533,13 @@ var [data-type] :hover::before {
 				</section>
 
 				<section id="sec-foreign-restrictions">
-					<h4 id="x3-1-3-foreign-resources"><span class="secno">3.1.3 </span>外部資源<a class="self-link" aria-label="§" href="#sec-foreign-restrictions"></a></h4>
+					<h4 id="x3-1-3-foreign-resources"><span class="secno">3.1.3 </span>外圍資源<a class="self-link" aria-label="§" href="#sec-foreign-restrictions"></a></h4>
 
-					<p id="confreq-foreign-no-fallback">EPUB出版品中的外部資源如果不列在<a href="epub-packages.html#sec-itemref-elem">書脊的<code>itemref</code>元素</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，或者可以直接以原生格式顯示在EPUB內容文件中（例如，使用 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/dom.html#embedded-content">嵌入內容</a>或者 [<cite><a class="bibref" href="#bib-svg">SVG</a></cite>] <a href="https://www.w3.org/TR/SVG/struct.html#ImageElement"><code>image</code></a>以及<a href="https://www.w3.org/TR/SVG/extend.html#ForeignObjectElement"><code>foreignObject</code></a>元素），<em class="rfc2119" title="MAY">可以</em>被包含卻無需提供回退。</p>
+					<p id="confreq-foreign-no-fallback">EPUB出版品中的外圍資源如果不列在<a href="epub-packages.html#sec-itemref-elem">書脊的<code>itemref</code>元素</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，或者可以直接以原生格式顯示在EPUB內容文件中（例如，使用 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/dom.html#embedded-content">嵌入內容</a>或者 [<cite><a class="bibref" href="#bib-svg">SVG</a></cite>] <a href="https://www.w3.org/TR/SVG/struct.html#ImageElement"><code>image</code></a>以及<a href="https://www.w3.org/TR/SVG/extend.html#ForeignObjectElement"><code>foreignObject</code></a>元素），<em class="rfc2119" title="MAY">可以</em>被包含卻無需提供回退。</p>
 
 					<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>注意事項</span></div><p class="">這項例外讓作者可以在<a href="epub-spec.html#dfn-epub-container">EPUB容器</a>內包含EPUB閱讀系統不會使用的資源。這項例外的主要案例可讓資料檔案隨著EPUB出版品移動，無論是供腳本在其所構成的EPUB內容文件使用，還是供外部程式使用（例如：科學期刊可能包含資料組，配合教學告知如何將其從EPUB容器中取出）。</p></div>
 
-					<p id="confreq-cmt">當一份<a href="epub-spec.html#dfn-foreign-resource">外部資源</a>包含在書脊中，或者直接在EPUB內容文件中以其原生格式顯示，就<em class="rfc2119" title="MUST">必需</em>包含對<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a>的回退。回退可以以下兩種形式擇一：</p>
+					<p id="confreq-cmt">當一份<a href="epub-spec.html#dfn-foreign-resource">外圍資源</a>包含在書脊中，或者直接在EPUB內容文件中以其原生格式顯示，就<em class="rfc2119" title="MUST">必需</em>包含對<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a>的回退。回退可以以下兩種形式擇一：</p>
 
 					<ul>
 						<li>
@@ -1550,7 +1550,7 @@ var [data-type] :hover::before {
 						</li>
 					</ul>
 
-					<p>宣告回退是<a href="epub-spec.html#dfn-package-document">包裝文件</a>的一項功能，可以創建回退鍊指向核心媒體類型資源。主要應用在創建對列於<a href="epub-packages.html#sec-spine-elem">書脊</a>中的外部資源的回退 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，尤其在缺少固有回退機制時（例如 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 的<a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-img-element"><code>img</code></a>元素）。</p>
+					<p>宣告回退是<a href="epub-spec.html#dfn-package-document">包裝文件</a>的一項功能，可以創建回退鍊指向核心媒體類型資源。主要應用在創建對列於<a href="epub-packages.html#sec-spine-elem">書脊</a>中的外圍資源的回退 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，尤其在缺少固有回退機制時（例如 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 的<a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-img-element"><code>img</code></a>元素）。</p>
 
 					<p>請參考 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 及 [<cite><a class="bibref" href="#bib-svg">SVG</a></cite>] 規格確認各種元素提供的固有回退機制。</p>
 
@@ -1597,7 +1597,7 @@ var [data-type] :hover::before {
 				</div></div>
 
 				<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-3" aria-level="4"><span>注意事項</span></div><div class="">
-					<p>本章節對出版品資源位置的規則適用於所有資源，無論是<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a>還是<a href="epub-spec.html#dfn-foreign-resource">外部資源</a>。</p>
+					<p>本章節對出版品資源位置的規則適用於所有資源，無論是<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a>還是<a href="epub-spec.html#dfn-foreign-resource">外圍資源</a>。</p>
 				</div></div>
 
 				<div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-4" aria-level="4"><span>注意事項</span></div><div class="">
@@ -1628,7 +1628,7 @@ var [data-type] :hover::before {
 					</li>
 				</ul>
 
-				<p>以上限制適用於所有出版品資源，無論是<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類別資源</a>還是<a href="epub-spec.html#dfn-foreign-resource">外部資源</a>。</p>
+				<p>以上限制適用於所有出版品資源，無論是<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類別資源</a>還是<a href="epub-spec.html#dfn-foreign-resource">外圍資源</a>。</p>
 
 			</section>
 

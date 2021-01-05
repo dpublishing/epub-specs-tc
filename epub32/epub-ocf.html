@@ -1048,9 +1048,9 @@ var [data-type] :hover::before {
 					<dd>
 						<p>編碼用於具備固有二進位格式特性的內容，例如影片或者聲音媒體類型等已經預供壓縮最佳化設計，或者能提供最佳化的串流相容性。</p>
 					</dd>
-					<dt><dfn id="dfn-default-rendition" data-lt="default renditions|default rendition" data-dfn-type="dfn">預設內容解釋（Default Rendition）</dfn></dt>
+					<dt><dfn id="dfn-default-rendition" data-lt="default renditions|default rendition" data-dfn-type="dfn">預設內容釋義（Default Rendition）</dfn></dt>
 					<dd>
-						<p>列於<a href="#sec-container-metainf-container.xml">container.xml</a>檔案中的第一個<code>rootfile</code>元素中的<a href="epub-spec.html#dfn-rendition">內容解釋</a>。</p>
+						<p>列於<a href="#sec-container-metainf-container.xml">container.xml</a>檔案中的第一個<code>rootfile</code>元素中的<a href="epub-spec.html#dfn-rendition">內容釋義</a>。</p>
 					</dd>
 					<dt><dfn id="dfn-file-name" data-lt="file names|file name" data-dfn-type="dfn">檔案名稱（File Name）</dfn></dt>
 					<dd>
@@ -1137,7 +1137,7 @@ var [data-type] :hover::before {
 					<dt><code>container.xml</code>
 						<code> [必要] </code></dt>
 					<dd>
-						<p>識別定義該EPUB出版品中每個<a href="epub-spec.html#dfn-rendition">內容解釋</a>的<a href="epub-spec.html#dfn-package-document">包裝文件</a>位置。</p>
+						<p>識別定義該EPUB出版品中每個<a href="epub-spec.html#dfn-rendition">內容釋義</a>的<a href="epub-spec.html#dfn-package-document">包裝文件</a>位置。</p>
 					</dd>
 					<dt><code>signatures.xml</code>
 						<code> [選擇性] </code>
@@ -1339,11 +1339,11 @@ var [data-type] :hover::before {
 
 						<p>該檔案的內容<em class="rfc2119" title="MUST">必需</em>在移除所有來自其他命名空間的元素以及屬性（包含所有屬性以及有這些元素的內容）後，合乎定義在「<a href="#app-schema-container">供<code>container.xml</code>使用的綱要</a>」裡提供的綱要。</p>
 
-						<p id="elemdef-container-rootfile">每一個<code>rootfile</code>元素<em class="rfc2119" title="MUST">必需</em>指定一份<a href="epub-spec.html#dfn-package-document">包裝文件</a>的位置，以代表EPUB出版品的一個內容解釋。每一個<a href="epub-spec.html#dfn-rendition">內容解釋</a><em class="rfc2119" title="MUST">必需</em>與其容器的EPUB版本相容。</p>
+						<p id="elemdef-container-rootfile">每一個<code>rootfile</code>元素<em class="rfc2119" title="MUST">必需</em>指定一份<a href="epub-spec.html#dfn-package-document">包裝文件</a>的位置，以代表EPUB出版品的一個內容釋義。每一個<a href="epub-spec.html#dfn-rendition">內容釋義</a><em class="rfc2119" title="MUST">必需</em>與其容器的EPUB版本相容。</p>
 
-						<p id="container-default-rendition">一個OCF處理器<em class="rfc2119" title="MUST">必需</em>將在<code>rootfile</code>元素中第一個<code>rootfile</code>元素視為所容納的EPUB出版品中的<a href="#dfn-default-rendition">預設內容解釋</a>。<a href="epub-spec.html#dfn-epub-reading-system">閱讀系統</a><em class="rfc2119" title="REQUIRED">需要</em>呈現預設內容解釋，但<em class="rfc2119" title="MAY">可以</em>顯示容器中的其他內容解釋。</p>
+						<p id="container-default-rendition">一個OCF處理器<em class="rfc2119" title="MUST">必需</em>將在<code>rootfile</code>元素中第一個<code>rootfile</code>元素視為所容納的EPUB出版品中的<a href="#dfn-default-rendition">預設內容釋義</a>。<a href="epub-spec.html#dfn-epub-reading-system">閱讀系統</a><em class="rfc2119" title="REQUIRED">需要</em>呈現預設內容釋義，但<em class="rfc2119" title="MAY">可以</em>顯示容器中的其他內容釋義。</p>
 
-						<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="6"><span>注意事項</span></div><p class="">儘管EPUB容器提供能夠包含多於一個內容解釋之內容的能力，閱讀系統對於多重內容解釋的支援依然未受到廣泛支援，僅有參與的團體為了其目的與手段提供特定的環境支援。</p></div>
+						<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="6"><span>注意事項</span></div><p class="">儘管EPUB容器提供能夠包含多於一個內容釋義之內容的能力，閱讀系統對於多重內容釋義的支援依然未受到廣泛支援，僅有參與的團體為了其目的與手段提供特定的環境支援。</p></div>
 
 						<aside class="example" id="example-3"><div class="marker">
       <a class="self-link" href="#example-3">範例3</a>
@@ -1361,7 +1361,7 @@ var [data-type] :hover::before {
 						<aside class="example" id="example-4"><div class="marker">
       <a class="self-link" href="#example-4">範例4</a>
     </div>
-							<p>以下範例呈現SVG與XHTML內容解釋包裝於相同的容器中：</p>
+							<p>以下範例呈現SVG與XHTML內容釋義包裝於相同的容器中：</p>
 							<pre aria-busy="false"><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0"?&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">container</span> <span class="hljs-attr">version</span>=<span class="hljs-string">"1.0"</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"urn:oasis:names:tc:opendocument:xmlns:container"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">rootfiles</span>&gt;</span>
@@ -1375,7 +1375,7 @@ var [data-type] :hover::before {
 
 						<p><em class="rfc2119" title="OPTIONAL">選擇性</em>的<code id="elemdef-container-links">links</code>元素指定處理<a href="#dfn-zip-container" class="internalDFN" data-link-type="dfn">OCF ZIP容器</a>時所需要的資源。其每一個<code id="elemdef-container-link">link</code>元素<em class="rfc2119" title="MUST">必需</em>包含一個<code>href</code>屬性，其值指定了一個資源的位址。每一個<code>link</code>元素都<em class="rfc2119" title="MUST">必需</em>包含一個<code>rel</code>屬性其值指定了與資源的關係，以及<em class="rfc2119" title="MAY">可以</em>包含一個<code>media-type</code>屬性，其值<em class="rfc2119" title="MUST">必需</em>為一個媒體類型 [<cite><a class="bibref" href="#bib-rfc2046">RFC2046</a></cite>] 指定了該<code>link</code>參照的資源的類型與格式。</p>
 
-						<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="6"><span>注意事項</span></div><p class=""><code>links</code>元素用於<a href="http://www.idpf.org/epub/renditions/multiple/#sec-4.4.4">多重內容解釋</a>EPUB中指出內容解釋所映射的文件。</p></div>
+						<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="6"><span>注意事項</span></div><p class=""><code>links</code>元素用於<a href="http://www.idpf.org/epub/renditions/multiple/#sec-4.4.4">多重內容釋義</a>EPUB中指出內容釋義所映射的文件。</p></div>
 
 						<p><code>rootfile</code>元素中<code>full-path</code>屬性的值與<code>link</code>元素的<code>href</code>屬性<em class="rfc2119" title="MUST">必需</em>包含一個<em class="firstterm" id="def-path-component">路徑部件</em> [<cite><a class="bibref" href="#bib-rfc3986">RFC3986</a></cite>] 其<em class="rfc2119" title="MUST">必需</em>僅使用<em class="firstterm" id="def-path-rootless">path-rootless</em> [<cite><a class="bibref" href="#bib-rfc3986">RFC3986</a></cite>] 形式。其路徑部件對<a href="#dfn-root-directory" class="internalDFN" data-link-type="dfn">根目錄</a>為相對。</p>
 
@@ -1398,7 +1398,7 @@ var [data-type] :hover::before {
 
 						<p>在OCF抽象容器中，以加密資料置換未加密的資料。例如，如果一個名為<code>photo.jpeg</code>的影像為加密，<code>photo.jpeg</code>資源的內容<em class="rfc2119" title="SHOULD">應該</em>被置換成其加密後的內容。在ZIP資料夾中，<em class="rfc2119" title="SHOULD">應該</em>儲存加密後的檔案而非Deflate壓縮檔。</p>
 
-						<p id="encryption-obfuscation">請注意在一些狀況下，需要模糊儲存被<a href="epub-spec.html#dfn-rendition">內容解釋</a>參照的嵌入資源，以連接到「母」EPUB出版品並且使他們更難以在非限制的使用下解壓縮（例如，字體）。儘管模糊化並非加密，<code>encryption.xml</code>檔案用於注入<a href="#sec-resource-obfuscation">資源模糊化演算法</a>以識別哪些資源需要在使用前去模糊化。</p>
+						<p id="encryption-obfuscation">請注意在一些狀況下，需要模糊儲存被<a href="epub-spec.html#dfn-rendition">內容釋義</a>參照的嵌入資源，以連接到「母」EPUB出版品並且使他們更難以在非限制的使用下解壓縮（例如，字體）。儘管模糊化並非加密，<code>encryption.xml</code>檔案用於注入<a href="#sec-resource-obfuscation">資源模糊化演算法</a>以識別哪些資源需要在使用前去模糊化。</p>
 
 						<p id="encryption-restrictions">以下檔案<em class="rfc2119" title="MUST NOT">不得</em>被加密，無論是以預設或者呼叫特別的加密法：</p>
 
@@ -1518,7 +1518,7 @@ var [data-type] :hover::before {
 
 						<p>OCF規格不指定宣告的格式。</p>
 
-						<p>請注意在<a href="epub-spec.html#dfn-package-document">包裝文件</a>中的<code>manifest</code>元素指定了為一個宣告用於處理該內容解釋。包含在ZIP封存中的額外宣告資訊或者<em class="rfc2119" title="OPTIONAL">選擇性</em>的<code>manifest.xml</code><em class="rfc2119" title="MUST NOT">不得</em>被用於處理內容解釋。</p>
+						<p>請注意在<a href="epub-spec.html#dfn-package-document">包裝文件</a>中的<code>manifest</code>元素指定了為一個宣告用於處理該內容釋義。包含在ZIP封存中的額外宣告資訊或者<em class="rfc2119" title="OPTIONAL">選擇性</em>的<code>manifest.xml</code><em class="rfc2119" title="MUST NOT">不得</em>被用於處理內容釋義。</p>
 						<div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-3" aria-level="6"><span>注意事項</span></div><div class="">本功能僅為了相容於 [<cite><a class="bibref" href="#bib-odf">ODF</a></cite>] 續存。</div></div>
 
 					</section>
@@ -1541,7 +1541,7 @@ var [data-type] :hover::before {
 
 						<p>本版本的OCF規格不要求特定格式的DRM資訊，但未來版本可能會要求。<code>rights.xml</code>的內容<em class="rfc2119" title="SHOULD">應該</em>僅包含命名空間認可的元素 [<cite><a class="bibref" href="#bib-xml-names">XML-NAMES</a></cite>] ，以避免與未來的格式產生斷裂。</p>
 
-						<p>當<code>rights.xml</code>檔案不存在時，該容器中沒有任何部分在容器層級上受到權利管控。但權利表述可能存在於容納的內容解釋。</p>
+						<p>當<code>rights.xml</code>檔案不存在時，該容器中沒有任何部分在容器層級上受到權利管控。但權利表述可能存在於容納的內容釋義。</p>
 
 						<p>如果<code>rights.xml</code>不存在時，OCF抽象容器沒有任何部分受到權利管控。</p>
 
@@ -1741,7 +1741,7 @@ var [data-type] :hover::before {
 			<section id="obfus-keygen">
 				<h3 id="x5-2-obfuscation-key"><span class="secno">5.2 </span>模糊化密鑰<a class="self-link" aria-label="§" href="#obfus-keygen"></a></h3>
 
-				<p>用於模糊化演算法的密鑰，由<a href="#dfn-default-rendition">預設內容解釋</a>的<a href="epub-spec.html#dfn-unique-identifier">獨特識別碼</a>所取得。</p>
+				<p>用於模糊化演算法的密鑰，由<a href="#dfn-default-rendition">預設內容釋義</a>的<a href="epub-spec.html#dfn-unique-identifier">獨特識別碼</a>所取得。</p>
 
 				<p>所有空白字元，如<a href="https://www.w3.org/TR/2008/REC-xml-20081126/#sec-common-syn">XML 1.0規格 [<cite><a class="bibref" href="#bib-xml">XML</a></cite>] 中2.3節</a>所定義，<em class="rfc2119" title="MUST">必需</em>由識別碼中移除——尤其是Unicode碼點<code>U+0020</code>、<code>U+0009</code>、<code>U+000D</code>與<code>U+000A</code>。</p>
 
@@ -2073,7 +2073,7 @@ EPUB/images/cover.png</code></pre>
 
 			<p>本附錄註冊媒體類型<code>application/epub+zip</code>供EPUB開放容器格式（Open Container Format, OCF）使用。</p>
 
-			<p>一個<a href="#dfn-zip-container" class="internalDFN" data-link-type="dfn">OCF ZIP容器</a>，或<a href="epub-spec.html#dfn-epub-container">EPUB容器</a>，檔案為基於 [<cite><a class="bibref" href="#bib-zip">ZIP</a></cite>] 封存格式技術的容器。用於包覆EPUB出版品的內容解釋。OCF與其相關標準由World Wide Web Consortium (W3C)所維護並且定義。</p>
+			<p>一個<a href="#dfn-zip-container" class="internalDFN" data-link-type="dfn">OCF ZIP容器</a>，或<a href="epub-spec.html#dfn-epub-container">EPUB容器</a>，檔案為基於 [<cite><a class="bibref" href="#bib-zip">ZIP</a></cite>] 封存格式技術的容器。用於包覆EPUB出版品的內容釋義。OCF與其相關標準由World Wide Web Consortium (W3C)所維護並且定義。</p>
 
 			<dl class="variablelist">
 				<dt>MIME媒體類型名稱：</dt>

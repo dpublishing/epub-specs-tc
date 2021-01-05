@@ -1029,7 +1029,7 @@ var [data-type] :hover::before {
       <hr title="Separator for header">
     </div>
 		<section id="abstract" class="introductory"><h2>概要</h2>
-			<p>本規格定義了一個<a data-lt="EPUB Package" href="epub-spec.html#dfn-epub-package">EPUB® 包裝</a>的語意與適用性需求。每個包裝代表了一本<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的一項<a href="epub-spec.html#dfn-rendition">內容解釋</a>，並且由<a href="epub-spec.html#dfn-package-document">包裝文件</a>所定義，其敘述了內容解釋的內容並且設置了<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>如何產生關連的需求。</p>
+			<p>本規格定義了一個<a data-lt="EPUB Package" href="epub-spec.html#dfn-epub-package">EPUB® 包裝</a>的語意與適用性需求。每個包裝代表了一本<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的一項<a href="epub-spec.html#dfn-rendition">內容釋義</a>，並且由<a href="epub-spec.html#dfn-package-document">包裝文件</a>所定義，其敘述了內容釋義的內容並且設置了<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>如何產生關連的需求。</p>
 			<p>本規格也定義了<a href="epub-spec.html#dfn-epub-navigation-document">EPUB導覽文件</a>，一份可由機器與人類閱讀的特化<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>，能夠提供導覽協助，如：目次。</p>
 			<p>本規格屬於組成 [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] 的<a href="epub-spec.html#sec-intro-epub-specs">規格群</a>之一，其為基於XML與Web標準的數位出版品交換與遞送格式。要了解整體EPUB 3規格，需要與其他規格一併閱讀且理解。</p> <p>可參考 [<cite><a class="bibref" href="#bib-epub32changes">EPUB32Changes</a></cite>] 以了解本規格與其前版本的差異資訊。</p>
 		</section>
@@ -1193,7 +1193,7 @@ var [data-type] :hover::before {
 						<p id="confreq-rendition-rs-nav"><span class="link-marker"><a href="#confreq-rendition-rs-nav" class="hidden-reveal"><span>&nbsp;</span></a> </span><em class="rfc2119" title="MUST">必需</em>以定義於<a href="#sec-package-nav-rs-conf">EPUB導覽文件—閱讀系統適用性</a>的方式處理<a href="epub-spec.html#dfn-epub-navigation-document">EPUB導覽文件</a>。</p>
 				</li>
 					<li>
-						<p id="confreq-rendition-rs-manifest"><span class="link-marker"><a href="#confreq-rendition-rs-manifest" class="hidden-reveal"><span>&nbsp;</span></a> </span>處理包裝時<em class="rfc2119" title="MUST NOT">不得</em>使用任何未列於包裝文件外的資源（例如，<code>META-INF</code>檔案（ [<cite><a class="bibref" href="#bib-ocf32">OCF32</a></cite>] ）或者專屬於該EPUB出版品中其他內容解釋的資源。）	</p>
+						<p id="confreq-rendition-rs-manifest"><span class="link-marker"><a href="#confreq-rendition-rs-manifest" class="hidden-reveal"><span>&nbsp;</span></a> </span>處理包裝時<em class="rfc2119" title="MUST NOT">不得</em>使用任何未列於包裝文件外的資源（例如，<code>META-INF</code>檔案（ [<cite><a class="bibref" href="#bib-ocf32">OCF32</a></cite>] ）或者專屬於該EPUB出版品中其他內容釋義的資源。）	</p>
 					</li>
 				</ul>
 
@@ -1206,19 +1206,19 @@ var [data-type] :hover::before {
 			<section id="sec-package-intro" class="informative">
 				<h3 id="x3-1-introduction"><span class="secno">3.1 </span>導論<a class="self-link" aria-label="§" href="#sec-package-intro"></a></h3><p><em>本章節為非規範性。</em></p>
 
-				<p><a href="epub-spec.html#dfn-package-document">包裝文件</a>是一份包含一系列元素的XML文件，各元素分別內含有<a href="epub-spec.html#dfn-epub-package">EPUB包裝</a>各特殊用途的資訊。這些元素提供了集中的詮釋資料，組成包裝個別資源的細節，並且提供閱讀順序以及其他必要的資訊來排出<a href="epub-spec.html#dfn-rendition">內容解釋</a>的版面。</p>
+				<p><a href="epub-spec.html#dfn-package-document">包裝文件</a>是一份包含一系列元素的XML文件，各元素分別內含有<a href="epub-spec.html#dfn-epub-package">EPUB包裝</a>各特殊用途的資訊。這些元素提供了集中的詮釋資料，組成包裝個別資源的細節，並且提供閱讀順序以及其他必要的資訊來排出<a href="epub-spec.html#dfn-rendition">內容釋義</a>的版面。</p>
 
 				<p>以下列表歸納了能在包裝文件中取得的資訊：</p>
 
 				<ul>
 					<li>
-						<p><a href="#sec-package-metadata">詮釋資料</a> — 用來包含及/或參照能適用於該<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>內容解釋之詮釋資料的機制。</p>
+						<p><a href="#sec-package-metadata">詮釋資料</a> — 用來包含及/或參照能適用於該<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>內容釋義之詮釋資料的機制。</p>
 					</li>
 					<li>
-						<p><a href="#sec-manifest-elem">宣告</a> — 識別（透過IRI [<cite><a class="bibref" href="#bib-rfc3987">RFC3987</a></cite>] ）及描述（透過MIME媒體類型 [<cite><a class="bibref" href="#bib-rfc4839">RFC4839</a></cite>] ）一系列集體對組成該內容解釋的資源。</p>
+						<p><a href="#sec-manifest-elem">宣告</a> — 識別（透過IRI [<cite><a class="bibref" href="#bib-rfc3987">RFC3987</a></cite>] ）及描述（透過MIME媒體類型 [<cite><a class="bibref" href="#bib-rfc4839">RFC4839</a></cite>] ）一系列集體對組成該內容釋義的資源。</p>
 					</li>
 					<li>
-						<p><a href="#sec-spine-elem">書脊</a> — 依序排列的ID對照，呼應宣告中最上層資源，使所有其他的系列資源能夠被接觸並且使用。書脊也定義了該內容解釋的預設閱讀順序。</p>
+						<p><a href="#sec-spine-elem">書脊</a> — 依序排列的ID對照，呼應宣告中最上層資源，使所有其他的系列資源能夠被接觸並且使用。書脊也定義了該內容釋義的預設閱讀順序。</p>
 					</li>
 					<li>
 						<p><a href="#sec-collection-elem">集合</a> — 在包裝內包含以及識別子元件的方法。</p>
@@ -1457,7 +1457,7 @@ var [data-type] :hover::before {
 					<section id="sec-metadata-elem">
 						<h5 id="x3-4-3-1-the-metadata-element"><span class="secno">3.4.3.1 </span><code>metadata</code>元素<a class="self-link" aria-label="§" href="#sec-metadata-elem"></a></h5>
 
-						<p><code>metadata</code>元素封裝了該<a href="epub-spec.html#dfn-rendition">內容解釋</a>的詮釋資訊。 </p>
+						<p><code>metadata</code>元素封裝了該<a href="epub-spec.html#dfn-rendition">內容釋義</a>的詮釋資訊。 </p>
 
 						<dl id="elemdef-opf-metadata" class="elemdef">
 							<dt>元素名稱</dt>
@@ -1523,7 +1523,7 @@ var [data-type] :hover::before {
 								<p>提供最小限的詮釋資訊讓閱讀系統能用於內部對<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的分類，以及對使用者呈現（例如在書架上顯示）。</p>
 							</li>
 							<li>
-								<p>提供取得所有顯示上必要的詮釋資料的機制，用以控制排版及顯示該內容解釋的內容（例如：<a href="#sec-package-metadata-fxl">固定版面的特性</a>）。</p>
+								<p>提供取得所有顯示上必要的詮釋資料的機制，用以控制排版及顯示該內容釋義的內容（例如：<a href="#sec-package-metadata-fxl">固定版面的特性</a>）。</p>
 							</li>
 						</ol>
 
@@ -1561,7 +1561,7 @@ var [data-type] :hover::before {
 						<section id="sec-opf-dcidentifier">
 							<h6 id="x3-4-3-2-1-the-identifier-element"><span class="secno">3.4.3.2.1 </span><code>identifier</code>元素<a class="self-link" aria-label="§" href="#sec-opf-dcidentifier"></a></h6>
 
-							<p> [<cite><a class="bibref" href="#bib-dc11">DC11</a></cite>] 的<code>identifier</code>元素包含連結到該<a href="epub-spec.html#dfn-rendition">內容解釋</a>的識別碼，例如<abbr title="Universally Unique Identifier">UUID</abbr>、<abbr title="Digital Object Identfier">DOI</abbr>或<abbr title="International Standard Book Number">ISBN</abbr>。</p>
+							<p> [<cite><a class="bibref" href="#bib-dc11">DC11</a></cite>] 的<code>identifier</code>元素包含連結到該<a href="epub-spec.html#dfn-rendition">內容釋義</a>的識別碼，例如<abbr title="Universally Unique Identifier">UUID</abbr>、<abbr title="Digital Object Identfier">DOI</abbr>或<abbr title="International Standard Book Number">ISBN</abbr>。</p>
 
 							<dl id="elemdef-opf-dcidentifier" class="elemdef">
 								<dt>元素名稱</dt>
@@ -1593,7 +1593,7 @@ var [data-type] :hover::before {
 								</dd>
 							</dl>
 
-							<p><code>metadata</code>區塊<em class="rfc2119" title="MUST">必需</em>包含一個<code>identifier</code>元素內有該內容解釋明確的識別碼。該識別碼<em class="rfc2119" title="MUST">必需</em>透過<code>package</code>元素中<a href="#attrdef-package-unique-identifier"><code>unique-identifier</code></a>屬性被標註為<a href="epub-spec.html#dfn-unique-identifier">獨特識別碼</a>。</p>
+							<p><code>metadata</code>區塊<em class="rfc2119" title="MUST">必需</em>包含一個<code>identifier</code>元素內有該內容釋義明確的識別碼。該識別碼<em class="rfc2119" title="MUST">必需</em>透過<code>package</code>元素中<a href="#attrdef-package-unique-identifier"><code>unique-identifier</code></a>屬性被標註為<a href="epub-spec.html#dfn-unique-identifier">獨特識別碼</a>。</p>
 
 							<aside class="example" id="example-2"><div class="marker">
       <a class="self-link" href="#example-2">範例2</a>
@@ -1609,11 +1609,11 @@ var [data-type] :hover::before {
 <span class="hljs-tag">&lt;/<span class="hljs-name">package</span>&gt;</span></code></pre>
 							</aside>
 
-							<p>每一份內容解釋的獨特識別碼<em class="rfc2119" title="MAY">可以</em>不同，且一份內容解釋<em class="rfc2119" title="MAY">可以</em>包含額外的identifier元素。</p>
+							<p>每一份內容釋義的獨特識別碼<em class="rfc2119" title="MAY">可以</em>不同，且一份內容釋義<em class="rfc2119" title="MAY">可以</em>包含額外的identifier元素。</p>
 
 							<p>為了區分同EPUB出版品的不同版本，本規格切分出EPUB出版品用的<a href="epub-spec.html#dfn-unique-identifier">獨特識別碼</a>，以及<a href="epub-spec.html#dfn-release-identifier">發布識別碼</a>用來辨識屬於哪一版本。</p>
 
-							<p>為了識別包裝後EPUB出版品的版本，發布識別碼可以透過組合獨特識別碼和該內容解釋的<a href="#last-modified-date">最後修改日期</a>來建構。若要了解更多關於發布識別碼的語意以及要求，請參照<a href="#sec-metadata-elem-identifiers-pid">發布識別碼</a>章節。</p>
+							<p>為了識別包裝後EPUB出版品的版本，發布識別碼可以透過組合獨特識別碼和該內容釋義的<a href="#last-modified-date">最後修改日期</a>來建構。若要了解更多關於發布識別碼的語意以及要求，請參照<a href="#sec-metadata-elem-identifiers-pid">發布識別碼</a>章節。</p>
 
 							<aside class="example" id="example-3"><div class="marker">
       <a class="self-link" href="#example-3">範例3</a>
@@ -1628,7 +1628,7 @@ var [data-type] :hover::before {
 <span class="hljs-tag">&lt;/<span class="hljs-name">metadata</span>&gt;</span></code></pre>
 							</aside>
 
-							<p>無論內容解釋何時更動，都<em class="rfc2119" title="MUST">必需</em>包含一個最新的更動日期。</p>
+							<p>無論內容釋義何時更動，都<em class="rfc2119" title="MUST">必需</em>包含一個最新的更動日期。</p>
 
 							<p>為了辨別一個<code>identifier</code>是否適用於既有的系統或者是否獲得發行端的認證，閱讀系統<em class="rfc2119" title="SHOULD">應該</em>檢查<a href="#identifier-type"><code>identifier-type</code>特性</a>。</p>
 
@@ -1726,7 +1726,7 @@ var [data-type] :hover::before {
 <span class="hljs-tag">&lt;/<span class="hljs-name">metadata</span>&gt;</span></code></pre>
 							</aside>
 
-							<p>每一份<a href="epub-spec.html#dfn-rendition">內容解釋</a>的標題<em class="rfc2119" title="MAY">可以</em>不同。</p>
+							<p>每一份<a href="epub-spec.html#dfn-rendition">內容釋義</a>的標題<em class="rfc2119" title="MAY">可以</em>不同。</p>
 
 							<p>閱讀系統在處理值之前，<em class="rfc2119" title="MUST">必需</em>刪除前後的<a href="https://www.w3.org/TR/xml/#white">空白</a> [<cite><a class="bibref" href="#bib-xml">XML</a></cite>] 。</p>
 
@@ -1737,7 +1737,7 @@ var [data-type] :hover::before {
 						<section id="sec-opf-dclanguage">
 							<h6 id="x3-4-3-2-3-the-language-element"><span class="secno">3.4.3.2.3 </span><code>language</code>元素<a class="self-link" aria-label="§" href="#sec-opf-dclanguage"></a></h6>
 
-							<p> [<cite><a class="bibref" href="#bib-dc11">DC11</a></cite>] <code>language</code>元素指定了該<a href="epub-spec.html#dfn-rendition">內容解釋</a>之內容使用的語言。本質不會由內容解釋中的個別元素所繼承。</p>
+							<p> [<cite><a class="bibref" href="#bib-dc11">DC11</a></cite>] <code>language</code>元素指定了該<a href="epub-spec.html#dfn-rendition">內容釋義</a>之內容使用的語言。本質不會由內容釋義中的個別元素所繼承。</p>
 
 							<dl id="elemdef-opf-dclanguage" class="elemdef">
 								<dt>元素名稱</dt>
@@ -1778,9 +1778,9 @@ var [data-type] :hover::before {
 <span class="hljs-tag">&lt;/<span class="hljs-name">metadata</span>&gt;</span></code></pre>
 							</aside>
 
-							<p>額外的<code>language</code>元素<em class="rfc2119" title="MAY">可以</em>被包含在多語文出版品中，但各個元素的值<em class="rfc2119" title="MUST">必需</em>符合 [<cite><a class="bibref" href="#bib-bcp47">BCP47</a></cite>] 。文件中的第一個<code>language</code>元素被視為該內容解釋的主要語言。</p>
+							<p>額外的<code>language</code>元素<em class="rfc2119" title="MAY">可以</em>被包含在多語文出版品中，但各個元素的值<em class="rfc2119" title="MUST">必需</em>符合 [<cite><a class="bibref" href="#bib-bcp47">BCP47</a></cite>] 。文件中的第一個<code>language</code>元素被視為該內容釋義的主要語言。</p>
 
-							<p>每一份<a href="epub-spec.html#dfn-rendition">內容解釋</a>的語言<em class="rfc2119" title="MAY">可以</em>不同。</p>
+							<p>每一份<a href="epub-spec.html#dfn-rendition">內容釋義</a>的語言<em class="rfc2119" title="MAY">可以</em>不同。</p>
 
 							<p>閱讀系統在處理值之前，<em class="rfc2119" title="MUST">必需</em>刪除前後的<a href="https://www.w3.org/TR/xml/#white">空白</a> [<cite><a class="bibref" href="#bib-xml">XML</a></cite>] 。</p>
 
@@ -1844,7 +1844,7 @@ var [data-type] :hover::before {
 								</dd>
 							</dl>
 
-							<p>每一份<a href="epub-spec.html#dfn-rendition">內容解釋</a>的<em class="rfc2119" title="OPTIONAL">選擇性</em> [<cite><a class="bibref" href="#bib-dc11">DC11</a></cite>] 詮釋資料<em class="rfc2119" title="MAY">可以</em>不同。</p>
+							<p>每一份<a href="epub-spec.html#dfn-rendition">內容釋義</a>的<em class="rfc2119" title="OPTIONAL">選擇性</em> [<cite><a class="bibref" href="#bib-dc11">DC11</a></cite>] 詮釋資料<em class="rfc2119" title="MAY">可以</em>不同。</p>
 
 							<p>閱讀系統在處理值之前，<em class="rfc2119" title="MUST">必需</em>刪除前後的<a href="https://www.w3.org/TR/xml/#white">空白</a> [<cite><a class="bibref" href="#bib-xml">XML</a></cite>] 。</p>
 
@@ -1866,7 +1866,7 @@ var [data-type] :hover::before {
 						<section id="sec-opf-dccreator">
 							<h6 id="x3-4-3-3-3-the-creator-element"><span class="secno">3.4.3.3.3 </span><code>creator</code>元素<a class="self-link" aria-label="§" href="#sec-opf-dccreator"></a></h6>
 
-							<p> [<cite><a class="bibref" href="#bib-dc11">DC11</a></cite>] <code>creator</code>元素用於表現一個人、組織或其他的名字，對本<a href="epub-spec.html#dfn-rendition">內容解釋</a>之內容創作負責。可以附加<a href="#role"><code>role</code>特性</a>到本元素來指出創作者在內容創作中所扮演的功能角色。</p>
+							<p> [<cite><a class="bibref" href="#bib-dc11">DC11</a></cite>] <code>creator</code>元素用於表現一個人、組織或其他的名字，對本<a href="epub-spec.html#dfn-rendition">內容釋義</a>之內容創作負責。可以附加<a href="#role"><code>role</code>特性</a>到本元素來指出創作者在內容創作中所扮演的功能角色。</p>
 
 							<aside class="example" id="example-8"><div class="marker">
       <a class="self-link" href="#example-8">範例8</a>
@@ -1919,7 +1919,7 @@ var [data-type] :hover::before {
 						<section id="sec-opf-dcdate">
 							<h6 id="x3-4-3-3-4-the-date-element"><span class="secno">3.4.3.3.4 </span><code>date</code>元素<a class="self-link" aria-label="§" href="#sec-opf-dcdate"></a></h6>
 
-							<p> [<cite><a class="bibref" href="#bib-dc11">DC11</a></cite>] <code>date</code>元素<em class="rfc2119" title="MUST">必需</em>僅用於定義該<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的出版日期。出版日期和<a href="#last-modified-date">最後修改日期</a>（該<a href="epub-spec.html#dfn-rendition">內容解釋</a>修改的最後時刻）不一樣。</p>
+							<p> [<cite><a class="bibref" href="#bib-dc11">DC11</a></cite>] <code>date</code>元素<em class="rfc2119" title="MUST">必需</em>僅用於定義該<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的出版日期。出版日期和<a href="#last-modified-date">最後修改日期</a>（該<a href="epub-spec.html#dfn-rendition">內容釋義</a>修改的最後時刻）不一樣。</p>
 
 							<p><em class="rfc2119" title="RECOMMENDED">推薦</em>日期字串符合 [<cite><a class="bibref" href="#bib-iso8601">ISO8601</a></cite>] ，尤其是W3C日期與時間格式 [<cite><a class="bibref" href="#bib-datetime">DateTime</a></cite>] 的子集表述，那樣的字串可同時供人讀與機讀。</p>
 
@@ -2082,7 +2082,7 @@ var [data-type] :hover::before {
 					<section id="sec-link-elem">
 						<h5 id="x3-4-3-5-the-link-element"><span class="secno">3.4.3.5 </span><code>link</code>元素<a class="self-link" aria-label="§" href="#sec-link-elem"></a></h5>
 
-						<p><code>link</code>元素用於讓<a href="epub-spec.html#dfn-rendition">內容解釋</a>與資源進行關聯，例如詮釋資料記錄。</p>
+						<p><code>link</code>元素用於讓<a href="epub-spec.html#dfn-rendition">內容釋義</a>與資源進行關聯，例如詮釋資料記錄。</p>
 
 						<dl id="elemdef-opf-link" class="elemdef">
 							<dt>元素名稱</dt>
@@ -2156,7 +2156,7 @@ var [data-type] :hover::before {
 
 						<p id="attrdef-link-media-type"><a href="#attrdef-media-type"><code>media-type</code></a>屬性為<em class="rfc2119" title="OPTIONAL">選擇性</em>，當連結的資源位於EPUB容器之外，而同一個IRI可以提供多於一個的媒體類型。該屬性對所有<a href="epub-spec.html#dfn-local-resource">本地資源</a>皆為<em class="rfc2119" title="REQUIRED">必要</em>。</p>
 
-						<p id="attrdef-link-rel"><em class="rfc2119" title="REQUIRED">必要</em>的<code>rel</code>屬性由空格區分的<a href="#sec-property-datatype">特性</a>值列表來建構內容解釋中的資源關係。</p>
+						<p id="attrdef-link-rel"><em class="rfc2119" title="REQUIRED">必要</em>的<code>rel</code>屬性由空格區分的<a href="#sec-property-datatype">特性</a>值列表來建構內容釋義中的資源關係。</p>
 
 						<aside class="example" id="example-16"><div class="marker">
       <a class="self-link" href="#example-16">範例16</a>
@@ -2237,7 +2237,7 @@ var [data-type] :hover::before {
 					<section id="sec-manifest-elem">
 						<h5 id="x3-4-4-1-the-manifest-element"><span class="secno">3.4.4.1 </span><code>manifest</code>元素<a class="self-link" aria-label="§" href="#sec-manifest-elem"></a></h5>
 
-						<p><code>manifest</code>元素提供了<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>的窮舉清單，用以建構該內容解釋，每一項都由一個<a href="epub-spec.html#dfn-rendition">Rendition</a>, each represented by an <a class="codelink" href="#sec-item-elem"><code>item</code></a>元素所表示。</p>
+						<p><code>manifest</code>元素提供了<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>的窮舉清單，用以建構該內容釋義，每一項都由一個<a href="epub-spec.html#dfn-rendition">Rendition</a>, each represented by an <a class="codelink" href="#sec-item-elem"><code>item</code></a>元素所表示。</p>
 
 						<dl id="elemdef-opf-manifest" class="elemdef">
 							<dt>元素名稱</dt>
@@ -2330,7 +2330,7 @@ var [data-type] :hover::before {
 
 						<p id="attrdef-item-media-type">由<code>item</code>元素識別的出版品資源<em class="rfc2119" title="MUST">必需</em>符合由其<a href="#attrdef-media-type"><code>media-type</code></a>屬性所提供的MIME媒體類型所適用之規格。<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a><em class="rfc2119" title="MUST">必需</em>使用<a href="epub-spec.html#sec-cmt-supported">支援的媒體類別</a> [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] 中的媒體類別。</p>
 
-						<p id="attrdef-item-fallback"><code>fallback</code>屬性使用IDREF [<cite><a class="bibref" href="#bib-xml">XML</a></cite>] 來識別出版品資源可回退到另一個<code>item</code>元素。<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a><em class="rfc2119" title="MAY">可以</em>適用回退。（例如為<a href="epub-spec.html#dfn-scripted-content-document">有腳本的內容文件</a>提供靜態的替代內容）。外部資源的回退需求定義在<a href="#sec-foreign-restrictions-manifest">宣告回退</a>中。</p>
+						<p id="attrdef-item-fallback"><code>fallback</code>屬性使用IDREF [<cite><a class="bibref" href="#bib-xml">XML</a></cite>] 來識別出版品資源可回退到另一個<code>item</code>元素。<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a><em class="rfc2119" title="MAY">可以</em>適用回退。（例如為<a href="epub-spec.html#dfn-scripted-content-document">有腳本的內容文件</a>提供靜態的替代內容）。外圍資源的回退需求定義在<a href="#sec-foreign-restrictions-manifest">宣告回退</a>中。</p>
 
 						<p id="attrdef-item-properties">本規格<a href="#sec-metadata-default-vocab">保留</a>的<a href="#app-item-properties-vocab">EPUB宣告特性用語</a>供<code>properties</code>屬性使用。由其他用語來的詞彙<em class="rfc2119" title="MAY">可以</em>在添加<a href="#sec-prefix-attr">字首</a>的狀況下使用（請參考<a href="#sec-metadata-reserved-prefixes">保留的字首</a>以取得不需要宣告的字首清單）。</p>
 
@@ -2400,7 +2400,7 @@ var [data-type] :hover::before {
 						<aside class="example" id="example-manifest-flbk"><div class="marker">
       <a class="self-link" href="#example-manifest-flbk">範例20</a>
     </div>
-							<p>以下範例呈現<code>manifest</code>參照兩個<a href="epub-spec.html#dfn-foreign-resource">外部資源</a>，使用<a href="#sec-foreign-restrictions-manifest">回退鍊機制</a>來支援替代內容。回退鍊結束於<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a>。</p>
+							<p>以下範例呈現<code>manifest</code>參照兩個<a href="epub-spec.html#dfn-foreign-resource">外圍資源</a>，使用<a href="#sec-foreign-restrictions-manifest">回退鍊機制</a>來支援替代內容。回退鍊結束於<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a>。</p>
 							<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">manifest</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"item1"</span> 
           <span class="hljs-attr">href</span>=<span class="hljs-string">"chap1_docbook.xml"</span> 
@@ -2460,7 +2460,7 @@ Manifest:
 					<section id="sec-foreign-restrictions-manifest">
 						<h5 id="x3-4-4-3-manifest-fallbacks"><span class="secno">3.4.4.3 </span>宣告回退<a class="self-link" aria-label="§" href="#sec-foreign-restrictions-manifest"></a></h5>
 
-						<p>外部資源在無法提供明確的回退之下，也<em class="rfc2119" title="MAY">可以</em>於脈絡中參照（例如，來自列於<a href="epub-spec.html#dfn-spine">書脊</a>的<a href="epub-spec.html#dfn-spine">spine</a>
+						<p>外圍資源在無法提供明確的回退之下，也<em class="rfc2119" title="MAY">可以</em>於脈絡中參照（例如，來自列於<a href="epub-spec.html#dfn-spine">書脊</a>的<a href="epub-spec.html#dfn-spine">spine</a>
 							<a href="#elemdef-spine-itemref"><code>itemref</code></a>元素；來自<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>的 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <code>img</code>、<code>iframe</code>以及<code>link</code>元素；以及來自CSS樣式表中的<code>@import</code>規則）。這些狀況都<em class="rfc2119" title="MUST">必需</em>提供宣告回退。</p>
 
 						<p>宣告回退使用<a href="epub-spec.html#dfn-manifest">宣告</a><em>item</em>元素中的<a href="#attrdef-item-fallback"><code>fallback</code></a>屬性來代表出版品資源。<code>fallback</code>屬性的IDREF [<cite><a class="bibref" href="#bib-xml">XML</a></cite>] 值<em class="rfc2119" title="MUST">必需</em>解析到另一項<code>manifest</code>中的<code>item</code>。回退<code>item</code>自身可以指定另一個回退<code>item</code>，以此類推。</p>
@@ -2471,10 +2471,10 @@ Manifest:
 
 						<ul>
 							<li>
-								<p>對直接來自書脊<a href="#elemdef-spine-itemref"><code>itemref</code></a>元素的外部資源參照，該鍊<em class="rfc2119" title="MUST">必需</em>包含至少一個<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>。</p>
+								<p>對直接來自書脊<a href="#elemdef-spine-itemref"><code>itemref</code></a>元素的外圍資源參照，該鍊<em class="rfc2119" title="MUST">必需</em>包含至少一個<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>。</p>
 							</li>
 							<li>
-								<p>對無法提供明確回退的外部資源，該鍊<em class="rfc2119" title="MUST">必需</em>包含至少一個<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a>。</p>
+								<p>對無法提供明確回退的外圍資源，該鍊<em class="rfc2119" title="MUST">必需</em>包含至少一個<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a>。</p>
 							</li>
 						</ul>
 
@@ -2499,7 +2499,7 @@ Manifest:
 					<section id="sec-spine-elem">
 						<h5 id="x3-4-5-1-the-spine-element"><span class="secno">3.4.5.1 </span><code>spine</code>元素<a class="self-link" aria-label="§" href="#sec-spine-elem"></a></h5>
 
-						<p><code>spine</code>元素定義了<a href="#sec-itemref-elem">宣告中<code>item</code>參照</a>的排序清單，表達該<a href="epub-spec.html#dfn-rendition">內容解釋</a>的預設閱讀順序。</p>
+						<p><code>spine</code>元素定義了<a href="#sec-itemref-elem">宣告中<code>item</code>參照</a>的排序清單，表達該<a href="epub-spec.html#dfn-rendition">內容釋義</a>的預設閱讀順序。</p>
 
 						<dl id="elemdef-opf-spine" class="elemdef">
 							<dt>元素名稱</dt>
@@ -2538,7 +2538,7 @@ Manifest:
 							</dd>
 						</dl>
 
-						<p>閱讀系統<em class="rfc2119" title="MUST">必需</em>提供按照定義在<code>spine</code>中的順序來排出內容解釋版面的手段，包括：１）辨識第一個主要<code>itemref</code>做為預設閱讀順序的開始，以及２）按照<code>spine</code>給出的順序接續第一個項目排版。</p>
+						<p>閱讀系統<em class="rfc2119" title="MUST">必需</em>提供按照定義在<code>spine</code>中的順序來排出內容釋義版面的手段，包括：１）辨識第一個主要<code>itemref</code>做為預設閱讀順序的開始，以及２）按照<code>spine</code>給出的順序接續第一個項目排版。</p>
 
 						<p id="spine-inclusion-req">所有超連結到列於<code>spine</code>中出版品資源的<a href="epub-spec.html#dfn-publication-resource">出版品資源</a><em class="rfc2119" title="MUST">必需</em>列於<code>spine</code>之中，超連結定義為任何連結機制需要使用者從現在資源中跳出的導覽方式。一般的超連結機制包含 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 中<a href="https://www.w3.org/TR/html/textlevel-semantics.html#the-a-element"><code>a</code></a>以及<a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-area-element"><code>area</code></a>元素和腳本化連結（例如使用DOM事件及/或form元素）的<em>href</em>屬性。對列出超連結資源的要求適用於迴圈（即為，所有的出版品資源連結到被連結的出版品資源都需要被列出，以此類推）。</p>
 
@@ -2562,7 +2562,7 @@ Manifest:
 					<section id="sec-itemref-elem">
 						<h5 id="x3-4-5-2-the-itemref-element"><span class="secno">3.4.5.2 </span><code>itemref</code>元素<a class="self-link" aria-label="§" href="#sec-itemref-elem"></a></h5>
 
-						<p><code>spine</code>的<code>itemref</code>子元素表示<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>的序列清單（<a href="#confreq-spine-itemtypes">一般</a>為<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>）。<em>itemref</em>元素的順序定義了該<a href="epub-spec.html#dfn-rendition">內容解釋</a>預設的閱讀順序。</p>
+						<p><code>spine</code>的<code>itemref</code>子元素表示<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>的序列清單（<a href="#confreq-spine-itemtypes">一般</a>為<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>）。<em>itemref</em>元素的順序定義了該<a href="epub-spec.html#dfn-rendition">內容釋義</a>預設的閱讀順序。</p>
 
 						<dl id="elemdef-spine-itemref" class="elemdef">
 							<dt>元素名稱</dt>
@@ -2606,7 +2606,7 @@ Manifest:
 
 						<p id="attrdef-itemref-idref">每一個<code>itemref</code>元素<em class="rfc2119" title="MUST">必需</em>指向宣告中的唯一<code>item</code>，其ID [<cite><a class="bibref" href="#bib-xml">XML</a></cite>] 需要與其<code>idref</code>屬性的IDREF [XML] 一致。（即是，不能有兩個或以上的<code>idref</code>元素指向相同的<code>item</code>）。</p>
 
-						<p id="confreq-spine-itemtypes">每一個被指向的宣告<code>item</code><em class="rfc2119" title="MUST">必需</em>同時為ａ）一個<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>或者ｂ）另一種類型的<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>，<em>其無論是否為<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a>或者<a href="epub-spec.html#dfn-foreign-resource">外部資源</a></em>，都<em class="rfc2119" title="MUST">必需</em>在其<a href="#sec-foreign-restrictions-manifest">回退鍊</a>中包含一個EPUB內容文件。</p>
+						<p id="confreq-spine-itemtypes">每一個被指向的宣告<code>item</code><em class="rfc2119" title="MUST">必需</em>同時為ａ）一個<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>或者ｂ）另一種類型的<a href="epub-spec.html#dfn-publication-resource">出版品資源</a>，<em>其無論是否為<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a>或者<a href="epub-spec.html#dfn-foreign-resource">外圍資源</a></em>，都<em class="rfc2119" title="MUST">必需</em>在其<a href="#sec-foreign-restrictions-manifest">回退鍊</a>中包含一個EPUB內容文件。</p>
 
 						<div class="note" role="note" id="issue-container-generatedID-6"><div role="heading" class="note-title marker" id="h-note-6" aria-level="6"><span>注意事項</span></div><div class="">
 							<p>雖然EPUB出版品<a href="#confreq-nav-occur">需要包含</a>一個<a href="epub-spec.html#dfn-epub-navigation-document">EPUB導覽文件</a>，但不強制包含在<code>spine</code>之中。</p>
@@ -2618,7 +2618,7 @@ Manifest:
 
 						<p>當處理一本EPUB出版品時，閱讀系統<em class="rfc2119" title="MAY">可以</em>跳過非線性的內容，而不會出現在預設閱讀順序，也可以忽視<code>linear</code>屬性，讓使用者接觸整本EPUB出版品的全部內容。本規格不指定閱讀系統需使用何種綱要。閱讀系統也<em class="rfc2119" title="MAY">可以</em>提供選項，讓使用者於兩種綱要間切換。</p>
 
-						<p>每一份內容解釋都<em class="rfc2119" title="MUST">必需</em>包含至少一個<code>itemref</code>，其<code>linear</code>屬性的值為未標示或者明確指定為"<code>yes</code>"，一個沒有<code>linear</code>屬性的<code>linear</code>假設其值為"<code>yes</code>"。</p>
+						<p>每一份內容釋義都<em class="rfc2119" title="MUST">必需</em>包含至少一個<code>itemref</code>，其<code>linear</code>屬性的值為未標示或者明確指定為"<code>yes</code>"，一個沒有<code>linear</code>屬性的<code>linear</code>假設其值為"<code>yes</code>"。</p>
 
 						<p>作者<em class="rfc2119" title="MUST">必需</em>提供存取所有非線性內容的方法（例如，內容內加入超連結或者透過<a href="#sec-package-nav">EPUB導覽文件</a>）。</p>
 
@@ -2700,9 +2700,9 @@ Manifest:
 							</dd>
 						</dl>
 
-						<p><code>collection</code>元素能夠將資源組成邏輯上的群組做為各種潛在用途：讓被切分為多個<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>的內容重組為一個有意義的單元（例如橫跨多個文件的索引）、識別供特殊目的使用的資源（例如預覽內容），或者將資源組合在一起來表示該<a href="epub-spec.html#dfn-rendition">內容解釋</a>的額外資訊。</p>
+						<p><code>collection</code>元素能夠將資源組成邏輯上的群組做為各種潛在用途：讓被切分為多個<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>的內容重組為一個有意義的單元（例如橫跨多個文件的索引）、識別供特殊目的使用的資源（例如預覽內容），或者將資源組合在一起來表示該<a href="epub-spec.html#dfn-rendition">內容釋義</a>的額外資訊。</p>
 
-						<p><code>collection</code>元素，如本章節定義，用以表達一個一般化的框架用來取得特化的內容（例如，透過EPUB子規格）。這些特化的內容<em class="rfc2119" title="MUST">必需</em>在內容解釋中定義<code>collection</code>元素的目的，也須在製作與使用上符合需求（特別是那些不同於以下所列一般化框架的規則）。</p>
+						<p><code>collection</code>元素，如本章節定義，用以表達一個一般化的框架用來取得特化的內容（例如，透過EPUB子規格）。這些特化的內容<em class="rfc2119" title="MUST">必需</em>在內容釋義中定義<code>collection</code>元素的目的，也須在製作與使用上符合需求（特別是那些不同於以下所列一般化框架的規則）。</p>
 
 						<p id="attrdef-collection-role">每一個特化的內容都<em class="rfc2119" title="MUST">必需</em>定義一個角色值，在所有適用的<code>collection</code>元素中為唯一識別。包裝文件中每一個<code>collection</code>元素的角色<em class="rfc2119" title="MUST">必需</em>在其<code>role</code>屬性中被識別，其值<em class="rfc2119" title="MUST">必需</em>為一或多個NMTOKENs [<cite><a class="bibref" href="#bib-xmlschema-2">XMLSCHEMA-2</a></cite>] 及/或絕對IRIs [<cite><a class="bibref" href="#bib-rfc3987">RFC3987</a></cite>] 。角色中使用NMTOKEN的值為反向，也未定義在EPUB中，而由 [<cite><a class="bibref" href="#bib-roleregistry">RoleRegistry</a></cite>] 所維護。未定義在註冊中的值不符合規範，本章節不定義任何角色。</p>
 
@@ -2754,7 +2754,7 @@ Manifest:
 
 						<p>在本規格的脈絡下，閱讀系統支援集合為<em class="rfc2119" title="OPTIONAL">選擇性</em>。閱讀系統<em class="rfc2119" title="MUST">必需</em>在無法辨識所定義角色的狀況下忽略<code>collection</code>元素。</p>
 
-						<p>內容解釋排版時<em class="rfc2119" title="MUST NOT">不得</em>依存對<code>collection</code>元素的解析。內容<em class="rfc2119" title="MUST">必需</em>在沒有丟師資炫或者其他明顯劣化的狀況下依然能被使用者所閱讀。</p>
+						<p>內容釋義排版時<em class="rfc2119" title="MUST NOT">不得</em>依存對<code>collection</code>元素的解析。內容<em class="rfc2119" title="MUST">必需</em>在沒有丟師資炫或者其他明顯劣化的狀況下依然能被使用者所閱讀。</p>
 
 						<h4 id="examples-2">範例<a class="self-link" aria-label="§" href="#sec-collection-elem"></a></h4>
 
@@ -2834,9 +2834,9 @@ Manifest:
 
 					<p>為了在不變更獨特識別碼的狀況下處理辨識小改版與發行的問題，本規格定義了「<em>發布識別碼</em>」的語意，或者用以區別及序列排序具有同一個獨特識別碼的EPUB出版品之手段。</p>
 
-					<p>發布識別碼並非在包裝<code>metadata</code>區塊中的實際特性，但卻是可以從其他兩個必須的詮釋資料獲取的值：獨特識別碼與內容解釋最後修改日期。當一起取得時，所結合的值可以作為一個獨特識別用以區別EPUB出版品的任何不同版本。</p>
+					<p>發布識別碼並非在包裝<code>metadata</code>區塊中的實際特性，但卻是可以從其他兩個必須的詮釋資料獲取的值：獨特識別碼與內容釋義最後修改日期。當一起取得時，所結合的值可以作為一個獨特識別用以區別EPUB出版品的任何不同版本。</p>
 
-					<p id="last-modified-date">為確保發布識別碼能被建構，每一個<a href="epub-spec.html#dfn-rendition">內容解釋</a>都<em class="rfc2119" title="MUST">必需</em>包含唯一的 [<cite><a class="bibref" href="#bib-dcterms">DCTERMS</a></cite>] <code>modified</code>特性包含其最後修改日期。該特性的值<em class="rfc2119" title="MUST">必需</em>為一個 [<cite><a class="bibref" href="#bib-xmlschema-2">XMLSCHEMA-2</a></cite>] 日期時間，適用以下形式：</p>
+					<p id="last-modified-date">為確保發布識別碼能被建構，每一個<a href="epub-spec.html#dfn-rendition">內容釋義</a>都<em class="rfc2119" title="MUST">必需</em>包含唯一的 [<cite><a class="bibref" href="#bib-dcterms">DCTERMS</a></cite>] <code>modified</code>特性包含其最後修改日期。該特性的值<em class="rfc2119" title="MUST">必需</em>為一個 [<cite><a class="bibref" href="#bib-xmlschema-2">XMLSCHEMA-2</a></cite>] 日期時間，適用以下形式：</p>
 
 					<pre class="nohighlight">CCYY-MM-DDThh:mm:ssZ</pre>
 
@@ -2868,7 +2868,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 					<p>發布識別碼結果上允許一組EPUB出版品能被檢驗並且判斷他們是否為同一本出版品的相同版本、同一本EPUB出版品的不同版本，或者和相似或者不同EPUB出版品的組合。</p>
 
 					<div class="note" role="note" id="issue-container-generatedID-8"><div role="heading" class="note-title marker" id="h-note-8" aria-level="5"><span>注意事項</span></div><div class="">
-						<p>當一個<a href="epub-spec.html#dfn-epub-container">EPUB容器</a>包含一個EPUB出版品多於一個的<a href="epub-spec.html#dfn-rendition">內容解釋</a>時，請在每次發布時更新<a href="epub-ocf.html#dfn-default-rendition">預設內容解釋</a>的最後修改日期——就算沒有更新——也能協助確保EPUB出版品不會和前一次發布的被視為相同版本，閱讀系統僅需處理預設內容解釋。</p>
+						<p>當一個<a href="epub-spec.html#dfn-epub-container">EPUB容器</a>包含一個EPUB出版品多於一個的<a href="epub-spec.html#dfn-rendition">內容釋義</a>時，請在每次發布時更新<a href="epub-ocf.html#dfn-default-rendition">預設內容釋義</a>的最後修改日期——就算沒有更新——也能協助確保EPUB出版品不會和前一次發布的被視為相同版本，閱讀系統僅需處理預設內容釋義。</p>
 					</div></div>
 				</section>
 			</section>
@@ -3190,8 +3190,8 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 								</dd>
 								<dt id="scrolled-continuous">scrolled-continuous</dt>
 								<dd>
-									<p>閱讀系統<em class="rfc2119" title="SHOULD">應該</em>將所有具流動內容的內容文件設定為捲軸顯示，EPUB出版品由其<a href="epub-spec.html#dfn-rendition">內容解釋</a>表現<em class="rfc2119" title="SHOULD">應該</em>被呈現為一個連續捲動形式，由一個書脊項目往下一個（除了<a href="#layout-property-flow-overrides">部分覆蓋</a>之外）。</p>
-									<p>請注意作者<em class="rfc2119" title="SHOULD NOT">不應</em>製作不同有著不一樣區塊流動方向的資源的出版品，這樣連續捲動的內容解釋在EPUB閱讀系統中會出問題。</p>
+									<p>閱讀系統<em class="rfc2119" title="SHOULD">應該</em>將所有具流動內容的內容文件設定為捲軸顯示，EPUB出版品由其<a href="epub-spec.html#dfn-rendition">內容釋義</a>表現<em class="rfc2119" title="SHOULD">應該</em>被呈現為一個連續捲動形式，由一個書脊項目往下一個（除了<a href="#layout-property-flow-overrides">部分覆蓋</a>之外）。</p>
+									<p>請注意作者<em class="rfc2119" title="SHOULD NOT">不應</em>製作不同有著不一樣區塊流動方向的資源的出版品，這樣連續捲動的內容釋義在EPUB閱讀系統中會出問題。</p>
 								</dd>
 								<dt id="scrolled-doc">scrolled-doc</dt>
 								<dd>
@@ -3236,7 +3236,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 							<aside class="example" id="property-flow-ex1"><div class="marker">
       <a class="self-link" href="#property-flow-ex1">範例30</a>
     </div>
-								<p>以下範例展示一個作者意圖想要讓分頁的內容解釋擁有可捲動的目次。</p>
+								<p>以下範例展示一個作者意圖想要讓分頁的內容釋義擁有可捲動的目次。</p>
 								<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">metadata</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"rendition:flow"</span>&gt;</span>paginated<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">metadata</span>&gt;</span>
@@ -3290,12 +3290,12 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 					<section id="layout">
 						<h5 id="x4-3-4-2-the-rendition-layout-property"><span class="secno">4.3.4.2 </span><code>rendition:layout</code>特性<a class="self-link" aria-label="§" href="#layout"></a></h5>
 
-						<p><code>rendition:layout</code>特性指定了該內容解釋為重排或者預先分頁。</p>
+						<p><code>rendition:layout</code>特性指定了該內容釋義為重排或者預先分頁。</p>
 
 						<section id="layout-usage">
 							<h6 id="x4-3-4-2-1-usage"><span class="secno">4.3.4.2.1 </span>用法<a class="self-link" aria-label="§" href="#layout-usage"></a></h6>
 
-							<p id="property-layout-global">當<a href="#layout"><code>rendition:layout</code>特性</a>在<code>meta</code>元素中指定時，其指示了整個<a href="epub-spec.html#dfn-rendition">內容解釋</a>該為分頁或者重排版面形式（即套用於所有書脊項目）。</p>
+							<p id="property-layout-global">當<a href="#layout"><code>rendition:layout</code>特性</a>在<code>meta</code>元素中指定時，其指示了整個<a href="epub-spec.html#dfn-rendition">內容釋義</a>該為分頁或者重排版面形式（即套用於所有書脊項目）。</p>
 
 							<p>預設值<code>reflowable</code>當在<a href="#elemdef-opf-metadata"><code>metadata</code></a>區塊中沒有<code>meta</code>元素乘載這項特性時，<a href="epub-spec.html#dfn-epub-reading-system">EPUB閱讀系統</a><em class="rfc2119" title="MUST">必需</em>視為全域值。</p>
 
@@ -3315,11 +3315,11 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 							<dl class="variablelist">
 								<dt id="def-layout-reflowable">reflowable</dt>
 								<dd>
-									<p>該內容解釋不是預先分頁。閱讀系統<em class="rfc2119" title="MAY">可以</em>排版時可套用動態分頁。</p>
+									<p>該內容釋義不是預先分頁。閱讀系統<em class="rfc2119" title="MAY">可以</em>排版時可套用動態分頁。</p>
 								</dd>
 								<dt id="def-layout-pre-paginated">pre-paginated</dt>
 								<dd>
-									<p>該內容解釋為預先分頁。閱讀系統<em class="rfc2119" title="MUST">必需</em>在排版時將每一個書脊<a href="#elemdef-spine-itemref"><code>itemref</code></a>處理成正好一頁。</p>
+									<p>該內容釋義為預先分頁。閱讀系統<em class="rfc2119" title="MUST">必需</em>在排版時將每一個書脊<a href="#elemdef-spine-itemref"><code>itemref</code></a>處理成正好一頁。</p>
 								</dd>
 							</dl>
 
@@ -3379,12 +3379,12 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 					<section id="orientation">
 						<h5 id="x4-3-4-3-the-rendition-orientation-property"><span class="secno">4.3.4.3 </span><code>rendition:orientation</code>特性<a class="self-link" aria-label="§" href="#orientation"></a></h5>
 
-						<p><code>rendition:orientation</code>特性指定作者希望該內容解釋排版時的頁面方向。</p>
+						<p><code>rendition:orientation</code>特性指定作者希望該內容釋義排版時的頁面方向。</p>
 
 						<section id="orientation-usage">
 							<h6 id="x4-3-4-3-1-usage"><span class="secno">4.3.4.3.1 </span>用法<a class="self-link" aria-label="§" href="#orientation-usage"></a></h6>
 
-							<p id="property-orientation-global">當在<code>meta</code>元素中指定了<a href="#orientation"><code>rendition:orientation</code>特性</a>時，期指睇定的方向套用到該內容解釋的全域（即為，所有書脊項目）。</p>
+							<p id="property-orientation-global">當在<code>meta</code>元素中指定了<a href="#orientation"><code>rendition:orientation</code>特性</a>時，期指睇定的方向套用到該內容釋義的全域（即為，所有書脊項目）。</p>
 
 							<p>當在<code>metadata</code>區塊中沒有<code>meta</code>元素指定本特性時，預設值<code>auto</code><em class="rfc2119" title="MUST">必需</em>由閱讀系統推測設定為全域值。</p>
 
@@ -3400,15 +3400,15 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 							<dl class="variablelist">
 								<dt>landscape</dt>
 								<dd>
-									<p>該內容解釋指示排版成landscape（橫寬直窄）。</p>
+									<p>該內容釋義指示排版成landscape（橫寬直窄）。</p>
 								</dd>
 								<dt>portrait</dt>
 								<dd>
-									<p>該內容解釋指示排版成portrait（橫窄直寬）。</p>
+									<p>該內容釋義指示排版成portrait（橫窄直寬）。</p>
 								</dd>
 								<dt>auto</dt>
 								<dd>
-									<p>該內容解釋不受方向指定。</p>
+									<p>該內容釋義不受方向指定。</p>
 								</dd>
 							</dl>
 
@@ -3458,12 +3458,12 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 					<section id="spread">
 						<h5 id="x4-3-4-4-the-rendition-spread-property"><span class="secno">4.3.4.4 </span><code>rendition:spread</code>特性<a class="self-link" aria-label="§" href="#spread"></a></h5>
 
-						<p><code>rendition:spread</code>特性指示該內容解釋在閱讀系統同步跨頁行為的意圖。</p>
+						<p><code>rendition:spread</code>特性指示該內容釋義在閱讀系統同步跨頁行為的意圖。</p>
 
 						<section id="spread-usage">
 							<h6 id="x4-3-4-4-1-usage"><span class="secno">4.3.4.4.1 </span>用法<a class="self-link" aria-label="§" href="#spread-usage"></a></h6>
 
-							<p id="property-spread-global">當<code>rendition:spread</code>指定於<code>meta</code>元素時，其指定了套用內容解釋全域的<a href="epub-spec.html#dfn-synthetic-spread">同步跨頁</a>行為的意圖（即為，所有書脊項目）。</p>
+							<p id="property-spread-global">當<code>rendition:spread</code>指定於<code>meta</code>元素時，其指定了套用內容釋義全域的<a href="epub-spec.html#dfn-synthetic-spread">同步跨頁</a>行為的意圖（即為，所有書脊項目）。</p>
 
 							<p>當在<code>metadata</code>區塊中沒有<code>meta</code>元素指定本特性時，預設值<code>auto</code><em class="rfc2119" title="MUST">必需</em>由閱讀系統推測設定為全域值。</p>
 
@@ -3617,7 +3617,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 							<aside class="example" id="fxl-ex5"><div class="marker">
       <a class="self-link" href="#fxl-ex5">範例35</a>
     </div>
-								<p>>以下範例展示重排內容放在一個兩頁固定版面置中的盤中，意圖在任何裝置使用同步跨頁排版。注意作者指定跨頁置左而保留其他部分（重排）的<a href="epub-spec.html#dfn-rendition">內容解釋</a>不定義。所以<code>rendition:spread</code>預設全域值初始為<code>auto</code>。</p>
+								<p>>以下範例展示重排內容放在一個兩頁固定版面置中的盤中，意圖在任何裝置使用同步跨頁排版。注意作者指定跨頁置左而保留其他部分（重排）的<a href="epub-spec.html#dfn-rendition">內容釋義</a>不定義。所以<code>rendition:spread</code>預設全域值初始為<code>auto</code>。</p>
 								<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">spine</span> <span class="hljs-attr">page-progression-direction</span>=<span class="hljs-string">"ltr"</span>&gt;</span>
     …
     <span class="hljs-tag">&lt;<span class="hljs-name">itemref</span> <span class="hljs-attr">idref</span>=<span class="hljs-string">"center-plate-left"</span>
@@ -3878,7 +3878,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 						<h5 id="x5-4-2-2-the-toc-nav-element"><span class="secno">5.4.2.2 </span><code>toc nav</code>元素<a class="self-link" aria-label="§" href="#sec-nav-toc"></a></h5>
 
 						<p><code>toc</code>
-							<code>nav</code>元素定義了該<a href="epub-spec.html#dfn-rendition">內容解釋</a>主要的導覽階層。其概念上呼應了印刷書的目次（即是，其提供了該出版品主要結構章節的導覽）。</p>
+							<code>nav</code>元素定義了該<a href="epub-spec.html#dfn-rendition">內容釋義</a>主要的導覽階層。其概念上呼應了印刷書的目次（即是，其提供了該出版品主要結構章節的導覽）。</p>
 
 						<p><code>toc</code> <code>nav</code>的參照<em class="rfc2119" title="MUST">必需</em>排序反映以下兩點：</p>
 
@@ -3916,7 +3916,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 						<h5 id="x5-4-2-4-the-landmarks-nav-element"><span class="secno">5.4.2.4 </span><code>landmarks nav</code>元素<a class="self-link" aria-label="§" href="#sec-nav-landmarks"></a></h5>
 
 						<p><code>landmarks</code>
-							<code>nav</code>元素識別該<a href="epub-spec.html#dfn-rendition">內容解釋</a>中的基礎架構元件，以使閱讀系統可以讓使用者更有效率的存取他們。</p>
+							<code>nav</code>元素識別該<a href="epub-spec.html#dfn-rendition">內容釋義</a>中的基礎架構元件，以使閱讀系統可以讓使用者更有效率的存取他們。</p>
 
 						<p><a href="epub-contentdocs.html#sec-epub-type-attribute"><code>epub:type</code>屬性</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] 在<code>landmarks</code> <code>nav</code>的<code>a</code>子元素中為<em class="rfc2119" title="MUST">必需</em>。<code>landmarks</code> <code>nav</code>元素中每個連結目標的結構語意，由該屬性的值決定。</p>
 
@@ -4052,7 +4052,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 
 			<p>本附錄為EPUB包裝文件註冊了媒體類型<code>application/oebps-package+xml</code>。本註冊優先於 [<cite><a class="bibref" href="#bib-rfc4839">RFC4839</a></cite>] 。</p>
 
-			<p>包裝文件是一個XML檔案，用來說明一本EPUB出版品的內容解釋。其定義了內容解釋中的資源並且提供詮釋資料資訊。包裝文件與其相關的規格由W3C的<a href="https://www.w3.org/community/epub3/">EPUB 3社群小組</a>所維護並且定義。</p>
+			<p>包裝文件是一個XML檔案，用來說明一本EPUB出版品的內容釋義。其定義了內容釋義中的資源並且提供詮釋資料資訊。包裝文件與其相關的規格由W3C的<a href="https://www.w3.org/community/epub3/">EPUB 3社群小組</a>所維護並且定義。</p>
 
 			<dl class="variablelist">
 				<dt>MIME媒體類型名稱：</dt>
@@ -4730,7 +4730,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 					<tr>
 						<th>說明：</th>
 						<td>
-							<p><code>source-of</code>特性指出由該EPUB出版品之內容解釋取得資源，所適用來源的特別面向。</p>
+							<p><code>source-of</code>特性指出由該EPUB出版品之內容釋義取得資源，所適用來源的特別面向。</p>
 							<p>本規格定義了<code>pagination</code>值，供<code>dc:source</code>參照定義在內容中<a href="http://www.idpf.org/epub/vocab/structure/#pagebreak"><code>pagebreak</code>特性</a>的來源。</p>
 						</td>
 					</tr>
@@ -4916,7 +4916,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 			<aside class="example" id="example-55"><div class="marker">
       <a class="self-link" href="#example-55">範例55</a>
     </div>
-				<p>以下範例展示一份內容解釋可能包含的一般精細化詮釋資料。</p>
+				<p>以下範例展示一份內容釋義可能包含的一般精細化詮釋資料。</p>
 				<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">metadata</span> <span class="hljs-attr">xmlns:dc</span>=<span class="hljs-string">"http://purl.org/dc/elements/1.1/"</span>&gt;</span>
     
     <span class="hljs-tag">&lt;<span class="hljs-name">dc:identifier</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"pub-id"</span>&gt;</span>urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809<span class="hljs-tag">&lt;/<span class="hljs-name">dc:identifier</span>&gt;</span>
@@ -5453,7 +5453,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 					</tr>
 					<tr>
 						<th>說明：</th>
-						<td><code>nav</code>特性說明了該出版品資源建構了該<a href="epub-spec.html#dfn-rendition">內容解釋</a>的<a href="epub-spec.html#dfn-epub-navigation-document">EPUB導覽文件</a>。</td>
+						<td><code>nav</code>特性說明了該出版品資源建構了該<a href="epub-spec.html#dfn-rendition">內容釋義</a>的<a href="epub-spec.html#dfn-epub-navigation-document">EPUB導覽文件</a>。</td>
 					</tr>
 					<tr>
 						<th>適用：</th>
