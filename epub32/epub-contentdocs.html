@@ -1197,7 +1197,7 @@ var [data-type] :hover::before {
 
 				<section id="sec-overview-relations-html">
 					<h4 id="x1-1-1-relationship-to-html"><span class="secno">1.1.1 </span>與HTML的關係<a class="self-link" aria-label="§" href="#sec-overview-relations-html"></a></h4>
-					<p>本規格並不參照特定版本的W3C [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] ，而參照無標注日期的版本，如此一來將會一直指向最新的推薦版本。這項作法確保可以讓EPUB持續跟上HTML標準的變化腳步。作者與閱讀系統開發者會需要持續追蹤HTML的變革，以確保他們的流程與系統保持更新。</p>
+					<p>本規格並不參照特定版本的W3C [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] ，而參照無標注日期的版本，如此一來將會一直指向最新的推薦版本。這項作法確保可以讓EPUB持續跟上HTML標準的變化腳步。作者與閱讀系統開發者會需要持續追蹤HTML的變革，以確保他們的處理程序與系統保持更新。</p>
 
 					<div class="caution">
 						<p>隨著HTML進化，可能有些功能在前一版有效，但後來變得過時或者被移除。W3C期望像這樣的變化能夠對作者造成最小限度的干擾，但考量到向後不相容的改版，於是重新考量使用無標注日期的參照版本。</p>
@@ -1236,8 +1236,7 @@ var [data-type] :hover::before {
 
 			<section id="sec-overview-pfx">
 				<h3 id="x1-4-namespace-prefix-mapping"><span class="secno">1.4 </span>命名空間字首對應<a class="self-link" aria-label="§" href="#sec-overview-pfx"></a></h3>
-				<p>
-					為求方便，以下命名空間字首 [<cite><a class="bibref" href="#bib-xml-names">XML-NAMES</a></cite>] 用於本規格而無需另外宣告。若要使用其他字首在<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>中，宣告為<em class="rfc2119" title="REQUIRED">必要</em>。</p>
+				<p>為求方便，以下命名空間字首 [<cite><a class="bibref" href="#bib-xml-names">XML-NAMES</a></cite>] 用於本規格而無需另外宣告。若要使用其他字首在<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>中，宣告為<em class="rfc2119" title="REQUIRED">必要</em>。</p>
 				<table class="mapping">
 					<tbody><tr>
 						<th>字首</th>
@@ -1288,7 +1287,7 @@ var [data-type] :hover::before {
 				<ul class="conformance-list">
 					<li><p id="confreq-html-rs-behavior"><span class="link-marker"><a href="#confreq-html-rs-behavior" class="hidden-reveal"><span>&nbsp;</span></a> </span>除非在本規格中額外定義為可覆蓋，其<em class="rfc2119" title="MUST">必需</em>使用定義在 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 中的語意來處理XHTML內容文件，並且鼓勵適用所有定義於其中的使用者端適用性限制。</p></li>
 					<li><p id="confreq-html-rs-behavior-add"><span class="link-marker"><a href="#confreq-html-rs-behavior-add" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>符合所有定義在<a href="#sec-xhtml-extensions">HTML延伸</a>中的閱讀系統適用性要求。</p></li>
-					<li><p id="confreq-html-rs-behavior-restr"><span class="link-marker"><a href="#confreq-html-rs-behavior-restr" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>識別並且行為上採用定義於<a href="#sec-xhtml-deviations">HTML歧異與限制中</a>的限制。</p></li>
+					<li><p id="confreq-html-rs-behavior-restr"><span class="link-marker"><a href="#confreq-html-rs-behavior-restr" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>識別並且行為上採用定義於<a href="#sec-xhtml-deviations">HTML歧異與限制</a>中的限制。</p></li>
 					<li><p id="confreq-html-rs-scrpt"><span class="link-marker"><a href="#confreq-html-rs-scrpt" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>符合所有定義在<a href="#sec-scripted-content-rs-reqs">有腳本的內容文件 — 閱讀系統適用性</a>中的適用性需求。</p></li>
 					<li><p id="confreq-html-rs-css"><span class="link-marker"><a href="#confreq-html-rs-css" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>支援對XHTML內容文件的視覺化排版，如在<a href="#sec-css-rs-conf">CSS樣式表 — 閱讀系統適用性</a>中的定義。</p></li>
 					<li><p id="confreq-html-rs-a11y"><span class="link-marker"><a href="#confreq-html-rs-a11y" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="SHOULD">應該</em>識別嵌入的ARIA標記以及支援任何存在ARIA角色、狀態以及特性的呈現，如平台無障礙輔助性APIs [<cite><a class="bibref" href="#bib-wai-aria">WAI-ARIA</a></cite>] 。</p></li>
@@ -1301,7 +1300,7 @@ var [data-type] :hover::before {
 				<p>本章節定義在 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 文件模型下，EPUB 3 <a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>的延伸。</p>
 
 				<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>注意事項</span></div><div class="">
-					<p>儘管 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 允許<a href="https://www.w3.org/TR/html5/infrastructure.html#conformance-requirements-extensibility">使用者端支援中立的延伸</a>，但除非這些延伸列於本章節，不然並非EPUB 3所支援的功能。</p>
+					<p>儘管 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 允許<a href="https://www.w3.org/TR/html5/infrastructure.html#conformance-requirements-extensibility">中立的延伸</a>，但除非這些延伸列於本章節，不然並非EPUB 3所支援的功能。</p>
 				</div></div>
 
 				<section id="sec-xhtml-semantic-inflection">
@@ -1309,8 +1308,8 @@ var [data-type] :hover::before {
 
 					<section id="sec-xhtml-semantic-inflection-intro" class="informative">
 						<h5 id="x2-4-1-1-introduction"><span class="secno">2.4.1.1 </span>導論<a class="self-link" aria-label="§" href="#sec-xhtml-semantic-inflection-intro"></a></h5><p><em>本章節為非規範性。</em></p>
-						<p>語意變化是在一份 <a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>中，附加一個元素額外為了特殊目的及/或性質意義的過程。<a href="#sec-epub-type-attribute"><code>epub:type</code>屬性</a>在XHTML內容文件中用於表達特殊領域的語意，在 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 用語之外，這樣的變化包含了補充意義。</p>
-						<p>適用語意是為了加強包含他們元素的意義；他們的存在不會覆蓋其性質（例如，該屬性可以被用於指示<code>section</code>為該作品中的一章，但並非設計用來在適當的列表架構外，把<code>p</code>元素轉為列表項目）。</p>
+						<p>語意變化是在一份 <a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>中，為一個元素附加為了特殊目的及/或性質之額外意義的過程。<a href="#sec-epub-type-attribute"><code>epub:type</code>屬性</a>在XHTML內容文件中用於領域特定的語意，在 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 用語之外，這樣的變化包含了補充意義。</p>
+						<p>使用語意是為了精製其包含他們元素的意義；他們的存在不會覆蓋其性質（例如，該屬性可以被用於指示<code>section</code>為該作品中的一章，但並非設計用來在適當的列表架構外，把<code>p</code>元素轉為列表項目）。</p>
 						<p>語意詮釋資料是在出版工作流程以及作者定義的目的下來強化內容的使用。其可讓閱讀系統了解更多關於文件中內容的結構，本規格對這些語意沒有特別定義其行為。處理行為可任閱讀系統決定。</p>
 						<p>本規格透過使用<em>屬性軸</em>來定義處理語意變化的方法：與其添加新元素，<code>epub:type</code>屬性可以對既存語意進行擴充，變化成想要的語意。也定義了一套機制來識別外部用語能夠提供對這些屬性的控制值。</p>
 					</section>
@@ -1329,7 +1328,7 @@ var [data-type] :hover::before {
 							<dd><p>由空白分隔的<a href="epub-packages.html#sec-property-datatype">特性</a>列表 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 值，其限制定義在<a href="#sec-contentdocs-vocab-association">用語關聯</a>中。</p>
 								<p>空白的字元組定義於 [<cite><a class="bibref" href="#bib-xml">XML</a></cite>] 。</p></dd>
 						</dl>
-						<p><code>epub:type</code>屬性出現在元素中會改變其語意。其值為一或多個由空白分隔的術語，來自於文件副本中關聯的外部用語基幹，如<a href="#sec-contentdocs-vocab-association">用語關聯</a>所定義。</p>
+						<p><code>epub:type</code>屬性出現在元素中會改變其語意。其值為一或多個由空白分隔的術語，來自於文件副本中關聯的外部用語集，如<a href="#sec-contentdocs-vocab-association">用語關聯</a>所定義。</p>
 						<p>變化的語意<em class="rfc2119" title="MUST">必需</em>為乘載的元素表達一個次級語意。對於語意中立的元素而言，如同 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/grouping-content.html#the-div-element"><code>div</code></a>及<a href="https://www.w3.org/TR/html/textlevel-semantics.html#the-span-element"><code>span</code></a>元素，變化的語意<em class="rfc2119" title="MUST NOT">不得</em>附加已經由既存元素所攜帶的意義（例如，一個<code>div</code>代表一段落或者區塊）。閱讀系統<em class="rfc2119" title="MUST">必需</em>忽略與乘載元素相衝突的<a href="#confreq-rs-epubtype-prec">語意變化</a>。</p>
 						<p> [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/document-metadata.html#the-head-element"><code>head</code></a>元素包含了該文件的詮釋資料，在此元素表達的結構化語意或者任何子元素沒有任何意義。閱讀系統<em class="rfc2119" title="MUST">必需</em>忽略這樣的語意。</p>
 
@@ -1338,7 +1337,7 @@ var [data-type] :hover::before {
 						<aside class="example" id="ex.epubtype.note"><div class="marker">
       <a class="self-link" href="#ex.epubtype.note">範例 1</a>
     </div>
-							<p>以下範例表示如何在 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <code>section</code>元素中使用<code>epub:type</code>屬性標示為前（preamble）。</p>
+							<p>以下範例表示如何在 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <code>section</code>元素中使用<code>epub:type</code>屬性標示為前言（preamble）。</p>
 							<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> … <span class="hljs-attr">xmlns:epub</span>=<span class="hljs-string">"http://www.idpf.org/2007/ops"</span>&gt;</span>
     …
     <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">epub:type</span>=<span class="hljs-string">"preamble"</span>&gt;</span>
@@ -1381,12 +1380,12 @@ var [data-type] :hover::before {
 					<section id="sec-contentdocs-vocab-association">
 						<h5 id="x2-4-1-3-vocabulary-association"><span class="secno">2.4.1.3 </span>用語關聯<a class="self-link" aria-label="§" href="#sec-contentdocs-vocab-association"></a></h5>
 
-						<p>本規格採用用語關聯機制，其定義於<a href="epub-packages.html#sec-metadata-assoc">用語關聯機制</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ，以及以下調整：</p>
+						<p>本規格採用用語關聯機制，其定義於[<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 中的<a href="epub-packages.html#sec-metadata-assoc">用語關聯機制</a>，但有以下調整：</p>
 
 						<section id="sec-contentdocs-default-vocab">
 							<h6 id="x2-4-1-3-1-default-vocabulary"><span class="secno">2.4.1.3.1 </span>預設用語<a class="self-link" aria-label="§" href="#sec-contentdocs-default-vocab"></a></h6>
 
-							<p>供內容文件使用的預設用語定義為 [<cite><a class="bibref" href="#bib-epub-ssv">EPUB-SSV</a></cite>] 。無字首的術語其不屬於 [<cite><a class="bibref" href="#bib-epub-ssv">EPUB-SSV</a></cite>] <em class="rfc2119" title="MAY">可以</em>被包含，但不建議使用。要添加客製化語意，建議使用字首作為偏好方式。</p>
+							<p>供內容文件使用的預設用語定義為 [<cite><a class="bibref" href="#bib-epub-ssv">EPUB-SSV</a></cite>] 。不屬於 [<cite><a class="bibref" href="#bib-epub-ssv">EPUB-SSV</a></cite>] 的無字首的術語<em class="rfc2119" title="MAY">可以</em>被包含，但不鼓勵使用。要添加客製化語意，建議使用字首。</p>
 						</section>
 
 						<section id="sec-contentdocs-reserved-prefixes">
@@ -1394,7 +1393,7 @@ var [data-type] :hover::before {
 
 							<p>作者<em class="rfc2119" title="MAY">可以</em>使用以下保留的字首於<code>epub:type</code>屬性而無需宣告。</p>
 
-							<div class="warning" id="issue-container-generatedID-1"><div role="heading" class="warning-title marker" id="h-warning" aria-level="7"><span>警告</span></div><p class="">儘管保留的字首是為了製作上的便利，依賴他們會導致互通性問題。例如，驗證工具經常會拒絕新的字首直到工具更新。強烈建議作者宣告所有使用的字首以避免這樣的問題。</p></div>
+							<div class="warning" id="issue-container-generatedID-1"><div role="heading" class="warning-title marker" id="h-warning" aria-level="7"><span>警告</span></div><p class="">儘管保留的字首是為了製作上的便利，但依賴他們會導致互通性問題。例如，驗證工具經常會拒絕新的字首直到工具更新。強烈建議作者宣告所有使用的字首以避免這樣的問題。</p></div>
 
 							<table id="tbl-reserved-prefixes" class="prefix">
 								<thead>
@@ -1454,7 +1453,7 @@ var [data-type] :hover::before {
 					<section id="sec-xhtml-sementic-enrichment-rdfa">
 						<h5 id="x2-4-2-2-rdfa"><span class="secno">2.4.2.2 </span>RDFa<a class="self-link" aria-label="§" href="#sec-xhtml-sementic-enrichment-rdfa"></a></h5>
 
-						<p> [ [<cite><a class="bibref" href="#bib-rdfa-core">RDFA-CORE</a></cite>] 屬性允許用於<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>，但所有使用情形<em class="rfc2119" title="MUST">必需</em>符合定義在 [ [!HTML+RDFA] ] 中的需求。</p>
+						<p> [<cite><a class="bibref" href="#bib-rdfa-core">RDFA-CORE</a></cite>] 屬性允許用於<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>，但所有使用情形<em class="rfc2119" title="MUST">必需</em>符合定義在 [[!HTML+RDFA]] 中的需求。</p>
 
 						<p> [<cite><a class="bibref" href="#bib-rdfa-core">RDFA-CORE</a></cite>] 規格定義了當使用RDFa屬性時， [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 內容模型的變化。變化後的內容模型在XHTML內容文件中合乎規定。</p>
 
@@ -1478,9 +1477,9 @@ var [data-type] :hover::before {
 					<section id="sec-cd-ssml-intro">
 						<h5 id="x2-4-3-1-introduction"><span class="secno">2.4.3.1 </span>導論<a class="self-link" aria-label="§" href="#sec-cd-ssml-intro"></a></h5>
 
-						<p>W3C語音合成標注語言 [<cite><a class="bibref" href="#bib-ssml">SSML</a></cite>] 是一種用來協助<a href="epub-spec.html#dfn-text-to-speech">文字轉換語音</a>（Text-to-Speech, TTS）引擎用來合成朗讀的語言。由於SSML設計上作為獨立的文件類型，其也定義了適用在其他標記語言中的語意。</p>
+						<p>W3C語音合成標記語言 [<cite><a class="bibref" href="#bib-ssml">SSML</a></cite>] 是一種用來協助<a href="epub-spec.html#dfn-text-to-speech">文字轉換語音</a>（Text-to-Speech, TTS）引擎用來合成朗讀的語言。由於SSML設計上作為獨立的文件類型，其也定義了適用在其他標記語言中的語意。</p>
 
-						<p>本規格重編 [<cite><a class="bibref" href="#bib-ssml">SSML</a></cite>] <a href="https://www.w3.org/TR/2010/REC-speech-synthesis11-20100907/#S3.1.10"><code>phoneme</code>元素</a>為兩種屬性） — <code>ssml:ph</code>與<code>ssml:alphabet</code> — 並讓他們可以與XHTML內容文件共用。</p>
+						<p>本規格改編 [<cite><a class="bibref" href="#bib-ssml">SSML</a></cite>] <a href="https://www.w3.org/TR/2010/REC-speech-synthesis11-20100907/#S3.1.10"><code>phoneme</code>元素</a>為兩種屬性 — <code>ssml:ph</code>與<code>ssml:alphabet</code> — 讓它們可以用於XHTML內容文件。</p>
 
 						<p>具備<a href="epub-spec.html#dfn-text-to-speech">文字轉換語音</a>相容性的閱讀系統<em class="rfc2119" title="SHOULD">應該</em>支援SSML屬性其定義如下：</p>
 
@@ -1493,7 +1492,7 @@ var [data-type] :hover::before {
 					<section id="sec-cd-ssml-ph-attrib">
 						<h5 id="x2-4-3-2-the-ssml-ph-attribute"><span class="secno">2.4.3.2 </span><code>ssml:ph</code>屬性<a class="self-link" aria-label="§" href="#sec-cd-ssml-ph-attrib"></a></h5>
 
-						<p><code>ssml:ph</code>屬性指定該文字一個音素的/語音學的發音，由附加其屬性的元素所表達。</p>
+						<p><code>ssml:ph</code>屬性指定該文字一個音素/語音學的發音，由附加其屬性的元素所表達。</p>
 
 						<dl class="elemdef" id="attrdef-ssml-ph">
 							<dt>屬性名稱</dt>
@@ -1513,13 +1512,13 @@ var [data-type] :hover::before {
 							<li><p id="ssml-ph-concat"><span class="link-marker"><a href="#ssml-ph-concat" class="hidden-reveal"><span>&nbsp;</span></a> </span>當<code>ssml:ph</code>屬性一個包含文字節點子項目的元素，相對應的文件文字，其發音是用在字串上時，結果會依文件順序連結到子項目文字節點上。指定的語音學發音因此<em class="rfc2119" title="MUST">必需</em>邏輯上對應到該元素完整的文字資料區域（例如，並非只是內容的獨立部分）。</p></li>
 						</ul>
 
-						<p>閱讀系統同時支援SSML屬性以及<a href="#sec-pls"><abbr title="Pronunciation Lexicon Specification">PLS</abbr>文件</a><em class="rfc2119" title="MUST">必需</em>對這兩種結構定義<a href="#confreq-pls-rs-casc">優先規則</a>。</p>
+						<p>閱讀系統同時支援SSML屬性以及<a href="#sec-pls"><abbr title="Pronunciation Lexicon Specification">PLS</abbr>文件</a><em class="rfc2119" title="MUST">必需</em>對這兩種結構定義<a href="#confreq-pls-rs-casc">優先順序</a>。</p>
 					</section>
 
 					<section id="sec-cd-ssml-alphabet-attrib">
 						<h5 id="x2-4-3-3-the-ssml-alphabet-attribute"><span class="secno">2.4.3.3 </span><code>ssml:alphabet</code>屬性<a class="self-link" aria-label="§" href="#sec-cd-ssml-alphabet-attrib"></a></h5>
 
-						<p><code>ssml:alphabet</code>屬性指定該文字一個音素的/語音學的發音字母表，其為用於<a href="#attrdef-ssml-ph"><code>ssml:ph</code></a>屬性的值。</p>
+						<p><code>ssml:alphabet</code>屬性指定該文字一個音素/語音學的發音字母表，其為用於<a href="#attrdef-ssml-ph"><code>ssml:ph</code></a>屬性的值。</p>
 
 						<dl class="elemdef" id="attrdef-ssml-alphabet">
 							<dt>屬性名稱</dt>
@@ -1565,7 +1564,7 @@ var [data-type] :hover::before {
 				<section id="sec-xhtml-custom-attributes">
 					<h4 id="x2-4-6-custom-attributes"><span class="secno">2.4.6 </span>客製化屬性<a class="self-link" aria-label="§" href="#sec-xhtml-custom-attributes"></a></h4>
 
-					<p><a href="epub-spec.html#dfn-epub-reading-system">閱讀系統</a><em class="rfc2119" title="MAY">可以</em>提供未定義在本規格中的功能來加強對<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的排版。為了活用這項實驗功能，提供者<em class="rfc2119" title="MAY">可以</em>定義客製化屬性供<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>使用。</p>
+					<p><a href="epub-spec.html#dfn-epub-reading-system">閱讀系統</a><em class="rfc2119" title="MAY">可以</em>提供未定義在本規格中的功能來加強對<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的排版處理。為了活用這項實驗功能，提供者<em class="rfc2119" title="MAY">可以</em>定義客製化屬性供<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>使用。</p>
 
 					<p>客製化屬性<em class="rfc2119" title="MAY">可以</em>在一份XHTML內容文件的任何元素中，這些屬性來自一個外部的命名空間，其定義如命名空間 [<cite><a class="bibref" href="#bib-xml-names">XML-NAMES</a></cite>] ，且不能對應到以下的URIs：</p>
 
@@ -1576,7 +1575,7 @@ var [data-type] :hover::before {
 							<p><code>http://www.idpf.org/2007/ops</code></p></li>
 					</ul>
 
-					<p>客製化屬性，以及與其相關聯的行為，<em class="rfc2119" title="MUST NOT">不得</em>改動一份EPUB出版品的一致性。內容<em class="rfc2119" title="MUST">必需</em>能在沒有任何資訊缺失或者明顯變形的狀況下讓使用者能夠閱讀，無論閱讀系統是否會進行排版。</p>
+					<p>客製化屬性，以及與其相關聯的行為，<em class="rfc2119" title="MUST NOT">不得</em>改動一份EPUB出版品的一致性。內容<em class="rfc2119" title="MUST">必需</em>能在沒有任何資訊缺失或者明顯瑕疵的狀況下讓使用者能夠閱讀，無論閱讀系統是否會進行排版處理。</p>
 
 					<div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-3" aria-level="5"><span>注意事項</span></div><div class="">
 						<p>為使客製化屬性能夠跨閱讀系統提供互通性，強烈建議提供者將實作的任何延伸記錄在 [<cite><a class="bibref" href="#bib-attributeextensions">AttributeExtensions</a></cite>] 中。</p>
@@ -1622,9 +1621,9 @@ var [data-type] :hover::before {
 
 					<section id="sec-xhtml-mathml-rs-conf">
 						<h5 id="x2-5-1-3-reading-system-conformance"><span class="secno">2.5.1.3 </span>閱讀系統適用性<a class="self-link" aria-label="§" href="#sec-xhtml-mathml-rs-conf"></a></h5>
-						<p>適用的<a href="epub-spec.html#dfn-epub-reading-system">EPUB閱讀系統</a><em class="rfc2119" title="MUST">必需</em>以下領域對在XHTML內容文件中支援MathML的需求：</p>
+						<p>合規的<a href="epub-spec.html#dfn-epub-reading-system">EPUB閱讀系統</a><em class="rfc2119" title="MUST">必需</em>以下領域對在XHTML內容文件中支援MathML的需求：</p>
 						<ul class="conformance-list">
-							<li><p id="confreq-mathml-rs-behavior"><span class="link-marker"><a href="#confreq-mathml-rs-behavior" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>一個<a href="https://www.w3.org/TR/MathML3/chapter3.html">顯示用的MathML</a>輸入相容的排版器，如 [<cite><a class="bibref" href="#bib-mathml3">MATHML3</a></cite>] 規格所定義。</p></li>
+							<li><p id="confreq-mathml-rs-behavior"><span class="link-marker"><a href="#confreq-mathml-rs-behavior" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>為一個<a href="https://www.w3.org/TR/MathML3/chapter3.html">顯示用MathML</a>輸入相容的排版器，如 [<cite><a class="bibref" href="#bib-mathml3">MATHML3</a></cite>] 規格所定義。</p></li>
 							<li><p id="confreq-mathml-rs-anno"><span class="link-marker"><a href="#confreq-mathml-rs-anno" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MAY">可以</em>支援在<code>annotation-xml</code>元素中<a href="https://www.w3.org/TR/MathML3/chapter4.html">MathML內容</a>的排版。</p></li>
 							<li><p id="confreq-mathml-rs-render"><span class="link-marker"><a href="#confreq-mathml-rs-render" class="hidden-reveal"><span>&nbsp;</span></a> </span>當有<a href="epub-spec.html#dfn-viewport">顯示範圍（Viewport）</a>時，其<em class="rfc2119" title="MUST">必需</em>支援MathML顯示的視覺排版。</p></li>
 						</ul>
@@ -1641,7 +1640,7 @@ var [data-type] :hover::before {
 				<section id="sec-xhtml-svg">
 					<h4 id="x2-5-2-embedded-svg"><span class="secno">2.5.2 </span>嵌入SVG<a class="self-link" aria-label="§" href="#sec-xhtml-svg"></a></h4>
 
-					<p><a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件支援嵌入<a href="https://www.w3.org/TR/SVG/conform.html#ConformingSVGXMLFragments">SVG文件斷片</a> [<cite><a class="bibref" href="#bib-svg">SVG</a></cite>] ，可透過<em>參照</em>（透過參照嵌入，例如，由一個<code>img</code>或者<code>object</code>元素）以及透過包含（在XHTML內容文件中直接透過包含一個<code>svg</code>元素嵌入）。</p>
+					<p><a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件支援嵌入<a href="https://www.w3.org/TR/SVG/conform.html#ConformingSVGXMLFragments">SVG文件斷片</a> [<cite><a class="bibref" href="#bib-svg">SVG</a></cite>] ，可透過<em>參照</em>（透過參照嵌入，例如，使用<code>img</code>或者<code>object</code>元素）以及透過包含（在XHTML內容文件中直接包含一個<code>svg</code>元素嵌入）。</p>
 
 					<p>對在XHTML中嵌入SVG的內容適用性限制如同對<a href="epub-spec.html#dfn-svg-content-document">SVG內容文件</a>的中對<a href="#sec-svg-restrictions">SVG限制</a>的定義。</p>
 
@@ -1659,7 +1658,7 @@ var [data-type] :hover::before {
 						<p id="confreq-svg-rs-css-embed-inc">若要為在XHTML內容文件中對<em>以包含</em>方式嵌入的SVG給予樣式，閱讀系統<em class="rfc2119" title="MUST">必需</em>套用包含文件的CSS規則到包含的SVG元素。</p>
 
 						<div class="note" role="note" id="issue-container-generatedID-8"><div role="heading" class="note-title marker" id="h-note-7" aria-level="6"><span>注意事項</span></div><div class="">
-							<p><em>透過參照</em>加入SVG處理上視為分開的文件，且可各自包含自己的CSS樣式規則如一份<a href="epub-spec.html#dfn-svg-content-document">SVG內容文件</a>可以做到的程度。請注意當遇到如一個 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#elementdef-object"><code>object</code></a>元素參照一個外部的 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 元素時，也須保持一致。</p>
+							<p><em>透過參照</em>加入SVG，處理上視為相互獨立的文件，且可各自包含自己的CSS樣式規則，如一份<a href="epub-spec.html#dfn-svg-content-document">SVG內容文件</a>可以做到的程度。請注意當遇到如一個 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#elementdef-object"><code>object</code></a>元素參照一個外部的 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 元素時，也須保持一致。</p>
 						</div></div>
 
 					</section>
@@ -1671,7 +1670,7 @@ var [data-type] :hover::before {
 
 					<dl class="variablelist">
 						<dt>私用字元與嵌入字體</dt>
-						<dd><p id="confreq-html-unicode-pua">任何包含的字元其指向的碼點包含在定義於 [<cite><a class="bibref" href="#bib-unicode">Unicode</a></cite>] 的私用區（Private Use Area, PUA）<em class="rfc2119" title="MUST">必需</em>出現在一個有樣式或者屬性的字串，其目的為包含對一個嵌入字體 [<cite><a class="bibref" href="#bib-css-fonts-3">CSS-Fonts-3</a></cite>] 的參照，該字體需包含該碼點的適當字形。</p></dd>
+						<dd><p id="confreq-html-unicode-pua">任何包含的字元其指向的碼點落在定義於 [<cite><a class="bibref" href="#bib-unicode">Unicode</a></cite>] 的私用區（Private Use Area, PUA）時，則<em class="rfc2119" title="MUST">必需</em>出現在一個有樣式或者屬性的字串中，其目的為可以其包含對嵌入字體 [<cite><a class="bibref" href="#bib-css-fonts-3">CSS-Fonts-3</a></cite>] 的參照，該字體需包含該碼點的適當字形。</p></dd>
 					</dl>
 				</section>
 
@@ -1680,19 +1679,19 @@ var [data-type] :hover::before {
 
 					<section id="sec-xhtml-deviations-rp">
 						<h5 id="x2-5-4-1-the-rp-element"><span class="secno">2.5.4.1 </span><code>rp</code>元素<a class="self-link" aria-label="§" href="#sec-xhtml-deviations-rp"></a></h5>
-						<p id="confreq-html-vocab-rp"> [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/textlevel-semantics.html#the-rp-element"><code>rp</code></a>元素之目的是提供對於無法辨識ruby標註之舊版<a href="epub-spec.html#dfn-epub-reading-system">閱讀系統</a>一個回退機制（即為，在<code>ruby</code>標註前後加入括號）。不過EPUB 3閱讀系統都重視ruby並且能提供回退機制，故不再推薦使用<code>rp</code>元素。</p>
+						<p id="confreq-html-vocab-rp"> [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/textlevel-semantics.html#the-rp-element"><code>rp</code></a>元素之目的是對於無法辨識ruby標記之舊版<a href="epub-spec.html#dfn-epub-reading-system">閱讀系統</a>提供回退機制（即為，在<code>ruby</code>標記前後加入括號）。不過EPUB 3閱讀系統都重視ruby並且能提供回退機制，故不再推薦使用<code>rp</code>元素。</p>
 					</section>
 
 					<section id="sec-xhtml-deviations-embed">
 						<h5 id="x2-5-4-2-the-embed-element"><span class="secno">2.5.4.2 </span><code>embed</code>元素<a class="self-link" aria-label="§" href="#sec-xhtml-deviations-embed"></a></h5>
-						<p id="confreq-html-vocab-embed">由於 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-embed-element"><code>embed</code></a>元素未包含明確機制以提供給不支援腳本的閱讀系統回退，故不鼓勵<a href="epub-spec.html#dfn-author">作者</a>使用本元素，尤其當參照的資源包含腳本時。可使用包含明確回退相容性的 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-object-element"><code>object</code>元素</a>取代。</p>
+						<p id="confreq-html-vocab-embed">由於 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-embed-element"><code>embed</code></a>元素未包含固有機制以提供給不支援腳本的閱讀系統回退，故不鼓勵<a href="epub-spec.html#dfn-author">作者</a>使用本元素，尤其當參照的資源包含腳本時。可使用包含固有回退相容性的 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-object-element"><code>object</code>元素</a>取代。</p>
 					</section>
 				</section>
 
 				<section id="sec-xhtml-fallbacks">
 					<h4 id="x2-5-5-foreign-resource-restrictions"><span class="secno">2.5.5 </span>外圍資源限制<a class="self-link" aria-label="§" href="#sec-xhtml-fallbacks"></a></h4>
 
-					<p id="confreq-resources-cd-fallback">外圍資源<em class="rfc2119" title="MAY">可以</em>透過有明確回退機制的元素進行參照，明確回退機制能夠在不支援外圍資源時，提供替代呈現。例如，多數 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/dom.html#embedded-content">嵌入內容元素</a>提供了替代排版的選項，例如在一項資源無法被排版時，可以指定多重來源或者允許嵌入HTML內容。<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a>或者嵌入HTML內容在外圍資源被參照時，其元素<em class="rfc2119" title="MUST">必需</em>提供明確的回退機制。</p>
+					<p id="confreq-resources-cd-fallback">外圍資源<em class="rfc2119" title="MAY">可以</em>透過有固有回退機制的元素進行參照，固有回退機制能夠在不支援外圍資源時，提供替代呈現。例如，多數 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/dom.html#embedded-content">嵌入內容元素</a>提供了替代排版的選項，例如在一項資源無法被排版時，可以指定多重來源或者允許嵌入HTML內容。<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a>或者嵌入HTML內容在外圍資源被參照時，其元素<em class="rfc2119" title="MUST">必需</em>提供明確的回退機制。</p>
 
 					<p id="confreq-resources-cd-fallback-media"> [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/dom.html#flow-content">重排內容</a><em class="rfc2119" title="MAY">可以</em>嵌入<a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-audio-element"><code>audio</code></a>及<a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-video-element"><code>video</code></a>元素供排版，但對無法辨識這些元素的舊版閱讀系統而言（例如EPUB 2閱讀系統），不需要回退到核心媒體類型資源上。</p>
 
@@ -1701,7 +1700,7 @@ var [data-type] :hover::before {
 					<ul>
 						<li><p>當為一個<a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-picture-element"><code>picture</code>元素</a>的子元素時：</p>
 							<ul>
-								<li>其<em class="rfc2119" title="MUST">必需</em>在其<code>src</code>中，和若指定其<code>srcset</code>屬性時，參照核心媒體類型資源；以及</li>
+								<li>其<em class="rfc2119" title="MUST">必需</em>在其<code>src</code>中，若指定其<code>srcset</code>屬性時，參照核心媒體類型資源；以及</li>
 								<li>每一個匹配的<a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-source-element"><code>source</code>元素</a><em class="rfc2119" title="MUST">必需</em>在其<code>src</code>和<code>srcset</code>屬性中，參照一個核心媒體類型資源，除非在其<code>type</code>屬性中指定一個媒體類型，其非核心媒體類型。</li>
 							</ul>
 						</li>
@@ -1713,13 +1712,13 @@ var [data-type] :hover::before {
 					<ul>
 						<li><p id="confreq-resources-cd-fallback-link"><a href="https://www.w3.org/TR/html/document-metadata.html#the-link-element"><code>link</code></a> — 當其<code>rel</code>屬性有<a href="#confreq-cd-pls-assoc">值"<code>pronunciation</code>"</a>時</p></li>
 						<li><p id="confreq-resources-cd-fallback-track"><a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-track-element"><code>track</code></a></p></li>
-						<li><p id="confreq-resources-cd-fallback-video"><a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-video-element"><code>video</code></a> — 包含在任何<a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-source-element"><code>source</code></a>子元素</p></li>
+						<li><p id="confreq-resources-cd-fallback-video"><a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-video-element"><code>video</code></a> — 包含任子<a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-source-element"><code>source</code></a>元素</p></li>
 					</ul>
 
 					<p>外圍資源<em class="rfc2119" title="MAY">可以</em>在以上三元素中被參照，且無需提供對核心媒體類型資源的回退。</p>
 
 					<div class="note" role="note" id="issue-container-generatedID-9"><div role="heading" class="note-title marker" id="h-note-8" aria-level="5"><span>注意事項</span></div><div class="">
-						<p>請參照<a href="epub-packages.html#sec-foreign-restrictions-manifest">宣告回退</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 以獲得對沒有明確機制元素，例如 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-iframe-element"><code>iframe</code></a>，提供回退的資訊。</p>
+						<p>請參照<a href="epub-packages.html#sec-foreign-restrictions-manifest">宣告回退</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 以獲得對沒有固有機制元素，例如 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-iframe-element"><code>iframe</code></a>，提供回退的資訊。</p>
 					</div></div>
 				</section>
 
@@ -1764,7 +1763,7 @@ var [data-type] :hover::before {
 						<p id="confreq-resources-svg-fallback"><span class="link-marker"><a href="#confreq-resources-svg-fallback" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MAY">可以</em>包含對<a href="epub-spec.html#dfn-foreign-resource">外圍資源</a>的參照，但須提供對<a href="epub-spec.html#dfn-core-media-type-resource">核心媒體類型資源</a>的回退。</p>
 						<p id="confreq-cd-svg-docprops-schema"><span class="link-marker"><a href="#confreq-cd-svg-docprops-schema" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>為一個<a href="https://www.w3.org/TR/SVG/intro.html#TermSVGDocumentFragment">SVG文件斷片</a> [<cite><a class="bibref" href="#bib-svg">SVG</a></cite>] ，並且符合<a href="#sec-svg-restrictions">SVG限制</a>中所有內容適用性限制。</p>
 						<div class="note" role="note" id="issue-container-generatedID-11"><div role="heading" class="note-title marker" id="h-note-10" aria-level="4"><span>注意事項</span></div><div class="">
-							<p>推薦EPUB出版品跟從 [<cite><a class="bibref" href="#bib-epubaccessibility">EPUBAccessibility</a></cite>] 中的無障礙輔助性需求於SVG內容文件。請見<a href="epub-spec.html#sec-epub-a11y">無障礙輔助性</a> [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] 。</p>
+							<p>推薦EPUB出版品遵從 [<cite><a class="bibref" href="#bib-epubaccessibility">EPUBAccessibility</a></cite>] 中的無障礙輔助性需求，套用於SVG內容文件。請見<a href="epub-spec.html#sec-epub-a11y">無障礙輔助性</a> [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] 。</p>
 						</div></div>
 					</dd>
 
@@ -1799,14 +1798,14 @@ var [data-type] :hover::before {
 					<li><p id="confreq-svg-rs-behavior"><span class="link-marker"><a href="#confreq-svg-rs-behavior" class="hidden-reveal"><span>&nbsp;</span></a> </span>除非在本規格中額外定義為可覆蓋，其<em class="rfc2119" title="MUST">必需</em>使用定義在 [<cite><a class="bibref" href="#bib-svg">SVG</a></cite>] 規格中的語意來處理SVG內容文件，並且推薦符合所有在該規格中表述的適用性限制。</p></li>
 					<li><p id="confreq-svg-rs-scrpt"><span class="link-marker"><a href="#confreq-svg-rs-scrpt" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>符合在<a href="#sec-scripted-content-rs-reqs">有腳本的內容文件 - 閱讀系統適用性</a>中定義的適用性規定。</p></li>
 					<li><p id="confreq-svg-rs-css"><span class="link-marker"><a href="#confreq-svg-rs-css" class="hidden-reveal"><span>&nbsp;</span></a> </span>當有<a href="epub-spec.html#dfn-viewport">顯示範圍（Viewport）</a>時，其<em class="rfc2119" title="MUST">必需</em>按照定義如<a href="https://www.w3.org/TR/SVG/styling.html">樣式</a> [<cite><a class="bibref" href="#bib-svg">SVG</a></cite>] ，使用CSS來支援SVG的排版，以及其<em class="rfc2119" title="SHOULD">應該</em>支援所有定義在<a href="https://www.w3.org/TR/SVG/propidx.html">特性索引</a> [<cite><a class="bibref" href="#bib-svg">SVG</a></cite>] 中的特性。對嵌入SVG而言，其<em class="rfc2119" title="MUST">必需</em>符合定義在<a href="#sec-xhtml-svg-css">嵌入SVG與CSS</a>中的限制。</p></li>
-					<li><p id="confreq-svg-rs-text"><span class="link-marker"><a href="#confreq-svg-rs-text" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="SHOULD">應該</em>讓使用者能在SVG元素中進行選擇與搜尋。</p></li>
+					<li><p id="confreq-svg-rs-text"><span class="link-marker"><a href="#confreq-svg-rs-text" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="SHOULD">應該</em>讓使用者能在SVG元素中進行選擇與搜尋文字。</p></li>
 					<li><p id="confreq-svg-rs-reqdExt"><span class="link-marker"><a href="#confreq-svg-rs-reqdExt" class="hidden-reveal"><span>&nbsp;</span></a> </span>當在XHTML內容文件斷片出現時，其<em class="rfc2119" title="MUST">必需</em>辨識<code>requiredExtensions</code>屬性的值"<code>http://www.idpf.org/2007/ops</code>"（即為，當該屬性包含在<code>foreignObject</code>元素，或其<code>switch</code>子元素中）。</p></li>
 				</ul>
 			</section>
 
 			<section id="sec-svg-semantic-inflection">
 				<h3 id="x3-5-semantic-inflection"><span class="secno">3.5 </span>語意變化<a class="self-link" aria-label="§" href="#sec-svg-semantic-inflection"></a></h3>
-				<p>定義在<a href="#sec-xhtml-semantic-inflection">XHTML語意變化</a>中的語法與語意在<a href="epub-spec.html#dfn-svg-content-document">SVG內容文件</a>中，繼承供<a href="#attrdef-epub-type"><code>epub:type</code></a> and <a href="#sec-contentdocs-prefix-attr"><code>epub:prefix</code></a>及<code>epub:prefix</code>屬性使用。</p>
+				<p>定義在<a href="#sec-xhtml-semantic-inflection">XHTML語意變化</a>中的語法與語意在<a href="epub-spec.html#dfn-svg-content-document">SVG內容文件</a>中，繼承供<a href="#attrdef-epub-type"><code>epub:type</code></a>與<a href="#sec-contentdocs-prefix-attr"><code>epub:prefix</code></a>屬性使用。</p>
 				<p><em>epub:prefix</em>屬性僅能用於SVG內容文件的根<code>svg</code>元素而合規。用於<a href="#sec-xhtml-svg">嵌入SVG</a>的字首<em class="rfc2119" title="MUST">必需</em>要在 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/semantics.html#the-html-element"><code>html</code>根元素</a>中宣告，如同<a href="#sec-xhtml-semantic-inflection">XHTML語意變化</a>中所定義。</p>
 			</section>
 		</section>
@@ -1816,7 +1815,7 @@ var [data-type] :hover::before {
 			<section id="sec-css-intro" class="informative">
 				<h3 id="x4-1-introduction"><span class="secno">4.1 </span>導論<a class="self-link" aria-label="§" href="#sec-css-intro"></a></h3><p><em>本章節為非規範性。</em></p>
 				<p>CSS為開放網頁平台不可欠的一部分。讀者、出版商以及文件作者預期CSS「能運作」，如同期望HTML能夠運作一般。</p>
-				<p>在過去，EPUB定義了一份CSS規格以只是對於一些特性的強制支援，並且提供了許多其他特性有字首的版本。儘管CSS工作組不再推薦使用這些有字首的特性，本規格依然需要維護一些有字首的特性以避免破壞既存的內容。但除了定義在本章節的少數例外外，EPUB依從W3C定義的CSS。</p>
+				<p>在過去，EPUB定義了一份CSS子集以指示對一些特性的強制性支援，並且提供了許多其他特性的有字首版本。儘管CSS工作組不再推薦使用這些有字首的特性，本規格依然需要維護一些有字首的特性以避免破壞既存的內容。但除了定義在本章節的少數例外外，EPUB依從W3C定義的CSS。</p>
 			</section>
 
 			<section id="sec-css-content-conf">
@@ -1835,7 +1834,7 @@ var [data-type] :hover::before {
 					<p>請注意，一些<a href="epub-spec.html#dfn-epub-reading-system">閱讀系統</a>可能不支援所有想要的CSS功能。特別是以下所列容易出問題：</p>
 					<ul>
 						<li>
-							<p>閱讀系統建構的分頁可能與樣式表造成不好的結果。分頁有時使用列來處理，會導致可見區域尺寸的值不正確。固定與絕對定位特別容易出錯。</p></li>
+							<p>閱讀系統建構的分頁可能與樣式表造成不好的結果。分頁有時使用列（columns）來處理，會導致可見區域尺寸的值不正確。固定與絕對定位特別容易出錯。</p></li>
 						<li>
 							<p>有些種類的螢幕在顯示動畫與轉場時表現不佳（即為，反應速度慢的）。</p></li>
 					</ul>
@@ -1861,7 +1860,7 @@ var [data-type] :hover::before {
 				<h3 id="x4-4-prefixed-properties"><span class="secno">4.4 </span>有字首的特性<a class="self-link" aria-label="§" href="#sec-css-prefixed"></a></h3>
 
 				<div class="caution">
-					<p>強烈推薦<a href="epub-spec.html#dfn-author">作者</a>使用無字首的特性，以及<a href="epub-spec.html#dfn-epub-reading-system">閱讀系統</a>支援最新的CSS規格。來自 [<cite><a class="bibref" href="#bib-contentdocs301">ContentDocs301</a></cite>] ，廣為使用的有字首的特性於本版恢復，但對其他特性的支援卻已經移除。作者建議在可以使用的狀況下，使用CSS原生解決方式替代移除的特性。</p>
+					<p>強烈推薦<a href="epub-spec.html#dfn-author">作者</a>使用無字首的特性，以及<a href="epub-spec.html#dfn-epub-reading-system">閱讀系統</a>支援最新的CSS規格。來自 [<cite><a class="bibref" href="#bib-contentdocs301">ContentDocs301</a></cite>] 中廣為使用的有字首特性於本版恢復，但對其他特性的支援卻已經移除。作者建議在可以使用的狀況下，使用CSS原生解決方式替代移除的特性。</p>
 					<p>作者現在使用這些有字首的特性時，在有支援的狀況下建議使用無字首版本，這些特性預期在下一次EPUB的主要版本中不再支援。</p>
 				</div>
 
@@ -2052,7 +2051,7 @@ var [data-type] :hover::before {
 
 			<section id="sec-css-rs-overrides">
 				<h3 id="x4-5-reading-system-overrides"><span class="secno">4.5 </span>閱讀系統覆蓋<a class="self-link" aria-label="§" href="#sec-css-rs-overrides"></a></h3>
-				<p><a href="epub-spec.html#dfn-epub-reading-system">EPUB閱讀系統</a><em class="rfc2119" title="SHOULD">應該</em>適用<a href="epub-spec.html#dfn-author">作者</a>寫在<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>中的樣式表。如果閱讀系統允許，使用者<em class="rfc2119" title="SHOULD">應該</em>能在想要的時候，能覆蓋作者提供的樣式表。EPUB閱讀系統<em class="rfc2119" title="SHOULD NOT">不應</em>在沒有嚴格需求下，覆蓋作者樣式表。</p>
+				<p><a href="epub-spec.html#dfn-epub-reading-system">EPUB閱讀系統</a><em class="rfc2119" title="SHOULD">應該</em>套用<a href="epub-spec.html#dfn-author">作者</a>寫在<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>中的樣式表。如果閱讀系統允許，使用者<em class="rfc2119" title="SHOULD">應該</em>能在想要的時候，能覆蓋作者提供的樣式表。EPUB閱讀系統<em class="rfc2119" title="SHOULD NOT">不應</em>在沒有嚴格需求下，覆蓋作者樣式表。</p>
 				<p>如果閱讀系統需要覆蓋作者樣式表，其<em class="rfc2119" title="SHOULD">應該</em>透過一個使用者端樣式表來保存其層疊，利用<a href="https://www.w3.org/TR/2000/REC-DOM-Level-2-Style-20001113/css.html#CSS-OverrideAndComputed"><code>getOverrideStyle</code>方式</a> [<cite><a class="bibref" href="#bib-dom-level-2-style">DOM-Level-2-Style</a></cite>] ，或者 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/dom.html#the-style-attribute"><code>style</code>屬性</a>。</p>
 				<p>強烈建議閱讀系統開發者公開發表所使用的使用者端樣式表以及如何與作者樣式表互動。</p>
 			</section>
@@ -2157,11 +2156,11 @@ var [data-type] :hover::before {
 					<dt>容器限制腳本（Container-constrained scripts）</dt>
 					<dd><p id="confreq-cd-scripted-container"><span class="link-marker"><a href="#confreq-cd-scripted-container" class="hidden-reveal"><span>&nbsp;</span></a> </span>一個容器限制腳本<em class="rfc2119" title="MUST NOT">不得</em>包含修改該EPUB出版品之其他內容，或其母內容文件的DOM的程序，以及<em class="rfc2119" title="MUST NOT">不得</em>包含操弄其包含矩形尺寸的程序。</p></dd>
 					<dt>書脊層級腳本（Spine-level scripts）</dt>
-					<dd><p id="confreq-cd-scripted-spine"><span class="link-marker"><a href="#confreq-cd-scripted-spine" class="hidden-reveal"><span>&nbsp;</span></a> </span>EPUB內容文件包含<a href="#sec-scripted-content-type-spine-level">書脊層級</a>腳本<em class="rfc2119" title="MUST">必需</em>使用<em>漸進強化技巧</em>，其目的在本規格中遵從以下定義：當文件透過沒有腳本支援的閱讀系統排版，或者腳本支援關閉時，其<a href="epub-spec.html#dfn-top-level-content-document">頂層內容文件</a><em class="rfc2119" title="MUST">必需</em>保持一致，依然可以被使用者閱讀而沒有任何資訊丟失或者明顯的瑕疵。</p></dd>
+					<dd><p id="confreq-cd-scripted-spine"><span class="link-marker"><a href="#confreq-cd-scripted-spine" class="hidden-reveal"><span>&nbsp;</span></a> </span>EPUB內容文件包含<a href="#sec-scripted-content-type-spine-level">書脊層級</a>腳本<em class="rfc2119" title="MUST">必需</em>使用<em>漸進強化技巧</em>，其目的在本規格中遵從以下定義：當文件透過沒有腳本支援的閱讀系統排版，或者關閉腳本支援時，其<a href="epub-spec.html#dfn-top-level-content-document">頂層內容文件</a><em class="rfc2119" title="MUST">必需</em>保持一致，依然可以被使用者閱讀而沒有任何資訊丟失或者明顯的瑕疵。</p></dd>
 					<dt>無障礙輔助性（Accessibility）</dt>
 					<dd><p id="confreq-cd-scripted-a11y"><span class="link-marker"><a href="#confreq-cd-scripted-a11y" class="hidden-reveal"><span>&nbsp;</span></a> </span>EPUB內容文件<a href="#sec-scripted-content-models">包含腳本</a><em class="rfc2119" title="SHOULD">應該</em>使用相關的 [<cite><a class="bibref" href="#bib-wai-aria">WAI-ARIA</a></cite>] 無障礙輔助性技巧以確保內容依然可以被所有使用者閱讀。</p></dd>
 					<dt id="confreq-cd-scripted-flbk">回退（Fallbacks）</dt>
-					<dd><p id="confreq-cd-scripted-fallback"><span class="link-marker"><a href="#confreq-cd-scripted-fallback" class="hidden-reveal"><span>&nbsp;</span></a> </span>EPUB內容文件<a href="#sec-scripted-content-models">包含腳本</a><em class="rfc2119" title="MAY">可以</em>為內容提供回退，無論是使用明確回退機制（例如可讓 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-object-element"><code>object</code></a>與<a href="https://www.w3.org/TR/html/semantics-scripting.html#the-canvas-element"><code>canvas</code></a>元素使用的）或者，當無法適用明確回退時，可使用<a href="epub-packages.html#sec-foreign-restrictions-manifest">宣告層級回退</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。</p>
+					<dd><p id="confreq-cd-scripted-fallback"><span class="link-marker"><a href="#confreq-cd-scripted-fallback" class="hidden-reveal"><span>&nbsp;</span></a> </span>EPUB內容文件<a href="#sec-scripted-content-models">包含腳本</a><em class="rfc2119" title="MAY">可以</em>為內容提供回退，無論是使用固有回退機制（例如可讓 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-object-element"><code>object</code></a>與<a href="https://www.w3.org/TR/html/semantics-scripting.html#the-canvas-element"><code>canvas</code></a>元素使用的）或者，當無法適用固有回退時，可使用<a href="epub-packages.html#sec-foreign-restrictions-manifest">宣告層級回退</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。</p>
 						<p id="confreq-cd-scripted-foreign-resources"><span class="link-marker"><a href="#confreq-cd-scripted-foreign-resources" class="hidden-reveal"><span>&nbsp;</span></a> </span>作者<em class="rfc2119" title="MUST">必需</em>確保腳本僅用於產生<a href="epub-spec.html#sec-core-media-types">核心媒體類型資源</a>或者斷片之類 [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] 。</p></dd>
 				</dl>
 
@@ -2224,8 +2223,7 @@ var [data-type] :hover::before {
 						</div></div>
 					</li>
 					<li>
-						<p>如果閱讀系統允許保留持續性資料，該資料則需要被視為敏感資料。腳本可以透過cookies或DOM儲存來保存持續性資料，但是閱讀系統可以阻擋這樣的嘗試。允許儲存資料的閱讀系統需要確保資料不會受到其他不相關文件的存取（例如其他文件以欺騙的方式偽裝）。特別是，使用匹配文件識別碼（或者類似的詮釋資料）並非有效的手段來控制對持續性資料的存取。
-</p>
+						<p>如果閱讀系統允許保留持續性資料，該資料則需要被視為敏感資料。腳本可以透過cookies或DOM儲存來保存持續性資料，但是閱讀系統可以阻擋這樣的嘗試。允許儲存資料的閱讀系統需要確保資料不會受到其他不相關文件的存取（例如其他文件以欺騙的方式偽裝）。特別是，使用匹配文件識別碼（或者類似的詮釋資料）並非有效的手段來控制對持續性資料的存取。</p>
 						<p>允許本地儲存的閱讀系統也需要提供方法讓使用者來檢查、關閉或者刪除這些資料。當對應的EPUB出版品刪除時，這些資料也需要受到銷毀。</p></li>
 				</ul>
 				<p>注意，適用以上推薦項目並不保證能夠抵抗所有列出的可能攻擊；開發者需要檢查閱讀系統脈絡下所有潛在的脆弱性。</p>
@@ -2243,9 +2241,9 @@ var [data-type] :hover::before {
 			<section id="sec-fxl-overview" class="informative">
 				<h3 id="x6-1-introduction"><span class="secno">6.1 </span>導論<a class="self-link" aria-label="§" href="#sec-fxl-overview"></a></h3><p><em>本章節為非規範性。</em></p>
 
-				<p>本章節定義了規則供<a href="epub-spec.html#dfn-fixed-layout-document">固定版面文件</a> — 在<a href="epub-spec.html#dfn-package-document">包裝文件</a>中標記為<code>pre-paginated</code>的<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>，之表述與空間特性的解釋。</p>
+				<p>本章節定義了規則供<a href="epub-spec.html#dfn-fixed-layout-document">固定版面文件</a> — 在<a href="epub-spec.html#dfn-package-document">包裝文件</a>中標為<code>pre-paginated</code>的<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>，之表述與空間特性的解釋。</p>
 
-				<p>本規格不定義如何<a href="https://www.w3.org/TR/CSS2/visudet.html#containing-block-details">初始化容器區塊</a> [<cite><a class="bibref" href="#bib-css2">CSS2</a></cite>] ，置放於閱讀系統<a href="epub-spec.html#dfn-content-display-area">內容顯示區域</a>中。</p>
+				<p>本規格不定義<a href="https://www.w3.org/TR/CSS2/visudet.html#containing-block-details">初始化容器區塊</a> [<cite><a class="bibref" href="#bib-css2">CSS2</a></cite>] 如何置放於閱讀系統<a href="epub-spec.html#dfn-content-display-area">內容顯示區域</a>中。</p>
 
 				<div class="note" role="note" id="issue-container-generatedID-17"><div role="heading" class="note-title marker" id="h-note-16" aria-level="4"><span>注意事項</span></div><div class="">
 					<p>請參考<a href="epub-packages.html#sec-package-metadata-fxl">固定版面特性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 以了解更多關於如何指定<a href="epub-spec.html#dfn-rendition">內容釋義</a>或獨立書脊項目，要被排版成預先分頁內容（即為有固定寬與高空間的頁面）。</p>
@@ -2255,7 +2253,7 @@ var [data-type] :hover::before {
 
 			<section id="sec-fxl-content-conf">
 				<h3 id="x6-2-content-conformance"><span class="secno">6.2 </span>內容適用性<a class="self-link" aria-label="§" href="#sec-fxl-content-conf"></a></h3>
-				<p>一份合規的<a href="epub-spec.html#dfn-fixed-layout-document">固定版面文件</a><em class="rfc2119" title="MUST">必需</em>符合以下領域需求：</p>
+				<p>合規的<a href="epub-spec.html#dfn-fixed-layout-document">固定版面文件</a><em class="rfc2119" title="MUST">必需</em>符合以下領域需求：</p>
 				<ul class="conformance-list">
 					<li>
 						<p>其<em class="rfc2119" title="MUST">必需</em>指定其<a href="https://www.w3.org/TR/CSS2/visudet.html#containing-block-details">初始容器區塊</a> [<cite><a class="bibref" href="#bib-css2">CSS2</a></cite>] 如在<a href="#sec-fxl-html-svg-dimensions">初始容器區塊空間</a>中所定義。</p></li>
@@ -2264,9 +2262,9 @@ var [data-type] :hover::before {
 
 			<section id="sec-fxl-rs-conf">
 				<h3 id="x6-3-reading-system-conformance"><span class="secno">6.3 </span>閱讀系統適用性<a class="self-link" aria-label="§" href="#sec-fxl-rs-conf"></a></h3>
-				<p>一個合規的<a href="epub-spec.html#dfn-epub-reading-system">EPUB閱讀系統</a>在處理<a href="epub-spec.html#dfn-fixed-layout-document">固定版面文件</a>時，<em class="rfc2119" title="MUST">必需</em>符合以下領域需求：</p>
+				<p>合規的<a href="epub-spec.html#dfn-epub-reading-system">EPUB閱讀系統</a>在處理<a href="epub-spec.html#dfn-fixed-layout-document">固定版面文件</a>時，<em class="rfc2119" title="MUST">必需</em>符合以下領域需求：</p>
 				<ul class="conformance-list">
-					<li><p id="confreq-fxl-rs-viewport"><span class="link-marker"><a href="#confreq-fxl-rs-viewport" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="SHOULD">應該</em>對該文件分配出完整<a href="epub-spec.html#dfn-content-display-area">內容顯示區域</a>，如<a href="#sec-fxl-viewport">顯示範圍排版</a>所定義。</p></li>
+					<li><p id="confreq-fxl-rs-viewport"><span class="link-marker"><a href="#confreq-fxl-rs-viewport" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="SHOULD">應該</em>對該文件分配出完整的<a href="epub-spec.html#dfn-content-display-area">內容顯示區域</a>，如<a href="#sec-fxl-viewport">顯示範圍排版</a>所定義。</p></li>
 					<li><p id="confreq-fxl-rs-html"><span class="link-marker"><a href="#confreq-fxl-rs-html" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>使用在<code>viewport</code> <code>meta</code>標籤所表述的空間來對<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>進行排版，如同在<a href="#sec-fxl-icb-html">於HTML中表述ICB</a>所定義。</p></li>
 					<li><p id="confreq-fxl-rs-svg"><span class="link-marker"><a href="#confreq-fxl-rs-svg" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>使用定義在<a href="#sec-fxl-icb-svg">於SVG中表述ICB</a>的方式給予空間來排版<a href="epub-spec.html#dfn-svg-content-document">SVG內容文件</a>。</p></li>
 				</ul>
@@ -2278,7 +2276,7 @@ var [data-type] :hover::before {
 				<p>當對<a href="epub-spec.html#dfn-fixed-layout-document">固定版面文件</a>進行排版時，預設目的為<a href="epub-spec.html#dfn-content-display-area">內容顯示區域</a><em class="rfc2119" title="SHOULD">應該</em>佔據盡可能多的可用<a href="epub-spec.html#dfn-viewport">顯示範圍</a>區域。<a href="epub-spec.html#dfn-epub-reading-system">閱讀系統</a><em class="rfc2119" title="MUST NOT">不得</em>插入額外的內容如邊框、邊界，頁首或頁尾到顯示範圍中。</p>
 
 				<div class="note" role="note" id="issue-container-generatedID-18"><div role="heading" class="note-title marker" id="h-note-17" aria-level="4"><span>注意事項</span></div><div class="">
-					<p>閱讀系統控制小工具對使用者出現為實作者控制，並且不包含在以上行為預期中。</p>
+					<p>閱讀系統控制小工具呈現給使用者，此部分由實作決定，不包含在以上行為預期中。</p>
 				</div></div>
 
 			</section>
@@ -2303,7 +2301,7 @@ var [data-type] :hover::before {
 					</aside>
 
 
-					<p>閱讀系統<em class="rfc2119" title="MUST">必需</em>固定XHTML內容到初始容器區塊(ICB)，透過<code>viewport</code> <code>meta</code>標籤所宣告的空間中 — 定位在初始容器區塊外的內容不應該被看見。當ICB長寬比與閱讀系統<a href="epub-spec.html#dfn-content-display-area">內容顯示區域</a>的長寬比不匹配時，閱讀系統<em class="rfc2119" title="MAY">可以</em>將ICB放置於顯示區塊內以適於使用者介面；換言之，可能會在內容的一側（或兩端）出現橫向塊狀空間。</p>
+					<p>閱讀系統<em class="rfc2119" title="MUST">必需</em>將XHTML內容剪裁到初始容器區塊(ICB)透過<code>viewport</code> <code>meta</code>標籤所宣告的空間中 — 定位在初始容器區塊外的內容不應該被看見。當ICB長寬比與閱讀系統<a href="epub-spec.html#dfn-content-display-area">內容顯示區域</a>的長寬比不匹配時，閱讀系統<em class="rfc2119" title="MAY">可以</em>將ICB放置於顯示區塊內以適合使用者介面；換言之，可能會在內容的一側（或兩端）出現橫向塊狀空間。</p>
 				</section>
 
 				<section id="sec-fxl-icb-svg">
@@ -2314,7 +2312,7 @@ var [data-type] :hover::before {
 					<aside class="example" id="example-6"><div class="marker">
       <a class="self-link" href="#example-6">範例6</a>
     </div>
-						<p>以下範例表示在SVG內容文件中使用一個<code>viewBox</code>屬性來宣告長寬比為寬844像素、高1200像素。</p>
+						<p>以下範例表示在SVG內容文件中使用一個<code>viewBox</code>屬性來宣告長寬，寬844像素、高1200像素。</p>
 						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2000/svg"</span>
      <span class="hljs-attr">version</span>=<span class="hljs-string">"1.1"</span> 
      <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 844 1200"</span>&gt;</span>
@@ -2329,8 +2327,8 @@ var [data-type] :hover::before {
 
 			<section id="sec-pls-intro" class="informative">
 				<h3 id="x7-1-introduction"><span class="secno">7.1 </span>導論<a class="self-link" aria-label="§" href="#sec-pls-intro"></a></h3><p><em>本章節為非規範性。</em></p>
-				<p>W3C發音辭典規格（Pronunciation Lexicon Specification, <abbr title="Pronunciation Lexicon Specification">PLS</abbr>) [<cite><a class="bibref" href="#bib-pronunciation-lexicon">PRONUNCIATION-LEXICON</a></cite>] 定義了基於XML的發音辭典的語法與語意，可供自動語音辨識以及<a href="epub-spec.html#dfn-text-to-speech">文字轉換語音</a>（Text-to-Speech, TTS) 引擎使用。</p>
-				<p>以下章節定義了當abbr title="Pronunciation Lexicon Specification">PLS</abbr>文件包含在<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>時的適用性領域，以及<abbr title="Pronunciation Lexicon Specification">PLS</abbr>文件與<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>建立關聯的規則。</p>
+				<p>W3C發音辭典規格（Pronunciation Lexicon Specification, <abbr title="Pronunciation Lexicon Specification">PLS</abbr>) [<cite><a class="bibref" href="#bib-pronunciation-lexicon">PRONUNCIATION-LEXICON</a></cite>] 定義了基於XML的發音辭典之語法與語意，可供自動語音辨識以及<a href="epub-spec.html#dfn-text-to-speech">文字轉換語音</a>（Text-to-Speech, TTS) 引擎使用。</p>
+				<p>以下章節定義了當<abbr title="Pronunciation Lexicon Specification">PLS</abbr>文件包含在<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>時的適用性領域，以及<abbr title="Pronunciation Lexicon Specification">PLS</abbr>文件與<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>建立關聯的規則。</p>
 
 				<div class="note" role="note" id="issue-container-generatedID-19"><div role="heading" class="note-title marker" id="h-note-18" aria-level="4"><span>注意事項</span></div><div class="">
 					<p>若想要了解更多EPUB 3與語音合成相關的資訊，請參照<a href="epub-overview.html#sec-tts">文字轉換語音</a> [<cite><a class="bibref" href="#bib-epub3overview">EPUB3Overview</a></cite>] 。</p>
@@ -2340,12 +2338,12 @@ var [data-type] :hover::before {
 
 			<section id="sec-pls-conf-pub">
 				<h3 id="x7-2-epub-publication-conformance"><span class="secno">7.2 </span>EPUB出版品適用性<a class="self-link" aria-label="§" href="#sec-pls-conf-pub"></a></h3>
-				<p>一本<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>合規的<a href="epub-spec.html#dfn-rendition">內容釋義</a>包含<abbr title="Pronunciation Lexicon Specification">PLS</abbr>文件時<em class="rfc2119" title="MUST">必需</em>符合以下領域需求：</p>
+				<p><a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>中合規的<a href="epub-spec.html#dfn-rendition">內容釋義</a>包含<abbr title="Pronunciation Lexicon Specification">PLS</abbr>文件時<em class="rfc2119" title="MUST">必需</em>符合以下領域需求：</p>
 				<ul class="conformance-list">
 					<li><p id="confreq-cd-pls-xht"><span class="link-marker"><a href="#confreq-cd-pls-xht" class="hidden-reveal"><span>&nbsp;</span></a> </span><abbr title="Pronunciation Lexicon Specification">PLS</abbr>文件<em class="rfc2119" title="MAY">可以</em>與<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>進行關聯。每一份XHTML內容文件<em class="rfc2119" title="MAY">可以</em>包含零或多個<abbr title="Pronunciation Lexicon Specification">PLS</abbr>文件關聯。</p></li>
-					<li><p id="confreq-cd-pls-assoc"><span class="link-marker"><a href="#confreq-cd-pls-assoc" class="hidden-reveal"><span>&nbsp;</span></a> </span><abbr title="Pronunciation Lexicon Specification">PLS</abbr>文件與<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>產生關聯時<em class="rfc2119" title="MUST">必需</em>透過使用 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/document-metadata.html#the-link-element"><code>link</code></a>元素其<code>rel</code>屬性設定為"<code>pronunciation</code>"並且其<code>type</code>屬性設定為媒體類型"<code>application/pls+xml</code>"。</p><p id="confreq-cd-pls-assoc-lang"><span class="link-marker"><a href="#confreq-cd-pls-assoc-lang" class="hidden-reveal"><span>&nbsp;</span></a> </span><code>link</code>元素的<code>hreflang</code><em class="rfc2119" title="SHOULD">應該</em>在每個<code>link</code>中都要指定，以及其值在相關的 [<cite><a class="bibref" href="#bib-pronunciation-lexicon">PRONUNCIATION-LEXICON</a></cite>] 受指定時<em class="rfc2119" title="MUST">必需</em>與該<a href="https://www.w3.org/TR/2008/REC-pronunciation-lexicon-20081014/#S4.1">發音字典語言匹配</a>。</p></li>
+					<li><p id="confreq-cd-pls-assoc"><span class="link-marker"><a href="#confreq-cd-pls-assoc" class="hidden-reveal"><span>&nbsp;</span></a> </span><abbr title="Pronunciation Lexicon Specification">PLS</abbr>文件與<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>產生關聯時<em class="rfc2119" title="MUST">必需</em>透過使用 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/document-metadata.html#the-link-element"><code>link</code></a>元素其<code>rel</code>屬性設定為"<code>pronunciation</code>"並且其<code>type</code>屬性設定為媒體類型"<code>application/pls+xml</code>"。</p><p id="confreq-cd-pls-assoc-lang"><span class="link-marker"><a href="#confreq-cd-pls-assoc-lang" class="hidden-reveal"><span>&nbsp;</span></a> </span><code>link</code>元素的<code>hreflang</code><em class="rfc2119" title="SHOULD">應該</em>在每個<code>link</code>中都要指定，以及其值在相關的 [<cite><a class="bibref" href="#bib-pronunciation-lexicon">PRONUNCIATION-LEXICON</a></cite>] 被指定時<em class="rfc2119" title="MUST">必需</em>與該<a href="https://www.w3.org/TR/2008/REC-pronunciation-lexicon-20081014/#S4.1">發音字典語言匹配</a>。</p></li>
 					<li><p id="confreq-pls-pub-cont"><span class="link-marker"><a href="#confreq-pls-pub-cont" class="hidden-reveal"><span>&nbsp;</span></a> </span><abbr title="Pronunciation Lexicon Specification">PLS</abbr>文件<em class="rfc2119" title="MUST">必需</em>符合定義在<a href="#sec-pls-conf-content"><abbr title="Pronunciation Lexicon Specification">PLS</abbr>文件 - 內容適用性</a>中的內容適用性領域。</p></li>
-					<li><p id="confreq-pls-pub-manif"><span class="link-marker"><a href="#confreq-pls-pub-manif" class="hidden-reveal"><span>&nbsp;</span></a> </span><abbr title="Pronunciation Lexicon Specification">PLS</abbr>文件<em class="rfc2119" title="MUST">必需</em>如同<a href="epub-packages.html#sec-package-conformance">EPUB包裝 - 適用性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 中的定義被表述及定位。</p></li>
+					<li><p id="confreq-pls-pub-manif"><span class="link-marker"><a href="#confreq-pls-pub-manif" class="hidden-reveal"><span>&nbsp;</span></a> </span><abbr title="Pronunciation Lexicon Specification">PLS</abbr>文件<em class="rfc2119" title="MUST">必需</em>如同<a href="epub-packages.html#sec-package-conformance">EPUB包裝 - 適用性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 中的定義被表述及置放。</p></li>
 				</ul>
 
 				<section id="pls-examples">
@@ -2385,11 +2383,11 @@ var [data-type] :hover::before {
 				<p>閱讀系統具備文字轉換語音（TTS）能力<em class="rfc2119" title="SHOULD">應該</em>支援<abbr title="Pronunciation Lexicon Specification">PLS</abbr>文件。</p>
 				<p>合規的<a href="epub-spec.html#dfn-epub-reading-system">EPUB閱讀系統</a>處理<abbr title="Pronunciation Lexicon Specification">PLS</abbr>文件時<em class="rfc2119" title="MUST">必需</em>符合以下領域需求：</p>
 				<ul class="conformance-list">
-					<li><p id="confreq-pls-rs-sptts"><span class="link-marker"><a href="#confreq-pls-rs-sptts" class="hidden-reveal"><span>&nbsp;</span></a> </span>閱讀系統支援<a href="epub-spec.html#dfn-text-to-speech">文字轉換語音</a>（TTS）<em class="rfc2119" title="SHOULD">應該</em>支援 [<cite><a class="bibref" href="#bib-pronunciation-lexicon">PRONUNCIATION-LEXICON</a></cite>] 。</p>
+					<li><p id="confreq-pls-rs-sptts"><span class="link-marker"><a href="#confreq-pls-rs-sptts" class="hidden-reveal"><span>&nbsp;</span></a> </span>支援<a href="epub-spec.html#dfn-text-to-speech">文字轉換語音</a>（TTS）的閱讀系統也<em class="rfc2119" title="SHOULD">應該</em>支援 [<cite><a class="bibref" href="#bib-pronunciation-lexicon">PRONUNCIATION-LEXICON</a></cite>] 。</p>
 						<p id="confreq-pls-rs-proc"><span class="link-marker"><a href="#confreq-pls-rs-proc" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>如 [<cite><a class="bibref" href="#bib-pronunciation-lexicon">PRONUNCIATION-LEXICON</a></cite>] 之定義處理<abbr title="Pronunciation Lexicon Specification">PLS</abbr>文件。</p>
 						<p id="confreq-pls-rs-scope"><span class="link-marker"><a href="#confreq-pls-rs-scope" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>套用提供的發音程序給所有該XHTML內容文件中其<a href="https://www.w3.org/TR/html/dom.html#the-lang-and-xmllang-attributes">語言</a> [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 符合該發音辭典<a href="https://www.w3.org/TR/2008/REC-pronunciation-lexicon-20081014/#S4.1">語言</a>所關聯 [<cite><a class="bibref" href="#bib-pronunciation-lexicon">PRONUNCIATION-LEXICON</a></cite>] 的文字節點。語言標籤的配對演算法定義在 [<cite><a class="bibref" href="#bib-bcp47">BCP47</a></cite>] 。</p>
-						<p id="confreq-pls-rs-multi"><span class="link-marker"><a href="#confreq-pls-rs-multi" class="hidden-reveal"><span>&nbsp;</span></a> </span>當在提供的語言中對提供的字串目標指定多於一個的發音規則，其<em class="rfc2119" title="MUST">必需</em>給予最後出現的規則優先順序，如此一來任何預先定義的發音規則能被覆蓋。</p>
-						<p id="confreq-pls-rs-casc"><span class="link-marker"><a href="#confreq-pls-rs-casc" class="hidden-reveal"><span>&nbsp;</span></a> </span>如果其也支援<a href="#sec-xhtml-ssml-attrib">SSML</a>屬性，則<em class="rfc2119" title="MUST">必需</em>讓任何透過<a href="#sec-cd-ssml-ph-attrib"><code>ssml:ph</code></a>屬性提供的發音程序優先，當一個元素包含<code>ssml:ph</code>屬性 [<cite><a class="bibref" href="#bib-ssml">SSML</a></cite>] ，當<code>grapheme</code>元素 [<cite><a class="bibref" href="#bib-pronunciation-lexicon">PRONUNCIATION-LEXICON</a></cite>] 與文字節點匹配。</p></li>
+						<p id="confreq-pls-rs-multi"><span class="link-marker"><a href="#confreq-pls-rs-multi" class="hidden-reveal"><span>&nbsp;</span></a> </span>當在提供的語言中，對提供的目標字串指定多於一個的發音規則時，其<em class="rfc2119" title="MUST">必需</em>讓最後出現的規則優先，如此一來任何預先定義的發音規則能被覆蓋。</p>
+						<p id="confreq-pls-rs-casc"><span class="link-marker"><a href="#confreq-pls-rs-casc" class="hidden-reveal"><span>&nbsp;</span></a> </span>如果其也支援<a href="#sec-xhtml-ssml-attrib">SSML</a>屬性，則<em class="rfc2119" title="MUST">必需</em>讓任何透過<a href="#sec-cd-ssml-ph-attrib"><code>ssml:ph</code></a>屬性提供的發音程序優先，當一個<code>grapheme</code>元素 [<cite><a class="bibref" href="#bib-pronunciation-lexicon">PRONUNCIATION-LEXICON</a></cite>] 與包含<code>ssml:ph</code>屬性 [<cite><a class="bibref" href="#bib-ssml">SSML</a></cite>]文字節點匹配。</p></li>
 				</ul>
 			</section>
 		</section>
@@ -2424,7 +2422,7 @@ partial interface <span class="idlID"><a data-link-for="" data-lt="" href="#dom-
 
 				<p><code><dfn data-dfn-type="dfn" data-lt="navigator.epubreadingsystem|epubreadingsystem" id="dom-navigator-epubreadingsystem" data-idl="attribute" data-title="Navigator.epubReadingSystem" data-dfn-for="navigator" data-type="EpubReadingSystem">Navigator.epubReadingSystem</dfn></code>物件提供了一個介面，可以讓<a href="epub-spec.html#dfn-scripted-content-document">有腳本的內容文件</a>能夠查詢使用者<a href="epub-spec.html#dfn-epub-reading-system">閱讀系統</a>的資訊。</p>
 
-				<p>該物件顯露閱讀系統的<a href="#app-ers-properties">特性</a>（名稱與版本），並且提供<a href="#app-ers-hasFeature"><code>hasFeature</code>方法</a>能用於決定功能是否受到支援。</p>
+				<p>該物件能顯示閱讀系統的<a href="#app-ers-properties">特性</a>（名稱與版本），並且提供<a href="#app-ers-hasFeature"><code>hasFeature</code>方法</a>能用於決定功能是否受到支援。</p>
 
 				<aside class="example" id="example-8"><div class="marker">
       <a class="self-link" href="#example-8">範例8</a>
@@ -2434,17 +2432,17 @@ partial interface <span class="idlID"><a data-link-for="" data-lt="" href="#dom-
 					<pre aria-busy="false"><code class="hljs css"><span class="hljs-selector-tag">alert</span>("<span class="hljs-selector-tag">Reading</span> <span class="hljs-selector-tag">System</span> <span class="hljs-selector-tag">name</span>: " + <span class="hljs-selector-tag">navigator</span><span class="hljs-selector-class">.epubReadingSystem</span><span class="hljs-selector-class">.name</span>);</code></pre>
 				</aside>
 
-				<p>閱讀系統<em class="rfc2119" title="MUST">必需</em>在所有載入的有腳本的內容文件的<code>navigator</code>物件中顯露<code>epubReadingSystem</code>物件，包含任何巢狀<a href="#sec-scripted-content-type-container-constrained">容器限制</a>腳本脈絡。閱讀系統<em class="rfc2119" title="MUST">必需</em>確保<code>epubReadingSystem</code>物件可被使用，不晚於<a href="https://www.w3.org/TR/html/syntax.html#the-end"><code>DOMContentLoaded</code>事件</a>被啟動 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 。</p>
+				<p>閱讀系統<em class="rfc2119" title="MUST">必需</em>在所有載入有腳本的內容文件的<code>navigator</code>物件中顯露<code>epubReadingSystem</code>物件，包含任何巢狀<a href="#sec-scripted-content-type-container-constrained">容器限制</a>腳本脈絡。閱讀系統<em class="rfc2119" title="MUST">必需</em>確保<code>epubReadingSystem</code>物件可被使用，且不晚於<a href="https://www.w3.org/TR/html/syntax.html#the-end"><code>DOMContentLoaded</code>事件</a>被啟動 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 。</p>
 
 				<div class="note" role="note" id="issue-container-generatedID-21"><div role="heading" class="note-title marker" id="h-note-20" aria-level="4"><span>注意事項</span></div><div class="">
-					<p>閱讀系統實作可以在有腳本的內容文件中創建複製的<code>epubReadingSystem</code>物件副本，以助於技術上實現的理由。在這些狀況中，閱讀系統需要確保該物件的狀態 — 如反映其特性與方法的值 — 在跨所有複製的副本中維持一致。</p>
+					<p>閱讀系統實作上，可以在有腳本的內容文件中創建複製的<code>epubReadingSystem</code>物件副本，以便於技術上的實踐。在這些狀況中，閱讀系統需要確保該物件的狀態 — 如反映其特性與方法的值 — 在所有複製的副本中維持一致。</p>
 				</div></div>
 			</section>
 
 			<section id="app-ers-properties">
 				<h3 id="a-3-properties"><span class="secno">A.3 </span>特性<a class="self-link" aria-label="§" href="#app-ers-properties"></a></h3>
 
-				<p>以下特性<em class="rfc2119" title="MUST">必需</em>在取得關於閱讀系統資訊時提供。</p>
+				<p>以下特性<em class="rfc2119" title="MUST">必需</em>在取得關於閱讀系統的資訊時提供。</p>
 
 				<table data-dfn-for="epubReadingSystem">
 					<thead>
@@ -2480,11 +2478,11 @@ partial interface <span class="idlID"><a data-link-for="" data-lt="" href="#dom-
 					<section id="app-ers-hasFeature-desc">
 						<h5 id="a-4-1-1-description"><span class="secno">A.4.1.1 </span>說明<a class="self-link" aria-label="§" href="#app-ers-hasFeature-desc"></a></h5>
 
-						<p data-dfn-for="epubReadingSystem"><code><dfn data-dfn-for="epubreadingsystem" data-dfn-type="dfn" id="dom-epubreadingsystem-hasfeature" data-idl="operation" data-title="hasFeature" data-type="boolean" data-lt="epubreadingsystem.hasfeature()|epubreadingsystem.hasfeature|hasfeature()|hasfeature">hasFeature</dfn></code>方法返回一個布林值指出是否指定功能的任何版本受到支援，或者當指定的功能無法被辨識時為<code>undefined</code>。</p>
+						<p data-dfn-for="epubReadingSystem"><code><dfn data-dfn-for="epubreadingsystem" data-dfn-type="dfn" id="dom-epubreadingsystem-hasfeature" data-idl="operation" data-title="hasFeature" data-type="boolean" data-lt="epubreadingsystem.hasfeature()|epubreadingsystem.hasfeature|hasfeature()|hasfeature">hasFeature</dfn></code>方法返回一個布林值指出指定功能的任何版本是否受到支援，或者當指定的功能無法被辨識時為<code>undefined</code>。</p>
 
-						<p>包含<em class="rfc2119" title="OPTIONAL">選擇性</em>的<code>version</code>參數供查詢可能隨著時間變得不相容的客製化功能。返回的值指出是否只支援特定版本的功能。</p>
+						<p>也包含<em class="rfc2119" title="OPTIONAL">選擇性</em>的<code>version</code>參數供查詢可能隨著時間變得不相容的客製化功能。返回的值指出是否只支援特定版本的功能。</p>
 
-						<p><a href="epub-spec.html#dfn-author">作者</a><em class="rfc2119" title="SHOULD NOT">不應</em>在使用查詢<a href="#app-ers-hasFeature-features">本規格定義的功能</a>時包含<code>version</code>參數 — 這些功能是為無版本。如果閱讀系統支援定義在本規格中的功能，其<em class="rfc2119" title="MUST">必需</em>忽略任何提供的<code>version</code>參數而回以<code>true</code>值。</p>
+						<p><a href="epub-spec.html#dfn-author">作者</a><em class="rfc2119" title="SHOULD NOT">不應</em>在使用查詢<a href="#app-ers-hasFeature-features">本規格定義的功能</a>時包含<code>version</code>參數 — 這些功能為無版本。如果閱讀系統支援定義在本規格中的功能，其<em class="rfc2119" title="MUST">必需</em>忽略任何提供的<code>version</code>參數而回以<code>true</code>值。</p>
 
 						<aside class="example" id="example-9"><div class="marker">
       <a class="self-link" href="#example-9">範例9</a>
