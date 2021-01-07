@@ -1010,9 +1010,9 @@ var [data-type] :hover::before {
       <hr title="Separator for header">
     </div>
 		<section id="abstract" class="introductory"><h2>概要</h2>
-			<p>本規格定義了一個檔案格式與處理模型，以包裝一組相關聯的資源以組成一本<a data-lt="EPUB Publication" href="epub-spec.html#dfn-epub-publication">EPUB®出版品</a>為一個單一檔案容器，即為<a href="epub-spec.html#dfn-epub-container">EPUB容器</a>。</p>
+			<p>本規格定義了一個檔案格式與處理模型，以包裝一組相關聯的資源組成一本<a data-lt="EPUB Publication" href="epub-spec.html#dfn-epub-publication">EPUB®出版品</a>為單一檔案容器，即為<a href="epub-spec.html#dfn-epub-container">EPUB容器</a>。</p>
 
-			<p>本規格定義了規則供建構抽象（即為「<a href="#sec-container-abstract">抽象容器（abstract container）</a>」）的檔案集合，以及規則此抽象容器於ZIP封存檔（即為「<a href="#sec-container-zip">ZIP容器</a>」）的呈現。供ZIP容器的規則建構在由 [<cite><a class="bibref" href="#bib-odf">ODF</a></cite>] 所使用的ZIP技術。OCF也定義了一套標準方式供模糊的嵌入資源，例如字體，以提供需要這些功能的EPUB出版品使用。</p>
+			<p>本規格定義了規則供建構抽象（即為「<a href="#sec-container-abstract">抽象容器（abstract container）</a>」）的檔案集合，以及規定此抽象容器於ZIP封存檔（即為「<a href="#sec-container-zip">ZIP容器</a>」）的呈現。供ZIP容器的規則建構於 [<cite><a class="bibref" href="#bib-odf">ODF</a></cite>] 所使用的ZIP技術。OCF也定義了一套標準方式供嵌入資源模糊化，例如字體，以提供需要這些功能的EPUB出版品使用。</p>
 
 			<p>本規格屬於組成 [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] 的<a href="epub-spec.html#sec-intro-epub-specs">規格群</a>之一，其為基於XML與Web標準的數位出版品交換與遞送格式。要了解整體EPUB 3規格，需要與其他規格一併閱讀且理解。</p>
 
@@ -1023,7 +1023,7 @@ var [data-type] :hover::before {
 <li class="tocline"><a class="tocxref" href="#sec-introduction"><span class="secno">1. </span>導論</a><ol class="toc">
 <li class="tocline"><a class="tocxref" href="#sec-terminology"><span class="secno">1.1 </span>術語</a></li><li class="tocline"><a class="tocxref" href="#conformance"><span class="secno">1.2 </span>適用性</a></li></ol></li><li class="tocline"><a class="tocxref" href="#sec-ocf-conformance"><span class="secno">2. </span>OCF適用性</a><ol class="toc">
 <li class="tocline"><a class="tocxref" href="#ocf-conformance-container"><span class="secno">2.1 </span>容器適用性</a></li><li class="tocline"><a class="tocxref" href="#ocf-conformance-rs"><span class="secno">2.2 </span>閱讀系統適用性</a></li></ol></li><li class="tocline"><a class="tocxref" href="#sec-container-abstract"><span class="secno">3. </span>OCF抽象容器</a><ol class="toc">
-<li class="tocline"><a class="tocxref" href="#sec-container-abstract-intro"><span class="secno">3.1 </span>導論</a></li><li class="tocline"><a class="tocxref" href="#sec-container-file-and-dir-structure"><span class="secno">3.2 </span>檔案與目錄結構</a></li><li class="tocline"><a class="tocxref" href="#sec-container-iri"><span class="secno">3.3 </span>參照其他元件時相關的IRI</a></li><li class="tocline"><a class="tocxref" href="#sec-container-filenames"><span class="secno">3.4 </span>檔案名稱</a></li><li class="tocline"><a class="tocxref" href="#sec-container-metainf"><span class="secno">3.5 </span><code>META-INF</code>資料夾</a><ol class="toc">
+<li class="tocline"><a class="tocxref" href="#sec-container-abstract-intro"><span class="secno">3.1 </span>導論</a></li><li class="tocline"><a class="tocxref" href="#sec-container-file-and-dir-structure"><span class="secno">3.2 </span>檔案與目錄結構</a></li><li class="tocline"><a class="tocxref" href="#sec-container-iri"><span class="secno">3.3 </span>參照其他元件時相對IRI</a></li><li class="tocline"><a class="tocxref" href="#sec-container-filenames"><span class="secno">3.4 </span>檔案名稱</a></li><li class="tocline"><a class="tocxref" href="#sec-container-metainf"><span class="secno">3.5 </span><code>META-INF</code>資料夾</a><ol class="toc">
 <li class="tocline"><a class="tocxref" href="#sec-container-metainf-inc"><span class="secno">3.5.1 </span>內含物</a></li><li class="tocline"><a class="tocxref" href="#sec-container-metainf-files"><span class="secno">3.5.2 </span>保留的檔案</a><ol class="toc">
 <li class="tocline"><a class="tocxref" href="#sec-container-metainf-container.xml"><span class="secno">3.5.2.1 </span>容器檔案 (<code>container.xml</code>)</a></li><li class="tocline"><a class="tocxref" href="#sec-container-metainf-encryption.xml"><span class="secno">3.5.2.2 </span>加密檔案 (<code>encryption.xml</code>)</a><ol class="toc">
 <li class="tocline"><a class="tocxref" href="#sec-enc-compression"><span class="secno">3.5.2.2.1 </span>壓縮與加密順序</a></li></ol></li><li class="tocline"><a class="tocxref" href="#sec-container-metainf-manifest.xml"><span class="secno">3.5.2.3 </span>宣告檔案 (<code>manifest.xml</code>)</a></li><li class="tocline"><a class="tocxref" href="#sec-container-metainf-metadata.xml"><span class="secno">3.5.2.4 </span>詮釋資料檔案 (<code>metadata.xml</code>)</a></li><li class="tocline"><a class="tocxref" href="#sec-container-metainf-rights.xml"><span class="secno">3.5.2.5 </span>權利管理檔案 (<code>rights.xml</code>)</a></li><li class="tocline"><a class="tocxref" href="#sec-container-metainf-signatures.xml"><span class="secno">3.5.2.6 </span>數位簽章檔案 (<code>signatures.xml</code>)</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#sec-container-zip"><span class="secno">4. </span>OCF ZIP容器</a><ol class="toc">
@@ -1046,7 +1046,7 @@ var [data-type] :hover::before {
 				<dl class="termlist">
 					<dt><dfn id="dfn-codec" data-lt="codecs|codec" data-dfn-type="dfn">編碼（Codec）</dfn></dt>
 					<dd>
-						<p>編碼用於具備固有二進位格式特性的內容，例如影片或者聲音媒體類型等已經預供壓縮最佳化設計，或者能提供最佳化的串流相容性。</p>
+						<p>編碼用於具備固有二進位格式特性的內容，例如影片或者聲音媒體類型等已經預先為壓縮做了最佳化設計，或者能提供最佳化的串流相容性。</p>
 					</dd>
 					<dt><dfn id="dfn-default-rendition" data-lt="default renditions|default rendition" data-dfn-type="dfn">預設內容釋義（Default Rendition）</dfn></dt>
 					<dd>
@@ -1066,7 +1066,7 @@ var [data-type] :hover::before {
 					</dd>
 					<dt><dfn id="dfn-ocf-processor" data-lt="ocf processors|ocf processor" data-dfn-type="dfn">OCF處理器（OCF Processor）</dfn></dt>
 					<dd>
-						<p>一個軟體應用程式用於處理<a href="#dfn-zip-container" class="internalDFN" data-link-type="dfn">OCF ZIP容器</a>，符合本規格中的需求。</p>
+						<p>一個軟體應用程式用於處理<a href="#dfn-zip-container" class="internalDFN" data-link-type="dfn">OCF ZIP容器</a>，需符合本規格中的需求。</p>
 					</dd>
 					<dt><dfn id="dfn-zip-container" data-lt="ocf zip containers|ocf zip container" data-dfn-type="dfn">OCF ZIP容器（OCF ZIP Container）</dfn></dt>
 					<dd>
@@ -1079,7 +1079,7 @@ var [data-type] :hover::before {
 					</dd>
 					<dt><dfn id="dfn-root-directory" data-lt="root directories|root directory" data-dfn-type="dfn">根目錄（Root Directory）</dfn></dt>
 					<dd>
-						<p>根目錄表示<a href="#dfn-ocf-abstract-container" class="internalDFN" data-link-type="dfn">OCF抽象容器</a>檔案系統的基礎。其檔案夾性質為虛擬：當內容尚未解壓縮時，一個<a href="epub-spec.html#dfn-epub-reading-system">EPUB閱讀系統</a>可或不可產生一個供OCF抽象容器內容的物理根目錄。</p>
+						<p>根目錄表示<a href="#dfn-ocf-abstract-container" class="internalDFN" data-link-type="dfn">OCF抽象容器</a>檔案系統的基底。其檔案夾性質為虛擬：當內容尚未解壓縮時，一個<a href="epub-spec.html#dfn-epub-reading-system">EPUB閱讀系統</a>可或不可產生一個供OCF抽象容器內容的實體根目錄。</p>
 					</dd>
 				</dl>
 			</section>
@@ -1109,7 +1109,7 @@ var [data-type] :hover::before {
 			<section id="ocf-conformance-rs">
 				<h3 id="x2-2-reading-system-conformance"><span class="secno">2.2 </span>閱讀系統適用性<a class="self-link" aria-label="§" href="#ocf-conformance-rs"></a></h3>
 
-				<p><a href="epub-spec.html#dfn-epub-reading-system">EPUB閱讀系統</a><em class="rfc2119" title="MUST">必需</em>滿足以下領域需求：</p>
+				<p><a href="epub-spec.html#dfn-epub-reading-system">EPUB閱讀系統</a><em class="rfc2119" title="MUST">必需</em>符合以下領域需求：</p>
 
 				<ul class="conformance-list">
 					<li>
@@ -1129,9 +1129,9 @@ var [data-type] :hover::before {
 			<section id="sec-container-abstract-intro" class="informative">
 				<h3 id="x3-1-introduction"><span class="secno">3.1 </span>導論<a class="self-link" aria-label="§" href="#sec-container-abstract-intro"></a></h3><p><em>本章節為非規範性。</em></p>
 
-				<p><a href="#dfn-ocf-abstract-container" class="internalDFN" data-link-type="dfn">OCF抽象容器</a>檔案系統模型使用單一通用<a href="#dfn-root-directory" class="internalDFN" data-link-type="dfn">根目錄</a>置放所有內容。所有供<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>使用的<a href="epub-spec.html#dfn-local-resource">本地資源</a>都放在由根目錄所開頭的目錄樹中，本規格中不對資源做檔案系統結構的指定。</p>
+				<p><a href="#dfn-ocf-abstract-container" class="internalDFN" data-link-type="dfn">OCF抽象容器</a>檔案系統模型，使用單一通用<a href="#dfn-root-directory" class="internalDFN" data-link-type="dfn">根目錄</a>來置放所有內容。所有供<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>使用的<a href="epub-spec.html#dfn-local-resource">本地資源</a>都放在由根目錄所開始的目錄樹中，本規格中不對資源做檔案系統結構的指定。</p>
 
-				<p>此檔案系統模型也包含一個必須的資料夾名為<code>META-INF</code>，為根目錄下直接子目錄，用於置放以下特別檔案：</p>
+				<p>此檔案系統模型也包含一個必要的資料夾<code>META-INF</code>，為根目錄下直接子目錄，用於置放以下特殊檔案：</p>
 
 				<dl class="variablelist">
 					<dt><code>container.xml</code>
@@ -1143,7 +1143,7 @@ var [data-type] :hover::before {
 						<code> [選擇性] </code>
 					</dt>
 					<dd>
-						<p>包含供各種用途的數位簽章。</p>
+						<p>包含各種用途的數位簽章。</p>
 					</dd>
 					<dt><code>encryption.xml</code>
 						<code> [選擇性] </code></dt>
@@ -1185,9 +1185,9 @@ var [data-type] :hover::before {
 			</section>
 
 			<section id="sec-container-iri">
-				<h3 id="x3-3-relative-iris-for-referencing-other-components"><span class="secno">3.3 </span>參照其他元件時相關的IRI<a class="self-link" aria-label="§" href="#sec-container-iri"></a></h3>
+				<h3 id="x3-3-relative-iris-for-referencing-other-components"><span class="secno">3.3 </span>參照其他元件時相對IRI<a class="self-link" aria-label="§" href="#sec-container-iri"></a></h3>
 
-				<p>在<a href="#dfn-ocf-abstract-container" class="internalDFN" data-link-type="dfn">OCF抽象容器</a>中的檔案<em class="rfc2119" title="MUST">必需</em>透過相關IRI位置相互參照 ( [<cite><a class="bibref" href="#bib-rfc3987">RFC3987</a></cite>和 [<cite><a class="bibref" href="#bib-rfc3986">RFC3986</a></cite>] )。</p>
+				<p>在<a href="#dfn-ocf-abstract-container" class="internalDFN" data-link-type="dfn">OCF抽象容器</a>中的檔案<em class="rfc2119" title="MUST">必需</em>透過相對IRI位置相互參照 ( [<cite><a class="bibref" href="#bib-rfc3987">RFC3987</a></cite>和 [<cite><a class="bibref" href="#bib-rfc3986">RFC3986</a></cite>] )。</p>
 
 				<aside class="example" id="example-1"><div class="marker">
       <a class="self-link" href="#example-1">範例1</a>
@@ -1196,13 +1196,13 @@ var [data-type] :hover::before {
 					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"image1.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"…"</span> /&gt;</span></code></pre>
 				</aside>
 
-				<p>對相關IRI位置，基礎IRI [<cite><a class="bibref" href="#bib-rfc3986">RFC3986</a></cite>] 由其給予的檔案格式之相關的語言規格所定義。例如，CSS的相關IRI位置如何運作，定義於CSS樣式表以及特性宣告 [<cite><a class="bibref" href="#bib-csssnapshot">CSSSnapshot</a></cite>] 之脈絡。</p>
+				<p>對相對IRI位置，其基本IRI [<cite><a class="bibref" href="#bib-rfc3986">RFC3986</a></cite>] 由其給予的檔案格式之相關的語言規格所定義。例如，CSS的相對IRI位置如何運作，定義於CSS樣式表以及特性宣告 [<cite><a class="bibref" href="#bib-csssnapshot">CSSSnapshot</a></cite>] 之脈絡。</p>
 
 				<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>注意事項</span></div><div class="">
 					<p>有些語言規格參考早於 [<cite><a class="bibref" href="#bib-rfc3987">RFC3987</a></cite>] 的IETF意見需求 [<cite><a class="bibref" href="#bib-rfc">RFC</a></cite>] （Requests For comments），在這些案例中，特殊語言套用較早的意見需求於內容上。</p>
 				</div></div>
 
-				<p>不像大多數的語言規格，所有在<code>META-INF</code>資料夾中的檔案使用OCF抽象容器的<a href="#dfn-root-directory" class="internalDFN" data-link-type="dfn">根目錄</a>作為預設的基礎IRI。</p>
+				<p>不像大多數的語言規格，所有在<code>META-INF</code>資料夾中的檔案使用OCF抽象容器的<a href="#dfn-root-directory" class="internalDFN" data-link-type="dfn">根目錄</a>作為預設的基本IRI。</p>
 
 				<p>舉個例子，如果<code>META-INF/container.xml</code>有以下內容：</p>
 
@@ -1218,16 +1218,16 @@ var [data-type] :hover::before {
 <span class="hljs-tag">&lt;/<span class="hljs-name">container</span>&gt;</span></code></pre>
         </div>
 
-				<p>接著<code>EPUB/Great_Expectations.opf</code>的路徑相關於該OCF抽象容器的根目錄，不相關於<code>META-INF</code>目錄。</p>
+				<p>接著<code>EPUB/Great_Expectations.opf</code>的路徑相對於該OCF抽象容器的根目錄，不相對於<code>META-INF</code>目錄。</p>
 
-				<p>所有相關的IRI位置<em class="rfc2119" title="MUST">必需</em>解析到位於OCF抽象容器中的資源（例如，位於或者低於根目錄）。</p>
+				<p>所有相對IRI位置<em class="rfc2119" title="MUST">必需</em>解析到位於OCF抽象容器中的資源（例如，位於或者低於根目錄）。</p>
 
 			</section>
 
 			<section id="sec-container-filenames">
 				<h3 id="x3-4-file-names"><span class="secno">3.4 </span>檔案名稱<a class="self-link" aria-label="§" href="#sec-container-filenames"></a></h3>
 
-				<p>本章節所說明的<a href="#dfn-file-name" class="internalDFN" data-link-type="dfn">檔案名稱</a>限制，設計用於允許<a href="#dfn-path-name" class="internalDFN" data-link-type="dfn">路徑名稱</a>與檔案名稱在多數常用的作業系統上無需更動即可使用。本規格不指示<a href="#dfn-ocf-processor" class="internalDFN" data-link-type="dfn">OCF處理器</a>在無法表現OCF檔案與路徑名時，如何添補其相容性問題的作法。</p>
+				<p>本章節所說明的<a href="#dfn-file-name" class="internalDFN" data-link-type="dfn">檔案名稱</a>限制，設計用於使<a href="#dfn-path-name" class="internalDFN" data-link-type="dfn">路徑名稱</a>與檔案名稱在多數常用的作業系統上無需調整即可使用。本規格不指示<a href="#dfn-ocf-processor" class="internalDFN" data-link-type="dfn">OCF處理器</a>在無法表現OCF檔案與路徑名時，如何添補其相容性問題的作法。</p>
 
 				<p>在一個<a href="#dfn-ocf-abstract-container" class="internalDFN" data-link-type="dfn">OCF抽象容器</a>的脈絡下，<span id="ocf-fn-cs">檔案與路徑名稱</span>在乎大小寫區分，並且<em class="rfc2119" title="MUST">必需</em>符合以下領域需求：</p>
 
@@ -1242,7 +1242,7 @@ var [data-type] :hover::before {
 						<p id="ocf-pn-length"><span class="link-marker"><a href="#ocf-pn-length" class="hidden-reveal"><span>&nbsp;</span></a> </span>任何在OCF抽象容器中的資料夾與檔名，其路徑名稱<em class="rfc2119" title="MUST NOT">不得</em>超過65535位元組。</p>
 					</li>
 					<li>
-						<p id="ocf-fn-chars"><span class="link-marker"><a href="#ocf-fn-chars" class="hidden-reveal"><span>&nbsp;</span></a> </span>檔案名稱<em class="rfc2119" title="MUST NOT">不得</em>使用以下 [<cite><a class="bibref" href="#bib-unicode">Unicode</a></cite>] 字元，因為這些字元可能不會在跨常用作業系統時受到支援：</p>
+						<p id="ocf-fn-chars"><span class="link-marker"><a href="#ocf-fn-chars" class="hidden-reveal"><span>&nbsp;</span></a> </span>檔案名稱<em class="rfc2119" title="MUST NOT">不得</em>使用以下 [<cite><a class="bibref" href="#bib-unicode">Unicode</a></cite>] 字元，因為這些字元可能在常用作業系統間支援程度不一：</p>
 						<ul>
 							<li>
 								<p>SOLIDUS: <code>/</code> (<code>U+002F</code>)</p>
@@ -1325,7 +1325,7 @@ var [data-type] :hover::before {
 
 					<p>所有<a href="#dfn-ocf-abstract-container" class="internalDFN" data-link-type="dfn">OCF抽象容器</a><em class="rfc2119" title="MUST">必需</em>在其<a href="#dfn-root-directory" class="internalDFN" data-link-type="dfn">根目錄</a>中包含一個名為<code>META-INF</code>的資料夾。</p>
 
-					<p>此資料夾包含檔案其為<a href="#sec-container-metainf-files">META-INF保留的檔案</a>。其他未列於本章節的檔案<em class="rfc2119" title="MAY">可以</em>被包含在<code class="filename">META-INF</code>資料夾中；<a href="#dfn-ocf-processor" class="internalDFN" data-link-type="dfn">OCF處理器</a>當遇到這些檔案時<em class="rfc2119" title="MUST NOT">不得</em>發生問題。</p>
+					<p>此資料夾中的檔案為<a href="#sec-container-metainf-files">META-INF保留的檔案</a>。其他未列於本章節的檔案<em class="rfc2119" title="MAY">可以</em>被放在<code class="filename">META-INF</code>資料夾中；而<a href="#dfn-ocf-processor" class="internalDFN" data-link-type="dfn">OCF處理器</a>當遇到這些檔案時<em class="rfc2119" title="MUST NOT">不得</em>視為錯誤。</p>
 
 				</section>
 
@@ -1335,15 +1335,15 @@ var [data-type] :hover::before {
 					<section id="sec-container-metainf-container.xml">
 						<h5 id="x3-5-2-1-container-file-container-xml"><span class="secno">3.5.2.1 </span>容器檔案 (<code>container.xml</code>)<a class="self-link" aria-label="§" href="#sec-container-metainf-container.xml"></a></h5>
 
-						<p>置放於<code>META-INF</code>資料夾中<em class="rfc2119" title="REQUIRED">必要的</em><code>container.xml</code>，用於識別在<a href="#dfn-ocf-abstract-container" class="internalDFN" data-link-type="dfn">OCF抽象容器</a>中的<a href="epub-spec.html#dfn-epub-package">EPUB包裝</a>。</p>
+						<p>置放於<code>META-INF</code>資料夾中的<code>container.xml</code>為<em class="rfc2119" title="REQUIRED">必要</em>，其用於指定在<a href="#dfn-ocf-abstract-container" class="internalDFN" data-link-type="dfn">OCF抽象容器</a>中的<a href="epub-spec.html#dfn-epub-package">EPUB包裝</a>。</p>
 
 						<p>該檔案的內容<em class="rfc2119" title="MUST">必需</em>在移除所有來自其他命名空間的元素以及屬性（包含所有屬性以及有這些元素的內容）後，合乎定義在「<a href="#app-schema-container">供<code>container.xml</code>使用的綱要</a>」裡提供的綱要。</p>
 
-						<p id="elemdef-container-rootfile">每一個<code>rootfile</code>元素<em class="rfc2119" title="MUST">必需</em>指定一份<a href="epub-spec.html#dfn-package-document">包裝文件</a>的位置，以代表EPUB出版品的一個內容釋義。每一個<a href="epub-spec.html#dfn-rendition">內容釋義</a><em class="rfc2119" title="MUST">必需</em>與其容器的EPUB版本相容。</p>
+						<p id="elemdef-container-rootfile">每一個<code>rootfile</code>元素<em class="rfc2119" title="MUST">必需</em>指定一份<a href="epub-spec.html#dfn-package-document">包裝文件</a>的位置，以代表EPUB出版品的一份內容釋義。每一份<a href="epub-spec.html#dfn-rendition">內容釋義</a><em class="rfc2119" title="MUST">必需</em>與其容器的EPUB版本相容。</p>
 
 						<p id="container-default-rendition">一個OCF處理器<em class="rfc2119" title="MUST">必需</em>將在<code>rootfile</code>元素中第一個<code>rootfile</code>元素視為所容納的EPUB出版品中的<a href="#dfn-default-rendition">預設內容釋義</a>。<a href="epub-spec.html#dfn-epub-reading-system">閱讀系統</a><em class="rfc2119" title="REQUIRED">需要</em>呈現預設內容釋義，但<em class="rfc2119" title="MAY">可以</em>顯示容器中的其他內容釋義。</p>
 
-						<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="6"><span>注意事項</span></div><p class="">儘管EPUB容器提供能夠包含多於一個內容釋義之內容的能力，閱讀系統對於多重內容釋義的支援依然未受到廣泛支援，僅有參與的團體為了其目的與手段提供特定的環境支援。</p></div>
+						<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="6"><span>注意事項</span></div><p class="">儘管EPUB容器具備能包含一個以上內容釋義之內容的能力，閱讀系統對於多重內容釋義的支援依然未受到廣泛支援，僅有相關團體為了其目的與手段提供特定的環境支援。</p></div>
 
 						<aside class="example" id="example-3"><div class="marker">
       <a class="self-link" href="#example-3">範例3</a>
@@ -1373,34 +1373,34 @@ var [data-type] :hover::before {
 <span class="hljs-tag">&lt;/<span class="hljs-name">container</span>&gt;</span></code></pre>
 						</aside>
 
-						<p><em class="rfc2119" title="OPTIONAL">選擇性</em>的<code id="elemdef-container-links">links</code>元素指定處理<a href="#dfn-zip-container" class="internalDFN" data-link-type="dfn">OCF ZIP容器</a>時所需要的資源。其每一個<code id="elemdef-container-link">link</code>元素<em class="rfc2119" title="MUST">必需</em>包含一個<code>href</code>屬性，其值指定了一個資源的位址。每一個<code>link</code>元素都<em class="rfc2119" title="MUST">必需</em>包含一個<code>rel</code>屬性其值指定了與資源的關係，以及<em class="rfc2119" title="MAY">可以</em>包含一個<code>media-type</code>屬性，其值<em class="rfc2119" title="MUST">必需</em>為一個媒體類型 [<cite><a class="bibref" href="#bib-rfc2046">RFC2046</a></cite>] 指定了該<code>link</code>參照的資源的類型與格式。</p>
+						<p><em class="rfc2119" title="OPTIONAL">選擇性</em>的<code id="elemdef-container-links">links</code>元素用來指定處理<a href="#dfn-zip-container" class="internalDFN" data-link-type="dfn">OCF ZIP容器</a>時所需要的資源。其每一個<code id="elemdef-container-link">link</code>元素<em class="rfc2119" title="MUST">必需</em>包含一個<code>href</code>屬性，其值指定了一個資源的位址。每一個<code>link</code>元素都<em class="rfc2119" title="MUST">必需</em>包含一個<code>rel</code>屬性，其值指定與資源的關係，以及<em class="rfc2119" title="MAY">可以</em>包含一個<code>media-type</code>屬性，其值<em class="rfc2119" title="MUST">必需</em>為一個媒體類型 [<cite><a class="bibref" href="#bib-rfc2046">RFC2046</a></cite>] ，其指定了該<code>link</code>參照的資源的類型與格式。</p>
 
-						<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="6"><span>注意事項</span></div><p class=""><code>links</code>元素用於<a href="http://www.idpf.org/epub/renditions/multiple/#sec-4.4.4">多重內容釋義</a>EPUB中指出內容釋義所映射的文件。</p></div>
+						<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="6"><span>注意事項</span></div><p class=""><code>links</code>元素用於<a href="http://www.idpf.org/epub/renditions/multiple/#sec-4.4.4">多重內容釋義</a>EPUB時，用以指向內容釋義所映射的文件。</p></div>
 
-						<p><code>rootfile</code>元素中<code>full-path</code>屬性的值與<code>link</code>元素的<code>href</code>屬性<em class="rfc2119" title="MUST">必需</em>包含一個<em class="firstterm" id="def-path-component">路徑部件</em> [<cite><a class="bibref" href="#bib-rfc3986">RFC3986</a></cite>] 其<em class="rfc2119" title="MUST">必需</em>僅使用<em class="firstterm" id="def-path-rootless">path-rootless</em> [<cite><a class="bibref" href="#bib-rfc3986">RFC3986</a></cite>] 形式。其路徑部件對<a href="#dfn-root-directory" class="internalDFN" data-link-type="dfn">根目錄</a>為相對。</p>
+						<p><code>rootfile</code>元素中<code>full-path</code>屬性的值與<code>link</code>元素的<code>href</code>屬性<em class="rfc2119" title="MUST">必需</em>包含一個<em class="firstterm" id="def-path-component">路徑部件（path component）</em> [<cite><a class="bibref" href="#bib-rfc3986">RFC3986</a></cite>] 其<em class="rfc2119" title="MUST">必需</em>僅使用<em class="firstterm" id="def-path-rootless">path-rootless</em> [<cite><a class="bibref" href="#bib-rfc3986">RFC3986</a></cite>] 形式。其路徑部件與<a href="#dfn-root-directory" class="internalDFN" data-link-type="dfn">根目錄</a>為相對。</p>
 
-						<p><a href="#dfn-ocf-processor" class="internalDFN" data-link-type="dfn">OCF處理器</a><em class="rfc2119" title="MUST">必需</em>忽略<code>container.xml</code>檔案中的外部元素與屬性。</p>
+						<p><a href="#dfn-ocf-processor" class="internalDFN" data-link-type="dfn">OCF處理器</a><em class="rfc2119" title="MUST">必需</em>忽略<code>container.xml</code>檔案中的外圍元素與屬性。</p>
 
 					</section>
 
 					<section id="sec-container-metainf-encryption.xml">
 						<h5 id="x3-5-2-2-encryption-file-encryption-xml"><span class="secno">3.5.2.2 </span>加密檔案 (<code>encryption.xml</code>)<a class="self-link" aria-label="§" href="#sec-container-metainf-encryption.xml"></a></h5>
 
-						<p>在<code>META-INF</code>資料夾中選擇性的<code>encryption.xml</code>保有所有該容器內容的加密資訊。如果任何在容器中的資源加密，<code>encryption.xml</code><em class="rfc2119" title="MUST">必需</em>用於指出何資源受到加密以及提供如何解密的資訊。</p>
+						<p>在<code>META-INF</code>資料夾中選擇性的<code>encryption.xml</code>包含所有該容器內容的加密資訊。如果任何容器中的資源有受到加密，<code>encryption.xml</code><em class="rfc2119" title="MUST">必需</em>用於指出哪一份資源受到加密，以及提供如何解密的資訊。</p>
 
-						<p>本檔案是一個XML文件，其根元素為<code id="elemdef-encryption-encryption">encryption</code>。<code>encryption</code>元素包含類型子元素<code>EncryptedKey</code>及<code>EncryptedData</code>由 [<cite><a class="bibref" href="#bib-xmlenc-core1">XMLENC-CORE1</a></cite>] 所定義。一個<code id="elemdef-encryption-EncryptedKey">EncryptedKey</code>元素解釋了用於容器的每一個加密密鑰，而<code id="elemdef-encryption-EncryptedData">EncryptedData</code>元素解釋了每一個加密檔案。每一個<code>EncryptedData</code>元素向一個<code>EncryptedKey</code>參照，如在XML加密中所說明。</p>
+						<p>本檔案是一個XML文件，其根元素為<code id="elemdef-encryption-encryption">encryption</code>。<code>encryption</code>元素包含類型子元素<code>EncryptedKey</code>及<code>EncryptedData</code>由 [<cite><a class="bibref" href="#bib-xmlenc-core1">XMLENC-CORE1</a></cite>] 所定義。<code id="elemdef-encryption-EncryptedKey">EncryptedKey</code>元素解釋了用於容器的每一個加密密鑰，而<code id="elemdef-encryption-EncryptedData">EncryptedData</code>元素解釋了每一個加密檔案。每一個<code>EncryptedData</code>元素參照一個<code>EncryptedKey</code>，如在XML加密中所說明。</p>
 
 						<p><code>encryption.xml</code>檔案之內容<em class="rfc2119" title="MUST">必需</em>合乎定義在「<a href="#app-schema-encryption">供<code>encryption.xml</code>使用的綱要</a>」裡提供的綱要。</p>
 
-						<p>OCF獨立地加密個別檔案，以一些安全性交換效能的提升，允許容器內容能夠被遞增解密。以這種方式加密會暴露目錄結構與整個包裝的檔案命名。</p>
+						<p>OCF獨立地加密個別檔案，以一些安全性交換效能的提升，允許容器內容能夠被遞增解密。但以這種方式加密會暴露目錄結構與整個包裝的檔案命名。</p>
 
-						<p>OCF使用XML加密 [<cite><a class="bibref" href="#bib-xmlenc-core1">XMLENC-CORE1</a></cite>] 以提供一個加密使用的框架，允許使用多種演算法。XML加密指定一個程序供加密任意資料以及以XML表現其結果。儘管一個<a href="#dfn-ocf-abstract-container" class="internalDFN" data-link-type="dfn">OCF抽象容器</a>可能包含非XML資料，XML加密可用於加密OCF抽象容器中的所有資料。OCF加密僅支援對在容器中的整體檔案加密，而非部份檔案。<code>encryption.xml</code>檔案若存在，則<em class="rfc2119" title="MUST NOT">不得</em>被加密。</p>
+						<p>OCF採用XML加密 [<cite><a class="bibref" href="#bib-xmlenc-core1">XMLENC-CORE1</a></cite>] 來提供一個加密用的框架，允許使用多種演算法。XML加密指定一個程序供加密任意資料並且以XML表示其結果。儘管<a href="#dfn-ocf-abstract-container" class="internalDFN" data-link-type="dfn">OCF抽象容器</a>中可能包含非XML資料，但XML加密可用於加密OCF抽象容器中的所有資料。OCF加密僅支援對在容器中的整個檔案加密，而非檔案的一部分。若<code>encryption.xml</code>檔案存在，則其自身<em class="rfc2119" title="MUST NOT">不得</em>被加密。</p>
 
 						<p>在OCF抽象容器中，以加密資料置換未加密的資料。例如，如果一個名為<code>photo.jpeg</code>的影像為加密，<code>photo.jpeg</code>資源的內容<em class="rfc2119" title="SHOULD">應該</em>被置換成其加密後的內容。在ZIP資料夾中，<em class="rfc2119" title="SHOULD">應該</em>儲存加密後的檔案而非Deflate壓縮檔。</p>
 
-						<p id="encryption-obfuscation">請注意在一些狀況下，需要模糊儲存被<a href="epub-spec.html#dfn-rendition">內容釋義</a>參照的嵌入資源，以連接到「母」EPUB出版品並且使他們更難以在非限制的使用下解壓縮（例如，字體）。儘管模糊化並非加密，<code>encryption.xml</code>檔案用於注入<a href="#sec-resource-obfuscation">資源模糊化演算法</a>以識別哪些資源需要在使用前去模糊化。</p>
+						<p id="encryption-obfuscation">請注意在一些狀況下，需要模糊儲存被<a href="epub-spec.html#dfn-rendition">內容釋義</a>參照的嵌入資源，以連接到「母」EPUB出版品並且使它們更難以在非限制的使用下解壓縮（例如，字體）。儘管模糊化並非加密，<code>encryption.xml</code>檔案用於對應<a href="#sec-resource-obfuscation">資源模糊化演算法</a>以識別哪些資源需要在使用前去模糊化。</p>
 
-						<p id="encryption-restrictions">以下檔案<em class="rfc2119" title="MUST NOT">不得</em>被加密，無論是以預設或者呼叫特別的加密法：</p>
+						<p id="encryption-restrictions">以下檔案<em class="rfc2119" title="MUST NOT">不得</em>被加密，無論是使用預設或者特別的加密法：</p>
 
 						<ul class="nomark">
 							<li><code>mimetype</code></li>
@@ -1418,7 +1418,7 @@ var [data-type] :hover::before {
 						<aside class="example" id="example-5"><div class="marker">
       <a class="self-link" href="#example-5">範例5</a>
     </div>
-							<p>以下範例採用<a href="https://www.w3.org/TR/2002/REC-xmlenc-core-20021210/#sec-eg-Symmetric-Key">2.2.1節</a>中之 [<cite><a class="bibref" href="#bib-xmlenc-core1">XMLENC-CORE1</a></cite>] ，資源<code>image.jpeg</code>使用對稱密鑰加密（AES）加密，其對稱密鑰更近一步使用非對稱密鑰加密（RSA）加密，其密鑰由John Smith持有。</p>
+							<p>以下範例採用<a href="https://www.w3.org/TR/2002/REC-xmlenc-core-20021210/#sec-eg-Symmetric-Key">2.2.1節</a>中之 [<cite><a class="bibref" href="#bib-xmlenc-core1">XMLENC-CORE1</a></cite>] ，資源<code>image.jpeg</code>使用對稱密鑰加密（AES）加密，其對稱密鑰更進一步使用非對稱密鑰加密（RSA）加密，其密鑰由John Smith持有。</p>
 							<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">encryption</span>
     <span class="hljs-attr">xmlns</span> =<span class="hljs-string">"urn:oasis:names:tc:opendocument:xmlns:container"</span>
     <span class="hljs-attr">xmlns:enc</span>=<span class="hljs-string">"http://www.w3.org/2001/04/xmlenc#"</span>
@@ -1448,7 +1448,7 @@ var [data-type] :hover::before {
 						<section id="sec-enc-compression">
 							<h6 id="x3-5-2-2-1-order-of-compression-and-encryption"><span class="secno">3.5.2.2.1 </span>壓縮與加密順序<a class="self-link" aria-label="§" href="#sec-enc-compression"></a></h6>
 
-							<p>當儲存在ZIP容器中，有<a href="#dfn-non-codec" class="internalDFN" data-link-type="dfn">非編碼</a>內容類型的資料流<em class="rfc2119" title="SHOULD">應該</em>在加密前壓縮，<em class="rfc2119" title="MUST">必需</em>使用Deflate壓縮。這種做法可確保存放在ZIP容器中的檔案能夠佔較少的空間。</p>
+							<p>儲存在ZIP容器中，<a href="#dfn-non-codec" class="internalDFN" data-link-type="dfn">非編碼</a>內容類型的資料流<em class="rfc2119" title="SHOULD">應該</em>在加密前壓縮，<em class="rfc2119" title="MUST">必需</em>使用Deflate壓縮。這種做法可確保存放在ZIP容器中的檔案能夠佔較少的空間。</p>
 
 							<p><a href="#dfn-codec" class="internalDFN" data-link-type="dfn">編碼</a>內容類型的資料<em class="rfc2119" title="SHOULD NOT">不應</em>在加密前壓縮。在這些案例中，額外的壓縮會在製作時產生不必要的處理程序（尤其在處理大型資源檔案時），以及在閱讀時將會影響影音播放效率。在某些案例中，某些加密綱要的組合壓縮可能會降低閱讀系統處理部分內容需求的能力（例如，HTTP位元組範圍byte range），由於技術上無法在媒體播放時判斷完整資源的長度（例如，HTTP內容長度檔頭Content-Length header）。</p>
 
@@ -1466,14 +1466,14 @@ var [data-type] :hover::before {
 								</dd>
 								<dt>用法</dt>
 								<dd>
-									<p><em class="rfc2119" title="OPTIONAL">OPTIONAL</em> child of <code>EncryptionProperty</code>.</p>
+									<p><code>EncryptionProperty</code>的<em class="rfc2119" title="OPTIONAL">選擇性</em>子元素。</p>
 								</dd>
 								<dt>屬性</dt>
 								<dd>
 									<dl class="variablelist">
 										<dt>Method <code> [必要] </code></dt>
 										<dd>
-											<p>識別使用的壓縮法。</p>
+											<p>識別所使用的壓縮法。</p>
 											<p>值需為「<code>0</code>」（無壓縮）或「<code>8</code>」（Deflate演算法）。</p>
 										</dd>
 										<dt>OriginalLength <code> [必要] </code></dt>
@@ -1514,11 +1514,11 @@ var [data-type] :hover::before {
 					<section id="sec-container-metainf-manifest.xml">
 						<h5 id="x3-5-2-3-manifest-file-manifest-xml"><span class="secno">3.5.2.3 </span>宣告檔案 (<code>manifest.xml</code>)<a class="self-link" aria-label="§" href="#sec-container-metainf-manifest.xml"></a></h5>
 
-						<p><code>META-INF</code>資料夾裡<em class="rfc2119" title="OPTIONAL">選擇性</em>的<code>manifest.xml</code>檔案提供了容器裡對檔案的宣告。</p>
+						<p><code>META-INF</code>資料夾裡<em class="rfc2119" title="OPTIONAL">選擇性</em>的<code>manifest.xml</code>檔案提供了對容器裡檔案的宣告。</p>
 
-						<p>OCF規格不指定宣告的格式。</p>
+						<p>OCF規格不強制指定宣告的格式。</p>
 
-						<p>請注意在<a href="epub-spec.html#dfn-package-document">包裝文件</a>中的<code>manifest</code>元素指定了為一個宣告用於處理該內容釋義。包含在ZIP封存中的額外宣告資訊或者<em class="rfc2119" title="OPTIONAL">選擇性</em>的<code>manifest.xml</code><em class="rfc2119" title="MUST NOT">不得</em>被用於處理內容釋義。</p>
+						<p>請注意在<a href="epub-spec.html#dfn-package-document">包裝文件</a>中的<code>manifest</code>元素為唯一用於處理該內容釋義的宣告。包含在ZIP封存中的額外宣告資訊或者<em class="rfc2119" title="OPTIONAL">選擇性</em>的<code>manifest.xml</code><em class="rfc2119" title="MUST NOT">不得</em>被用於處理內容釋義。</p>
 						<div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-3" aria-level="6"><span>注意事項</span></div><div class="">本功能僅為了相容於 [<cite><a class="bibref" href="#bib-odf">ODF</a></cite>] 續存。</div></div>
 
 					</section>
@@ -1526,9 +1526,9 @@ var [data-type] :hover::before {
 					<section id="sec-container-metainf-metadata.xml">
 						<h5 id="x3-5-2-4-metadata-file-metadata-xml"><span class="secno">3.5.2.4 </span>詮釋資料檔案 (<code>metadata.xml</code>)<a class="self-link" aria-label="§" href="#sec-container-metainf-metadata.xml"></a></h5>
 
-						<p><code>META-INF</code>資料夾裡<em class="rfc2119" title="OPTIONAL">選擇性</em>的<code>META-INF/metadata.xml</code>檔案，若存在，必須用於容器層級的詮釋資料。</p>
+						<p><code>META-INF</code>資料夾裡若有<em class="rfc2119" title="OPTIONAL">選擇性</em>的<code>META-INF/metadata.xml</code>檔案，則必需用於容器層級的詮釋資料。</p>
 
-						<p>如果<code>metadata.xml</code>檔案存在，其內容<em class="rfc2119" title="SHOULD">應該</em>僅包含命名空間認可的元素 [<cite><a class="bibref" href="#bib-xml-names">XML-NAMES</a></cite>] 。該檔案<em class="rfc2119" title="SHOULD">應該</em>包含根元素<code>metadata</code>，其命名空間為<code>http://www.idpf.org/2013/metadata</code>，但其他根元素允許供反向相容使用。閱讀系統<em class="rfc2119" title="SHOULD">應該</em>忽略有無法識別的根元素之<code>metadata</code>。</p>
+						<p>若有<code>metadata.xml</code>檔案，其內容<em class="rfc2119" title="SHOULD">應該</em>僅包含命名空間認可的元素 [<cite><a class="bibref" href="#bib-xml-names">XML-NAMES</a></cite>] 。該檔案<em class="rfc2119" title="SHOULD">應該</em>包含根元素<code>metadata</code>，其命名空間為<code>http://www.idpf.org/2013/metadata</code>，但其他根元素可以用於向後相容目的。閱讀系統<em class="rfc2119" title="SHOULD">應該</em>忽略根元素無法識別之<code>metadata.xml</code>。</p>
 
 						<p>本版本的OCF規格不定義供<code>metadata.xml</code>檔案使用的詮釋資料格式。容器層級的詮釋資料<em class="rfc2119" title="MAY">可以</em>在本規格的未來版本以及EPUB延伸規格中定義。</p>
 
@@ -1537,7 +1537,7 @@ var [data-type] :hover::before {
 					<section id="sec-container-metainf-rights.xml">
 						<h5 id="x3-5-2-5-rights-management-file-rights-xml"><span class="secno">3.5.2.5 </span>權利管理檔案 (<code>rights.xml</code>)<a class="self-link" aria-label="§" href="#sec-container-metainf-rights.xml"></a></h5>
 
-						<p><code>META-INF</code>資料夾裡<em class="rfc2119" title="OPTIONAL">選擇性</em>的<code>rights.xml</code>為供數位權利管理（DRM）資訊所保留，目的為讓EPUB出版品能在權利人、中介與使用者間前到信任地傳遞。</p>
+						<p><code>META-INF</code>資料夾裡<em class="rfc2119" title="OPTIONAL">選擇性</em>的<code>rights.xml</code>為供數位權利管理（DRM）資訊所保留，目的為讓EPUB出版品能在權利人、中介與使用者間可被信任地傳遞。</p>
 
 						<p>本版本的OCF規格不要求特定格式的DRM資訊，但未來版本可能會要求。<code>rights.xml</code>的內容<em class="rfc2119" title="SHOULD">應該</em>僅包含命名空間認可的元素 [<cite><a class="bibref" href="#bib-xml-names">XML-NAMES</a></cite>] ，以避免與未來的格式產生斷裂。</p>
 
@@ -1551,7 +1551,7 @@ var [data-type] :hover::before {
 						<h5 id="x3-5-2-6-digital-signatures-file-signatures-xml"><span class="secno">3.5.2.6 </span>數位簽章檔案 (<code>signatures.xml</code>)<a class="self-link" aria-label="§" href="#sec-container-metainf-signatures.xml"></a></h5>
 
 						<div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-4" aria-level="6"><span>注意事項</span></div><div class="">
-							<p>添加數位簽章並不保證EPUB檔案不受到變更，主要因為閱讀系統並不需要確認簽章。</p>
+							<p>添加數位簽章並不保證EPUB檔案不受到變更，主要因為閱讀系統不被要求必須確認簽章。</p>
 						</div></div>
 
 						<p><code>META-INF</code>資料夾裡<em class="rfc2119" title="OPTIONAL">選擇性</em>的<code>signatures.xml</code>包含供容器與其內容的數位簽章。本檔案的內容<em class="rfc2119" title="MUST">必需</em>合乎定義在「<a href="#app-schema-signatures">供<code>signatures.xml</code>使用的綱要</a>」裡提供的綱要。</p>
@@ -1563,10 +1563,10 @@ var [data-type] :hover::before {
 						<p id="sig-container">當資料簽章為該容器所創建，其簽章<em class="rfc2119" title="SHOULD">應該</em>被加到<code>signatures</code>元素中最後一個子<code>Signature</code>元素。</p>
 
 						<div class="note" role="note" id="issue-container-generatedID-5"><div role="heading" class="note-title marker" id="h-note-5" aria-level="6"><span>注意事項</span></div><div class="">
-							<p>每一個在<code>signatures.xml</code>中的<code>Signature</code>由IRI所識別其簽章所適用的資料，使用 [<cite><a class="bibref" href="#bib-xmldsig-core1">XMLDSIG-CORE1</a></cite>] <code>Manifest</code>元素以及其<code>Reference</code>子元素。獨立涵蓋的檔案可以被分別或者一起簽署。對每個檔案個別簽署時會創建資源的摘要值以能被獨立驗證。這種方式會讓簽章元素變大。如果檔案被一起簽署，簽署檔案的及殼可以被列於單一XML簽章<code>Manifest</code>元素以及被一或多個<code>Signature</code>元素參照。</p>
+							<p>每一個在<code>signatures.xml</code>中的<code>Signature</code>由IRI所識別其簽章所適用的資料，使用 [<cite><a class="bibref" href="#bib-xmldsig-core1">XMLDSIG-CORE1</a></cite>] <code>Manifest</code>元素以及其<code>Reference</code>子元素。獨立涵蓋的檔案可以被分別或者一起簽署。對每個檔案個別簽署時會創建資源的摘要值以能被獨立驗證。這種方式會讓簽章元素變大。如果檔案被一起簽署，簽署檔案的集合可以被列於單一XML簽章<code>Manifest</code>元素以讓一或多個<code>Signature</code>元素參照。</p>
 						</div></div>
 
-						<p id="sig-restrictions">任何，或所有位於容器中的檔案都可以被完整簽署，除了<code>signatures.xml</code>檔案自身，由該檔案包含計算過的簽章資訊。不管<code>signatures.xml</code>如何被簽署或者簽署者的目的為何。</p>
+						<p id="sig-restrictions">所有位於容器中的檔案都可以被完整簽署，除了自身包含計算過的簽章資訊的<code>signatures.xml</code>檔案。不管<code>signatures.xml</code>如何被簽署或者簽署者的目的為何。</p>
 
 						<p>當簽署者想要為容器允許加入或者移除簽章，卻沒有無效化簽署者簽章時，<code>signatures.xml</code><em class="rfc2119" title="SHOULD NOT">不應</em>被簽署。</p>
 
@@ -1638,7 +1638,7 @@ var [data-type] :hover::before {
 			<section id="sec-container-zip-intro" class="informative">
 				<h3 id="x4-1-introduction"><span class="secno">4.1 </span>導論<a class="self-link" aria-label="§" href="#sec-container-zip-intro"></a></h3><p><em>本章節為非規範性。</em></p>
 
-				<p><a href="#dfn-zip-container" class="internalDFN" data-link-type="dfn">OCF ZIP容器</a>為物理性單一檔案，宣告了<a href="#dfn-ocf-abstract-container" class="internalDFN" data-link-type="dfn">OCF抽象容器</a>。該容器用於：</p>
+				<p><a href="#dfn-zip-container" class="internalDFN" data-link-type="dfn">OCF ZIP容器</a>為實體單一檔案，宣告了<a href="#dfn-ocf-abstract-container" class="internalDFN" data-link-type="dfn">OCF抽象容器</a>。該容器用於：</p>
 
 				<ul>
 					<li>
@@ -1648,7 +1648,7 @@ var [data-type] :hover::before {
 						<p>讓EPUB出版品由一個出版社或者轉檔公司遞送到經銷或銷售管道；以及</p>
 					</li>
 					<li>
-						<p>將EPUB出版本遞交給<a href="epub-spec.html#dfn-epub-reading-system">EPUB閱讀系統</a>或使用者。</p>
+						<p>將EPUB出版品遞交給<a href="epub-spec.html#dfn-epub-reading-system">EPUB閱讀系統</a>或使用者。</p>
 					</li>
 				</ul>
 
@@ -1664,10 +1664,10 @@ var [data-type] :hover::before {
 						<p id="confreq-zip-abstr"><span class="link-marker"><a href="#confreq-zip-abstr" class="hidden-reveal"><span>&nbsp;</span></a> </span>OCF ZIP容器的內容<em class="rfc2119" title="MUST">必需</em>為合乎規定的<a href="#sec-container-abstract">OCF抽象容器</a>。</p>
 					</li>
 					<li>
-						<p id="confreq-zip-mult"><span class="link-marker"><a href="#confreq-zip-mult" class="hidden-reveal"><span>&nbsp;</span></a> </span>OCF ZIP容器<em class="rfc2119" title="MUST NOT">不得</em>使用ZIP應用程式備忘 [<cite><a class="bibref" href="#bib-zip">ZIP</a></cite>] 中的功能讓ZIP檔案跨多個儲存媒體，或者分割為複數檔案。<a href="#dfn-ocf-processor">OCF處理器</a><em class="rfc2119" title="MUST">必需</em>在處理任何OCF檔案，其中指定ZIP檔分割跨多重儲存媒體的狀況為錯誤。</p>
+						<p id="confreq-zip-mult"><span class="link-marker"><a href="#confreq-zip-mult" class="hidden-reveal"><span>&nbsp;</span></a> </span>OCF ZIP容器<em class="rfc2119" title="MUST NOT">不得</em>使用ZIP應用程式備忘 [<cite><a class="bibref" href="#bib-zip">ZIP</a></cite>] 中的功能讓ZIP檔案跨多個儲存媒體，或者分割為複數檔案。<a href="#dfn-ocf-processor">OCF處理器</a><em class="rfc2119" title="MUST">必需</em>在處理任何OCF檔案時，將指定ZIP檔分割跨多重儲存媒體的狀況視為錯誤。</p>
 					</li>
 					<li>
-						<p id="confreq-zip-comp"><span class="link-marker"><a href="#confreq-zip-comp" class="hidden-reveal"><span>&nbsp;</span></a> </span>OCF ZIP容器<em class="rfc2119" title="MUST">必需</em>在ZIP封裝中僅包含儲存（無壓縮）及採Deflate演算法壓縮的ZIP內容。OCF處理器<em class="rfc2119" title="MUST">必需</em>處理任何使用非Delate演算法的壓縮技術之OCF容器為錯誤。</p>
+						<p id="confreq-zip-comp"><span class="link-marker"><a href="#confreq-zip-comp" class="hidden-reveal"><span>&nbsp;</span></a> </span>OCF ZIP容器<em class="rfc2119" title="MUST">必需</em>在ZIP封裝中僅包含儲存（無壓縮）及採Deflate演算法壓縮的ZIP內容。OCF處理器<em class="rfc2119" title="MUST">必需</em>處理任何使用非Delate演算法的壓縮技術之OCF容器視為錯誤。</p>
 					</li>
 					<li>
 						<p id="confreq-zip-64"><span class="link-marker"><a href="#confreq-zip-64" class="hidden-reveal"><span>&nbsp;</span></a> </span>OCF ZIP容器<em class="rfc2119" title="MAY">可以</em>使用在應用程式備忘 [<cite><a class="bibref" href="#bib-zip">ZIP</a></cite>] 中第5章G節定義為「Version 1」的ZIP64延伸，以及<em class="rfc2119" title="SHOULD">應該</em>僅在內容需要他們時使用這些延伸。OCF處理器<em class="rfc2119" title="MUST">必需</em>支援定義為「version 1」的ZIP64延伸。</p>
@@ -1722,17 +1722,17 @@ var [data-type] :hover::before {
 			<section id="fobfus-intro" class="informative">
 				<h3 id="x5-1-introduction"><span class="secno">5.1 </span>導論<a class="self-link" aria-label="§" href="#fobfus-intro"></a></h3><p><em>本章節為非規範性。</em></p>
 
-				<p>由於<a href="#dfn-zip-container" class="internalDFN" data-link-type="dfn">OCF ZIP容器</a>基本上是一個ZIP檔案，一般可得的ZIP工具都可以用於從其包裝中解壓縮未加密的內容流。此外，ZIP檔案的特性表示其內容可以如其他原生容器在一些系統上（例如，資料夾）顯示。</p>
+				<p>由於<a href="#dfn-zip-container" class="internalDFN" data-link-type="dfn">OCF ZIP容器</a>基本上是一個ZIP檔案，一般常見的ZIP工具都可以用於從其包裝中解壓縮未加密的內容流。此外，ZIP檔案的特性表示其內容可以如其他原生容器在一些系統上（例如，資料夾）顯示。</p>
 
-				<p>ZIP檔案的單純性很方便，但也產生了一個問題，不加密的副作用是易於提取資源，而這不是期盼的結果。例如，<a href="epub-spec.html#dfn-author">作者</a>想要包含第三方字體時，一般不會希望字體被解壓縮並且被其他人使用。更重要的是，許多商用字體允許被嵌入，但嵌入字體即代表其為EPUB出版品整體的一部分，不只是隨著內容提供其原始字體。</p>
+				<p>ZIP檔案的單純很便於使用，但也產生了一個問題，不加密的副作用是易於提取資源，而這不是期盼的結果。例如，<a href="epub-spec.html#dfn-author">作者</a>想要包含第三方字體時，一般不會希望字體被解壓縮並且被其他人使用。更重要的是，許多商用字體允許被嵌入，但嵌入字體即代表其為EPUB出版品整體的一部分，不只是隨著內容提供其原始字體。</p>
 
-				<p>雖然現在作業系統的ZIP支援整合相當普遍，但只是把字體置放到ZIP封裝並不足以表示其不想被用於其他脈絡的意圖。這種不確定性會損害EPUB出版品中相當好用的字體嵌入相容性。</p>
+				<p>雖然現在作業系統普遍整合了ZIP支援，但只是把字體置放到ZIP封裝並不足以表示其不想被用於其他脈絡的意圖。這種不確定性會損害EPUB出版品中相當有用的嵌入字體能耐。</p>
 
 				<p>為了避免字體受到使用，有些字體提供者可能僅會在以某些方法與EPUB出版品連結的狀況下，才允許使用它們的字體於EPUB出版品。即為，當字型檔案不能以預設工具被直接安裝在裝置中供作業系統使用，也不能被其他EPUB出版品所直接使用。</p>
 
 				<p>提供數位權利管理或者強制系統供這些資源使用超過本規格的目標。本章節則以定義模糊化的方法取代，其需要花額外的功夫在最終OCF收受端以增加對任何模糊化資源的一般性存取。</p>
 
-				<p>請注意，本規格並不將其宣稱為加密，也不能保障資源安全無虞不受侵權。然而，僅希望這項演算法將會符合多數提供者希望為其資源提供一些保障，而不能簡單地透過對容器解壓縮取出。</p>
+				<p>請注意，本規格並不將其宣稱為加密，也不能保障資源安全無虞不受侵權。然而，僅希望這項演算法將會符合多數提供者希望為其資源提供一些保障，而不會簡單地透過對容器解壓縮就能取出。</p>
 
 				<p>在字體的案例中，主要使用的方法是模糊化，定義的機制將簡單地提供阻擋方式來避免人們沒有注意到授權細節。其將無法避免有意圖的使用者獲得對字體的完整存取權。對該OCF容器而言，則可以套用該定義的演算法來取出原始字型檔案。本模糊手段是否能滿足個別字體的授權，依然還需詢問授權者與被授權者。</p>
 
@@ -1752,7 +1752,7 @@ var [data-type] :hover::before {
 			<section id="obfus-algorithm">
 				<h3 id="x5-3-obfuscation-algorithm"><span class="secno">5.3 </span>模糊化演算法<a class="self-link" aria-label="§" href="#obfus-algorithm"></a></h3>
 
-				<p>部署供模糊化資源的演算法固定調整最初檔案的1040位元組（~1KB）。在罕見的狀態下檔案小於1040位元組時，整個檔案都會變動。</p>
+				<p>部署供模糊化資源的演算法固定調整最初檔案的1040位元組（~1KB）。在罕見的狀態下，檔案小於1040位元組時，則整個檔案都會變動。</p>
 
 				<p>為了模糊化原始資料，結論上使用邏輯互斥或（logical exclusive or, XOR）於原始檔案的第一個位元組，以及將<a href="#obfus-keygen">模糊化密鑰</a>的第一個位元組儲存作為嵌入資源的第一個位元組。</p>
 
@@ -1789,7 +1789,7 @@ Deflate destination
 store destination as source in ocf</code></pre>
 				</aside>
 
-				<p>為了恢復成原來的字型檔案，程序僅要簡單反向：來源檔案變成模糊化資料，而其結果檔案將包含原始資料。</p>
+				<p>為了恢復成原來的字型檔案，程序僅要簡單地反向進行：來源檔案變成模糊化資料，而其結果檔案將包含原始資料。</p>
 
 				<div class="note" role="note" id="issue-container-generatedID-8"><div role="heading" class="note-title marker" id="h-note-8" aria-level="4"><span>注意事項</span></div><div class="">
 					<p>對字體的模糊化早在EPUB 3.0.1版就已經允許使用，但沒有指定模糊化與壓縮的順序。結果而言，在解壓縮與去模糊化後可能會得到不合規的字體。在這些狀況下，在解壓縮前對資料進行去模糊化可能取得合規的字體。本規格不要求對這種逆向方法的支援，原因是不適用本版本規格，但其可能需要納入對EPUB 3內容的一般支援。</p>
@@ -1800,9 +1800,9 @@ store destination as source in ocf</code></pre>
 			<section id="obfus-specifying">
 				<h3 id="x5-4-specifying-obfuscated-resources"><span class="secno">5.4 </span>指定模糊化資源<a class="self-link" aria-label="§" href="#obfus-specifying"></a></h3>
 
-				<p>儘管技術上並非對資料加密，所有模糊化資源<em class="rfc2119" title="MUST">必需</em>在<code class="filename">encryption.xml</code>檔案中登記，並且出現於該EPUB出版品中（請見<a href="#sec-container-metainf-encryption.xml">加密檔案（<code>encryption.xml</code>）</a>）。</p>
+				<p>儘管技術上並非對資料加密，所有模糊化資源<em class="rfc2119" title="MUST">必需</em>在該EPUB出版品中的<code class="filename">encryption.xml</code>檔案中登錄（請見<a href="#sec-container-metainf-encryption.xml">加密檔案（<code>encryption.xml</code>）</a>）。</p>
 
-				<p><code>EncryptedData</code>元素<em class="rfc2119" title="MUST">必需</em>為每一個模糊化資源包含在內。每一個<code>EncryptedData</code>元素<em class="rfc2119" title="MUST">必需</em>包含一個<code>EncryptionMethod</code>子元素，其<code>Algorithm</code>屬性之值設定為<code>http://www.idpf.org/2008/embedding</code>。這項屬性出現代表使用本規格所闡釋的演算法。對模糊化資源的路徑<em class="rfc2119" title="MUST">必需</em>被列於<code>CipherData</code>元素中的 <code>CipherReference</code>子元素。</p>
+				<p><code>EncryptedData</code>元素<em class="rfc2119" title="MUST">必需</em>包含每一個模糊化資源。每一個<code>EncryptedData</code>元素<em class="rfc2119" title="MUST">必需</em>包含一個<code>EncryptionMethod</code>子元素，其<code>Algorithm</code>屬性之值設定為<code>http://www.idpf.org/2008/embedding</code>。這項屬性出現代表使用本規格所闡釋的演算法。對模糊化資源的路徑<em class="rfc2119" title="MUST">必需</em>被列於<code>CipherData</code>元素中的 <code>CipherReference</code>子元素。</p>
 
 				<aside class="example" id="example-9"><div class="marker">
       <a class="self-link" href="#example-9">範例9</a>
@@ -2086,21 +2086,20 @@ EPUB/images/cover.png</code></pre>
 				</dd>
 				<dt>必要參數：</dt>
 				<dd>
-					<p>None.</p>
+					<p>無。</p>
 				</dd>
 				<dt>選擇性參數：</dt>
 				<dd>
-					<p>None.</p>
+					<p>無。</p>
 				</dd>
 				<dt>編碼考量：</dt>
 				<dd>
-					<p>OCF ZIP容器檔案為以<a class="media-type" href="https://www.iana.org/assignments/media-types/application/zip">
-							<code>application/zip</code></a>媒體類型編碼的二進位檔案。</p>
+					<p>OCF ZIP容器檔案為以<a class="media-type" href="https://www.iana.org/assignments/media-types/application/zip"><code>application/zip</code></a>媒體類型編碼的二進位檔案。</p>
 				</dd>
 				<dt>安全性考量：</dt>
 				<dd>
 					<p>所有能夠讀取OCF ZIP容器檔案的處理器應該嚴密地對取得的檔案大小以及合規性進行檢查。</p>
-					<p>此外，因為各種不同內容類型可被嵌入到OCF ZIP容器檔案中，<code>application/epub+zip</code>可以敘述為擁有超過此處說明含有安全性問題的內容。然而在這些案例中，僅有在處理器辨別並且處理這些額外內容，或者將內容交派到其他處理器進行近一步處理時，才會遇到這些潛在的安全問題。在這些案例中，安全性問題落於本註冊文件的領域之外。</p>
+					<p>此外，因為各種不同內容類型可被嵌入到OCF ZIP容器檔案中，<code>application/epub+zip</code>可以敘述為擁有超過此處說明含有安全性問題的內容。然而在這些案例中，僅有在處理器辨別並且處理這些額外內容，或者將內容交派到其他處理器進行進一步處理時，才會遇到這些潛在的安全問題。在這些案例中，安全性問題落於本註冊文件的領域之外。</p>
 					<p>適用於<code>application/zip</code>的安全性考量也適用於OCF ZIP容器檔案。</p>
 				</dd>
 				<dt>互通性考量：</dt>
