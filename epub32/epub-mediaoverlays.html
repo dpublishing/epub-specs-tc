@@ -1000,9 +1000,9 @@ var [data-type] :hover::before {
       <hr title="Separator for header">
     </div>
 		<section id="abstract" class="introductory"><h2>概要</h2>
-			<p>本規格定義了如何使用 [<cite><a class="bibref" href="#bib-smil3">SMIL3</a></cite>] （同步多媒體整合語言, Synchronized Multimedia Integration Language）、<a href="epub-spec.html#dfn-package-document">包裝文件</a>、CSS樣式表與<a data-lt="EPUB Content Documents" href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>，令聲音表現能夠與EPUB內容文件同步。</p>
+			<p>本規格定義了如何使用 [<cite><a class="bibref" href="#bib-smil3">SMIL3</a></cite>] （同步多媒體整合語言, Synchronized Multimedia Integration Language）、<a href="epub-spec.html#dfn-package-document">包裝文件</a>、CSS樣式表與<a data-lt="EPUB Content Documents" href="epub-spec.html#dfn-epub-content-document">EPUB®內容文件</a>，以表現聲音和EPUB內容文件的同步。</p>
 
-			<p>媒體層疊可以讓文字與聲音同步，以增進無障礙輔助性供對傳統書籍文字使用上有困難的使用者。媒體層疊也提供因各種理由無法閱讀文字的讀者連續聆聽的體驗，且傳統嵌入聲音技術無法提供。甚至在某些方面提供了傳統思維無法提供的無障礙輔助性考量（例如，為了語言學習或能閱讀商售有聲書）。</p>
+			<p>媒體層疊可以讓文字與聲音同步，以增進無障礙輔助性給難以閱讀傳統書籍上文字的使用者。媒體層疊也提供因各種理由無法閱讀文字的讀者連續聆聽的體驗，且傳統嵌入聲音技術無法提供。甚至在某些方面提供了傳統思維無法提供的無障礙輔助性考量（例如，為了語言學習或能閱讀商售有聲書）。</p>
 
 			<p>本規格屬於組成 [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] 的<a href="epub-spec.html#sec-intro-epub-specs">規格群</a>之一，其為基於XML與Web標準的數位出版品交換與遞送格式。要了解整體EPUB 3規格，需要與其他規格一併閱讀且理解。</p>
 
@@ -1035,7 +1035,7 @@ var [data-type] :hover::before {
 				<section id="d46451e218">
 					<h4 id="x1-1-1-relationship-to-smil"><span class="secno">1.1.1 </span>與SMIL的關係<a class="self-link" aria-label="§" href="#d46451e218"></a></h4>
 
-					<p>本規格依賴於 [<cite><a class="bibref" href="#bib-smil3">SMIL3</a></cite>] 之子集，其中EPUB媒體層疊元素與屬性定義於<a href="#sec-overlays-def">媒體層疊文件中的定義</a>出自其延伸。</p>
+					<p>本規格依靠於 [<cite><a class="bibref" href="#bib-smil3">SMIL3</a></cite>] 之子集，其中EPUB媒體層疊元素與屬性定義於<a href="#sec-overlays-def">媒體層疊文件中的定義</a>出自其延伸。</p>
 
 				</section>
 
@@ -1083,7 +1083,7 @@ var [data-type] :hover::before {
 			<section id="sec-overlays-introduction" class="informative">
 				<h3 id="x2-1-introduction"><span class="secno">2.1 </span>導論<a class="self-link" aria-label="§" href="#sec-overlays-introduction"></a></h3><p><em>本章節為非規範性。</em></p>
 
-				<p>同步語音朗讀使用於主流電子書、教育工具以及供對印刷物有障礙者所用的電子書格式。在EPUB 3中，這些類型的書籍可以使用媒體層疊文件製作，以敘述供預先錄製的語音朗讀之時間點，以及如何與EPUB內容文件標注關聯。供媒體層疊使用的檔案格式定義如 [<cite><a class="bibref" href="#bib-smil3">SMIL3</a></cite>] 的子集，其為W3C推薦標準，使用XML作為呈現同步多媒體資訊之用。</p>
+				<p>同步語音朗讀使用於主流電子書、教育工具以及作為專為閱讀印刷品有障礙者所調整的電子書。在EPUB 3中，這些類型的書籍可以使用媒體層疊文件製作，以描述預先錄製的語音朗讀之時間點，以及如何與EPUB內容文件標記關聯。供媒體層疊使用的檔案格式定義如 [<cite><a class="bibref" href="#bib-smil3">SMIL3</a></cite>] 的子集，其為W3C推薦標準，使用XML作為呈現同步多媒體資訊之用。</p>
 
 				<p>媒體層疊功能在設計上，對於不支援的<a href="epub-spec.html#dfn-epub-reading-system">EPUB閱讀系統</a>顯示為透明。所以在EPUB出版品中包含媒體層疊不會影響到不支援媒體層疊閱讀系統對EPUB排版的能力，因為媒體層疊不會呈現。</p>
 
@@ -1126,7 +1126,7 @@ var [data-type] :hover::before {
 						<p id="confreq-rs-xhtml-svg"><span class="link-marker"><a href="#confreq-rs-xhtml-svg" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>支援<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>，也<em class="rfc2119" title="MAY">可以</em>支援<a href="epub-spec.html#dfn-svg-content-document">SVG內容文件</a>。</p>
 						<p id="confreq-rs-render"><span class="link-marker"><a href="#confreq-rs-render" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>如在<a href="#sec-behaviors-playback">基本播放</a>中所敘述之方式處理媒體層疊元素。</p>
 						<p id="confreq-rs-navigation"><span class="link-marker"><a href="#confreq-rs-navigation" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>在媒體層疊播放時允許使用者導覽，如在<a href="#sec-rsconf-navigation">導覽</a>中所討論。</p>
-						<p id="confreq-rs-embed"><span class="link-marker"><a href="#confreq-rs-embed" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>緊貼在<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>中處理參照嵌入聲音與影片的規則，如在<a href="#sec-embedded-media">嵌入聲音與影片</a>中所陳述。</p>
+						<p id="confreq-rs-embed"><span class="link-marker"><a href="#confreq-rs-embed" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>謹守在<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>中處理參照嵌入聲音與影片的規則，如在<a href="#sec-embedded-media">嵌入聲音與影片</a>中所陳述。</p>
 						<p id="confreq-rs-tts"><span class="link-marker"><a href="#confreq-rs-tts" class="hidden-reveal"><span>&nbsp;</span></a> </span>支援<a href="epub-spec.html#dfn-text-to-speech">文字轉換語音</a>的閱讀系統<em class="rfc2119" title="SHOULD">應該</em>合乎<a href="epub-spec.html#confreq-rs-epub3-tts">閱讀系統文字轉換語音適用性需求</a> [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] 。</p>
 						<p id="confreq-rs-skip-escape"><span class="link-marker"><a href="#confreq-rs-skip-escape" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="SHOULD">應該</em>提供可跳過性與可跳出性功能，如在<a href="#sec-behaviors-skip-escape">可跳過性與可跳出性</a>中所敘述。</p>
 					</li>
@@ -1136,7 +1136,7 @@ var [data-type] :hover::before {
 
 				<ul class="conformance-list">
 					<li>
-						<p id="confreq-rs-mo-ignore"><span class="link-marker"><a href="#confreq-rs-mo-ignore" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>忽略<a href="epub-spec.html#dfn-manifest">宣告</a><a href="epub-packages.html#elemdef-package-item"><code>item</code>元素</a>中的<code>media-overlay</code>屬性，以及宣告<code>item</code>元素，其<code>media-type</code>屬性值等同於<code>application/smil+xml</code>。</em>。</p>
+						<p id="confreq-rs-mo-ignore"><span class="link-marker"><a href="#confreq-rs-mo-ignore" class="hidden-reveal"><span>&nbsp;</span></a> </span>其<em class="rfc2119" title="MUST">必需</em>忽略<a href="epub-spec.html#dfn-manifest">宣告</a><a href="epub-packages.html#elemdef-package-item"><code>item</code>元素</a>中的<code>media-overlay</code>屬性，以及宣告中<code>item</code>元素，其<code>media-type</code>屬性值等同於<code>application/smil+xml</code>。</em>。</p>
 					</li>
 				</ul>
 
@@ -1145,7 +1145,7 @@ var [data-type] :hover::before {
 			<section id="sec-overlays-def">
 				<h3 id="x2-4-media-overlay-document-definition"><span class="secno">2.4 </span>媒體層疊文件定義<a class="self-link" aria-label="§" href="#sec-overlays-def"></a></h3>
 
-				<p>除另外指定的之外，本章所有定義的元素 [<cite><a class="bibref" href="#bib-xml">XML</a></cite>] 都屬於<code>https://www.w3.org/ns/SMIL</code>命名空間 [<cite><a class="bibref" href="#bib-xml-names">XML-NAMES</a></cite>] 。</p>
+				<p>除另外指定，本章所有定義的元素 [<cite><a class="bibref" href="#bib-xml">XML</a></cite>] 都屬於<code>https://www.w3.org/ns/SMIL</code>命名空間 [<cite><a class="bibref" href="#bib-xml-names">XML-NAMES</a></cite>] 。</p>
 
 				<section id="sec-smil-smil-elem">
 					<h4 id="x2-4-1-the-smil-element"><span class="secno">2.4.1 </span><code>smil</code>元素<a class="self-link" aria-label="§" href="#sec-smil-smil-elem"></a></h4>
@@ -1243,7 +1243,7 @@ var [data-type] :hover::before {
 				<section id="sec-smil-metadata-elem">
 					<h4 id="x2-4-3-the-metadata-element"><span class="secno">2.4.3 </span><code>metadata</code>元素<a class="self-link" aria-label="§" href="#sec-smil-metadata-elem"></a></h4>
 
-					<p><code>metadata</code>元素表示媒體層疊文件的詮釋資料。<code>metadata</code>元素為一延伸點其允許包含使用任何詮釋資訊結構語言的詮釋資料。</p>
+					<p><code>metadata</code>元素表示媒體層疊文件的詮釋資料。<code>metadata</code>元素為一延伸點，其允許包含使用任何詮釋資訊結構語言的詮釋資料。</p>
 
 					<dl class="elemdef" id="elemdef-smil-metadata">
 						<dt>元素名稱</dt>
@@ -1272,7 +1272,7 @@ var [data-type] :hover::before {
 				<section id="sec-smil-body-elem">
 					<h4 id="x2-4-4-the-body-element"><span class="secno">2.4.4 </span><code>body</code>元素<a class="self-link" aria-label="§" href="#sec-smil-body-elem"></a></h4>
 
-					<p><code>body</code>元素為媒體層疊文件中包含表述的開始點。其包含了<code>par</code>與<code>seq</code>元素的主要序列。</p>
+					<p><code>body</code>元素為媒體層疊文件中包含呈現的開始點。其包含了<code>par</code>與<code>seq</code>元素的主要序列。</p>
 
 					<dl class="elemdef" id="elemdef-smil-body">
 						<dt>元素名稱</dt>
@@ -1293,7 +1293,7 @@ var [data-type] :hover::before {
 								</dt>
 								<dd>
 									<p>結構語意表述用以對應在<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>中呼應的元素。</p>
-									<p>其值為由空白分隔的<a href="epub-packages.html#sec-property-datatype">特性</a>列表 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 類別。請參考<a href="#sec-docs-semantic-inflection">語意變化</a>以獲得更多資訊。tic Inflection</a>
+									<p>其值為由空白分隔的<a href="epub-packages.html#sec-property-datatype">特性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 類別列表。請參考<a href="#sec-docs-semantic-inflection">語意變化</a>以獲得更多資訊。tic Inflection</a>
 										for more information.</p>
 								</dd>
 								<dt>
@@ -1357,7 +1357,7 @@ var [data-type] :hover::before {
 								</dt>
 								<dd>
 									<p>結構語意表述用以對應在<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>中呼應的元素。</p>
-									<p>其值為由空白分隔的<a href="epub-packages.html#sec-property-datatype">特性</a>列表 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 類別。請參考<a href="#sec-docs-semantic-inflection">語意變化</a>以獲得更多資訊。</p>
+									<p>其值為由空白分隔的<a href="epub-packages.html#sec-property-datatype">特性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 類別列表。請參考<a href="#sec-docs-semantic-inflection">語意變化</a>以獲得更多資訊。</p>
 								</dd>
 								<dt>
 									<code>id</code>
@@ -1371,7 +1371,7 @@ var [data-type] :hover::before {
 									<code> [必要] </code>
 								</dt>
 								<dd>
-									<p>相對的IRI參照 [<cite><a class="bibref" href="#bib-rfc3987">RFC3987</a></cite>] 以呼應EPUB內容文件，包含一個斷片識別碼用以參照特定的元素如 [<cite><a class="bibref" href="#bib-xptrsh">XPTRSH</a></cite>] 。</p>
+									<p>相對IRI參照 [<cite><a class="bibref" href="#bib-rfc3987">RFC3987</a></cite>] 以呼應EPUB內容文件，包含一個斷片識別碼用以參照特定的元素如 [<cite><a class="bibref" href="#bib-xptrsh">XPTRSH</a></cite>] 。</p>
 									<p>請參考<a href="#sec-media-overlays-structure">結構</a>以取得更多資訊。</p>
 								</dd>
 							</dl>
@@ -1421,7 +1421,7 @@ var [data-type] :hover::before {
 								</dt>
 								<dd>
 									<p>結構語意表述用以對應在<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>中呼應的元素。</p>
-									<p>其值為由空白分隔的<a href="epub-packages.html#sec-property-datatype">特性</a>列表 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 類別。請參考<a href="#sec-docs-semantic-inflection">語意變化</a>以獲得更多資訊。</p>
+									<p>其值為由空白分隔的<a href="epub-packages.html#sec-property-datatype">特性</a>類別列表 [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 類別。請參考<a href="#sec-docs-semantic-inflection">語意變化</a>以獲得更多資訊。</p>
 								</dd>
 								<dt>
 									<code>id</code>
@@ -1476,7 +1476,7 @@ var [data-type] :hover::before {
 									<code> [必要] </code>
 								</dt>
 								<dd>
-									<p>相對的IRI參照 [<cite><a class="bibref" href="#bib-rfc3987">RFC3987</a></cite>] 以呼應EPUB內容文件，包含一個斷片識別碼用以參照特定的元素如 [<cite><a class="bibref" href="#bib-xptrsh">XPTRSH</a></cite>] 。</p>
+									<p>相對IRI參照 [<cite><a class="bibref" href="#bib-rfc3987">RFC3987</a></cite>] 以呼應EPUB內容文件，包含一個斷片識別碼用以參照特定的元素如 [<cite><a class="bibref" href="#bib-xptrsh">XPTRSH</a></cite>] 。</p>
 								</dd>
 								<dt>
 									<code>id</code>
@@ -1525,7 +1525,7 @@ var [data-type] :hover::before {
 									<code> [必要] </code>
 								</dt>
 								<dd>
-									<p>相對或絕對的IRI參照 [<cite><a class="bibref" href="#bib-rfc3987">RFC3987</a></cite>] 至聲音檔案。該聲音檔案<em class="rfc2119" title="MUST">必需</em>為列於<a href="epub-spec.html#sec-core-media-types">核心媒體類型資源</a> [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] 表格中的聲音格式之一。</p>
+									<p>相對或絕對IRI參照 [<cite><a class="bibref" href="#bib-rfc3987">RFC3987</a></cite>] 至聲音檔案。該聲音檔案<em class="rfc2119" title="MUST">必需</em>為列於<a href="epub-spec.html#sec-core-media-types">核心媒體類型資源</a> [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] 表格中的聲音格式之一。</p>
 								</dd>
 								<dt id="attrdef-smil-clipBegin">
 									<code>clipBegin</code>
@@ -1565,7 +1565,7 @@ var [data-type] :hover::before {
 			<section id="sec-docs-intro" class="informative">
 				<h3 id="x3-1-introduction"><span class="secno">3.1 </span>導論<a class="self-link" aria-label="§" href="#sec-docs-intro"></a></h3><p><em>本章節為非規範性。</em></p>
 
-				<p>出版品中預先錄製好的配音可以一系列聲音片段呈現，個別對應到<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>的部分。一個單獨的聲音片段，舉個例子，一般呈現單一句或者段落，但推測與其他片段或者文件中的文字沒有順序關係。媒體層疊解決了同步的問題，使用 [<cite><a class="bibref" href="#bib-smil3">SMIL3</a></cite>] 標記以連結結構化聲音旁白到EPUB內容文件中對應的文字（或者其他媒體）。媒體層疊實際上為SMIL 3.0簡化了的子集以允許播放所定義的片段序列。</p>
+				<p>出版品中預先錄製好的配音可以一系列的聲音片段呈現，個別對應到<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>的一部分。一個單獨的聲音片段，舉個例子，一般呈現單一句子或者段落，但沒辦法和其他片段或文件中的文字建立順序關係。媒體層疊則解決了同步的問題，使用 [<cite><a class="bibref" href="#bib-smil3">SMIL3</a></cite>] 標記以連結有結構的旁白聲音到EPUB內容文件中對應的文字（或者其他媒體）。媒體層疊實際上為SMIL 3.0簡化了的子集以允許播放所定義的片段序列。</p>
 
 				<p>SMIL元素主要用於結構化媒體層疊的元素為<a href="#elemdef-smil-body"><code>body</code></a>（用於主要序列）、<a href="#elemdef-smil-seq"><code>seq</code></a>（序列）以及<a href="#elemdef-smil-par"><code>par</code></a>（平行）。（請參照<a href="#sec-overlays-def">媒體層疊文件定義</a>以獲得更多這些與其他SMIL元素的資訊）。</p>
 
@@ -1616,7 +1616,7 @@ var [data-type] :hover::before {
 				<h3 id="x3-2-relationship-to-the-epub-content-document"><span class="secno">3.2 </span>與EPUB內容文件的關係<a class="self-link" aria-label="§" href="#sec-docs-relations"></a></h3>
 
 				<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>注意事項</span></div><div class="">
-					<p>於本章節中，<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>假定為一份<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>。儘管媒體層疊可被用於<a href="epub-spec.html#dfn-svg-content-document">SVG內容文件</a>，但播放行為可能不穩定，且無法保證其互通性。</p>
+					<p>於本章節中，<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>假定為一份<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>。儘管媒體層疊可被用於<a href="epub-spec.html#dfn-svg-content-document">SVG內容文件</a>，但播放行為可能不恆定，而無法保證其互通性。</p>
 				</div></div>
 
 				<section id="sec-media-overlays-structure">
@@ -1697,7 +1697,7 @@ var [data-type] :hover::before {
 					</div>
 
 					<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>注意事項</span></div><div class="">
-						<p>群組化結構，如章節、圖說、表格與腳註於同一個<code>seq</code>元素的原因是如此一來他們開始與結束位置可以在播放時被識別。閱讀系統可以透過此針對該內容釋義的版面提供播放選項，例如跳過一段長圖說、關閉對換頁的處理（請見<a href="#sec-behaviors-skip-escape">可跳過性與可跳出性</a>），或者客製化閱讀模式也適應結構，如表格。</p>
+						<p>群組化結構，如章節、圖說、表格與腳註於同一個<code>seq</code>元素的原因是，這麼做可以在播放時識別它們的開始與結束位置。閱讀系統可以透過此針對該內容釋義的版面提供播放選項，例如跳過一段長圖說、關閉對換頁的處理（請見<a href="#sec-behaviors-skip-escape">可跳過性與可跳出性</a>），或者調整閱讀模式以適合結構，像是表格。</p>
 					</div></div>
 
 					<aside class="example" id="example-3"><div class="marker">
@@ -1734,7 +1734,7 @@ var [data-type] :hover::before {
 				<section id="sec-media-overlays-granularity" class="informative">
 					<h4 id="x3-2-2-granularity"><span class="secno">3.2.2 </span>粒度（Granularity）<a class="self-link" aria-label="§" href="#sec-media-overlays-granularity"></a></h4><p><em>本章節為非規範性。</em></p>
 
-					<p>媒體層疊<a href="#elemdef-smil-text"><code>text</code></a>元素之<em>src</em>屬性透過其ID [<cite><a class="bibref" href="#bib-xml">XML</a></cite>] 參照到<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>的元素上。故此，媒體層疊的粒度等級依附於EPUB內容文件如何被標記。如果最細的標記等級落在段落層級上，那麼就會是媒體層疊同步能夠發布的可能最細等級。同理，如果有著子段落標記，例如使用 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/textlevel-semantics.html#the-span-element"><code>span</code></a>元素來代表詞句或句子，則可以在媒體層疊中提供更細的力度。越細的粒度月可以讓使用者得到更精準的同步播放結果，無論在依字或詞句導覽時，還是在搜尋文字時，但也會增加媒體層疊文件的檔案容量。</p>
+					<p>媒體層疊<a href="#elemdef-smil-text"><code>text</code></a>元素之<em>src</em>屬性透過其ID [<cite><a class="bibref" href="#bib-xml">XML</a></cite>] 參照到<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>的元素上。故此，媒體層疊的粒度等級依附於EPUB內容文件如何被標記。如果最細的標記等級落在段落層級上，那麼就會是媒體層疊同步能夠發布的可能最細等級。同理，如果有著子段落標記，例如使用 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/textlevel-semantics.html#the-span-element"><code>span</code></a>元素來代表詞句或句子，則可以在媒體層疊中提供更細的粒度。越細的粒度越可以讓使用者得到更精準的同步播放結果，無論在按照字或詞句導覽時，還是在搜尋文字時，但也會增加媒體層疊文件的檔案尺寸。</p>
 
 				</section>
 
@@ -1743,16 +1743,16 @@ var [data-type] :hover::before {
 
 					<p>任何與媒體層疊相關連的<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a><em class="rfc2119" title="MAY">可以</em>包含嵌入媒體像是影片、聲音或者圖片。該媒體層疊<a href="#elemdef-smil-text"><code>text</code></a>元素可以用於透過其ID [<cite><a class="bibref" href="#bib-xml">XML</a></cite>] 值來用於參照這些嵌入媒體。</p>
 
-					<p>當一個<code>text</code>元素參照嵌入媒體其包含聲音時，其匹配的<a href="#elemdef-smil-audio"><code>audio</code></a>元素可以為<em class="rfc2119" title="OPTIONAL">選擇性</em>。</p>
+					<p>當一個<code>text</code>元素參照包含聲音的嵌入媒體時，其匹配的<a href="#elemdef-smil-audio"><code>audio</code></a>元素為<em class="rfc2119" title="OPTIONAL">選擇性</em>。</p>
 
-					<p><a href="epub-spec.html#dfn-author">作者</a><em class="rfc2119" title="SHOULD">應該</em>避免使用腳本來控制參照的嵌入EPUB內容文件媒體播放，這可能會與媒體層疊播放行為產生衝突。</p>
+					<p><a href="epub-spec.html#dfn-author">作者</a><em class="rfc2119" title="SHOULD">應該</em>避免使用腳本來控制所參照在EPUB內容文件中的嵌入媒體播放，這可能會與媒體層疊播放行為產生衝突。</p>
 
 				</section>
 
 				<section id="sec-tts">
 					<h4 id="x3-2-4-text-to-speech"><span class="secno">3.2.4 </span>文字轉換語音<a class="self-link" aria-label="§" href="#sec-tts"></a></h4>
 
-					<p>本規格允許在預錄的聲音斷片外，使用<a href="epub-spec.html#dfn-text-to-speech">文字轉換語音（TTS）</a>。當媒體層疊a href="#elemdef-smil-text"><code>text</code></a>元素沒有對應的<a href="#elemdef-smil-audio"><code>audio</code></a>元素參照到目標<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>元素時，該參照元素的內容<em class="rfc2119" title="MUST">必需</em>適於透過TTS處理。例如，其可以為文字性質的EPUB內容文件元素，或者包含文字的回退。</p>
+					<p>本規格允許在預錄的聲音斷片外，使用<a href="epub-spec.html#dfn-text-to-speech">文字轉換語音（TTS）</a>。當媒體層疊a href="#elemdef-smil-text"><code>text</code></a>元素沒有對應的<a href="#elemdef-smil-audio"><code>audio</code></a>元素參照到目標<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>元素時，該參照元素的內容<em class="rfc2119" title="MUST">必需</em>能夠使用TTS處理。例如，其可以為文字性質的EPUB內容文件元素，或者包含文字的回退。</p>
 
 				</section>
 
@@ -1763,9 +1763,9 @@ var [data-type] :hover::before {
 
 				<p>為了表達語意變化，<a href="epub-contentdocs.html#attrdef-epub-type"><code>epub:type</code>屬性</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] <em class="rfc2119" title="MAY">可以</em>添加到媒體層疊<a href="#elemdef-smil-par"><code>par</code></a>、<a href="#elemdef-smil-seq"><code>seq</code></a>與<a href="#elemdef-smil-body"><code>body</code></a>元素。</p>
 
-				<p>媒體層疊<code>epub:type</code>屬性的值限制尚須與<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>中的<code>epub:type</code>屬性一致。請參考<a href="epub-contentdocs.html#sec-xhtml-semantic-inflection">語意變化</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] 以了解細節。</p>
+				<p>媒體層疊<code>epub:type</code>屬性的值限制需與<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>中的<code>epub:type</code>屬性一致。請參考<a href="epub-contentdocs.html#sec-xhtml-semantic-inflection">語意變化</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] 以了解細節。</p>
 
-				<p><code>epub:type</code>屬性可使閱讀系統行為適用於所指出的語意類型。這些行為的範例為<a href="#sec-behaviors-skip-escape">可跳過性與可跳出性</a>及<a href="#note-table-reading-mode">注意事項</a>。</p>
+				<p><code>epub:type</code>屬性可使閱讀系統行為適用於所指示的語意類型。這些行為的範例為<a href="#sec-behaviors-skip-escape">可跳過性與可跳出性</a>及<a href="#note-table-reading-mode">注意事項</a>。</p>
 
 				<aside class="example" id="example-4"><div class="marker">
       <a class="self-link" href="#example-4">範例4</a>
@@ -1793,7 +1793,7 @@ var [data-type] :hover::before {
 <span class="hljs-tag">&lt;/<span class="hljs-name">smil</span>&gt;</span></code></pre>
 				</aside>
 
-				<p>本規格採用用語相關機制定義於<a href="http://w3c.github.io/publ-epub-revision/epub32/spec/epub-contentdocs.html#sec-contentdocs-vocab-association">用語關聯</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] 且無變更。來自<a href="http://w3c.github.io/publ-epub-revision/epub32/spec/epub-contentdocs.html#sec-contentdocs-default-vocab">預設用語</a>的術語<em class="rfc2119" title="MUST">必需</em>在覆蓋文件中以無字首的方式使用。</p>
+				<p>本規格採用用語相關機制定義於<a href="http://w3c.github.io/publ-epub-revision/epub32/spec/epub-contentdocs.html#sec-contentdocs-vocab-association">用語關聯</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] 且沒有任何變更。來自<a href="http://w3c.github.io/publ-epub-revision/epub32/spec/epub-contentdocs.html#sec-contentdocs-default-vocab">預設用語集</a>的術語<em class="rfc2119" title="MUST">必需</em>在覆蓋文件中以無字首的方式使用。</p>
 
 				<p>媒體層疊<em class="rfc2119" title="MAY">可以</em>使用額外的用語，透過<a href="#attrdef-smil-prefix"><code>epub:prefix</code></a>屬性在根<code>smil</code>元素中進行定義。</p>
 
@@ -1804,18 +1804,18 @@ var [data-type] :hover::before {
 
 				<p>正在播放的<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>元素之視覺表現資訊<em class="rfc2119" title="MAY">可以</em>透過CSS樣式表中作者定義的class來表述。這些作者定義的class名稱<em class="rfc2119" title="SHOULD">應該</em>在<a href="epub-spec.html#dfn-package-document">包裝文件</a>的詮釋資料中使用詮釋資料特性<a href="#active-class"><code>active-class</code></a>及<a href="#playback-active-class"><code>playback-active-class</code></a>來進行宣告。這些class名稱才可被閱讀系統發現。</p>
 
-				<p><code>active-class</code>與<code>playback-active-class</code>特性<em class="rfc2119" title="MUST NOT">不得</em>與<a href="epub-packages.html#attrdef-refines"><code>refines</code>屬性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 一起使用，由於這些通常會被套用於整份<a href="epub-spec.html#dfn-rendition">內容釋義</a>。</p>
+				<p><code>active-class</code>與<code>playback-active-class</code>特性<em class="rfc2119" title="MUST NOT">不得</em>與<a href="epub-packages.html#attrdef-refines"><code>refines</code>屬性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 一起使用，由於這些特性一般視為要套用在整份<a href="epub-spec.html#dfn-rendition">內容釋義</a>。</p>
 
 				<p>本範例展示作者如何連結樣式資訊與正在播放的EPUB內容文件。</p>
 
 				<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>注意事項</span></div><div class="">
-					<p>儘管本範例使用class名稱<code>-epub-media-overlay-active</code>與<code>-epub-media-overlay-playing</code>，但任何class名稱都可使用。選擇的class名稱可使用任何支援的CSS功能。</p>
+					<p>儘管本範例使用class名稱<code>-epub-media-overlay-active</code>與<code>-epub-media-overlay-playing</code>，但可使用任何class名稱。選擇的class名稱可使用所有支援的CSS功能。</p>
 				</div></div>
 
 				<aside class="example" id="example-5"><div class="marker">
       <a class="self-link" href="#example-5">範例5</a>
     </div>
-					<p>作者定義的CSS class名稱，使用詮釋資料特性<a href="#active-class"><code>active-class</code></a>與<a href="#playback-active-class"><code>playback-active-class</code></a>在包裝文件中宣告。</p>
+					<p>在包裝文件中使用詮釋資料特性<a href="#active-class"><code>active-class</code></a>與<a href="#playback-active-class"><code>playback-active-class</code></a>宣告作者定義的CSS class名稱。</p>
 					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"media:active-class"</span>&gt;</span>-epub-media-overlay-active<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"media:playback-active-class"</span>&gt;</span>-epub-media-overlay-playing<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></code></pre>
 
@@ -1842,9 +1842,9 @@ var [data-type] :hover::before {
 
 				</aside>
 
-				<p>本範例中，閱讀系統可以套用作者定義的<code>-epub-media-overlay-active</code>Class到每一個在EPUB內容文件中的文字元素，在播放時會變得有效。反過來說，當元素不再播放時，將會移除其class名稱。使用者將會看到每一個EPUB內容文件元素在播放時將會套用黃色背景的樣式。</p>
+				<p>本範例中，閱讀系統可以套用作者定義的<code>-epub-media-overlay-active</code>class到每一個在EPUB內容文件中在播放時啟用的文字元素。反過來說，當元素不再播放時，要移除其class名稱。使用者將會看到每一個EPUB內容文件元素在播放時將會套用黃色背景的樣式。</p>
 
-				<p>閱讀系統也可以套用作者定義的<code>-epub-media-overlay-playing</code>Class，當媒體層疊開始時，將會套用到該EPUB內容文件的文件元素。當播放結束時，Class名稱將會被移除。以XHTML內容文件為例，class名稱將會套用到<code>html</code>元素。對SVG內容文件而言，將會套用到<code>svg</code>元素。使用者將會在媒體層疊播放時，看到所有未在作用的文字元素變成灰色。當播放停止，所有元素的顏色又會回到其預設值。</p>
+				<p>閱讀系統也可以套用作者定義的<code>-epub-media-overlay-playing</code>class，當媒體層疊開始時，套用到該EPUB內容文件的文件元素。當播放結束時，class名稱將會被移除。以XHTML內容文件為例，class名稱將會套用到<code>html</code>元素。對SVG內容文件而言，將會套用到<code>svg</code>元素。使用者將會在媒體層疊播放時，看到所有未在作用的文字元素變成灰色。當播放停止，所有元素的顏色又會回到其預設值。</p>
 
 			</section>
 
@@ -1863,7 +1863,7 @@ var [data-type] :hover::before {
 					<aside class="example" id="example-6"><div class="marker">
       <a class="self-link" href="#example-6">範例6</a>
     </div>
-						<p>以下範例呈現包裝文件中EPUB內容文件與其相關連媒體層疊在宣告中的項目。</p>
+						<p>以下範例呈現包裝文件中EPUB內容文件與其相關連媒體層疊在宣告中的登錄項目。</p>
 						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">manifest</span>&gt;</span>
    <span class="hljs-tag">&lt;<span class="hljs-name">item</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"ch1"</span> 
          <span class="hljs-attr">href</span>=<span class="hljs-string">"chapter1.xhtml"</span> 
@@ -1883,7 +1883,7 @@ var [data-type] :hover::before {
 
 					<p><a href="epub-spec.html#dfn-package-document">包裝文件</a><em class="rfc2119" title="MUST">必需</em>在<a href="epub-packages.html#elemdef-package-item"><code>meta</code>元素</a>以<a href="#duration"><code>duration</code>特性</a>中包含整個<a href="epub-spec.html#dfn-rendition">內容釋義</a>的音檔長度。</p>
 
-					<p>此外每一個EPUB內容文件與相關媒體層疊的音檔長度也<em class="rfc2119" title="MUST">必需</em>提供。<a href="epub-packages.html#attrdef-refines"><code>refines</code>屬性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 用於連結每一段長度宣告到呼應的<a href="epub-spec.html#dfn-manifest">宣告</a><a href="epub-packages.html#elemdef-package-item"><code>item</code></a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。</p>
+					<p>此外每一個EPUB內容文件與相關媒體層疊的音檔長度也<em class="rfc2119" title="MUST">必需</em>個別提供。<a href="epub-packages.html#attrdef-refines"><code>refines</code>屬性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 用於連結每一段長度宣告到呼應的<a href="epub-spec.html#dfn-manifest">宣告</a><a href="epub-packages.html#elemdef-package-item"><code>item</code></a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] 。</p>
 
 					<p><a href="epub-spec.html#dfn-author">作者</a>也<em class="rfc2119" title="MAY">可以</em>在包裝文件中包含旁白<a href="#narrator"><code>narrator</code></a>的資訊，也可以將<a href="#sec-docs-assoc-style">作者定義的CSS class名稱</a>套用到正在播放的EPUB內容文件元素上。</p>
 
@@ -1919,7 +1919,7 @@ var [data-type] :hover::before {
 			<section id="sec-behaviors-loading">
 				<h3 id="x4-1-loading-the-media-overlay"><span class="secno">4.1 </span>載入媒體層疊<a class="self-link" aria-label="§" href="#sec-behaviors-loading"></a></h3>
 
-				<p>當<a href="epub-spec.html#dfn-epub-reading-system">EPUB閱讀系統</a>載入<a href="epub-spec.html#dfn-package-document">包裝文件</a>時，其<em class="rfc2119" title="MUST">必需</em>參考<a href="epub-spec.html#dfn-manifest">宣告</a><a href="epub-packages.html#elemdef-package-item"><code>item</code>元素</a>中<code>media-overlay</code>屬性已發現<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>中對應的媒體層疊。播放<em class="rfc2119" title="MUST">必需</em>開始於媒體層疊元素所對應到所欲對應的EPUB內容文件的開始點。請注意EPUB內容文件的開始<em class="rfc2119" title="MAY">可以</em>對應到一份媒體層疊的開始元素或者中間的元素。當媒體層疊文件結束播放時，閱讀系統<em class="rfc2119" title="SHOULD">應該</em>載入下一個EPUB內容文件（如在包裝文件<a href="epub-spec.html#dfn-spine">書脊</a>中指定）同時載入其對應的媒體層疊文件，提供內容。</p>
+				<p>當<a href="epub-spec.html#dfn-epub-reading-system">EPUB閱讀系統</a>載入<a href="epub-spec.html#dfn-package-document">包裝文件</a>時，其<em class="rfc2119" title="MUST">必需</em>參考<a href="epub-spec.html#dfn-manifest">宣告</a><a href="epub-packages.html#elemdef-package-item"><code>item</code>元素</a>中<code>media-overlay</code>屬性，用以發現<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>中對應的媒體層疊。播放<em class="rfc2119" title="MUST">必需</em>開始於媒體層疊元素所對應到的EPUB內容文件之開始點。請注意EPUB內容文件的開始<em class="rfc2119" title="MAY">可以</em>對應到一份媒體層疊的開始元素或者中間的元素。當媒體層疊文件結束播放時，閱讀系統<em class="rfc2119" title="SHOULD">應該</em>載入下一個EPUB內容文件（如在包裝文件<a href="epub-spec.html#dfn-spine">書脊</a>中指定）同時載入其對應的媒體層疊文件以提供內容。</p>
 
 			</section>
 
@@ -1929,24 +1929,24 @@ var [data-type] :hover::before {
 				<section id="sec-rsconf-timing-synch">
 					<h4 id="x4-2-1-timing-and-synchronization"><span class="secno">4.2.1 </span>時間與同步<a class="self-link" aria-label="§" href="#sec-rsconf-timing-synch"></a></h4>
 
-					<p>閱讀系統<em class="rfc2119" title="MUST">必需</em>序列中<a href="#elemdef-smil-body"><code>body</code></a>元素中緊接的子元素。<a href="#elemdef-smil-seq"><code>seq</code></a>元素的子元素<em class="rfc2119" title="MUST">必需</em>被依序處理，當最後一個子元素結束播放時，播放完成。<a href="#elemdef-smil-par"><code>par</code></a>元素的子元素<em class="rfc2119" title="MUST">必需</em>被平行處理（每一個都需要同時開始），當所有子元素結束播放時，播放完成。當<code>body</code>元素的最後一個子元素結束播放時，媒體層疊文件的播放結束。</p>
+					<p>閱讀系統<em class="rfc2119" title="MUST">必需</em>立即處理序列中<a href="#elemdef-smil-body"><code>body</code></a>元素中緊接的子元素。<em class="rfc2119" title="MUST">必需</em>依序處理<a href="#elemdef-smil-seq"><code>seq</code></a>元素的子元素，當最後一個子元素結束播放時，播放完畢。<em class="rfc2119" title="MUST">必需</em>平行處理（每一個都需要同時開始）<a href="#elemdef-smil-par"><code>par</code></a>元素的子元素，當所有子元素結束播放時，播放完畢。當<code>body</code>元素的最後一個子元素播放結束時，媒體層疊文件也播放結束。</p>
 
 				</section>
 
 				<section id="sec-rsconf-rendering-audio">
 					<h4 id="x4-2-2-rendering-audio"><span class="secno">4.2.2 </span>處理聲音<a class="self-link" aria-label="§" href="#sec-rsconf-rendering-audio"></a></h4>
 
-					<p>當在呈現媒體層疊的<a href="#elemdef-smil-audio"><code>audio</code></a>元素時，閱讀系統<em class="rfc2119" title="MUST">必需</em>播放<code>src</code>屬性中參照的聲音資源，片段的時間點透過所給予的<a href="#attrdef-smil-clipBegin"><code>clipBegin</code></a>屬性開始，並透過所給予的<a href="#attrdef-smil-clipEnd"><code>clipEnd</code></a>屬性結束。<em class="rfc2119" title="MUST">必需</em>注意以下規則：</p>
+					<p>當呈現媒體層疊的<a href="#elemdef-smil-audio"><code>audio</code></a>元素時，閱讀系統<em class="rfc2119" title="MUST">必需</em>播放<code>src</code>屬性中參照的聲音資源，片段的時間點透過所給予的<a href="#attrdef-smil-clipBegin"><code>clipBegin</code></a>屬性開始，並透過所給予的<a href="#attrdef-smil-clipEnd"><code>clipEnd</code></a>屬性結束。<em class="rfc2119" title="MUST">必需</em>注意以下規則：</p>
 
 					<ul>
 						<li>
 							<p>當<code>clipBegin</code>未被指定時，其值預想為「<code>0</code>」。</p>
 						</li>
 						<li>
-							<p>當<code>clipEnd</code>未被指定時，其值預想為物理媒體的完整長度。</p>
+							<p>當<code>clipEnd</code>未被指定時，其值預想為實體媒體的完整長度。</p>
 						</li>
 						<li>
-							<p>當<code>clipEnd</code>超過物理媒體的完整長度時，其值預想為物理媒體的完整長度。</p>
+							<p>當<code>clipEnd</code>超過實體媒體的完整長度時，其值預想為實體媒體的完整長度。</p>
 						</li>
 					</ul>
 
@@ -1957,7 +1957,7 @@ var [data-type] :hover::before {
 				<section id="sec-rsconf-rendering-text">
 					<h4 id="x4-2-3-rendering-epub-content-document-elements"><span class="secno">4.2.3 </span>處理EPUB內容文件元素<a class="self-link" aria-label="§" href="#sec-rsconf-rendering-text"></a></h4>
 
-					<p>當呈現媒體層疊<a href="#elemdef-smil-text"><code>text</code></a>元素時，閱讀系統<em class="rfc2119" title="SHOULD">應該</em>確保透過<code>src</code>屬性參照於EPUB內容文件中的元素在<a href="epub-spec.html#dfn-viewport">顯示範圍</a>中可見。當媒體層疊播放時，閱讀系統有Viewport的話<em class="rfc2119" title="SHOULD">應該</em>在EPUB內容文件中添加於詮釋資料特性中所給予的<a href="#active-class"><code>active-class</code></a>>及<a href="#playback-active-class"><code>playback-active-class</code></a>之class名稱到適當的元素上。反之，在播放狀態改變時class名稱<em class="rfc2119" title="SHOULD">應該</em>被移除，如<a href="#sec-docs-assoc-style">連結樣式資訊</a>所解釋。</p>
+					<p>當呈現媒體層疊<a href="#elemdef-smil-text"><code>text</code></a>元素時，閱讀系統<em class="rfc2119" title="SHOULD">應該</em>確實透過<code>src</code>屬性參照EPUB內容文件中的元素，在<a href="epub-spec.html#dfn-viewport">顯示範圍</a>中可見。當媒體層疊播放時，若閱讀系統有顯示範圍，則<em class="rfc2119" title="SHOULD">應該</em>在EPUB內容文件中添加於詮釋資料特性中所給予的<a href="#active-class"><code>active-class</code></a>>及<a href="#playback-active-class"><code>playback-active-class</code></a>之class名稱到適當的元素上。反之，在播放狀態改變時class名稱<em class="rfc2119" title="SHOULD">應該</em>被移除，如<a href="#sec-docs-assoc-style">連結樣式資訊</a>所解釋。</p>
 
 					<p><code>active-class</code>及<code>playback-active-class</code>詮釋資料特性為<em class="rfc2119" title="OPTIONAL">選擇性</em>，當沒有時，閱讀系統行為由實裝端指定。</p>
 
@@ -1971,16 +1971,16 @@ var [data-type] :hover::before {
 				<section id="sec-rsconf-navigation">
 					<h4 id="x4-3-1-navigation"><span class="secno">4.3.1 </span>導覽<a class="self-link" aria-label="§" href="#sec-rsconf-navigation"></a></h4>
 
-					<p>由於媒體層疊與<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>緊密結合，所以閱讀系統可以很簡單地基於目前媒體層疊播放的位置來尋找到EPUB內容文件中的位置。當使用者中斷同步播放並且導覽轉移到<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的不同部分時，同步播放<em class="rfc2119" title="MUST">必需</em>從該點繼續。例如，當在EPUB內容文件中指定的頁數為預期的位置時，須從媒體層疊中相同位置的點開始播放。</p>
+					<p>由於媒體層疊與<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>緊密連結，所以閱讀系統可以很簡單地利用目前媒體層疊播放的位置來尋找到EPUB內容文件中的位置。當使用者中斷同步播放並且導覽轉移到<a href="epub-spec.html#dfn-epub-publication">EPUB出版品</a>的不同部分時，同步播放<em class="rfc2119" title="MUST">必需</em>從該點繼續。例如，當在EPUB內容文件中指定的頁碼為想要前往的位置時，則需從媒體層疊中相同位置的點開始播放。</p>
 
-					<p>相同的方法允許在使用者選擇<a href="epub-spec.html#dfn-epub-navigation-document">EPUB導覽文件</a>中導覽點時同步播放媒體層疊。閱讀系統載入供該檔案的媒體層疊並且尋找正確的點來開始播放，其基於導覽點目標的ID [<cite><a class="bibref" href="#bib-xml">XML</a></cite>] 。</p>
+					<p>相同的方法允許在使用者選擇<a href="epub-spec.html#dfn-epub-navigation-document">EPUB導覽文件</a>中導覽點時同步播放媒體層疊。閱讀系統載入供該檔案的媒體層疊並且尋找正確的點來開始播放，依據其導覽點目標的ID [<cite><a class="bibref" href="#bib-xml">XML</a></cite>] 。</p>
 
 					<div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-3" aria-level="5"><span>注意事項</span></div><div class="">
-						<p>媒體層疊文件可以直接與導覽文件相關，以提供對其內容的同步播放，且無論該<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>是否包含於書脊中。請見<a href="epub-spec.html#dfn-spine">spine</a>. See <a href="#sec-nav-doc"><em>EPUB導覽文件</em></a>以了解更多資訊。</p>
+						<p>媒體層疊文件可以直接與導覽文件相關連，以提供其內容的同步播放，無論該<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>是否包含於<a href="epub-spec.html#dfn-spine">書脊</a>中。請見<a href="#sec-nav-doc"><em>EPUB導覽文件</em></a>以了解更多資訊。</p>
 					</div></div>
 
 					<div class="note" role="note" id="note-table-reading-mode"><div role="heading" class="note-title marker" id="h-note-4" aria-level="5"><span>注意事項</span></div><div class="">
-						<p>媒體層疊文件元素可以與EPUB內容文件架構，例如表格，相關連。閱讀系統需要確保媒體層疊播放在使用者導覽表格之行及列時保持同步。閱讀系統也可以在處理表格內容前播放對應的表格標題。</p>
+						<p>媒體層疊文件元素可以與EPUB內容文件結構相關連，例如表格。閱讀系統需要確保媒體層疊播放在使用者導覽表格之行及資料格時保持同步。閱讀系統也可以在處理表格內容前播放對應的表格標題。</p>
 					</div></div>
 
 				</section>
@@ -1988,27 +1988,27 @@ var [data-type] :hover::before {
 				<section id="sec-embedded-media">
 					<h4 id="x4-3-2-embedded-audio-and-video"><span class="secno">4.3.2 </span>嵌入影音<a class="self-link" aria-label="§" href="#sec-embedded-media"></a></h4>
 
-					<p><a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>與媒體層疊關聯的話，<em class="rfc2119" title="MAY">可以</em>自身包含嵌入的影片與聲音媒體，其<em class="rfc2119" title="MAY">可以</em>透過媒體層疊元素指向。不像文字與圖片，影片與聲音媒體具備自有的播放長度。結果上，當閱讀系統按照媒體層疊處理同步化時，相關EPUB內容文件中預設嵌入聲音與影片媒體的播放行為<em class="rfc2119" title="MUST">必需</em>要被覆蓋。</p>
+					<p>與與媒體層疊關聯的<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>，自身<em class="rfc2119" title="MAY">可以</em>包含嵌入的影片與聲音媒體，並且<em class="rfc2119" title="MAY">可以</em>透過媒體層疊元素指向。不像文字與圖片，影片與聲音媒體自身具備播放長度。結果上，當閱讀系統按照媒體層疊同步處理時，相關EPUB內容文件中預設嵌入聲音與影片媒體的預設播放行為<em class="rfc2119" title="MUST">必需</em>要被覆蓋。</p>
 
-					<p>請注意以下規則僅套用到相關連EPUB內容文件中<em>參照</em>的 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-video-element"><code>video</code></a>與<a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-audio-element"><code>audio</code></a>元素。也就是說，規則僅套用到在媒體層疊中<a href="#elemdef-smil-text"><code>text</code></a>元素所指向的元素（即為，透過<code>src</code>屬性）。沒有被媒體層疊元素所參照的嵌入媒體並非這些規則的標的。</p>
+					<p>請注意以下規則僅套用到相關連EPUB內容文件中<em>參照</em>的 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-video-element"><code>video</code></a>與<a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-audio-element"><code>audio</code></a>元素。也就是說，規則僅套用到在媒體層疊中<a href="#elemdef-smil-text"><code>text</code></a>元素所指向的元素（即為，透過<code>src</code>屬性）。沒有被媒體層疊元素所參照的嵌入媒體無須遵從這些規則。</p>
 
 					<ul>
 						<li>
 							<p>所有在EPUB內容文件中受參照的嵌入聲音與影片媒體<em class="rfc2119" title="MUST">必需</em>使其公開的播放介面不啟動（一般為：播放/暫停控制，時間軸，音量等）。此項行為為必要，以避免在媒體層疊定義中所排定的播放序列與透過使用者互動或者執行腳本的任意播放行為相互干擾。做為結果，當閱讀系統在播放模式時，其<em class="rfc2119" title="SHOULD">應該</em>：</p>
 							<ul>
 								<li>
-									<p>隱藏頁面上所有獨立影音使用者介面控制列，其取代定義在 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 中<a href="https://www.w3.org/TR/html/semantics-embedded-content.html#element-attrdef-mediaelements-controls"><code>controls</code></a>屬性的預設行為。</p>
+									<p>隱藏頁面上個別影音使用者介面控制列，其取代定義在 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 中<a href="https://www.w3.org/TR/html/semantics-embedded-content.html#element-attrdef-mediaelements-controls"><code>controls</code></a>屬性的預設行為。</p>
 								</li>
 								<li>
-									<p>避免嵌入於EPUB內容文件的腳本啟動JavaScript影音播放API（即為，寫成部分預設行為）。也<em class="rfc2119" title="RECOMMENDED">推薦</em>內容製作者不要嵌入腳本供控制播放嵌入影音媒體。已經發佈的媒體層疊因此可以取得對同步呈現的完整控制，而無須面對任何受到腳本啟動客製化行為的風險。</p>
+									<p>避免嵌入於EPUB內容文件的腳本啟動JavaScript影音播放API（即為，寫成部分預設行為）。也<em class="rfc2119" title="RECOMMENDED">推薦</em>內容製作者不要嵌入腳本來控制播放嵌入影音媒體。發佈的媒體層疊因此可以取得對同步呈現的完整控制，而無須面對任何受到腳本啟動客製化行為的風險。</p>
 								</li>
 							</ul>
 						</li>
 						<li>
-							<p>所有EPUB內容文件中參照的嵌入影音媒體<em class="rfc2119" title="MUST">必需</em>初始化到「停止」狀態，並且準備尤其內容流的零點位置播放（最好能顯示使用 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-video-element"><code>poster</code></a>屬性指定的圖片）。這項需求取代由 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-video-element"><code>autoplay</code></a>屬性所定義的預設行為。</p>
+							<p>所有EPUB內容文件中參照的嵌入影音媒體<em class="rfc2119" title="MUST">必需</em>初始化到「停止」狀態，並且準備由其內容流的零點位置播放（最好能使用 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-video-element"><code>poster</code></a>屬性指定的圖片顯示）。這項需求取代了由 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-video-element"><code>autoplay</code></a>屬性所定義的預設行為。</p>
 						</li>
 						<li>
-							<p>當EPUB內容文件元素啟動時，需套用CSS樣式表的視覺強調規則，無論該元素之<code>src</code>屬性所參照的內容類型（例如，在詮釋資料特性<a href="#active-class"><code>active-class</code></a>定義的CSS class名稱<em class="rfc2119" title="SHOULD">應該</em>被套用在其刊載EPUB內容文件中可見的影音播放器控制項上）。</p>
+							<p>當EPUB內容文件元素啟動時，需套用CSS樣式表的視覺強調規則，無論該元素之<code>src</code>屬性所參照的內容類型（例如，在詮釋資料特性<a href="#active-class"><code>active-class</code></a>定義的CSS class名稱<em class="rfc2119" title="SHOULD">應該</em>被套用在承載其之EPUB內容文件中可見的影音播放器控制項上）。</p>
 						</li>
 						<li>
 							<p>除了媒體層疊啟動時對文字斷片以及圖片的預設行為外，影音播放<em class="rfc2119" title="MUST">必需</em>按照指定的媒體層疊同步長度開始以及停止（根據標準 [<cite><a class="bibref" href="#bib-smil3">SMIL3</a></cite>] 計時模型）。會有兩種可能的狀態：</p>
@@ -2023,7 +2023,7 @@ var [data-type] :hover::before {
 							</ul>
 						</li>
 						<li>
-							<p>當<code>text</code>元素於媒體層疊中結束啟動狀態，並且其指向到嵌入影音媒體，被參照的媒體<em class="rfc2119" title="MUST">必需</em>被重置到初始的「停止」狀態，準備被從其內容流的零點位置準備被播放（最好能顯示使用 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <code>poster</code>屬性指定的圖片）。</p>
+							<p>當<code>text</code>元素於媒體層疊中結束啟動狀態，並且其指向到嵌入影音媒體，被參照的媒體<em class="rfc2119" title="MUST">必需</em>被重置到初始的「停止」狀態，準備被從其內容流的零點位置準備被播放（最好能使用 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <code>poster</code>屬性指定的圖片顯示）。</p>
 						</li>
 					</ul>
 
@@ -2032,9 +2032,9 @@ var [data-type] :hover::before {
 				<section id="sec-text-to-speech">
 					<h4 id="x4-3-3-text-to-speech"><span class="secno">4.3.3 </span>文字轉換語音<a class="self-link" aria-label="§" href="#sec-text-to-speech"></a></h4>
 
-					<p>當媒體層疊<a href="#elemdef-smil-text"><code>text</code></a>元素沒有匹配的<a href="#elemdef-smil-audio"><code>audio</code></a>元素，參照目標<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>的文字時，支援<a href="epub-spec.html#dfn-text-to-speech">文字轉換語音（TTS）</a>的閱讀系統<em class="rfc2119" title="SHOULD">應該</em>使用TTS處理受參照的文字。</p>
+					<p>當媒體層疊的<a href="#elemdef-smil-text"><code>text</code></a>元素沒有匹配的<a href="#elemdef-smil-audio"><code>audio</code></a>元素參照到目標<a href="epub-spec.html#dfn-epub-content-document">EPUB內容文件</a>的文字時，支援<a href="epub-spec.html#dfn-text-to-speech">文字轉換語音（TTS）</a>的閱讀系統<em class="rfc2119" title="SHOULD">應該</em>使用文字轉換語音處理受參照的文字。</p>
 
-					<p>如同閱讀系統適用性需求，提供在目標EPUB內容文件的語音相關資訊<em class="rfc2119" title="SHOULD">應該</em>被用於播放聲音流作為媒體層疊處理的一部分。請參照<a href="epub-spec.html#confreq-rs-epub3-tts">閱讀系統文字轉換語音適用性需求</a> [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] 。</p>
+					<p>如閱讀系統適用性需求所述，目標EPUB內容文件中提供的語音相關資訊<em class="rfc2119" title="SHOULD">應該</em>被用於播放聲音流作為媒體層疊處理的一部分。請參照<a href="epub-spec.html#confreq-rs-epub3-tts">閱讀系統文字轉換語音適用性需求</a> [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] 。</p>
 
 					<p>媒體層疊<code>text</code>元素的生命週期呼應到相關語音合成的朗讀時間。該<code>text</code>元素所默認的長度（或者由從母<code>par</code>元素推測）透過文字轉換語音引擎處理而決定，所以在製作時無法提早知道（要素如語音速度、暫停以及其他音律參數都會影響到聲音輸出）。</p>
 
@@ -2048,12 +2048,12 @@ var [data-type] :hover::before {
 				<section id="sec-skippability">
 					<h4 id="x4-4-1-skippability"><span class="secno">4.4.1 </span>可跳過性（Skippability）<a class="self-link" aria-label="§" href="#sec-skippability"></a></h4>
 
-					<p>當在閱讀時，使用者也許會希望開啟或關閉某些內容的功能，例如腳註、頁碼或者其他類型的次要內容。這項功能稱為可跳過性。閱讀系統<em class="rfc2119" title="SHOULD">應該</em>使用媒體層疊元素中<a href="#sec-docs-semantic-inflection"><code>epub:type</code></a>屬性所提供的語意資訊來判斷何時提供使用者跳過功能的選項。</p>
+					<p>當在閱讀時，使用者也許會希望開啟或關閉某些內容的功能，例如注釋、頁碼或者其他類型的次要內容。這項功能稱為可跳過性。閱讀系統<em class="rfc2119" title="SHOULD">應該</em>使用媒體層疊元素中<a href="#sec-docs-semantic-inflection"><code>epub:type</code></a>屬性所提供的語意資訊來判斷何時提供使用者跳過功能的選項。</p>
 
 					<aside class="example" id="example-8"><div class="marker">
       <a class="self-link" href="#example-8">範例8</a>
     </div>
-						<p>以下範例呈現有換頁的媒體層疊文件。閱讀系統可以提供使用者選項來開啟及關閉換頁/頁碼告知，這些聽起來顯得複雜。</p>
+						<p>以下範例呈現有分頁標記的媒體層疊文件。閱讀系統可以提供使用者選項來開啟及關閉換頁/頁碼告知，以避免聽起來太複雜。</p>
 						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">smil</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/ns/SMIL"</span> 
       <span class="hljs-attr">xmlns:epub</span>=<span class="hljs-string">"http://www.idpf.org/2007/ops"</span>
       <span class="hljs-attr">version</span>=<span class="hljs-string">"3.0"</span>&gt;</span>
@@ -2088,7 +2088,7 @@ var [data-type] :hover::before {
 					<aside class="example" id="example-9"><div class="marker">
       <a class="self-link" href="#example-9">範例9</a>
     </div>
-						<p>以下範例呈現一份有換頁的EPUB內容文件。</p>
+						<p>以下範例呈現一份有分頁標記的EPUB內容文件。</p>
 						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> … &gt;</span>
     …
     <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
@@ -2101,7 +2101,7 @@ var [data-type] :hover::before {
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 					</aside>
 
-					<p>以下非窮舉清單呈現來自 [<cite><a class="bibref" href="#bib-epub-ssv">EPUB-SSV</a></cite>] 的術語，閱讀系統可以依此提供可跳過性選項：</p>
+					<p>以下非窮舉的清單列出 [<cite><a class="bibref" href="#bib-epub-ssv">EPUB-SSV</a></cite>] 的術語，閱讀系統可以依此提供可跳過性選項：</p>
 
 					<ul>
 						<li>
@@ -2115,16 +2115,16 @@ var [data-type] :hover::before {
 						</li>
 					</ul>
 
-					<p>支援可跳過性的閱讀系統，<em class="rfc2119" title="SHOULD NOT">不應</em>推斷其基於<code>epub:type</code>的值。</p>
+					<p>閱讀系統若支援可跳過性，其基於<code>epub:type</code>，則<em class="rfc2119" title="SHOULD NOT">不應</em>推斷其值。</p>
 
 				</section>
 
 				<section id="sec-escabaility">
 					<h4 id="x4-4-2-escapability"><span class="secno">4.4.2 </span>可跳出性（Escapability）<a class="self-link" aria-label="§" href="#sec-escabaility"></a></h4>
 
-					<p>可跳出的項目為巢狀結構，例如表格以及列表，使用者也許希望能夠跳過，直接從巢狀結構的下一個點開始繼續閱讀。可跳出性功能不同於可跳過性，差別在於其非啟動或者關閉整個類型的項目，但提供了可離開的選項（即為，使用者可以在選擇跳出前聽到一部分內容）。</p>
+					<p>可跳出的項目為巢狀結構，例如表格以及列表，使用者也許希望能夠跳過，直接從巢狀結構後開始繼續閱讀。可跳出性功能不同於可跳過性，差別在於不是開關項目的整個種類，而是提供了可離開的選擇（也就是，使用者會在決定要跳出前聽到一部分內容）。</p>
 
-					<p>閱讀系統<em class="rfc2119" title="SHOULD">應該</em>允許跳出巢狀結構。閱讀系統<em class="rfc2119" title="MUST">必需</em>透過<a href="#sec-docs-semantic-inflection"><code>epub:type</code></a>屬性的值來判斷巢狀內容的開始，以及<em class="rfc2119" title="SHOULD">應該</em>提供使用者選項以跳過對該結構的播放並且無論接著的內容為何，都能繼續播放。</p>
+					<p>閱讀系統<em class="rfc2119" title="SHOULD">應該</em>允許跳出巢狀結構。閱讀系統<em class="rfc2119" title="MUST">必需</em>透過<a href="#sec-docs-semantic-inflection"><code>epub:type</code></a>屬性的值來判斷巢狀內容的開始，以及<em class="rfc2119" title="SHOULD">應該</em>提供使用者選項以跳過對該結構的播放，並且無論後續內容為何都能繼續播放。</p>
 
 					<aside class="example" id="example-10"><div class="marker">
       <a class="self-link" href="#example-10">範例10</a>
@@ -2197,7 +2197,7 @@ var [data-type] :hover::before {
 <span class="hljs-tag">&lt;/<span class="hljs-name">smil</span>&gt;</span></code></pre>
 					</aside>
 
-					<p>以下非窮舉清單呈現來自 [<cite><a class="bibref" href="#bib-epub-ssv">EPUB-SSV</a></cite>] 的術語，閱讀系統可以依此提供可跳出性選項：</p>
+					<p>以下非窮舉的清單列出 [<cite><a class="bibref" href="#bib-epub-ssv">EPUB-SSV</a></cite>] 的術語，閱讀系統可以依此提供可跳出性選項：</p>
 
 					<ul>
 						<li>
@@ -2216,7 +2216,7 @@ var [data-type] :hover::before {
 							<p>list-item（列表項目）</p>
 						</li>
 						<li>
-							<p>figur（圖片組）e</p>
+							<p>figure（圖片組）</p>
 						</li>
 					</ul>
 
@@ -2228,19 +2228,19 @@ var [data-type] :hover::before {
 		<section id="sec-nav-doc">
 			<!--OddPage--><h2 id="x5-epub-navigation-document"><span class="secno">5. </span>EPUB導覽文件<a class="self-link" aria-label="§" href="#sec-nav-doc"></a></h2>
 
-			<p><a href="epub-spec.html#dfn-epub-navigation-document">EPUB導覽文件</a>為<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>，所以可以與聲音媒體層疊相關聯。不像傳統的XHTML內容文件，然而，<a href="epub-spec.html#dfn-epub-reading-system">閱讀系統</a>必須將EPUB導覽文件呈現給使用者，儘管不被包含在<a href="epub-spec.html#dfn-spine">書脊</a>中（請見<a href="epub-packages.html#sec-package-nav-rs-conf">EPUB導覽文件—閱讀系統適用性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ）。結果而言，連結到媒體層疊的方法可能會按照以下脈絡而受到變更：</p>
+			<p><a href="epub-spec.html#dfn-epub-navigation-document">EPUB導覽文件</a>為<a href="epub-spec.html#dfn-xhtml-content-document">XHTML內容文件</a>，所以可以與聲音媒體層疊相關聯。不像傳統的XHTML內容文件，就不被包含在<a href="epub-spec.html#dfn-spine">書脊</a>中<a href="epub-spec.html#dfn-epub-reading-system">閱讀系統</a>必須將EPUB導覽文件呈現給使用者（請見<a href="epub-packages.html#sec-package-nav-rs-conf">EPUB導覽文件 — 閱讀系統適用性</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ）。結果而言，與媒體層疊相關的行為可能會在以下脈絡而有所差異：</p>
 
 			<ul>
 				<li>
-					<p>當包含在書脊中，播放EPUB導覽文件的媒體層疊遵循與其他XHTML內容文件相同的適用性需求。</p>
+					<p>當包含在書脊中時，播放EPUB導覽文件的媒體層疊遵循與其他XHTML內容文件相同的適用性需求。</p>
 				</li>
 				<li>
-					<p>當在以顯示脈絡，其允許使用者存取並且啟動連結時，閱讀系統<em class="rfc2119" title="MAY">可以</em>實作額外顯示行為，在導覽連結受到存取時提供聲音回饋。</p>
+					<p>當用在顯示的脈下絡，其允許使用者存取並且啟動其連結時，閱讀系統<em class="rfc2119" title="MAY">可以</em>實作額外的呈現行為，在存取導覽連結時提供聲音回饋。</p>
 				</li>
 			</ul>
 
 			<div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-5" aria-level="3"><span>注意事項</span></div><div class="">
-				<p>指定實作細節超乎本規格的目標。<a href="http://www.daisy.org/guidelines/epub/media-overlays-playback-requirements">DAISY媒體層疊播放需求</a>文件提供了供作者的最佳範例，也提供了給閱讀系統開發者的建議。</p>
+				<p>指定實作細節超乎本規格的目標。<a href="http://www.daisy.org/guidelines/epub/media-overlays-playback-requirements">DAISY媒體層疊播放需求</a>文件提供給作者最佳實踐，也提供給閱讀系統開發者的建議。</p>
 			</div></div>
 
 		</section>
@@ -2345,7 +2345,7 @@ var [data-type] :hover::before {
 						</td>
 					</tr>
 					<tr>
-						<th>Cardinality:</th>
+						<th>基數：</th>
 						<td>
 							<code>零或一個</code>
 						</td>
@@ -2374,7 +2374,7 @@ var [data-type] :hover::before {
 					</tr>
 					<tr>
 						<th>說明：</th>
-						<td>全部或者指定的媒體層疊之播放長度。指定的播放長度由聲音片段在製作時計算，所以需排除從外圍資源而來的直播以及語音合成。</td>
+						<td>全部或者指定的媒體層疊之播放長度。指定的播放長度由聲音片段在製作時計算，所以需排除從外圍資源而來的現場直播以及語音合成。</td>
 					</tr>
 					<tr>
 						<th>允許的值：</th>
@@ -2455,7 +2455,7 @@ var [data-type] :hover::before {
 						</td>
 					</tr>
 					<tr>
-						<th>Cardinality:</th>
+						<th>基數：</th>
 						<td>
 							<code>零或一個</code>
 						</td>
