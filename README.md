@@ -16,4 +16,4 @@
 - [EPUB內容文件 3.2](https://dpublishing.github.io/epub-specs-tc/epub32/epub-contentdocs.html)（原文：[EPUB Content Documents 3.2](https://www.w3.org/publishing/epub3/epub-contentdocs.html)）
 - [EPUB開放容器格式 3.2](https://dpublishing.github.io/epub-specs-tc/epub32/epub-ocf.html)（原文：[EPUB Open Container Format (OCF) 3.2](https://www.w3.org/publishing/epub3/epub-ocf.html)）
 - [EPUB媒體層疊 3.2](https://dpublishing.github.io/epub-specs-tc/epub32/epub-mediaoverlays.html)（原文：[EPUB Media Overlays 3.2](https://www.w3.org/publishing/epub3/epub-mediaoverlays.html)）
-- [EPUB無障礙輔助性](https://dpublishing.github.io/epub-specs-tc/epub32/epub-accessibility.html)（原文：[EPUB Accessibility](https://www.w3.org/Submission/epub-a11y/)）
+- [EPUB無障礙輔助性 1.0](https://dpublishing.github.io/epub-specs-tc/epub32/epub-accessibility.html)（原文：[EPUB Accessibility 1.0](https://www.w3.org/Submission/epub-a11y/)）
