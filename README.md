@@ -11,7 +11,7 @@
 ## 文件清單
 - [EPUB 3 總覽](https://dpublishing.github.io/epub-specs-tc/epub32/epub-overview.html)（原文：[EPUB 3 Overview](https://www.w3.org/publishing/epub3/epub-overview.html)）
 - [EPUB 3.2 規格](https://dpublishing.github.io/epub-specs-tc/epub32/epub-spec.html)（原文：[EPUB 3.2 Specification](https://www.w3.org/publishing/epub3/epub-spec.html)）
-- [EPUB 3.2 變更內容](https://dpublishing.github.io/epub-specs-tc/epub32/epub-changes.html)（原文：[EPUB 3.2 Changes](https://www.w3.org/publishing/epub3/epub-changes.html)）
+- [EPUB 3.2 變更點](https://dpublishing.github.io/epub-specs-tc/epub32/epub-changes.html)（原文：[EPUB 3.2 Changes](https://www.w3.org/publishing/epub3/epub-changes.html)）
 - [EPUB包裝 3.2](https://dpublishing.github.io/epub-specs-tc/epub32/epub-packages.html)（原文：[EPUB Packages 3.2](https://www.w3.org/publishing/epub3/epub-packages.html)）
 - [EPUB內容文件 3.2](https://dpublishing.github.io/epub-specs-tc/epub32/epub-contentdocs.html)（原文：[EPUB Content Documents 3.2](https://www.w3.org/publishing/epub3/epub-contentdocs.html)）
 - [EPUB開放容器格式 3.2](https://dpublishing.github.io/epub-specs-tc/epub32/epub-ocf.html)（原文：[EPUB Open Container Format (OCF) 3.2](https://www.w3.org/publishing/epub3/epub-ocf.html)）
