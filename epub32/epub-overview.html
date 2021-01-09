@@ -1118,11 +1118,11 @@ var [data-type] :hover::before {
 
 					<p>EPUB的關鍵概念為：EPUB出版品中包含了多種資源，而能被人、以及機器，<em>按照某些指定順序</em>來完整導覽及閱讀。</p>
 
-					<p>各式各類的出版品都有明確的閱讀順序，或者整個內容有著邏輯上的推進。以小說為例，就是高度有順序性的文件——通常會有開頭、承續、結尾——但不是所有出版品都會按照順序被閱讀：例如食譜與攝影集就可能更像是一個資料庫。但所有的文件都至少有一個最主要層級的邏輯閱讀順序內容項目，可以按照日期、主題、地點或者其它範疇（例如，食譜一般會按照烹煮方式排序）。</p>
+					<p>各式各類的出版品都有明確的閱讀順序，或者整個內容有著邏輯上的推進。以小說為例，就是高度有順序性的文件 — 通常會有開頭、承續、結尾 — 但不是所有出版品都會按照順序被閱讀：例如食譜與攝影集就可能更像是一個資料庫。但所有的文件都至少有一個最主要層級的邏輯閱讀順序內容項目，可以按照日期、主題、地點或者其它範疇（例如，食譜一般會按照烹煮方式排序）。</p>
 
 					<p>每一份EPUB出版品的內容釋義都定義了至少一個最主要層級內容的邏輯順序（即為<a href="epub-packages.html#sec-spine-elem">spine</a> [<cite><a class="bibref" href="#bib-packages32">Packages32</a></cite>] ），以及宣告式的目錄（即為<a href="epub-spec.html#dfn-epub-navigation-document">EPUB導覽文件</a> [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] ）。EPUB出版品令這些資料在內容<em>外部</em>透過機器可讀取的方式結構化，而得以讓內容易於被發現及被使用。</p>
 
-					<p>EPUB出版品並不僅限於以線性順序閱讀內容，也可以使用預先包含的連結，以任意跳躍的方式來讀——如同網頁一般，EPUB出版品基以超文本技術打造——其所具備的基礎閱讀以及導覽方式以能被可靠的方式建構，這是HTML頁面所不具備的。</p>
+					<p>EPUB出版品並不僅限於以線性順序閱讀內容，也可以使用預先包含的連結，以任意跳躍的方式來讀 — 如同網頁一般，EPUB出版品基以超文本技術打造 — 其所具備的基礎閱讀以及導覽方式以能被可靠的方式建構，這是HTML頁面所不具備的。</p>
 
 				</section>
 
@@ -1196,7 +1196,7 @@ var [data-type] :hover::before {
 			<section id="sec-fonts">
 				<h3 id="x1-8-fonts"><span class="secno">1.8 </span>字型<a class="self-link" aria-label="§" href="#sec-fonts"></a></h3>
 
-				<p>EPUB 3支援兩種緊密相關的字型格式——OpenType [<cite><a class="bibref" href="#bib-opentype">OpenType</a></cite>] 與WOFF [<cite><a class="bibref" href="#bib-woff">WOFF</a></cite>] [<cite><a class="bibref" href="#bib-woff2">WOFF2</a></cite>] ——同時適應傳統出版工作流程，以及逐漸興起以網頁為基礎的工作流程。文字處理程式在製作EPUB出版品時，通常只會從已經安裝的OpenType字型集合中挑選字型，而抓取網頁作為存檔的EPUB產生器則僅能存取WOFF資源（該資源不能在非預期，以及大多數沒有授權、捨棄WOFF詮釋資料的狀況下轉為OpenType格式）。</p>
+				<p>EPUB 3支援兩種緊密相關的字型格式 — OpenType [<cite><a class="bibref" href="#bib-opentype">OpenType</a></cite>] 與WOFF [<cite><a class="bibref" href="#bib-woff">WOFF</a></cite>] [<cite><a class="bibref" href="#bib-woff2">WOFF2</a></cite>]  — 同時適應傳統出版工作流程，以及逐漸興起以網頁為基礎的工作流程。文字處理程式在製作EPUB出版品時，通常只會從已經安裝的OpenType字型集合中挑選字型，而抓取網頁作為存檔的EPUB產生器則僅能存取WOFF資源（該資源不能在非預期，以及大多數沒有授權、捨棄WOFF詮釋資料的狀況下轉為OpenType格式）。</p>
 
 				<p>EPUB 3也支援模糊化與一般的字型資源，不限OpenType與WOFF字型格式。對模糊化字體資源的支援在對應多數商售的字型授權限制上為必要。</p>
 
@@ -1205,7 +1205,7 @@ var [data-type] :hover::before {
 			<section id="sec-scripting">
 				<h3 id="x1-9-scripting"><span class="secno">1.9 </span>腳本<a class="self-link" aria-label="§" href="#sec-scripting"></a></h3>
 
-				<p>EPUB致力於以<em>宣告式方式</em>處理內容——資料可以被調整，但不該透過程式執行的方式產生——但支援腳本（Scripting），如 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 及 [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>] 中的定義（想要了解更多，請參照<a href="epub-contentdocs.html#sec-scripted-content">腳本</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] ）。</p>
+				<p>EPUB致力於以<em>宣告式方式</em>處理內容 — 資料可以被調整，但不該透過程式執行的方式產生 — 但支援腳本（Scripting），如 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] 及 [<cite><a class="bibref" href="#bib-svg2">SVG2</a></cite>] 中的定義（想要了解更多，請參照<a href="epub-contentdocs.html#sec-scripted-content">腳本</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] ）。</p>
 
 				<p>然而，值得注意的是，EPUB 3不要求閱讀系統支援腳本，所以可能因為安全性因素而被關閉。</p>
 
@@ -1355,7 +1355,7 @@ var [data-type] :hover::before {
 
 				<p>EPUB的設計中心思想為動態版面：內容標準上應該動態生成版面，而非預先以分頁的方式設計完成（即為指定尺寸的「頁面」）。這項核心能力非常有用，例如針對不同尺寸螢幕以及視窗尺寸時都能提供最佳化的排版，同時能促進、簡化內容的無障礙輔助性。</p>
 
-				<p>EPUB同時也能夠接受高度設計的內容——例如透過點陣圖或者SVG圖像，甚至能使用CSS指定定位或者透過table元素來達成特別的視覺呈現——但強烈不建議作者使用這些技巧。這些做法在EPUB中並不可靠，許多閱讀系統的分頁演算法主要目標是將單一捲動的<a href="epub-spec.html#dfn-viewport">Viewport</a>予以切割成頁，而非處理預先設定好的固定頁面。如果這些技巧對於傳達出版品的內容為必要，請考慮包含<a href="epub-spec.html#sec-foreign-restrictions">回退</a> [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] （例如圖像小說）。</p>
+				<p>EPUB同時也能夠接受高度設計的內容 — 例如透過點陣圖或者SVG圖像，甚至能使用CSS指定定位或者透過table元素來達成特別的視覺呈現 — 但強烈不建議作者使用這些技巧。這些做法在EPUB中並不可靠，許多閱讀系統的分頁演算法主要目標是將單一捲動的<a href="epub-spec.html#dfn-viewport">Viewport</a>予以切割成頁，而非處理預先設定好的固定頁面。如果這些技巧對於傳達出版品的內容為必要，請考慮包含<a href="epub-spec.html#sec-foreign-restrictions">回退</a> [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] （例如圖像小說）。</p>
 
 				<p>整體而言，推薦使用CSS樣式來達到視覺上的多變，但不建議指定絕對尺寸與定位。</p>
 
