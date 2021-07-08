@@ -2691,7 +2691,7 @@ Manifest:
 
 						<p>宣告回退使用<a href="epub-spec.html#dfn-manifest">宣告</a><em>item</em>元素中的<a href="#attrdef-item-fallback"><code>fallback</code></a>屬性來呈現出版品資源。<code>fallback</code>屬性的IDREF [<cite><a class="bibref" href="#bib-xml">XML</a></cite>] 值<em class="rfc2119" title="MUST">必需</em>解析到另一項<code>manifest</code>中的<code>item</code>。回退<code>item</code>自身<em class="rfc2119" title="MAY">可以</em>指定另一個回退<code>item</code>，以此類推。</p>
 
-						<p>所有ID參照的順序清單可以從某一個項目的<code>fallback</code>屬性開始，代表了該項目的「<em>回退鍊</em>」。該回退鍊中的資源順序代表了作者希望的回退順序。</p>如果閱讀系統支援回退鍊中的多個出版品資源，<em class="rfc2119" title="MAY">可以</em>基於該資源的指定<a href="#attrdef-item-properties">特性</a>選擇其一，不然就<em class="rfc2119" title="SHOULD">應該</em>尊重作者希望的回退順序。如果閱讀系統不支援任何回退鍊中的資源，則<em class="rfc2119" title="MUST">必需</em>警告讀者該內容無法被顯示。</p>
+						<p>所有ID參照的順序清單可以從某一個項目的<code>fallback</code>屬性開始，代表了該項目的「<em>回退鍊</em>」。該回退鍊中的資源順序代表了作者希望的回退順序。如果閱讀系統支援回退鍊中的多個出版品資源，<em class="rfc2119" title="MAY">可以</em>基於該資源的指定<a href="#attrdef-item-properties">特性</a>選擇其一，不然就<em class="rfc2119" title="SHOULD">應該</em>尊重作者希望的回退順序。如果閱讀系統不支援任何回退鍊中的資源，則<em class="rfc2119" title="MUST">必需</em>警告讀者該內容無法被顯示。</p>
 
 						<p>回退鍊<em class="rfc2119" title="MUST">必需</em>適當地符合以下要求其一：</p>
 
@@ -2771,7 +2771,7 @@ Manifest:
 						<p>所有<a href="epub-spec.html#dfn-epub-navigation-document">EPUB導覽文件</a>超連結到的出版品資源也<em class="rfc2119" title="MUST">必需</em>要列於<code>spine</code>，無論導覽文件自身是否被列於<code>spine</code>。</p>
 
 						<div class="note" role="note" id="issue-container-generatedID-5"><div role="heading" class="note-title marker" id="h-note-5" aria-level="6"><span>注意事項</span></div><div class="">
-							<p>透過超連結參照的<a href="epub-spec.html#dfn-remote-resource">遠端資源<a>並非出版品資源，所以不是需要包含於書脊的需求中的對象（例如網頁與資源）。</p>
+							<p>透過超連結參照的<a href="epub-spec.html#dfn-remote-resource">遠端資源</a>並非出版品資源，所以不是需要包含於書脊的需求中的對象（例如網頁與資源）。</p>
 						</div></div>
 
 						<p>嵌入出版品資源（例如，透過 [<cite><a class="bibref" href="#bib-html">HTML</a></cite>] <a href="https://www.w3.org/TR/html/semantics-embedded-content.html#the-iframe-element"><code>iframe</code></a>元素）不需要列於<code>spine</code>中。</p>
@@ -3322,7 +3322,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 						<aside class="example" id="example-29"><div class="marker">
       <a class="self-link" href="#example-29">範例29</a>
     </div>
-							<p>以下範例呈現在宣告<a href="#elemdef-package-item"><code>item</code></a>元素</a>中使用的<a href="#mathml"><code>mathml</code>特性</a>：</p>
+							<p>以下範例呈現在宣告<a href="#elemdef-package-item"><code>item</code></a>元素中使用的<a href="#mathml"><code>mathml</code>特性</a>：</p>
 
 							<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">item</span> … <span class="hljs-attr">properties</span>=<span class="hljs-string">"mathml"</span>/&gt;</span></code></pre>
 
@@ -3832,7 +3832,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 							<p>只有一個<code>page-spread-*</code>特性能在書脊項目中宣告。</p>
 
 							<div class="note" role="note" id="note-page-spread-aliases"><div role="heading" class="note-title marker" id="h-note-15" aria-level="7"><span>注意事項</span></div><div class="">
-								<p><code>rendition:page-spread-left</code>和<code>rendition:page-spread-right</code>是對<a href="#page-spread-left"><code>page-spread-left</code></a>和a href="#page-spread-right"><code>spread-right</code></a>特性的捷徑。其允許使用單一用語供所有固定版面特性。作者可以使用兩種特性組合，但是較舊的閱讀系統可能只認得無字首的版本。EPUB書脊特性與會不再延伸供包裝顯示詮釋資料使用，所以無字首的<code>page-spread-center</code>不存在。</p>
+								<p><code>rendition:page-spread-left</code>和<code>rendition:page-spread-right</code>是對<a href="#page-spread-left"><code>page-spread-left</code></a>和<a href="#page-spread-right"><code>spread-right</code></a>特性的捷徑。其允許使用單一用語供所有固定版面特性。作者可以使用兩種特性組合，但是較舊的閱讀系統可能只認得無字首的版本。EPUB書脊特性與會不再延伸供包裝顯示詮釋資料使用，所以無字首的<code>page-spread-center</code>不存在。</p>
 							</div></div>
 
 						</section>
@@ -3937,7 +3937,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 				<section id="sec-package-nav-def-model">
 					<h4 id="x5-4-1-the-nav-element-restrictions"><span class="secno">5.4.1 </span><code>nav</code>元素：限制<a class="self-link" aria-label="§" href="#sec-package-nav-def-model"></a></h4>
 
-					<p>當一個在EPUB導覽文件中的<code>nav</code>元素包含<a href="epub-contentdocs.html#sec-epub-type-attribute"><code>epub:type</code>epub:type</code>屬性</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] ，本規格限制了該元素的內容模型以及其子元素如下：</p>
+					<p>當一個在EPUB導覽文件中的<code>nav</code>元素包含<a href="epub-contentdocs.html#sec-epub-type-attribute"><code>epub:type</code>屬性</a> [<cite><a class="bibref" href="#bib-contentdocs32">ContentDocs32</a></cite>] ，本規格限制了該元素的內容模型以及其子元素如下：</p>
 
 					<dl class="elemdef">
 						<dt>內容模型</dt>
@@ -5605,7 +5605,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 					</tr>
 					<tr>
 						<th>適用：</th>
-						<td>所有<a href="epub-spec.html#tbl-core-media-types">點陣以及向量圖片類型</a> [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] </a>
+						<td>所有<a href="epub-spec.html#tbl-core-media-types">點陣以及向量圖片類型</a> [<cite><a class="bibref" href="#bib-epub32">EPUB32</a></cite>] 
 							</td>
 					</tr>
 					<tr>
@@ -5820,7 +5820,7 @@ urn:uuid:A1B0D67E-2E81-4DF5-9E67-A64CBE366809@2011-01-01T12:00:00Z</pre>
 			</figure>
 
 			<figure class="example" id="example-item-properties-scripted-mathml">
-				<figcaption>示範<span class="figno">3</span> <span class="fig-title">以下範例展示一個<code>manifest</code> <code>item</code>元素為<a href="epub-spec.html#dfn-scripted-content-document">有腳本的內容文件</a>並且包含嵌入MathML。</figcaption>
+				<figcaption>示範<span class="figno">3</span> <span class="fig-title">以下範例展示一個<code>manifest</code> <code>item</code>元素為<a href="epub-spec.html#dfn-scripted-content-document">有腳本的內容文件</a>並且包含嵌入MathML。</span></figcaption>
 				<pre class="synopsis" aria-busy="false"><code class="hljs">&lt;item properties="scripted mathml" id="c2" href="c2.xhtml" media-type="application/xhtml+xml" /&gt;
 </code></pre>
 			</figure>
