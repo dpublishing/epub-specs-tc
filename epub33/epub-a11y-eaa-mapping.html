@@ -1,0 +1,724 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 28.0.7">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+.issue-label{text-transform:initial}
+.warning>p:first-child{margin-top:0}
+.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
+span.warning{padding:.1em .5em .15em}
+.issue.closed span.issue-number{text-decoration:line-through}
+.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}
+.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
+li.task-list-item{list-style:none}
+input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
+.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
+</style>
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font:small Helvetica Neue,sans-serif,Droid Sans Fallback;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+		
+		
+<title>EPUB無障礙輔助性 - 歐盟無障礙法之對應關係</title>
+		
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+.hljs{background:0 0!important}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+code{color:#c63501}
+th code{color:inherit}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+h2,h3,h4,h5,h6{position:relative}
+aside.example .marker>a.self-link{color:inherit}
+:is(h2,h3,h4,h5,h6)>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}
+:is(h2,h3,h4,h5,h6)>a.self-link::before{content:"§";display:block}
+@media (max-width:767px){
+dd{margin-left:0}
+:is(h2,h3,h4,h5,h6)>a.self-link{left:auto;top:auto}
+}
+@media print{
+.removeOnSave{display:none}
+}
+em {
+  font-style: normal;
+  font-family: "KaiTi TC", "BiauKai", serif;
+}
+.rfc2119 {
+  font-weight: bold;
+  font-family: sans-serif;
+}
+</style>
+		
+		
+		
+<style>
+
+			td {
+				vertical-align: top;
+			}
+</style>
+	
+<meta name="description" content="The European
+					Accessibility Act (EAA) is an EU directive that establishes binding accessibility targets that
+				must be met by many different types of products and services to strengthen the rights of people with
+				disabilities to access goods and services, including ebooks, dedicated reading software, ereading
+				devices, and ecommerce.">
+<link rel="canonical" href="https://www.w3.org/TR/epub-a11y-eaa-mapping/">
+<style>
+var{position:relative;cursor:pointer}
+var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "group": "epub",
+  "wgPublicList": "public-epub-wg",
+  "specStatus": "NOTE",
+  "noRecTrack": true,
+  "shortName": "epub-a11y-eaa-mapping",
+  "edDraftURI": "https://w3c.github.io/epub-specs/epub33/epub-a11y-eaa-mapping/",
+  "copyrightStart": "2021",
+  "editors": [
+    {
+      "name": "Cristina Mussinelli",
+      "company": "Fondazione LIA",
+      "companyURL": "https://www.fondazionelia.org",
+      "w3cid": 66100
+    },
+    {
+      "name": "Luc Audrain",
+      "company": "Invited Expert",
+      "w3cid": 65303
+    },
+    {
+      "name": "Gregorio Pellegrino",
+      "company": "Fondazione LIA",
+      "companyURL": "https://www.fondazionelia.org",
+      "w3cid": 97111
+    }
+  ],
+  "includePermalinks": true,
+  "permalinkEdge": true,
+  "permalinkHide": false,
+  "diffTool": "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
+  "github": {
+    "repoURL": "https://github.com/w3c/epub-specs",
+    "branch": "main"
+  },
+  "publishDate": "2021-12-08",
+  "previousMaturity": "NOTE",
+  "previousPublishDate": "2021-11-25",
+  "publishISODate": "2021-12-08T00:00:00.000Z",
+  "generatedSubtitle": "Group Note 08 December 2021"
+}</script>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-NOTE"></head>
+	<body class="h-entry informative"><div class="head">
+    <a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
+  </a> <h1 id="title" class="title">EPUB無障礙輔助性 - 歐盟無障礙法之對應關係</h1>
+    
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#NOTE">W3C小組備忘</a> <time class="dt-published" datetime="2021-12-08">2022年8月10日</time></p>
+    <details open="">
+      <summary>更多關於本文件的細節</summary>
+      <dl>
+        <dt>本版本：</dt><dd>
+                <a class="u-url" href="https://www.w3.org/TR/2021/NOTE-epub-a11y-eaa-mapping-20211208/">https://www.w3.org/TR/2021/NOTE-epub-a11y-eaa-mapping-20211208/</a>
+              </dd><dt>最新發佈版本：</dt><dd>
+                <a href="https://www.w3.org/TR/epub-a11y-eaa-mapping/">https://www.w3.org/TR/epub-a11y-eaa-mapping/</a>
+              </dd>
+        <dt>最新編輯草稿：</dt><dd><a href="https://w3c.github.io/epub-specs/epub33/epub-a11y-eaa-mapping/">https://w3c.github.io/epub-specs/epub33/epub-a11y-eaa-mapping/</a></dd>
+        <dt>歷史：</dt><dd>
+      <a href="https://www.w3.org/standards/history/epub-a11y-eaa-mapping">https://www.w3.org/standards/history/epub-a11y-eaa-mapping</a>
+    </dd><dd>
+        <a href="https://github.com/w3c/epub-specs/commits/main">更新歷程</a>
+      </dd>
+        
+        
+        
+        
+        
+        <dt>編輯者：</dt>
+        <dd class="editor p-author h-card vcard" data-editor-id="66100">
+    <span class="p-name fn">Cristina Mussinelli</span> (<a class="p-org org h-org" href="https://www.fondazionelia.org">Fondazione LIA</a>)
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="65303">
+    <span class="p-name fn">Luc Audrain</span> (<span class="p-org org h-org">Invited Expert</span>)
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="97111">
+    <span class="p-name fn">Gregorio Pellegrino</span> (<a class="p-org org h-org" href="https://www.fondazionelia.org">Fondazione LIA</a>)
+  </dd>
+        
+        
+        <dt>提出回饋：</dt><dd>
+        <a href="https://github.com/w3c/epub-specs/">GitHub w3c/epub-specs</a>
+        (<a href="https://github.com/w3c/epub-specs/pulls/">pull requests</a>,
+        <a href="https://github.com/w3c/epub-specs/issues/new/choose">new issue</a>,
+        <a href="https://github.com/w3c/epub-specs/issues/">open issues</a>)
+      </dd><dd>以郵件主旨<em>…訊息主題…</em><kbd>[epub-a11y-eaa-mapping]</kbd>寄送到<a href="mailto:public-epub-wg@w3.org?subject=%5Bepub-a11y-eaa-mapping%5D%20YOUR%20TOPIC%20HERE">public-epub-wg@w3.org</a>(<a rel="discussion" href="https://lists.w3.org/Archives/Public/public-epub-wg">存檔</a>)</dd>
+        
+        
+      </dl>
+    </details>
+    
+    
+    <p class="copyright">
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+    ©
+    2021
+    
+    <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+    <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
+    <a href="https://ev.buaa.edu.cn/">Beihang</a>). W3C
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+    <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document" title="W3C Software and Document Notice and License">permissive document license</a> rules apply.
+  </p>
+    <hr title="Separator for header">
+  </div>
+		<section id="abstract" class="introductory"><h2 id="abstract-0">摘要<a class="self-link" href="#abstract" aria-label="Permalink for Section"></a></h2>
+			<p><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019L0882">歐盟無障礙法（The European Accessibility Act, EAA）</a>為一份歐盟指令，其建立了無障礙輔助性目標的強制力，許多不同類型的產品與服務，包括電子書、專用的閱讀軟體、數位閱讀裝置以及電子商務，都必須符合規定，以強化障礙者使用產品以及存取服務的權益。</p>
+
+			<p>EAA於2019年6月27日通過，需要由歐盟會員國在2022年6月28日前執行，並且於2025年6月28日成為強制狀態。</p>
+
+			<p>本備忘的目的在於展示歐盟無障礙法的技術性與電子書相關的規定，如何透過EPUB®標準來達成。</p>
+
+			<p>所使用的方法，是將歐盟無障礙法與電子書相關的規定對應到<a href="https://www.w3.org/TR/epub-a11y-11/">EPUB無障礙輔助性</a>規格。</p>
+		</section>
+		<section id="sotd" class="introductory"><h2 id="status-of-this-document">本文件狀態<a class="self-link" href="#sotd" aria-label="Permalink for Section"></a></h2><p><em>本章節解釋了本文件在其發表時的狀態。<abbr title="World Wide Web Consortium">W3C</abbr>的當前出版品清單以及本技術報告的最新版本可於位在https://www.w3.org/TR/之<a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr>技術報告索引</a>中取得。</em></p><p>本文件由<a href="https://www.w3.org/groups/wg/epub">EPUB 3工作小組</a>透過<a href="https://www.w3.org/2021/Process-20211102/#recs-and-notes">備忘流程</a>發布為小組備忘。
+  </p><p>小組備忘不代表受<abbr title="World Wide Web Consortium">W3C</abbr>及其會員支持。</p><p>本文件為草稿，而且可能會隨時會被其他文件更新、取代、淘汰。編輯作業尚未完成前，不適宜引用本文件。
+    
+  </p><p data-deliverer="125377"><a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr>專利政策</a>不承擔本文件的任何授權要求與貢獻。</p><p>本文件受 <a id="w3c_process_revision" href="https://www.w3.org/2021/Process-20211102/">2021年11月2日<abbr title="World Wide Web Consortium">W3C</abbr>流程文件</a>所規範。</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">目錄</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">摘要</a></li><li class="tocline"><a class="tocxref" href="#sotd">本文件狀態</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>符合EPUB無障礙輔助性指引的EPUB如何符合歐盟無障礙輔助法規定</a></li><li class="tocline"><a class="tocxref" href="#mappings"><bdi class="secno">2. </bdi>對應方式</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#annex-I"><bdi class="secno">2.1 </bdi>附錄I</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#annex-I-section-III"><bdi class="secno">2.1.1 </bdi>節III</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#annex-I-section-III-a"><bdi class="secno">2.1.1.1 </bdi>(a)</a></li><li class="tocline"><a class="tocxref" href="#annex-I-section-III-b"><bdi class="secno">2.1.1.2 </bdi>(b)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#annex-I-section-III-b-i"><bdi class="secno">2.1.1.2.1 </bdi>(i)</a></li><li class="tocline"><a class="tocxref" href="#annex-I-section-III-b-ii"><bdi class="secno">2.1.1.2.2 </bdi>(ii)</a></li><li class="tocline"><a class="tocxref" href="#annex-I-section-III-b-iii"><bdi class="secno">2.1.1.2.3 </bdi>(iii)</a></li><li class="tocline"><a class="tocxref" href="#annex-I-section-III-b-iv"><bdi class="secno">2.1.1.2.4 </bdi>(iv)</a></li><li class="tocline"><a class="tocxref" href="#annex-I-section-III-b-v"><bdi class="secno">2.1.1.2.5 </bdi>(v)</a></li><li class="tocline"><a class="tocxref" href="#annex-I-section-III-b-vi"><bdi class="secno">2.1.1.2.6 </bdi>(vi)</a></li><li class="tocline"><a class="tocxref" href="#annex-I-section-III-b-vii"><bdi class="secno">2.1.1.2.7 </bdi>(vii)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#annex-I-section-III-c"><bdi class="secno">2.1.1.3 </bdi>(c)</a></li><li class="tocline"><a class="tocxref" href="#annex-I-section-III-d"><bdi class="secno">2.1.1.4 </bdi>(d)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#annex-I-section-IV"><bdi class="secno">2.1.2 </bdi>節IV</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#annex-I-section-IV-f"><bdi class="secno">2.1.2.1 </bdi>(f)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#annex-I-section-IV-f-i"><bdi class="secno">2.1.2.1.1 </bdi>(i)</a></li><li class="tocline"><a class="tocxref" href="#annex-I-section-IV-f-ii"><bdi class="secno">2.1.2.1.2 </bdi>(ii)</a></li><li class="tocline"><a class="tocxref" href="#annex-I-section-IV-f-iii"><bdi class="secno">2.1.2.1.3 </bdi>(iii)</a></li><li class="tocline"><a class="tocxref" href="#annex-I-section-IV-f-iv"><bdi class="secno">2.1.2.1.4 </bdi>(iv)</a></li><li class="tocline"><a class="tocxref" href="#annex-I-section-IV-f-v"><bdi class="secno">2.1.2.1.5 </bdi>(v)</a></li><li class="tocline"><a class="tocxref" href="#annex-I-section-IV-f-vi"><bdi class="secno">2.1.2.1.6 </bdi>(vi)</a></li></ol></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>參考資料</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.1 </bdi>參考性文件</a></li></ol></li></ol></nav>
+		<section id="introduction">
+			<h2 id="x1-how-epub-conforming-to-epub-accessibility-guidelines-cover-european-accessibility-act-requirements"><bdi class="secno">1. </bdi>符合EPUB無障礙輔助性指引的EPUB如何符合歐盟無障礙輔助法規定<a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></h2>
+
+			<p>EPUB為在數位出版商業部門中，供製作以及遞送出版品的標準格式。</p>
+
+			<p>EPUB標準的規格基於<a href="https://www.w3.org/wiki/Open_Web_Platform">開放網頁平台</a>：HTML、CSS、Javascript和SVG為內容製作的核心技術。使用這些技術意味著EPUB出版品可以輕易地應用適當的既有網頁無障礙輔助技巧，稱為<a href="https://www.w3.org/WAI/standards-guidelines/wcag/">網頁內容無障礙輔助性準則（Web Content Accessibility Guidelines, WCAG）</a>，就能以高度無障礙輔助性製作。</p>
+
+			<p>為了說明該如何製作具完整無障礙輔助性的EPUB，<a href="https://www.w3.org/TR/epub-a11y-11/">EPUB無障礙輔助性指引</a>已經起草，以說明兩項在EPUB生態系統中的兩大關鍵需求：</p>
+
+			<ul>
+				<li>對出版品無障礙輔助功能的發現性；</li>
+				<li>以及對無障礙EPUB出版品的評量與認證。</li>
+			</ul>
+
+			<p>提供無障礙輔助詮釋資料有助於做出資訊充分的抉擇，判斷一本EPUB出版品的可用性。消費者可以檢驗其內容的特徵並且判斷是否該EPUB出版品符合其需求。</p>
+
+			<p>在隨時都可能創建具高度無障礙輔助性的EPUB出版品的狀況下，本文件題建構了對內容的正式規定已被認證為具無障礙輔助性。這些規定讓EPUB製作者可以有明確的指引集來評量其內容，作為品質認證並且使其成為可能。
+        </p>
+
+			<p>EPUB無障礙輔助性並不針對單一版本的EPUB（大多數商售可獲得的出版品都使用EPUB 3或者EPUB 2格式）。其設計上適用於所有的EPUB出版品，無論合乎任何版本或者子集，包含該標準的未來版本。</p>
+		</section>
+		<section id="mappings">
+			<h2 id="x2-mappings"><bdi class="secno">2. </bdi>對應方式<a class="self-link" href="#mappings" aria-label="Permalink for Section 2."></a></h2>
+
+			<section id="annex-I">
+				<h3 id="x2-1-annex-i"><bdi class="secno">2.1 </bdi>附錄I<a class="self-link" href="#annex-I" aria-label="Permalink for Section 2.1"></a></h3>
+
+				<blockquote>
+					<p>對產品與服務的無障礙輔助性規定</p>
+				</blockquote>
+
+				<section id="annex-I-section-III">
+					<h4 id="x2-1-1-section-iii"><bdi class="secno">2.1.1 </bdi>節III<a class="self-link" href="#annex-I-section-III" aria-label="Permalink for Section 2.1.1"></a></h4>
+
+					<blockquote>
+						<p>與本指令涵蓋所有服務相關的通用無障礙輔助性規定，須符合2(2)條（Article）</p>
+						<p>提供服務時，應該要最大化障礙者可預期的使用，能透過以下方式達成：</p>
+					</blockquote>
+
+					<section id="annex-I-section-III-a">
+						<h5 id="x2-1-1-1-a"><bdi class="secno">2.1.1.1 </bdi>(a)<a class="self-link" href="#annex-I-section-III-a" aria-label="Permalink for Section 2.1.1.1"></a></h5>
+
+						<blockquote>
+							<p>確保提供服務時，使用的產品之無障礙輔助性合乎本附錄之節I，若可應用，也包含節II</p>
+						</blockquote>
+					</section>
+
+					<section id="annex-I-section-III-b">
+						<h5 id="x2-1-1-2-b"><bdi class="secno">2.1.1.2 </bdi>(b)<a class="self-link" href="#annex-I-section-III-b" aria-label="Permalink for Section 2.1.1.2"></a></h5>
+
+						<blockquote>
+							<p>提供服務的功能之相關資訊，以及所提供服務何處會使用到產品，其連結到產品的同時提供其無障礙輔助性特徵以及對輔助裝置與設備的通用性</p>
+						</blockquote>
+
+						<p>本項規定可由符合EPUB無障礙輔助性，<a href="https://www.w3.org/TR/epub-a11y-11/#sec-discovery">發現性章節</a>達成。</p>
+
+						<section id="annex-I-section-III-b-i">
+							<h6 id="x2-1-1-2-1-i"><bdi class="secno">2.1.1.2.1 </bdi>(i)<a class="self-link" href="#annex-I-section-III-b-i" aria-label="Permalink for Section 2.1.1.2.1"></a></h6>
+
+							<blockquote>
+								<p>使資訊能透過超過一種的知覺管道獲得</p>
+							</blockquote>
+
+							<p>目標外：此為對閱讀系統和遞送端的規定。
+                </p>
+						</section>
+
+						<section id="annex-I-section-III-b-ii">
+							<h6 id="x2-1-1-2-2-ii"><bdi class="secno">2.1.1.2.2 </bdi>(ii)<a class="self-link" href="#annex-I-section-III-b-ii" aria-label="Permalink for Section 2.1.1.2.2"></a></h6>
+
+							<blockquote>
+								<p>以可理解的方式呈現該資訊</p>
+							</blockquote>
+
+							<p>目標外：此為對閱讀系統和遞送端的規定。</p>
+						</section>
+
+						<section id="annex-I-section-III-b-iii">
+							<h6 id="x2-1-1-2-3-iii"><bdi class="secno">2.1.1.2.3 </bdi>(iii)<a class="self-link" href="#annex-I-section-III-b-iii" aria-label="Permalink for Section 2.1.1.2.3"></a></h6>
+
+							<blockquote>
+								<p>以使用者可以感知的方式呈現該資訊</p>
+							</blockquote>
+
+							<p>目標外：此為對閱讀系統和遞送端的規定。</p>
+						</section>
+
+						<section id="annex-I-section-III-b-iv">
+							<h6 id="x2-1-1-2-4-iv"><bdi class="secno">2.1.1.2.4 </bdi>(iv)<a class="self-link" href="#annex-I-section-III-b-iv" aria-label="Permalink for Section 2.1.1.2.4"></a></h6>
+
+							<blockquote>
+								<p>准許替代的內容釋義，並且可在不同的輔助科技間互通，如此可使其可感知（perceivable）、可操作（operable）、可理解（understandable）、且為穩健的（robust）</p>
+							</blockquote>
+
+							<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="7"><span>注意事項</span></div><div class="">
+								<p>在歐盟無障礙法的脈絡中，用語「內容釋義（rendition）」並非指涉<em>EPUB 3多重內容釋義</em>規格，其意旨能夠採不同方式存取內容的能力。</p>
+							</div></div>
+
+							<p>本項規定可由符合<a href="https://www.w3.org/TR/WCAG2/">WCAG 2</a>達成。</p>
+						</section>
+
+						<section id="annex-I-section-III-b-v">
+							<h6 id="x2-1-1-2-5-v"><bdi class="secno">2.1.1.2.5 </bdi>(v)<a class="self-link" href="#annex-I-section-III-b-v" aria-label="Permalink for Section 2.1.1.2.5"></a></h6>
+
+							<blockquote>
+								<p>字體以足夠的尺寸和合適的形狀呈現，須預先考量使用情境並且提供足夠的對比，也須讓字母間距、行距和段落間距能被調整</p>
+							</blockquote>
+
+							<p>該規定可由符合WCAG規定<a href="https://www.w3.org/TR/WCAG2/#resize-text">1.4.4調整文字尺寸</a>（AA等級）和WCAG規定<a href="https://www.w3.org/TR/WCAG2/#contrast-minimum">1.4.3對比（最底限）</a>（AA等級）達成。</p>
+						</section>
+
+						<section id="annex-I-section-III-b-vi">
+							<h6 id="x2-1-1-2-6-vi"><bdi class="secno">2.1.1.2.6 </bdi>(vi)<a class="self-link" href="#annex-I-section-III-b-vi" aria-label="Permalink for Section 2.1.1.2.6"></a></h6>
+
+							<blockquote>
+								<p>對非文字內容提供替代的呈現，以及</p>
+							</blockquote>
+
+							<p>本項規定可由符合WCAG規定<a href="https://www.w3.org/TR/WCAG2/#non-text-content">1.1.1非文字內容</a>（A等級）達成。</p>
+						</section>
+
+						<section id="annex-I-section-III-b-vii">
+							<h6 id="x2-1-1-2-7-vii"><bdi class="secno">2.1.1.2.7 </bdi>(vii)<a class="self-link" href="#annex-I-section-III-b-vii" aria-label="Permalink for Section 2.1.1.2.7"></a></h6>
+
+							<blockquote>
+								<p>為提供的服務提出需要的電子資訊，以一致且適當的方式使其可感知、可操作、可理解、且為穩健的</p>
+							</blockquote>
+
+							<p>目標外：此為對閱讀系統和遞送端的規定。</p>
+						</section>
+					</section>
+
+					<section id="annex-I-section-III-c">
+						<h5 id="x2-1-1-3-c"><bdi class="secno">2.1.1.3 </bdi>(c)<a class="self-link" href="#annex-I-section-III-c" aria-label="Permalink for Section 2.1.1.3"></a></h5>
+
+						<blockquote>
+							<p>使網站，包含相關的線上應用程式，以及基於行動裝置的服務，包含行動應用程式具無障礙輔助性。以一致且適當的方式使其可感知、可操作、可理解、且為穩健的</p>
+						</blockquote>
+
+						<p>目標外：此為對閱讀系統和遞送端的規定。</p>
+					</section>
+
+					<section id="annex-I-section-III-d">
+						<h5 id="x2-1-1-4-d"><bdi class="secno">2.1.1.4 </bdi>(d)<a class="self-link" href="#annex-I-section-III-d" aria-label="Permalink for Section 2.1.1.4"></a></h5>
+
+						<blockquote>
+							<p>在可獲得之處，協助服務（客服櫃台、電話中心、技術協助、轉接服務以及訓練服務）提供關於該服務的無障礙輔助性以及對輔助科技相容的資訊，以無障礙的溝通模式進行</p>
+						</blockquote>
+
+						<p>目標外：此為對閱讀系統和遞送端的規定。</p>
+					</section>
+				</section>
+
+				<section id="annex-I-section-IV">
+					<h4 id="x2-1-2-section-iv"><bdi class="secno">2.1.2 </bdi>節IV<a class="self-link" href="#annex-I-section-IV" aria-label="Permalink for Section 2.1.2"></a></h4>
+
+					<blockquote>
+						<p>對特別服務相關的額外無障礙輔助性規定</p>
+					</blockquote>
+
+					<section id="annex-I-section-IV-f">
+						<h5 id="x2-1-2-1-f"><bdi class="secno">2.1.2.1 </bdi>(f)<a class="self-link" href="#annex-I-section-IV-f" aria-label="Permalink for Section 2.1.2.1"></a></h5>
+
+						<blockquote>
+							<p>電子書</p>
+						</blockquote>
+
+						<section id="annex-I-section-IV-f-i">
+							<h6 id="x2-1-2-1-1-i"><bdi class="secno">2.1.2.1.1 </bdi>(i)<a class="self-link" href="#annex-I-section-IV-f-i" aria-label="Permalink for Section 2.1.2.1.1"></a></h6>
+
+							<blockquote>
+								<p>確保當一本電子書在文字之外還包含聲音時，可讓聲音與文字同步播放</p>
+							</blockquote>
+
+							<p>在EPUB世界中，讓聲音對文字同步功能稱為<a href="https://www.w3.org/TR/epub-a11y-11/#sec-mo">媒體覆蓋</a>，提供了有效的手段讓聲音與文字同步播放。</p>
+						</section>
+
+						<section id="annex-I-section-IV-f-ii">
+							<h6 id="x2-1-2-1-2-ii"><bdi class="secno">2.1.2.1.2 </bdi>(ii)<a class="self-link" href="#annex-I-section-IV-f-ii" aria-label="Permalink for Section 2.1.2.1.2"></a></h6>
+
+							<blockquote>
+								<p>確保電子書的數位檔案不會阻礙輔助技術，使其無法正確運作</p>
+							</blockquote>
+
+							<p>EPUB無障礙輔助性文件使用<a href="https://www.w3.org/TR/WCAG2/">WCAG2</a>的輔助科技定義。</p>
+
+							<p>本項規定可透過符合以下滿足：</p>
+
+							<ul>
+								<li>WCAG 適用性規定 <a href="https://www.w3.org/TR/WCAG2/#cc4">僅使用有無障礙輔助協助的技術</a>;</li>
+								<li>WCAG 適用性規定 <a href="https://www.w3.org/TR/WCAG2/#cc5">不干擾</a>;</li>
+								<li>WCAG 原則<a href="https://www.w3.org/TR/WCAG2/#robust">4 穩健性</a> (A等級);</li>
+								<li>WCAG 指引 <a href="https://www.w3.org/TR/WCAG2/#keyboard-accessible">2.1 鍵盤無障礙輔助性</a> (A等級)。ㄋ</li>
+							</ul>
+						</section>
+
+						<section id="annex-I-section-IV-f-iii">
+							<h6 id="x2-1-2-1-3-iii"><bdi class="secno">2.1.2.1.3 </bdi>(iii)<a class="self-link" href="#annex-I-section-IV-f-iii" aria-label="Permalink for Section 2.1.2.1.3"></a></h6>
+
+							<blockquote>
+								<p>確保對內容的存取，檔案內容的導覽以及包含動態排版的版面，為內容的呈現提供結構、彈性以及和選擇</p>
+							</blockquote>
+
+							<p>本項規定可透過符合以下滿足：</p>
+
+							<ul>
+								<li>EPUB規格章節 <a href="https://www.w3.org/TR/epub-33/#sec-nav-toc">TOC nav</a>;</li>
+								<li>EPUB無障礙輔助性 <a href="https://www.w3.org/TR/epub-a11y-11/#sec-page-nav">頁面導覽規定</a>;</li>
+								<li>WCAG原則 <a href="https://www.w3.org/TR/WCAG2/#adaptable">1.3 可適應</a> (A等級)。</li>
+							</ul>
+						</section>
+
+						<section id="annex-I-section-IV-f-iv">
+							<h6 id="x2-1-2-1-4-iv"><bdi class="secno">2.1.2.1.4 </bdi>(iv)<a class="self-link" href="#annex-I-section-IV-f-iv" aria-label="Permalink for Section 2.1.2.1.4"></a></h6>
+
+							<blockquote>
+								<p>准許替代的內容釋義，並且可在不同的輔助科技間互通，如此可使其可感知（perceivable）、可操作（operable）、可理解（understandable）、且為穩健的（robust）</p>
+							</blockquote>
+
+							<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="7"><span>注意事項</span></div><div class="">
+								<p>在歐盟無障礙法的脈絡中，用語「<em>內容釋義（rendition）</em>」並非意指<em>EPUB 3多重內容釋義</em>規格，其意旨能夠採不同方式存取內容的能力。</p>
+							</div></div>
+
+							<p>本項規定可由符合<a href="https://www.w3.org/TR/WCAG2/">WCAG 2</a>達成。</p>
+						</section>
+
+						<section id="annex-I-section-IV-f-v">
+							<h6 id="x2-1-2-1-5-v"><bdi class="secno">2.1.2.1.5 </bdi>(v)<a class="self-link" href="#annex-I-section-IV-f-v" aria-label="Permalink for Section 2.1.2.1.5"></a></h6>
+
+							<blockquote>
+								<p>透過詮釋資料以提供其無障礙輔助功能的資訊，以讓其可以被發現</p>
+							</blockquote>
+
+							<p>本項規定可由符合EPUB無障礙輔助性，<a href="https://www.w3.org/TR/epub-a11y-11/#sec-discovery">發現性章節</a>達成。</p>
+						</section>
+
+						<section id="annex-I-section-IV-f-vi">
+							<h6 id="x2-1-2-1-6-vi"><bdi class="secno">2.1.2.1.6 </bdi>(vi)<a class="self-link" href="#annex-I-section-IV-f-vi" aria-label="Permalink for Section 2.1.2.1.6"></a></h6>
+
+							<blockquote>
+								<p>確保數位權利管理措施不會阻礙無障礙輔助功能</p>
+							</blockquote>
+
+							<p>本項規定可由符合EPUB無障礙輔助性，<a href="https://www.w3.org/TR/epub-a11y-11/#sec-distribution">遞送章節</a>達成（非規範性）。</p>
+						</section>
+					</section>
+				</section>
+			</section>
+		</section>
+	
+
+<section id="references" class="appendix"><h2 id="a-references"><bdi class="secno">A. </bdi>參考資料<a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></h2><section id="informative-references">
+    <h3 id="a-1-informative-references"><bdi class="secno">A.1 </bdi>參考性文件<a class="self-link" href="#informative-references" aria-label="Permalink for Appendix A.1"></a></h3>
+    <dl class="bibliography"><dt id="bib-epub-33">[epub-33]</dt><dd><a href="https://www.w3.org/TR/epub-33/"><cite>EPUB 3.3</cite></a>. Matt Garrish; Ivan Herman; Dave Cramer.  W3C. 7 December 2021. W3C Working Draft. URL: <a href="https://www.w3.org/TR/epub-33/">https://www.w3.org/TR/epub-33/</a></dd><dt id="bib-epub-a11y-11">[epub-a11y-11]</dt><dd><a href="https://www.w3.org/TR/epub-a11y-11/"><cite>EPUB Accessibility 1.1</cite></a>. Matt Garrish; George Kerscher; Charles LaPierre; Gregorio Pellegrino; Avneesh Singh.  W3C. 25 November 2021. W3C Working Draft. URL: <a href="https://www.w3.org/TR/epub-a11y-11/">https://www.w3.org/TR/epub-a11y-11/</a></dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>

@@ -1,0 +1,1368 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 32.2.2">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+span.example-title{text-transform:none}
+:is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
+div.illegal-example{color:red}
+div.illegal-example p{color:#000}
+:is(aside,div).example{border-left-width:.5em;border-left-style:solid;border-color:#e0cb52;background:#fcfaee}
+aside.example div.example{border-left-width:.1em;border-color:#999;background:#fff}
+.example pre{background-color:rgba(0,0,0,.03)}
+</style>
+<style>
+.issue-label{text-transform:initial}
+.warning>p:first-child{margin-top:0}
+.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
+span.warning{padding:.1em .5em .15em}
+.issue.closed span.issue-number{text-decoration:line-through}
+.issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
+.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}
+.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
+li.task-list-item{list-style:none}
+input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
+.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
+</style>
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+		
+		
+<title>EPUB 3 文字轉換語音增強機制 1.0</title>
+		
+		
+		
+	
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<style>
+
+ul.nomark,
+ol.nomark {
+    list-style-type: none;
+}
+
+ol.cmt,
+ul.flat {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+ol.cmt {
+	margin: 0;
+}
+
+dl.elemdef {
+    border-left: 0.5em solid rgb(145,200,255);
+    background-color: rgb(236,246,255);
+    padding: 0.5em 1em;
+	margin-bottom: 2em;
+}
+
+dl.elemdef ul.nomark {
+	padding-left: 1em;
+}
+
+dl.elemdef > dd > ul.nomark:first-child {
+	padding-left: 0 !important;
+}
+
+dl.conformance-list > dd {
+    margin-top: 0.7em;
+}
+
+dl.elemdef > dt,
+table.tabledef th {
+	font-weight: normal;
+	font-style: italic;
+}
+
+dl.elemdef > dt {
+	margin-bottom: 0.5em;
+}
+
+dl.elemdef dfn {
+	font-style: normal;
+}
+
+/*  EBNF tables */
+
+
+table.productionset {
+    border: none;
+    border-left: 5px solid rgb(145,200,255);
+    background-color: rgb(236,246,255);
+}
+
+table.productionset caption {
+	text-align: left;
+	font-size: 80%;
+	font-style: normal;
+}
+
+table.productionset tbody tr {
+    border: none;
+}
+
+table.productionset tbody tr td {
+    border: none;
+    padding: 0.5em;
+    border-bottom: 1px solid #ddd;
+}
+
+table.productionset tbody tr td a {
+    text-decoration: none;
+    border-bottom: 1px dotted #000090;
+}
+
+table.productionset tbody tr td a:hover {
+    text-decoration: underline;
+}
+
+table.productionset tbody tr td a:visited,
+table.productionset tbody tr td a:active,
+table.productionset tbody tr td a:hover {
+    color: #000090;
+}
+
+a.deprecated,
+a.legacy {
+	font-size: 85%;
+	text-transform: uppercase;
+}
+
+/* styles for core media types */
+
+table#tbl-core-media-types {
+    border-spacing: 0px;
+    padding: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 2em;    
+}
+
+table#tbl-core-media-types th {
+    border-bottom: 1px solid #005A9C;
+    font-weight: bold;
+    padding: 0.5em;
+    font-weight: bold;
+    color: #000090;
+    font-size: 90%
+}
+
+table#tbl-core-media-types td {
+    border-bottom: 1px solid #005A9C;
+    border-right: 1px solid #efefef;
+    padding: 0.5em;
+    text-align: left
+}
+
+table#tbl-core-media-types tr td:last-child {
+    border-right: none;
+}
+
+table#tbl-core-media-types td *, table#tbl-core-media-types td > * {
+    text-align: left;
+}
+
+table#tbl-core-media-types, table#tbl-core-media-types tbody {
+    padding: 0;
+}
+
+table#tbl-core-media-types caption {
+    text-align: left;
+    font-size: 90%
+}
+
+.tbl-group {
+	text-align: left;
+	border-bottom: none;
+	color: rgb(0, 0, 0);
+	background-color: rgb(240, 248, 255);
+}
+
+table#tbl-core-media-types > thead > tr > th {
+    background-color: rgb(240,240,240);
+    text-align: left;
+    white-space:nowrap;
+}
+
+table#tbl-core-media-types > tbody > tr > th {    
+    text-align: left;
+    font-weight: normal;
+    font-style: italic;
+    padding: 3px;
+}
+
+table#tbl-core-media-types td, table#tbl-core-media-types th, table#tbl-core-media-types tr {
+    border-color: #005A9C;
+    margin: 0em;
+}
+
+table#tbl-core-media-types td code, table#tbl-core-media-types td a {
+    white-space:nowrap;
+}
+
+td[headers="tbl-cmt-appl"] {
+    font-size: .9em;
+}
+
+
+
+
+/****************************************************/
+/*  property tables                                 */
+/****************************************************/
+
+/* ensure confomity of width for property tables */
+table.tabledef {
+	border-spacing: 0px;
+	border: none;
+	font-size: 1em;
+	width: 100%
+}
+
+table.tabledef td, table.tabledef th {
+	border: none;
+	background-color: rgb(236,246,255);
+	color: rgb(0,0,0);
+	padding: 0.3em;
+	vertical-align: top;
+}
+
+table.tabledef th {
+    text-align: left;
+	vertical-align: top;
+    width: 8em;
+    padding-left: 1em;
+}
+
+table.tabledef th {
+    border-left: 5px solid rgb(145,200,255);
+}
+
+table.tabledef td {
+    padding: 3px 3px 3px 10px;
+}
+
+table.tabledef td > p:first-child {
+	padding: 0em;
+	margin: 0em
+}
+
+
+/* Reserved prefix tables */
+
+table.prefix {
+    border-spacing: 0px;
+    padding: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 2em;    
+}
+table.prefix th {
+    border-bottom: 1px solid #005A9C;
+    font-weight: bold;
+    padding: 0.5em;
+    font-weight: bold;
+    color: #000090;
+    font-size: 90%
+}
+table.prefix td {
+    border-bottom: 1px solid #005A9C;
+    border-right: 1px solid #efefef;
+    padding: 0.5em;
+    text-align: left
+}
+table.prefix tr td:last-child {
+    border-right: none;
+}
+table.prefix td *, table.prefix td > * {
+    text-align: left;
+}
+table.prefix, table.prefix tbody {
+    padding: 0;
+}
+
+table.prefix caption {
+    text-align: left;
+    font-size: 90%
+}
+
+
+/* Table zebra style... */
+
+table.zebra {
+    font-size:inherit;
+    font:90%;
+    margin:1em;
+}
+
+table.zebra td {
+    padding-left: 0.3em;
+}
+
+table.zebra th {
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(0,0,128) !important;
+    font-size: 110%;
+    background: hsl(180, 30%, 50%);
+    color: #fff;
+}
+
+table.zebra th a:link {
+  color: #fff;
+}
+
+table.zebra th a:visited {
+  color: #aaa;
+}
+
+table.zebra tr:nth-child(even) {
+    background-color: hsl(180, 30%, 93%) !important;
+}
+
+table.zebra th{border-bottom:1px solid #bbb;padding:.2em 1em;}
+table.zebra td{border-bottom:1px solid #ddd;padding:.2em 1em;}
+
+
+p.support {
+	border-left: 0.4rem solid rgb(255,255,0);
+	background-color: rgb(255,255,230);
+	padding: 0.7rem;
+}
+
+p.caution, div.caution {
+	padding: 0.5rem;
+	border-left: 0.5rem solid rgb(255,140,0);
+	background-color: rgb(254,236,207);
+}
+
+div.caution-title > span {
+	color: rgb(140,40,0);
+	text-transform: uppercase;
+}
+
+details.desc {
+	margin-top: -2.5rem !important;
+	margin-left: 3rem !important;
+}
+
+details.explanation, details.desc {
+	background-color: rgb(245,245,245);
+	border-left: 0.3em solid rgb(200,200,200);
+	padding: 0.3em;
+}
+
+details.explanation > summary, details.desc > summary {
+	font-size: small;
+	text-align: left;
+    font-weight: normal !important;
+    font-style: italic;
+}
+
+</style>
+<style>
+/*中文翻譯版添加樣式*/
+dfn {font-style: normal;}
+em {font-family: serif; font-style: normal;}
+em.rfc2119 {font-family: sans-serif; font-weight: bold; text-decoration: underline;}
+code {color: red;}
+p {text-align: justify;line-height: 1.8;}
+</style>
+<meta name="description" content="This document describes authoring features and reading system support for improving the voicing of EPUB®
+				3 publications.">
+<link rel="canonical" href="https://www.w3.org/TR/epub-tts-10/">
+<style>
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
+.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
+.hljs-literal{color:#0b76c5}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
+.hljs-link{text-decoration:underline}
+</style>
+<style>
+var{position:relative;cursor:pointer}
+var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "group": "epub",
+  "wgPublicList": "public-epub3",
+  "specStatus": "NOTE",
+  "shortName": "epub-tts-10",
+  "edDraftURI": "https://w3c.github.io/epub-specs/epub33/tts/",
+  "editors": [
+    {
+      "name": "Matt Garrish",
+      "company": "DAISY Consortium",
+      "companyURL": "https://daisy.org",
+      "w3cid": 51655
+    }
+  ],
+  "includePermalinks": true,
+  "permalinkEdge": true,
+  "permalinkHide": false,
+  "diffTool": "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
+  "github": {
+    "repoURL": "https://github.com/w3c/epub-specs",
+    "branch": "main"
+  },
+  "localBiblio": {
+    "epubcontentdocs-30": {
+      "authors": [
+        "Markus Gylling",
+        "William McCoy",
+        "Elika J. Etimad",
+        "Matt Garrish"
+      ],
+      "title": "EPUB Content Documents 3.0",
+      "href": "http://idpf.org/epub/30/spec/epub30-contentdocs-20111011.html",
+      "date": "11 October 2011",
+      "publisher": "IDPF",
+      "id": "epubcontentdocs-30"
+    },
+    "svg": {
+      "title": "SVG",
+      "href": "https://www.w3.org/TR/SVG/",
+      "publisher": "W3C",
+      "id": "svg"
+    }
+  },
+  "xref": {
+    "profile": "web-platform",
+    "specs": [
+      "epub-rs-33",
+      "epub-33"
+    ]
+  },
+  "preProcess": [
+    null
+  ],
+  "publishDate": "2022-08-10",
+  "previousMaturity": "NOTE",
+  "previousPublishDate": "2022-07-24",
+  "publishISODate": "2022-08-10T00:00:00.000Z",
+  "generatedSubtitle": "W3C Group Note 10 August 2022"
+}</script>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-NOTE"></head>
+	<body class="h-entry" data-cite="epub-rs-33 epub-33 HTML INFRA URL WEBIDL DOM FETCH"><div class="head">
+    <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
+  </a></p>
+    <h1 id="title" class="title">EPUB 3 文字轉換語音增強機制 1.0</h1> 
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#NOTE">W3C小組備忘</a> <time class="dt-published" datetime="2022-08-10">10 August 2022</time></p>
+    <details open="">
+      <summary>更多關於此份文件的細節</summary>
+      <dl>
+        <dt>本版本：</dt><dd>
+                <a class="u-url" href="https://www.w3.org/TR/2022/NOTE-epub-tts-10-20220810/">https://www.w3.org/TR/2022/NOTE-epub-tts-10-20220810/</a>
+              </dd>
+        <dt>最新發佈版本：</dt><dd>
+                <a href="https://www.w3.org/TR/epub-tts-10/">https://www.w3.org/TR/epub-tts-10/</a>
+              </dd>
+        <dt>最新編輯草稿：</dt><dd><a href="https://w3c.github.io/epub-specs/epub33/tts/">https://w3c.github.io/epub-specs/epub33/tts/</a></dd>
+        <dt>歷史：</dt><dd>
+                    <a href="https://www.w3.org/standards/history/epub-tts-10">https://www.w3.org/standards/history/epub-tts-10</a>
+                  </dd><dd>
+                    <a href="https://github.com/w3c/epub-specs/commits/main">發布歷程</a>
+                  </dd>
+        
+        
+        
+        
+        
+        <dt>編輯者：</dt><dd class="editor p-author h-card vcard" data-editor-id="51655">
+    <span class="p-name fn">Matt Garrish</span> (<a class="p-org org h-org" href="https://daisy.org">DAISY Consortium</a>)
+  </dd>
+        
+        
+        <dt>提出回饋：</dt><dd>
+        <a href="https://github.com/w3c/epub-specs/">GitHub w3c/epub-specs</a>
+        (<a href="https://github.com/w3c/epub-specs/pulls/">提交請求</a>,
+        <a href="https://github.com/w3c/epub-specs/issues/new/choose">新主題</a>,
+        <a href="https://github.com/w3c/epub-specs/issues/">開放主題</a>)
+      </dd><dd>以郵件主旨<kbd>[epub-tts-10] <em>… 主題資訊 …</em></kbd>寄到<a href="mailto:public-epub3@w3.org?subject=%5Bepub-tts-10%5D%20YOUR%20TOPIC%20HERE">public-epub3@w3.org</a> (<a rel="discussion" href="https://lists.w3.org/Archives/Public/public-epub3">存檔</a>)</dd>
+        
+        
+      </dl>
+    </details>
+    
+    
+    <p class="copyright">
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+    ©
+    2022
+    
+    <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+    <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
+    <a href="https://ev.buaa.edu.cn/">Beihang</a>). W3C
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+    <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document" title="W3C Software and Document Notice and License">permissive document license</a> rules apply.
+  </p>
+    <hr title="Separator for header">
+  </div>
+		<section id="abstract" class="introductory"><h2>摘要</h2>
+			<p>本文件描述用於增進EPUB® 3出版品語音表現的製作特色與閱讀系統支援。</p>
+		</section>
+		<section id="sotd" class="introductory"><h2>本文件狀態</h2>
+    
+    <p><em>本章節描述了本文件在其發表時的狀態。目前<abbr title="World Wide Web Consortium">W3C</abbr>出版品及此技術報告的最新改版之列表皆列於<a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr>技術報告索引</a>，網址為：https://www.w3.org/TR/。</em></p>
+      <p>本文件由<a href="https://www.w3.org/groups/wg/epub">EPUB 3工作小組</a>按照<a href="https://www.w3.org/2021/Process-20211102/#recs-and-notes">備忘流程</a>，發布為小組備忘。</p>
+      <p>小組備忘不受<abbr title="World Wide Web Consortium">W3C</abbr>及其會員背書。</p>
+      <p>本文件為草稿，而且可能會隨時更新，被其他文件所取代或淘汰。編輯作業尚未完成前，不適宜引用本文件。</p>
+      
+      <p data-deliverer="125377"><a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr>專利政策</a>不對此文件做任何授權需求與承諾。</p>
+      <p>本文件受<a id="w3c_process_revision" href="https://www.w3.org/2021/Process-20211102/">2021年11月2日<abbr title="World Wide Web Consortium">W3C</abbr>流程文件</a>所規範。
+                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">目次</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">摘要</a></li>
+<li class="tocline"><a class="tocxref" href="#sotd">本文件狀態</a></li>
+<li class="tocline"><a class="tocxref" href="#intro"><bdi class="secno">1. </bdi>導論</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#overview"><bdi class="secno">1.1 </bdi>總覽</a></li>
+<li class="tocline"><a class="tocxref" href="#background"><bdi class="secno">1.2 </bdi>背景說明</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-terminology"><bdi class="secno">1.3 </bdi>術語</a></li>
+<li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1.4 </bdi>適用性</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#ssml"><bdi class="secno">2. </bdi>SSML屬性</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ssml-intro"><bdi class="secno">2.1 </bdi>導論</a></li>
+<li class="tocline"><a class="tocxref" href="#ssml-ph-attribute"><bdi class="secno">2.2 </bdi><code>ssml:ph</code>屬性</a></li>
+<li class="tocline"><a class="tocxref" href="#ssml-alphabet-attribute"><bdi class="secno">2.3 </bdi><code>ssml:alphabet</code>屬性</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#pls"><bdi class="secno">3. </bdi>發音辭典</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#pls-intro"><bdi class="secno">3.1 </bdi>導論</a></li>
+<li class="tocline"><a class="tocxref" href="#pls-lexicon-conformance"><bdi class="secno">3.2 </bdi>辭典適用性</a></li>
+<li class="tocline"><a class="tocxref" href="#pls-publication-requirements"><bdi class="secno">3.3 </bdi>與EPUB內容文件相關聯</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#css-speech"><bdi class="secno">4. </bdi>CSS speech</a></li>
+<li class="tocline"><a class="tocxref" href="#reading-system-support"><bdi class="secno">5. </bdi>閱讀系統支援</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#reading-system-intro"><bdi class="secno">5.1 </bdi>導論</a></li>
+<li class="tocline"><a class="tocxref" href="#reading-system-conformance"><bdi class="secno">5.2 </bdi>適用性</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#change-log"><bdi class="secno">A. </bdi>變更日誌</a></li>
+<li class="tocline"><a class="tocxref" href="#ack"><bdi class="secno">B. </bdi>致謝</a></li>
+<li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">C. </bdi>參考資料</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">C.1 </bdi>規範性文件</a></li>
+<li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">C.2 </bdi>參考性文件</a></li></ol></li></ol></nav>
+		<section id="intro"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>導論</h2><a class="self-link" href="#intro" aria-label="Permalink for Section 1."></a></div>
+			
+
+			<section id="overview"><div class="header-wrapper"><h3 id="x1-1-overview"><bdi class="secno">1.1 </bdi>總覽</h3><a class="self-link" href="#overview" aria-label="Permalink for Section 1.1"></a></div>
+				
+
+				<p>能夠清晰並且正確地處理出版品<a data-link-type="dfn" href="#dfn-text-to-speech" class="internalDFN" id="ref-for-dfn-text-to-speech-1">文字轉換語音（TTS, Text-to-speech）</a>，能大幅提升出版品的可讀性，並增進理解。然而不幸的是，自然語音發音的複雜度以及文字轉換語音引擎內建詞彙的限制，經常讓發音不正確或難以識別。如果可行，使用者就得推測正確的意義；或者停下閱讀，把搞混的單字逐字母讀出。任何人曾經嘗試過以基本TTS播放來閱讀教育用或者教學用材料的話，就能理解該體驗帶來的挫折。</p>
+
+				<p><abbr title="World Wide Web Consortium">W3C</abbr>定義了各式各樣的技術，能用於增進對標記內容的語音處理：合成語音標記語言（Synthetic Speech Markup Language）[<cite><a class="bibref" data-link-type="biblio" href="#bib-ssml" title="Speech Synthesis Markup Language (SSML) Version 1.1">ssml</a></cite>], 發音辭典[<cite><a class="bibref" data-link-type="biblio" href="#bib-pronunciation-lexicon" title="Pronunciation Lexicon Specification (PLS) Version 1.0">pronunciation-lexicon</a></cite>]，以及CSS Speech模組。</p>
+
+				<p>SSML與發音辭典提供了增強的語音處理。發音辭典就像TTS引擎可以使用的常用語字典，而SSML提供了能針對指定語句提供獨立發音的能力。<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-creator">EPUB製作者</a>可以同時或者分別使用這些技術，取決於文字的複雜程度。儘管有這些優勢，這些技術目前尚未受到EPUB所依靠的XHTML與SVG格式所採用而無法簡單地運用。本文件提出了在EPUB內容文件中製作與處理的方法。</p>
+
+				<p>本文件也涵蓋了CSS Speech的用法，能在EPUB中增進語音處理。CSS Speech包含的領域不同於SSML與發音辭典。不同於控制指定單字或者詞句的發薪，這些特性能讓EPUB製作者指定語音播放的各面向——處理哪些文字、以多大的音量，以哪種偏好的聲音等等。</p>
+
+				<p>本文件也包含<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-reading-system">EPUB閱讀系統</a>處理上該如何使用這些技術。雖然預期一般性的輔助技術，像是螢幕閱讀器可能也會受到這些技術的協助，但由這些技術使用的狀況並非本文件目標。</p>
+			</section>
+
+			<section id="background" class="informative"><div class="header-wrapper"><h3 id="x1-2-background"><bdi class="secno">1.2 </bdi>背景說明</h3><a class="self-link" href="#background" aria-label="Permalink for Section 1.2"></a></div><p><em>本章節為非規範性。</em></p>
+				
+
+				<p>國際數位出版論壇的EPUB工作小組，最早定義了在EPUB 3.0[<cite><a class="bibref" data-link-type="biblio" href="#bib-epubcontentdocs-30" title="EPUB Content Documents 3.0">epubcontentdocs-30</a></cite>]中整合合成語音標記語言[<cite><a class="bibref" data-link-type="biblio" href="#bib-ssml" title="Speech Synthesis Markup Language (SSML) Version 1.1">ssml</a></cite>]和發音辭典[<cite><a class="bibref" data-link-type="biblio" href="#bib-pronunciation-lexicon" title="Pronunciation Lexicon Specification (PLS) Version 1.0">pronunciation-lexicon</a></cite>]的手段。如此一來<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-creator">EPUB製作者</a>能夠以此增進<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-reading-system">閱讀系統</a>中<a data-link-type="dfn" href="#dfn-text-to-speech" class="internalDFN" id="ref-for-dfn-text-to-speech-2">文字轉換語音（TTS, Text-to-speech）</a>的語音處理品質。可以包含樣式表[<cite><a class="bibref" data-link-type="biblio" href="#bib-css2" title="Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification">css2</a></cite>]也能讓EPUB製作者能使用CSS Speech模組[<cite><a class="bibref" data-link-type="biblio" href="#bib-css-speech-1" title="CSS Speech Module">css-speech-1</a></cite>]中正在開發的speech特性。</p>
+
+				<p>儘管有些製作的內容已經採用了這些技術，但因為對技術穩定性的考量，閱讀系統的支援尚未能達到一定的層次。結果使得這些技術目前以<abbr title="World Wide Web Consortium">W3C</abbr> 工作小組備忘方式發表。</p>
+
+				<p>EPUB製作者可以在其出版品中繼續使用這些技術，將其移到備忘，並不會改變其效力，或者影響向後相容性。強烈建議支援TTS語音的閱讀系統開發者實作這些支援。工作小組將在未來EPUB 3改版時會將任何符合支援需求的技術進行標準化。</p>
+
+				<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>注意事項</span></div><div class="">
+					<p><a href="https://www.w3.org/TR/spoken-html/#">HTML中的言說表述規格</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-spoken-html" title="Specification for Spoken Presentation in HTML">spoken-html</a></cite>]，是<abbr title="World Wide Web Consortium">W3C</abbr>另一個將SSML帶入HTML的倡議。但人在早期階段而無法判斷其影響力，若未來有所影響，將會加入本文件中。工作小組會持續檢視該作業，並且持續更新本備忘以反映任何對EPUB中文字轉換語音處理的變化。</p>
+				</div></div>
+			</section>
+
+			<section id="sec-terminology"><div class="header-wrapper"><h3 id="x1-3-terminology"><bdi class="secno">1.3 </bdi>術語</h3><a class="self-link" href="#sec-terminology" aria-label="Permalink for Section 1.3"></a></div>
+				
+
+				<p>本規格使用<a href="https://www.w3.org/TR/epub-33/#sec-terminology">定義在EPUB 3.3</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>]的術語。</p>
+
+				<p>並且定義以下術語：</p>
+
+				<dl>
+					<dt><dfn id="dfn-text-to-speech" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">文字轉換語音（text-to-speech）</dfn></dt>
+					<dd>
+						<p><a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-reading-system">閱讀系統</a>利用合成人聲，將一本<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication">EPUB出版品</a>中的文字內容處理成人造語音朗讀。</p>
+					</dd>
+				</dl>
+
+				<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>注意事項</span></div><div class="">
+					<p>每一章節中只有術語第一次出現時會連結到其定義。</p>
+				</div></div>
+			</section>
+
+			<section id="conformance"><div class="header-wrapper"><h3 id="x1-4-conformance"><bdi class="secno">1.4 </bdi>適用性</h3><a class="self-link" href="#conformance" aria-label="Permalink for Section 1.4"></a></div><p>本規格中被標註為非規範性的章節，以及所有製作準則、圖表、範例以及注意事項都為非規範性。本規格其他部分皆為規範性。
+</p><p>關鍵字：<em class="rfc2119">可以（MAY）</em>,、<em class="rfc2119">必須（MUST）</em>、<em class="rfc2119">不得（MUST NOT）</em>、<em class="rfc2119">應該（SHOULD）</em>、<em class="rfc2119">不應（SHOULD NOT）</em>，在本文件中以如上粗體加底線格式出現時，須按照<a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>] 中的敘述詮釋。</p></section>
+		</section>
+		<section id="ssml"><div class="header-wrapper"><h2 id="x2-ssml-attributes"><bdi class="secno">2. </bdi>SSML屬性</h2><a class="self-link" href="#ssml" aria-label="Permalink for Section 2."></a></div>
+			
+
+			<section id="ssml-intro" class="informative"><div class="header-wrapper"><h3 id="x2-1-introduction"><bdi class="secno">2.1 </bdi>導論</h3><a class="self-link" href="#ssml-intro" aria-label="Permalink for Section 2.1"></a></div><p><em>本章節為非規範性。</em></p>
+				
+
+				<p><abbr title="World Wide Web Consortium">W3C</abbr>合成語音標記語言[<cite><a class="bibref" data-link-type="biblio" href="#bib-ssml" title="Speech Synthesis Markup Language (SSML) Version 1.1">ssml</a></cite>]是一種用於輔助<a data-link-type="dfn" href="#dfn-text-to-speech" class="internalDFN" id="ref-for-dfn-text-to-speech-3">文字轉換語音（TTS）</a>引擎來產生合成語音的語言。雖然SSML設計上作為可獨自運作的文件類型，但其定義的語義也適合在其他標記語言中使用。</p>
+
+				<p>本規格以兩項屬性重新定義[<cite><a class="bibref" data-link-type="biblio" href="#bib-ssml" title="Speech Synthesis Markup Language (SSML) Version 1.1">ssml</a></cite>]的<a href="https://www.w3.org/TR/speech-synthesis11/#S3.1.10"><code>phoneme</code>元素</a>— <code>ssml:ph</code>與<code>ssml:alphabet</code> —讓他們能在<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-content-document">EPUB內容文件</a>中使用。</p>
+
+				<p>這些屬性讓EPUB製作者能為罕用詞彙指定合適的音標發音，避免TTS常會念錯，也可避免念成發音近似的詞彙。</p>
+			</section>
+
+			<section id="ssml-ph-attribute"><div class="header-wrapper"><h3 id="x2-2-the-ssml-ph-attribute"><bdi class="secno">2.2 </bdi>The <code>ssml:ph</code>屬性</h3><a class="self-link" href="#ssml-ph-attribute" aria-label="Permalink for Section 2.2"></a></div>
+				
+
+				<p><code>ssml:ph</code>屬性用於制定其所在元素中文字的音素/音標發音。</p>
+
+				<dl class="elemdef" id="attrdef-ssml-ph">
+					<dt>屬性名稱</dt>
+					<dd>
+						<p>
+							<code>ph</code>
+						</p>
+					</dd>
+					<dt>命名空間</dt>
+					<dd>
+						<p>
+							<code>https://www.w3.org/2001/10/synthesis</code>
+						</p>
+					</dd>
+					<dt>用法</dt>
+					<dd>
+						<p>EPUB製作者<em class="rfc2119">可以</em>在EPUB內容文件中的任何元素使用該屬性，使其能在邏輯上連結對應的音標（也就是元素裡頭包含了文字內容，文字轉換語音引擎會進行處理）。</p>
+						<p>EPUB製作者<em class="rfc2119">不得</em>在子孫項已經包含了本屬性的元素中指定本屬性。</p>
+					</dd>
+					<dt>值</dt>
+					<dd>
+						<p>一個音素/音標表述，語句結構須合乎所<a href="#ssml-alphabet-attribute">使用的音素/音標表</a>的規則。</p>
+					</dd>
+				</dl>
+
+				<p><code>ssml:ph</code>屬性繼承[<cite><a class="bibref" data-link-type="biblio" href="#bib-ssml" title="Speech Synthesis Markup Language (SSML) Version 1.1">ssml</a></cite>]<code>phoneme</code>元素<a href="https://www.w3.org/TR/speech-synthesis11/#S3.1.10"><code>ph</code></a>屬性的製作規定。</p>
+
+				<p id="ssml-ph-concat">當<code>ssml:ph</code>屬性出現在其子孫項包含文字節點的元素時，該發音適用的對應文件文字，應為把子孫項文字節點按照文件順序連接起來的最終字串。所指定的音標發音邏輯上必須匹配該元素整體的文字資料（也就是，不能只對應到內容中孤立的一部分）。</p>
+
+				<p id="ssml-ph-text">EPUB製作者<em class="rfc2119">不應</em>把<code>ssml:ph</code>屬性用在沒有文字內容的元素，因為文字轉換語音引擎一班不會處理（像是用於空白的<code>div</code>或<code>span</code>元素）。該屬性不能用於為TTS播放增加額外的語音，閱讀系統當無法取代一般會處理的文字時，預期會忽略該屬性。</p>
+
+				<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span注意事項</span></div><div class="">
+					<p><code>ssml:ph</code>屬性不會取代帶有額外文字性質資訊的屬性值（例如<code><a data-type="element-attr" href="https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-alt">alt</a></code>[<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>]以及<a href="https://www.w3.org/TR/wai-aria/#aria-label"><code>aria-label</code></a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria" title="Accessible Rich Internet Applications (WAI-ARIA) 1.0">wai-aria</a></cite>]）或連結額外的文字性質資訊（例如<a href="https://www.w3.org/TR/wai-aria/#aria-describedby"><code>aria-describedby</code></a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria" title="Accessible Rich Internet Applications (WAI-ARIA) 1.0">wai-aria</a></cite>]）。</p>
+				</div></div>
+
+				<p id="ssml-ph-empty">同樣地，EPUB製作者<em class="rfc2119">不應</em>添加空白的<code>ssml:ph</code>屬性以嘗試或者抑止對文字的處理。閱讀系統預期上會忽略這些空白的屬性。（請見<a href="https://www.w3.org/TR/wai-aria/#aria-hidden"><code>aria-hidden</code>屬性</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria" title="Accessible Rich Internet Applications (WAI-ARIA) 1.0">wai-aria</a></cite>]，其用來指定內容僅用於視覺處理）。</p>
+
+				<aside class="example" id="example-1"><div class="marker">
+    <a class="self-link" href="#example-1">範例<bdi> 1</bdi></a>
+  </div>
+					<p>以下範例呈現在HTML標記中加入EPUB的發音。</p>
+					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> …
+      <span class="hljs-attr">xmlns:ssml</span>=<span class="hljs-string">"http://www.w3.org/2001/10/synthesis"</span>
+      <span class="hljs-attr">ssml:alphabet</span>=<span class="hljs-string">"ipa"</span>&gt;</span>
+   …
+   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">ssml:ph</span>=<span class="hljs-string">"ipʌb"</span>&gt;</span>EPUB<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> 3.3<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+      …
+   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+				</aside>
+
+				<aside class="example" id="example-2"><div class="marker">
+    <a class="self-link" href="#example-2">範例<bdi> 2</bdi></a>
+  </div>
+					<p>以下範例呈現在SVG標記中加入EPUB的發音。</p>
+					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> …
+     <span class="hljs-attr">xmlns:ssml</span>=<span class="hljs-string">"http://www.w3.org/2001/10/synthesis"</span>
+     <span class="hljs-attr">ssml:alphabet</span>=<span class="hljs-string">"ipa"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">tspan</span> <span class="hljs-attr">ssml:ph</span>=<span class="hljs-string">"ipʌb"</span>&gt;</span>EPUB<span class="hljs-tag">&lt;/<span class="hljs-name">tspan</span>&gt;</span> 3 … <span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+   …
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span></code></pre>
+				</aside>
+			</section>
+
+			<section id="ssml-alphabet-attribute"><div class="header-wrapper"><h3 id="x2-3-the-ssml-alphabet-attribute"><bdi class="secno">2.3 </bdi>The <code>ssml:alphabet</code>屬性</h3><a class="self-link" href="#ssml-alphabet-attribute" aria-label="Permalink for Section 2.3"></a></div>
+				
+
+				<p><code>ssml:alphabet</code>屬性指定<a href="#attrdef-ssml-ph"><code>ssml:ph</code></a>屬性中的值，使用何種音素/音標發音字母表。</p>
+
+				<dl class="elemdef" id="attrdef-ssml-alphabet">
+					<dt>屬性名稱</dt>
+					<dd>
+						<p>
+							<code>alphabet</code>
+						</p>
+					</dd>
+					<dt>命名空間</dt>
+					<dd>
+						<p>
+							<code>https://www.w3.org/2001/10/synthesis</code>
+						</p>
+					</dd>
+					<dt>用法</dt>
+					<dd>
+						<p>EPUB製作者<em class="rfc2119">可以</em>在EPUB內容文件中的任何其子孫項包含文字內容的元素中使用該屬性。</p>
+					</dd>
+					<dt>值</dt>
+					<dd>
+						<p>在<a href="#attrdef-ssml-ph"><code>ssml:ph</code>屬性</a>中，其表述值所使用的發音字母表名稱。</p>
+					</dd>
+				</dl>
+
+				<p><code>ssml:alphabet</code>屬性繼承[<cite><a class="bibref" data-link-type="biblio" href="#bib-ssml" title="Speech Synthesis Markup Language (SSML) Version 1.1">ssml</a></cite>]<code>phoneme</code>元素<a href="https://www.w3.org/TR/speech-synthesis11/#S3.1.10"><code>alphabet</code></a>屬性的製作規定。</p>
+
+				<p id="ssml-alphabet-inherit"><code>ssml:alphabet</code>屬性的值在文件樹中繼承。判斷供每個<code>ssml:ph</code>屬性值使用的發音字母表的方法為：先找出第一個<code>ssml:alphabet</code>屬性，其所在的元素<code>ssml:ph</code>也開始出現，接隨最接近的上層元素。</p>
+
+				<p>EPUB製作者<em class="rfc2119">應該</em>確保字母表所定義的範圍可包含所有以 屬性</p>表達的音素。缺少這樣的宣告就不能保證播放的互換性—例如閱讀系統可能會套用預設的字母表，或者可能讓該音素不發音。</p>
+
+				<aside class="example" id="example-3"><div class="marker">
+    <a class="self-link" href="#example-3">範例<bdi> 3</bdi></a>
+  </div>
+					<p>以下範例呈現在根<code>html</code>元素宣告全域使用x-JEITA字母表。然後在body覆寫轉為使用IPA。</p>
+					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> … 
+      <span class="hljs-attr">xmlns:ssml</span>=<span class="hljs-string">"http://www.w3.org/2001/10/synthesis"</span>
+      <span class="hljs-attr">ssml:alphabet</span>=<span class="hljs-string">"x-JEITA"</span>&gt;</span>
+   …
+   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+   	…
+   	   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">ssml:alphabet</span>=<span class="hljs-string">"ipa"</span> <span class="hljs-attr">ssml:ph</span>=<span class="hljs-string">"ipʌb"</span>&gt;</span>EPUB<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> is an …<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+   	…
+   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+				</aside>
+
+				<aside class="example" id="example-4"><div class="marker">
+    <a class="self-link" href="#example-4">範例<bdi> 4</bdi></a>
+  </div>
+					<p>以下範例呈現在根<code>svg</code>元素宣告全域使用x-SAMPA字母表。</p>
+					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> …
+      <span class="hljs-attr">xmlns:ssml</span>=<span class="hljs-string">"http://www.w3.org/2001/10/synthesis"</span>
+      <span class="hljs-attr">ssml:alphabet</span>=<span class="hljs-string">"x-sampa"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">tspan</span> <span class="hljs-attr">ssml:ph</span>=<span class="hljs-string">"ipVb"</span>&gt;</span>EPUB<span class="hljs-tag">&lt;/<span class="hljs-name">tspan</span>&gt;</span> Adoption Chart<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+   …
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span></code></pre>
+				</aside>
+
+				<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>注意事項</span></div><div class="">
+					<p>儘管[<cite><a class="bibref" data-link-type="biblio" href="#bib-ssml" title="Speech Synthesis Markup Language (SSML) Version 1.1">ssml</a></cite>]規格有一份參考的字母表清單，但目前尚未發表。因為<abbr title="World Wide Web Consortium">W3C</abbr>語音瀏覽器工作小組的章程已經過期，該工作小組預期不會發布這份清單。EPUB製作者應該參考閱讀系統支援文件來判斷所支援的字母表。一些常見的字母表包含x-JEITA（以及x-JEITA-IT-4002和x-JEITA-IT-4006）以及)x-sampa。</p>
+				</div></div>
+			</section>
+		</section>
+		<section id="pls"><div class="header-wrapper"><h2 id="x3-pronunciation-lexicons"><bdi class="secno">3. </bdi>發音辭典</h2><a class="self-link" href="#pls" aria-label="Permalink for Section 3."></a></div>
+			
+
+			<section id="pls-intro" class="informative"><div class="header-wrapper"><h3 id="x3-1-introduction"><bdi class="secno">3.1 </bdi>導論</h3><a class="self-link" href="#pls-intro" aria-label="Permalink for Section 3.1"></a></div><p><em>本章節為非規範性。</em></p>
+				
+
+				<p><abbr title="World Wide Web Consortium">W3C</abbr>發音辭典規格（Pronunciation Lexicon Specification, PLS）[<cite><a class="bibref" data-link-type="biblio" href="#bib-pronunciation-lexicon" title="Pronunciation Lexicon Specification (PLS) Version 1.0">pronunciation-lexicon</a></cite>]定義了基於XML格式發音辭典的語法與語意，可被用於自動語音辨識，以及<a data-link-type="dfn" href="#dfn-text-to-speech" class="internalDFN" id="ref-for-dfn-text-to-speech-4">文字轉換語音（TTS）</a>引擎。</p>
+
+				<p>發音辭典讓EPUB製作者可以定義單一全域的語音學發音，讓閱讀系統可以於詞彙每一次出現時使用，而不像SSML屬性，需要詞彙每次出現都標注一次。所以對於僅有一種發音，或者有多種發音卻常僅發其中一種音的詞彙而言，是更為有效率的定義發音方式。</p>
+
+				<p>EPUB製作者可以使用[<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>]<a href="https://html.spec.whatwg.org/multipage/#the-link-element"><code>link</code>元素</a>以及[<cite><a class="bibref" data-link-type="biblio" href="#bib-svg" title="SVG">svg</a></cite>]<a href="https://www.w3.org/TR/SVG/struct.html#HTMLMetadataElements"><code>link</code>元素</a>來讓相對應的<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-content-document">EPUB內容文件</a>類別與一或多個辭典產生關聯。當閱讀系統處理文件時，可以此識別連結的字典並且用於啟動<a data-link-type="dfn" href="#dfn-text-to-speech" class="internalDFN" id="ref-for-dfn-text-to-speech-5">文字轉換語音</a>播放。</p>
+			</section>
+
+			<section id="pls-lexicon-conformance"><div class="header-wrapper"><h3 id="x3-2-lexicon-conformance"><bdi class="secno">3.2 </bdi>辭典適用性</h3><a class="self-link" href="#pls-lexicon-conformance" aria-label="Permalink for Section 3.2"></a></div>
+				
+
+				<p>一本發音辭典：</p>
+
+				<ul class="conformance-list">
+					<li>
+						<p id="confreq-pls-xml"><em class="rfc2119">必須</em>符合定義在XML適用性[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>]中對XML文件的適用規則。</p>
+					</li>
+					<li>
+						<p id="confreq-pls"><em class="rfc2119">必須</em>合乎定義在[<cite><a class="bibref" data-link-type="biblio" href="#bib-pronunciation-lexicon" title="Pronunciation Lexicon Specification (PLS) Version 1.0">pronunciation-lexicon</a></cite>]的文法規則。</p>
+					</li>
+				</ul>
+
+				<div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-3" aria-level="4"><span>注意事項</span></div><div class="">
+					<p>用來驗證辭典的非規範性綱要可由此取得：<a href="https://www.w3.org/TR/2008/REC-pronunciation-lexicon-20081014/pls.rng"><code>https://www.w3.org/TR/2008/REC-pronunciation-lexicon-20081014/pls.rng</code></a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-pronunciation-lexicon" title="Pronunciation Lexicon Specification (PLS) Version 1.0">pronunciation-lexicon</a></cite>]。</p>
+				</div></div>
+
+				<aside class="example" id="example-5"><div class="marker">
+    <a class="self-link" href="#example-5">範例<bdi> 5</bdi></a>
+  </div>
+					<p>以下範例呈現一本日文的發音辭典。</p>
+					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">lexicon</span>
+     <span class="hljs-attr">version</span>=<span class="hljs-string">"1.0"</span>
+     <span class="hljs-attr">alphabet</span>=<span class="hljs-string">"ipa"</span>
+     <span class="hljs-attr">xml:lang</span>=<span class="hljs-string">"en"</span>
+     <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2005/01/pronunciation-lexicon"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">lexeme</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">grapheme</span>&gt;</span>EPUB<span class="hljs-tag">&lt;/<span class="hljs-name">grapheme</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">phoneme</span>&gt;</span>ipʌb<span class="hljs-tag">&lt;/<span class="hljs-name">phoneme</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">lexeme</span>&gt;</span>
+   …
+<span class="hljs-tag">&lt;/<span class="hljs-name">lexicon</span>&gt;</span></code></pre>
+				</aside>
+			</section>
+
+			<section id="pls-publication-requirements"><div class="header-wrapper"><h3 id="x3-3-associating-with-epub-content-documents"><bdi class="secno">3.3 </bdi>與EPUB內容文件相關聯</h3><a class="self-link" href="#pls-publication-requirements" aria-label="Permalink for Section 3.3"></a></div>
+				
+
+				<p id="confreq-cd-pls-xht">EPUB製作者<em class="rfc2119">可以</em>在<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-content-document">EPUB內容文件</a>中連結零或多個發音辭典[<cite><a class="bibref" data-link-type="biblio" href="#bib-pronunciation-lexicon" title="Pronunciation Lexicon Specification (PLS) Version 1.0">pronunciation-lexicon</a></cite>]。</p>
+
+				<p id="confreq-cd-pls-assoc">若要讓一份<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-xhtml-content-document">XHTML內容文件</a>和發音辭典產生關連，EPUB製作者<em class="rfc2119">必須</em>使用[<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>]<a href="https://html.spec.whatwg.org/multipage/#the-link-element"><code>link</code>元素</a>。同樣的要讓一份<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-svg-content-document">SVG內容文件</a>與發音辭典產生關聯，EPUB製作者<em class="rfc2119">必須</em>使用[<cite><a class="bibref" data-link-type="biblio" href="#bib-svg" title="SVG">svg</a></cite>]<a href="https://www.w3.org/TR/SVG/struct.html#HTMLMetadataElements"><code>link</code>元素</a>。</p>
+
+				<p>無論是哪一種EPUB內容文件，<code>link</code>元素<em class="rfc2119">必須</em>要有<code>rel</code>屬性，設定為"<code>pronunciation</code>"，以及其<code>type</code>屬性設定為媒體類型"<code>application/pls+xml</code>"。</p>
+
+				<p id="confreq-cd-pls-assoc-lang">EPUB製作者<em class="rfc2119">應該</em>為每一個連結的<code>link</code>元素指定<code>hreflang</code>屬性，當指定時，其值<em class="rfc2119">必須</em>符合<a href="https://www.w3.org/TR/pronunciation-lexicon/#S4.1">發音辭典所關聯的語言</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-pronunciation-lexicon" title="Pronunciation Lexicon Specification (PLS) Version 1.0">pronunciation-lexicon</a></cite>]。</p>
+
+				<aside class="example" id="example-6"><div class="marker">
+    <a class="self-link" href="#example-6">範例<bdi> 6</bdi></a>
+  </div>
+					<p>以下範例呈現兩份發音辭典（一份為中文，另一份為蒙文）與XHTML內容文件相關聯。</p>
+					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> … &gt;</span>    
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        …
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"pronunciation"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"application/pls+xml"</span> <span class="hljs-attr">hreflang</span>=<span class="hljs-string">"cmn"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../speech/cmn.pls"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"pronunciation"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"application/pls+xml"</span> <span class="hljs-attr">hreflang</span>=<span class="hljs-string">"mn"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../speech/mn.pls"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>        
+    …
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+				</aside>
+			</section>
+		</section>
+		<section id="css-speech"><div class="header-wrapper"><h2 id="x4-css-speech"><bdi class="secno">4. </bdi>CSS speech</h2><a class="self-link" href="#css-speech" aria-label="Permalink for Section 4."></a></div>
+			
+
+			<p>CSS Speech[<cite><a class="bibref" data-link-type="biblio" href="#bib-css-speech-1" title="CSS Speech Module">css-speech-1</a></cite>]模組定義了特性，能讓EPUB製作者宣告性地控制<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-content-document">EPUB內容文件</a>的聲音處理。其包含了特性用來指定偏好的<a data-link-type="dfn" href="#dfn-text-to-speech" class="internalDFN" id="ref-for-dfn-text-to-speech-6">文字轉換語音</a>聲音、音量，在處理元素時還可以表現停頓與指示。</p>
+
+			<p>由於EPUB內容文件支援使用層疊樣式表[<cite><a class="bibref" data-link-type="biblio" href="#bib-css2" title="Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification">css2</a></cite>]，EPUB製作者<em class="rfc2119">可以</em>使用CSS Speech[<cite><a class="bibref" data-link-type="biblio" href="#bib-css-speech-1" title="CSS Speech Module">css-speech-1</a></cite>]特性於樣式表定義中。</p>
+
+			<aside class="example" id="example-7"><div class="marker">
+    <a class="self-link" href="#example-7">範例<bdi> 7</bdi></a>
+  </div>
+				<p>以下範例呈現CSS宣告，在出版品中每一個新章節開始前給予一個聲音上的指引。</p>
+				<pre aria-busy="false"><code class="hljs css"><span class="hljs-selector-tag">section</span><span class="hljs-selector-class">.chapter</span> {
+   cue-before: <span class="hljs-built_in">url</span>(<span class="hljs-string">audio/chapter_start.mp3</span>) +<span class="hljs-number">6</span>dB;
+}</code></pre>
+			</aside>
+		</section>
+		<section id="reading-system-support"><div class="header-wrapper"><h2 id="x5-reading-system-support"><bdi class="secno">5. </bdi>閱讀系統支援</h2><a class="self-link" href="#reading-system-support" aria-label="Permalink for Section 5."></a></div>
+			
+
+			<section id="reading-system-intro"><div class="header-wrapper"><h3 id="x5-1-introduction"><bdi class="secno">5.1 </bdi>導論</h3><a class="self-link" href="#reading-system-intro" aria-label="Permalink for Section 5.1"></a></div>
+				
+
+				<p> <a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-reading-system">閱讀系統</a>可以按照他們所使用的引擎類型，以不同的方式實作<a data-link-type="dfn" href="#dfn-text-to-speech" class="internalDFN" id="ref-for-dfn-text-to-speech-7">文字轉換語音</a>播放—例如，某種做法可能僅將文件中的文字內容送進引擎，而另一種可能支援完整的標記。本文件試圖在規定上提供彈性以允許這些差別。唯一的規定是在處理行為結果上需要正確。</p>
+
+				<p>儘管本文件所指稱的「強化」，脈絡上用於本身有內建文字轉換語音處理能力的閱讀系統，但也期望任何應用程式或者輔助科技，若能存取EPUB出版品中的標記也能夠使用這些功能來提供強化的聲音處理。然而，確保這些技術能被這些應用程式所使用並非本文件的目標。</p>
+			</section>
+
+			<section id="reading-system-conformance"><div class="header-wrapper"><h3 id="x5-2-conformance"><bdi class="secno">5.2 </bdi>適用性</h3><a class="self-link" href="#reading-system-conformance" aria-label="Permalink for Section 5.2"></a></div>
+				
+
+				<p>具有<a data-link-type="dfn" href="#dfn-text-to-speech" class="internalDFN" id="ref-for-dfn-text-to-speech-8">文字轉換語音（TTS）</a>相容性的<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-reading-system">閱讀系統</a><em class="rfc2119">應該</em>支援<a href="#ssml">SSML屬性</a>、<a href="#pls">發音辭典</a>以及<a href="#css-speech">CSS Speech</a>如下：</p>
+
+				<dl>
+					<dt>SSML</dt>
+					<dd>
+						<p>支援SSML的閱讀系統：</p>
+						<ul class="conformance-list">
+							<li>
+								<p id="confreq-ssml-ph"><em class="rfc2119">必須</em>按照[<cite><a class="bibref" data-link-type="biblio" href="#bib-ssml" title="Speech Synthesis Markup Language (SSML) Version 1.1">ssml</a></cite>]中對<a href="https://www.w3.org/TR/speech-synthesis11/#S3.1.10"><code>phoneme</code>元素</a><code>ph</code>屬性的規定處理<code>ssml:ph</code>屬性，並且有額外規定如下：</p>
+								<ul>
+									<li>
+										<p id="confreq-ssml-ph-empty"><em class="rfc2119">必須</em>忽略其值為空白字串或者僅包含<a href="https://infra.spec.whatwg.org/#ascii-whitespace">ASCII空白</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-infra" title="Infra Standard">infra</a></cite>]的<code>ssml:ph</code>屬性。</p>
+									</li>
+									<li>
+										<p id="confreq-ssml-ph-emptytext"><em class="rfc2119">必須</em>忽略<code>ssml:ph</code>屬性，若其所在元素的子孫項文字內容為空白字串或者僅包含<a href="https://infra.spec.whatwg.org/#ascii-whitespace">ASCII空白</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-infra" title="Infra Standard">infra</a></cite>]。</p>
+									</li>
+									<li>
+										<p id="confreq-ssml-ph-nontext"><em class="rfc2119">必須</em>忽略<code>ssml:ph</code>屬性，若其所在元素的子孫項文字內容表現為回退。</p>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p id="confreq-ssml-alphabet"><em class="rfc2119">必須</em>按照[<cite><a class="bibref" data-link-type="biblio" href="#bib-ssml" title="Speech Synthesis Markup Language (SSML) Version 1.1">ssml</a></cite>]中<a href="https://www.w3.org/TR/speech-synthesis11/#S3.1.10"><code>phoneme</code>元素</a><code>alphabet</code>屬性的規定處理<code>ssml:alphabet</code>屬性。</p>
+							</li>
+						</ul>
+					</dd>
+
+					<dt>發音辭典</dt>
+					<dd>
+						<p>支援發音辭典的閱讀系統：</p>
+						<ul class="conformance-list">
+							<li>
+								<p id="confreq-pls-rs-proc"><em class="rfc2119">必須</em>按照[<cite><a class="bibref" data-link-type="biblio" href="#bib-pronunciation-lexicon" title="Pronunciation Lexicon Specification (PLS) Version 1.0">pronunciation-lexicon</a></cite>]的定義，處理所有在EPUB內容文件中連結的發音辭典。</p>
+							</li>
+							<li>
+								<p id="confreq-pls-rs-scope">當EPUB內容文件，其語言與<a href="https://www.w3.org/TR/pronunciation-lexicon/#S4.1">相關聯的發音辭典語言</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-pronunciation-lexicon" title="Pronunciation Lexicon Specification (PLS) Version 1.0">pronunciation-lexicon</a></cite>]匹配時，<em class="rfc2119">必須</em>將所提供的詞彙套用到EPUB內容文件中的文字節點。[<cite><a class="bibref" data-link-type="biblio" href="#bib-bcp47" title="Tags for Identifying Languages">bcp47</a></cite>]定義了匹配語言標籤的演算法。</p>
+							</li>
+						</ul>
+						<div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-4" aria-level="4"><span>注意事項</span></div><div class="">
+							<p>不要求閱讀系統使用的文字轉換語音引擎支援發音辭典，並且將詞彙正確地處理並且應用。舉個例子，閱讀系統可以將辭典轉換成另外一種TTS引擎支援的字典格式。</p>
+						</div></div>
+					</dd>
+
+					<dt>SSML與發音辭典</dt>
+					<dd>
+						<p>支援SSML與發音辭典的閱讀系統：</p>
+						<ul>
+							<li>
+								<p><em class="rfc2119">必須</em>讓任何透過<a href="#ssml-ph-attribute"><code>ssml:ph</code></a>屬性提供的發音程序優先，當[<cite><a class="bibref" data-link-type="biblio" href="#bib-pronunciation-lexicon" title="Pronunciation Lexicon Specification (PLS) Version 1.0">pronunciation-lexicon</a></cite>]的<a href="https://www.w3.org/TR/pronunciation-lexicon/#S4.5"><code>grapheme</code>元素</a>與元素中的文字節點匹配，並且帶有<code>ssml:ph</code>屬性時。</p>
+							</li>
+						</ul>
+					</dd>
+
+					<dt>CSS Speech</dt>
+					<dd>
+						<p>本文件對閱讀系統作出支援如[<cite><a class="bibref" data-link-type="biblio" href="#bib-css-speech-1" title="CSS Speech Module">css-speech-1</a></cite>]所定義之外的額外要求。</p>
+					</dd>
+				</dl>
+			</section>
+		</section>
+		<section id="change-log" class="appendix informative"><div class="header-wrapper"><h2 id="a-change-log"><bdi class="secno">A. </bdi>變更日誌</h2><a class="self-link" href="#change-log" aria-label="Permalink for Appendix A."></a></div><p><em>本章節為非規範性。</em></p>
+			
+
+			<p>請注意本變更日誌僅列出自<a href="https://www.w3.org/publishing/epub/epub-contentdocs.html">EPUB內容文件3.2</a>以來的顯著變更——這些變更會影響適用性或有同等的重要性。</p>
+
+			<p>若要取得在改版過程中所有議題的列表，請參考<a href="https://github.com/w3c/epub-specs/issues?q=is%3Aissue+is%3Aclosed+label%3AEPUB33+label%3ASpec-TTS">工作小組的議題追蹤器</a>。</p>
+
+			<ul>
+				<li>25-June-2021: 釐清<code>ssml:alphabet</code>屬性處理，並且增加對<code>ssml:ph</code>屬性的額外規定，以避免用於添加或移除文字的語音化。請見<a href="https://github.com/w3c/epub-specs/issues/1706">issue 1706</a>。</li>
+				<li>25-June-2021: 釐清發音辭典的應用程式。請見<a href="https://github.com/w3c/epub-specs/issues/1705">issue 1705</a>。</li>
+				<li>22-June-2021: 新增讓SSML與PLD也能用於SVG內容文件。請見<a href="https://github.com/w3c/epub-specs/issues/1710">issue 1710</a>。</li>
+			</ul>
+		</section>
+		<section id="ack" class="appendix informative"><div class="header-wrapper"><h2 id="b-acknowledgements"><bdi class="secno">B. </bdi>致謝</h2><a class="self-link" href="#ack" aria-label="Permalink for Appendix B."></a></div><p><em>本章節為非規範性。</em></p>
+    
+
+    <p>以下EPUB 3工作小組的成員對本規格的產製有所貢獻：</p>
+
+    <ul class="ack">
+                <li>Will AWAD (Newgen Knowledgeworks)</li>
+        <li>Sofia Bautista (Legible Media Inc.)</li>
+        <li>Laura Brady (Legible Media Inc.)</li>
+        <li>Leah Brochu (National Network for Equitable Library Service)</li>
+        <li>Matthew C. Chan (House of Anansi Press)</li>
+        <li>Yu-Wei Chang (Taiwan Digital Publishing Forum)</li>
+        <li>Fred Chasen (Scribd)</li>
+        <li>Juan Corona (Legible Media Inc.)</li>
+        <li>Dave Cramer (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Expert, chair)</li>
+        <li>Romain Deltour (DAISY Consortium)</li>
+        <li>Marisa DeMeglio (DAISY Consortium)</li>
+        <li>Brady Duga (Google LLC)</li>
+        <li>Reinaldo Ferraz (NIC.br - Brazilian Network Information Center)</li>
+        <li>John Foliot (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Expert)</li>
+        <li>Teenya Franklin (Pearson plc)</li>
+        <li>Hadrien Gardeur (EDRLab)</li>
+        <li>Matt Garrish (DAISY Consortium)</li>
+        <li>Jen Goulden (Crawford Technologies)</li>
+        <li>Ivan Herman (<abbr title="World Wide Web Consortium">W3C</abbr>, staff contact)</li>
+        <li>Tetsu Hoshino (Kodansha, Publishers, Ltd.)</li>
+        <li>Norikazu Ishizu (Kadokawa Corporation)</li>
+        <li>Norihito IYENAGA (Kodansha, Publishers, Ltd.)</li>
+        <li>Rick Johnson (VitalSource Technologies)</li>
+        <li>Ken Jones (Circular Software)</li>
+        <li>Antonio Kamiya (Dentsu Group Inc.)</li>
+        <li>Deborah Kaplan (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Expert)</li>
+        <li>Bill Kasdorf (Book Industry Study Group)</li>
+        <li>George Kerscher (DAISY Consortium)</li>
+        <li>Kazuhito Kidachi (Mitsue-Links Co., Ltd.)</li>
+        <li>Masakazu Kitahara (Voyager Japan, Inc.)</li>
+        <li>Toshiaki Koike (Voyager Japan, Inc.)</li>
+        <li>Ryo Kuroda (ACCESS CO., LTD.)</li>
+        <li>Charles LaPierre (Benetech)</li>
+        <li>Dan Lazin (Google LLC)</li>
+        <li>Laurent Le Meur (EDRLab)</li>
+        <li>Victoria Lee (Apple, Inc.)</li>
+        <li>Farrah Little (National Network for Equitable Library Service)</li>
+        <li>Victor Lopes (Apple, Inc.)</li>
+        <li>Karan  Malhotra (Newgen Knowledgeworks)</li>
+        <li>Makoto Murata (DAISY Consortium)</li>
+        <li>Cristina Mussinelli (Fondazione LIA)</li>
+        <li>Yoichiro Nagao (Kodansha, Publishers, Ltd.)</li>
+        <li>Theresa O'Connor (Apple, Inc.)</li>
+        <li>Yoshinori Ohmura (SHUEISHA Inc.)</li>
+        <li>Rachel Osolen (National Network for Equitable Library Service)</li>
+        <li>Gregorio Pellegrino (Fondazione LIA)</li>
+        <li>Vijaya Gowri Perumal (Newgen Knowledgeworks)</li>
+        <li>Wendy Reid (Rakuten Group, Inc., chair)</li>
+        <li>John Roque (Apple, Inc.)</li>
+        <li>Leonard Rosenthol (Adobe)</li>
+        <li>Shinobu Sato (Kadokawa Corporation)</li>
+        <li>Ben Schroeter (Pearson plc)</li>
+        <li>Daihei Shiohama (MEDIA DO Co., Ltd.)</li>
+        <li>Tzviya Siegman (Wiley)</li>
+        <li>Avneesh Singh (DAISY Consortium)</li>
+        <li>MOTOI SUZUKI (SHUEISHA Inc.)</li>
+        <li>Yutaka Suzuki (Kadokawa Corporation)</li>
+        <li>Kyrce Swenson (Pearson plc)</li>
+        <li>Shinya Takami (Kadokawa Corporation, chair)</li>
+        <li>Mateus Teixeira (W. W. Norton &amp; Company)</li>
+        <li>Yukio Tomikura (Kodansha, Publishers, Ltd.)</li>
+        <li>Aimee Ubbink (Crawford Technologies)</li>
+        <li>Daniel Weck (DAISY Consortium)</li>
+        <li>Zheng Xu (Gardenia Corp)</li>
+        <li>Fuqiao Xue (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+        <li>Evan Yamanishi (W. W. Norton &amp; Company)</li>
+        <li>Osamu Yoshiba (Kodansha, Publishers, Ltd.)</li>
+        <li>Junichi Yoshii (Kodansha, Publishers, Ltd.)</li>
+        <li>Naomi Yoshizawa (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+        <li>Laurence Zaysser (EDRLab)</li>
+    </ul>
+    
+</section>
+
+
+	
+
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="c-references"><bdi class="secno">C. </bdi>參考資料</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix C."></a></div><section id="normative-references"><div class="header-wrapper"><h3 id="c-1-normative-references"><bdi class="secno">C.1 </bdi>規範性文件</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix C.1"></a></div>
+    
+    <dl class="bibliography"><dt id="bib-bcp47">[bcp47]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc5646"><cite>Tags for Identifying Languages</cite></a>. A. Phillips, Ed.; M. Davis, Ed..  IETF. September 2009. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc5646">https://www.rfc-editor.org/rfc/rfc5646</a>
+    </dd><dt id="bib-css-speech-1">[css-speech-1]</dt><dd>
+      <a href="https://www.w3.org/TR/css-speech-1/"><cite>CSS Speech Module</cite></a>. Daniel Weck.  W3C. 10 March 2020. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/css-speech-1/">https://www.w3.org/TR/css-speech-1/</a>
+    </dd><dt id="bib-css2">[css2]</dt><dd>
+      <a href="https://www.w3.org/TR/CSS21/"><cite>Cascading Style Sheets Level 2 Revision 1 (CSS 2.1) Specification</cite></a>. Bert Bos; Tantek Çelik; Ian Hickson; Håkon Wium Lie.  W3C. 7 June 2011. W3C Recommendation. URL: <a href="https://www.w3.org/TR/CSS21/">https://www.w3.org/TR/CSS21/</a>
+    </dd><dt id="bib-epub-33">[epub-33]</dt><dd>
+      <a href="https://www.w3.org/TR/epub-33/"><cite>EPUB 3.3</cite></a>. Matt Garrish; Ivan Herman; Dave Cramer.  W3C. 7 August 2022. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/epub-33/">https://www.w3.org/TR/epub-33/</a>
+    </dd><dt id="bib-html">[html]</dt><dd>
+      <a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Anne van Kesteren; Domenic Denicola; Ian Hickson; Philip Jägenstedt; Simon Pieters.  WHATWG. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
+    </dd><dt id="bib-infra">[infra]</dt><dd>
+      <a href="https://infra.spec.whatwg.org/"><cite>Infra Standard</cite></a>. Anne van Kesteren; Domenic Denicola.  WHATWG. Living Standard. URL: <a href="https://infra.spec.whatwg.org/">https://infra.spec.whatwg.org/</a>
+    </dd><dt id="bib-pronunciation-lexicon">[pronunciation-lexicon]</dt><dd>
+      <a href="https://www.w3.org/TR/pronunciation-lexicon/"><cite>Pronunciation Lexicon Specification (PLS) Version 1.0</cite></a>. Paolo Baggia.  W3C. 14 October 2008. W3C Recommendation. URL: <a href="https://www.w3.org/TR/pronunciation-lexicon/">https://www.w3.org/TR/pronunciation-lexicon/</a>
+    </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
+    </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>
+    </dd><dt id="bib-ssml">[ssml]</dt><dd>
+      <a href="https://www.w3.org/TR/speech-synthesis11/"><cite>Speech Synthesis Markup Language (SSML) Version 1.1</cite></a>. Daniel Burnett; Zhi Wei Shuang.  W3C. 7 September 2010. W3C Recommendation. URL: <a href="https://www.w3.org/TR/speech-synthesis11/">https://www.w3.org/TR/speech-synthesis11/</a>
+    </dd><dt id="bib-svg">[svg]</dt><dd>
+      <a href="https://www.w3.org/TR/SVG/"><cite>SVG</cite></a>.  W3C. URL: <a href="https://www.w3.org/TR/SVG/">https://www.w3.org/TR/SVG/</a>
+    </dd></dl>
+  </section><section id="informative-references"><div class="header-wrapper"><h3 id="c-2-informative-references"><bdi class="secno">C.2 </bdi>參考性文件</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix C.2"></a></div>
+    
+    <dl class="bibliography"><dt id="bib-epubcontentdocs-30">[epubcontentdocs-30]</dt><dd>
+      <a href="http://idpf.org/epub/30/spec/epub30-contentdocs-20111011.html"><cite>EPUB Content Documents 3.0</cite></a>. Markus Gylling; William McCoy; Elika J. Etimad; Matt Garrish.  IDPF. 11 October 2011. URL: <a href="http://idpf.org/epub/30/spec/epub30-contentdocs-20111011.html">http://idpf.org/epub/30/spec/epub30-contentdocs-20111011.html</a>
+    </dd><dt id="bib-spoken-html">[spoken-html]</dt><dd>
+      <a href="https://www.w3.org/TR/spoken-html/"><cite>Specification for Spoken Presentation in HTML</cite></a>. Irfan Ali; Markku Hakkinen; Paul Grenier; Ruoxi Ran.  W3C. 23 September 2021. W3C Working Draft. URL: <a href="https://www.w3.org/TR/spoken-html/">https://www.w3.org/TR/spoken-html/</a>
+    </dd><dt id="bib-wai-aria">[wai-aria]</dt><dd>
+      <a href="https://www.w3.org/TR/wai-aria/"><cite>Accessible Rich Internet Applications (WAI-ARIA) 1.0</cite></a>. James Craig; Michael Cooper et al.  W3C. 20 March 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria/">https://www.w3.org/TR/wai-aria/</a>
+    </dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-text-to-speech" aria-label="Links in this document to definition: text-to-speech">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-text-to-speech" aria-label="Permalink for definition: text-to-speech. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-text-to-speech-1" title="§ 1.1 Overview">§ 1.1 Overview</a> 
+  </li>
+<li>
+    <a href="#ref-for-dfn-text-to-speech-2" title="§ 1.2 Background">§ 1.2 Background</a> 
+  </li>
+<li>
+    <a href="#ref-for-dfn-text-to-speech-3" title="§ 2.1 Introduction">§ 2.1 Introduction</a> 
+  </li>
+<li>
+    <a href="#ref-for-dfn-text-to-speech-4" title="§ 3.1 Introduction">§ 3.1 Introduction</a> <a href="#ref-for-dfn-text-to-speech-5" title="Reference 2">(2)</a> 
+  </li>
+<li>
+    <a href="#ref-for-dfn-text-to-speech-6" title="§ 4. CSS speech">§ 4. CSS speech</a> 
+  </li>
+<li>
+    <a href="#ref-for-dfn-text-to-speech-7" title="§ 5.1 Introduction">§ 5.1 Introduction</a> 
+  </li>
+<li>
+    <a href="#ref-for-dfn-text-to-speech-8" title="§ 5.2 Conformance">§ 5.2 Conformance</a> 
+  </li>
+  </ul>
+    </div><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>

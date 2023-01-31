@@ -1,0 +1,242 @@
+@charset "UTF-8";
+@namespace "http://www.w3.org/1999/xhtml";
+@namespace epub "http://www.idpf.org/2007/ops";
+
+/*EPUB 3.3中推薦閱讀系統支援CSS工作小組每年發佈的CSS Snapshot（快照）上的推薦規格。
+然而，並非所有閱讀系統都能使用最新的瀏覽器核心，以及設計上的考量，所以EPUB製作者製作時需注意*/
+
+html {
+  -ms-writing-mode: tb-rl;
+  -epub-writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+  font-family: serif;
+}
+
+body {
+  text-align: justify;
+  text-justify: inter-ideograph;
+  vertical-align: baseline;
+  word-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: serif, sans-serif;
+  font-weight: normal;
+  color: inherit;
+}
+
+h1 {
+  font-size: 2em;
+  margin-right: 0.625em;
+  margin-left: 0.625em;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-right: 0.83333em;
+  margin-left: 0.83333em;
+}
+
+h3 {
+  font-size: 1.125em;
+  margin-right: 1.11111em;
+  margin-left: 1.11111em;
+}
+
+h4 {
+  font-size: 1em;
+  margin-right: 1.25em;
+  margin-left: 1.25em;
+}
+
+h5 {
+  font-size: 0.875em;
+  margin-right: 1.42857em;
+  margin-left: 1.42857em;
+}
+
+h6 {
+  font-size: 0.75em;
+  margin-right: 1.66667em;
+  margin-left: 1.66667em;
+}
+
+p {
+  margin-right: 1.25em;
+  margin-left: 1.25em;
+   line-height: 1.8; 
+}
+
+p, li, dt, dd {
+   line-height: 1.8; 
+}
+
+b, strong, dt, caption, figcaption, th {
+  font-family: sans-serif, serif;
+}
+
+blockquote, ul,
+fieldset, form,
+ol, dl, menu {
+  margin-right: 1.25em;
+  margin-left: 1.25em;
+  padding: 0;
+}
+
+blockquote blockquote, blockquote ol, blockquote ul, blockquote dl, ol blockquote, ol ol, ol ul, ol dl, ul blockquote, ul ol, ul ul, ul dl, dl blockquote, dl ol, dl ul, dl dl {
+  margin-right: 0em;
+  margin-left: 0em;
+}
+
+ol, ul, menu, dd {
+  margin-top: 2em;
+}
+
+a {
+  color: #0538b2;
+}
+a:hover {
+  color: #b2058e;
+}
+a:active {
+  color: #b27f05;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+hr {
+  margin-right: 1.25em;
+  margin-left: 1.25em;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+rt {
+  font-family: serif, sans-serif;
+}
+
+.tcy {
+  -epub-text-combine: horizontal;
+  -webkit-text-combine: horizontal;
+  -ms-text-combine-horizontal: all;
+  text-combine-horizontal: all;
+  text-combine-upright: all;
+}
+
+.sideways {
+  -epub-text-orientation: sideways;
+  text-orientation: sideways;
+}
+
+.upright {
+  -epub-text-orientation: rotate-right;
+  -epub-text-orientation: upright;
+  -webkit-text-orientation: upright;
+  -epub-text-combine: horizontal;
+  -webkit-text-combine: horizontal;
+  -ms-text-combine-horizontal: all;
+  text-combine-horizontal: all;
+  text-combine-upright: all;
+}
+
+.pagenum {
+  color: gray;
+  font-size: 0.8em;
+}
+
+.footnotes hr {
+  margin-right: 1.25em;
+  margin-left: 1.25em;
+}
+.footnotes ol {
+  margin-top: 2em;
+}
+.footnotes li {
+  font-size: 0.875em;
+}
+
+a.noteref {
+  display: inline-block;
+  border: none;
+  font-size: 0.75em;
+  line-height: 1;
+  vertical-align: super;
+  -epub-text-combine: horizontal;
+  -webkit-text-combine: horizontal;
+  -ms-text-combine-horizontal: all;
+  text-combine-horizontal: all;
+  text-combine-upright: all;
+}
+a.noteref:before {
+  content: "[";
+}
+a.noteref:after {
+  content: "]";
+}
+
+nav#toc, nav#landmarks, nav#loi, nav#lot, nav#page-list {
+  margin-left: 2.5em;
+}
+nav#toc ol, nav#landmarks ol, nav#loi ol, nav#lot ol, nav#page-list ol {
+  margin-top: 1em;
+}
+
+.-epub-media-overlay-active {
+  background-color: yellow;
+}
+
+h2 {
+  margin-top: 0.66667em;
+}
+
+h3 {
+  margin-top: 1.77778em;
+}
+
+h4 {
+  margin-top: 3em;
+  font-family: sans-serif, serif;
+}
+
+blockquote {
+  margin-top: 1em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+u {
+  text-decoration: overline;
+}
+
+em {
+  font-style: normal;
+  -epub-text-emphasis-style: filled sesame;
+  text-emphasis-style: filled sesame;
+}
+
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+.text-justify        { text-align: justify; }
+.text-pre-wrap       { white-space: pre-wrap; }

@@ -1,0 +1,2029 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW" xml:lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 32.3.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+span.example-title{text-transform:none}
+:is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
+div.illegal-example{color:red}
+div.illegal-example p{color:#000}
+:is(aside,div).example{border-left-width:.5em;border-left-style:solid;border-color:#e0cb52;background:#fcfaee}
+aside.example div.example{border-left-width:.1em;border-color:#999;background:#fff}
+.example pre{background-color:rgba(0,0,0,.03)}
+</style>
+<style>
+.issue-label{text-transform:initial}
+.warning>p:first-child{margin-top:0}
+.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
+span.warning{padding:.1em .5em .15em}
+.issue.closed span.issue-number{text-decoration:line-through}
+.issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
+.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}
+.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
+li.task-list-item{list-style:none}
+input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
+.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
+</style>
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a [href] {color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a [href] :hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+		
+		
+<title>EPUB 3多重內容釋義出版品 1.1 </title>
+		
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a [href] .respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+a [href] .orcid{padding-left:4px;padding-right:4px}
+a [href] .orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th [scope=row] {background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details [open] {z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details [open] >summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+		
+		
+	
+<style>
+
+ul.nomark,
+ol.nomark {
+    list-style-type: none;
+}
+
+ol.cmt,
+ul.flat {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+ol.cmt {
+	margin: 0;
+}
+
+dl.elemdef {
+    border-left: 0.5em solid rgb(145,200,255);
+    background-color: rgb(236,246,255);
+    padding: 0.5em 1em;
+	margin-bottom: 2em;
+}
+
+dl.elemdef ul.nomark {
+	padding-left: 1em;
+}
+
+dl.elemdef > dd > ul.nomark:first-child {
+	padding-left: 0 !important;
+}
+
+dl.conformance-list > dd {
+    margin-top: 0.7em;
+}
+
+dl.elemdef > dt,
+table.tabledef th {
+	font-weight: normal;
+	font-style: italic;
+}
+
+dl.elemdef > dt {
+	margin-bottom: 0.5em;
+}
+
+dl.elemdef dfn {
+	font-style: normal;
+}
+
+/*  EBNF tables */
+
+
+table.productionset {
+    border: none;
+    border-left: 5px solid rgb(145,200,255);
+    background-color: rgb(236,246,255);
+}
+
+table.productionset caption {
+	text-align: left;
+	font-size: 80%;
+	font-style: normal;
+}
+
+table.productionset tbody tr {
+    border: none;
+}
+
+table.productionset tbody tr td {
+    border: none;
+    padding: 0.5em;
+    border-bottom: 1px solid #ddd;
+}
+
+table.productionset tbody tr td a {
+    text-decoration: none;
+    border-bottom: 1px dotted #000090;
+}
+
+table.productionset tbody tr td a:hover {
+    text-decoration: underline;
+}
+
+table.productionset tbody tr td a:visited,
+table.productionset tbody tr td a:active,
+table.productionset tbody tr td a:hover {
+    color: #000090;
+}
+
+a.deprecated,
+a.legacy {
+	font-size: 85%;
+	text-transform: uppercase;
+}
+
+/* styles for core media types */
+
+table#tbl-core-media-types {
+    border-spacing: 0px;
+    padding: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 2em;    
+}
+
+table#tbl-core-media-types th {
+    border-bottom: 1px solid #005A9C;
+    font-weight: bold;
+    padding: 0.5em;
+    font-weight: bold;
+    color: #000090;
+    font-size: 90%
+}
+
+table#tbl-core-media-types td {
+    border-bottom: 1px solid #005A9C;
+    border-right: 1px solid #efefef;
+    padding: 0.5em;
+    text-align: left
+}
+
+table#tbl-core-media-types tr td:last-child {
+    border-right: none;
+}
+
+table#tbl-core-media-types td *, table#tbl-core-media-types td > * {
+    text-align: left;
+}
+
+table#tbl-core-media-types, table#tbl-core-media-types tbody {
+    padding: 0;
+}
+
+table#tbl-core-media-types caption {
+    text-align: left;
+    font-size: 90%
+}
+
+.tbl-group {
+	text-align: left;
+	border-bottom: none;
+	color: rgb(0, 0, 0);
+	background-color: rgb(240, 248, 255);
+}
+
+table#tbl-core-media-types > thead > tr > th {
+    background-color: rgb(240,240,240);
+    text-align: left;
+    white-space:nowrap;
+}
+
+table#tbl-core-media-types > tbody > tr > th {    
+    text-align: left;
+    font-weight: normal;
+    font-style: italic;
+    padding: 3px;
+}
+
+table#tbl-core-media-types td, table#tbl-core-media-types th, table#tbl-core-media-types tr {
+    border-color: #005A9C;
+    margin: 0em;
+}
+
+table#tbl-core-media-types td code, table#tbl-core-media-types td a {
+    white-space:nowrap;
+}
+
+td [headers="tbl-cmt-appl"]  {
+    font-size: .9em;
+}
+
+
+
+
+/****************************************************/
+/*  property tables                                 */
+/****************************************************/
+
+/* ensure confomity of width for property tables */
+table.tabledef {
+	border-spacing: 0px;
+	border: none;
+	font-size: 1em;
+	width: 100%
+}
+
+table.tabledef td, table.tabledef th {
+	border: none;
+	background-color: rgb(236,246,255);
+	color: rgb(0,0,0);
+	padding: 0.3em;
+	vertical-align: top;
+}
+
+table.tabledef th {
+    text-align: left;
+	vertical-align: top;
+    width: 8em;
+    padding-left: 1em;
+}
+
+table.tabledef th {
+    border-left: 5px solid rgb(145,200,255);
+}
+
+table.tabledef td {
+    padding: 3px 3px 3px 10px;
+}
+
+table.tabledef td > p:first-child {
+	padding: 0em;
+	margin: 0em
+}
+
+
+/* Reserved prefix tables */
+
+table.prefix {
+    border-spacing: 0px;
+    padding: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 2em;    
+}
+table.prefix th {
+    border-bottom: 1px solid #005A9C;
+    font-weight: bold;
+    padding: 0.5em;
+    font-weight: bold;
+    color: #000090;
+    font-size: 90%
+}
+table.prefix td {
+    border-bottom: 1px solid #005A9C;
+    border-right: 1px solid #efefef;
+    padding: 0.5em;
+    text-align: left
+}
+table.prefix tr td:last-child {
+    border-right: none;
+}
+table.prefix td *, table.prefix td > * {
+    text-align: left;
+}
+table.prefix, table.prefix tbody {
+    padding: 0;
+}
+
+table.prefix caption {
+    text-align: left;
+    font-size: 90%
+}
+
+
+/* Table zebra style... */
+
+table.zebra {
+    font-size:inherit;
+    font:90%;
+    margin:1em;
+}
+
+table.zebra td {
+    padding-left: 0.3em;
+}
+
+table.zebra th {
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(0,0,128) !important;
+    font-size: 110%;
+    background: hsl(180, 30%, 50%);
+    color: #fff;
+}
+
+table.zebra th a:link {
+  color: #fff;
+}
+
+table.zebra th a:visited {
+  color: #aaa;
+}
+
+table.zebra tr:nth-child(even) {
+    background-color: hsl(180, 30%, 93%) !important;
+}
+
+table.zebra th{border-bottom:1px solid #bbb;padding:.2em 1em;}
+table.zebra td{border-bottom:1px solid #ddd;padding:.2em 1em;}
+
+
+p.support {
+	border-left: 0.4rem solid rgb(255,255,0);
+	background-color: rgb(255,255,230);
+	padding: 0.7rem;
+}
+
+p.caution, div.caution {
+	padding: 0.5rem;
+	border-left: 0.5rem solid rgb(255,140,0);
+	background-color: rgb(254,236,207);
+}
+
+div.caution-title > span {
+	color: rgb(140,40,0);
+	text-transform: uppercase;
+}
+
+details.desc {
+	margin-top: -2.5rem !important;
+	margin-left: 3rem !important;
+}
+
+details.explanation, details.desc {
+	background-color: rgb(245,245,245);
+	border-left: 0.3em solid rgb(200,200,200);
+	padding: 0.3em;
+}
+
+details.explanation > summary, details.desc > summary {
+	font-size: small;
+	text-align: left;
+    font-weight: normal !important;
+    font-style: italic;
+}
+
+</style>
+
+<style>
+/*中文翻譯版添加樣式*/
+dfn {font-style: normal;}
+em {font-family: serif; font-style: normal;}
+em.rfc2119 {font-family: sans-serif; font-weight: bold; text-decoration: underline;}
+code {color: red;}
+p {text-align: justify;line-height: 1.8;}
+</style>
+
+<meta name="description" content="This specification, EPUB Multiple-Rendition Publications, defines the creation and rendering of EPUB®
+				Publications consisting of more than one rendition.">
+<style>
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
+.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
+.hljs-literal{color:#0b76c5}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
+.hljs-link{text-decoration:underline}
+</style>
+<style>
+var{position:relative;cursor:pointer}
+var [data-type] ::after,var [data-type] ::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var [data-type] ::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var [data-type] ::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var [data-type] :hover::after,var [data-type] :hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "group": "epub",
+  "wgPublicList": "public-epub-wg",
+  "specStatus": "ED",
+  "shortName": "epub-multi-rend-11",
+  "edDraftURI": "https://w3c.github.io/epub-specs/epub33/multi-rend/",
+  "previousPublishDate": "2021-12-08",
+  "previousMaturity": "NOTE",
+  "copyrightStart": "2015",
+  "noRecTrack": true,
+  "editors":  [
+    {
+      "name": "Matt Garrish",
+      "company": "DAISY Consortium",
+      "companyURL": "https://daisy.org",
+      "w3cid": 51655
+    }
+  ] ,
+  "formerEditors":  [
+    {
+      "name": "Jim Lester",
+      "company": "Barnes &amp; Noble"
+    },
+    {
+      "name": "Takeshi Kanai",
+      "company": "Sony Corporation",
+      "companyURL": "http://www.sony.net/"
+    }
+  ] ,
+  "includePermalinks": true,
+  "permalinkEdge": true,
+  "permalinkHide": false,
+  "github": {
+    "repoURL": "https://github.com/w3c/epub-specs",
+    "branch": "main"
+  },
+  "pluralize": true,
+  "localBiblio": {
+    "iso24751-3": {
+      "title": " ISO/IEC 24751-3:2008 Information technology -- Individualized adaptability and accessibility in e-learning, education and training -- Part 3: &quot;Access for all&quot; digital resource description",
+      "href": "http://www.iso.org/iso/catalogue_detail?csnumber=43604",
+      "date": "2008-10-01",
+      "id": "iso24751-3"
+    },
+    "epubcfi-11": {
+      "authors":  [
+        "Peter Sorotokin",
+        "Garth Conboy",
+        "Brady Duga",
+        "John Rivlin",
+        "Don Beaver",
+        "Kevin Ballard",
+        "Alastair Fettes",
+        "Daniel Weck"
+      ] ,
+      "title": "EPUB Canonical Fragment Identifiers 1.1",
+      "href": "http://idpf.org/epub/linking/cfi/epub-cfi-20170105.html",
+      "date": "5 October 2017",
+      "publisher": "IDPF",
+      "id": "epubcfi-11"
+    }
+  },
+  "xref": {
+    "profile": "web-platform",
+    "specs":  [
+      "epub-rs-33",
+      "epub-33"
+    ] 
+  },
+  "preProcess":  [
+    null
+  ] ,
+  "publishISODate": "2022-10-14T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 14 October 2022"
+}</script>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
+	<body class="h-entry toc-inline" data-cite="epub-rs-33 epub-33 HTML INFRA URL WEBIDL DOM FETCH"><div class="head">
+    <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
+  </a></p>
+    <h1 id="title" class="title">EPUB 3多重內容釋義出版品 1.1 </h1> 
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C編輯草稿</a> <time class="dt-published" datetime="2022-10-14">14 October 2022</time></p>
+    <details open="">
+      <summary>更多關於此份文件的細節</summary>
+      <dl>
+        <dt>本版本：</dt><dd>
+                <a class="u-url" href="https://w3c.github.io/epub-specs/epub33/multi-rend/">https://w3c.github.io/epub-specs/epub33/multi-rend/</a>
+              </dd>
+        <dt>最新發佈版本：</dt><dd>
+                <a href="https://www.w3.org/TR/epub-multi-rend-11/">https://www.w3.org/TR/epub-multi-rend-11/</a>
+              </dd>
+        <dt>最新編輯草稿：</dt><dd><a href="https://w3c.github.io/epub-specs/epub33/multi-rend/">https://w3c.github.io/epub-specs/epub33/multi-rend/</a></dd>
+        <dt>歷史：</dt><dd>
+                    <a href="https://www.w3.org/standards/history/epub-multi-rend-11">https://www.w3.org/standards/history/epub-multi-rend-11</a>
+                  </dd><dd>
+                    <a href="https://github.com/w3c/epub-specs/commits/main">發布歷程</a>
+                  </dd>
+        
+        
+        
+        
+        
+        <dt>編輯者：</dt><dd class="editor p-author h-card vcard" data-editor-id="51655">
+    <span class="p-name fn">Matt Garrish</span> (<a class="p-org org h-org" href="https://daisy.org">DAISY Consortium</a>)
+  </dd>
+        <dt>
+                前任編輯：
+              </dt><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Jim Lester</span> (<span class="p-org org h-org">Barnes &amp; Noble</span>)
+  </dd><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Takeshi Kanai</span> (<a class="p-org org h-org" href="http://www.sony.net/">Sony Corporation</a>)
+  </dd>
+        
+        <dt>提出回饋：</dt><dd>
+        <a href="https://github.com/w3c/epub-specs/">GitHub w3c/epub-specs</a>
+        (<a href="https://github.com/w3c/epub-specs/pulls/">提交請求</a>,
+        <a href="https://github.com/w3c/epub-specs/issues/new/choose">新主題</a>,
+        <a href="https://github.com/w3c/epub-specs/issues/">開放主題</a>)
+      </dd><dd>以郵件主旨<kbd>[epub-multi-rend-11]  <em>… 主題資訊 …</em></kbd>寄到<a href="mailto:public-epub-wg@w3.org?subject=%5Bepub-multi-rend-11%5D%20YOUR%20TOPIC%20HERE">public-epub-wg@w3.org</a> (<a rel="discussion" href="https://lists.w3.org/Archives/Public/public-epub-wg">存檔</a>)</dd>
+        
+        
+      </dl>
+    </details>
+    
+    
+    <p class="copyright">
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+    ©
+    2015-2022
+    
+    <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+    <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
+    <a href="https://ev.buaa.edu.cn/">Beihang</a>). W3C
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+    <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document" title="W3C Software and Document Notice and License">permissive document license</a> rules apply.
+  </p>
+    <hr title="Separator for header">
+  </div>
+		<section id="abstract" class="introductory"><h2>摘要</h2>
+			<p>EPUB多重內容釋義（Rendition）出版品，定義了如何製作與處理由一個以上內容釋義所構成的EPUB®出版品。</p>
+		</section>
+		<section id="sotd" class="introductory"><h2>本文件狀態</h2><p><em>本章節描述了本文件在其發表時的狀態。目前<abbr title="World Wide Web Consortium">W3C</abbr>出版品及此技術報告的最新改版之列表皆列於<a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr>技術報告索引</a>，網址為：https://www.w3.org/TR/</em></p><p>本文件由<a href="https://www.w3.org/groups/wg/epub">EPUB 3工作小組</a>發布為編輯草稿。</p>
+		<p>編輯草稿狀態之出版品不受<abbr title="World Wide Web Consortium">W3C</abbr>及其會員背書。</p><p>本文件為草稿，而且可能會隨時更新，被其他文件所取代或淘汰。編輯作業尚未完成前，不適宜引用本文件。</p>
+		<p>本文件由<a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr>專利政策</a>下所運作的小組所製作。<abbr title="World Wide Web Consortium">W3C</abbr>維護一份與該小組交付成果有關的<a rel="disclosure" href="https://www.w3.org/groups/wg/epub/ipr">任何專利披露公開清單</a>，該頁面也包含了專利披露的說明。任何人若實際擁有某項專利知識並相信其包含該專利之 <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">主要申請範圍</a>，則必須依照<a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure"><abbr title="World Wide Web Consortium">W3C</abbr>專利政策第六節</a>之規定揭露該訊息。</a>.</p>
+		<p>本文件受<a id="w3c_process_revision" href="https://www.w3.org/2021/Process-20211102/">2021年11月2日<abbr title="World Wide Web Consortium">W3C</abbr>流程文件</a>所規範。</p></section>
+		<nav id="toc"><h2 class="introductory" id="table-of-contents">目次</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">摘要</a></li>
+<li  class="tocline"><a class="tocxref" href="#sotd">本文件狀態</a></li>
+<li  class="tocline"><a class="tocxref" href="#intro"><bdi class="secno">1. </bdi>導論</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#overview"><bdi class="secno">1.1 </bdi>總覽</a></li>
+<li  class="tocline"><a class="tocxref" href="#background"><bdi class="secno">1.2 </bdi>背景說明</a></li>
+<li  class="tocline"><a class="tocxref" href="#rel-epub3"><bdi class="secno">1.3 </bdi>與EPUB 3的關係</a></li>
+<li  class="tocline"><a class="tocxref" href="#terminology"><bdi class="secno">1.4 </bdi>術語</a></li>
+<li  class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">1.5 </bdi>適用性</a></li></ol></li>
+<li  class="tocline"><a class="tocxref" href="#container"><bdi class="secno">2. </bdi>指定多重內容釋義</a></li>
+<li  class="tocline"><a class="tocxref" href="#sec-metadata"><bdi class="secno">3. </bdi>後設資料表述</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#rendition-metadata"><bdi class="secno">3.1 </bdi>內容釋義後設資料</a></li>
+<li  class="tocline"><a class="tocxref" href="#pub-metadata"><bdi class="secno">3.2 </bdi>出版品後設資料</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#pub-metadata-file"><bdi class="secno">3.2.1 </bdi><code>metadata.xml</code>檔案</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#pub-metadata-obfuscation"><bdi class="secno">3.2.1.1 </bdi>資源模糊化</a></li></ol></li>
+<li  class="tocline"><a class="tocxref" href="#vocab-assoc"><bdi class="secno">3.2.2 </bdi>用語關聯機制</a></li></ol></li></ol></li>
+<li  class="tocline"><a class="tocxref" href="#rendition-selection"><bdi class="secno">4. </bdi>選擇內容釋義</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#rendition-selection-intro"><bdi class="secno">4.1 </bdi>導論</a></li>
+<li  class="tocline"><a class="tocxref" href="#rendition-selection-pub-confomance"><bdi class="secno">4.2 </bdi>內容適用性</a></li>
+<li  class="tocline"><a class="tocxref" href="#rendition-selection-rs-conformance"><bdi class="secno">4.3 </bdi>閱讀系統適用性</a></li>
+<li  class="tocline"><a class="tocxref" href="#rendition-selection-attr"><bdi class="secno">4.4 </bdi>供選擇內容釋義用的屬性</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#media-attr"><bdi class="secno">4.4.1 </bdi><code>rendition:media</code>屬性</a></li>
+<li  class="tocline"><a class="tocxref" href="#layout-attr"><bdi class="secno">4.4.2 </bdi><code>rendition:layout</code>屬性</a></li>
+<li  class="tocline"><a class="tocxref" href="#language-attr"><bdi class="secno">4.4.3 </bdi><code>rendition:language</code>屬性</a></li>
+<li  class="tocline"><a class="tocxref" href="#accessMode-attr"><bdi class="secno">4.4.4 </bdi><code>rendition:accessMode</code>屬性</a></li>
+<li  class="tocline"><a class="tocxref" href="#label-attr"><bdi class="secno">4.4.5 </bdi><code>rendition:label</code>屬性</a></li></ol></li>
+<li  class="tocline"><a class="tocxref" href="#rendition-selection-proc-model"><bdi class="secno">4.5 </bdi>處理模型</a></li></ol></li>
+<li  class="tocline"><a class="tocxref" href="#rendition-mapping"><bdi class="secno">5. </bdi>內容釋義映射</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#rendition-mapping-intro"><bdi class="secno">5.1 </bdi>導論</a></li>
+<li  class="tocline"><a class="tocxref" href="#rendition-mapping-pub-conformance"><bdi class="secno">5.2 </bdi>內容適用性</a></li>
+<li  class="tocline"><a class="tocxref" href="#rendition-mapping-rs-conformance"><bdi class="secno">5.3 </bdi>閱讀系統適用性</a></li>
+<li  class="tocline"><a class="tocxref" href="#rendition-mapping-doc-def"><bdi class="secno">5.4 </bdi>EPUB內容釋義映射文件定義</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#rendition-mapping-doc-xhtml"><bdi class="secno">5.4.1 </bdi>XHTML內容文件：限制</a></li>
+<li  class="tocline"><a class="tocxref" href="#rendition-mapping-doc-nav"><bdi class="secno">5.4.2 </bdi>nav元素：變更與限制</a></li>
+<li  class="tocline"><a class="tocxref" href="#rendition-mappings"><bdi class="secno">5.4.3 </bdi>內容釋義映射</a></li>
+<li  class="tocline"><a class="tocxref" href="#rendition-mapping-container-id"><bdi class="secno">5.4.4 </bdi>在容器中識別</a></li></ol></li>
+<li  class="tocline"><a class="tocxref" href="#rendition-mapping-proc-model"><bdi class="secno">5.5 </bdi>處理模型</a></li></ol></li>
+<li  class="tocline"><a class="tocxref" href="#app-schemas"><bdi class="secno">A. </bdi>綱要</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#schema-metadata"><bdi class="secno">A.1 </bdi>Metadata.xml綱要</a></li>
+<li  class="tocline"><a class="tocxref" href="#schema-container"><bdi class="secno">A.2 </bdi>Container.xml綱要</a></li>
+<li  class="tocline"><a class="tocxref" href="#schema-mapping-doc"><bdi class="secno">A.3 </bdi>映射文件綱要</a></li></ol></li>
+<li  class="tocline"><a class="tocxref" href="#change-log"><bdi class="secno">B. </bdi>變更日誌</a></li>
+<li  class="tocline"><a class="tocxref" href="#ack"><bdi class="secno">C. </bdi>致謝</a></li>
+<li  class="tocline"><a class="tocxref" href="#references"><bdi class="secno">D. </bdi>參考資料</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">D.1 </bdi>規範性文件</a></li>
+<li  class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">D.2 </bdi>參考性文件</a></li></ol></li></ol></nav>
+		<section id="intro"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>導論</h2><a class="self-link" href="#intro" aria-label="Permalink for Section 1."></a></div>
+			
+
+			<section id="overview" class="informative"><div class="header-wrapper"><h3 id="x1-1-overview"><bdi class="secno">1.1 </bdi>總覽</h3><a class="self-link" href="#overview" aria-label="Permalink for Section 1.1"></a></div><p><em>本章節為非規範性。</em></p>
+				
+
+				<p>隨著<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-reading-system">閱讀系統</a>的進化以及日趨複雜，在<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication">EPUB出版品</a>內包含一個以上<a data-link-type="dfn" href="#dfn-rendition" class="internalDFN" id="ref-for-dfn-rendition-1">內容釋義</a>的需求逐日增加。有些調整內容的措施能夠在樣式表層級完成，能達成的範圍以及處理內容的方式都有所限制。<a data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-package-document">包裝文件</a>既存的退回機制，同樣地僅能確保資源能被受到處理而已。</p>
+
+				<p>內容適應（Adaptation）不只為了對樣式最佳化，以及考量到螢幕特性，如尺寸以及色彩，或者閱讀系統的方向來配置內容，而經常會涉及對內容自身的變更。用來處理一本EPUB出版品固定版面內容釋義的資源以及標記，可能會和相同內容的可重排版本重疊，但兩者絕對不可能一模一樣。內容適應也可能涉及對內容文字的修改。在這相互連結日益緊密的世界，包含作品多重語文翻譯的做法，比起分別製作單一語言EPUB出版品再綁在一起提供，可能更符合需求。從一份內容釋義中的位置，在閱讀環境改變時，能跳到另一個內容釋義中相等的位置，此項可能性也與內容適應相關。</p>
+
+				<p>本規格定義了閱讀系統如何從多個<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-creator">EPUB製作者</a>提供的內容釋義中，選擇最適合目前裝置特徵以及使用者偏好的內容──而並非定義如何即時變更內容的方法。舉個例子，當使用者以喜歡的方式持用裝置，而改變裝置的方向時，閱讀系統就可以尋找更合適的內容釋義，以這裡定義的功能來做無縫切換。</p>
+
+				<p>本規格描述如何對多重內容釋義EPUB出版品進行發現、選擇、彼此映射的主要需求。特別是：</p>
+
+				<ul>
+					<li>對所有在<code>META-INF/metadata.xml</code>檔案中的內容釋義建立共通的唯一識別碼；</li>
+					<li>透過一組屬性來選擇內容釋義，屬性可以附加在<a data-link-type="dfn" href="#dfn-container-document" class="internalDFN" id="ref-for-dfn-container-document-1">容器文件</a>中的<code>rootfile</code>元素中；</li>
+					<li>選擇性地提供讓一份內容釋義中的位置透過一份映射文件，移動到另一份內容釋義中相同位置的能力。</li>
+				</ul>
+
+				<p>集合以上功能，就能製作出先進的多重內容釋義出版品，讓閱讀系統能夠在使用者改變需求時自動適應。</p>
+			</section>
+
+			<section id="background" class="informative"><div class="header-wrapper"><h3 id="x1-2-background"><bdi class="secno">1.2 </bdi>背景說明</h3><a class="self-link" href="#background" aria-label="Permalink for Section 1.2"></a></div><p><em>本章節為非規範性。</em></p>
+				
+
+				<p>在<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication">EPUB出版品</a>中包含多重內容釋義的概念，從EPUB規格誕生就已經存在，但是規格卻從來沒有完整地說明這些內容釋義是為了什麼而存在，以及如何進行存取。結果使得EPUB 3規格等於僅具備單一內容的EPUB出版品。而且多數的<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-creator">EPUB製作者</a>以及<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-reading-system">閱讀系統</a>開發者都認為EPUB出版品僅有單一<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-package-document">包裝文件</a>，位置在<code>container.xml</code>檔案 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 的第一個<code>rootfile</code>元素中。</p>
+
+				<p>然而在實踐上，<code>container.xml</code>檔案並不限制EPUB製作者只能列出一個內容文件。舉個例子，在EPUB 2中，<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-creator">EPUB製作者</a>可以添加額外的<code>rootfile</code>元素用來參照其他想要的格式（比如，另外一個包裝文件、一份PDF檔案，甚至是一份Word文件）。在EPUB 3中，<code>rootfile</code>元素限制僅能用於參照符合相同版本標準的包裝文件。</p>
+
+				<p>本規格將進一步地在允許多個內容釋義外，定義出更完整的框架，用於識別並且在其中進行選擇。每一份在<code>rootfile</code>元素中參照的內容文件都定義了EPUB出版品中的一個<a data-link-type="dfn" href="#dfn-rendition" class="internalDFN" id="ref-for-dfn-rendition-2">內容釋義</a>，而第一份內容文件代表為<a data-link-type="dfn" href="#dfn-default-rendition" class="internalDFN" id="ref-for-dfn-default-rendition-1">預設的內容釋義</a>（也就是說，所有閱讀系統都必須處理的那一份）。</p>
+
+				<p>儘管此模型預期能盡可能無縫地在既存的EPUB生態體系運作，但製作多重內容釋義為了維持相容性，則需要做出一些妥協（例如，對於無法處理多重內容釋義的閱讀系統而言，可能會需要讓後設資料重複出現）。</p>
+			</section>
+
+			<section id="rel-epub3"><div class="header-wrapper"><h3 id="x1-3-relationship-to-epub-3"><bdi class="secno">1.3 </bdi>與EPUB 3的關係</h3><a class="self-link" href="#rel-epub3" aria-label="Permalink for Section 1.3"></a></div>
+				
+
+				<p>在本規格中定義在一個<a data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-container">EPUB容器</a>中包含多重<a data-link-type="dfn" href="#dfn-rendition" class="internalDFN" id="ref-for-dfn-rendition-3">內容釋義</a>的方法，並非所有<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication">EPUB出版品</a>都有這項需求。在容器中<em class="rfc2119">可以</em>有多個<a data-link-type="dfn" href="#dfn-rendition" class="internalDFN" id="ref-for-dfn-rendition-3">內容釋義</a>，但卻不符合本規格，主要是因為在本規格之前，就能夠建立多重內容釋義的容器了。</p>
+
+				<p>所以，我們強烈<em class="rfc2119">推薦</em>未來所有在容器中加入多重內容釋義的需求，都該遵從本規格。既有的實作若運用了其他的方法在多重內容釋義中進行選擇，也鼓勵考慮改用本規格，來增進整體對<a data-link-type="dfn" href="#dfn-multiple-rendition-publications" class="internalDFN" id="ref-for-dfn-multiple-rendition-publications-1">多重內容釋義出版品</a>的互通性。</p>
+
+				<p>許多在本規格中定義的<a href="#rendition-selection-attr">內容釋義選擇屬性</a>，和包裝文件元素以及特性 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 共用名稱，但在設計上是為了反映用於選擇目的的資訊。</p>
+
+				<p>儘管有此共通性，本規格並不強制讓位於<code>rootfile</code>元素 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 中的內容釋義選擇特性與呼應內容文件之後設資料彼此對等，不是所有狀況都能直接劃上等號。</p>
+
+				<p>例如，一份多種語文的EPUB出版品會定義多於一個的<code><a data-type="element" href="https://www.w3.org/TR/epub-33/#dfn-dc-language">dc:language</a></code>元素 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] ──每種語言各一──但在內容釋義選擇上只能定義一個主要語言。同樣的，定義在包裝文件中的語言可以含有指定的區域代碼，但用於選擇用途，EPUB製作者只能提供語言代碼作為識別。</p>
+
+				<p>在兩處提供共通後設資料的原因是為了簡化選擇程序：提供屬性是為了避免要處理所有參照的包裝文件，同時在包裝層級上無法呈現優先順序。這也避免用於不同目的（「用於選擇」對「處理用途」）的後設資料產生對立或者產生歧義。</p>
+
+				<p>定義在<a href="https://www.w3.org/TR/epub-33/#sec-container-metainf-container.xml"><code>container.xml</code>檔案</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 中的選擇特性不會附加任何處理行為。舉個例子，在<a href="#layout-attr"><code>rendition:layout</code>屬性</a>中指出內容釋義為固定版面，並不會在指定的內容釋義中啟動固定版面的處理行為。</p>
+
+				<p>閱讀系統僅需根據包裝文件中後設資料的表述，對內容釋義做出處理。</p>
+			</section>
+
+			<section id="terminology"><div class="header-wrapper"><h3 id="x1-4-terminology"><bdi class="secno">1.4 </bdi>術語</h3><a class="self-link" href="#terminology" aria-label="Permalink for Section 1.4"></a></div>
+				
+
+				<p>本規格使用<a href="https://www.w3.org/TR/epub-33/#sec-terminology">定義在EPUB 3</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 中的術語。</p>
+
+				<p>另外定義了以下術語：</p>
+
+				<dl>
+					<dt><dfn id="dfn-container-document" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">容器文件</dfn></dt>
+					<dd>
+						<p>位於EPUB容器根目錄 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 的子<a href="https://www.w3.org/TR/epub-33/#sec-container-metainf"><code>META-INF</code>資料夾</a>中的<a href="https://www.w3.org/TR/epub-33/#sec-container-metainf-container.xml"><code>container.xml</code>檔案</a>。在容器中的每一份<a data-link-type="dfn" href="#dfn-rendition" class="internalDFN" id="ref-for-dfn-rendition-4">內容釋義</a>都由一個<code>rootfile</code>元素 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 來作為識別。</p>
+					</dd>
+
+					<dt><dfn id="dfn-default-rendition" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">預設內容釋義</dfn></dt>
+					<dd>
+						<p>在<a href="https://www.w3.org/TR/epub-33/#sec-container-metainf-container.xml"><code>container.xml</code>檔案</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 中，第一個<code>rootfile</code>元素所列出的<a data-link-type="dfn" href="#dfn-rendition" class="internalDFN" id="ref-for-dfn-rendition-5">內容釋義</a>。</p>
+					</dd>
+
+					<dt><dfn data-lt="multiple-rendition publications|multiple-rendition publication" id="dfn-multiple-rendition-publications" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">多重內容釋義出版品</dfn></dt>
+					<dd>
+						<p>一本包含兩個以上<a data-link-type="dfn" href="#dfn-rendition" class="internalDFN" id="ref-for-dfn-rendition-6">內容釋義</a>內容的EPUB出版品。</p>
+					</dd>
+
+					<dt><dfn data-plurals="renditions" id="dfn-rendition" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">內容釋義</dfn></dt>
+					<dd>
+						<p>將一本EPUB出版品中的內容，按照內容文件的描述進行處理。</p>
+					</dd>
+
+					<dt><dfn data-lt="rendition mapping documents|rendition mapping document" id="dfn-rendition-mapping-documents" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">內容釋義映射文件</dfn></dt>
+					<dd>
+						<p>一份特化的XHTML內容文件，其中包含了機器可讀取的映射資料，用以對照不同<a data-link-type="dfn" href="#dfn-rendition" class="internalDFN" id="ref-for-dfn-rendition-7">內容釋義</a>的對等內容，其合乎<a href="#rendition-mapping">內容釋義映射</a>中所表述的限制。</p>
+					</dd>
+				</dl>
+
+				<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>注意事項</span></div><div class="">
+					<p>每一章節中只有術語第一次出現時會連結到其定義。</p>
+				</div></div>
+			</section>
+
+			<section id="conformance"><div class="header-wrapper"><h3 id="x1-5-conformance"><bdi class="secno">1.5 </bdi>適用性</h3><a class="self-link" href="#conformance" aria-label="Permalink for Section 1.5"></a></div><p>本規格中被標註為非規範性的章節，以及所有製作準則、圖表、範例以及注意事項都為非規範性。本規格其他部分皆為規範性。</p><p>關鍵字：<em class="rfc2119">可以（MAY）</em>、<em class="rfc2119">必須（MUST）</em>、<em class="rfc2119">不得（MUST NOT）</em>、<em class="rfc2119">選擇性（OPTIONAL）</em>、<em class="rfc2119">推薦（RECOMMENDED）</em>，以及<em class="rfc2119">應該（SHOULD）</em>在本文件中以如上粗體加底線格式出現時，<a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>]   [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>] 中的敘述詮釋。</p></section>
+		</section>
+		<section id="container"><div class="header-wrapper"><h2 id="x2-specifying-multiple-renditions"><bdi class="secno">2. </bdi>指定多重內容釋義</h2><a class="self-link" href="#container" aria-label="Permalink for Section 2."></a></div>
+			
+
+			<p><a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication">EPUB出版品</a>中的每一份內容釋義都<em class="rfc2119">必須</em>符合<a href="https://www.w3.org/TR/epub-33/#sec-epub-conf">EPUB出版品中的需求</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 。</p>
+
+			<p>每一份內容釋義的<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-package-document">包裝文件</a><em class="rfc2119">必須</em>列於<code>container.xml</code>檔案 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] ，列於第一個的包裝文件代表為<a data-link-type="dfn" href="#dfn-default-rendition" class="internalDFN" id="ref-for-dfn-default-rendition-2">預設內容釋義</a>。</p>
+
+			<aside class="example" id="example-1"><div class="marker">
+    <a class="self-link" href="#example-1">範例<bdi> 1</bdi></a>
+  </div>
+				<p>以下範例呈現在同一個容器中提供SVG與XHTML內容釋義的組合：</p>
+
+				<pre id="sep-dir" aria-busy="false"><code class="hljs xml"><span class="hljs-meta">&lt;?xml version="1.0"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">container</span> <span class="hljs-attr">version</span>=<span class="hljs-string">"1.0"</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"urn:oasis:names:tc:opendocument:xmlns:container"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">rootfiles</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">rootfile</span> <span class="hljs-attr">full-path</span>=<span class="hljs-string">"SVG/Sandman.opf"</span>
+            <span class="hljs-attr">media-type</span>=<span class="hljs-string">"application/oebps-package+xml"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">rootfile</span> <span class="hljs-attr">full-path</span>=<span class="hljs-string">"XHTML/Sandman.opf"</span>
+            <span class="hljs-attr">media-type</span>=<span class="hljs-string">"application/oebps-package+xml"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">rootfiles</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">container</span>&gt;</span></code></pre>
+			</aside>
+
+			<p>EPUB出版品中的每一份內容釋義都<em class="rfc2119">應該</em>僅在其包裝文件的 <a data-link-type="dfn" data-lt="EPUB manifest" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-manifest">宣告</a>區塊 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 中列舉處理上必需的<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-publication-resource">出版品資源</a>。不同的內容釋義<em class="rfc2119">可以</em>參照相同的出版品資源。</p>
+
+			<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="3"><span>注意事項</span></div><div class="">
+				<p>並非所有的閱讀系統都能讓內容釋義存取儲存在鄰接資料夾中的資源（也就是，有些閱讀系統不會給予內容釋義包裝文件所儲存的資料夾以外的存取權限）。</p>
+
+				<p>例如以下目錄結構（為了簡潔起見，除了包裝文件以外的所有資源都被省略）：</p>
+
+				<pre aria-busy="false"><code class="hljs">/META-INF
+/Rendition1
+   - rendition1.opf
+/Rendition2
+   - rendition2.opf
+/Shared</code></pre>
+
+				<p>在「<code>Rendition1</code>」資料夾中的資源，可能無法存取位於「<code>Rendition2</code>」或「<code>Shared</code>」中的資源。</p>
+
+				<p>若要在不同內容釋義間共享資源，建議將包裝文件都置放在同一個資料夾中，並且把不同內容釋義的資源存放在個別的子資料夾中。</p>
+
+				<p>將上面範例重構如下，即可存取所有共享的資源：</p>
+
+				<pre class="prettyprint" aria-busy="false"><code class="hljs">/META-INF
+/EPUB
+   /Rendition1
+   /Rendition2
+   /Shared
+   - rendition1.opf
+   - rendition2.opf</code></pre>
+			</div></div>
+		</section>
+		<section id="sec-metadata"><div class="header-wrapper"><h2 id="x3-expressing-metadata"><bdi class="secno">3. </bdi>後設資料表述</h2><a class="self-link" href="#sec-metadata" aria-label="Permalink for Section 3."></a></div>
+			
+
+			<section id="rendition-metadata"><div class="header-wrapper"><h3 id="x3-1-rendition-metadata"><bdi class="secno">3.1 </bdi>內容釋義後設資料</h3><a class="self-link" href="#rendition-metadata" aria-label="Permalink for Section 3.1"></a></div>
+				
+
+				<p>在內容釋義層級表述的後設資料，<em class="rfc2119">可以</em>因案例而有不同。例如，用於區分語言的內容釋義可能有著不同的主要語言以及特定語言的後設資料，如標題，會分別表述。同樣的，將固定版面以及可重排內容釋義放在一起，其排版後設資料表述也會不同。</p>
+			</section>
+
+			<section id="pub-metadata"><div class="header-wrapper"><h3 id="x3-2-publication-metadata"><bdi class="secno">3.2 </bdi>出版品後設資料</h3><a class="self-link" href="#pub-metadata" aria-label="Permalink for Section 3.2"></a></div>
+				
+
+				<section id="pub-metadata-file"><div class="header-wrapper"><h4 id="x3-2-1-the-metadata-xml-file"><bdi class="secno">3.2.1 </bdi><code>metadata.xml</code>檔案</h4><a class="self-link" href="#pub-metadata-file" aria-label="Permalink for Section 3.2.1"></a></div>
+					
+
+					<p>為了確保在出版品以及<a data-link-type="dfn" href="#dfn-rendition" class="internalDFN" id="ref-for-dfn-rendition-8">內容釋義</a>等級的後設資料維持一致，本規格定義了<a href="https://www.w3.org/TR/epub-33/#sec-container-metainf-metadata.xml"><code>metadata.xml</code>檔案</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 中根<code>metadata</code>元素的內容模型，和包裝文件中的<a href="https://www.w3.org/TR/epub-33/#elemdef-opf-metadata"><code>metadata</code>元素</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 相同，但以下語法和語意有所不同：</p>
+
+					<ul>
+						<li>一個<code>dc:identifier</code>元素 [<cite><a class="bibref" data-link-type="biblio" href="#bib-dcterms" title="DCMI Metadata Terms">dcterms</a></cite>]<em class="rfc2119">必須</em>包含<a href="https://www.w3.org/TR/epub-33/#sec-opf-dcidentifier">唯一識別碼</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 供EPUB出版品使用。</li>
+						<li>一個<code>meta</code>元素 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>]<em class="rfc2119">必須</em>包含<a href="https://www.w3.org/TR/epub-33/#sec-metadata-last-modified">最後修改日期</a>，使用<code>dcterms:modified</code>特性進行表述 [<cite><a class="bibref" data-link-type="biblio" href="#bib-dcterms" title="DCMI Metadata Terms">dcterms</a></cite>] 。該特性的值<em class="rfc2119">必須</em>合乎 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 所定義最後修改日期的模式與規則。僅允許一個<code>dcterms:modified</code>特性得以不搭配<a href="https://www.w3.org/TR/epub-33/#attrdef-refines"><code>refines</code>屬性</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 出現。</li>
+						<li>所有其他的詮釋資料都為<em class="rfc2119">選擇性</em>。</li>
+						<li>不允許使用過時的<a href="https://www.w3.org/TR/epub-33/#sec-opf2-meta">OPF2 <code>meta</code>元素</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 。</li>
+						<li><code>meta</code>與<code>link</code>元素和<code>metadata</code>根元素一樣定義在相同的命名空間：<code class="uri"><a href="http://www.idpf.org/2013/metadata">http://www.idpf.org/2013/metadata</a></code></li>
+						<li>為了讓位於<code>metadata.xml</code>檔案中的後設資料能夠完整表達，所有能在<code><a data-type="element" href="https://www.w3.org/TR/epub-33/#dfn-package">package</a></code>元素 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 中使用的屬性，都能用於根<code class="markup">metadata</code>元素。</li>
+					</ul>
+
+					<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>注意事項</span></div><div class="">
+						<p>本檔案中的內容也非正式地透過一個XML綱要進行定義，請見<a href="#schema-metadata" class="sec-ref"><bdi class="secno">A.1 </bdi>Metadata.xml綱要</a>以獲得更多細節。</p>
+					</div></div>
+
+					<p>本規格不定義讓後設資料可以從出版品層級繼承到<a data-link-type="dfn" href="#dfn-rendition" class="internalDFN" id="ref-for-dfn-rendition-9">內容釋義</a>層級的模型，主要是EPUB在處理上僅要求閱讀系統能辨識<a href="#dfn-default-rendition" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-default-rendition-3">預設的內容釋義</a>（換句話說，依靠繼承的話，可能會讓閱讀系統無法掌握必要的後設資料）。</p>
+
+					<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="5"><span>注意事項</span></div><div class="">
+						<p>強烈建議EPUB製作者在預設內容釋義中包含完整出版品後設資料，以確保該檔案在使用時的相容性。</p>
+						<p>書名、語言以及其他後設資料不見得能套用到所有的內容釋義上，這使得共享後設資料變得更為複雜。無論內容釋義是否有表述後設資料，都不能假設在<code>metadata.xml</code>檔案中的後設資料能夠套用到所有的內容釋義上。</p>
+					</div></div>
+
+					<div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-3" aria-level="5"><span>注意事項</span></div><div class="">
+						<p>由於 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 並未定義供<code>metadata.xml</code>檔案使用的內容模型，不合乎本規格的EPUB出版品可以包含不同的後設資料。EPUB出版品若違反本章節的內容模型限制，就並非本規格所定義的<a data-link-type="dfn" href="#dfn-multiple-rendition-publications" class="internalDFN" id="ref-for-dfn-multiple-rendition-publications-2">多重內容釋義出版品</a>，但還是可以為合規的EPUB 3出版品。</p>
+						<p>強烈建議EPUB製作者，儘管不是為了產製多重內容釋義出版品，也該改用本規格定義的內容模型，以確保處理上的穩定。</p>
+					</div></div>
+
+					<section id="pub-metadata-obfuscation"><div class="header-wrapper"><h5 id="x3-2-1-1-resource-obfuscation"><bdi class="secno">3.2.1.1 </bdi>資源模糊化</h5><a class="self-link" href="#pub-metadata-obfuscation" aria-label="Permalink for Section 3.2.1.1"></a></div>
+						
+
+						<p><a href="https://www.w3.org/TR/epub-33/#obfus-algorithm">資源模糊化演算法</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 仰賴由該EPUB出版品之<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-unique-identifier">唯一識別碼</a>產生的<a href="https://www.w3.org/TR/epub-33/#obfus-keygen">模糊化密鑰</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 。</p>
+
+						<p>為了相容性原因，以及為了跨內容釋義分享資源的複雜性，本規格不改變此項需求，但將其套用到所有位於EPUB容器中的模糊化資源。</p>
+
+						<p>結果而論，EPUB製作者<em class="rfc2119">必須</em>使用<a data-link-type="dfn" href="#dfn-default-rendition" class="internalDFN" id="ref-for-dfn-default-rendition-4">預設內容釋義</a>的唯一識別碼作為模糊化密鑰，供所有<a data-link-type="dfn" href="#dfn-multiple-rendition-publications" class="internalDFN" id="ref-for-dfn-multiple-rendition-publications-3">多重內容釋義出版品</a>中的所有資源使用。</p>
+
+						<p>同樣的，<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-reading-system">閱讀系統</a><em class="rfc2119">必須</em>使用預設內容釋義的唯一識別碼來為多重內容釋義出版品中的所有資源進行去模糊化。</p>
+					</section>
+				</section>
+
+				<section id="vocab-assoc"><div class="header-wrapper"><h4 id="x3-2-2-vocabulary-association-mechanisms"><bdi class="secno">3.2.2 </bdi>用語關聯機制</h4><a class="self-link" href="#vocab-assoc" aria-label="Permalink for Section 3.2.2"></a></div>
+					
+
+					<p>本規格繼承了定義在 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 中的<a href="https://www.w3.org/TR/epub-33/#sec-vocab-assoc">用語關聯機制</a>，其與包裝文件的後設資料相關，僅有以下差異：<code>prefix</code>屬性<em class="rfc2119">可以</em>只用在根<code>metadata</code>元素上。</p>
+
+					<p>供後設資料屬性表述而<a href="https://www.w3.org/TR/epub-33/#sec-reserved-prefixes">保留的字首</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 皆可無變更地採用。</p>
+				</section>
+			</section>
+		</section>
+		<section id="rendition-selection"><div class="header-wrapper"><h2 id="x4-rendition-selection"><bdi class="secno">4. </bdi>選擇內容釋義</h2><a class="self-link" href="#rendition-selection" aria-label="Permalink for Section 4."></a></div>
+			
+
+			<section id="rendition-selection-intro"><div class="header-wrapper"><h3 class="informative" id="x4-1-introduction"><bdi class="secno">4.1 </bdi>導論</h3><a class="self-link" href="#rendition-selection-intro" aria-label="Permalink for Section 4.1"></a></div>
+				
+
+				<p>儘管每一份EPUB出版品代表單一作品，但也可能以複數不同的方法來處理該作品。例如一本雜誌，可能包含著固定版面版本（印刷複製品）用來針對平板尺寸螢幕進行處理，也會包含一份可重排版本供較小的手機螢幕使用，原因是在手機螢幕上固定版面會被縮到難以閱讀（或者在不支援固定版面時，自動切換成非預期的重排）。</p>
+
+				<p>EPUB容器能讓一本EPUB出版品包含內容的多重<a data-link-type="dfn" href="#dfn-rendition" class="internalDFN" id="ref-for-dfn-rendition-10">內容釋義</a>，但卻無法指定閱讀系統如何透過列於容器文件中各內容釋義具備的獨特特性來進行判斷，或者在之間進行選擇。</p>
+
+				<p>本章節試著補救這問題，透過兩項定義，一是一組能夠添加在容器文件中<a href="https://www.w3.org/TR/epub-33/#sec-container-metainf-container.xml"><code>rootfile</code>元素</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 上的內容釋義選擇屬性；另一是一套處理模型，能讓EPUB製作者在不同的狀況下指定哪一個內容釋義能提供最佳的呈現。</p>
+				<p>閱讀系統能以此從內容釋義表列中選擇最合適的呈現，以符合當下的硬體配置以及使用者偏好。</p>
+			</section>
+
+			<section id="rendition-selection-pub-confomance"><div class="header-wrapper"><h3 id="x4-2-content-conformance"><bdi class="secno">4.2 </bdi>內容適用性</h3><a class="self-link" href="#rendition-selection-pub-confomance" aria-label="Permalink for Section 4.2"></a></div>
+				
+
+				<p>一份容器文件：</p>
+
+				<ul class="conformancelist">
+					<li id="confreq-container"><em class="rfc2119">必須</em>符合 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 中<a href="https://www.w3.org/TR/epub-33/#sec-container-metainf-container.xml">容器 – META-INF/container.xml</a>一節對<code>container.xml</code>檔案的定義以及需求。</li>
+					<li id="confreq-selection-attr"><em class="rfc2119">可以</em>包含任何定義在<a href="#rendition-selection-attr">內容釋義選擇屬性</a>一節中的選擇用屬性。</li>
+					<li id="confreq-selection-default"><em class="rfc2119">可以</em>包含 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 中<a href="https://www.w3.org/TR/epub-33/#sec-container.xml-rootfiles-elem"><code>rootfile</code>元素</a>中供<a data-link-type="dfn" href="#dfn-default-rendition" class="internalDFN" id="ref-for-dfn-default-rendition-5">預設內容釋義</a>使用的選擇用屬性。</li>
+					<li id="confreq-selection-min">第二個以後的每一個<code>rootfile</code>元素都<em class="rfc2119">應該</em>在<em class="rfc2119">選擇性</em>標籤之外，包含至少一個供選擇用的屬性。</li>
+				</ul>
+			</section>
+
+			<section id="rendition-selection-rs-conformance"><div class="header-wrapper"><h3 id="x4-3-reading-system-conformance"><bdi class="secno">4.3 </bdi>閱讀系統適用性</h3><a class="self-link" href="#rendition-selection-rs-conformance" aria-label="Permalink for Section 4.3"></a></div>
+				
+
+				<p>EPUB閱讀系統<em class="rfc2119">應該</em>以定義在<a href="#rendition-selection-proc-model" class="sec-ref"><bdi class="secno">4.5處理模型</bdi>的方式來判斷應該對使用者呈現哪一個內容釋義。</p>
+			</section>
+
+			<section id="rendition-selection-attr"><div class="header-wrapper"><h3 id="x4-4-rendition-selection-attributes"><bdi class="secno">4.4 </bdi>供選擇內容釋義用的屬性</h3><a class="self-link" href="#rendition-selection-attr" aria-label="Permalink for Section 4.4"></a></div>
+				
+
+				<div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-4" aria-level="4"><span>注意事項</span></div><div class="">
+					<p>在<a href="https://www.w3.org/TR/epub-33/#sec-container-metainf-container.xml"><code>container.xml</code>檔案</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 中使用內容釋義選擇屬性，也非正式地透過一份XML綱要進行定義。請見<a href="#schema-container" class="sec-ref"><bdi class="secno">A.2 </bdi>Container.xml綱要</a>以獲得更多細節。</p>
+				</div></div>
+
+				<section id="media-attr"><div class="header-wrapper"><h4 id="x4-4-1-the-rendition-media-attribute"><bdi class="secno">4.4.1 </bdi><code>rendition:media</code>屬性</h4><a class="self-link" href="#media-attr" aria-label="Permalink for Section 4.4.1"></a></div>
+					
+
+					<p><code>rendition:media</code>用於識別閱讀系統的媒體特性，以判斷該<a data-link-type="dfn" href="#dfn-rendition" class="internalDFN" id="ref-for-dfn-rendition-11">內容釋義</a>是否為最適宜的處理對象。</p>
+
+					<div class="elem-synopsis" id="attrdef-media">
+						<dl>
+							<dt class="varlistentry">
+								<span class="term">屬性名稱</span>
+							</dt>
+							<dd>
+								<p>
+									<code>media</code>
+								</p>
+							</dd>
+							<dt class="varlistentry">
+								<span class="term">命名空間</span>
+							</dt>
+							<dd>
+								<p>
+									<code class="uri">http://www.idpf.org/2013/rendition</code>
+								</p>
+							</dd>
+							<dt class="varlistentry">
+								<span class="term">用法</span>
+							</dt>
+							<dd>
+								<p><em class="rfc2119">可以</em>用於容器文件的<code>rootfile</code>元素 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 。</p>
+							</dd>
+							<dt class="varlistentry">
+								<span class="term">值</span>
+							</dt>
+							<dd>
+								<p>為一個CSS 3媒體查詢（media query） [<cite><a class="bibref" data-link-type="biblio" href="#bib-mediaqueries" title="Media Queries Level 4">mediaqueries</a></cite>] ，<em class="rfc2119">必須</em>只能在其值為"<code>all</code>"的狀況下，選擇該媒體類型。</p>
+							</dd>
+						</dl>
+					</div>
+
+					<p>如 [<cite><a class="bibref" data-link-type="biblio" href="#bib-mediaqueries" title="Media Queries Level 4">mediaqueries</a></cite>] 所述，在本屬性中的媒體查詢<em class="rfc2119">必須</em>判斷為真，才能讓該內容釋義被選擇來進行處理。若媒體查詢如 [<cite><a class="bibref" data-link-type="biblio" href="#bib-mediaqueries" title="Media Queries Level 4">mediaqueries</a></cite>]<a href="https://www.w3.org/TR/mediaqueries-4/#error-handling">3.1錯誤處理</a>章節，被判斷為"not all”時，<em class="rfc2119">應該</em>被當作為假，供內容釋義選擇目的使用（也就是說該內容釋義並不合規而不適合）。</p>
+
+					<aside class="example" id="example-2"><div class="marker">
+    <a class="self-link" href="#example-2">範例<bdi> 2</bdi></a>
+  </div>
+						<p>以下範例呈現在同一個容器中同捆的兩份The Sandman之內容釋義，一份對寬度超過1920像素的螢幕進行最佳化。在螢幕尺寸小於1920像素時，將會使用預設的內容釋義。</p>
+
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">container</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"urn:oasis:names:tc:opendocument:xmlns:container"</span>
+           <span class="hljs-attr">xmlns:rendition</span>=<span class="hljs-string">"http://www.idpf.org/2013/rendition"</span>
+           <span class="hljs-attr">version</span>=<span class="hljs-string">"1.0"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">rootfiles</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">rootfile</span> <span class="hljs-attr">full-path</span>=<span class="hljs-string">"Sandman.opf"</span>
+           <span class="hljs-attr">media-type</span>=<span class="hljs-string">"application/oebps-package+xml"</span>/&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">rootfile</span> <span class="hljs-attr">full-path</span>=<span class="hljs-string">"Sandman-large.opf"</span>
+           <span class="hljs-attr">media-type</span>=<span class="hljs-string">"application/oebps-package+xml"</span>
+            <span class="hljs-attr">rendition:media</span>=<span class="hljs-string">"(min-width: 1920px)"</span>/&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">rootfiles</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">container</span>&gt;</span></code></pre>
+					</aside>
+				</section>
+
+				<section id="layout-attr"><div class="header-wrapper"><h4 id="x4-4-2-the-rendition-layout-attribute"><bdi class="secno">4.4.2 </bdi><code>rendition:layout</code>屬性</h4><a class="self-link" href="#layout-attr" aria-label="Permalink for Section 4.4.2"></a></div>
+					
+
+					<p><code>rendition:layout</code>屬性指示該<a data-link-type="dfn" href="#dfn-rendition" class="internalDFN" id="ref-for-dfn-rendition-12">內容釋義</a>為可重排或者預先分頁（固定版面）。</p>
+
+					<div class="elem-synopsis" id="attrdef-layout">
+						<dl>
+							<dt class="varlistentry">
+								<span class="term">屬性名稱</span>
+							</dt>
+							<dd>
+								<p>
+									<code>layout</code>
+								</p>
+							</dd>
+							<dt class="varlistentry">
+								<span class="term">命名空間</span>
+							</dt>
+							<dd>
+								<p>
+									<code class="uri">http://www.idpf.org/2013/rendition</code>
+								</p>
+							</dd>
+							<dt class="varlistentry">
+								<span class="term">用法</span>
+							</dt>
+							<dd>
+								<p><em class="rfc2119">可以</em>用於容器文件的<code>rootfile</code>元素 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 。</p>
+							</dd>
+							<dt class="varlistentry">
+								<span class="term">值</span>
+							</dt>
+							<dd>
+								<p>本屬性的值<em class="rfc2119">必須</em>為<code class="markup">reflowable</code>或<code>pre-paginated</code>。</p>
+							</dd>
+						</dl>
+					</div>
+
+					<p>當指定時，本屬性的值<em class="rfc2119">必須</em>符合參照內容釋義的<a href="https://www.w3.org/TR/epub-33/#property-layout-global">全域rendition:layout設定</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 。</p>
+
+					<p>如果在閱讀系統中使用者定義了版面偏好，當偏好符合該指定的值時，該屬性評量為真，否則該評量為假。如果沒有定義使用者偏好，閱讀系統在選擇可用的內容釋義時，<em class="rfc2119">應該</em>忽略這項屬性。</p>
+
+					<aside class="example" id="example-3"><div class="marker">
+    <a class="self-link" href="#example-3">範例<bdi> 3</bdi></a>
+  </div>
+						<p>以下範例呈現在容器中同一本雜誌同捆的兩份內容釋義。請注意，預設內容釋義不需要描述rendition:language屬性指示該內容釋義為指定的語言最佳化。為可重排，主要因為內容釋義預設為可重排。</p>
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">container</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"urn:oasis:names:tc:opendocument:xmlns:container"</span>
+           <span class="hljs-attr">xmlns:rendition</span>=<span class="hljs-string">"http://www.idpf.org/2013/rendition"</span>
+           <span class="hljs-attr">version</span>=<span class="hljs-string">"1.0"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">rootfiles</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">rootfile</span> <span class="hljs-attr">full-path</span>=<span class="hljs-string">"EPUB/reflow/magazine.opf"</span>
+           <span class="hljs-attr">media-type</span>=<span class="hljs-string">"application/oebps-package+xml"</span>/&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">rootfile</span> <span class="hljs-attr">full-path</span>=<span class="hljs-string">"EPUB/fxl/magazine.opf"</span>
+           <span class="hljs-attr">media-type</span>=<span class="hljs-string">"application/oebps-package+xml"</span>
+           <span class="hljs-attr">rendition:layout</span>=<span class="hljs-string">"pre-paginated"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">rootfiles</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">container</span>&gt;</span></code></pre>
+					</aside>
+				</section>
+
+				<section id="language-attr"><div class="header-wrapper"><h4 id="x4-4-3-the-rendition-language-attribute"><bdi class="secno">4.4.3 </bdi><code>rendition:language</code>屬性</h4><a class="self-link" href="#language-attr" aria-label="Permalink for Section 4.4.3"></a></div>
+					
+
+					<p><code>rendition:language</code>屬性指示該<a data-link-type="dfn" href="#dfn-rendition" class="internalDFN" id="ref-for-dfn-rendition-13">內容釋義</a>為指定的語言最佳化。</p>
+
+					<div class="elem-synopsis" id="attrdef-language">
+						<dl>
+							<dt class="varlistentry">
+								<span class="term">屬性名稱</span>
+							</dt>
+							<dd>
+								<p>
+									<code>language</code>
+								</p>
+							</dd>
+							<dt class="varlistentry">
+								<span class="term">命名空間</span>
+							</dt>
+							<dd>
+								<p>
+									<code class="uri">http://www.idpf.org/2013/rendition</code>
+								</p>
+							</dd>
+							<dt class="varlistentry">
+								<span class="term">用法</span>
+							</dt>
+							<dd>
+								<p><em class="rfc2119">可以</em>用於容器文件的<code>rootfile</code>元素 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 。</p>
+							</dd>
+							<dt class="varlistentry">
+								<span class="term">值</span>
+							</dt>
+							<dd>
+								<p><em class="rfc2119">必須</em>包含合乎 [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc5646" title="Tags for Identifying Languages">rfc5646</a></cite>] 的有效語言代碼。</p>
+							</dd>
+						</dl>
+					</div>
+
+					<p><code>rendition:language</code>更加精確地用於識別該內容釋義的主要語言，更勝於在內容釋義的包裝文件中包含<code>dc:language</code>元素，因為<code>dc:language</code>元素主要指示指定的語言在該作品內容中受到顯著地使用。</p>
+
+					<p>如果在閱讀系統中使用者定義了語言偏好，當偏好符合該指定的值時，該屬性評量為真，否則該評量為假。在 [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc4647" title="Matching of Language Tags">rfc4647</a></cite>] 的第三章中定義了許多比對綱要。閱讀系統可以運用最合適的比對綱要。如果沒有定義使用者偏好，閱讀系統在選擇可用的內容釋義時，<em class="rfc2119">應該</em>忽略這項屬性。</p>
+
+					<aside class="example" id="example-4"><div class="marker">
+    <a class="self-link" href="#example-4">範例<bdi> 4</bdi></a>
+  </div>
+						<p>以下範例呈現一份多語系EPUB出版品，包含英文、法文、西班牙文版內容釋義。</p>
+
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">container</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"urn:oasis:names:tc:opendocument:xmlns:container"</span>
+           <span class="hljs-attr">xmlns:rendition</span>=<span class="hljs-string">"http://www.idpf.org/2013/rendition"</span>
+           <span class="hljs-attr">version</span>=<span class="hljs-string">"1.0"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">rootfiles</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">rootfile</span> <span class="hljs-attr">full-path</span>=<span class="hljs-string">"EPUB/en/package.opf"</span>
+           <span class="hljs-attr">media-type</span>=<span class="hljs-string">"application/oebps-package+xml"</span>
+           <span class="hljs-attr">rendition:language</span>=<span class="hljs-string">"en"</span>/&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">rootfile</span> <span class="hljs-attr">full-path</span>=<span class="hljs-string">"EPUB/fr/package.opf"</span>
+           <span class="hljs-attr">media-type</span>=<span class="hljs-string">"application/oebps-package+xml"</span>
+           <span class="hljs-attr">rendition:language</span>=<span class="hljs-string">"fr"</span>/&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">rootfile</span> <span class="hljs-attr">full-path</span>=<span class="hljs-string">"EPUB/es/package.opf"</span>
+           <span class="hljs-attr">media-type</span>=<span class="hljs-string">"application/oebps-package+xml"</span>
+           <span class="hljs-attr">rendition:language</span>=<span class="hljs-string">"es"</span>/&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">rootfiles</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">container</span>&gt;</span></code></pre>
+					</aside>
+				</section>
+
+				<section id="accessMode-attr"><div class="header-wrapper"><h4 id="x4-4-4-the-rendition-accessmode-attribute"><bdi class="secno">4.4.4 </bdi><code>rendition:accessMode</code>屬性</h4><a class="self-link" href="#accessMode-attr" aria-label="Permalink for Section 4.4.4"></a></div>
+					
+
+					<p><code>rendition:accessMode</code>屬性指示該<a data-link-type="dfn" href="#dfn-rendition" class="internalDFN" id="ref-for-dfn-rendition-14">內容釋義</a>以何種方式傳達其知識內容，其基於 [<cite><a class="bibref" data-link-type="biblio" href="#bib-iso24751-3" title=" ISO/IEC 24751-3:2008 Information technology -- Individualized adaptability and accessibility in e-learning, education and training -- Part 3: &amp;quot;Access for all&amp;quot; digital resource description">iso24751-3</a></cite>] 的"Access Mode"特性。</p>
+
+					<div class="elem-synopsis" id="attrdef-accessMode">
+						<dl>
+							<dt class="varlistentry">
+								<span class="term">屬性名稱</span>
+							</dt>
+							<dd>
+								<p>
+									<code>accessMode</code>
+								</p>
+							</dd>
+							<dt class="varlistentry">
+								<span class="term">命名空間</span>
+							</dt>
+							<dd>
+								<p>
+									<code class="uri">http://www.idpf.org/2013/rendition</code>
+								</p>
+							</dd>
+							<dt class="varlistentry">
+								<span class="term">用法</span>
+							</dt>
+							<dd>
+								<p><em class="rfc2119">可以</em>用於容器文件的<code>rootfile</code>元素 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 。</p>
+							</dd>
+							<dt class="varlistentry">
+								<span class="term">值</span>
+							</dt>
+							<dd>
+								<p><em class="rfc2119">必須</em>為一或多個以下的值：<code class="markup">auditory</code>、<code>tactile</code>、<code>textual</code>或<code>visual</code></p>
+							</dd>
+						</dl>
+					</div>
+
+					<p><code>rendition:accessMode</code>屬性定義了該內容釋義主要的存取模式（不只一種）。例如，一份文字作品可能包含圖片、聲音以及影片，其主要用於傳達資訊的手段為文字。同樣的，一份圖像作品可能包含替代文字以及/或有描述文字，但這些內容並不須在該內容釋義中列為textual模式來供選擇用途使用。</p>
+
+					<p>資訊以何種方式編碼，在指定存取模式時也需要進行考量。若一份作品具備文字元件，或者性質上全部都為文字，但內容卻被全部做成圖像格式呈現，該存取模式為visual（例如漫畫中的JPEG頁面裡包含角色對話，或者一份文件的掃瞄版）。</p>
+
+					<p>內容釋義<em class="rfc2119">可以</em>包含多於一個的存取模式。例如，文字版本可能使用媒體層疊嵌入有聲版本。在這樣的案例中，該屬性應該將所有可用的主要存取模式列出。</p>
+
+					<p>如果在閱讀系統中使用者定義了存取模式偏好，當偏好符合該指定的值時，該屬性評量為真，否則該評量為假。如果沒有定義使用者偏好，閱讀系統在選擇可用的內容釋義時，<em class="rfc2119">應該</em>忽略這項屬性。</p>
+
+					<p><a href="#label-attr"><code>rendition:label</code>屬性</a>可以用來告知使用者該內容的性質，尤其在無法取得這種資訊，或尚未標準化的狀況下供選擇使用。例如，tactile（觸覺）內容釋義可以透過其標籤指出盲文代碼以及等級，或者textual內容釋義可以標註供文字轉換語音最佳化處理使用，而非供一般人閱讀使用。</p>
+
+					<aside class="example" id="example-5"><div class="marker">
+    <a class="self-link" href="#example-5">範例<bdi> 5</bdi></a>
+  </div>
+						<p>以下範例呈現一本EPUB出版品中有著基於圖像的內容釋義，並且也有基於文字的序列可以使用。</p>
+
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">container</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"urn:oasis:names:tc:opendocument:xmlns:container"</span>
+           <span class="hljs-attr">xmlns:rendition</span>=<span class="hljs-string">"http://www.idpf.org/2013/rendition"</span>
+           <span class="hljs-attr">version</span>=<span class="hljs-string">"1.0"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">rootfiles</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">rootfile</span> <span class="hljs-attr">full-path</span>=<span class="hljs-string">"EPUB/comic/package.opf"</span>
+           <span class="hljs-attr">media-type</span>=<span class="hljs-string">"application/oebps-package+xml"</span>
+           <span class="hljs-attr">rendition:accessMode</span>=<span class="hljs-string">"visual"</span>/&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">rootfile</span> <span class="hljs-attr">full-path</span>=<span class="hljs-string">"EPUB/novel/package.opf"</span>
+           <span class="hljs-attr">media-type</span>=<span class="hljs-string">"application/oebps-package+xml"</span>
+           <span class="hljs-attr">rendition:accessMode</span>=<span class="hljs-string">"textual"</span>/&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">rootfiles</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">container</span>&gt;</span></code></pre>
+					</aside>
+				</section>
+
+				<section id="label-attr"><div class="header-wrapper"><h4 id="x4-4-5-the-rendition-label-attribute"><bdi class="secno">4.4.5 </bdi><code>rendition:label</code>屬性</h4><a class="self-link" href="#label-attr" aria-label="Permalink for Section 4.4.5"></a></div>
+					
+
+					<p><code>rendition:label</code>屬性允許每一個<code>rootfile</code>元素 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 以人類可讀的名稱附加說明。</p>
+
+					<div class="elem-synopsis" id="attrdef-label">
+						<dl>
+							<dt class="varlistentry">
+								<span class="term">屬性名稱</span>
+							</dt>
+							<dd>
+								<p>
+									<code>label</code>
+								</p>
+							</dd>
+							<dt class="varlistentry">
+								<span class="term">命名空間</span>
+							</dt>
+							<dd>
+								<p>
+									<code class="uri">http://www.idpf.org/2013/rendition</code>
+								</p>
+							</dd>
+							<dt class="varlistentry">
+								<span class="term">用法</span>
+							</dt>
+							<dd>
+								<p><em class="rfc2119">可以</em>用於容器文件的<code>rootfile</code>元素 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 。</p>
+							</dd>
+							<dt class="varlistentry">
+								<span class="term">值</span>
+							</dt>
+							<dd>
+								<p>文字。</p>
+							</dd>
+						</dl>
+					</div>
+
+					<p><code>rendition:label</code>屬性為<a data-link-type="dfn" href="#dfn-rendition" class="internalDFN" id="ref-for-dfn-rendition-15">內容釋義</a>提供名稱（例如供手動選擇內容釋義使用）。</p>
+
+					<p><code>rendition:label</code>屬性使用的語言<em class="rfc2119">可以</em>一個<code>xml:lang</code>屬性來進行表述。</p>
+
+					<aside class="example" id="example-6"><div class="marker">
+    <a class="self-link" href="#example-6">範例<bdi> 6</bdi></a>
+  </div>
+						<p>以下範例呈現<code>rendition:label</code>屬性被用於為內容釋義提供人類可讀的名稱。</p>
+
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">container</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"urn:oasis:names:tc:opendocument:xmlns:container"</span>
+           <span class="hljs-attr">xmlns:rendition</span>=<span class="hljs-string">"http://www.idpf.org/2013/rendition"</span>
+           <span class="hljs-attr">version</span>=<span class="hljs-string">"1.0"</span>
+           <span class="hljs-attr">xml:lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">rootfiles</span>&gt;</span>
+        …
+       <span class="hljs-tag">&lt;<span class="hljs-name">rootfile</span> <span class="hljs-attr">full-path</span>=<span class="hljs-string">"EPUB/package.opf"</span>
+           <span class="hljs-attr">media-type</span>=<span class="hljs-string">"application/oebps-package+xml"</span>
+           <span class="hljs-attr">rendition:media</span>=<span class="hljs-string">"color, min-width: 1024"</span>
+           <span class="hljs-attr">rendition:layout</span>=<span class="hljs-string">"pre-paginated"</span>
+           <span class="hljs-attr">rendition:label</span>=<span class="hljs-string">"Color-optimized print replica"</span>/&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">rootfiles</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">container</span>&gt;</span></code></pre>
+					</aside>
+
+					<p><code>rendition:label</code>屬性並非用於評量要處理哪一個內容釋義的選擇用屬性。</p>
+				</section>
+			</section>
+
+			<section id="rendition-selection-proc-model"><div class="header-wrapper"><h3 id="x4-5-processing-model"><bdi class="secno">4.5 </bdi>處理模型</h3><a class="self-link" href="#rendition-selection-proc-model" aria-label="Permalink for Section 4.5"></a></div>
+				
+
+				<p>本章節描述閱讀系統選擇最佳化<a data-link-type="dfn" href="#dfn-rendition" class="internalDFN" id="ref-for-dfn-rendition-16">內容釋義</a>呈現給讀者的方法。</p>
+
+				<p>選擇內容釋義<em class="rfc2119">應該</em>發生在初次處理時，以及閱讀系統<em class="rfc2119">應該</em>在使用者環境改變（例如，改變裝置方向或者可視尺寸時）作為反應，重新對選擇進行評量。</p>
+
+				<p>當觸動狀態變更時，閱讀系統<em class="rfc2119">應該</em>對容器文件中的<code>rootfile</code>元素 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 按以下方式，從最後一個<code>rootfile</code>項目開始評量：</p>
+
+				<ul>
+					<li>如果內容釋義有設定命名空間內的屬性，確認每一個屬性是否為<a href="#rendition-selection-attr" class="sec-ref"><bdi class="secno">4.4 </bdi>供選擇內容釋義用的屬性</a>中定義的屬性，並由其定義判斷指定的狀態是否為真：</li>
+				</ul>
+				<ul>
+					<li>如果所有的狀態評量為真，選擇該內容釋義並且離開選擇程序。</li>
+					<li>如果任一狀態為假，移去處理下一個<code>rootfile</code>元素，並且持續評量程序。</li>
+					<li>如果發現任何無法辨識的命名空間內的內容釋義屬性，就應該忽視，不供評量用途所使用。</li>
+					<li>如果找不到內容釋義中有任何命名空間內的屬性，移去處理下一個<code class="markup">rootfile</code>元素，並且持續評量程序。</li>
+					
+				</ul>
+
+				<p>如果處理到預設內容釋義，選擇該內容釋義並且離開程序。</p>
+
+				<div class="note" role="note" id="issue-container-generatedID-5"><div role="heading" class="note-title marker" id="h-note-5" aria-level="4"><span>注意事項</span></div><div class="">
+					<p>本處理模型不要求選擇程序發生在使用者裝置上，或者提供所有容器中的內容釋義。例如，內容釋義選擇可以發生在基於雲端的遞送系統之伺服器端，並且僅將一個最佳匹配的內容釋義送到裝置上。</p>
+				</div></div>
+
+				<div class="note" role="note" id="issue-container-generatedID-6"><div role="heading" class="note-title marker" id="h-note-6" aria-level="4"><span>注意事項</span></div><div class="">
+					<p>由於EPUB 2閱讀系統，以及不支援多重內容釋義選擇的EPUB 3閱讀系統只會處理預設內容釋義，EPUB製作者需要思考哪一個內容釋義在閱讀系統間有最廣的相容性，確保其被列於第一。</p>
+				</div></div>
+
+				<p>閱讀系統<em class="rfc2119">可以</em>給使用者選項來手動選擇容器中的內容釋義。如果有的話，<em class="rfc2119">應該</em>使用<a href="#label-attr"><code>rendition:label</code>屬性</a>的值來作為選擇項目呈現。</p>
+
+				<p>由於以前EPUB沒有定義內容釋義選擇模型，一些EPUB出版品可能會有自己的選擇模型。如果可以辨識，則<em class="rfc2119">應該</em>使用這些選擇模型。如果同時具備合乎本規格的內容釋義選擇屬性以及自行定義的屬性，後者<em class="rfc2119">應該</em>被忽略。</p>
+			</section>
+		</section>
+		<section id="rendition-mapping"><div class="header-wrapper"><h2 id="x5-rendition-mapping"><bdi class="secno">5. </bdi>內容釋義映射</h2><a class="self-link" href="#rendition-mapping" aria-label="Permalink for Section 5."></a></div>
+			
+
+			<section id="rendition-mapping-intro" class="informative"><div class="header-wrapper"><h3 id="x5-1-introduction"><bdi class="secno">5.1 </bdi>導論</h3><a class="self-link" href="#rendition-mapping-intro" aria-label="Permalink for Section 5.1"></a></div><p><em>本章節為非規範性。</em></p>
+				
+
+				<p><a data-link-type="dfn" href="#dfn-rendition-mapping-documents" class="internalDFN" id="ref-for-dfn-rendition-mapping-documents-1">內容釋義映射文件</a>用於在一份<a data-link-type="dfn" href="#dfn-multiple-rendition-publications" class="internalDFN" id="ref-for-dfn-multiple-rendition-publications-4">多重內容釋義出版品</a>中，跨<a data-link-type="dfn" href="#dfn-rendition" class="internalDFN" id="ref-for-dfn-rendition-17">內容釋義</a>識別相關的內容位址，讓閱讀系統在切換內容釋義時，能夠保持使用者正在讀的位置。</p>
+
+				<p data-cite="html">內容釋義映射文件以XHTML呈現，使用<code><a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element">nav</a></code>元素透過無排序的列表來將映射位置分組。在內容釋義映射文件中沒有顯示用元件；設計上是為了啟動自動切換。由於XHTML內容模型缺少處理脈絡的方法，使得這份文件相當受限，僅允許在<code><a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element">body</a></code>中只用單一<code><a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element">nav</a></code>元素，以簡化製作與處理程序。</p>
+
+				<p>為了要在內容釋義間啟動內容位址的映射，內容釋義映射文件的<code>nav</code>元素包含了一系列一或多個無排序列表，每一項代表了跨所有內容釋義的共通點（例如，一章、一頁、或者頁內的一個元素）。在每一個無排序列表中的列表項目代表了一組對等的連結目標群，跨所有內容中可用的內容釋義（例如，一個連結可能指向固定版面內容釋義中的一頁，而可重排內容釋義的對等連結所指向的是包含該頁面XHTML內容文件的分頁指示點）。</p>
+
+				<p>閱讀系統可以檢查相鄰的列表項目來知悉使用者在目前內容釋義所讀到的位置，當脈絡發生變化，或者由使用者觸發時，能判斷載入哪一份EPUB內容文件最能符合新的狀態。</p>
+			</section>
+
+			<section id="rendition-mapping-pub-conformance"><div class="header-wrapper"><h3 id="x5-2-content-conformance"><bdi class="secno">5.2 </bdi>內容適用性</h3><a class="self-link" href="#rendition-mapping-pub-conformance" aria-label="Permalink for Section 5.2"></a></div>
+				
+
+				<p>一本EPUB出版品<em class="rfc2119">可以</em>包含一份<a data-link-type="dfn" href="#dfn-rendition-mapping-documents" class="internalDFN" id="ref-for-dfn-rendition-mapping-documents-2">內容釋義映射文件</a>。</p>
+
+				<p>一份合乎規定的內容釋義映射文件：</p>
+
+				<ul class="conformancelist">
+					<li id="confreq-map-xhtml"><em class="rfc2119">必須</em>合乎<a href="https://www.w3.org/TR/epub-33/#sec-xhtml-req">XHTML需求</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 中所定義對於XHTML內容文件的所有內容合規性限制。</li>
+					<li id="confreq-map-content-model"><em class="rfc2119">必須</em>合乎<a href="#rendition-mapping-doc-def">EPUB內容釋義映射文件定義</a>中專對內容釋義映射文件制定的所有內容合規性限制。</li>
+					<li id="confreq-map-unlisted"><em class="rfc2119">不得</em>列於EPUB出版品任一內容釋義的包裝文件宣告中。</li>
+				</ul>
+			</section>
+
+			<section id="rendition-mapping-rs-conformance"><div class="header-wrapper"><h3 id="x5-3-reading-system-conformance"><bdi class="secno">5.3 </bdi>閱讀系統適用性</h3><a class="self-link" href="#rendition-mapping-rs-conformance" aria-label="Permalink for Section 5.3"></a></div>
+				
+
+				<p>閱讀系統<em class="rfc2119">應該</em>支援在切換內容時使用<a data-link-type="dfn" href="#dfn-rendition-mapping-documents" class="internalDFN" id="ref-for-dfn-rendition-mapping-documents-3">內容釋義映射文件</a>。</p>
+
+				<p>支援映射的閱讀系統：</p>
+
+				<ul class="conformancelist">
+					<li id="confreq-rs-remap"><em class="rfc2119">必須</em>在發生內容釋義更換時，掌握內容釋義映射文件中現在所在位址，並且載入新內容釋義中的對應位置。</li>
+				</ul>
+			</section>
+
+			<section id="rendition-mapping-doc-def"><div class="header-wrapper"><h3 id="x5-4-epub-rendition-mapping-document-definition"><bdi class="secno">5.4 </bdi>EPUB內容釋義對應文件定義</h3><a class="self-link" href="#rendition-mapping-doc-def" aria-label="Permalink for Section 5.4"></a></div>
+				
+
+				<div class="note" role="note" id="issue-container-generatedID-7"><div role="heading" class="note-title marker" id="h-note-7" aria-level="4"><span>注意事項</span></div><div class="">
+					<p>本檔案中的內容也非正式地透過一份XML綱要進行定義。請見<a href="#schema-mapping-doc" class="sec-ref"><bdi class="secno">A.3 </bdi>映射文件綱要</a>以獲得更多細節。</p>
+				</div></div>
+
+				<section id="rendition-mapping-doc-xhtml"><div class="header-wrapper"><h4 id="x5-4-1-xhtml-content-document-restrictions"><bdi class="secno">5.4.1 </bdi>XHTML內容文件：限制</h4><a class="self-link" href="#rendition-mapping-doc-xhtml" aria-label="Permalink for Section 5.4.1"></a></div>
+					
+
+					<p><a data-link-type="dfn" href="#dfn-rendition-mapping-documents" class="internalDFN" id="ref-for-dfn-rendition-mapping-documents-4">內容釋義映射文件</a>須遵從XHTML內容文件規定，但在 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>] 內容模型上有著以下限制：</p>
+
+					<ul>
+						<li><code>html</code>、<code>head</code>、<code>body</code>、<code>ul</code>及<code>li</code>元素不允許使用任何屬性。（僅允許<code>xmlns</code>偽屬性用於宣告命名空間）<code>nav</code>元素僅接受一個<code>epub:type</code>屬性。</li>
+						<li><code>head</code>只<em class="rfc2119">可以</em>包含<code>meta</code>元素。<code>meta</code>元素只<em class="rfc2119">可以</em>附加<code>charset</code>屬性或者<code>name</code>以及<code class="markup">content</code>屬性。</li>
+						<li><code>head</code><em class="rfc2119">必須</em>包含一個<code>meta</code>元素，其<code>name</code>屬性的值為"<code>epub.multiple.renditions.version</code>"，其<code>content</code>屬性的值為"<code>1.0</code>"。閱讀系統<em class="rfc2119">可以</em>忽略所有其他的<code>meta</code>元素。</li>
+						<li><code>body</code>元素<em class="rfc2119">必須</em>包含唯一的<code>nav</code>子元素，其<code>epub:type</code>指定值為"<code>resource-map</code>"，還<em class="rfc2119">可以</em>包含一或多個選擇性的<code>nav</code>元素。在<code>body</code>的子元素中，不能有其他 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>] 內容。</li>
+					</ul>
+				</section>
+
+				<section id="rendition-mapping-doc-nav"><div class="header-wrapper"><h4 id="x5-4-2-the-nav-element-modifications-and-restrictions"><bdi class="secno">5.4.2 </bdi>nav元素：變更與限制</h4><a class="self-link" href="#rendition-mapping-doc-nav" aria-label="Permalink for Section 5.4.2"></a></div>
+					
+
+					<p>本規格在<a data-link-type="dfn" href="#dfn-rendition-mapping-documents" class="internalDFN" id="ref-for-dfn-rendition-mapping-documents-5">內容釋義映射文件</a>中限制<code>nav</code>元素及其子孫項的內容模型如下：</p>
+
+					<ul>
+						<li>每一個<code>nav</code>元素<em class="rfc2119">必須</em>透過一個<code>epub:type</code>屬性以識別其特質。</li>
+						<li>內容釋義映射文件使用無排序列表(<code>ul</code>)代替有序列表(<code>ol</code>)。</li>
+						<li><code>nav</code>元素<em class="rfc2119">可以</em>包含一或多個<code>ul</code>元素。</li>
+						<li>每一列表項目（<code>li</code>）<em class="rfc2119">必須</em>包含唯一的<code>a</code>元素（也就是禁止使用<code>span</code>標題以及巢狀列表）。</li>
+						<li><code>a</code>元素<em class="rfc2119">必須</em>為空。</li>
+						<li>
+							<p><code>a</code>元素<em class="rfc2119">必須</em>指向所參照的內容釋義如下：</p>
+							<ul>
+								<li>使用<a href="http://idpf.org/epub/linking/cfi/#sec-intra-cfis">出版品內部CFI</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epubcfi-11" title="EPUB Canonical Fragment Identifiers 1.1">epubcfi-11</a></cite>] 作為其<code>href</code>屬性的值，或者，</li>
+								<li>透過一個<code>epub:rendition</code>屬性，其值為該內容釋義中出版品文件的相對路徑。</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+
+				<section id="rendition-mappings"><div class="header-wrapper"><h4 id="x5-4-3-rendition-mappings"><bdi class="secno">5.4.3 </bdi>內容釋義對應</h4><a class="self-link" href="#rendition-mappings" aria-label="Permalink for Section 5.4.3"></a></div>
+					
+
+					<p>每一個在<a data-link-type="dfn" href="#dfn-rendition-mapping-documents" class="internalDFN" id="ref-for-dfn-rendition-mapping-documents-6">內容釋義映射文件</a><code class="markup">resource-map</code><code>nav</code>元素中的<code>ul</code>元素用於識別內容位址，其子<code>li</code>元素表列每一個可使用內容釋義的對應位址。結果使得每一個<code>ul</code>元素<em class="rfc2119">必須</em>為每一份內容釋義包含一個<code>li</code>。</p>
+
+					<div class="note" role="note" id="issue-container-generatedID-8"><div role="heading" class="note-title marker" id="h-note-8" aria-level="5"><span>注意事項</span></div><div class="">
+						<p>為了讓使用案例更為多元，本規格並不指定映射的粒度等級。例如，有些出版品目標讀者為語言學習者，可能u以定義句子層級為同步點，而其他類別的出版品可能只會跨內容釋義時對應到主要章節而已。</p>
+					</div></div>
+
+					<p>每一個在無排序列表中的列表項目<em class="rfc2119">必須</em>為<code>a</code>子元素中定義的內容釋義，指向一份EPUB內容文件，或者其中的一個斷片。每一個連結<em class="rfc2119">必須</em>參照<a href="https://www.w3.org/TR/epub-33/#sec-itemref-elem">線性最高層級內容文件</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 。</p>
+
+					<p>每一個<code>a</code>元素<em class="rfc2119">必須</em>指定所參照的內容釋義，以1)在其<code>href</code>屬性中包含<a href="http://idpf.org/epub/linking/cfi/#sec-intra-cfis">出版品內部CFI</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epubcfi-11" title="EPUB Canonical Fragment Identifiers 1.1">epubcfi-11</a></cite>] 的方式，或者2)在<code>epub:rendition</code>屬性中，將該內容釋義包裝文件的相對路徑作為值提供。</p>
+
+					<p>如果使用<code>epub:rendition</code>屬性來指定目標內容釋義，在<code>a</code>元素的<code>href</code>屬性中，任何斷片識別碼綱要都<em class="rfc2119">可以</em>被當作URL的值使用（例如，唯一識別碼，或者<abbr title="World Wide Web Consortium">W3C</abbr>媒體斷片）。</p>
+
+					<div class="note" role="note" id="issue-container-generatedID-9"><div role="heading" class="note-title marker" id="h-note-9" aria-level="5"><span>注意事項</span></div><div class="">
+						<p>我們強烈推薦使用 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epubcfi-11" title="EPUB Canonical Fragment Identifiers 1.1">epubcfi-11</a></cite>] 表述，勝於其他斷片識別綱要（尤其在可重排XHTML內容文件的脈絡下），因為該表述可以讓閱讀系統無需做任何預先處理，就能獲得內容釋義映射資訊。反過來說，使用唯一識別碼會強制閱讀系統載入目標EPUB內容文件，並且處理其DOM以能排序/比較連結目的地（與文件順序的關係）。這額外的處理會影響效能，並且會增加在快取、增量更新等的實作成本。</p>
+					</div></div>
+
+					<aside class="example" id="example-7"><div class="marker">
+    <a class="self-link" href="#example-7">範例<bdi> 7</bdi></a>
+  </div>
+						<p>以下範例呈現一份內容釋義映射文件用來對一本雜誌中的3個內容釋義：文字、直式（Portrait）以及橫式（Landscape）。'article 1'跨固定版面內容釋義的第五與第六頁，而橫式內容釋義使用跨頁（非同步）。</p>
+
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/1999/xhtml"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">epub:type</span>=<span class="hljs-string">"resource-map"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+             <span class="hljs-comment">&lt;!-- First Page of the Article 1 --&gt;</span>
+                 <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>= <span class="hljs-string">"../../text/default.opf#epubcfi(/6/8 [article1] !/4/2:20)"</span> /&gt;</span>
+                 <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                 <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../../images/page5.png"</span>
+                        <span class="hljs-attr">epub:rendition</span>=<span class="hljs-string">"../../portrait/portrait.opf"</span> /&gt;</span>
+                 <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+             <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+             <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+                 <span class="hljs-comment">&lt;!-- Second Page of the Article 1 --&gt;</span>
+                 <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>= <span class="hljs-string">"../../text/default.opf#epubcfi(/6/8 [article1] !/4/22:40)"</span> /&gt;</span>
+                 <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                 <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../../images/page6.png"</span>
+                        <span class="hljs-attr">epub:rendition</span>=<span class="hljs-string">"../../portrait/portrait.opf"</span> /&gt;</span>
+                 <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+             <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+             <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+                 <span class="hljs-comment">&lt;!-- Article 1 --&gt;</span>
+                 <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>= <span class="hljs-string">"../../text/default.opf#epubcfi(/6/8 [article1] )"</span> /&gt;</span>
+                 <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                 <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../../images/page5-6.png"</span>
+                        <span class="hljs-attr">epub:rendition</span>=<span class="hljs-string">"../../landscape/landscape.opf"</span> /&gt;</span>
+                 <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+             <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+					</aside>
+
+					<aside class="example" id="example-8"><div class="marker">
+    <a class="self-link" href="#example-8">範例<bdi> 8</bdi></a>
+  </div>
+						<p>以下範例呈現一份多語系EPUB出版品，其不同語言分別位於獨立的內容釋義。</p>
+
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/1999/xhtml"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">epub:type</span>=<span class="hljs-string">"resource-map"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+                <span class="hljs-comment">&lt;!-- Chapter 1 --&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span> = <span class="hljs-string">"../../en/en.opf#epubcfi(/6/2)"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span> = <span class="hljs-string">"../../fr/fr.opf#epubcfi(/6/4)"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span> = <span class="hljs-string">"../../de/de.opf#epubcfi(/6/2)"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span> = <span class="hljs-string">"../../es/es.opf#epubcfi(/6/6)"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span> = <span class="hljs-string">"../../it/it.opf#epubcfi(/6/2)"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+                 <span class="hljs-comment">&lt;!-- Chapter 2 --&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span> = <span class="hljs-string">"../../en/en.opf#epubcfi(/6/4)"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span> = <span class="hljs-string">"../../fr/fr.opf#epubcfi(/6/6)"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span> = <span class="hljs-string">"../../de/de.opf#epubcfi(/6/4)"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span> = <span class="hljs-string">"../../es/es.opf#epubcfi(/6/8)"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span> = <span class="hljs-string">"../../it/it.opf#epubcfi(/6/6)"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+                <span class="hljs-comment">&lt;!-- Chapter 3 --&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span> = <span class="hljs-string">"../../en/en.opf#epubcfi(/6/6)"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span> = <span class="hljs-string">"../../fr/fr.opf#epubcfi(/6/8)"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span> = <span class="hljs-string">"../../de/de.opf#epubcfi(/6/6)"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span> = <span class="hljs-string">"../../es/es.opf#epubcfi(/6/10)"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span> = <span class="hljs-string">"../../it/it.opf#epubcfi(/6/8)"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+            <span class="hljs-comment">&lt;!-- …  could be even more fine grained for better results … --&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+					</aside>
+				</section>
+
+				<section id="rendition-mapping-container-id"><div class="header-wrapper"><h4 id="x5-4-4-container-identification"><bdi class="secno">5.4.4 </bdi>在容器中識別</h4><a class="self-link" href="#rendition-mapping-container-id" aria-label="Permalink for Section 5.4.4"></a></div>
+					
+
+					<p><a data-link-type="dfn" href="#dfn-rendition-mapping-documents" class="internalDFN" id="ref-for-dfn-rendition-mapping-documents-7">內容釋義映射文件</a>的位址，在容器文件中使用一個<a href="https://www.w3.org/TR/epub-33/#sec-container.xml-link-elem"><code>link</code>元素</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 來進行識別，其位於：</p>
+
+					<ul>
+						<li><code>href</code>屬性<em class="rfc2119">必須</em>>參照內容釋義映射文件相對於EPUB容器根目錄所在的位址；</li>
+						<li><code>rel</code>屬性<em class="rfc2119">必須</em>指定為值"<code>mapping</code>"；</li>
+						<li><code>media-type</code>屬性<em class="rfc2119">必須</em>指定為值"<code>application/xhtml+xml</code>"。</li>
+					</ul>
+
+					<p>容器文件<em class="rfc2119">不得</em>參照多於一個的映射文件。</p>
+
+					<aside class="example" id="example-9"><div class="marker">
+    <a class="self-link" href="#example-9">範例<bdi> 9</bdi></a>
+  </div>
+						<p>以下範例呈現多語系EPUB出版品的<code>container.xml</code>檔案。內容釋義映射文件的位址包含在<code>link</code>元素內。</p>
+
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">container</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"urn:oasis:names:tc:opendocument:xmlns:container"</span>
+           <span class="hljs-attr">xmlns:rendition</span>=<span class="hljs-string">"http://www.idpf.org/2013/rendition"</span>
+           <span class="hljs-attr">version</span>=<span class="hljs-string">"1.0"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">rootfiles</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">rootfile</span> <span class="hljs-attr">full-path</span>=<span class="hljs-string">"en/en.opf"</span>
+           <span class="hljs-attr">rendition:language</span>=<span class="hljs-string">"en"</span>
+           <span class="hljs-attr">media-type</span>=<span class="hljs-string">"application/oebps-package+xml"</span> /&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">rootfile</span> <span class="hljs-attr">full-path</span>=<span class="hljs-string">"de/de.opf"</span>
+           <span class="hljs-attr">rendition:language</span>=<span class="hljs-string">"de"</span>
+           <span class="hljs-attr">media-type</span>=<span class="hljs-string">"application/oebps-package+xml"</span> /&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">rootfiles</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">links</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"renditionMapping.html"</span>
+             <span class="hljs-attr">rel</span>=<span class="hljs-string">"mapping"</span>
+             <span class="hljs-attr">media-type</span>=<span class="hljs-string">"application/xhtml+xml"</span> /&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">links</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">container</span>&gt;</span></code></pre>
+					</aside>
+				</section>
+			</section>
+
+			<section id="rendition-mapping-proc-model" class="informative"><div class="header-wrapper"><h3 id="x5-5-processing-model"><bdi class="secno">5.5 </bdi>處理模型</h3><a class="self-link" href="#rendition-mapping-proc-model" aria-label="Permalink for Section 5.5"></a></div><p><em>本章節為非規範性。</em></p>
+				
+
+				<p>本章節提供一個非規範性的模型，供閱讀系統處理<a data-link-type="dfn" href="#dfn-rendition-mapping-documents" class="internalDFN" id="ref-for-dfn-rendition-mapping-documents-8">內容釋義映射文件</a>。該模型不描述如何或者何時閱讀系統該切換內容釋義。</p>
+
+				<p>內容釋義映射文件映射能力預期結果為，在新的內容釋義中展示位址相等於目前內容釋義所呈現的內容，因此使用者可以在閱讀時維持位置。為達到此目的，想要遵從此規格的閱讀系統可以跟隨以下步驟，當觸發狀態變更時，重設目前的內容釋義：</p>
+
+				<ul>
+					<li>
+						<p>首先，需要辨明目前內容釋義所在的位置範圍：</p>
+						<ul>
+							<li>對於固定格式的內容釋義而言，位置極有可能落在目前可視區域的範圍之內。</li>
+							<li>對於可重排的內容釋義而言，位置極有可能落在目前呈現在螢幕上的文字範圍。</li>
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li>其次，需要決定要導向哪一個內容釋義，如<a href="#rendition-selection-proc-model" class="sec-ref"><bdi class="secno">4.5 </bdi>處理模型</a>所定義。</li>
+					<li>
+						<p>最後閱讀系統可以分析<code>ul</code>元素以找到其包含<code>li</code>元素的<code>a</code>子元素，其中指定相同內容釋義，並且與目前的範圍重疊：</p>
+						<ul>
+							<li>如果僅有一個這樣的<code>ul</code>元素，閱讀系統將導向新內容釋義中該範圍的開始處。</li>
+							<li>如果有多於一個這樣的<code>ul</code>元素，並且閱讀系統行為尚未定義，閱讀系統可以協助使用者選擇新的位址，或者可以預測的方式在其中選擇適當的位址。</li>
+							<li>如果沒有匹配的<code>ul</code>元素，閱讀系統將需要決定新內容釋義中導向的位置，就如同沒有內容釋義映射文件一樣。</li>
+						</ul>
+					</li>
+				</ul>
+
+				<p>請注意，導向時發生的事件將大幅影響使用者經驗，所以閱讀系統可以在上列以外增加額外的資訊已達到更好的結果。</p>
+			</section>
+		</section>
+		<section id="app-schemas" class="appendix informative"><div class="header-wrapper"><h2 id="a-schemas"><bdi class="secno">A. </bdi>綱要</h2><a class="self-link" href="#app-schemas" aria-label="Permalink for Appendix A."></a></div><p><em>本章節為非規範性。</em></p>
+			
+
+			<p>使用本附錄中的綱要進行驗證，需要支援 [<cite><a class="bibref" data-link-type="biblio" href="#bib-relaxng-schema" title="Information technology -- Document Schema Definition Language (DSDL) -- Part 2: Regular-grammar-based validation -- RELAX NG">relaxng-schema</a></cite>] 及 [<cite><a class="bibref" data-link-type="biblio" href="#bib-xmlschema11-2" title="W3C XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes">xmlschema11-2</a></cite>] 的處理器。</p>
+
+			<section id="schema-metadata"><div class="header-wrapper"><h3 id="a-1-metadata-xml-schema"><bdi class="secno">A.1 </bdi>Metadata.xml綱要</h3><a class="self-link" href="#schema-metadata" aria-label="Permalink for Appendix A.1"></a></div>
+				
+				<p>用於在<code>metadata.xml</code>檔案中包含後設資料的綱要，如<a href="#pub-metadata" class="sec-ref"><bdi class="secno">3.2 </bdi>出版品後設資料</a>所說明，可於<a href="https://github.com/w3c/epubcheck/blob/main/src/main/resources/com/adobe/epubcheck/schema/30/ocf-metadata-30.rnc">https://github.com/w3c/epubcheck/blob/main/src/main/resources/com/adobe/epubcheck/schema/30/ocf-metadata-30.rnc</a>取得。</p>
+			</section>
+
+			<section id="schema-container"><div class="header-wrapper"><h3 id="a-2-container-xml-schema"><bdi class="secno">A.2 </bdi>Container.xml綱要</h3><a class="self-link" href="#schema-container" aria-label="Permalink for Appendix A.2"></a></div>
+				
+				<p>用於在<code class="markup">container.xml</code>檔案中包含內容釋義選擇屬性的綱要，如<a href="#rendition-selection" class="sec-ref"><bdi class="secno">4. </bdi> 選擇內容釋義</a>所說明，可於<a href="https://github.com/w3c/epubcheck/blob/main/src/main/resources/com/adobe/epubcheck/schema/30/multiple-renditions/container.rnc">https://github.com/w3c/epubcheck/blob/main/src/main/resources/com/adobe/epubcheck/schema/30/multiple-renditions/container.rnc</a>取得。</p>
+			</section>
+
+			<section id="schema-mapping-doc"><div class="header-wrapper"><h3 id="a-3-mapping-document-schema"><bdi class="secno">A.3 </bdi>映射文件綱要</h3><a class="self-link" href="#schema-mapping-doc" aria-label="Permalink for Appendix A.3"></a></div>
+				
+				<p>用於映射文件的綱要，如<a href="#rendition-mapping" class="sec-ref"><bdi class="secno">5. </bdi>內容釋義映射</a>所說明，可於<a href="https://github.com/w3c/epubcheck/blob/main/src/main/resources/com/adobe/epubcheck/schema/30/multiple-renditions/mapping.rnc">https://github.com/w3c/epubcheck/blob/main/src/main/resources/com/adobe/epubcheck/schema/30/multiple-renditions/mapping.rnc</a>取得。</p>
+			</section>
+		</section>
+		<section id="change-log" class="appendix informative"><div class="header-wrapper"><h2 id="b-change-log"><bdi class="secno">B. </bdi>變更日誌</h2><a class="self-link" href="#change-log" aria-label="Permalink for Appendix B."></a></div><p><em>本章節為非規範性。</em></p>
+			
+
+			<p>請注意本變更日誌僅列出自<a href="http://idpf.org/epub/renditions/multiple/">EPUB多重內容釋義出版品1.0</a>以來的顯著變更——這些變更會影響<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication">EPUB出版品</a>的適用性或有同等的重要性。</p>
+
+			<p>若要取得在改版過程中所有議題的列表，請參考<a href="https://github.com/w3c/epub-specs/issues?q=is%3Aissue+is%3Aclosed+label%3AMultipleRenditions11">工作小組的議題追蹤器</a>。</a>.</p>
+
+			<ul>
+				<li>19-Mar-2021: 在<code>metadata.xml</code>檔案中要求使用唯一識別碼供模糊化資源使用，並且推薦使用預設內容釋義的識別碼，請見<a href="https://github.com/w3c/publ-epub-revision/issues/1443">issue 1443</a>。</li>
+				
+				<li>19-Mar-2021: 增加注意事項以說明包裝文件需要被放在共通的資料夾中才能分享資源。請見<a href="https://github.com/w3c/publ-epub-revision/issues/619">issue 619</a>。</li>
+				
+				<li>19-Mar-2021: 修正<code>link</code>元素作為<code>container</code>元素子元素中錯誤的參照。請見<a href="https://github.com/w3c/publ-epub-revision/issues/584">issue 584</a>。</li>
+				
+				<li>24-Dec-2020: 本規格不再參照發布識別碼，但依然需要在<code>metadata.xml</code>檔案中包含唯一識別碼與最後修改日期供向後相容性使用。請見<a href="https://github.com/w3c/publ-epub-revision/issues/1440">issue 1440</a>。</li>
+				
+				<li>16-Dec-2020: 與EPUB出版品內容釋義相關的術語及需求移到本規格，以便於閱讀本規格和 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 規格。這些變更不影響在EPUB出版品中包含多重內容釋義。請見<a href="https://github.com/w3c/publ-epub-revision/issues/1436">issue 1436</a>。</li>
+			</ul>
+		</section>
+		<section id="ack" class="appendix informative"><div class="header-wrapper"><h2 id="c-acknowledgements"><bdi class="secno">C. </bdi>致謝</h2><a class="self-link" href="#ack" aria-label="Permalink for Appendix C."></a></div><p><em>本章節為非規範性。</em></p>
+    
+
+    <p>以下EPUB 3工作小組的成員對本規格的產製有所貢獻：</p>
+
+    <ul class="ack">
+                <li>Will AWAD (Newgen Knowledgeworks)</li>
+        <li>Sofia Bautista (Legible Media Inc.)</li>
+        <li>Laura Brady (Legible Media Inc.)</li>
+        <li>Leah Brochu (National Network for Equitable Library Service)</li>
+        <li>Matthew C. Chan (House of Anansi Press)</li>
+        <li>Yu-Wei Chang (Taiwan Digital Publishing Forum)</li>
+        <li>Fred Chasen (Scribd)</li>
+        <li>Juan Corona (Legible Media Inc.)</li>
+        <li>Dave Cramer (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Expert, chair)</li>
+        <li>Romain Deltour (DAISY Consortium)</li>
+        <li>Marisa DeMeglio (DAISY Consortium)</li>
+        <li>Brady Duga (Google LLC)</li>
+        <li>Reinaldo Ferraz (NIC.br - Brazilian Network Information Center)</li>
+        <li>John Foliot (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Expert)</li>
+        <li>Teenya Franklin (Pearson plc)</li>
+        <li>Hadrien Gardeur (EDRLab)</li>
+        <li>Matt Garrish (DAISY Consortium)</li>
+        <li>Jen Goulden (Crawford Technologies)</li>
+        <li>Ivan Herman (<abbr title="World Wide Web Consortium">W3C</abbr>, staff contact)</li>
+        <li>Tetsu Hoshino (Kodansha, Publishers, Ltd.)</li>
+        <li>Norikazu Ishizu (Kadokawa Corporation)</li>
+        <li>Norihito IYENAGA (Kodansha, Publishers, Ltd.)</li>
+        <li>Rick Johnson (VitalSource Technologies)</li>
+        <li>Ken Jones (Circular Software)</li>
+        <li>Antonio Kamiya (Dentsu Group Inc.)</li>
+        <li>Deborah Kaplan (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Expert)</li>
+        <li>Bill Kasdorf (Book Industry Study Group)</li>
+        <li>George Kerscher (DAISY Consortium)</li>
+        <li>Kazuhito Kidachi (Mitsue-Links Co., Ltd.)</li>
+        <li>Masakazu Kitahara (Voyager Japan, Inc.)</li>
+        <li>Toshiaki Koike (Voyager Japan, Inc.)</li>
+        <li>Ryo Kuroda (ACCESS CO., LTD.)</li>
+        <li>Charles LaPierre (Benetech)</li>
+        <li>Dan Lazin (Google LLC)</li>
+        <li>Laurent Le Meur (EDRLab)</li>
+        <li>Victoria Lee (Apple, Inc.)</li>
+        <li>Farrah Little (National Network for Equitable Library Service)</li>
+        <li>Victor Lopes (Apple, Inc.)</li>
+        <li>Karan  Malhotra (Newgen Knowledgeworks)</li>
+        <li>Makoto Murata (DAISY Consortium)</li>
+        <li>Cristina Mussinelli (Fondazione LIA)</li>
+        <li>Yoichiro Nagao (Kodansha, Publishers, Ltd.)</li>
+        <li>Theresa O'Connor (Apple, Inc.)</li>
+        <li>Yoshinori Ohmura (SHUEISHA Inc.)</li>
+        <li>Rachel Osolen (National Network for Equitable Library Service)</li>
+        <li>Gregorio Pellegrino (Fondazione LIA)</li>
+        <li>Vijaya Gowri Perumal (Newgen Knowledgeworks)</li>
+        <li>Wendy Reid (Rakuten Group, Inc., chair)</li>
+        <li>John Roque (Apple, Inc.)</li>
+        <li>Leonard Rosenthol (Adobe)</li>
+        <li>Shinobu Sato (Kadokawa Corporation)</li>
+        <li>Ben Schroeter (Pearson plc)</li>
+        <li>Daihei Shiohama (MEDIA DO Co., Ltd.)</li>
+        <li>Tzviya Siegman (Wiley)</li>
+        <li>Avneesh Singh (DAISY Consortium)</li>
+        <li>MOTOI SUZUKI (SHUEISHA Inc.)</li>
+        <li>Yutaka Suzuki (Kadokawa Corporation)</li>
+        <li>Kyrce Swenson (Pearson plc)</li>
+        <li>Shinya Takami (Kadokawa Corporation, chair)</li>
+        <li>Mateus Teixeira (W. W. Norton &amp; Company)</li>
+        <li>Yukio Tomikura (Kodansha, Publishers, Ltd.)</li>
+        <li>Aimee Ubbink (Crawford Technologies)</li>
+        <li>Daniel Weck (DAISY Consortium)</li>
+        <li>Zheng Xu (Gardenia Corp)</li>
+        <li>Fuqiao Xue (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+        <li>Evan Yamanishi (W. W. Norton &amp; Company)</li>
+        <li>Osamu Yoshiba (Kodansha, Publishers, Ltd.)</li>
+        <li>Junichi Yoshii (Kodansha, Publishers, Ltd.)</li>
+        <li>Naomi Yoshizawa (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+        <li>Laurence Zaysser (EDRLab)</li>
+    </ul>
+    
+</section>
+
+
+	
+
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="d-references"><bdi class="secno">D. </bdi>參考資料</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix D."></a></div><section id="normative-references"><div class="header-wrapper"><h3 id="d-1-normative-references"><bdi class="secno">D.1 </bdi>規範性文件</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix D.1"></a></div>
+    
+    <dl class="bibliography"><dt id="bib-dcterms">[dcterms]</dt><dd>
+      <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"><cite>DCMI Metadata Terms</cite></a>. DCMI Usage Board.  DCMI. 20 January 2020. DCMI Recommendation. URL: <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">https://www.dublincore.org/specifications/dublin-core/dcmi-terms/</a>
+    </dd><dt id="bib-epub-33">[epub-33]</dt><dd>
+      <a href="https://www.w3.org/TR/epub-33/"><cite>EPUB 3.3</cite></a>. Matt Garrish; Ivan Herman; Dave Cramer.  W3C. 3 October 2022. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/epub-33/">https://www.w3.org/TR/epub-33/</a>
+    </dd><dt id="bib-epubcfi-11">[epubcfi-11]</dt><dd>
+      <a href="http://idpf.org/epub/linking/cfi/epub-cfi-20170105.html"><cite>EPUB Canonical Fragment Identifiers 1.1</cite></a>. Peter Sorotokin; Garth Conboy; Brady Duga; John Rivlin; Don Beaver; Kevin Ballard; Alastair Fettes; Daniel Weck.  IDPF. 5 October 2017. URL: <a href="http://idpf.org/epub/linking/cfi/epub-cfi-20170105.html">http://idpf.org/epub/linking/cfi/epub-cfi-20170105.html</a>
+    </dd><dt id="bib-html">[html]</dt><dd>
+      <a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Anne van Kesteren; Domenic Denicola; Ian Hickson; Philip Jägenstedt; Simon Pieters.  WHATWG. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
+    </dd><dt id="bib-iso24751-3">[iso24751-3]</dt><dd>
+      <a href="http://www.iso.org/iso/catalogue_detail?csnumber=43604"><cite> ISO/IEC 24751-3:2008 Information technology -- Individualized adaptability and accessibility in e-learning, education and training -- Part 3: "Access for all" digital resource description</cite></a>. 2008-10-01. URL: <a href="http://www.iso.org/iso/catalogue_detail?csnumber=43604">http://www.iso.org/iso/catalogue_detail?csnumber=43604</a>
+    </dd><dt id="bib-mediaqueries">[mediaqueries]</dt><dd>
+      <a href="https://www.w3.org/TR/mediaqueries-4/"><cite>Media Queries Level 4</cite></a>. Florian Rivoal; Tab Atkins Jr..  W3C. 25 December 2021. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/mediaqueries-4/">https://www.w3.org/TR/mediaqueries-4/</a>
+    </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
+    </dd><dt id="bib-rfc4647">[rfc4647]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc4647"><cite>Matching of Language Tags</cite></a>. A. Phillips, Ed.; M. Davis, Ed..  IETF. September 2006. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc4647">https://www.rfc-editor.org/rfc/rfc4647</a>
+    </dd><dt id="bib-rfc5646">[rfc5646]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc5646"><cite>Tags for Identifying Languages</cite></a>. A. Phillips, Ed.; M. Davis, Ed..  IETF. September 2009. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc5646">https://www.rfc-editor.org/rfc/rfc5646</a>
+    </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>
+    </dd></dl>
+  </section><section id="informative-references"><div class="header-wrapper"><h3 id="d-2-informative-references"><bdi class="secno">D.2 </bdi>參考性文件</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix D.2"></a></div>
+    
+    <dl class="bibliography"><dt id="bib-relaxng-schema">[relaxng-schema]</dt><dd>
+      <a href="http://standards.iso.org/ittf/PubliclyAvailableStandards/c052348_ISO_IEC_19757-2_2008(E).zip"><cite>Information technology -- Document Schema Definition Language (DSDL) -- Part 2: Regular-grammar-based validation -- RELAX NG</cite></a>.  ISO/IEC. 2008. URL: <a href="http://standards.iso.org/ittf/PubliclyAvailableStandards/c052348_ISO_IEC_19757-2_2008(E).zip">http://standards.iso.org/ittf/PubliclyAvailableStandards/c052348_ISO_IEC_19757-2_2008(E).zip</a>
+    </dd><dt id="bib-xmlschema11-2">[xmlschema11-2]</dt><dd>
+      <a href="https://www.w3.org/TR/xmlschema11-2/"><cite>W3C XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes</cite></a>. David Peterson; Sandy Gao; Ashok Malhotra; Michael Sperberg-McQueen; Henry Thompson; Paul V. Biron et al.  W3C. 5 April 2012. W3C Recommendation. URL: <a href="https://www.w3.org/TR/xmlschema11-2/">https://www.w3.org/TR/xmlschema11-2/</a>
+    </dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-container-document" aria-label="Links in this document to definition: container document">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-container-document" aria-label="Permalink for definition: container document. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-container-document-1" title="§ 1.1 Overview">§ 1.1 Overview</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-default-rendition" aria-label="Links in this document to definition: default rendition">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-default-rendition" aria-label="Permalink for definition: default rendition. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-default-rendition-1" title="§ 1.2 Background">§ 1.2 Background</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-default-rendition-2" title="§ 2. Specifying multiple renditions">§ 2. Specifying multiple renditions</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-default-rendition-3" title="§ 3.2.1 The metadata.xml file">§ 3.2.1 The metadata.xml file</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-default-rendition-4" title="§ 3.2.1.1 Resource obfuscation">§ 3.2.1.1 Resource obfuscation</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-default-rendition-5" title="§ 4.2 Content conformance">§ 4.2 Content conformance</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-multiple-rendition-publications" aria-label="Links in this document to definition: multiple-rendition publication">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-multiple-rendition-publications" aria-label="Permalink for definition: multiple-rendition publication. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-multiple-rendition-publications-1" title="§ 1.3 Relationship to EPUB 3">§ 1.3 Relationship to EPUB 3</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-multiple-rendition-publications-2" title="§ 3.2.1 The metadata.xml file">§ 3.2.1 The metadata.xml file</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-multiple-rendition-publications-3" title="§ 3.2.1.1 Resource obfuscation">§ 3.2.1.1 Resource obfuscation</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-multiple-rendition-publications-4" title="§ 5.1 Introduction">§ 5.1 Introduction</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-rendition" aria-label="Links in this document to definition: rendition">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-rendition" aria-label="Permalink for definition: rendition. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-rendition-1" title="§ 1.1 Overview">§ 1.1 Overview</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-rendition-2" title="§ 1.2 Background">§ 1.2 Background</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-rendition-3" title="§ 1.3 Relationship to EPUB 3">§ 1.3 Relationship to EPUB 3</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-rendition-4" title="§ 1.4 Terminology">§ 1.4 Terminology</a> <a href="#ref-for-dfn-rendition-5" title="Reference 2">(2)</a> <a href="#ref-for-dfn-rendition-6" title="Reference 3">(3)</a> <a href="#ref-for-dfn-rendition-7" title="Reference 4">(4)</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-rendition-8" title="§ 3.2.1 The metadata.xml file">§ 3.2.1 The metadata.xml file</a> <a href="#ref-for-dfn-rendition-9" title="Reference 2">(2)</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-rendition-10" title="§ 4.1 Introduction">§ 4.1 Introduction</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-rendition-11" title="§ 4.4.1 The rendition:media attribute">§ 4.4.1 The rendition:media attribute</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-rendition-12" title="§ 4.4.2 The rendition:layout attribute">§ 4.4.2 The rendition:layout attribute</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-rendition-13" title="§ 4.4.3 The rendition:language attribute">§ 4.4.3 The rendition:language attribute</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-rendition-14" title="§ 4.4.4 The rendition:accessMode attribute">§ 4.4.4 The rendition:accessMode attribute</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-rendition-15" title="§ 4.4.5 The rendition:label attribute">§ 4.4.5 The rendition:label attribute</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-rendition-16" title="§ 4.5 Processing model">§ 4.5 Processing model</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-rendition-17" title="§ 5.1 Introduction">§ 5.1 Introduction</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-rendition-mapping-documents" aria-label="Links in this document to definition: rendition mapping document">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-rendition-mapping-documents" aria-label="Permalink for definition: rendition mapping document. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-rendition-mapping-documents-1" title="§ 5.1 Introduction">§ 5.1 Introduction</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-rendition-mapping-documents-2" title="§ 5.2 Content conformance">§ 5.2 Content conformance</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-rendition-mapping-documents-3" title="§ 5.3 reading system conformance">§ 5.3 reading system conformance</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-rendition-mapping-documents-4" title="§ 5.4.1 XHTML content document: restrictions">§ 5.4.1 XHTML content document: restrictions</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-rendition-mapping-documents-5" title="§ 5.4.2 The nav element: modifications and restrictions">§ 5.4.2 The nav element: modifications and restrictions</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-rendition-mapping-documents-6" title="§ 5.4.3 Rendition mappings">§ 5.4.3 Rendition mappings</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-rendition-mapping-documents-7" title="§ 5.4.4 Container identification">§ 5.4.4 Container identification</a> 
+  </li>
+<li >
+    <a href="#ref-for-dfn-rendition-mapping-documents-8" title="§ 5.5 Processing model">§ 5.5 Processing model</a> 
+  </li>
+  </ul>
+    </div><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not( [data-cite] ), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not( [hidden] )")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects [0] .height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a [href] ");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const  [record]  = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter:  ["hidden"]  });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>

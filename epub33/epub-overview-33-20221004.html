@@ -1,0 +1,2455 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW" xml:lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 32.2.5">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+.issue-label{text-transform:initial}
+.warning>p:first-child{margin-top:0}
+.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
+span.warning{padding:.1em .5em .15em}
+.issue.closed span.issue-number{text-decoration:line-through}
+.issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
+.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}
+.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
+li.task-list-item{list-style:none}
+input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
+.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
+</style>
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a [href] {color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a [href] :hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+		
+		
+<title>EPUB 3 總覽</title>
+		
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a [href] .respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+a [href] .orcid{padding-left:4px;padding-right:4px}
+a [href] .orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th [scope=row] {background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details [open] {z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details [open] >summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+		
+		
+		
+		
+		
+	
+<style>
+
+ul.nomark,
+ol.nomark {
+    list-style-type: none;
+}
+
+ol.cmt,
+ul.flat {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+ol.cmt {
+	margin: 0;
+}
+
+dl.elemdef {
+    border-left: 0.5em solid rgb(145,200,255);
+    background-color: rgb(236,246,255);
+    padding: 0.5em 1em;
+	margin-bottom: 2em;
+}
+
+dl.elemdef ul.nomark {
+	padding-left: 1em;
+}
+
+dl.elemdef > dd > ul.nomark:first-child {
+	padding-left: 0 !important;
+}
+
+dl.conformance-list > dd {
+    margin-top: 0.7em;
+}
+
+dl.elemdef > dt,
+table.tabledef th {
+	font-weight: normal;
+	font-style: italic;
+}
+
+dl.elemdef > dt {
+	margin-bottom: 0.5em;
+}
+
+dl.elemdef dfn {
+	font-style: normal;
+}
+
+/*  EBNF tables */
+
+
+table.productionset {
+    border: none;
+    border-left: 5px solid rgb(145,200,255);
+    background-color: rgb(236,246,255);
+}
+
+table.productionset caption {
+	text-align: left;
+	font-size: 80%;
+	font-style: normal;
+}
+
+table.productionset tbody tr {
+    border: none;
+}
+
+table.productionset tbody tr td {
+    border: none;
+    padding: 0.5em;
+    border-bottom: 1px solid #ddd;
+}
+
+table.productionset tbody tr td a {
+    text-decoration: none;
+    border-bottom: 1px dotted #000090;
+}
+
+table.productionset tbody tr td a:hover {
+    text-decoration: underline;
+}
+
+table.productionset tbody tr td a:visited,
+table.productionset tbody tr td a:active,
+table.productionset tbody tr td a:hover {
+    color: #000090;
+}
+
+a.deprecated,
+a.legacy {
+	font-size: 85%;
+	text-transform: uppercase;
+}
+
+/* styles for core media types */
+
+table#tbl-core-media-types {
+    border-spacing: 0px;
+    padding: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 2em;    
+}
+
+table#tbl-core-media-types th {
+    border-bottom: 1px solid #005A9C;
+    font-weight: bold;
+    padding: 0.5em;
+    font-weight: bold;
+    color: #000090;
+    font-size: 90%
+}
+
+table#tbl-core-media-types td {
+    border-bottom: 1px solid #005A9C;
+    border-right: 1px solid #efefef;
+    padding: 0.5em;
+    text-align: left
+}
+
+table#tbl-core-media-types tr td:last-child {
+    border-right: none;
+}
+
+table#tbl-core-media-types td *, table#tbl-core-media-types td > * {
+    text-align: left;
+}
+
+table#tbl-core-media-types, table#tbl-core-media-types tbody {
+    padding: 0;
+}
+
+table#tbl-core-media-types caption {
+    text-align: left;
+    font-size: 90%
+}
+
+.tbl-group {
+	text-align: left;
+	border-bottom: none;
+	color: rgb(0, 0, 0);
+	background-color: rgb(240, 248, 255);
+}
+
+table#tbl-core-media-types > thead > tr > th {
+    background-color: rgb(240,240,240);
+    text-align: left;
+    white-space:nowrap;
+}
+
+table#tbl-core-media-types > tbody > tr > th {    
+    text-align: left;
+    font-weight: normal;
+    font-style: italic;
+    padding: 3px;
+}
+
+table#tbl-core-media-types td, table#tbl-core-media-types th, table#tbl-core-media-types tr {
+    border-color: #005A9C;
+    margin: 0em;
+}
+
+table#tbl-core-media-types td code, table#tbl-core-media-types td a {
+    white-space:nowrap;
+}
+
+td [headers="tbl-cmt-appl"]  {
+    font-size: .9em;
+}
+
+
+
+
+/****************************************************/
+/*  property tables                                 */
+/****************************************************/
+
+/* ensure confomity of width for property tables */
+table.tabledef {
+	border-spacing: 0px;
+	border: none;
+	font-size: 1em;
+	width: 100%
+}
+
+table.tabledef td, table.tabledef th {
+	border: none;
+	background-color: rgb(236,246,255);
+	color: rgb(0,0,0);
+	padding: 0.3em;
+	vertical-align: top;
+}
+
+table.tabledef th {
+    text-align: left;
+	vertical-align: top;
+    width: 8em;
+    padding-left: 1em;
+}
+
+table.tabledef th {
+    border-left: 5px solid rgb(145,200,255);
+}
+
+table.tabledef td {
+    padding: 3px 3px 3px 10px;
+}
+
+table.tabledef td > p:first-child {
+	padding: 0em;
+	margin: 0em
+}
+
+
+/* Reserved prefix tables */
+
+table.prefix {
+    border-spacing: 0px;
+    padding: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 2em;    
+}
+table.prefix th {
+    border-bottom: 1px solid #005A9C;
+    font-weight: bold;
+    padding: 0.5em;
+    font-weight: bold;
+    color: #000090;
+    font-size: 90%
+}
+table.prefix td {
+    border-bottom: 1px solid #005A9C;
+    border-right: 1px solid #efefef;
+    padding: 0.5em;
+    text-align: left
+}
+table.prefix tr td:last-child {
+    border-right: none;
+}
+table.prefix td *, table.prefix td > * {
+    text-align: left;
+}
+table.prefix, table.prefix tbody {
+    padding: 0;
+}
+
+table.prefix caption {
+    text-align: left;
+    font-size: 90%
+}
+
+
+/* Table zebra style... */
+
+table.zebra {
+    font-size:inherit;
+    font:90%;
+    margin:1em;
+}
+
+table.zebra td {
+    padding-left: 0.3em;
+}
+
+table.zebra th {
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(0,0,128) !important;
+    font-size: 110%;
+    background: hsl(180, 30%, 50%);
+    color: #fff;
+}
+
+table.zebra th a:link {
+  color: #fff;
+}
+
+table.zebra th a:visited {
+  color: #aaa;
+}
+
+table.zebra tr:nth-child(even) {
+    background-color: hsl(180, 30%, 93%) !important;
+}
+
+table.zebra th{border-bottom:1px solid #bbb;padding:.2em 1em;}
+table.zebra td{border-bottom:1px solid #ddd;padding:.2em 1em;}
+
+
+p.support {
+	border-left: 0.4rem solid rgb(255,255,0);
+	background-color: rgb(255,255,230);
+	padding: 0.7rem;
+}
+
+p.caution, div.caution {
+	padding: 0.5rem;
+	border-left: 0.5rem solid rgb(255,140,0);
+	background-color: rgb(254,236,207);
+}
+
+div.caution-title > span {
+	color: rgb(140,40,0);
+	text-transform: uppercase;
+}
+
+details.desc {
+	margin-top: -2.5rem !important;
+	margin-left: 3rem !important;
+}
+
+details.explanation, details.desc {
+	background-color: rgb(245,245,245);
+	border-left: 0.3em solid rgb(200,200,200);
+	padding: 0.3em;
+}
+
+details.explanation > summary, details.desc > summary {
+	font-size: small;
+	text-align: left;
+    font-weight: normal !important;
+    font-style: italic;
+}
+
+</style>
+<style>
+ul.index{columns:30ch;column-gap:1.5em}
+ul.index li{list-style:inherit}
+ul.index li span{color:inherit;cursor:pointer;white-space:normal}
+#index-defined-here ul.index li{font-size:.9rem}
+ul.index code{color:inherit}
+#index-defined-here .print-only{display:none}
+@media print{
+#index-defined-here .print-only{display:initial}
+}
+</style>
+
+<style>
+/*中文翻譯版添加樣式*/
+dfn {font-style: normal;}
+em {font-family: serif; font-style: normal;}
+em.rfc2119 {font-family: sans-serif; font-weight: bold; text-decoration: underline;}
+code {color: red;}
+p {text-align: justify;line-height: 1.8;}
+</style>
+
+<meta name="description" content="EPUB® 3 defines a distribution and interchange format for digital publications and documents. The EPUB
+				format provides a means of representing, packaging, and encoding structured and semantically enhanced
+				web content — including HTML, CSS, SVG, and other resources — for distribution in a single-file
+				container.">
+<link rel="canonical" href="https://www.w3.org/TR/epub-overview-33/">
+<style>
+var{position:relative;cursor:pointer}
+var [data-type] ::after,var [data-type] ::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var [data-type] ::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var [data-type] ::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var [data-type] :hover::after,var [data-type] :hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "group": "epub",
+  "wgPublicList": "public-epub-wg",
+  "specStatus": "NOTE",
+  "noRecTrack": true,
+  "shortName": "epub-overview-33",
+  "edDraftURI": "https://w3c.github.io/epub-specs/epub33/overview/",
+  "previousPublishDate": "2021-12-08",
+  "previousMaturity": "NOTE",
+  "copyrightStart": "1999",
+  "editors":  [
+    {
+      "name": "Matt Garrish",
+      "company": "DAISY Consortium",
+      "companyURL": "https://daisy.org",
+      "w3cid": 51655
+    },
+    {
+      "name": "Ivan Herman",
+      "url": "https://www.w3.org/People/Ivan/",
+      "company": "W3C",
+      "w3cid": 7382,
+      "orcid": "https://orcid.org/0000-0003-0782-2704",
+      "companyURL": "https://www.w3.org"
+    }
+  ] ,
+  "includePermalinks": true,
+  "permalinkEdge": true,
+  "permalinkHide": false,
+  "github": {
+    "repoURL": "https://github.com/w3c/epub-specs",
+    "branch": "main"
+  },
+  "xref": {
+    "profile": "web-platform",
+    "specs":  [
+      "epub-rs-33",
+      "epub-33"
+    ] 
+  },
+  "localBiblio": {
+    "csssnapshot": {
+      "title": "CSS Snapshot",
+      "href": "https://www.w3.org/TR/CSS/",
+      "id": "csssnapshot"
+    },
+    "epub-31": {
+      "authors":  [
+        "Markus Gylling",
+        "Tzviya Siegman",
+        "Matt Garrish"
+      ] ,
+      "title": "EPUB 3.1",
+      "href": "http://idpf.org/epub/31/spec/epub-spec-20170105.html",
+      "date": "05 January 2017",
+      "publisher": "IDPF",
+      "id": "epub-31"
+    },
+    "epub-32": {
+      "authors":  [
+        "Matt Garrish",
+        "Dave Cramer"
+      ] ,
+      "title": "EPUB 3.2",
+      "href": "https://www.w3.org/publishing/epub32/epub-spec.html",
+      "date": "08 May 2019",
+      "publisher": "EPUB 3 Community Group",
+      "id": "epub-32"
+    },
+    "epubchanges-30": {
+      "authors":  [
+        "William McCoy",
+        "Markus Gylling"
+      ] ,
+      "title": "EPUB 3 Changes from 2.0.1",
+      "href": "http://idpf.org/epub/30/spec/epub30-changes-20111011.html",
+      "date": "11 October 2011",
+      "publisher": "IDPF",
+      "id": "epubchanges-30"
+    },
+    "epubchanges-301": {
+      "authors":  [
+        "Markus Gylling",
+        "Matt Garrish"
+      ] ,
+      "title": "EPUB 3.0.1 Changes from 3.0",
+      "href": "http://idpf.org/epub/301/spec/epub-changes-20140626.html",
+      "date": "26 June 2014",
+      "publisher": "IDPF",
+      "id": "epubchanges-301"
+    },
+    "epubchanges-31": {
+      "authors":  [
+        "Markus Gylling",
+        "Matt Garrish"
+      ] ,
+      "title": "EPUB 3.1 Changes from 3.0.1",
+      "href": "http://idpf.org/epub/31/spec/epub-changes-20170105.html",
+      "date": "05 January 2017",
+      "publisher": "IDPF",
+      "id": "epubchanges-31"
+    },
+    "epubchanges-32": {
+      "authors":  [
+        "Matt Garrish",
+        "Dave Cramer"
+      ] ,
+      "title": "EPUB 3.2 Changes",
+      "href": "https://www.w3.org/publishing/epub32/epub-changes.html",
+      "date": "08 May 2019",
+      "publisher": "EPUB 3 Community Group",
+      "id": "epubchanges-32"
+    },
+    "epubcontentdocs-30": {
+      "authors":  [
+        "Markus Gylling",
+        "William McCoy",
+        "Elika J. Etimad",
+        "Matt Garrish"
+      ] ,
+      "title": "EPUB Content Documents 3.0",
+      "href": "http://idpf.org/epub/30/spec/epub30-contentdocs-20111011.html",
+      "date": "11 October 2011",
+      "publisher": "IDPF",
+      "id": "epubcontentdocs-30"
+    },
+    "epubcontentdocs-301": {
+      "authors":  [
+        "Markus Gylling",
+        "William McCoy",
+        "Elika J. Etimad",
+        "Matt Garrish"
+      ] ,
+      "title": "EPUB Content Documents 3.0.1",
+      "href": "http://idpf.org/epub/301/spec/epub-contentdocs-20140626.html",
+      "date": "26 June 2014",
+      "publisher": "IDPF",
+      "id": "epubcontentdocs-301"
+    },
+    "epubcontentdocs-31": {
+      "authors":  [
+        "Markus Gylling",
+        "William McCoy",
+        "Dave Cramer",
+        "Elika J. Etimad",
+        "Matt Garrish"
+      ] ,
+      "title": "EPUB Content Documents 3.1",
+      "href": "http://idpf.org/epub/31/spec/epub-contentdocs-20170105.html",
+      "date": "05 January 2017",
+      "publisher": "IDPF",
+      "id": "epubcontentdocs-31"
+    },
+    "epubcontentdocs-32": {
+      "authors":  [
+        "Dave Cramer",
+        "Matt Garrish"
+      ] ,
+      "title": "EPUB Content Documents 3.2",
+      "href": "https://www.w3.org/publishing/epub32/epub-contentdocs.html",
+      "date": "08 May 2019",
+      "publisher": "EPUB 3 Community Group",
+      "id": "epubcontentdocs-32"
+    },
+    "epubmediaoverlays-30": {
+      "authors":  [
+        "Marisa DeMeglio",
+        "Daniel Weck"
+      ] ,
+      "title": "EPUB Media Overlays 3.0",
+      "href": "http://idpf.org/epub/30/spec/epub30-mediaoverlays-20111011.html",
+      "date": "11 October 2011",
+      "publisher": "IDPF",
+      "id": "epubmediaoverlays-30"
+    },
+    "epubmediaoverlays-301": {
+      "authors":  [
+        "Marisa DeMeglio",
+        "Daniel Weck"
+      ] ,
+      "title": "EPUB Media Overlays 3.0.1",
+      "href": "http://idpf.org/epub/301/spec/epub-mediaoverlays-20140626.html",
+      "date": "26 June 2014",
+      "publisher": "IDPF",
+      "id": "epubmediaoverlays-301"
+    },
+    "epubmediaoverlays-31": {
+      "authors":  [
+        "Marisa DeMeglio",
+        "Daniel Weck"
+      ] ,
+      "title": "EPUB Media Overlays 3.1",
+      "href": "http://idpf.org/epub/31/spec/epub-mediaoverlays-20170105.html",
+      "date": "05 January 2017",
+      "publisher": "IDPF",
+      "id": "epubmediaoverlays-31"
+    },
+    "epubmediaoverlays-32": {
+      "authors":  [
+        "Marisa DeMeglio",
+        "Daniel Weck"
+      ] ,
+      "title": "EPUB Media Overlays 3.2",
+      "href": "https://www.w3.org/publishing/epub32/epub-mediaoverlays.html",
+      "date": "08 May 2019",
+      "publisher": "EPUB 3 Community Group",
+      "id": "epubmediaoverlays-32"
+    },
+    "epubpackages-31": {
+      "authors":  [
+        "Markus Gylling",
+        "William McCoy",
+        "Matt Garrish"
+      ] ,
+      "title": "EPUB Packages 3.1",
+      "href": "http://idpf.org/epub/31/spec/epub-packages-20170105.html",
+      "date": "05 January 2017",
+      "publisher": "IDPF",
+      "id": "epubpackages-31"
+    },
+    "epubpackages-32": {
+      "authors":  [
+        "Matt Garrish",
+        "Dave Cramer"
+      ] ,
+      "title": "EPUB Packages 3.2",
+      "href": "https://www.w3.org/publishing/epub32/epub-packages.html",
+      "date": "08 May 2019",
+      "publisher": "EPUB 3 Community Group",
+      "id": "epubpackages-32"
+    },
+    "epubpublications-30": {
+      "authors":  [
+        "Markus Gylling",
+        "William McCoy",
+        "Matt Garrish"
+      ] ,
+      "title": "EPUB Publications 3.0",
+      "href": "http://idpf.org/epub/30/spec/epub30-publications-20111011.html",
+      "date": "11 October 2011",
+      "publisher": "IDPF",
+      "id": "epubpublications-30"
+    },
+    "epubpublications-301": {
+      "authors":  [
+        "Markus Gylling",
+        "William McCoy",
+        "Matt Garrish"
+      ] ,
+      "title": "EPUB Publications 3.0.1",
+      "href": "http://idpf.org/epub/301/spec/epub-publications-20140626.html",
+      "date": "26 June 2014",
+      "publisher": "IDPF",
+      "id": "epubpublications-301"
+    },
+    "ocf-201": {
+      "title": "EPUB Open Container Format (OCF) 2.0.1",
+      "href": "http://idpf.org/epub/20/spec/OCF_2.0.1_draft.doc",
+      "date": "04 September 2010",
+      "publisher": "IDPF",
+      "id": "ocf-201"
+    },
+    "ocf-30": {
+      "authors":  [
+        "James Pritchett",
+        "Markus Gylling"
+      ] ,
+      "title": "EPUB Open Container Format (OCF) 3.0",
+      "href": "http://idpf.org/epub/30/spec/epub30-ocf-20111011.html",
+      "date": "11 October 2011",
+      "publisher": "IDPF",
+      "id": "ocf-30"
+    },
+    "ocf-301": {
+      "authors":  [
+        "James Pritchett",
+        "Markus Gylling"
+      ] ,
+      "title": "EPUB Open Container Format (OCF) 3.0.1",
+      "href": "http://idpf.org/epub/301/spec/epub-ocf-20140626.html",
+      "date": "26 June 2014",
+      "publisher": "IDPF",
+      "id": "ocf-301"
+    },
+    "ocf-31": {
+      "authors":  [
+        "James Pritchett",
+        "Markus Gylling"
+      ] ,
+      "title": "Open Container Format (OCF) 3.1",
+      "href": "http://idpf.org/epub/31/spec/epub-ocf-20170105.html",
+      "date": "05 January 2017",
+      "publisher": "IDPF",
+      "id": "ocf-31"
+    },
+    "ocf-32": {
+      "authors":  [
+        "Garth Conboy"
+      ] ,
+      "title": "Open Container Format (OCF) 3.2",
+      "href": "https://www.w3.org/publishing/epub32/epub-ocf.html",
+      "date": "08 May 2019",
+      "publisher": "EPUB 3 Community Group",
+      "id": "ocf-32"
+    },
+    "opf-201": {
+      "title": "Open Packaging Format 2.0.1",
+      "href": "http://idpf.org/epub/20/spec/OPF_2.0.1_draft.htm",
+      "date": "04 September 2010",
+      "publisher": "IDPF",
+      "id": "opf-201"
+    },
+    "ops-201": {
+      "title": "Open Publication Structure 2.0.1",
+      "href": "http://idpf.org/epub/20/spec/OPS_2.0.1_draft.htm",
+      "date": "04 September 2010",
+      "publisher": "IDPF",
+      "id": "ops-201"
+    },
+    "svg": {
+      "title": "SVG",
+      "href": "https://www.w3.org/TR/SVG/",
+      "publisher": "W3C",
+      "id": "svg"
+    }
+  },
+  "preProcess":  [
+    null
+  ] ,
+  "postProcess":  [
+    null
+  ] ,
+  "publishISODate": "2022-10-04T00:00:00.000Z",
+  "generatedSubtitle": "W3C Group Note 04 October 2022"
+}</script>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-NOTE"></head>
+	<body class="h-entry informative toc-inline" data-cite="epub-rs-33 epub-33 HTML INFRA URL WEBIDL DOM FETCH"><div class="head">
+    <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
+  </a></p>
+    <h1 id="title" class="title">EPUB 3 總覽</h1> 
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#NOTE">W3C小組備忘</a> <time class="dt-published" datetime="2022-10-04">04 October 2022</time></p>
+    <details open="">
+      <summary>更多關於此份文件的細節</summary>
+      <dl>
+        <dt>本版本：</dt><dd>
+                <a class="u-url" href="https://www.w3.org/TR/2022/NOTE-epub-overview-33-20221004/">https://www.w3.org/TR/2022/NOTE-epub-overview-33-20221004/</a>
+              </dd>
+        <dt>最新發佈版本：</dt><dd>
+                <a href="https://www.w3.org/TR/epub-overview-33/">https://www.w3.org/TR/epub-overview-33/</a>
+              </dd>
+        <dt>最新編輯草稿：</dt><dd><a href="https://w3c.github.io/epub-specs/epub33/overview/">https://w3c.github.io/epub-specs/epub33/overview/</a></dd>
+        <dt>歷史：</dt><dd>
+                    <a href="https://www.w3.org/standards/history/epub-overview-33">https://www.w3.org/standards/history/epub-overview-33</a>
+                  </dd><dd>
+                    <a href="https://github.com/w3c/epub-specs/commits/main">發布歷程</a>
+                  </dd>
+        
+        
+        
+        
+        
+        <dt>編輯者：</dt><dd class="editor p-author h-card vcard" data-editor-id="51655">
+    <span class="p-name fn">Matt Garrish</span> (<a class="p-org org h-org" href="https://daisy.org">DAISY Consortium</a>)
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="7382">
+    <a class="u-url url p-name fn" href="https://www.w3.org/People/Ivan/">Ivan Herman</a><a class="p-name orcid" href="https://orcid.org/0000-0003-0782-2704"><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <style>
+
+    .st1 {
+      fill: #fff;
+    }
+  
+</style>
+  <path d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z" fill="#a6ce39"></path>
+  <path class="st1" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7C191.7 111.2 178 93 148 93h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"></path>
+</svg></a> (<a class="p-org org h-org" href="https://www.w3.org">W3C</a>)
+  </dd>
+        
+        
+        <dt>提出回饋：</dt><dd>
+        <a href="https://github.com/w3c/epub-specs/">GitHub w3c/epub-specs</a>
+        (<a href="https://github.com/w3c/epub-specs/pulls/">提交請求</a>,
+        <a href="https://github.com/w3c/epub-specs/issues/new/choose">新主題</a>,
+        <a href="https://github.com/w3c/epub-specs/issues/">開放主題</a>)
+      </dd><dd>以郵件主旨<kbd>[epub-overview-33]  <em>… 主題資訊 …</em></kbd>寄到<a href="mailto:public-epub-wg@w3.org?subject=%5Bepub-overview-33%5D%20YOUR%20TOPIC%20HERE">public-epub-wg@w3.org</a> (<a rel="discussion" href="https://lists.w3.org/Archives/Public/public-epub-wg">存檔</a>)</dd>
+        
+        
+      </dl>
+    </details>
+    
+    
+    <p class="copyright">
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+    ©
+    1999-2022
+    
+    <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+    <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
+    <a href="https://ev.buaa.edu.cn/">Beihang</a>). W3C
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+    <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document" title="W3C Software and Document Notice and License">permissive document license</a> rules apply.
+  </p>
+    <hr title="Separator for header">
+  </div>
+		<section id="abstract" class="introductory"><h2>摘要</h2>
+			<p>EPUB® 3定義了供數位出版品及文件用於配布及交換的格式。EPUB格式提供表現、包裝，以及將結構化和增強語意的網頁內容──包括HTML、CSS、SVG以及其他資源──進行編碼，以單一檔案容器形式供配布使用的方法。</p>
+
+			<p>本總覽為一般性的入門導覽，供任何對EPUB 3出版品感興趣，想要了解所具備功能的大眾閱讀。並不預期作為對該格式以及製作閱讀系統的技術導論。</p>
+		</section>
+		<section id="sotd" class="introductory">
+      <h2>本文件狀態</h2>
+      <p><em>本章節描述了本文件在其發表時的狀態。目前<abbr title="World Wide Web Consortium">W3C</abbr>出版品及此技術報告的最新改版之列表皆列於<a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr>技術報告索引，網址為：https://www.w3.org/TR/</a></em></p>
+      <p>本文件由<a href="https://www.w3.org/groups/wg/epub">EPUB 3工作小組</a>按照<a href="https://www.w3.org/2021/Process-20211102/#recs-and-notes">備忘</a>流程，發布為小組備忘。</p>
+      <p>小組備忘不受<abbr title="World Wide Web Consortium">W3C</abbr>及其會員背書。</p>
+      <p>本文件為草稿，而且可能會隨時更新，被其他文件所取代或淘汰。編輯作業尚未完成前，不適宜引用本文件。</p>
+      <p data-deliverer="125377"><a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr>專利政策</a>不對此文件做任何授權需求與承諾。</p>
+      <p>本文件受<a id="w3c_process_revision" href="https://www.w3.org/2021/Process-20211102/">2021年11月2日<abbr title="World Wide Web Consortium">W3C</abbr>流程文件</a>所規範。</p>
+    </section>
+    <nav id="toc"><h2 class="introductory" id="table-of-contents">目次</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">摘要</a></li>
+<li class="tocline"><a class="tocxref" href="#sotd">本文件狀態</a></li>
+<li class="tocline"><a class="tocxref" href="#intro"><bdi class="secno">1. </bdi>導論</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#reading-overview"><bdi class="secno">1.1 </bdi>如何閱讀本文件</a></li>
+<li class="tocline"><a class="tocxref" href="#reading-specs"><bdi class="secno">1.2 </bdi>如何閱讀規格群</a></li>
+<li class="tocline"><a class="tocxref" href="#version-num"><bdi class="secno">1.3 </bdi>版本編號</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#sec-container"><bdi class="secno">2. </bdi>EPUB容器</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-package-file"><bdi class="secno">3. </bdi>包裝文件</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-nav"><bdi class="secno">4. </bdi>導覽</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#sec-nav-order"><bdi class="secno">4.1 </bdi>閱讀順序</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-nav-nav-doc"><bdi class="secno">4.2 </bdi>導覽文件</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#sec-content-docs"><bdi class="secno">5. </bdi>內容文件</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#sec-rendering"><bdi class="secno">5.1 </bdi>排版與CSS</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-multimedia"><bdi class="secno">5.2 </bdi>多媒體</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-fonts"><bdi class="secno">5.3 </bdi>字型</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-scripting"><bdi class="secno">5.4 </bdi>腳本</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-semantic-enrichment"><bdi class="secno">5.5 </bdi>語意擴增</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-structural-semantics"><bdi class="secno">5.6 </bdi>結構語意</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#sec-layouts"><bdi class="secno">6. </bdi>版面</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#sec-reflow"><bdi class="secno">6.1 </bdi>可重排的版面</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-fxl"><bdi class="secno">6.2 </bdi>固定版面</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#sec-mediaoverlays"><bdi class="secno">7. </bdi>媒體層疊</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-gls"><bdi class="secno">8. </bdi>全球語言支援</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-accessibility"><bdi class="secno">9. </bdi>無障礙輔助性</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-experimental"><bdi class="secno">10. </bdi>新的實驗性功能</a></li>
+<li class="tocline"><a class="tocxref" href="#app-documents"><bdi class="secno">A. </bdi>EPUB 3文件</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#sec-doc-rec"><bdi class="secno">A.1 </bdi>規格群</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-doc-notes"><bdi class="secno">A.2 </bdi>備忘</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#app-revision-history"><bdi class="secno">B. </bdi>EPUB改版歷史</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#epub2"><bdi class="secno">B.1 </bdi>OEB、OCF與EPUB 2: 1999—2010</a></li>
+<li class="tocline"><a class="tocxref" href="#epub30"><bdi class="secno">B.2 </bdi>EPUB 3.0: 2010</a></li>
+<li class="tocline"><a class="tocxref" href="#epub301"><bdi class="secno">B.3 </bdi>EPUB 3.0.1: 2014</a></li>
+<li class="tocline"><a class="tocxref" href="#epub31"><bdi class="secno">B.4 </bdi>EPUB 3.1: 2017</a></li>
+<li class="tocline"><a class="tocxref" href="#epub32"><bdi class="secno">B.5 </bdi>EPUB 3.2: 2018</a></li>
+<li class="tocline"><a class="tocxref" href="#epub33"><bdi class="secno">B.6 </bdi>EPUB 3.3: 2022</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">C. </bdi>索引</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">C.1 </bdi>參考資料定義的術語</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#ack"><bdi class="secno">D. </bdi>致謝</a></li>
+<li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">E. </bdi>參考資料</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">E.1 </bdi>參考性資料</a></li></ol></li></ol></nav>
+		<section id="intro"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>導論</h2><a class="self-link" href="#intro" aria-label="Permalink for Section 1."></a></div>
+			
+
+			<section id="reading-overview"><div class="header-wrapper"><h3 id="x1-1-reading-this-document"><bdi class="secno">1.1 </bdi>如何閱讀本文件</h3><a class="self-link" href="#reading-overview" aria-label="Permalink for Section 1.1"></a></div>
+				
+
+				<p>EPUB 3格式透過利用開放Web平台的各種特色與機能，讓出版者能以此打造先進的閱讀體驗。格式使用HTML、SVG、CSS以及JavaScript，不僅能提供豐富且具互動性的閱讀體驗，也能製作各種語言的內容，無論預設的書寫方式為橫排還是直排。<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication" id="ref-for-index-term-epub-publications-1">EPUB出版品</a>選擇使用這樣的技術，也使其在產製時即具備無障礙輔助能力，以符合廣範圍的使用者需求。</p>
+
+				<p>本總覽以較高的層次來發掘EPUB 3於製作上能夠提供功能的各項特色。本文件不試圖成為製作EPUB出版品的教學指南，也不對該格式的技術細節，或閱讀系統如何運作作深入探討。相對之下，本文件目的為提供給更一般的讀者，讓他們能探索並理解使用EPUB 3格式製作數位出版品的優點，而無需閱讀整份技術規格。</p>
+
+				<p>然而，在直接進入這些特色之前，最好能夠先具備對EPUB出版品架構的基本概念認識。一個EPUB檔案就是一個有效的ZIP檔案，提供識別使用的後設資料，讓閱讀系統得以識別並且用於處理出版品（ZIP檔案在規格中稱為<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-container" id="ref-for-index-term-epub-container-1">EPUB容器</a>）。</p>
+
+				<p>此處理程序中的關鍵檔案稱為<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-package-document" id="ref-for-index-term-package-document-1">包裝文件</a>。提供關於出版品的後設資料、列出所有資源，並且指定<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-content-document">EPUB內容文件</a>（即為XHTML和SVG文件，處理後用來提供內容）的呈現先後順序。</p>
+
+				<p>另一個關鍵檔案為<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-navigation-document" id="ref-for-index-term-epub-navigation-document-1">EPUB導覽文件</a>。此文件內有該出版品的目次，同時也可以包含其他出版者所定義的導覽輔助（例如一份頁面列表或者地標列表）。</p>
+
+				<p id="fig-epub-structure">以下圖片讓一本EPUB出版品的結構以視覺化呈現：</p>
+
+				<img src="images/epub.png" width="600" aria-details="fig-epub-structure-diagram" alt="一本EPUB出版品主要架構的視覺化結構">
+
+				<details id="fig-epub-structure-diagram" class="desc">
+					<summary style="font-weight: normal; font-style: italic">圖片說明</summary>
+					<p>「EPUB(OCF)容器」作為最外層的元件封裝整個「EPUB出版品」，其中包含兩份文件「包裝文件」以及「導覽文件」還有一個名為「出版品資源」的元件，其中包含多個「內容文件」（XHTML, SVG)，以及多個「其他資源」（CSS, png, mp3, mov等）。</p>
+				</details>
+
+				<p>本文件內文提供了各種資源連結到的細節，以能達成進一步理解EPUB 3出版品中各項功能的目標。</p>
+			</section>
+
+			<section id="reading-specs"><div class="header-wrapper"><h3 id="x1-2-reading-the-specifications"><bdi class="secno">1.2 </bdi>如何閱讀規格群</h3><a class="self-link" href="#reading-specs" aria-label="Permalink for Section 1.2"></a></div>
+				
+
+				<p>若對本文件所提供一般性導論不滿足，想要進一步獲得更多資訊。EPUB 3.3規格 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 包含了製作上所必要的資訊。</p>
+
+				<p>在EPUB 3.3之前的版本，閱讀EPUB 3規格可能是種挑戰。該格式被切割為多份文件，同時每一份文件中內容製作與<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-reading-system" id="ref-for-index-term-reading-system-1">閱讀系統</a>的需求散亂混雜。隨著EPUB 3.3版發布，已經整合成一份文件。</p>
+
+				<p>此外，<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication" id="ref-for-index-term-epub-publications-2">EPUB出版品</a>的無障礙輔助性需求，則在EPUB無障礙輔助性規格 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-a11y-11" title="EPUB Accessibility 1.1">epub-a11y-11</a></cite>] 中進行說明。像EPUB 3這樣的數位格式所能提供的最大優勢，其中之一就是能打破印刷內容的無障礙壁壘。只要在製作時注意無障礙需求，出版品就能讓有著多樣需求的使用者都能夠閱讀。</p>
+
+				<p>同時透過閱讀系統規格 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-rs-33" title="EPUB Reading Systems 3.3">epub-rs-33</a></cite>] 則有助於理解處理內容的程序，以及程序的技術細節。這些資訊對製作內容而言，並非必要。</p>
+
+				<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>注意事項</span></div><div class="">
+					<p>在<a href="#app-documents" class="sec-ref"><bdi class="secno">A. </bdi>EPUB 3文件</a>中列出了所有推薦流程的EPUB 3規格以及參考性的備忘。</p>
+				</div></div>
+			</section>
+
+			<section id="version-num"><div class="header-wrapper"><h3 id="x1-3-version-numbering"><bdi class="secno">1.3 </bdi>版本編號</h3><a class="self-link" href="#version-num" aria-label="Permalink for Section 1.3"></a></div>
+				
+				<p>對於新接觸EPUB的人，一開始都會對「EPUB 3」格式與EPUB 3規格的版本編號感到困惑。最新版本的EPUB 3由EPUB 3.3規格 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 所定義。該規格後的小數（「.3」）用來與下一個發布版作為區分，並非每個發布版都代表新的格式。</p>
+
+				<p>維護EPUB 3的<abbr title="World Wide Web Consortium">W3C</abbr>工作小組致力於不讓按照早先版本規格製作的內容失效，舉個例子，基於EPUB 3.0規格製作的EPUB 3出版品，應該也能合乎EPUB 3.3版的需求。</p>
+
+				<p>這也是為什麼本總覽的名稱為「EPUB 3」，主要因為每份規格的發布版與下一版一般來說不會相差太多。</p>
+
+				<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>注意事項</span></div><div class="">
+					<p>在<a href="#app-revision-history" class="sec-ref"><bdi class="secno">B. </bdi>EPUB改版歷史中，提供了每個版本變革的一般性總覽。</p>
+				</div></div>
+			</section>
+		</section>
+		<section id="sec-container"><div class="header-wrapper"><h2 id="x2-the-epub-container"><bdi class="secno">2. </bdi>EPUB容器</h2><a class="self-link" href="#sec-container" aria-label="Permalink for Section 2."></a></div>
+			
+
+			<p>一本<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication" id="ref-for-index-term-epub-publications-3">EPUB出版品</a>，會以單一檔案（即為一份「可攜式文件」）的方式被傳送以及交換，其中含有<a data-link-type="dfn" data-lt="package document" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-package-document" id="ref-for-index-term-package-document-2">包裝文件</a>（可能不只一份），<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-content-document" id="ref-for-index-term-epub-content-documents-2">EPUB內容文件</a>，以及其他在處理出版品上所必需的資源。供EPUB使用的單一檔案容器基於廣受採用的ZIP格式，以及一份XML文件用來識別包裝文件位置，利用預先定義封裝中位置的方式，來指定ZIP封裝中出版品所在。</p>
+
+			<p>這種方式，在EPUB出版品的製作者以及任何使用EPUB出版品的系統間，提供了清楚的協定，同時在網路傳輸或者特定檔案系統間提供了可靠的表述方式</p>
+
+			<p>這也使得EPUB出版品能夠以廣泛易於取得的ZIP工具來製作或者編輯。出版者可彈性運用市售的編輯應用程式，或者建構自己的內容轉換流程來製作</p>
+
+			<p>若想了解更多關於一本EPUB出版品以單一容器檔案呈現的資訊，請參考 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 中的<a href="https://www.w3.org/TR/epub-33/#sec-ocf" id="ref-for-index-term-open-container-format-ofc-1">開放容器格式（Open Container Format, OFC）</a>章節。</p>
+
+		</section>
+		<section id="sec-package-file"><div class="header-wrapper"><h2 id="x3-the-package-document"><bdi class="secno">3. </bdi>包裝文件</h2><a class="self-link" href="#sec-package-file" aria-label="Permalink for Section 3."></a></div>
+			
+
+			<p>每一本<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication" id="ref-for-index-term-epub-publications-4">EPUB出版品</a>都由一份<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-package-document" id="ref-for-index-term-package-document-3">包裝文件</a>作為代表。包裝文件指定了所有必需的資源供處理內容呈現使用。包裝文件也定義了線性閱讀時的閱讀順序，並且連結後設資料以及導覽資訊。</p>
+
+			<p>包裝文件在一般網站的傳統架構之上，定義了一個層級，以便於製作數位出版品。舉網站為例，若在內容中嵌入參照資料作為其資源使用，最簡單且具彈性的手段就是指向資源，但卻不易列舉所有處理內容所必需的資源。此外，也沒有標準的方式來定義網站中各頁面的順序來建構為一個大型出版品，這也就是EPUB<a data-type="element" href="https://www.w3.org/TR/epub-33/#dfn-spine" id="ref-for-index-term-spine-element-1">書脊（<code>spine</code>）</a>元素 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 的目的（也就是提供外部宣告式的手段來明確指出如何為一組文件集合排出順序）。</p>
+
+			<p data-cite="epub-33">包裝文件也提供了表述適用於整體內容之後設資料的標準方式。每一份包裝文件都包含一個<a href="https://www.w3.org/TR/epub-33/#sec-pkg-metadata" id="ref-for-index-term-metadata-section-1">後設資料區塊</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 以提供該EPUB出版品的一般性資訊，可讓書名、作者、識別碼以及其他資訊能夠被輕易取得，並且呈現予使用者。也提供了使用<code><a data-type="element" href="https://www.w3.org/TR/epub-33/#dfn-link" id="ref-for-index-term-link-element-1">link</a></code>元素添加完整書目記錄的方式 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 。</p>
+
+			<p>包裝文件也允許使用<a href="https://www.w3.org/TR/epub-33/#attrdef-package-unique-identifier" id="ref-for-index-term-unique-identifier-attribute-1"><code>unique-identifier</code>屬性</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 來為EPUB出版品建立<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-unique-identifier" id="ref-for-index-term-unique-identifier-1">唯一識別碼</a>。此識別碼讓出版者能用來分辨出版品，甚至用於區分不同版本。</p>
+
+			<p>若想了解更多關於包裝文件的資訊，請參考 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 中的<a href="https://www.w3.org/TR/epub-33/#sec-package-doc" id="ref-for-index-term-package-document-0-1">包裝文件</a>章節。</p>
+		</section>
+		<section id="sec-nav"><div class="header-wrapper"><h2 id="x4-navigation"><bdi class="secno">4. </bdi>導覽</h2><a class="self-link" href="#sec-nav" aria-label="Permalink for Section 4."></a></div>
+			
+
+			<section id="sec-nav-order"><div class="header-wrapper"><h3 id="x4-1-reading-order"><bdi class="secno">4.1 </bdi>閱讀順序</h3><a class="self-link" href="#sec-nav-order" aria-label="Permalink for Section 4.1"></a></div>
+				
+
+				<p>EPUB的核心概念為：一本<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication" id="ref-for-index-term-epub-publications-5">EPUB出版品</a>包含多重資源，可以被個人或者程式<em>以一些特定的順序</em>完整導覽並且消費使用。</p>
+
+				<p>許多類別的出版品有著顯而易見的閱讀順序，或者在內容中有著邏輯進程。小說就是一種高度序列化文件的範例──它一般來說有著開頭、中間與結尾──但並非所有的出版品都這麼整然有序：食譜或攝影作品集可能更像是一個資料庫。然而所有的文件都應該至少有一個邏輯順序，供所有最高層級的內容物件排序，無論是按照日期、主題、位置或者其他的分類法（例如，食譜一般會按照烹飪方法來分類）。</p>
+
+				<p>每一本EPUB出版品都至少需要在其<a data-link-type="dfn" data-lt="EPUB spine" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-spine" id="ref-for-index-term-epub-spine-1">書脊</a>中定義一組這樣的邏輯順序，來排列所有最高層級內容。也可以在<a href="#sec-nav-nav-doc">EPUB導覽文件</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 中定義一組描述性的目次。EPUB出版品使這些資料結構在內容<em>外部</em>，可以透過機器可讀取的方式取得，使便於被發現和使用。</p>
+
+				<p>EPUB出版品不限制以線性方式對內容排序，也不排除以任意的方式做連結──就像網頁一樣，EPUB出版品基於超文本建構──但可以透過此方式確實做到最基本的使用和導覽，HTML網頁就沒有這樣的方法。</p>
+			</section>
+
+			<section id="sec-nav-nav-doc"><div class="header-wrapper"><h3 id="x4-2-navigation-document"><bdi class="secno">4.2 </bdi>導覽文件</h3><a class="self-link" href="#sec-nav-nav-doc" aria-label="Permalink for Section 4.2"></a></div>
+				
+
+				<p>每一本<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication" id="ref-for-index-term-epub-publications-6">EPUB出版品</a>都包含一份特別的<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-xhtml-content-document" id="ref-for-index-term-xhtml-content-document-1">XHTML內容文件</a>，稱為<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-navigation-document" id="ref-for-index-term-epub-navigation-document-2">EPUB導覽文件</a>。此文件使用 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>] 的<code><a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element" id="ref-for-index-term-nav-element-1">nav</a></code>元素來定義人類和機器都可讀取的導覽資訊。所有的<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-reading-system" id="ref-for-index-term-reading-system-2">閱讀系統都</a>可利用EPUB導覽文件來對使用者呈現目次。</p>
+
+				<p>EPUB導覽文件對所有使用者提供最低限度的無障礙輔助以及導覽協助，以及提供增強導覽的功能。其中最重要的為國際化支援（舉個例子，EPUB導覽文件本身作為XHTML文件，原生支援<a data-lt="ruby" data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-ruby-element" id="ref-for-index-term-ruby-element-1">Ruby註解</a>）並且支援嵌入語法（在導覽連接中可以包含MathML以及SVG）。</p>
+
+				<p>儘管不強制要求EPUB閱讀系統在處理資料建立自己的目次時，需支援這些先進的文字格式功能，但EPUB導覽文件可分飾兩角，這些功能依然可以對預期的讀者產生用途。出版者可以將EPUB導覽文件包含在<a data-link-type="dfn" data-lt="EPUB spine" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-spine" id="ref-for-index-term-epub-spine-2">書脊</a>中 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] （也就是作為出版品內容的一頁），這麼一來使用者就可以直接存取完整的HTML。</p>
+
+				<p>在EPUB出版品的內文中包含EPUB導覽文件，也可以讓出版者為使用者以及閱讀系統安排不同的呈現。例如，一份結構複雜的文件，可能就不會想把完整的目次展現在出版品內文中給使用者看。在這案例中，顯示層級可以使用<a href="https://www.w3.org/TR/epub-33/#sec-nav-doc-use-spine" id="ref-for-index-term-hidden-attribute-1"><code>hidden</code>屬性</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 來進行調整。這項屬性會被閱讀系統在<a data-link-type="dfn" data-lt="EPUB spine" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-spine" id="ref-for-index-term-epub-spine-3">書脊</a>外處理目次時所忽略（也就是以自己特化的介面展示），可以避免能用於增進整體無障礙輔助性的資訊被縮減。</p>
+
+				<p>出版者也能提供額外的<code><a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element" id="ref-for-index-term-nav-element-2">nav</a></code>元素，當EPUB出版品包含非結構化興趣點，像是分頁、地標、圖片、表格等時，能更進一步強化對內容的存取。</p>
+
+				<p>若想了解更多關於<a href="https://www.w3.org/TR/epub-33/#sec-nav" id="ref-for-index-term-epub-navigation-document-0-1">EPUB導覽文件</a>結構與語意的資訊，請參考 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 中的EPUB導覽文件章節。</p>
+			</section>
+		</section>
+		<section id="sec-content-docs"><div class="header-wrapper"><h2 id="x5-content-documents"><bdi class="secno">5. </bdi>內容文件</h2><a class="self-link" href="#sec-content-docs" aria-label="Permalink for Section 5."></a></div>
+			
+
+			<p>每一本<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication" id="ref-for-index-term-epub-publications-7">EPUB出版品</a>都包含一或多份<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-content-document" id="ref-for-index-term-epub-content-documents-3">EPUB內容文件</a>，如<a href="https://www.w3.org/TR/epub-33/#sec-contentdocs" id="ref-for-index-term-epub-content-documents-0-1">EPUB內容文件</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 所定義。這些XHTML或SVG文件用來描述可供閱讀的內容，以及參照相關的媒體資源（例如，影像、聲音檔以及影片片段）。</p>
+
+			<p><a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-xhtml-content-document" id="ref-for-index-term-xhtml-content-document-2">XHTML內容文件</a>由 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>] 中的一項子集所定義。</p>
+
+			<section id="sec-rendering"><div class="header-wrapper"><h3 id="x5-1-rendering-and-css"><bdi class="secno">5.1 </bdi>排版與CSS</h3><a class="self-link" href="#sec-rendering" aria-label="Permalink for Section 5.1"></a></div>
+				
+
+				<p>EPUB的核心概念就是內容呈現可由讀者調整成適合的樣貌，而不是讀者非得去配合特定的內容呈現形式。HTML一開始就被設計成能夠支援結構化內容的動態排版，然而HTML在網頁瀏覽器中的支援越來越集中於網頁應用程式的需求上，同時許多熱門的網站現在的版面也越來越不具彈性。</p>
+
+				<p><a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication" id="ref-for-index-term-epub-publications-8">EPUB出版品</a>被設計為能對視覺障礙者提供最大化無障礙輔助性，<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-reading-system" id="ref-for-index-term-reading-system-3">閱讀系統</a>一般會即時處理文字行列版面以及分頁，以適應顯示區域的尺寸、使用者偏好的文字尺寸和其他環境要素。但EPUB不能保證這項行為；像是包含影像、向量圖像、影片以及其他無法被重排的內容，以及一些閱讀系統可能不會即時分頁或者完全不分頁。然而，支援動態適應性版面以及無障礙輔助性一向是EPUB標準長期演化的主要設計考量。</p>
+
+				<p>EPUB內容文件可以配合CSS樣式表，讓出版者可以定義想要的排版設計。EPUB 3所支援的CSS定義於 [<cite><a class="bibref" data-link-type="biblio" href="#bib-csssnapshot" title="CSS Snapshot">csssnapshot</a></cite>] 。</p>
+
+				<p>EPUB 3也支援直排與橫排的CSS樣式，以及由左到右和由右到左的書寫方式。</p>
+			</section>
+
+			<section id="sec-multimedia"><div class="header-wrapper"><h3 id="x5-2-multimedia"><bdi class="secno">5.2 </bdi>多媒體</h3><a class="self-link" href="#sec-multimedia" aria-label="Permalink for Section 5.2"></a></div>
+				
+
+				<p>EPUB 3支援在<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-xhtml-content-document" id="ref-for-index-term-xhtml-content-document-3">XHTML內容文件</a>中，使用 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>] 的<span data-cite="html"><code><a data-type="element" href="https://html.spec.whatwg.org/multipage/media.html#audio" id="ref-for-index-term-audio-element-1">audio</a></code>和<code><a data-type="element" href="https://html.spec.whatwg.org/multipage/media.html#video" id="ref-for-index-term-video-element-1">video</a></code></span>元素來嵌入影音，也承繼了所有這些元素能夠提供的特色與機能（例如，內建開始、停止控制以及音量控制）。若想了解更多關於EPUB 3支援聲音與影片格式的資訊，請參考 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 中的<a href="https://www.w3.org/TR/epub-33/#sec-core-media-types" id="ref-for-index-term-core-media-types-1">核心媒體類別</a>章節。</p>
+			</section>
+
+			<section id="sec-fonts"><div class="header-wrapper"><h3 id="x5-3-fonts"><bdi class="secno">5.3 </bdi>字型</h3><a class="self-link" href="#sec-fonts" aria-label="Permalink for Section 5.3"></a></div>
+				
+
+				<p>EPUB 3支援兩種彼此緊密相關的字型格式──OpenType [<cite><a class="bibref" data-link-type="biblio" href="#bib-opentype" title="OpenType specification">opentype</a></cite>] 與WOFF [<cite><a class="bibref" data-link-type="biblio" href="#bib-woff" title="WOFF File Format 1.0">woff</a></cite>]   [<cite><a class="bibref" data-link-type="biblio" href="#bib-woff2" title="WOFF File Format 2.0">woff2</a></cite>] ──以相容傳統出版的工作流程以及日益興起以網頁為基礎的工作流程。例如，使用文字處理軟體製作<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication" id="ref-for-index-term-epub-publications-9">EPUB出版品</a>時，可能只會存取已經安裝的OpenType字型集合，然而將網頁封存成EPUB的產生器，則可能只會存取WOFF資源（該檔案在抽離WOFF後設資料的狀況下，無法被轉換成OpenType，通常也不希望被在沒有授權的狀況下被轉換）。</p>
+
+				<p>EPUB 3也同時支援一般與模糊化的字型，不分OpenType與WOFF字型格式。對模糊化字型資源的支援，許多商售字型的授權限制需要此項功能，請參考 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>]<a href="https://www.w3.org/TR/epub-33/#sec-font-obfuscation" id="ref-for-index-term-font-obfuscation-1">字型模糊化</a>以獲得更多資訊。</p>
+			</section>
+
+			<section id="sec-scripting"><div class="header-wrapper"><h3 id="x5-4-scripting"><bdi class="secno">5.4 </bdi>腳本</h3><a class="self-link" href="#sec-scripting" aria-label="Permalink for Section 5.4"></a></div>
+				
+
+				<p>EPUB力求以<em>宣告式</em>的方式處理內容──資料可以被更動，但不該像可執行的程式──卻依然支援腳本，如 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>] 及 [<cite><a class="bibref" data-link-type="biblio" href="#bib-svg" title="SVG">svg</a></cite>] 所定義。這讓出版者可以建立、添加動態內容，如問答、互動遊戲，以此類推。</p>
+
+				<p>然而，在EPUB出版品中的腳本需要面對與在網頁瀏覽器中執行腳本不同的安全性考量。例如具代表性的同源政策（same-origin policies）並不適用於下載到使用者端系統的內容。基於這些原因，最好在對使用者經驗而言有必要的狀況下才使用腳本，但這麼做也會增加讓內容無法在所有閱讀系統間互通，不具備可攜性的可能，也會製造對無障礙輔助性的隔閡，影響內容再利用的可能。</p>
+
+				<p>也必須注意，EPUB 3並不要求閱讀系統一定要支援腳本，所以可能會因安全性考量而不支援。出版者需要思考當腳本對內容而言為必要，自己的出版品遇到不支援的狀況時，能如何被使用者閱讀。</p>
+
+				<p>請參考 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 的<a href="https://www.w3.org/TR/epub-33/#sec-scripted-content" id="ref-for-index-term-scripting-1">腳本</a>以獲得更多與腳本相容性相關的資訊。</p>
+			</section>
+
+			<section id="sec-semantic-enrichment"><div class="header-wrapper"><h3 id="x5-5-semantic-enrichment"><bdi class="secno">5.5 </bdi>語意擴增</h3><a class="self-link" href="#sec-semantic-enrichment" aria-label="Permalink for Section 5.5"></a></div>
+				
+
+				<p><a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-xhtml-content-document" id="ref-for-index-term-xhtml-content-document-4">XHTML內容文件</a>也能以豐富後設資料對文件加註，這可以使文件在語意上更具意義，並且對處理以及無障礙輔助性都能受用。出版者可以使用RDFa [<cite><a class="bibref" data-link-type="biblio" href="#bib-rdfa-in-html" title="HTML+RDFa 1.1 - Second Edition">rdfa-in-html</a></cite>] 與Microdata [<cite><a class="bibref" data-link-type="biblio" href="#bib-microdata" title="HTML Microdata">microdata</a></cite>] 兩種屬性來達成，也可以用 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>] 的<code><a data-type="element" href="https://html.spec.whatwg.org/multipage/scripting.html#script" id="ref-for-index-term-script-element-1">script</a></code>元素來嵌入JSON-LD後設資料紀錄 [<cite><a class="bibref" data-link-type="biblio" href="#bib-json-ld" title="JSON-LD 1.0">json-ld</a></cite>] 。</p>
+			</section>
+
+			<section id="sec-structural-semantics"><div class="header-wrapper"><h3 id="x5-6-structural-semantics"><bdi class="secno">5.6 </bdi>結構語意</h3><a class="self-link" href="#sec-structural-semantics" aria-label="Permalink for Section 5.6"></a></div>
+				
+
+				<p>EPUB 3也能使用<code><a data-type="element-attr" href="https://www.w3.org/TR/epub-33/#dfn-epub-type" id="ref-for-index-term-epub-type-attribute-1">epub:type</a></code>屬性 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 來為<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-content-document" id="ref-for-index-term-epub-content-documents-4">EPUB內容文件</a>中的任何元素添加額外資訊，能夠表達該元素在作品中的目的以及意義。</p>
+
+				<p>儘管這些語意主要用於出版者的內部工作流程，在某些狀況下，他們也可以用來加強<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-reading-system" id="ref-for-index-term-reading-system-4">閱讀系統</a>的行為（特別是用於跳出式註釋）。</p>
+
+				<p>請參考 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 的<a href="https://www.w3.org/TR/epub-33/#app-structural-semantics" id="ref-for-index-term-expressing-structural-semantics-1">表達結構語意</a>章節以獲得更多資訊。</p>
+			</section>
+		</section>
+		<section id="sec-layouts"><div class="header-wrapper"><h2 id="x6-layouts"><bdi class="secno">6. </bdi>版面</h2><a class="self-link" href="#sec-layouts" aria-label="Permalink for Section 6."></a></div>
+			
+
+			<section id="sec-reflow"><div class="header-wrapper"><h3 id="x6-1-reflowable-layouts"><bdi class="secno">6.1 </bdi>可重排的版面</h3><a class="self-link" href="#sec-reflow" aria-label="Permalink for Section 6.1"></a></div>
+				
+
+				<p>EPUB設計上的核心目標之一為提供動態版面的能力：預期內容會被即時動態地生成，而並非以預先分好頁的方式排版呈現。這項核心能力對於針對不同尺寸裝置的螢幕或者視窗尺寸進行最佳化排版來說極為有用，也能簡便地為內容提供無障礙輔助。</p>
+
+				<p>EPUB 3也能讓出版者以後設資料指定可重排內容以何種方式呈現。支援此功能的閱讀系統可以讓可重排的文件以捲軸方式呈現給使用者，取代分頁方式。</p>
+
+				<p>若想了解更多資訊，請參考 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] .的<a href="https://www.w3.org/TR/epub-33/#sec-reflowable-layouts" id="ref-for-index-term-reflowable-layouts-1">可重排版面</a>章節。</p>
+			</section>
+
+			<section id="sec-fxl"><div class="header-wrapper"><h3 id="x6-2-fixed-layouts"><bdi class="secno">6.2 </bdi>固定版面</h3><a class="self-link" href="#sec-fxl" aria-label="Permalink for Section 6.2"></a></div>
+				
+
+				<p>儘管EPUB發展史上長期致力於發展可重排內容，但並非所有出版品都能被輕易地轉成重排。像是童書、漫畫、雜誌以及其他多種內容形式，就需要精準的分頁版面來提供完整的表現。</p>
+
+				<p>EPUB 3除了透過既有SVG技術來製作固定版面的方法之外，可以運用後設資料來創建<a href="https://www.w3.org/TR/epub-33/#sec-fixed-layouts" id="ref-for-index-term-fixed-layout-xhtml-content-documents-1">固定版面的XHTML內容文件</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 。這項後設資料可以啟動對<a href="https://www.w3.org/TR/epub-33/#sec-fxl-content-dimensions" id="ref-for-index-term-page-dimensions-1">頁面尺寸</a>的控制 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] ，製作出一個畫布，讓各種元素能夠精準定位於其上。</p>
+
+				<p>後設資料不僅可以用來決定內容要以固定還是可重排的方式呈現，也能讓出版者指定想要的<a href="https://www.w3.org/TR/epub-33/#orientation" id="ref-for-index-term-orientation-of-pages-1">頁面方向</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] ，何時要<a href="https://www.w3.org/TR/epub-33/#spread" id="ref-for-index-term-create-synthetic-spreads-1">建立同步跨頁</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] ，以及在這些跨頁中，要<a href="https://www.w3.org/TR/epub-33/#page-spread" id="ref-for-index-term-how-to-position-pages-1">如何擺設頁面</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] ，為EPUB出版品的表現提供了廣範圍的控制。</p>
+
+				<p>若想了解更多資訊，請參考 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 的<a href="https://www.w3.org/TR/epub-33/#sec-fixed-layouts" id="ref-for-index-term-fixed-layout-xhtml-content-documents-2">固定版面</a>章節。</p>
+			</section>
+		</section>
+		<section id="sec-mediaoverlays"><div class="header-wrapper"><h2 id="x7-media-overlays"><bdi class="secno">7. </bdi>媒體層疊</h2><a class="self-link" href="#sec-mediaoverlays" aria-label="Permalink for Section 7."></a></div>
+			
+
+			<p id="para-media-overlay">EPUB 3另外一個關鍵多媒體功能就是能夠定義媒體層疊。當<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication" id="ref-for-index-term-epub-publications-10">EPUB出版品</a>有預錄的旁白可供使用時，媒體層疊提供了讓聲音與<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-content-document" id="ref-for-index-term-epub-content-documents-5">EPUB內容文件</a>上的文字同步播放的能力。使用者可以看著EPUB出版品上高光強調的文字，邊聽這些文字的朗讀，或者只聽聲音。</p>
+
+			<p>媒體層疊所帶來的好處，遠超乎於一目即知的無障礙輔助性，除了可以讓無法看見內容的人聽見內容之外。也可以透過文字與聲音同步作為學習朗讀的工具。</p>
+
+			<p>若想了解更多關於製作媒體層疊的資訊，請參考 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 的<a href="https://www.w3.org/TR/epub-33/#sec-media-overlays" id="ref-for-index-term-media-overlays-1">媒體層疊</a>章節。</p>
+		</section>
+		<section id="sec-gls"><div class="header-wrapper"><h2 id="x8-global-language-support"><bdi class="secno">8. </bdi>全球語言支援</h2><a class="self-link" href="#sec-gls" aria-label="Permalink for Section 8."></a></div>
+			
+
+			<p>EPUB 3活用了XHTML、SVG、CSS或MathML對於全球語言支援的特色，並且以 [<cite><a class="bibref" data-link-type="biblio" href="#bib-unicode" title="The Unicode Standard">unicode</a></cite>] 作為內容編碼。這代表著<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-content-document" id="ref-for-index-term-epub-content-documents-6">EPUB內容文件</a>能夠使用不同的字元組並且呈現雙向文字、Ruby註解，以及多種多樣語言與文化的排版呈現。</p>
+
+			<p>以下表列描述了一些專屬於EPUB 3的關鍵全球語言支援特色：</p>
+
+			<dl>
+				<dt>不同語言的後設資料</dt>
+				<dd>
+					<p>EPUB 3包裝文件的後設資料區塊中，後設資料支援各種文字可以不同語言添加資料，這有助於<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication" id="ref-for-index-term-epub-publications-11">EPUB出版品</a>於全球發行時使用。<a href="https://www.w3.org/TR/epub-33/#alternate-script" id="ref-for-index-term-alternate-script-property-1"><code>alternate-script</code> 特性</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 可以和<code>xml:lang</code>屬性組合來添加並作為識別，用於處理該語言專屬的後設資料。</p>
+          <p>舉個例子。使用此特性，一本日文EPUB出版品中可以添加以羅馬文字（拼音）表述的作者名字和/或以拉丁文字書寫的書名翻譯，且不限一種。</p>
+				</dd>
+
+				<dt>基礎文字方向</dt>
+				<dd>
+					<p>文字後設資料項目也需要在<a href="https://www.w3.org/TR/epub-33/#attrdef-dir" id="ref-for-index-term-attributes-specifying-base-direction-1">屬性中指定基礎行文方向</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] ，可以用來對雙向文字進行細微控制（例如，書的標題中同時包含拉丁文字以及阿拉伯或希伯來文字母）。</p>
+				</dd>
+
+				<dt>翻頁方向</dt>
+				<dd>
+					<p><a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-package-document" id="ref-for-index-term-package-document-4">包裝文件</a>中的<code>page-progression-direction</code>屬性可以指定全域EPUB內容文件的排列方向，以便於處理（請見 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 中的<a href="https://www.w3.org/TR/epub-33/#attrdef-spine-page-progression-direction" id="ref-for-index-term-page-progression-direction-1">page-progression-direction</a>）。</p>
+				</dd>
+
+				<dt>字型</dt>
+				<dd>
+					<p>EPUB 3不強制要求閱讀系統提供內建的系統字型。在網頁脈絡中，使用者在特定的地區設定下，可能已經安裝了一些字型，而這些字型可能無法顯示其他地區設定所需要的文字，這時閱讀系統可以使用自有的字型或者字型引擎，而不使用作業系統安裝的字體。就結果而論，EPUB出版品的文字內容在所有閱讀系統上的原生排版顯示可能會不如預期。</p>
+					<p>EPUB支援的嵌入字型有助於處理文字內容，使內容的排版如預期一般呈現。</p>
+          <p>嵌入字型支援能讓出版者確保EPUB出版品中特殊的符號與字形能夠正確顯示。</p>
+
+				</dd>
+
+				<dt>容器</dt>
+				<dd>
+					<p>OCF容器格式支援UTF-8，允許內容資源的檔案以及資料夾可以使用國際化名稱。</p>
+				</dd>
+			</dl>
+		</section>
+		<section id="sec-accessibility"><div class="header-wrapper"><h2 id="x9-accessibility"><bdi class="secno">9. </bdi>無障礙輔助性</h2><a class="self-link" href="#sec-accessibility" aria-label="Permalink for Section 9."></a></div>
+			
+
+			<p>EPUB的一大主要目標就是增進內容的無障礙輔助性，所以多項EPUB 3功能都支援此需求。更進一步說明，EPUB無障礙輔助性規格 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-a11y-11" title="EPUB Accessibility 1.1">epub-a11y-11</a></cite>] 提供了用於評估<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication" id="ref-for-index-term-epub-publications-12">EPUB出版品</a>無障礙輔助性的框架。其完成了延伸網頁內容無障礙指引（Web Content Accessibility Guidelines, WCAG [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">wcag21</a></cite>] ）的工作，該份指引為全球認同的內容無障礙標準。</p>
+
+			<p>該規格定義了產製能被更廣範圍的使用者存取的<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication" id="ref-for-index-term-epub-publications-13">EPUB出版品</a>之需求。也伴隨著一份技術文件 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-a11y-tech-11" title="EPUB Accessibility Techniques 1.1">epub-a11y-tech-11</a></cite>] 以描述達成這些需求的最佳實踐。</p>
+
+			<p>值得注意的是，無障礙輔助性自身固然重要，但具備無障礙輔助能力的內容更有價值：一本具無障礙輔助性的EPUB出版品可以應用於更多的設備，並且容易再利用，無論整體或者其中一部分，無論透過手工還是自動化的工作流程。</p>
+
+			<p>一些EPUB 3的特殊內容功能可以用於製作高度具無障礙輔助的內容，包括：</p>
+
+			<dl>
+				<dt>HTML語意標記</dt>
+				<dd>
+					<p>與EPUB 2相較，EPUB 3所支援版本的HTML加入了一系列新元素，可以讓標記更具備語意上的意義。舉例而言，包括 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>] 的<code><a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element" id="ref-for-index-term-section-element-1">section</a></code>、<code><a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element" id="ref-for-index-term-nav-element-3">nav</a></code>、以及<code><a data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element" id="ref-for-index-term-aside-element-1">aside</a></code>元素。這些額外元素可以讓內容在分類與定義上更加完整，可助於表達文件結構，便於邏輯導覽。 </p>
+				</dd>
+
+				<dt>HTML多媒體元素</dt>
+				<dd>
+					<p data-cite="html">[<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>] 的<code><a data-type="element" href="https://html.spec.whatwg.org/multipage/media.html#audio" id="ref-for-index-term-audio-element-2">audio</a></code>及<code><a data-type="element" href="https://html.spec.whatwg.org/multipage/media.html#video" id="ref-for-index-term-video-element-2">video</a></code>元素提供了內建的控制項，並且能與輔助技術通用。這些新元素讓使用者可以直接控制播放，不再需要依靠透過無障礙支援做得很糟的插件了。</p>
+				</dd>
+
+				<dt>可重排的版面</dt>
+				<dd>
+					<p>EPUB出版品預設透過重排以符合可使用的螢幕空間。這讓使用者可以調整他們想要的顯示方式（例如，調大字型尺寸、行距以及字距）而不會讓出版品變得無法閱讀──調整尺寸後的內容自身會重新在可用的空間中排列。</p>
+				</dd>
+
+				<dt>ARIA支援</dt>
+				<dd>
+					<p>EPUB在XHTML及SVG內容文件中支援對ARIA角色（roles）、狀態（states）以及特性的表述。這些屬性可以讓出版者提升腳本控制以及元件的無障礙輔助性。</p>
+				</dd>
+			</dl>
+		</section>
+		<section id="sec-experimental"><div class="header-wrapper"><h2 id="x10-new-and-experimental-features"><bdi class="secno">10. </bdi>新的實驗性功能</h2><a class="self-link" href="#sec-experimental" aria-label="Permalink for Section 10."></a></div>
+			
+
+			<p>EPUB 3隨著網頁採用新的功能與技術而持續進化。本規格列舉一系列的網頁標準作為參照，當他們改版時，自動生效並可使用。例如HTML現在被稱為「活的標準（Living Standard）」主要是因為新功能只要有兩組實作，就會被立即加入。EPUB 3參照的SVG [<cite><a class="bibref" data-link-type="biblio" href="#bib-svg" title="SVG">svg</a></cite>] 、JavaScript [<cite><a class="bibref" data-link-type="biblio" href="#bib-ecmascript" title="ECMAScript Language Specification">ecmascript</a></cite>] 以及Unicode [<cite><a class="bibref" data-link-type="biblio" href="#bib-unicode" title="The Unicode Standard">unicode</a></cite>] 也是一推出新版本就立即受到採用，而CSS則請參考最新的快照   [<cite><a class="bibref" data-link-type="biblio" href="#bib-csssnapshot" title="CSS Snapshot">csssnapshot</a></cite>] 資料。</p>
+
+			<p>這意味著當這些標準加入新功能的同時，這些功能也立即合乎EPUB 3規格，可以用於<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication" id="ref-for-index-term-epub-publications-14">EPUB 出版品</a>。（這不意味這些功能立即就能使用，主要是<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-reading-system" id="ref-for-index-term-reading-system-5">閱讀系統</a>通常需要較長的時間來實作支援，同時銷售方可能不見得一直希望這些新功能來挑戰他們既有的驗證規則）。</p>
+
+			<p>EPUB工作小組也會持續介紹這些在核心規格群之外的新實驗性功能。這是一項代表性的作為，因為這些功能通常在真實世界的閱讀系統尚未支援，而工作小組會在將技術標準化之前，尋求實作上的回覆。</p>
+
+			<p>目前就有兩個這樣的實現性功能：多重內容釋義出版品 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-multi-rend-11" title="EPUB 3 Multiple-Rendition Publications 1.1">epub-multi-rend-11</a></cite>] 以及文字轉換語音增強機制 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-tts-10" title="EPUB 3 Text-to-Speech Enhancements 1.0">epub-tts-10</a></cite>] 。出版者可以在自己的出版品中使用這樣的功能，但必須要意識到，這些功能僅受到有限度的支援。</p>
+		</section>
+		<section id="app-documents" class="appendix"><div class="header-wrapper"><h2 id="a-epub-3-documents"><bdi class="secno">A. </bdi>EPUB 3文件</h2><a class="self-link" href="#app-documents" aria-label="Permalink for Appendix A."></a></div>
+			
+
+			<section id="sec-doc-rec"><div class="header-wrapper"><h3 id="a-1-specifications"><bdi class="secno">A.1 </bdi>規格群</h3><a class="self-link" href="#sec-doc-rec" aria-label="Permalink for Appendix A.1"></a></div>
+				
+
+				<p>EPUB 3目前由以下規格群所定義：</p>
+
+				<ul>
+					<li>EPUB 3.3 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] ：定義了EPUB出版品的製作規格以及需求，功能包括<a href="#sec-package-file">包裝</a>以及<a href="#sec-nav-nav-doc">導覽</a>文件、<a href="#sec-content-docs">EPUB內容文件</a>、<a href="#sec-fxl">固定版面</a>、<a href="#para-media-overlay">媒體層疊</a>以及<a href="#sec-container">容器格式</a>。</li>
+					<li>EPUB閱讀系統 3.3 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-rs-33" title="EPUB Reading Systems 3.3">epub-rs-33</a></cite>] ：定義了EPUB 3閱讀系統的合規性需求──閱讀系統為處理EPUB 3出版品的使用者代理。</li>
+					<li>EPUB無障礙輔助性 1.1 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-a11y-11" title="EPUB Accessibility 1.1">epub-a11y-11</a></cite>] ：定義了內容合規性需求，以驗證EPUB 3出版品的無障礙輔助性。</li>
+				</ul>
+
+				<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>注意事項</span></div><div class="">這些推薦流程文件都包含了詳細的變更日誌，以記錄從上一正式發布版本以來的主要變更。請個別參見<a href="https://www.w3.org/TR/epub-33/#change-log" id="ref-for-index-term-epub-3-3-1">EPUB 3.3</a>、<a href="https://www.w3.org/TR/epub-rs-33/#change-log" id="ref-for-index-term-epub-reading-systems-3-3-1">EPUB閱讀系統 3.3</a>以及<a href="https://www.w3.org/TR/epub-a11y-11/#change-log" id="ref-for-index-term-epub-accessibility-1-1-1">EPUB無障礙輔助性 1.1</a>的變更日誌。</div></div>
+			</section>
+
+			<section id="sec-doc-notes"><div class="header-wrapper"><h3 id="a-2-notes"><bdi class="secno">A.2 </bdi>備忘</h3><a class="self-link" href="#sec-doc-notes" aria-label="Permalink for Appendix A.2"></a></div>
+				
+
+				<p>儘管以下文件為參考性，但他們也提供了實作EPUB 3規格以及定義實驗性功能的相關指引。</p>
+
+				<ul>
+					<li>EPUB無障礙輔助性與歐盟無障礙法之對應關係 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-a11y-eaa-mapping" title="EPUB Accessibility - EU Accessibility Act Mapping">epub-a11y-eaa-mapping</a></cite>] ：目的用於展示<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019L0882">歐盟無障礙法</a>與電子書相關的技術需求，以及如何透過EPUB標準達成。.</li>
+					<li>EPUB無障礙輔助性技巧 1.1 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-a11y-tech-11" title="EPUB Accessibility Techniques 1.1">epub-a11y-tech-11</a></cite>] ：提供如何達成EPUB無障礙輔助性 1.1 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-a11y-11" title="EPUB Accessibility 1.1">epub-a11y-11</a></cite>] 對於EPUB出版品發現性以及無障礙輔助性需求的指引。</li>
+					<li>EPUB多重內容釋義出版品 1.1 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-multi-rend-11" title="EPUB 3 Multiple-Rendition Publications 1.1">epub-multi-rend-11</a></cite>] ：定義如何製作與處理包含一個以上內容釋義的EPUB出版品。</li>
+					<li>EPUB結構語意用語集 1.1 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-ssv-11" title="EPUB 3 Structural Semantics Vocabulary 1.1">epub-ssv-11</a></cite>] ：定義一組特性，用於描述書寫作品的結構性語意。</li>
+					<li>EPUB文字轉換語音增強機制 1.1 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-tts-10" title="EPUB 3 Text-to-Speech Enhancements 1.0">epub-tts-10</a></cite>] ：說明為提升EPUB出版品語音朗讀需有的製作功能與閱讀系統支援。</li>
+				</ul>
+			</section>
+		</section>
+		<section id="app-revision-history" class="appendix"><div class="header-wrapper"><h2 id="b-epub-revision-history"><bdi class="secno">B. </bdi>改版歷史</h2><a class="self-link" href="#app-revision-history" aria-label="Permalink for Appendix B."></a></div>
+			
+
+			<section id="epub2"><div class="header-wrapper"><h3 id="b-1-oeb-ocf-and-epub-2-1999-2010"><bdi class="secno">B.1 </bdi>OEB、OCF與EPUB 2: 1999—2010</h3><a class="self-link" href="#epub2" aria-label="Permalink for Appendix B.1"></a></div>
+				
+
+				<p>EPUB奠基於名為開放電子書出版品架構（Open EBook Publication Structure,OEBPS）的交換格式。OEBPS 1.0於1999年由開放電子書論壇（Open eBook Forum）所通過，該組織後來改組為為國際數位出版論壇（International Digital Publishing Forum, IDPF）。後續1.1與1.2改版分別由IDPF於2001和2002年通過。</p>
+
+				<p>當時認知到，在遞交以及交換兩方面，都有對標準格式的需求，於是在2005年底開始規劃供OEBPS使用的單一檔案容器格式，後來於2006年IDPF通過OEBPS容器格式（OEBPS Container Format, OCF）規格。2007年十月EPUB 2.0的改名與改版作業同步進行，並且於2010年九月通過。這項改版結合了規格的鐵三角：開放包裝格式（Open Package Format, OPF）、開放出版品格式（Open Publication Format, OPF）以及OCF。EPUB 2.0.1作為2.0規格的維護性改版，主要目的為澄清、更正，對規格做出勘誤。請見 [<cite><a class="bibref" data-link-type="biblio" href="#bib-opf-201" title="Open Packaging Format 2.0.1">opf-201</a></cite>]   [<cite><a class="bibref" data-link-type="biblio" href="#bib-ops-201" title="Open Publication Structure 2.0.1">ops-201</a></cite>] 
+           [<cite><a class="bibref" data-link-type="biblio" href="#bib-ocf-201" title="EPUB Open Container Format (OCF) 2.0.1">ocf-201</a></cite>] 。</p>
+
+			</section>
+			<section id="epub30"><div class="header-wrapper"><h3 id="b-2-epub-3-0-2010"><bdi class="secno">B.2 </bdi>EPUB 3.0: 2010</h3><a class="self-link" href="#epub30" aria-label="Permalink for Appendix B.2"></a></div>
+				
+				<p>EPUB規格的大幅改版作業起於2010年，其目標在於讓EPUB與HTML兩規格能更為對齊，並且處理新增原生的多媒體功能、複雜的CSS版面處理以及嵌入字型、MathML支援、腳本互動性、直排文字以及其他全球語言支援的強化，以及提升無障礙輔助性。同時也推出新的規格：EPUB媒體層疊，讓文字與聲音能在EPUB出版品中同步播放。為了讓規格名稱更能貼近標準，開放包裝格式規格改名為EPUB出版品，以及開放出版品規格改名為EPUB內容文件。EPUB 3.0規格於2011年十月通過。請見 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epubpublications-30" title="EPUB Publications 3.0">epubpublications-30</a></cite>]   [<cite><a class="bibref" data-link-type="biblio" href="#bib-epubcontentdocs-30" title="EPUB Content Documents 3.0">epubcontentdocs-30</a></cite>]   [<cite><a class="bibref" data-link-type="biblio" href="#bib-ocf-30" title="EPUB Open Container Format (OCF) 3.0">ocf-30</a></cite>]   [<cite><a class="bibref" data-link-type="biblio" href="#bib-epubmediaoverlays-30" title="EPUB Media Overlays 3.0">epubmediaoverlays-30</a></cite>] 
+           [<cite><a class="bibref" data-link-type="biblio" href="#bib-epubchanges-30" title="EPUB 3 Changes from 2.0.1">epubchanges-30</a></cite>] 。</p>
+			</section>
+
+			<section id="epub301"><div class="header-wrapper"><h3 id="b-3-epub-3-0-1-2014"><bdi class="secno">B.3 </bdi>EPUB 3.0.1: 2014</h3><a class="self-link" href="#epub301" aria-label="Permalink for Appendix B.3"></a></div>
+				
+
+				<p>EPUB 3.0.1改版於2013到2014進行，主要為細節修正以及更新，並且整合了固定版面文件，當該內容不適合可重排的EPUB時，出版者能對呈現做到更大的控制。請見 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epubpublications-301" title="EPUB Publications 3.0.1">epubpublications-301</a></cite>]   [<cite><a class="bibref" data-link-type="biblio" href="#bib-epubcontentdocs-301" title="EPUB Content Documents 3.0.1">epubcontentdocs-301</a></cite>]   [<cite><a class="bibref" data-link-type="biblio" href="#bib-ocf-301" title="EPUB Open Container Format (OCF) 3.0.1">ocf-301</a></cite>]   [<cite><a class="bibref" data-link-type="biblio" href="#bib-epubmediaoverlays-301" title="EPUB Media Overlays 3.0.1">epubmediaoverlays-301</a></cite>] 
+           [<cite><a class="bibref" data-link-type="biblio" href="#bib-epubchanges-301" title="EPUB 3.0.1 Changes from 3.0">epubchanges-301</a></cite>] 。</p>
+			</section>
+
+			<section id="epub31"><div class="header-wrapper"><h3 id="b-4-epub-3-1-2017"><bdi class="secno">B.4 </bdi>EPUB 3.1: 2017</h3><a class="self-link" href="#epub31" aria-label="Permalink for Appendix B.4"></a></div>
+				
+
+				<p>EPUB 3.1是EPUB 3的第一個小改版。此次改版的目標是讓EPUB 3與當下的網頁標準更為貼近。對於重要標準的參照改為無日期版，這意味著當他們改版時，就可直接用於EPUB 3內容中（舉個例子，最新版本的HTML可以立即合規地用於EPUB；而不需要等EPUB規格進行改版）。使用的CSS也進一步簡化，減少使用EPUB專有的特性。</p>
+
+				<p>許多EPUB特有的功能也在標準中被移除，特別是內容的切換（Switching）、觸發（Triggers）以及綁定（Binding）。此項變更需要使用新的內容文件版本編號。請見 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-31" title="EPUB 3.1">epub-31</a></cite>]   [<cite><a class="bibref" data-link-type="biblio" href="#bib-epubpackages-31" title="EPUB Packages 3.1">epubpackages-31</a></cite>]   [<cite><a class="bibref" data-link-type="biblio" href="#bib-epubcontentdocs-31" title="EPUB Content Documents 3.1">epubcontentdocs-31</a></cite>]   [<cite><a class="bibref" data-link-type="biblio" href="#bib-ocf-31" title="Open Container Format (OCF) 3.1">ocf-31</a></cite>]   [<cite><a class="bibref" data-link-type="biblio" href="#bib-epubmediaoverlays-31" title="EPUB Media Overlays 3.1">epubmediaoverlays-31</a></cite>] 
+           [<cite><a class="bibref" data-link-type="biblio" href="#bib-epubchanges-31" title="EPUB 3.1 Changes from 3.0.1">epubchanges-31</a></cite>] 。</p>
+			</section>
+
+			<section id="epub32"><div class="header-wrapper"><h3 id="b-5-epub-3-2-2018"><bdi class="secno">B.5 </bdi>EPUB 3.2: 2018</h3><a class="self-link" href="#epub32" aria-label="Permalink for Appendix B.5"></a></div>
+				
+
+				<p>EPUB 3.2改版作業緊接在EPUB 3.1之後，以恢復對EPUB 3內容的相容。EPUB 3.1需要變更版本編號，對出版商、銷售方與閱讀系統開發者來說，意味著要產製、配布、處理兩個版本的EPUB內容，但這樣改變的花費遠遠超過新版本能帶來的好處。EPUB 3.2致力於保留EPUB 3.1版中最好的部分，改以不再推薦元素的方式取代直接刪除，這麼一來就不需要在包裝文件中加入新的版本編號。請見 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-32" title="EPUB 3.2">epub-32</a></cite>]   [<cite><a class="bibref" data-link-type="biblio" href="#bib-epubpackages-32" title="EPUB Packages 3.2">epubpackages-32</a></cite>] 
+           [<cite><a class="bibref" data-link-type="biblio" href="#bib-epubcontentdocs-32" title="EPUB Content Documents 3.2">epubcontentdocs-32</a></cite>]   [<cite><a class="bibref" data-link-type="biblio" href="#bib-ocf-32" title="Open Container Format (OCF) 3.2">ocf-32</a></cite>]   [<cite><a class="bibref" data-link-type="biblio" href="#bib-epubmediaoverlays-32" title="EPUB Media Overlays 3.2">epubmediaoverlays-32</a></cite>]   [<cite><a class="bibref" data-link-type="biblio" href="#bib-epubchanges-32" title="EPUB 3.2 Changes">epubchanges-32</a></cite>] 。</p>
+			</section>
+
+			<section id="epub33"><div class="header-wrapper"><h3 id="b-6-epub-3-3-2022"><bdi class="secno">B.6 </bdi>EPUB 3.3: 2022</h3><a class="self-link" href="#epub33" aria-label="Permalink for Appendix B.6"></a></div>
+				
+
+				<p>EPUB 3.3 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 改版於2020到2021進行，這是EPUB 3系列首次以<abbr title="World Wide Web Consortium">W3C</abbr>推薦流程發佈的版本。EPUB 3.3與EPUB 3.2相較，沒有顯著的技術變更，並且抱有強的向後相容性。這意味著所有合規的EPUB 3.2出版品也會是合規的EPUB 3.3出版品。</p>
+
+				<p>文件則經過架構的重新調整。調整架構的主要動機以及在編輯上改版的原因是為了讓文件更易於閱讀。同時為了要完整通過<a href="https://www.w3.org//publishing/groups/epub-wg/"><abbr title="World Wide Web Consortium">W3C</abbr> EPUB 3工作小組</a>所開發的測試檢驗，架構調整時也把推薦標準和工作小組紀錄分開（請見文件的<a href="#app-documents">細項列表</a>）。在推薦標準中列出的功能需經完整的測試，並且廣受閱讀系統所實作，才能被視為具有互通性。另一方面，工作小組紀錄中所列出的功能，基於製作上的考量，目前依然缺少閱讀系統的支援；結果上這些技術不應該被視為穩定並且具互通性。</p>
+
+				<p>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] 的獨立<a href="https://www.w3.org/TR/epub-33/#change-log" id="ref-for-index-term-epub-3-3-2">章節</a>提供了對這些變更更為詳細的說明。</p>
+			</section>
+		</section>
+		<section id="index" class="appendix"><div class="header-wrapper"><h2 id="c-index"><bdi class="secno">C. </bdi>索引</h2><a class="self-link" href="#index" aria-label="Permalink for Appendix C."></a></div><section id="index-defined-elsewhere"><div class="header-wrapper"><h3 id="c-2-terms-defined-by-reference"><bdi class="secno">C.1 </bdi>Terms defined by reference</h3><a class="self-link" href="#index-defined-elsewhere" aria-label="Permalink for Appendix C.2"></a></div>
+    
+    <ul class="index">
+    <li>
+         [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33">EPUB-33</a></cite>]  定義以下術語:
+        <ul>
+          <li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#alternate-script" id="index-term-alternate-script-property" tabindex="0" aria-haspopup="dialog">alternate-script property | alternate-script特性</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#attrdef-dir" id="index-term-attributes-specifying-base-direction" tabindex="0" aria-haspopup="dialog">attributes specifying base direction | 屬性指定基礎行文方向</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#sec-core-media-types" id="index-term-core-media-types" tabindex="0" aria-haspopup="dialog">core media types | 核心媒體類別</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#spread" id="index-term-create-synthetic-spreads" tabindex="0" aria-haspopup="dialog">create synthetic spreads | 建立同步跨頁</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#change-log" id="index-term-epub-3-3" tabindex="0" aria-haspopup="dialog">EPUB 3.3</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#dfn-epub-container" id="index-term-epub-container" tabindex="0" aria-haspopup="dialog">EPUB container | EPUB容器</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#dfn-epub-content-document" id="index-term-epub-content-documents" tabindex="0" aria-haspopup="dialog">EPUB content documents | EPUB內容文件</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#sec-contentdocs" id="index-term-epub-content-documents-0" tabindex="0" aria-haspopup="dialog">EPUB content documents | EPUB內容文件</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#dfn-epub-navigation-document" id="index-term-epub-navigation-document" tabindex="0" aria-haspopup="dialog">EPUB navigation document | EPUB導覽文件</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#sec-nav" id="index-term-epub-navigation-document-0" tabindex="0" aria-haspopup="dialog">EPUB navigation document | EPUB導覽文件</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#dfn-epub-publication" id="index-term-epub-publications" tabindex="0" aria-haspopup="dialog">EPUB publications | EPUB出版品</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#dfn-epub-spine" id="index-term-epub-spine" tabindex="0" aria-haspopup="dialog">EPUB spine | EPUB書脊</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#dfn-epub-type" id="index-term-epub-type-attribute" tabindex="0" aria-haspopup="dialog"><code>epub:type</code> attribute | <code>epub:type</code>屬性</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#app-structural-semantics" id="index-term-expressing-structural-semantics" tabindex="0" aria-haspopup="dialog">Expressing structural semantics | 表達結構語意</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#sec-fixed-layouts" id="index-term-fixed-layout-xhtml-content-documents" tabindex="0" aria-haspopup="dialog">fixed-layout XHTML content documents | 固定版面XHTML內容文件</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#sec-font-obfuscation" id="index-term-font-obfuscation" tabindex="0" aria-haspopup="dialog">Font Obfuscation | 字型模糊化</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#sec-nav-doc-use-spine" id="index-term-hidden-attribute" tabindex="0" aria-haspopup="dialog"><code>hidden</code> attribute | <code>hidden</code>屬性</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#page-spread" id="index-term-how-to-position-pages" tabindex="0" aria-haspopup="dialog">how to position pages | 如何擺設頁面</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#dfn-link" id="index-term-link-element" tabindex="0" aria-haspopup="dialog"><code>link</code> element | <code>link</code>元素</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#sec-media-overlays" id="index-term-media-overlays" tabindex="0" aria-haspopup="dialog">Media overlays | 媒體層疊</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#sec-pkg-metadata" id="index-term-metadata-section" tabindex="0" aria-haspopup="dialog">metadata section | 後設資料區塊</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#sec-ocf" id="index-term-open-container-format-ofc" tabindex="0" aria-haspopup="dialog">Open Container Format (OFC) | 開放容器格式（OFC）</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#orientation" id="index-term-orientation-of-pages" tabindex="0" aria-haspopup="dialog">orientation of pages | 頁面方向</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#dfn-package-document" id="index-term-package-document" tabindex="0" aria-haspopup="dialog">package document | 包裝文件</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#sec-package-doc" id="index-term-package-document-0" tabindex="0" aria-haspopup="dialog">Package document | 包裝文件</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#sec-fxl-content-dimensions" id="index-term-page-dimensions" tabindex="0" aria-haspopup="dialog">page dimensions | 頁面尺寸</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#attrdef-spine-page-progression-direction" id="index-term-page-progression-direction" tabindex="0" aria-haspopup="dialog">page-progression-direction</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#dfn-epub-reading-system" id="index-term-reading-system" tabindex="0" aria-haspopup="dialog">reading system | 閱讀系統</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#sec-reflowable-layouts" id="index-term-reflowable-layouts" tabindex="0" aria-haspopup="dialog">Reflowable layouts | 可重排版面</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#sec-scripted-content" id="index-term-scripting" tabindex="0" aria-haspopup="dialog">Scripting | 腳本</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#dfn-spine" id="index-term-spine-element" tabindex="0" aria-haspopup="dialog"><code>spine | 書脊</code> element</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#dfn-unique-identifier" id="index-term-unique-identifier" tabindex="0" aria-haspopup="dialog">unique identifier | 唯一識別碼</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#attrdef-package-unique-identifier" id="index-term-unique-identifier-attribute" tabindex="0" aria-haspopup="dialog"><code>unique-identifier</code> attribute | <code>unique-identifier</code>屬性</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-33/#dfn-xhtml-content-document" id="index-term-xhtml-content-document" tabindex="0" aria-haspopup="dialog">XHTML content document | XHTML內容屬性</span>
+  </li>
+        </ul>
+      </li>
+<li>
+         [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-a11y-11">EPUB-A11Y-11</a></cite>] 定義以下術語:
+        <ul>
+          <li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-a11y-11/#change-log" id="index-term-epub-accessibility-1-1" tabindex="0" aria-haspopup="dialog">EPUB Accessibility 1.1 | EPUB無障礙輔助性 1.1 </span>
+  </li>
+        </ul>
+      </li>
+<li>
+         [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-rs-33">EPUB-RS-33</a></cite>] 定義以下術語:
+        <ul>
+          <li>
+    <span class="index-term" data-href="https://www.w3.org/TR/epub-rs-33/#change-log" id="index-term-epub-reading-systems-3-3" tabindex="0" aria-haspopup="dialog">EPUB reading systems 3.3 | EPUB 3.3 閱讀系統</span>
+  </li>
+        </ul>
+      </li>
+<li>
+         [<cite><a class="bibref" data-link-type="biblio" href="#bib-html">HTML</a></cite>]  定義以下術語:
+        <ul>
+          <li>
+    <span class="index-term" data-href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element" id="index-term-aside-element" tabindex="0" aria-haspopup="dialog"><code>aside</code> element | <code>aside</code>元素</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://html.spec.whatwg.org/multipage/media.html#audio" id="index-term-audio-element" tabindex="0" aria-haspopup="dialog"><code>audio</code> element | <code>audio</code>元素</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element" id="index-term-nav-element" tabindex="0" aria-haspopup="dialog"><code>nav</code> element | <code>nav</code>元素</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-ruby-element" id="index-term-ruby-element" tabindex="0" aria-haspopup="dialog"><code>ruby</code> element | <code>ruby</code> 元素</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://html.spec.whatwg.org/multipage/scripting.html#script" id="index-term-script-element" tabindex="0" aria-haspopup="dialog"><code>script</code> element | <code>script</code>元素</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element" id="index-term-section-element" tabindex="0" aria-haspopup="dialog"><code>section</code> element | <code>section</code>元素</span>
+  </li>
+<li>
+    <span class="index-term" data-href="https://html.spec.whatwg.org/multipage/media.html#video" id="index-term-video-element" tabindex="0" aria-haspopup="dialog"><code>video</code> element | <code>video</code>元素</span>
+  </li>
+        </ul>
+      </li>
+  </ul>
+  </section></section>
+		<section id="ack" class="appendix informative"><div class="header-wrapper"><h2 id="d-acknowledgements"><bdi class="secno">D. </bdi>致謝</h2><a class="self-link" href="#ack" aria-label="Permalink for Appendix D."></a></div><p><em>本章節為非規範性。</em></p>
+	
+	<p>規格，就像藝術，就像人類創作。沒有人對EPUB的貢獻多於Garth Conboy，他參與了規格發展的每一步，從最早1999年的OEB 1.0到現在的EPUB 3.3。若沒有Garth的遠見、知識，以及超常的善良本性，這一切都不會成真。我們將EPUB 3.3版貢獻於對他的紀念，Garth，我們永遠欠你一筆。</p>
+	<p>以下EPUB 3工作小組的成員對本文件的產製有所貢獻：</p>
+	<ul class="ack">
+		<li>Will AWAD (Newgen Knowledgeworks)</li>
+		<li>Sofia Bautista (Legible Media Inc.)</li>
+		<li>Laura Brady (Legible Media Inc.)</li>
+		<li>Leah Brochu (National Network for Equitable Library Service)</li>
+		<li>Matthew C. Chan (House of Anansi Press)</li>
+		<li>Yu-Wei Chang (Taiwan Digital Publishing Forum)</li>
+		<li>Fred Chasen (Scribd)</li>
+		<li>Juan Corona (Legible Media Inc.)</li>
+		<li>Dave Cramer (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Expert, chair)</li>
+		<li>Romain Deltour (DAISY Consortium)</li>
+		<li>Marisa DeMeglio (DAISY Consortium)</li>
+		<li>Brady Duga (Google LLC)</li>
+		<li>Reinaldo Ferraz (NIC.br - Brazilian Network Information Center)</li>
+		<li>John Foliot (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Expert)</li>
+		<li>Teenya Franklin (Pearson plc)</li>
+		<li>Hadrien Gardeur (EDRLab)</li>
+		<li>Matt Garrish (DAISY Consortium)</li>
+		<li>Jen Goulden (Crawford Technologies)</li>
+		<li>Ivan Herman (<abbr title="World Wide Web Consortium">W3C</abbr>, staff contact)</li>
+		<li>Tetsu Hoshino (Kodansha, Publishers, Ltd.)</li>
+		<li>Norikazu Ishizu (Kadokawa Corporation)</li>
+		<li>Norihito IYENAGA (Kodansha, Publishers, Ltd.)</li>
+		<li>Rick Johnson (VitalSource Technologies)</li>
+		<li>Ken Jones (Circular Software)</li>
+		<li>Antonio Kamiya (Dentsu Group Inc.)</li>
+		<li>Deborah Kaplan (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Expert)</li>
+		<li>Bill Kasdorf (Book Industry Study Group)</li>
+		<li>George Kerscher (DAISY Consortium)</li>
+		<li>Kazuhito Kidachi (Mitsue-Links Co., Ltd.)</li>
+		<li>Masakazu Kitahara (Voyager Japan, Inc.)</li>
+		<li>Toshiaki Koike (Voyager Japan, Inc.)</li>
+		<li>Ryo Kuroda (ACCESS CO., LTD.)</li>
+		<li>Charles LaPierre (Benetech)</li>
+		<li>Dan Lazin (Google LLC)</li>
+		<li>Laurent Le Meur (EDRLab)</li>
+		<li>Victoria Lee (Apple, Inc.)</li>
+		<li>Farrah Little (National Network for Equitable Library Service)</li>
+		<li>Victor Lopes (Apple, Inc.)</li>
+		<li>Karan Malhotra (Newgen Knowledgeworks)</li>
+		<li>Makoto Murata (DAISY Consortium)</li>
+		<li>Cristina Mussinelli (Fondazione LIA)</li>
+		<li>Yoichiro Nagao (Kodansha, Publishers, Ltd.)</li>
+		<li>Theresa O'Connor (Apple, Inc.)</li>
+		<li>Yoshinori Ohmura (SHUEISHA Inc.)</li>
+		<li>Rachel Osolen (National Network for Equitable Library Service)</li>
+		<li>Gregorio Pellegrino (Fondazione LIA)</li>
+		<li>Vijaya Gowri Perumal (Newgen Knowledgeworks)</li>
+		<li>Wendy Reid (Rakuten Group, Inc., chair)</li>
+		<li>John Roque (Apple, Inc.)</li>
+		<li>Leonard Rosenthol (Adobe)</li>
+		<li>Shinobu Sato (Kadokawa Corporation)</li>
+		<li>Ben Schroeter (Pearson plc)</li>
+		<li>Daihei Shiohama (MEDIA DO Co., Ltd.)</li>
+		<li>Tzviya Siegman (Wiley)</li>
+		<li>Avneesh Singh (DAISY Consortium)</li>
+		<li>MOTOI SUZUKI (SHUEISHA Inc.)</li>
+		<li>Yutaka Suzuki (Kadokawa Corporation)</li>
+		<li>Kyrce Swenson (Pearson plc)</li>
+		<li>Shinya Takami (Kadokawa Corporation, chair)</li>
+		<li>Mateus Teixeira (W. W. Norton &amp; Company)</li>
+		<li>Yukio Tomikura (Kodansha, Publishers, Ltd.)</li>
+		<li>Aimee Ubbink (Crawford Technologies)</li>
+		<li>Daniel Weck (DAISY Consortium)</li>
+		<li>Zheng Xu (Gardenia Corp)</li>
+		<li>Fuqiao Xue (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+		<li>Evan Yamanishi (W. W. Norton &amp; Company)</li>
+		<li>Osamu Yoshiba (Kodansha, Publishers, Ltd.)</li>
+		<li>Junichi Yoshii (Kodansha, Publishers, Ltd.)</li>
+		<li>Naomi Yoshizawa (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+		<li>Laurence Zaysser (EDRLab)</li>
+	</ul>
+	<p>此外，工作小組要特別感謝EPUB 3規格與總覽的前任編輯： Garth Conboy, Marisa DeMeglio, Elika J. Etemad, Markus Gylling, William McCoy,
+		MURATA Makoto, James Pritchett, Tzviya Siegman, and Daniel Weck.</p>
+</section>
+
+	
+
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="e-references"><bdi class="secno">E. </bdi>參考資料</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix E."></a></div><section id="informative-references"><div class="header-wrapper"><h3 id="e-1-informative-references"><bdi class="secno">E.1 </bdi>參考性資料</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix E.1"></a></div>
+    
+    <dl class="bibliography"><dt id="bib-csssnapshot">[csssnapshot]</dt><dd>
+      <a href="https://www.w3.org/TR/CSS/"><cite>CSS Snapshot</cite></a>. URL: <a href="https://www.w3.org/TR/CSS/">https://www.w3.org/TR/CSS/</a>
+    </dd><dt id="bib-ecmascript">[ecmascript]</dt><dd>
+      <a href="https://tc39.es/ecma262/multipage/"><cite>ECMAScript Language Specification</cite></a>.  Ecma International. URL: <a href="https://tc39.es/ecma262/multipage/">https://tc39.es/ecma262/multipage/</a>
+    </dd><dt id="bib-epub-31">[epub-31]</dt><dd>
+      <a href="http://idpf.org/epub/31/spec/epub-spec-20170105.html"><cite>EPUB 3.1</cite></a>. Markus Gylling; Tzviya Siegman; Matt Garrish.  IDPF. 05 January 2017. URL: <a href="http://idpf.org/epub/31/spec/epub-spec-20170105.html">http://idpf.org/epub/31/spec/epub-spec-20170105.html</a>
+    </dd><dt id="bib-epub-32">[epub-32]</dt><dd>
+      <a href="https://www.w3.org/publishing/epub32/epub-spec.html"><cite>EPUB 3.2</cite></a>. Matt Garrish; Dave Cramer.  EPUB 3 Community Group. 08 May 2019. URL: <a href="https://www.w3.org/publishing/epub32/epub-spec.html">https://www.w3.org/publishing/epub32/epub-spec.html</a>
+    </dd><dt id="bib-epub-33">[epub-33]</dt><dd>
+      <a href="https://www.w3.org/TR/epub-33/"><cite>EPUB 3.3</cite></a>. Matt Garrish; Ivan Herman; Dave Cramer.  W3C. 3 October 2022. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/epub-33/">https://www.w3.org/TR/epub-33/</a>
+    </dd><dt id="bib-epub-a11y-11">[epub-a11y-11]</dt><dd>
+      <a href="https://www.w3.org/TR/epub-a11y-11/"><cite>EPUB Accessibility 1.1</cite></a>. Matt Garrish; George Kerscher; Charles LaPierre; Gregorio Pellegrino; Avneesh Singh.  W3C. 14 September 2022. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/epub-a11y-11/">https://www.w3.org/TR/epub-a11y-11/</a>
+    </dd><dt id="bib-epub-a11y-eaa-mapping">[epub-a11y-eaa-mapping]</dt><dd>
+      <a href="https://www.w3.org/TR/epub-a11y-eaa-mapping/"><cite>EPUB Accessibility - EU Accessibility Act Mapping</cite></a>. Cristina Mussinelli; Luc Audrain; Gregorio Pellegrino.  W3C. 10 August 2022. W3C Working Group Note. URL: <a href="https://www.w3.org/TR/epub-a11y-eaa-mapping/">https://www.w3.org/TR/epub-a11y-eaa-mapping/</a>
+    </dd><dt id="bib-epub-a11y-tech-11">[epub-a11y-tech-11]</dt><dd>
+      <a href="https://www.w3.org/TR/epub-a11y-tech-11/"><cite>EPUB Accessibility Techniques 1.1</cite></a>. Matt Garrish; George Kerscher; Charles LaPierre; Gregorio Pellegrino; Avneesh Singh.  W3C. 13 September 2022. W3C Working Group Note. URL: <a href="https://www.w3.org/TR/epub-a11y-tech-11/">https://www.w3.org/TR/epub-a11y-tech-11/</a>
+    </dd><dt id="bib-epub-multi-rend-11">[epub-multi-rend-11]</dt><dd>
+      <a href="https://www.w3.org/TR/epub-multi-rend-11/"><cite>EPUB 3 Multiple-Rendition Publications 1.1</cite></a>. Matt Garrish.  W3C. 10 August 2022. W3C Working Group Note. URL: <a href="https://www.w3.org/TR/epub-multi-rend-11/">https://www.w3.org/TR/epub-multi-rend-11/</a>
+    </dd><dt id="bib-epub-rs-33">[epub-rs-33]</dt><dd>
+      <a href="https://www.w3.org/TR/epub-rs-33/"><cite>EPUB Reading Systems 3.3</cite></a>. Matt Garrish; Ivan Herman; Dave Cramer.  W3C. 3 October 2022. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/epub-rs-33/">https://www.w3.org/TR/epub-rs-33/</a>
+    </dd><dt id="bib-epub-ssv-11">[epub-ssv-11]</dt><dd>
+      <a href="https://www.w3.org/TR/epub-ssv-11/"><cite>EPUB 3 Structural Semantics Vocabulary 1.1</cite></a>. Ivan Herman; Matt Garrish.  W3C. 10 August 2022. W3C Working Group Note. URL: <a href="https://www.w3.org/TR/epub-ssv-11/">https://www.w3.org/TR/epub-ssv-11/</a>
+    </dd><dt id="bib-epub-tts-10">[epub-tts-10]</dt><dd>
+      <a href="https://www.w3.org/TR/epub-tts-10/"><cite>EPUB 3 Text-to-Speech Enhancements 1.0</cite></a>. Matt Garrish.  W3C. 10 August 2022. W3C Working Group Note. URL: <a href="https://www.w3.org/TR/epub-tts-10/">https://www.w3.org/TR/epub-tts-10/</a>
+    </dd><dt id="bib-epubchanges-30">[epubchanges-30]</dt><dd>
+      <a href="http://idpf.org/epub/30/spec/epub30-changes-20111011.html"><cite>EPUB 3 Changes from 2.0.1</cite></a>. William McCoy; Markus Gylling.  IDPF. 11 October 2011. URL: <a href="http://idpf.org/epub/30/spec/epub30-changes-20111011.html">http://idpf.org/epub/30/spec/epub30-changes-20111011.html</a>
+    </dd><dt id="bib-epubchanges-301">[epubchanges-301]</dt><dd>
+      <a href="http://idpf.org/epub/301/spec/epub-changes-20140626.html"><cite>EPUB 3.0.1 Changes from 3.0</cite></a>. Markus Gylling; Matt Garrish.  IDPF. 26 June 2014. URL: <a href="http://idpf.org/epub/301/spec/epub-changes-20140626.html">http://idpf.org/epub/301/spec/epub-changes-20140626.html</a>
+    </dd><dt id="bib-epubchanges-31">[epubchanges-31]</dt><dd>
+      <a href="http://idpf.org/epub/31/spec/epub-changes-20170105.html"><cite>EPUB 3.1 Changes from 3.0.1</cite></a>. Markus Gylling; Matt Garrish.  IDPF. 05 January 2017. URL: <a href="http://idpf.org/epub/31/spec/epub-changes-20170105.html">http://idpf.org/epub/31/spec/epub-changes-20170105.html</a>
+    </dd><dt id="bib-epubchanges-32">[epubchanges-32]</dt><dd>
+      <a href="https://www.w3.org/publishing/epub32/epub-changes.html"><cite>EPUB 3.2 Changes</cite></a>. Matt Garrish; Dave Cramer.  EPUB 3 Community Group. 08 May 2019. URL: <a href="https://www.w3.org/publishing/epub32/epub-changes.html">https://www.w3.org/publishing/epub32/epub-changes.html</a>
+    </dd><dt id="bib-epubcontentdocs-30">[epubcontentdocs-30]</dt><dd>
+      <a href="http://idpf.org/epub/30/spec/epub30-contentdocs-20111011.html"><cite>EPUB Content Documents 3.0</cite></a>. Markus Gylling; William McCoy; Elika J. Etimad; Matt Garrish.  IDPF. 11 October 2011. URL: <a href="http://idpf.org/epub/30/spec/epub30-contentdocs-20111011.html">http://idpf.org/epub/30/spec/epub30-contentdocs-20111011.html</a>
+    </dd><dt id="bib-epubcontentdocs-301">[epubcontentdocs-301]</dt><dd>
+      <a href="http://idpf.org/epub/301/spec/epub-contentdocs-20140626.html"><cite>EPUB Content Documents 3.0.1</cite></a>. Markus Gylling; William McCoy; Elika J. Etimad; Matt Garrish.  IDPF. 26 June 2014. URL: <a href="http://idpf.org/epub/301/spec/epub-contentdocs-20140626.html">http://idpf.org/epub/301/spec/epub-contentdocs-20140626.html</a>
+    </dd><dt id="bib-epubcontentdocs-31">[epubcontentdocs-31]</dt><dd>
+      <a href="http://idpf.org/epub/31/spec/epub-contentdocs-20170105.html"><cite>EPUB Content Documents 3.1</cite></a>. Markus Gylling; William McCoy; Dave Cramer; Elika J. Etimad; Matt Garrish.  IDPF. 05 January 2017. URL: <a href="http://idpf.org/epub/31/spec/epub-contentdocs-20170105.html">http://idpf.org/epub/31/spec/epub-contentdocs-20170105.html</a>
+    </dd><dt id="bib-epubcontentdocs-32">[epubcontentdocs-32]</dt><dd>
+      <a href="https://www.w3.org/publishing/epub32/epub-contentdocs.html"><cite>EPUB Content Documents 3.2</cite></a>. Dave Cramer; Matt Garrish.  EPUB 3 Community Group. 08 May 2019. URL: <a href="https://www.w3.org/publishing/epub32/epub-contentdocs.html">https://www.w3.org/publishing/epub32/epub-contentdocs.html</a>
+    </dd><dt id="bib-epubmediaoverlays-30">[epubmediaoverlays-30]</dt><dd>
+      <a href="http://idpf.org/epub/30/spec/epub30-mediaoverlays-20111011.html"><cite>EPUB Media Overlays 3.0</cite></a>. Marisa DeMeglio; Daniel Weck.  IDPF. 11 October 2011. URL: <a href="http://idpf.org/epub/30/spec/epub30-mediaoverlays-20111011.html">http://idpf.org/epub/30/spec/epub30-mediaoverlays-20111011.html</a>
+    </dd><dt id="bib-epubmediaoverlays-301">[epubmediaoverlays-301]</dt><dd>
+      <a href="http://idpf.org/epub/301/spec/epub-mediaoverlays-20140626.html"><cite>EPUB Media Overlays 3.0.1</cite></a>. Marisa DeMeglio; Daniel Weck.  IDPF. 26 June 2014. URL: <a href="http://idpf.org/epub/301/spec/epub-mediaoverlays-20140626.html">http://idpf.org/epub/301/spec/epub-mediaoverlays-20140626.html</a>
+    </dd><dt id="bib-epubmediaoverlays-31">[epubmediaoverlays-31]</dt><dd>
+      <a href="http://idpf.org/epub/31/spec/epub-mediaoverlays-20170105.html"><cite>EPUB Media Overlays 3.1</cite></a>. Marisa DeMeglio; Daniel Weck.  IDPF. 05 January 2017. URL: <a href="http://idpf.org/epub/31/spec/epub-mediaoverlays-20170105.html">http://idpf.org/epub/31/spec/epub-mediaoverlays-20170105.html</a>
+    </dd><dt id="bib-epubmediaoverlays-32">[epubmediaoverlays-32]</dt><dd>
+      <a href="https://www.w3.org/publishing/epub32/epub-mediaoverlays.html"><cite>EPUB Media Overlays 3.2</cite></a>. Marisa DeMeglio; Daniel Weck.  EPUB 3 Community Group. 08 May 2019. URL: <a href="https://www.w3.org/publishing/epub32/epub-mediaoverlays.html">https://www.w3.org/publishing/epub32/epub-mediaoverlays.html</a>
+    </dd><dt id="bib-epubpackages-31">[epubpackages-31]</dt><dd>
+      <a href="http://idpf.org/epub/31/spec/epub-packages-20170105.html"><cite>EPUB Packages 3.1</cite></a>. Markus Gylling; William McCoy; Matt Garrish.  IDPF. 05 January 2017. URL: <a href="http://idpf.org/epub/31/spec/epub-packages-20170105.html">http://idpf.org/epub/31/spec/epub-packages-20170105.html</a>
+    </dd><dt id="bib-epubpackages-32">[epubpackages-32]</dt><dd>
+      <a href="https://www.w3.org/publishing/epub32/epub-packages.html"><cite>EPUB Packages 3.2</cite></a>. Matt Garrish; Dave Cramer.  EPUB 3 Community Group. 08 May 2019. URL: <a href="https://www.w3.org/publishing/epub32/epub-packages.html">https://www.w3.org/publishing/epub32/epub-packages.html</a>
+    </dd><dt id="bib-epubpublications-30">[epubpublications-30]</dt><dd>
+      <a href="http://idpf.org/epub/30/spec/epub30-publications-20111011.html"><cite>EPUB Publications 3.0</cite></a>. Markus Gylling; William McCoy; Matt Garrish.  IDPF. 11 October 2011. URL: <a href="http://idpf.org/epub/30/spec/epub30-publications-20111011.html">http://idpf.org/epub/30/spec/epub30-publications-20111011.html</a>
+    </dd><dt id="bib-epubpublications-301">[epubpublications-301]</dt><dd>
+      <a href="http://idpf.org/epub/301/spec/epub-publications-20140626.html"><cite>EPUB Publications 3.0.1</cite></a>. Markus Gylling; William McCoy; Matt Garrish.  IDPF. 26 June 2014. URL: <a href="http://idpf.org/epub/301/spec/epub-publications-20140626.html">http://idpf.org/epub/301/spec/epub-publications-20140626.html</a>
+    </dd><dt id="bib-html">[html]</dt><dd>
+      <a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Anne van Kesteren; Domenic Denicola; Ian Hickson; Philip Jägenstedt; Simon Pieters.  WHATWG. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
+    </dd><dt id="bib-json-ld">[json-ld]</dt><dd>
+      <a href="https://www.w3.org/TR/json-ld/"><cite>JSON-LD 1.0</cite></a>. Manu Sporny; Gregg Kellogg; Markus Lanthaler.  W3C. 3 November 2020. W3C Recommendation. URL: <a href="https://www.w3.org/TR/json-ld/">https://www.w3.org/TR/json-ld/</a>
+    </dd><dt id="bib-microdata">[microdata]</dt><dd>
+      <a href="https://www.w3.org/TR/microdata/"><cite>HTML Microdata</cite></a>. Chaals Nevile; Dan Brickley; Ian Hickson.  W3C. 28 January 2021. W3C Working Group Note. URL: <a href="https://www.w3.org/TR/microdata/">https://www.w3.org/TR/microdata/</a>
+    </dd><dt id="bib-ocf-201">[ocf-201]</dt><dd>
+      <a href="http://idpf.org/epub/20/spec/OCF_2.0.1_draft.doc"><cite>EPUB Open Container Format (OCF) 2.0.1</cite></a>.  IDPF. 04 September 2010. URL: <a href="http://idpf.org/epub/20/spec/OCF_2.0.1_draft.doc">http://idpf.org/epub/20/spec/OCF_2.0.1_draft.doc</a>
+    </dd><dt id="bib-ocf-30">[ocf-30]</dt><dd>
+      <a href="http://idpf.org/epub/30/spec/epub30-ocf-20111011.html"><cite>EPUB Open Container Format (OCF) 3.0</cite></a>. James Pritchett; Markus Gylling.  IDPF. 11 October 2011. URL: <a href="http://idpf.org/epub/30/spec/epub30-ocf-20111011.html">http://idpf.org/epub/30/spec/epub30-ocf-20111011.html</a>
+    </dd><dt id="bib-ocf-301">[ocf-301]</dt><dd>
+      <a href="http://idpf.org/epub/301/spec/epub-ocf-20140626.html"><cite>EPUB Open Container Format (OCF) 3.0.1</cite></a>. James Pritchett; Markus Gylling.  IDPF. 26 June 2014. URL: <a href="http://idpf.org/epub/301/spec/epub-ocf-20140626.html">http://idpf.org/epub/301/spec/epub-ocf-20140626.html</a>
+    </dd><dt id="bib-ocf-31">[ocf-31]</dt><dd>
+      <a href="http://idpf.org/epub/31/spec/epub-ocf-20170105.html"><cite>Open Container Format (OCF) 3.1</cite></a>. James Pritchett; Markus Gylling.  IDPF. 05 January 2017. URL: <a href="http://idpf.org/epub/31/spec/epub-ocf-20170105.html">http://idpf.org/epub/31/spec/epub-ocf-20170105.html</a>
+    </dd><dt id="bib-ocf-32">[ocf-32]</dt><dd>
+      <a href="https://www.w3.org/publishing/epub32/epub-ocf.html"><cite>Open Container Format (OCF) 3.2</cite></a>. Garth Conboy.  EPUB 3 Community Group. 08 May 2019. URL: <a href="https://www.w3.org/publishing/epub32/epub-ocf.html">https://www.w3.org/publishing/epub32/epub-ocf.html</a>
+    </dd><dt id="bib-opentype">[opentype]</dt><dd>
+      <a href="http://www.microsoft.com/typography/otspec/default.htm"><cite>OpenType specification</cite></a>.  Microsoft. URL: <a href="http://www.microsoft.com/typography/otspec/default.htm">http://www.microsoft.com/typography/otspec/default.htm</a>
+    </dd><dt id="bib-opf-201">[opf-201]</dt><dd>
+      <a href="http://idpf.org/epub/20/spec/OPF_2.0.1_draft.htm"><cite>Open Packaging Format 2.0.1</cite></a>.  IDPF. 04 September 2010. URL: <a href="http://idpf.org/epub/20/spec/OPF_2.0.1_draft.htm">http://idpf.org/epub/20/spec/OPF_2.0.1_draft.htm</a>
+    </dd><dt id="bib-ops-201">[ops-201]</dt><dd>
+      <a href="http://idpf.org/epub/20/spec/OPS_2.0.1_draft.htm"><cite>Open Publication Structure 2.0.1</cite></a>.  IDPF. 04 September 2010. URL: <a href="http://idpf.org/epub/20/spec/OPS_2.0.1_draft.htm">http://idpf.org/epub/20/spec/OPS_2.0.1_draft.htm</a>
+    </dd><dt id="bib-rdfa-in-html">[rdfa-in-html]</dt><dd>
+      <a href="https://www.w3.org/TR/html-rdfa/"><cite>HTML+RDFa 1.1 - Second Edition</cite></a>. Manu Sporny.  W3C. 17 March 2015. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html-rdfa/">https://www.w3.org/TR/html-rdfa/</a>
+    </dd><dt id="bib-svg">[svg]</dt><dd>
+      <a href="https://www.w3.org/TR/SVG/"><cite>SVG</cite></a>.  W3C. URL: <a href="https://www.w3.org/TR/SVG/">https://www.w3.org/TR/SVG/</a>
+    </dd><dt id="bib-unicode">[unicode]</dt><dd>
+      <a href="https://www.unicode.org/versions/latest/"><cite>The Unicode Standard</cite></a>.  Unicode Consortium. URL: <a href="https://www.unicode.org/versions/latest/">https://www.unicode.org/versions/latest/</a>
+    </dd><dt id="bib-wcag21">[wcag21]</dt><dd>
+      <a href="https://www.w3.org/TR/WCAG21/"><cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite></a>. Andrew Kirkpatrick; Joshue O'Connor; Alastair Campbell; Michael Cooper.  W3C. 5 June 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a>
+    </dd><dt id="bib-woff">[woff]</dt><dd>
+      <a href="https://www.w3.org/TR/WOFF/"><cite>WOFF File Format 1.0</cite></a>. Jonathan Kew; Tal Leming; Erik van Blokland.  W3C. 13 December 2012. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WOFF/">https://www.w3.org/TR/WOFF/</a>
+    </dd><dt id="bib-woff2">[woff2]</dt><dd>
+      <a href="https://www.w3.org/TR/WOFF2/"><cite>WOFF File Format 2.0</cite></a>. Vladimir Levantovsky; Raph Levien.  W3C. 10 March 2022. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WOFF2/">https://www.w3.org/TR/WOFF2/</a>
+    </dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-alternate-script-property" aria-label="Links in this document to definition: alternate-script property">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#alternate-script" aria-label="Permalink for definition: alternate-script property. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-alternate-script-property-1" title="§ 8. Global language support">§ 8. Global language support</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-attributes-specifying-base-direction" aria-label="Links in this document to definition: attributes specifying base direction">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#attrdef-dir" aria-label="Permalink for definition: attributes specifying base direction. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-attributes-specifying-base-direction-1" title="§ 8. Global language support">§ 8. Global language support</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-core-media-types" aria-label="Links in this document to definition: core media types">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#sec-core-media-types" aria-label="Permalink for definition: core media types. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-core-media-types-1" title="§ 5.2 Multimedia">§ 5.2 Multimedia</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-create-synthetic-spreads" aria-label="Links in this document to definition: create synthetic spreads">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#spread" aria-label="Permalink for definition: create synthetic spreads. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-create-synthetic-spreads-1" title="§ 6.2 Fixed layouts">§ 6.2 Fixed layouts</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-epub-3-3" aria-label="Links in this document to definition: EPUB 3.3">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#change-log" aria-label="Permalink for definition: EPUB 3.3. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-epub-3-3-1" title="§ A.1 Specifications">§ A.1 Specifications</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-3-3-2" title="§ B.6 EPUB 3.3: 2022">§ B.6 EPUB 3.3: 2022</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-epub-container" aria-label="Links in this document to definition: EPUB container">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#dfn-epub-container" aria-label="Permalink for definition: EPUB container. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-epub-container-1" title="§ 1.1 Reading this document">§ 1.1 Reading this document</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-epub-content-documents" aria-label="Links in this document to definition: EPUB content documents">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#dfn-epub-content-document" aria-label="Permalink for definition: EPUB content documents. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-epub-content-documents-1" title="§ 1.1 Reading this document">§ 1.1 Reading this document</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-content-documents-2" title="§ 2. The EPUB container">§ 2. The EPUB container</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-content-documents-3" title="§ 5. Content documents">§ 5. Content documents</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-content-documents-4" title="§ 5.6 Structural semantics">§ 5.6 Structural semantics</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-content-documents-5" title="§ 7. Media overlays">§ 7. Media overlays</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-content-documents-6" title="§ 8. Global language support">§ 8. Global language support</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-epub-content-documents-0" aria-label="Links in this document to definition: EPUB content documents">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#sec-contentdocs" aria-label="Permalink for definition: EPUB content documents. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-epub-content-documents-0-1" title="§ 5. Content documents">§ 5. Content documents</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-epub-navigation-document" aria-label="Links in this document to definition: EPUB navigation document">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#dfn-epub-navigation-document" aria-label="Permalink for definition: EPUB navigation document. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-epub-navigation-document-1" title="§ 1.1 Reading this document">§ 1.1 Reading this document</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-navigation-document-2" title="§ 4.2 Navigation document">§ 4.2 Navigation document</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-epub-navigation-document-0" aria-label="Links in this document to definition: EPUB navigation document">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#sec-nav" aria-label="Permalink for definition: EPUB navigation document. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-epub-navigation-document-0-1" title="§ 4.2 Navigation document">§ 4.2 Navigation document</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-epub-publications" aria-label="Links in this document to definition: EPUB publications">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#dfn-epub-publication" aria-label="Permalink for definition: EPUB publications. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-epub-publications-1" title="§ 1.1 Reading this document">§ 1.1 Reading this document</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-publications-2" title="§ 1.2 Reading the specifications">§ 1.2 Reading the specifications</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-publications-3" title="§ 2. The EPUB container">§ 2. The EPUB container</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-publications-4" title="§ 3. The package document">§ 3. The package document</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-publications-5" title="§ 4.1 Reading order">§ 4.1 Reading order</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-publications-6" title="§ 4.2 Navigation document">§ 4.2 Navigation document</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-publications-7" title="§ 5. Content documents">§ 5. Content documents</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-publications-8" title="§ 5.1 Rendering and CSS">§ 5.1 Rendering and CSS</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-publications-9" title="§ 5.3 Fonts">§ 5.3 Fonts</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-publications-10" title="§ 7. Media overlays">§ 7. Media overlays</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-publications-11" title="§ 8. Global language support">§ 8. Global language support</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-publications-12" title="§ 9. Accessibility">§ 9. Accessibility</a> <a href="#ref-for-index-term-epub-publications-13" title="Reference 2">(2)</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-publications-14" title="§ 10. New and experimental features">§ 10. New and experimental features</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-epub-spine" aria-label="Links in this document to definition: EPUB spine">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#dfn-epub-spine" aria-label="Permalink for definition: EPUB spine. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-epub-spine-1" title="§ 4.1 Reading order">§ 4.1 Reading order</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-epub-spine-2" title="§ 4.2 Navigation document">§ 4.2 Navigation document</a> <a href="#ref-for-index-term-epub-spine-3" title="Reference 2">(2)</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-epub-type-attribute" aria-label="Links in this document to definition: epub:type attribute">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#dfn-epub-type" aria-label="Permalink for definition: epub:type attribute. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-epub-type-attribute-1" title="§ 5.6 Structural semantics">§ 5.6 Structural semantics</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-expressing-structural-semantics" aria-label="Links in this document to definition: Expressing structural semantics">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#app-structural-semantics" aria-label="Permalink for definition: Expressing structural semantics. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-expressing-structural-semantics-1" title="§ 5.6 Structural semantics">§ 5.6 Structural semantics</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-fixed-layout-xhtml-content-documents" aria-label="Links in this document to definition: fixed-layout XHTML content documents">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#sec-fixed-layouts" aria-label="Permalink for definition: fixed-layout XHTML content documents. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-fixed-layout-xhtml-content-documents-1" title="§ 6.2 Fixed layouts">§ 6.2 Fixed layouts</a> <a href="#ref-for-index-term-fixed-layout-xhtml-content-documents-2" title="Reference 2">(2)</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-font-obfuscation" aria-label="Links in this document to definition: Font Obfuscation">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#sec-font-obfuscation" aria-label="Permalink for definition: Font Obfuscation. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-font-obfuscation-1" title="§ 5.3 Fonts">§ 5.3 Fonts</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-hidden-attribute" aria-label="Links in this document to definition: hidden attribute">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#sec-nav-doc-use-spine" aria-label="Permalink for definition: hidden attribute. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-hidden-attribute-1" title="§ 4.2 Navigation document">§ 4.2 Navigation document</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-how-to-position-pages" aria-label="Links in this document to definition: how to position pages">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#page-spread" aria-label="Permalink for definition: how to position pages. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-how-to-position-pages-1" title="§ 6.2 Fixed layouts">§ 6.2 Fixed layouts</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-link-element" aria-label="Links in this document to definition: link element">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#dfn-link" aria-label="Permalink for definition: link element. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-link-element-1" title="§ 3. The package document">§ 3. The package document</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-media-overlays" aria-label="Links in this document to definition: Media overlays">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#sec-media-overlays" aria-label="Permalink for definition: Media overlays. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-media-overlays-1" title="§ 7. Media overlays">§ 7. Media overlays</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-metadata-section" aria-label="Links in this document to definition: metadata section">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#sec-pkg-metadata" aria-label="Permalink for definition: metadata section. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-metadata-section-1" title="§ 3. The package document">§ 3. The package document</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-open-container-format-ofc" aria-label="Links in this document to definition: Open Container Format (OFC)">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#sec-ocf" aria-label="Permalink for definition: Open Container Format (OFC). Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-open-container-format-ofc-1" title="§ 2. The EPUB container">§ 2. The EPUB container</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-orientation-of-pages" aria-label="Links in this document to definition: orientation of pages">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#orientation" aria-label="Permalink for definition: orientation of pages. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-orientation-of-pages-1" title="§ 6.2 Fixed layouts">§ 6.2 Fixed layouts</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-package-document" aria-label="Links in this document to definition: package document">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#dfn-package-document" aria-label="Permalink for definition: package document. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-package-document-1" title="§ 1.1 Reading this document">§ 1.1 Reading this document</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-package-document-2" title="§ 2. The EPUB container">§ 2. The EPUB container</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-package-document-3" title="§ 3. The package document">§ 3. The package document</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-package-document-4" title="§ 8. Global language support">§ 8. Global language support</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-package-document-0" aria-label="Links in this document to definition: Package document">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#sec-package-doc" aria-label="Permalink for definition: Package document. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-package-document-0-1" title="§ 3. The package document">§ 3. The package document</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-page-dimensions" aria-label="Links in this document to definition: page dimensions">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#sec-fxl-content-dimensions" aria-label="Permalink for definition: page dimensions. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-page-dimensions-1" title="§ 6.2 Fixed layouts">§ 6.2 Fixed layouts</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-page-progression-direction" aria-label="Links in this document to definition: page-progression-direction">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#attrdef-spine-page-progression-direction" aria-label="Permalink for definition: page-progression-direction. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-page-progression-direction-1" title="§ 8. Global language support">§ 8. Global language support</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-reading-system" aria-label="Links in this document to definition: reading system">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#dfn-epub-reading-system" aria-label="Permalink for definition: reading system. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-reading-system-1" title="§ 1.2 Reading the specifications">§ 1.2 Reading the specifications</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-reading-system-2" title="§ 4.2 Navigation document">§ 4.2 Navigation document</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-reading-system-3" title="§ 5.1 Rendering and CSS">§ 5.1 Rendering and CSS</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-reading-system-4" title="§ 5.6 Structural semantics">§ 5.6 Structural semantics</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-reading-system-5" title="§ 10. New and experimental features">§ 10. New and experimental features</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-reflowable-layouts" aria-label="Links in this document to definition: Reflowable layouts">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#sec-reflowable-layouts" aria-label="Permalink for definition: Reflowable layouts. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-reflowable-layouts-1" title="§ 6.1 Reflowable layouts">§ 6.1 Reflowable layouts</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-scripting" aria-label="Links in this document to definition: Scripting">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#sec-scripted-content" aria-label="Permalink for definition: Scripting. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-scripting-1" title="§ 5.4 Scripting">§ 5.4 Scripting</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-spine-element" aria-label="Links in this document to definition: spine element">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#dfn-spine" aria-label="Permalink for definition: spine element. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-spine-element-1" title="§ 3. The package document">§ 3. The package document</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-unique-identifier" aria-label="Links in this document to definition: unique identifier">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#dfn-unique-identifier" aria-label="Permalink for definition: unique identifier. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-unique-identifier-1" title="§ 3. The package document">§ 3. The package document</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-unique-identifier-attribute" aria-label="Links in this document to definition: unique-identifier attribute">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#attrdef-package-unique-identifier" aria-label="Permalink for definition: unique-identifier attribute. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-unique-identifier-attribute-1" title="§ 3. The package document">§ 3. The package document</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-xhtml-content-document" aria-label="Links in this document to definition: XHTML content document">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-33/#dfn-xhtml-content-document" aria-label="Permalink for definition: XHTML content document. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-xhtml-content-document-1" title="§ 4.2 Navigation document">§ 4.2 Navigation document</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-xhtml-content-document-2" title="§ 5. Content documents">§ 5. Content documents</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-xhtml-content-document-3" title="§ 5.2 Multimedia">§ 5.2 Multimedia</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-xhtml-content-document-4" title="§ 5.5 Semantic enrichment">§ 5.5 Semantic enrichment</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-epub-accessibility-1-1" aria-label="Links in this document to definition: EPUB Accessibility 1.1">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-a11y-11/#change-log" aria-label="Permalink for definition: EPUB Accessibility 1.1. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-epub-accessibility-1-1-1" title="§ A.1 Specifications">§ A.1 Specifications</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-epub-reading-systems-3-3" aria-label="Links in this document to definition: EPUB reading systems 3.3">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://www.w3.org/TR/epub-rs-33/#change-log" aria-label="Permalink for definition: EPUB reading systems 3.3. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-epub-reading-systems-3-3-1" title="§ A.1 Specifications">§ A.1 Specifications</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-aside-element" aria-label="Links in this document to definition: aside element">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element" aria-label="Permalink for definition: aside element. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-aside-element-1" title="§ 9. Accessibility">§ 9. Accessibility</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-audio-element" aria-label="Links in this document to definition: audio element">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://html.spec.whatwg.org/multipage/media.html#audio" aria-label="Permalink for definition: audio element. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-audio-element-1" title="§ 5.2 Multimedia">§ 5.2 Multimedia</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-audio-element-2" title="§ 9. Accessibility">§ 9. Accessibility</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-nav-element" aria-label="Links in this document to definition: nav element">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element" aria-label="Permalink for definition: nav element. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-nav-element-1" title="§ 4.2 Navigation document">§ 4.2 Navigation document</a> <a href="#ref-for-index-term-nav-element-2" title="Reference 2">(2)</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-nav-element-3" title="§ 9. Accessibility">§ 9. Accessibility</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-ruby-element" aria-label="Links in this document to definition: ruby element">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-ruby-element" aria-label="Permalink for definition: ruby element. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-ruby-element-1" title="§ 4.2 Navigation document">§ 4.2 Navigation document</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-script-element" aria-label="Links in this document to definition: script element">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://html.spec.whatwg.org/multipage/scripting.html#script" aria-label="Permalink for definition: script element. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-script-element-1" title="§ 5.5 Semantic enrichment">§ 5.5 Semantic enrichment</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-section-element" aria-label="Links in this document to definition: section element">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element" aria-label="Permalink for definition: section element. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-section-element-1" title="§ 9. Accessibility">§ 9. Accessibility</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-index-term-video-element" aria-label="Links in this document to definition: video element">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="https://html.spec.whatwg.org/multipage/media.html#video" aria-label="Permalink for definition: video element. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-index-term-video-element-1" title="§ 5.2 Multimedia">§ 5.2 Multimedia</a> 
+  </li>
+<li>
+    <a href="#ref-for-index-term-video-element-2" title="§ 9. Accessibility">§ 9. Accessibility</a> 
+  </li>
+  </ul>
+    </div><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not( [data-cite] ), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not( [hidden] )")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects [0] .height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a [href] ");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const  [record]  = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter:  ["hidden"]  });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>

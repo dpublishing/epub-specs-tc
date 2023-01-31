@@ -1,0 +1,2029 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 28.0.7">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+span.example-title{text-transform:none}
+:is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
+div.illegal-example{color:red}
+div.illegal-example p{color:#000}
+:is(aside,div).example{border-left-width:.5em;border-left-style:solid;border-color:#e0cb52;background:#fcfaee}
+aside.example div.example{border-left-width:.1em;border-color:#999;background:#fff}
+.example pre{background-color:rgba(0,0,0,.03)}
+</style>
+<style>
+.issue-label{text-transform:initial}
+.warning>p:first-child{margin-top:0}
+.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
+span.warning{padding:.1em .5em .15em}
+.issue.closed span.issue-number{text-decoration:line-through}
+.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}
+.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
+li.task-list-item{list-style:none}
+input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
+.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
+</style>
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font:small Helvetica Neue,sans-serif,Droid Sans Fallback;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a [href] {color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a [href] :hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+em {
+	font-style: normal;
+	font-family: "KaiTi TC", "BiauKai", serif;
+}
+.rfc2119 {
+	font-weight: bold;
+	font-family: sans-serif;
+}
+</style>
+		
+		
+<title>EPUB無障礙輔助性技巧</title>
+		
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+.hljs{background:0 0!important}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a [href] .respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+code{color:#c63501}
+th code{color:inherit}
+a [href] .orcid{padding-left:4px;padding-right:4px}
+a [href] .orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th [scope=row] {background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details [open] {z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details [open] >summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+a [href] .self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+h2,h3,h4,h5,h6{position:relative}
+aside.example .marker>a.self-link{color:inherit}
+:is(h2,h3,h4,h5,h6)>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}
+:is(h2,h3,h4,h5,h6)>a.self-link::before{content:"§";display:block}
+@media (max-width:767px){
+dd{margin-left:0}
+:is(h2,h3,h4,h5,h6)>a.self-link{left:auto;top:auto}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+		
+		
+<style>
+
+			pre,
+			code {
+				white-space: break-spaces !important;
+			}
+</style>
+	
+<meta name="description" content="EPUB Accessibility Techniques defines discovery and content accessibility requirements for EPUB®
+				Publications.">
+<link rel="canonical" href="https://www.w3.org/TR/epub-a11y-tech-11/">
+<style>
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
+.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
+.hljs-literal{color:#0b76c5}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
+.hljs-link{text-decoration:underline}
+</style>
+<style>
+var{position:relative;cursor:pointer}
+var [data-type] ::after,var [data-type] ::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var [data-type] ::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var [data-type] ::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var [data-type] :hover::after,var [data-type] :hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "group": "epub",
+  "wgPublicList": "public-epub-wg",
+  "specStatus": "NOTE",
+  "shortName": "epub-a11y-tech-11",
+  "noRecTrack": true,
+  "edDraftURI": "https://w3c.github.io/epub-specs/epub33/a11y-tech/",
+  "previousPublishDate": "2021-11-25",
+  "previousMaturity": "NOTE",
+  "copyrightStart": "2017",
+  "editors":  [
+    {
+      "name": "Matt Garrish",
+      "company": "DAISY Consortium",
+      "companyURL": "https://www.daisy.org",
+      "w3cid": 51655
+    },
+    {
+      "name": "George Kerscher",
+      "company": "DAISY Consortium",
+      "companyURL": "https://daisy.org",
+      "w3cid": 1460
+    },
+    {
+      "name": "Charles LaPierre",
+      "company": "Benetech",
+      "companyURL": "http://benetech.org",
+      "w3cid": 72055
+    },
+    {
+      "name": "Gregorio Pellegrino",
+      "company": "Fondazione LIA",
+      "companyURL": "https://www.fondazionelia.org",
+      "w3cid": 97111
+    },
+    {
+      "name": "Avneesh Singh",
+      "company": "DAISY Consortium",
+      "companyURL": "https://daisy.org",
+      "w3cid": 75336
+    }
+  ] ,
+  "includePermalinks": true,
+  "permalinkEdge": true,
+  "permalinkHide": false,
+  "diffTool": "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
+  "github": {
+    "repoURL": "https://github.com/w3c/epub-specs",
+    "branch": "main"
+  },
+  "localBiblio": {
+    "A11Y-DISCOV-VOCAB": {
+      "title": "Schema.org Accessibility Properties for Discoverability Vocabulary",
+      "href": "https://www.w3.org/2021/a11y-discov-vocab/latest/",
+      "editors":  [
+        "Charles LaPierre",
+        "Madeleine Rothberg",
+        "Matt Garrish"
+      ] ,
+      "id": "a11y-discov-vocab"
+    },
+    "EPUB-3": {
+      "title": "EPUB 3",
+      "href": "https://www.w3.org/TR/epub/",
+      "publisher": "W3C",
+      "id": "epub-3"
+    },
+    "EPUBMultipleRenditions-10": {
+      "authors":  [
+        "Jim Lester",
+        "Takeshi Kania",
+        "Matt Garrish"
+      ] ,
+      "title": "EPUB Multiple-Rendition Publications 1.0",
+      "href": "http://www.idpf.org/epub/renditions/multiple/epub-multiple-renditions-20150826.html",
+      "date": "26 August 2015",
+      "publisher": "IDPF",
+      "id": "epubmultiplerenditions-10"
+    },
+    "ISO24751-3": {
+      "title": " ISO/IEC 24751-3:2008 Information technology -- Individualized adaptability and accessibility in e-learning, education and training -- Part 3: &quot;Access for all&quot; digital resource description",
+      "href": "http://www.iso.org/iso/catalogue_detail?csnumber=43604",
+      "date": "2008-10-01",
+      "id": "iso24751-3"
+    },
+    "OPF-201": {
+      "title": "Open Packaging Format 2.0.1",
+      "href": "http://www.idpf.org/epub/20/spec/OPF_2.0.1_draft.htm",
+      "date": "04 September 2010",
+      "publisher": "IDPF",
+      "id": "opf-201"
+    },
+    "SWF": {
+      "title": "SWF File Format Specification Version 19",
+      "href": "https://www.adobe.com/content/dam/acom/en/devnet/pdf/swf-file-format-spec.pdf",
+      "date": "2012",
+      "id": "swf"
+    },
+    "WCAG2": {
+      "title": "Web Content Accessibility Guidelines (WCAG) 2",
+      "href": "https://www.w3.org/TR/WCAG2/",
+      "publisher": "W3C",
+      "id": "wcag2"
+    }
+  },
+  "publishDate": "2021-12-08",
+  "publishISODate": "2021-12-08T00:00:00.000Z",
+  "generatedSubtitle": "Group Note 08 December 2021"
+}</script>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-NOTE"></head>
+	<body class="h-entry informative"><div class="head">
+    <a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
+  </a> <h1 id="title" class="title">EPUB無障礙輔助性技巧 1.1</h1>
+    
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#NOTE">W3C小組備忘</a> <time class="dt-published" datetime="2021-12-08">2022年12月31日</time></p>
+    <details open="">
+      <summary>更多關於本文件的細節</summary>
+      <dl>
+        <dt>本版本：</dt><dd>
+                <a class="u-url" href="https://www.w3.org/TR/2021/NOTE-epub-a11y-tech-11-20211208/">https://www.w3.org/TR/2021/NOTE-epub-a11y-tech-11-20211208/</a>
+              </dd><dt>最新發佈版本：</dt><dd>
+                <a href="https://www.w3.org/TR/epub-a11y-tech-11/">https://www.w3.org/TR/epub-a11y-tech-11/</a>
+              </dd>
+        <dt>最新編輯草稿：</dt><dd><a href="https://w3c.github.io/epub-specs/epub33/a11y-tech/">https://w3c.github.io/epub-specs/epub33/a11y-tech/</a></dd>
+        <dt>歷史：</dt><dd>
+      <a href="https://www.w3.org/standards/history/epub-a11y-tech-11">https://www.w3.org/standards/history/epub-a11y-tech-11</a>
+    </dd><dd>
+        <a href="https://github.com/w3c/epub-specs/commits/main">更新歷程</a>
+      </dd>
+        
+        
+        
+        
+        
+        <dt>編輯者：</dt>
+        <dd class="editor p-author h-card vcard" data-editor-id="51655">
+    <span class="p-name fn">Matt Garrish</span> (<a class="p-org org h-org" href="https://www.daisy.org">DAISY Consortium</a>)
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="1460">
+    <span class="p-name fn">George Kerscher</span> (<a class="p-org org h-org" href="https://daisy.org">DAISY Consortium</a>)
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="72055">
+    <span class="p-name fn">Charles LaPierre</span> (<a class="p-org org h-org" href="http://benetech.org">Benetech</a>)
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="97111">
+    <span class="p-name fn">Gregorio Pellegrino</span> (<a class="p-org org h-org" href="https://www.fondazionelia.org">Fondazione LIA</a>)
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="75336">
+    <span class="p-name fn">Avneesh Singh</span> (<a class="p-org org h-org" href="https://daisy.org">DAISY Consortium</a>)
+  </dd>
+        
+        
+        <dt>提出回饋：</dt><dd>
+        <a href="https://github.com/w3c/epub-specs/">GitHub w3c/epub-specs</a>
+        (<a href="https://github.com/w3c/epub-specs/pulls/">pull requests</a>,
+        <a href="https://github.com/w3c/epub-specs/issues/new/choose">new issue</a>,
+        <a href="https://github.com/w3c/epub-specs/issues/">open issues</a>)
+      </dd><dd>以郵件主旨<em>…訊息主題…</em><kbd> [epub-a11y-tech-11]  </kbd>寄送到<a href="mailto:public-epub-wg@w3.org?subject=%5Bepub-a11y-tech-11%5D%20YOUR%20TOPIC%20HERE">public-epub-wg@w3.org</a>(<a rel="discussion" href="https://lists.w3.org/Archives/Public/public-epub-wg">存檔</a>)</dd>
+        
+        
+      </dl>
+    </details>
+    
+    
+    <p class="copyright">
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+    ©
+    2017-2021
+    
+    <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+    <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
+    <a href="https://ev.buaa.edu.cn/">Beihang</a>). W3C
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+    <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document" title="W3C Software and Document Notice and License">permissive document license</a> rules apply.
+  </p>
+    <hr title="Separator for header">
+  </div>
+		<section id="abstract" class="introductory"><h2 id="abstract-0">摘要<a class="self-link" href="#abstract" aria-label="Permalink for Section"></a></h2>
+			<p>EPUB無障礙輔助性技巧定義了供EPUB®出版品使用的發現性及內容無障礙輔助性規定。</p>
+		</section>
+		<section id="sotd" class="introductory"><h2 id="status-of-this-document">本文件狀態<a class="self-link" href="#sotd" aria-label="Permalink for Section"></a></h2><p><em>本章節解釋了本文件在其發表時的狀態。<abbr title="World Wide Web Consortium">W3C</abbr>的當前出版品清單以及本技術報告的最新版本可於位在https://www.w3.org/TR/之<a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr>技術報告索引</a>中取得。</em></p>
+		<p>本文件由<a href="https://www.w3.org/groups/wg/epub">EPUB 3工作小組</a>透過<a href="https://www.w3.org/2021/Process-20211102/#recs-and-notes">備忘流程</a>發布為小組備忘。</p>
+<p>小組備忘不代表受 <abbr title="World Wide Web Consortium">W3C</abbr>及其會員支持。</p>
+<p>本文件為草稿，而且可能會隨時會被其他文件更新、取代、淘汰。編輯作業尚未完成前，不適宜引用本文件。</p><p data-deliverer="125377"><a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr>專利政策</a>不承擔本文件的任何授權要求與貢獻。</p>
+<p>本文件受 <a id="w3c_process_revision" href="https://www.w3.org/2021/Process-20211102/">2021年11月2日<abbr title="World Wide Web Consortium">W3C</abbr>流程文件</a>所規範。</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">目錄</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">摘要</a></li>
+<li class="tocline"><a class="tocxref" href="#sotd">本文件狀態</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-overview"><bdi class="secno">1. </bdi>概要</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#sec-purpose-scope"><bdi class="secno">1.1 </bdi>目的與範圍</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-terminology"><bdi class="secno">1.2 </bdi>術語</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#sec-about"><bdi class="secno">2. </bdi>關於這些技巧</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-discovery"><bdi class="secno">3. </bdi發現性詮釋資料技巧</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#meta-001"><bdi class="secno">3.1 </bdi>識別主要存取模式</a></li>
+<li class="tocline"><a class="tocxref" href="#meta-002"><bdi class="secno">3.2 </bdi>識別充要存取模式</a></li>
+<li class="tocline"><a class="tocxref" href="#meta-003"><bdi class="secno">3.3 </bdi>識別無障礙輔助性功能</a></li>
+<li class="tocline"><a class="tocxref" href="#meta-004"><bdi class="secno">3.4 </bdi>識別無障礙輔助性危害</a></li>
+<li class="tocline"><a class="tocxref" href="#meta-005"><bdi class="secno">3.5 </bdi>包含無障礙輔助摘要</a></li>
+<li class="tocline"><a class="tocxref" href="#meta-006"><bdi class="secno">3.6 </bdi>識別ARIA適用性</a></li>
+<li class="tocline"><a class="tocxref" href="#meta-007"><bdi class="secno">3.7 </bdi>識別輸入控制手段</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-meta-ex"><bdi class="secno">3.8 </bdi>範例</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#sec-wcag"><bdi class="secno">4. </bdi>WCAG技巧</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#sec-wcag-general"><bdi class="secno">4.1 </bdi>通用指引</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#sec-wcag-general-res"><bdi class="secno">4.1.1 </bdi>有用的資源</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#sec-wcag-content-access"><bdi class="secno">4.2 </bdi>內容存取</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#access-001"><bdi class="secno">4.2.1 </bdi>確保在跨頁時內容順序具意義</a></li>
+<li class="tocline"><a class="tocxref" href="#access-002"><bdi class="secno">4.2.2 </bdi>提供多重存取內容的方式</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#sec-access-002-toc"><bdi class="secno">4.2.2.1 </bdi>關於目錄的備忘</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#access-003"><bdi class="secno">4.2.3 </bdi>確保目錄各項目順序符合線性閱讀順序</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#sec-wcag-semantics"><bdi class="secno">4.3 </bdi>語意</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#sem-001"><bdi class="secno">4.3.1 </bdi>ARIA的roles與<code>epub:type</code></a></li>
+<li class="tocline"><a class="tocxref" href="#sem-002"><bdi class="secno">4.3.2 </bdi>跨整塊內容語意不重複</a></li>
+<li class="tocline"><a class="tocxref" href="#sem-003"><bdi class="secno">4.3.3 </bdi>包含EPUB的landmarks元素</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#sec-sem-003-res"><bdi class="secno">4.3.3.1 </bdi>有用的資源</a></li></ol></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#sec-wcag-titles"><bdi class="secno">4.4 </bdi>書名（Titles）與標題（Headings）</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#titles-001"><bdi class="secno">4.4.1 </bdi>包含出版品與文件titles</a></li>
+<li class="tocline"><a class="tocxref" href="#titles-002"><bdi class="secno">4.4.2 </bdi>確保標題層級能反應出版品樹狀結構</a></li>
+<li class="tocline"><a class="tocxref" href="#titles-003"><bdi class="secno">4.4.3 </bdi>標題的主題或目的</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#sec-wcag-descriptions"><bdi class="secno">4.5 </bdi>描述</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#desc-001"><bdi class="secno">4.5.1 </bdi>包含替代文字描述</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#sec-desc-001-res"><bdi class="secno">4.5.1.1 </bdi>有用的資源</a></li></ol></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#sec-wcag-language"><bdi class="secno">4.6 </bdi>語言</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#lang-001"><bdi class="secno">4.6.1 </bdi>包裝文件的語言</a></li>
+<li class="tocline"><a class="tocxref" href="#lang-002"><bdi class="secno">4.6.2 </bdi>EPUB出版品的語言</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#sec-wcag-text"><bdi class="secno">4.7 </bdi>文字</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#text-001"><bdi class="secno">4.7.1 </bdi>文字內容使用Unicode</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#sec-wcag-alt"><bdi class="secno">4.8 </bdi>無障礙輔助替代方式</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#sec-epub"><bdi class="secno">5. </bdi>EPUB技巧</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#sec-epub-page-markers"><bdi class="secno">5.1 </bdi>頁面標記</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#page-001"><bdi class="secno">5.1.1 </bdi>提供分頁點標記</a></li>
+<li class="tocline"><a class="tocxref" href="#page-002"><bdi class="secno">5.1.2 </bdi>在聲音播放中識別頁碼</a></li>
+<li class="tocline"><a class="tocxref" href="#page-003"><bdi class="secno">5.1.3 </bdi>提供頁面列表</a></li>
+<li class="tocline"><a class="tocxref" href="#page-004"><bdi class="secno">5.1.4 </bdi>識別分頁來源</a></li></ol></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#sec-distribution"><bdi class="secno">6. </bdi>遞送技巧</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#dist-001"><bdi class="secno">6.1 </bdi>不要透過數位權利管理機制限制存取</a></li>
+<li class="tocline"><a class="tocxref" href="#dist-002"><bdi class="secno">6.2 </bdi>在遞送紀錄中包含無障礙輔助詮釋資料</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#sec-dist-002-res"><bdi class="secno">6.2.1 </bdi>有用的資源</a></li></ol></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#change-log"><bdi class="secno">A. </bdi>變更紀錄</a></li>
+<li class="tocline"><a class="tocxref" href="#ack"><bdi class="secno">B. </bdi>致謝</a></li>
+<li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">C. </bdi>參考資料</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">C.1 </bdi>參考性文件</a></li></ol></li></ol></nav>
+		<section id="sec-overview">
+			<h2 id="x1-overview"><bdi class="secno">1. </bdi>概要<a class="self-link" href="#sec-overview" aria-label="Permalink for Section 1."></a></h2>
+
+			<section id="sec-purpose-scope">
+				<h3 id="x1-1-purpose-and-scope"><bdi class="secno">1.1 </bdi>目的與範圍<a class="self-link" href="#sec-purpose-scope" aria-label="Permalink for Section 1.1"></a></h3>
+
+				<p>本文件，EPUB無障礙輔助性技巧，提供了如何達到 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-a11y-11" title="EPUB Accessibility 1.1">EPUB-A11Y-11</a></cite>] 中對EPUB出版品發現性及無障礙輔助性規定的指引。</p>
+
+				<p>本文件並未包含已經在 [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">WCAG2</a></cite>] 中 [<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>] 敘述的技巧與最佳實踐，是因為在應用上沒有明顯的差異。</p>
+			</section>
+
+			<section id="sec-terminology">
+				<h3 id="x1-2-terminology"><bdi class="secno">1.2 </bdi>術語<a class="self-link" href="#sec-terminology" aria-label="Permalink for Section 1.2"></a></h3>
+
+				<p>本文件採用以下定義在EPUB 3 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-3" title="EPUB 3">EPUB-3</a></cite>] 中的術語：</p>
+
+				<ul>
+					<li>
+						<a href="https://www.w3.org/TR/epub/#dfn-epub-content-document">EPUB內容文件</a>
+					</li>
+					<li>
+						<a href="https://www.w3.org/TR/epub/#dfn-epub-creator">EPUB 製作者</a>
+					</li>
+					<li>
+						<a href="https://www.w3.org/TR/epub/#dfn-epub-navigation-document">EPUB導覽文件</a>
+					</li>
+					<li>
+						<a href="https://www.w3.org/TR/epub/#dfn-epub-publication">EPUB出版品</a>
+					</li>
+					<li>
+						<a href="https://www.w3.org/TR/epub/#dfn-media-overlay-document">媒體覆蓋文件</a>
+					</li>
+					<li>
+						<a href="https://www.w3.org/TR/epub/#dfn-package-document">包裝文件</a>
+					</li>
+					<li>
+						<a href="https://www.w3.org/TR/epub/#dfn-epub-reading-system">閱讀系統</a>
+					</li>
+				</ul>
+
+				<p>此外，也使用了 [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">WCAG2</a></cite>] 中的<a href="https://www.w3.org/TR/WCAG2/#dfn-assistive-technologies">輔助科技</a>定義。</p>
+
+				<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>注意事項</span></div><div class="">
+					<p>輔助科技不一定是與閱讀系統分開的應用程式。閱讀系統經常整合了獨立的輔助科技功能，像是文字轉換語音（text-to-speech）播放。</p>
+				</div></div>
+			</section>
+		</section>
+		<section id="sec-about">
+			<h2 id="x2-about-the-techniques"><bdi class="secno">2. </bdi>關於這些技巧<a class="self-link" href="#sec-about" aria-label="Permalink for Section 2."></a></h2>
+
+			<p>在本文件描述的無障礙輔助性技巧，基本上為建議性質。其預期能協助EPUB製作者在製作EPUB出版品時，能夠合乎 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-a11y-11" title="EPUB Accessibility 1.1">EPUB-A11Y-11</a></cite>] 中的規定。但並非適用所有狀況，同時可能也有其他的方法可以達成規格中的規定。以結果而言，本文件不應該被視為指示性質的規定。</p>
+
+			<p>這些技巧也未能指出在數位出版領域中，那些尚未有通用無障礙解決方案存在的問題。<abbr title="World Wide Web Consortium">W3C</abbr>的數位出版興趣小組曾經發佈過一份備忘 [<cite><a class="bibref" data-link-type="biblio" href="#bib-dpub-accessibility" title="Digital Publishing and Accessibility in W3C Documents">DPUB-Accessibility</a></cite>] ，匡列了許多這樣的問題。當有可用的解決方案時，將會被整合到適當的文件中，可能是本文件或者所參照的文件。</p>
+
+			<p>如果EPUB製作者遇到以下以及相關技巧未能涵蓋的問題時，我們建議將其回報到合適的社群以尋求符合無障礙標準的指引。<a href="https://www.w3.org/WAI/IG/"><abbr title="World Wide Web Consortium">W3C</abbr>網頁無障礙興趣小組</a>提供公開的郵件清單可提出符合 [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">WCAG2</a></cite>] 和 [<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>] 規定的問題。<a href="https://github.com/w3c/publ-a11y/issues"><abbr title="World Wide Web Consortium">W3C</abbr>出版社群小組</a>的問題追蹤器可以提供實作專屬於EPUB規定的協助，同時<a href="https://github.com/w3c/epub-specs/issues">EPUB 3工作小組</a>的問題追蹤可用於回報與本文件相關的問題。</p>
+		</section>
+		<section id="sec-discovery">
+			<h2 id="x3-discovery-metadata-techniques"><bdi class="secno">3. </bdi>發現性詮釋資料技巧<a class="self-link" href="#sec-discovery" aria-label="Permalink for Section 3."></a></h2>
+
+			<section id="meta-001">
+				<h3 id="x3-1-identify-primary-access-modes"><bdi class="secno">3.1 </bdi>識別主要存取模式<a class="self-link" href="#meta-001" aria-label="Permalink for Section 3.1"></a></h3>
+
+				<p>存取模式（access mode）的定義為：一種「人類感官知覺系統或者認知官能，使用者可以透過它來處理或感知數位資源的內容。」 [<cite><a class="bibref" data-link-type="biblio" href="#bib-iso24751-3" title=" ISO/IEC 24751-3:2008 Information technology -- Individualized adaptability and accessibility in e-learning, education and training -- Part 3: &amp;quot;Access for all&amp;quot; digital resource description">ISO24751-3</a></cite>] 例如，如果一本EPUB出版品包含影像和影片，就需要視覺感知來取用該內容，如其被創造時的模樣。</p>
+
+				<p>這裡有四種專屬於EPUB出版品，代表性的存取模式：</p>
+
+				<ul>
+					<li>
+						<p><strong>textual（文字）</strong>&nbsp;— 該出版品包含文字內容（標題、段落，等等）。</p>
+					</li>
+					<li>
+						<p><strong>visual（視覺）</strong>&nbsp;— 該出版品包含視覺內容，像是影像、圖像、圖表、動畫，以及影片。</p>
+					</li>
+					<li>
+						<p><strong>auditory（聽覺）</strong>&nbsp;— 該出版品包含聽覺內容，像是獨立的聲音片段，以及影片內容的音軌。</p>
+					</li>
+					<li>
+						<p><strong>tactile（觸覺）</strong>&nbsp;— 該出版品包含觸覺內容，像是嵌入的點字以及觸覺圖表。</p>
+					</li>
+				</ul>
+
+				<p>為了讓使用者能夠判斷是否一本EPUB出版品符合其需求，他們需要知道具有哪些存取模式才能夠消費內容。在 [<cite><a class="bibref" data-link-type="biblio" href="#bib-schema-org" title="Schema.org">schema-org</a></cite>] 的<a href="https://schema.org/accessMode"><code>accessMode</code>特性</a>中列出所有可應用的存取模式，並且為每一種可應用的模式重複該項特性。</p>
+
+				<aside class="example" id="example-metadata-entries-for-textual-and-visual-access-modes"><div class="marker">
+    <a class="self-link" href="#example-metadata-entries-for-textual-and-visual-access-modes">範例<bdi> 1</bdi></a><span class="example-title">: 文字與視覺存取模式的詮釋資料紀錄</span>
+  </div>
+					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+    <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessMode"</span>&gt;</span>
+   textual
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+    <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessMode"</span>&gt;</span>
+   visual
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></code></pre>
+				</aside>
+
+				<p>請注意，內容的存取模式不會反應任何提供的改編。例如一本漫畫書，其中每一則影像都包含替代文字時，並不算擁有文字存取模式。請見下一章節<a href="#meta-002">充要存取模式</a>以了解如何指出具備其他可用的改編，能以其他模式消費內容。</p>
+
+				<p>請參考 [<cite><a class="bibref" data-link-type="biblio" href="#bib-a11y-discov-vocab" title="Schema.org Accessibility Properties for Discoverability Vocabulary">A11Y-DISCOV-VOCAB</a></cite>] 的<a href="https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode"><code>accessMode</code>特性</a>以了解該特性及所使用的值。</p>
+			</section>
+
+			<section id="meta-002">
+				<h3 id="x3-2-identify-sufficient-access-modes"><bdi class="secno">3.2 </bdi>識別充要存取模式<a class="self-link" href="#meta-002" aria-label="Permalink for Section 3.2"></a></h3>
+
+				<p>充要存取模式，是在<a href="#meta-001">基本存取模式</a>之外，以更廣的角度描述潛在的可用性，能讓使用者用來消費該EPUB出版品的方式。基本存取模式用來識別使用在該出版品中媒體的預設性質，充要存取模式識別何種模式、或者模式的組合，可供使用者來閱讀該出版品。充要存取模式用於說明既已提供的可用性與改編，能讓使用者判斷是否該內容能被使用，無關其預設性質。</p>
+
+				<p>充要存取模式透過 [<cite><a class="bibref" data-link-type="biblio" href="#bib-schema-org" title="Schema.org">schema-org</a></cite>] 中的<a href="https://schema.org/accessModeSufficient"><code>accessModeSufficient</code>特性</a>進行識別。並且為每一組充要存取模式重複該項特性。</p>
+
+				<p>例如，假設一本EPUB出版品包含了圖像與圖表，這些影像全部具備描述。那麼該出版品就擁有文字與視覺內容，所以EPUB製作者可以包含以下詮釋資料紀錄以指出：</p>
+
+				<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+    <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessMode"</span>&gt;</span>
+   textual
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+    <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessMode"</span>&gt;</span>
+   visual
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></code></pre>
+
+				<p>該詮釋資料不能明確表示是否文字存取模式為充要，能夠用於閱讀整本出版品，或者視覺存取模式僅是預設的兩種模式之一。這種歧異就是為什麼知道是否「充要」之所以重要的原因。</p>
+
+				<p>EPUB製作者所輸入的第一組充要性詮釋資料將建立文字與視覺需求：</p>
+
+				<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+    <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessModeSufficient"</span>&gt;</span>
+   textual,visual
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></code></pre>
+
+				<p>存取模式在列表中的順序不重要。唯一的規定只有必需要使用逗號區隔。</p>
+
+				<p>由於EPUB製作者為所有影像加入了描述，所以EPUB製作者也可以單獨將文字設定成可用來閱讀內容的充要存取模式：</p>
+
+				<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+    <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessModeSufficient"</span>&gt;</span>
+   textual
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></code></pre>
+
+				<p>若缺少該詮釋資料，使用者將無法知悉他們是否能僅透過文字內容閱讀該出版品。</p>
+
+				<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="4"><span>注意事項</span></div><div class="">
+					<p>如果內容不是全部都由影像構成，就不用提供單一充要存取模式「<code>visual</code>」。會考量把文字內容設定為獨立的一種模式，是因為可以透過視覺以及口語（文字轉換語音）的方式閱讀。而沒有文字的攝影集，可以作為單獨以純視覺作為充要存取模式的作品範例。</p>
+				</div></div>
+
+				<p>本範例的完整資料紀錄組如下：</p>
+
+				<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+    <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessMode"</span>&gt;</span>
+   textual
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+    <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessMode"</span>&gt;</span>
+   visual
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+    <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessModeSufficient"</span>&gt;</span>
+   textual,visual
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+    <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessModeSufficient"</span>&gt;</span>
+   textual
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></code></pre>
+
+				<p>請注意，存取模式是否為充要，往往由EPUB製作者基於提供的資訊是否足夠供理解文字的認知，進行主觀判斷。例如，當無法看一則影片時，就會產生一些資訊丟失，但EPUB製作者可能會認為，抄本可提供所有必要的資訊來理解影片傳達的概念時，視覺或者聽覺上丟失的資訊就不那麼重要。</p>
+
+				<p>請參考 [<cite><a class="bibref" data-link-type="biblio" href="#bib-a11y-discov-vocab" title="Schema.org Accessibility Properties for Discoverability Vocabulary">A11Y-DISCOV-VOCAB</a></cite>] 的<a href="https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient"><code>accessModeSufficient</code>特性</a>以了解該特性及所使用的值。</p>
+
+				<div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>注意事項</span></div><div class="">
+					<p><code>accessModeSufficient</code>特性在EPUB 2或3的包裝文件外，可按照 [<cite><a class="bibref" data-link-type="biblio" href="#bib-schema-org" title="Schema.org">schema-org</a></cite>] 中的定義，提供更為複雜的表述（例如，定義一份值的清單，以及包含一份人可閱讀的描述）。未來版本的EPUB可能會允許更完整的詮釋資料，但本章節所展示的基本表述，已經能夠滿足發現性目的。</p>
+				</div></div>
+			</section>
+
+			<section id="meta-003">
+				<h3 id="x3-3-identify-accessibility-features"><bdi class="secno">3.3 </bdi>識別無障礙輔助性功能<a class="self-link" href="#meta-003" aria-label="Permalink for Section 3.3"></a></h3>
+
+				<p>在一本EPUB出版品中識別所有無障礙輔助性功能以及改編，可以讓使用者判斷是否可使用該內容，所提供的層級比存取模式更為細膩。</p>
+
+				<p>例如，一本數學教科書可能擁有文字存取模式，但光提供存取模式，無法確認是否有MathML標記。一份視覺作品是僅有替代文字，還是包含延伸描述，在評判其可用性時，也是重要需要知道的項目。</p>
+
+				<p>無障礙輔助性功能透過 [<cite><a class="bibref" data-link-type="biblio" href="#bib-schema-org" title="Schema.org">schema-org</a></cite>] 中的<a href="https://schema.org/accessibilityFeature"><code>accessibilityFeature</code>特性</a>進行識別。並且為每一項功能重複該項特性。</p>
+
+				<aside class="example" id="example-metadata-entries-for-mathml-and-alternative-text"><div class="marker">
+    <a class="self-link" href="#example-metadata-entries-for-mathml-and-alternative-text">範例<bdi> 2</bdi></a><span class="example-title">: 具備MathML以及替代文字的詮釋資料紀錄</span>
+  </div>
+					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+    <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessibilityFeature"</span>&gt;</span>
+   MathML
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+    <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessibilityFeature"</span>&gt;</span>
+   alternativeText
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></code></pre>
+				</aside>
+
+				<p>EPUB格式規定一定要有某些無障礙輔助性功能（例如，目錄）。但不需要因此而將這些功能不包含在無障礙輔助性詮釋資料，主要是因為，一般來說，使用者不會注意到這些格式內建的功能。如果不包含這些紀錄，在使用者搜尋特定功能時，將會降低該出版品的發現性。</p>
+
+				<p>請參考 [<cite><a class="bibref" data-link-type="biblio" href="#bib-a11y-discov-vocab" title="Schema.org Accessibility Properties for Discoverability Vocabulary">A11Y-DISCOV-VOCAB</a></cite>] 的<a href="https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature"><code>accessibilityFeature</code>特性</a>以了解該特性及所使用的值。</p>
+			</section>
+
+			<section id="meta-004">
+				<h3 id="x3-4-identify-accessibility-hazards"><bdi class="secno">3.4 </bdi>識別無障礙輔助性危害<a class="self-link" href="#meta-004" aria-label="Permalink for Section 3.4"></a></h3>
+
+				<p>以下列出三種廣受認知，會影響數位內容讀者的危害：</p>
+
+				<ul>
+					<li>
+						<p>閃爍（flashing） — 如果一項資源閃爍超過一秒三下，就能觸發癲癇（例如，影片或者動畫）。請見 [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">WCAG2</a></cite>] <a href="https://www.w3.org/TR/WCAG2/#seizures-and-physical-reactions">指引2.3項</a>。</p>
+					</li>
+					<li>
+						<p>動態模擬（motion simulation） — 如果一項資源模擬動作，就可能讓使用者感到噁心（例如，一個遊戲使用 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">HTML</a></cite>]  <a href="https://html.spec.whatwg.org/multipage/#the-canvas-element"><code>canvas</code>元素</a>繪製，或者使用CSS進行視差捲動）。</p>
+					</li>
+					<li>
+						<p>聲響（sound） — 特定的聲響模式，例如鈴響或者蜂鳴聲，能觸發癲癇，同時，大聲或突然改變聲量也會對使用者造成負面影響。</p>
+					</li>
+				</ul>
+
+				<p>EPUB製作者在EPUB出版品中包含任何會呈現對使用者造成危害的資源時，都必須報告，這些危害會造成真正實體影響。</p>
+
+				<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="4"><span>注意事項</span></div><div class="">
+					<p>聲響危害到底由什麼構成，以及如何測試這些危害等，這份文件的發布時尚未完成標準化。EPUB製作者在額外的指引完善前，必須謹慎指定聲響危害。本指引在這些資訊更為明確時，會進行更新。</p>
+				</div></div>
+
+				<p>危害透過 [<cite><a class="bibref" data-link-type="biblio" href="#bib-schema-org" title="Schema.org">schema-org</a></cite>] 中的<a href="https://schema.org/accessibilityHazard"><code>accessibilityHazard</code>特性</a>進行識別。並且為每一項危害重複該項特性。</p>
+
+				<p>和其他無障礙輔助特性不同之處在於，危害報告同時傳達了正面與負面兩面的訊息。設計上是因為，使用者搜尋內容時，通常會找不會對健康造成影響的內容，同時也會想知道所發現的任何出版品具備怎麼樣的危險。</p>
+
+				<aside class="example" id="example-metadata-entries-for-a-flashing-hazard-but-no-motion-simulation-or-sound-hazards"><div class="marker">
+    <a class="self-link" href="#example-metadata-entries-for-a-flashing-hazard-but-no-motion-simulation-or-sound-hazards">範例<bdi> 3</bdi></a><span class="example-title">: 具備閃爍危害，卻不具動態模擬和聲響危害的詮釋資料紀錄</span>
+  </div>
+					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+    <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessibilityHazard"</span>&gt;</span>
+   flashing
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+    <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessibilityHazard"</span>&gt;</span>
+   noMotionSimulationHazard
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+    <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessibilityHazard"</span>&gt;</span>
+   noSoundHazard
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></code></pre>
+				</aside>
+
+				<p>請不要因為EPUB出版品不包含任何可能造成風險的內容，就不做危害報告。當詮釋資料缺少這資訊時，使用者就無法推測其含義。在這樣的案例中，可以使用值「<code>none</code>」來取代重複報告沒有危害。</p>
+
+				<p>如果一本EPUB出版品包含一項危害，請在<a href="#meta-005">無障礙輔助性摘要</a>中提供額外資訊，以表示其來源和特性。</p>
+
+				<p>如果無法明確判定危害，請回報值「<code>unknown</code>」。</p>
+
+				<p>請參考 [<cite><a class="bibref" data-link-type="biblio" href="#bib-a11y-discov-vocab" title="Schema.org Accessibility Properties for Discoverability Vocabulary">A11Y-DISCOV-VOCAB</a></cite>] 的<a href="https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard"><code>accessibilityHazard</code>特性</a>以了解該特性及所使用的值。</p>
+			</section>
+
+			<section id="meta-005">
+				<h3 id="x3-5-include-an-accessibility-summary"><bdi class="secno">3.5 </bdi>包含無障礙輔助摘要<a class="self-link" href="#meta-005" aria-label="Permalink for Section 3.5"></a></h3>
+
+				<p>無障礙輔助摘要為該EPUB出版品提供一份簡要、人可閱讀的無障礙輔助性特徵描述，或告知所欠缺之處。</p>
+
+				<p>如果一本EPUB出版品未能符合 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-a11y-11" title="EPUB Accessibility 1.1">EPUB-A11Y-11</a></cite>] 中內容無障礙輔助性的規定，應該在摘要中註明其無法符合的原因。</p>
+
+				<p>無障礙輔助摘要透過 [<cite><a class="bibref" data-link-type="biblio" href="#bib-schema-org" title="Schema.org">schema-org</a></cite>] 中的<a href="https://schema.org/accessibilitySummary"><code>accessibilitySummary</code>特性</a>提供。</p>
+
+				<aside class="example" id="example-accessibility-summary-for-a-publication-that-fails-the-content-accessibility-requirements"><div class="marker">
+    <a class="self-link" href="#example-accessibility-summary-for-a-publication-that-fails-the-content-accessibility-requirements">範例<bdi> 4</bdi></a><span class="example-title">: 一本未能達到內容無障礙輔助性規定的出版品的無障礙輔助摘要</span>
+  </div>
+					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+    <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessibilitySummary"</span>&gt;</span>
+   The publication is missing alternative text for complex diagrams.（本出版品缺少複雜圖表的替代文字）
+   The publication otherwise meets WCAG 2.0 Level A.（本出版其他部分符合WCAG 2.0 A等級）
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></code></pre>
+				</aside>
+
+				<aside class="example" id="example-accessibility-summary-for-a-publication-with-a-motion-simulation-hazard"><div class="marker">
+    <a class="self-link" href="#example-accessibility-summary-for-a-publication-with-a-motion-simulation-hazard">範例<bdi> 5</bdi></a><span class="example-title">: 一本有著動態模擬危害出版品的無障礙輔助摘要</span>
+  </div>
+					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta3</span>
+    <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessibilitySummary"</span>&gt;</span>
+   Chapter four contains a first-person interactive game that could cause
+   motion sickness in certain individuals. The game is only provided for
+   illustrative purposes, so readers unable to interact with it will not
+   be at a disadvantage.（第四章包含第一任視角互動遊戲，可能讓某些人對動作感到不適。該遊戲僅供範例目的使用，所以讀者無法與其互動，將不會任何損失。）
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></code></pre>
+				</aside>
+
+				<p>請勿重複該特性，除非要提供以另外一種語言撰寫的摘要。當有多個摘要時，請使用<code>xml:lang</code>屬性以區分語言。</p>
+
+				<p>請參考 [<cite><a class="bibref" data-link-type="biblio" href="#bib-a11y-discov-vocab" title="Schema.org Accessibility Properties for Discoverability Vocabulary">A11Y-DISCOV-VOCAB</a></cite>] <a href="https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilitySummary">的<code>accessibilitySummary</code>特性</a>以了解該特性及所使用的值。</p>
+			</section>
+
+			<section id="meta-006">
+				<h3 id="x3-6-identify-aria-conformance"><bdi class="secno">3.6 </bdi>識別ARIA適用性<a class="self-link" href="#meta-006" aria-label="Permalink for Section 3.6"></a></h3>
+
+				<p>已經不再強制要求於EPUB出版品中使用<code>schema:accesibilityAPI</code>特性。EPUB製作者不需為閱讀系統以及底層平台API的互動負責。</p>
+
+				<p>符合 [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">WCAG2</a></cite>] 規定可作為判斷腳本無障礙輔助性的更好標準，本特性無法分別ARIA標記是用於文件結構，還是用於識別控制項。</p>
+			</section>
+
+			<section id="meta-007">
+				<h3 id="x3-7-identify-input-control-methods"><bdi class="secno">3.7 </bdi>識別輸入控制手段<a class="self-link" href="#meta-007" aria-label="Permalink for Section 3.7"></a></h3>
+
+				<p>已經不在強制要求於EPUB出版品中使用<code>schema:accesibilityControl</code>特性。本特性無法分別問題是來自閱讀系統介面，還是來自底層內容，這會導致使用上產生混亂。</p>
+
+				<p>符合 [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">WCAG2</a></cite>] 規定可以減輕大部分的內容已知問題，並且對製作目的來說已經足夠。</p>
+			</section>
+
+			<section id="sec-meta-ex">
+				<h3 id="x3-8-examples"><bdi class="secno">3.8 </bdi>範例<a class="self-link" href="#sec-meta-ex" aria-label="Permalink for Section 3.8"></a></h3>
+
+				<p>以下範例呈現一份詮釋資料，該EPUB出版品包含了文字與視覺存取模式，且可以透過文字閱讀，也包含替代文字和MathML標記，同時有閃爍危害。</p>
+
+				<aside class="example" id="example-epub-3"><div class="marker">
+    <a class="self-link" href="#example-epub-3">範例<bdi> 6</bdi></a><span class="example-title">: EPUB 3</span>
+  </div>
+					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">package</span> … &gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">metadata</span> …&gt;</span>
+&nbsp; &nbsp;   …
+&nbsp;  &nbsp;  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+          <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessMode"</span>&gt;</span>
+         textual
+      <span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+      
+&nbsp;  &nbsp;  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+          <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessMode"</span>&gt;</span>
+         visual
+      <span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+      
+      <span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+          <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessModeSufficient"</span>&gt;</span>
+         textual,visual
+      <span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+      
+      <span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+          <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessModeSufficient"</span>&gt;</span>
+         textual
+      <span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+      
+    &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+          <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessibilityFeature"</span>&gt;</span>
+         transcript
+      <span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+      
+    &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+          <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessibilityFeature"</span>&gt;</span>
+         MathML
+      <span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+      
+&nbsp; &nbsp;   <span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+          <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessibilityFeature"</span>&gt;</span>
+         alternativeText
+      <span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+      
+&nbsp; &nbsp;   <span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+          <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessibilityHazard"</span>&gt;</span>
+         flashing
+      <span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+      
+&nbsp;  &nbsp;  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+          <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessibilityHazard"</span>&gt;</span>
+         noMotionSimulationHazard
+      <span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+&nbsp;  &nbsp;  
+      <span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+          <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessibilityHazard"</span>&gt;</span>
+         noSoundHazard
+      <span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+      
+ &nbsp; &nbsp;  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+          <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessibilitySummary"</span>&gt;</span>
+&nbsp; &nbsp;   &nbsp; &nbsp;The video in chapter 2 presents a flashing hazard. A transcript is
+&nbsp; &nbsp;   &nbsp; &nbsp;provided that covers all the essential information contained in the
+&nbsp; &nbsp;   &nbsp; &nbsp;video. The publication otherwise meets WCAG 2.0 Level A.
+&nbsp;  &nbsp;  <span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+&nbsp;  <span class="hljs-tag">&lt;/<span class="hljs-name">metadata</span>&gt;</span>
+ &nbsp;&nbsp;…
+<span class="hljs-tag">&lt;/<span class="hljs-name">package</span>&gt;</span></code></pre>
+				</aside>
+
+				<aside class="example" id="example-epub-2"><div class="marker">
+    <a class="self-link" href="#example-epub-2">範例<bdi> 7</bdi></a><span class="example-title">: EPUB 2</span>
+  </div>
+					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">package</span> … &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">metadata</span> …&gt;</span>
+    &nbsp; &nbsp;…
+    &nbsp; &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+           <span class="hljs-attr">name</span>=<span class="hljs-string">"schema:accessMode"</span>
+           <span class="hljs-attr">content</span>=<span class="hljs-string">"textual"</span>/&gt;</span>
+    &nbsp; &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+           <span class="hljs-attr">name</span>=<span class="hljs-string">"schema:accessMode"</span>
+           <span class="hljs-attr">content</span>=<span class="hljs-string">"visual"</span>/&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+           <span class="hljs-attr">name</span>=<span class="hljs-string">"schema:accessModeSufficient"</span>
+           <span class="hljs-attr">content</span>=<span class="hljs-string">"textual,visual"</span>/&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+           <span class="hljs-attr">name</span>=<span class="hljs-string">"schema:accessModeSufficient"</span>
+           <span class="hljs-attr">content</span>=<span class="hljs-string">"textual"</span>/&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+           <span class="hljs-attr">name</span>=<span class="hljs-string">"schema:accessibilityFeature"</span>
+           <span class="hljs-attr">content</span>=<span class="hljs-string">"transcript"</span>/&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+           <span class="hljs-attr">name</span>=<span class="hljs-string">"schema:accessibilityFeature"</span>
+           <span class="hljs-attr">content</span>=<span class="hljs-string">"MathML"</span>/&gt;</span>
+    &nbsp; &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+           <span class="hljs-attr">name</span>=<span class="hljs-string">"schema:accessibilityFeature"</span>
+           <span class="hljs-attr">content</span>=<span class="hljs-string">"alternativeText"</span>/&gt;</span>
+    &nbsp; &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+           <span class="hljs-attr">name</span>=<span class="hljs-string">"schema:accessibilityHazard"</span>
+           <span class="hljs-attr">content</span>=<span class="hljs-string">"flashing"</span>/&gt;</span>
+    &nbsp; &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+           <span class="hljs-attr">name</span>=<span class="hljs-string">"schema:accessibilityHazard"</span>
+           <span class="hljs-attr">content</span>=<span class="hljs-string">"noMotionSimulationHazard"</span>/&gt;</span>
+    &nbsp; &nbsp;<span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+           <span class="hljs-attr">name</span>=<span class="hljs-string">"schema:accessibilityHazard"</span>
+           <span class="hljs-attr">content</span>=<span class="hljs-string">"noSoundHazard"</span>/&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+           <span class="hljs-attr">name</span>=<span class="hljs-string">"schema:accessibilitySummary"</span>
+           <span class="hljs-attr">content</span>=<span class="hljs-string">"The video in chapter 2 presents a flashing hazard.
+              A transcript is provided that covers all the essential
+              information contained in the video. The publication
+              otherwise meets WCAG 2.0 Level AA."</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">metadata</span>&gt;</span>
+    …
+<span class="hljs-tag">&lt;/<span class="hljs-name">package</span>&gt;</span></code></pre>
+				</aside>
+			</section>
+		</section>
+		<section id="sec-wcag">
+			<h2 id="x4-wcag-techniques"><bdi class="secno">4. </bdi>WCAG技巧<a class="self-link" href="#sec-wcag" aria-label="Permalink for Section 4."></a></h2>
+
+			<section id="sec-wcag-general">
+				<h3 id="x4-1-general-guidance"><bdi class="secno">4.1 </bdi>通用指引<a class="self-link" href="#sec-wcag-general" aria-label="Permalink for Section 4.1"></a></h3>
+
+				<p>符合 [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">WCAG2</a></cite>] 規定的技巧定義在<a href="https://www.w3.org/WAI/WCAG21/Techniques/">供WCAG使用的技巧</a>中。本文件不再重複。</p>
+
+				<p>一般來說，在網頁上應用WCAG技巧和在EPUB內容文件上應用的差異極小，以下章節將匡列一些主要差異。</p>
+
+				<p>有一點值得注意的是，WCAG技巧涵蓋了比EPUB出版品更為廣泛的技術與內容類型，所以大多數無法應用在EPUB出版品。</p>
+
+				<p>以下技術組合常應用於EPUB內容文件：</p>
+
+				<ul>
+					<li>
+						<p>
+							<a href="https://www.w3.org/WAI/WCAG21/Techniques/#general">一般技巧</a>
+						</p>
+					</li>
+					<li>
+						<p>
+							<a href="https://www.w3.org/WAI/WCAG21/Techniques/#html">HTML與XHTML技巧 </a>
+						</p>
+					</li>
+					<li>
+						<p>
+							<a href="https://www.w3.org/WAI/WCAG21/Techniques/#css">CSS技巧</a>
+						</p>
+					</li>
+					<li>
+						<p>
+							<a href="https://www.w3.org/WAI/WCAG21/Techniques/#client-side-script">客戶端腳本技巧</a>
+						</p>
+					</li>
+					<li>
+						<p>
+							<a href="https://www.w3.org/WAI/WCAG21/Techniques/#aria">ARIA技巧</a>
+						</p>
+					</li>
+				</ul>
+
+				<p>其他技巧按照所使用的技術（例如，在EPUB 2中使用 [<cite><a class="bibref" data-link-type="biblio" href="#bib-swf" title="SWF File Format Specification Version 19">SWF</a></cite>] 影片）或者任何在EPUB出版品中的其他嵌入替代格式（例如PDF表單）可能適用。</p>
+
+				<section id="sec-wcag-general-res">
+					<h4 id="x4-1-1-helpful-resources"><bdi class="secno">4.1.1 </bdi>有用的資源<a class="self-link" href="#sec-wcag-general-res" aria-label="Permalink for Section 4.1.1"></a></h4>
+
+					<p>不熟悉 [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">WCAG2</a></cite>] 的EPUB製作者可能會被技巧的數量給嚇到，因為那些技巧是為了廣泛涵蓋各種可行的解決方案而提供。</p>
+
+					<p>可透過以下來源找到套用這些技巧到EPUB內容文件的協助：
+						</p>
+
+					<ul>
+						<li>
+							<p><a href="https://kb.daisy.org/publishing/docs/">DAISY 無障礙出版知識庫</a>&nbsp;— 按照內容類型的最佳實踐概要，提供連結到可應用的WCAG技巧。</p>
+						</li>
+						<li>
+							<p><a href="https://bisg.org/store/viewproduct.aspx?id=13534677">BISG無障礙出版快速指南</a>&nbsp;— 包含一系列讓內容無障礙的最佳實踐。</p>
+						</li>
+					</ul>
+				</section>
+			</section>
+
+			<section id="sec-wcag-content-access">
+				<h3 id="x4-2-content-access"><bdi class="secno">4.2 </bdi>內容存取<a class="self-link" href="#sec-wcag-content-access" aria-label="Permalink for Section 4.2"></a></h3>
+
+				<section id="access-001">
+					<h4 id="x4-2-1-ensure-meaningful-order-of-content-across-spreads"><bdi class="secno">4.2.1 </bdi>確保在跨頁時內容順序具意義<a class="self-link" href="#access-001" aria-label="Permalink for Section 4.2.1"></a></h4>
+
+					<p> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">WCAG2</a></cite>] <a href="https://www.w3.org/TR/WCAG2/#meaningful-sequence">成功標準1.3.2</a>指出，每一個網頁都要有具意義的順序（例如內容在視覺上的呈現符合底層的標記）。</p>
+
+					<p>EPUB允許兩份文件被一起排版，以<a href="https://www.w3.org/TR/epub/#spread">同步跨頁</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-3" title="EPUB 3">EPUB-3</a></cite>] 呈現，所以單一文件中的內容順序不能僅分別進行評量。內容在視覺呈現上可能從一份文件跨到另一份。例如，一個側邊欄可能會被跨置於兩頁的底部。</p>
+
+					<p>按照視覺呈現分別排列每一份文件可以讓輔助科技的使用者，在跨頁文字的開始與結束間遇到障礙。如果無法改變標記來提供更具邏輯性的閱讀體驗（例如，跨頁內容的開始放到第一頁的尾端，並且下一頁的開頭接續內容），其他滿足此標準的手段需要避免失敗（例如，提供超連結讓使用者從第一頁的斷點跳到下一頁接續）。</p>
+				</section>
+
+				<section id="access-002">
+					<h4 id="x4-2-2-provide-multiple-ways-to-access-the-content"><bdi class="secno">4.2.2 </bdi>提供多重存取內容的方式<a class="self-link" href="#access-002" aria-label="Permalink for Section 4.2.2"></a></h4>
+
+					<p> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">WCAG2</a></cite>] <a href="https://www.w3.org/TR/WCAG2/#multiple-ways">成功標準2.4.5</a>要求以一種以上的方式，在一組網頁中指向單一網頁。EPUB出版品預設就符合此項WCAG規定，只要EPUB製作者依從EPUB規定，將<a href="https://www.w3.org/TR/epub/#sec-spine-elem">所有EPUB內容文件包含在書脊之中</a>，並且</a>&nbsp;<a href="https://www.w3.org/TR/epub/#sec-itemref-elem">確保能夠存取所有非線性的文件</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-3" title="EPUB 3">EPUB-3</a></cite>] 。</p>
+
+					<p>EPUB出版品通過這些規定的原因，需要從使用者如何與EPUB出版品中的文件組進行互動的不同方式中去理解。具體來說，一本EPUB出版品一般包含多份內容文件，閱讀系統能自動地讓使用者能夠無縫按照<a href="https://www.w3.org/TR/epub/#sec-spine-elem">書脊</a>中所列的順序 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-3" title="EPUB 3">EPUB-3</a></cite>] ，從一份文件移到下一份。對使用者而言，一本EPUB出版品是一份他們可以完全存取的獨立文件，而並非一組需要透過連結才具順序的相互不關聯頁面。</p>
+
+					<p>規定需具備的目錄提供了第二種存取該出版品主要章節標題的手段。使用者可以跳到任何標題，無論該出版品如何編排，都可以繼續透過目錄進行導覽。</p>
+
+					<p>遵從這兩種規定，就能夠滿足透過多重手段存取內容的需求。閱讀系統一般也提供了搜尋的功能，這是EPUB製作者所不能提供的，所以在大多數的狀況下，使用者也能擁有第三種選項。</p>
+
+					<p>儘管EPUB製作者僅需要依從EPUB規定就可滿足這項標準，依然鼓勵製作者提供額外的方法，以在最低標準上強化存取，建議的方法包括：</p>
+
+					<ul>
+						<li>
+							<p>若可行，在目錄中為每一個列於書脊中的內容文件增添至少一個連結；</p>
+						</li>
+						<li>
+							<p>增添一份指向主要題目的索引；以及</p>
+						</li>
+						<li>
+							<p>在EPUB導覽文件中增添額外的輔助導覽（例如，圖片和表格列表）。</p>
+						</li>
+					</ul>
+
+					<section id="sec-access-002-toc">
+						<h5 id="x4-2-2-1-note-about-the-table-of-contents"><bdi class="secno">4.2.2.1 </bdi>關於目錄的備忘<a class="self-link" href="#sec-access-002-toc" aria-label="Permalink for Section 4.2.2.1"></a></h5>
+
+						<p>關於EPUB目錄，最常見的問題就是在尊重該出版品的標題下，怎麼樣才能算是完整。儘管最顯而易見的答案就是簡單地集結所有章節的標題就好，但實務上，這種方法會有許多使用性上的挑戰。</p>
+
+						<p>許多要素，像是裝置的螢幕尺寸，會讓出版品的目錄在具多層級標題結構時無法閱讀，所以EPUB製作者可能需要裁減掉一定層級以下的標題以提升可讀性。此外，閱讀系統不一定都能在目錄中提供對標題結構的存取，或者提供捷徑來對連結進行導覽。這使得使用者需要一次一個聽取每一個連結，才能找到他們想要前往的位置，這過程不僅煩人、而且耗時。</p>
+
+						<p>儘管我們預期閱讀系統會隨著支援EPUB無障礙輔助性演進，而改善對目錄的存取 — 使整個目錄都能夠被所有人使用 — 但也有合理的使用性考量，以至於現在無法提供。</p>
+
+						<p>當EPUB製作者選擇不提供所有標題的連結時，就應該對提供的連結做到最佳化以增進整體閱讀體驗。如何達到這項目標的考量包括：</p>
+
+						<ul>
+							<li>
+								<p>確保每一份EPUB內容文件都至少有一個連結 — 這可以讓使用者到達每一份文件，以簡化對其中小標題的導覽；以及</p>
+							</li>
+							<li>
+								<p>單純在目錄中忽視小標題 — 雖然這是個主觀的判斷，但通常在一定層級之下，沒有導覽的價值（例如，第四層或者更低層級的標題只用來對單一主題區分小節）。</p>
+							</li>
+						</ul>
+					</section>
+				</section>
+
+				<section id="access-003">
+					<h4 id="x4-2-3-ensure-the-order-of-table-of-contents-entries-matches-linear-order"><bdi class="secno">4.2.3 </bdi>確保目錄各項目順序符合線性閱讀順序<a class="self-link" href="#access-003" aria-label="Permalink for Section 4.2.3"></a></h4>
+
+					<p>目錄讓使用者不僅透過連結跳到內容，也提供了用於瞭解該本EPUB出版品結構與順序的手段。因此，當目錄項目順序與線性閱讀順序不同時，使用者可能會不知道目前位於出版品的哪個位置，以及他們想要到的位置，還有該如何回到前一個位置。</p>
+
+					<p>EPUB製作者因此應該確保在目錄中的項目永遠與內容的線性順序相呼應，就細節上來說，項目的順序應該反映以下兩者：</p>
+
+					<ul>
+						<li>EPUB內容文件在<code>spine</code>中的順序；以及</li>
+						<li>所參照的章節在其對應的內容文件中的順序。</li>
+					</ul>
+
+					<p>只有在符合邏輯，對順序進行不同的安排時，可以變更其順序。這項的狀況通常發生在內容不需要被線性閱讀，或者在目錄尾端包含額外資訊的狀況。例如，一本雜誌的目錄可能會先列出所有主要文章，然後再列出專題，此類狀況。</p>
+
+					<p>當目錄的順序與內容不符時，EPUB製作者應該在其<a href="#meta-005">無障礙摘要</a>中說明原因。</p>
+
+					<p>EPUB製作者應該避免在目錄尾端加入補充內容的連結。對圖片、表格、插畫以及類似內容的連結，最好能以獨立的導覽元素提供（無論在EPUB導覽文件或者在書脊中）。EPUB製作者可以在目錄中包含對額外導覽列表的連結。</p>
+				</section>
+			</section>
+
+			<section id="sec-wcag-semantics">
+				<h3 id="x4-3-semantics"><bdi class="secno">4.3 </bdi>語意<a class="self-link" href="#sec-wcag-semantics" aria-label="Permalink for Section 4.3"></a></h3>
+
+				<section id="sem-001">
+					<h4 id="x4-3-1-aria-roles-and-epub-type"><bdi class="secno">4.3.1 </bdi>ARIA的roles與<code>epub:type</code><a class="self-link" href="#sem-001" aria-label="Permalink for Section 4.3.1"></a></h4>
+
+					<div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-3" aria-level="5"><span>注意事項</span></div><div class="">
+						<p>以下指引僅供EPUB內容文件使用。<code>type</code>屬性是為媒體覆蓋文件提供結構資訊的唯一方法，而能更有效率地導覽如列表及表格等功能。也規定應用於EPUB導覽文件來識別關鍵結構。</p>
+					</div></div>
+
+					<p>儘管<code>role</code>屬性在性質上可能與<a href="https://www.w3.org/TR/epub/#sec-epub-type-attribute"><code>type</code>屬性</a>類似 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-3" title="EPUB 3">EPUB-3</a></cite>] ，但其在EPUB內容文件的目的不會重疊。</p>
+
+					<p>這些屬性的關鍵差異在於，<code>role</code>屬性在內容中用於建構無障礙輔助性，而<code>type</code>屬性提供連結以觸發閱讀系統行為。忽略role屬性會對輔助科技的使用者降低無障礙輔助性，另一個角度，忽略type屬性則會停用某些閱讀系統功能（例如，跳出式註解，或者內容的特殊顯示方式）。</p>
+
+					<p>雖然每種屬性提供不同的好處，但並不一定要一起使用。因為沒有限制EPUB使用者可以將<code>type</code>屬性用於何處，併用這些屬性可能會造成無障礙輔助性問題（例如，將role用於<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">HTML</a></cite>] 的<code>body</code>元素）。</p>
+
+					<p>具體來說，使用<code>type</code>屬性並非能夠滿足WCAG對ARIA role規定的手段。</p>
+
+					<p>對於想要以ARIA role取代<code>type</code>屬性的EPUB製作者，〈<a href="https://idpf.github.io/epub-guides/epub-aria-authoring/">從EPUB type轉換到ARIA role製作指引</a>〉鉅細彌遺地提供了這兩種屬性在製作上的顯著差異。也包含了一份語意對應表格，將EPUB結構語意用語對應到 [<cite><a class="bibref" data-link-type="biblio" href="#bib-dpub-aria-1.0" title="Digital Publishing WAI-ARIA Module 1.0">DPUB-ARIA-1.0</a></cite>] 及 [<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>] 中的ARIA role。</p>
+				</section>
+
+				<section id="sem-002">
+					<h4 id="x4-3-2-do-not-repeat-semantics-across-chunked-content"><bdi class="secno">4.3.2 </bdi>跨整塊內容語意不重複<a class="self-link" href="#sem-002" aria-label="Permalink for Section 4.3.2"></a></h4>
+
+					<p>儘管EPUB出版品在使用者閱讀時，會被視為單一不間斷的文件，但實際上一般是由許多獨立的EPUB內容文件所組成。這種做法讓閱讀系統一次需要處理的標記數量較少，以縮短處理時間（也就是，讓使用者看到文件顯示的等待時間變得最短）。一本EPUB出版品僅包含一份內容文件，裡頭包含所有內容的狀況很少見，尤其對書籍而言。</p>
+
+					<p>當內容以這種方式整塊出現時，通常會需要EPUB製作者做決定，以何種方法重建結構資訊。例如一部（Part），一般不會包含所有從屬的章節。EPUB製作者可以將該部的標題與每一章節區分，放置到分開的文件中。</p>
+
+					<p>儘管在視覺上，這樣的重建結構抉擇對讀者來說不會察覺，但卻會影響到輔助科技的功能性。就 [<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>]  role來說，結果會造成僅有目前載入的EPUB內容文件的子集能夠對使用者呈現。輔助科技無法提供整份出版品的地標清單，因為技術無法看到現在文件以外的檔案。</p>
+
+					<p>為了對應這種重建結構造成的影響，EPUB製作者可能認為在每一份文件中加入這些資訊可以對使用者有益，有時候會重新加入或者重新識別結構（例如，在章節前加入額外的 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">HTML</a></cite>] <code>section</code>元素以指出該章節屬於某一部，或者在<code>body</code>標籤中加入部的語意）。然而，這些實作不僅會造成重複，在閱讀時使結構分裂，也會讓整本出版品的結構變得難以追從。因此，建議EPUB製作者不要試著使用這種方式來重建結構。</p>
+
+					<p>舉個例子，一本書有五部，而每一部包含五章。結構上，每一章歸屬於其部（也就是以其構成群組），可以下列方式標記：</p>
+
+					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>
+    <span class="hljs-attr">role</span>=<span class="hljs-string">"doc-part"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Part 1<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+   
+   <span class="hljs-tag">&lt;<span class="hljs-name">section</span>
+       <span class="hljs-attr">role</span>=<span class="hljs-string">"doc-chapter"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Chapter 1<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+      …
+   <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+   …
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></code></pre>
+
+					<p>這種做法會使內容檔案很大，所以部的標題一般來說會分隔到自己的內容文件，而以獨立頁面顯示：</p>
+
+					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> … &gt;</span>
+   …
+   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>
+       <span class="hljs-attr">role</span>=<span class="hljs-string">"doc-part"</span>&gt;</span>
+    &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Part 1<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+
+					<p>每一章節就可以分割到個別的內容文件：
+						</p>
+
+					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> … &gt;</span>
+   …
+   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>
+       <span class="hljs-attr">role</span>=<span class="hljs-string">"doc-chapter"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Chapter 1<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+      …
+   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+
+					<p>不需要為每一章額外加上部的外層，如以下範例：</p>
+
+					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> … &gt;</span>
+   …
+   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>
+       <span class="hljs-attr">role</span>=<span class="hljs-string">"doc-part"</span>&gt;</span>
+    &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">section</span>
+          <span class="hljs-attr">role</span>=<span class="hljs-string">"doc-chapter"</span>&gt;</span>
+    &nbsp;    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Chapter 1<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+         …
+      <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+
+					<p>這麼做會為每一份文件加上新的<code>part</code> 地標，這樣會讓輔助科技告訴使用者有一個可以導覽前往的地標。</p>
+				</section>
+
+				<section id="sem-003">
+					<h4 id="x4-3-3-include-epub-landmarks"><bdi class="secno">4.3.3 </bdi>包含EPUB的landmarks元素<a class="self-link" href="#sem-003" aria-label="Permalink for Section 4.3.3"></a></h4>
+
+					<p> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.1" title="Accessible Rich Internet Applications (WAI-ARIA) 1.1">WAI-ARIA-1.1</a></cite>] 的<a href="https://www.w3.org/TR/wai-aria-1.1/#dfn-landmark">landmarks</a>在性質上與<a href="https://www.w3.org/TR/epub/#sec-nav-landmarks">EPUB landmarks</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-3" title="EPUB 3">EPUB-3</a></cite>] 相似：兩者都是設計用於讓使用者快速存取一份文件中的主要結構，像是章節、詞彙表以及索引。ARIA的landmarks是由輔助科技自動從套用在標記中的<a href="#sem-001">roles</a>自動生成，所以EPUB製作者僅需要遵循規定加入roles，就可以讓使用者使用landmarks。</p>
+
+					<p>雖然ARIA landmarks的自動生成可以簡化製作，但也意味著，ARIA landmarks受到EPUB出版品中內容文件如何切分所限制。輔助科技僅能呈現目前載入文件中可取得的landmarks；並不能提供一份多文件出版品中所有landmark的完整輪廓（請見<a href="#sem-002">前一節</a>對於內容分塊的更多討論）。</p>
+
+					<p>EPUB的landmarks則是相反，由EPUB製作者在遞送發行前預先處理，而且並不直接連結到內容中使用的<a href="https://www.w3.org/TR/epub/#sec-epub-type-attribute"><code>type</code>屬性</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-3" title="EPUB 3">EPUB-3</a></cite>] 。他們在設計上是為了以機器可以讀取的方式，簡化對出版品中主要區塊的連結，因為閱讀系統也不會對整份出版品掃描來尋找landmarks。EPUB的landmarks一般不會像ARIA的landmarks那樣大量，因為閱讀系統只會有少數的導覽需求。</p>
+
+					<p>然而實際應用的差異是，包含EPUB的landmarks很重要，並且不能僅依賴ARIA的
+						roles來協助導覽，反之亦然，兩者都以自己的方式來協助導覽。</p>
+
+					<p>EPUB規格並不要求EPUB製作者在書中包含指定的landmarks組合，但推薦包含一個連結指向內文開始處，以及指向任何主要的參考資料章節（例如，目錄、註釋、參考書目、詞彙表、索引）。</p>
+
+					<aside class="example" id="example-landmarks-expressed-in-the-epub-3-navigation-document"><div class="marker">
+    <a class="self-link" href="#example-landmarks-expressed-in-the-epub-3-navigation-document">範例<bdi> 8</bdi></a><span class="example-title">: 在EPUB 3導覽文件中記述Landmarks</span>
+  </div>
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">epub:type</span>=<span class="hljs-string">"landmarks"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>
+             <span class="hljs-attr">epub:type</span>=<span class="hljs-string">"toc"</span>
+             <span class="hljs-attr">href</span>=<span class="hljs-string">"toc.xhtml"</span>&gt;</span>
+            Table of Contents
+         <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>
+             <span class="hljs-attr">epub:type</span>=<span class="hljs-string">"bodymatter"</span>
+             <span class="hljs-attr">href</span>=<span class="hljs-string">"chap01.xhtml"</span>&gt;</span>
+            Start reading
+         <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>
+             <span class="hljs-attr">epub:type</span>=<span class="hljs-string">"endnotes"</span>
+             <span class="hljs-attr">href</span>=<span class="hljs-string">"notes.xhtml"</span>&gt;</span>
+            Notes
+         <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>
+             <span class="hljs-attr">epub:type</span>=<span class="hljs-string">"bibliography"</span>
+             <span class="hljs-attr">href</span>=<span class="hljs-string">"bibliography.xhtml"</span>&gt;</span>
+            Bibliography
+         <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>
+             <span class="hljs-attr">epub:type</span>=<span class="hljs-string">"glossary"</span>
+             <span class="hljs-attr">href</span>=<span class="hljs-string">"glossary.xhtml"</span>&gt;</span>
+            Glossary
+         <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>
+             <span class="hljs-attr">epub:type</span>=<span class="hljs-string">"index"</span>
+             <span class="hljs-attr">href</span>=<span class="hljs-string">"index.xhtml"</span>&gt;</span>
+            Index
+         <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></code></pre>
+					</aside>
+
+					<aside class="example" id="example-landmarks-expressed-in-the-epub-2-guide-element"><div class="marker">
+    <a class="self-link" href="#example-landmarks-expressed-in-the-epub-2-guide-element">範例<bdi> 9</bdi></a><span class="example-title">: 在EPUB 2 guide元素中記述地標</span>
+  </div>
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">guide</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">reference</span>
+       <span class="hljs-attr">type</span>=<span class="hljs-string">"toc"</span>
+       <span class="hljs-attr">href</span>=<span class="hljs-string">"toc.xhtml"</span>/&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">reference</span>
+       <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>
+       <span class="hljs-attr">href</span>=<span class="hljs-string">"chap01.xhtml"</span>/&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">reference</span>
+       <span class="hljs-attr">type</span>=<span class="hljs-string">"endnotes"</span>
+       <span class="hljs-attr">href</span>=<span class="hljs-string">"notes.xhtml"</span>/&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">reference</span>
+       <span class="hljs-attr">type</span>=<span class="hljs-string">"bibliogrpahy"</span>
+       <span class="hljs-attr">href</span>=<span class="hljs-string">"biblio.xhtml"</span>/&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">reference</span>
+       <span class="hljs-attr">type</span>=<span class="hljs-string">"glossary"</span>
+       <span class="hljs-attr">href</span>=<span class="hljs-string">"glossary.xhtml"</span>/&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">reference</span>
+       <span class="hljs-attr">type</span>=<span class="hljs-string">"index"</span>
+       <span class="hljs-attr">href</span>=<span class="hljs-string">"index.xhtml"</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">guide</span>&gt;</span></code></pre>
+					</aside>
+
+					<section id="sec-sem-003-res">
+						<h5 id="x4-3-3-1-helpful-resources"><bdi class="secno">4.3.3.1 </bdi>有用的資源<a class="self-link" href="#sec-sem-003-res" aria-label="Permalink for Section 4.3.3.1"></a></h5>
+
+						<p>以下資源解釋EPUB與ARIA landmarks的更多細節：</p>
+
+						<ul>
+							<li>
+								<p>EPUB 2 <a href="http://www.idpf.org/epub/20/spec/OPF_2.0.1_draft.htm#Section2.6">guide element</a></p>
+							</li>
+							<li>
+								<p>EPUB 3 <a href="https://www.w3.org/TR/epub/#sec-nav-landmarks">landmarks nav</a></p>
+							</li>
+							<li>
+								<p>ARIA 1.1 <a href="https://www.w3.org/TR/wai-aria-1.1/#landmark_roles">landmarks</a></p>
+							</li>
+						</ul>
+					</section>
+				</section>
+			</section>
+
+			<section id="sec-wcag-titles">
+				<h3 id="x4-4-titles-and-headings"><bdi class="secno">4.4 </bdi>書名（Titles）與標題（Headings）<a class="self-link" href="#sec-wcag-titles" aria-label="Permalink for Section 4.4"></a></h3>
+
+				<section id="titles-001">
+					<h4 id="x4-4-1-include-publication-and-document-titles"><bdi class="secno">4.4.1 </bdi>包含出版品與文件titles<a class="self-link" href="#titles-001" aria-label="Permalink for Section 4.4.1"></a></h4>
+
+					<p> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">WCAG2</a></cite>] <a href="https://www.w3.org/TR/WCAG2/#page-titled">成功標準2.4.2</a>要求網頁都要有一個title。EPUB對EPUB出版品也有相同的要求：出版品在包裝文件詮釋資料中一定要有一個 [<cite><a class="bibref" data-link-type="biblio" href="#bib-dcterms" title="DCMI Metadata Terms">DCTERMS</a></cite>] <code>title</code>元素。然而EPUB的規定無法滿足 [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">WCAG2</a></cite>] 的規定。</p>
+
+					<p>當在製作EPUB出版品時，也要求在每一份EPUB內容文件中加入描述性的title來說明其內容。如果沒有提供，輔助科技經常無法對使用者宣讀該檔案的名稱。</p>
+
+					<aside class="example" id="example-title-for-an-epub-content-document"><div class="marker">
+    <a class="self-link" href="#example-title-for-an-epub-content-document">範例<bdi> 10</bdi></a><span class="example-title">: EPUB內容文件中的Title</span>
+  </div>
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> …&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Chapter 1<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    &nbsp; …
+   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Chapter 1: Loomings<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    &nbsp; …
+   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+					</aside>
+
+					<p>如果title包含了結構性脈絡（例如，章節所屬的部的標題，或者出版品名稱），對這些標題進行排序時，請讓當下文件最精確的敘述放在最前面。</p>
+
+					<aside class="example" id="example-a-structured-title"><div class="marker">
+    <a class="self-link" href="#example-a-structured-title">範例<bdi> 11</bdi></a><span class="example-title">: 結構化title</span>
+  </div>
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> …&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>
+    &nbsp;    III. The Night Shadows —
+    &nbsp; &nbsp; &nbsp;Book the First—Recalled to Life — 
+    &nbsp; &nbsp; &nbsp;A Tale of Two Cities
+    &nbsp; <span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    &nbsp; …
+   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>III. The Night Shadows<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    &nbsp; …
+   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+					</aside>
+
+					<p>要了解更多與titles相關的資訊，請見<a href="https://www.w3.org/WAI/WCAG21/Techniques/html/H25">技巧H25</a>。</p>
+				</section>
+
+				<section id="titles-002">
+					<h4 id="x4-4-2-ensure-numbered-headings-reflect-publication-hierarchy"><bdi class="secno">4.4.2 </bdi>確保標題層級能反應出版品樹狀結構<a class="self-link" href="#titles-002" aria-label="Permalink for Section 4.4.2"></a></h4>
+
+					<p>對使用者來說，一本EPUB出版品就像一份獨立的文件，他們可以從頭讀到尾，儘管內容實際上經常是由許多EPUB內容文件所組成。結果來說，自然會期待標題反映了在出版品整體樹狀結構中的位置，儘管出版品實際上並不是單一文件（例如，如果部的標題使用 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">HTML</a></cite>] <code>h1</code>元素表達，那麼屬於該部的每一章節都該以<code>h2</code>標題標記）。</p>
+
+					<p>技巧<a href="https://www.w3.org/WAI/WCAG21/Techniques/general/G141">G141：使用標題建構頁面</a>指出EPUB製作者在一份文件中，應該正確地使用標題層級，但在EPUB出版品中，標題層級在跨文件時也需要維持一致。實作上，這意味了每一份EPUB內容文件不該都從<code>h1</code>標題開始，除非第一個標題就是最上層的標題 — 第一個標題應該為反應出版品中實際位置的標題層級元素。</p>
+
+					<p>EPUB製作者也需要整合其內容，才能讓文件中的第一個標題一直都有最高的層級。例如，如果一份文件以<code>h3</code>標題開始，文件之後就不應該有<code>h2</code>標題（也就是，在前一章節的延續中，不應該包含新章節的開始）。但後來的標題與第一個標題層級相同是可以接受的（即為在一份文件中有著多個子章節，所有的標題都是<code>h3</code>標題）。</p>
+
+					<aside class="example" id="example-heading-order-across-documents"><div class="marker">
+    <a class="self-link" href="#example-heading-order-across-documents">範例<bdi> 12</bdi></a><span class="example-title">: 跨文件的標題順序</span>
+  </div>
+						<p>
+							在本範本中提供了一本教科書中兩份相連結的EPUB內容文件。第一份包含了章節標題（<code>h2</code>）以及開始兩個子章節（<code>h3</code>），第二份包含了後兩個子章節（<code>h3</code>）。</p>
+						<pre aria-busy="false"><code class="hljs css">&lt;<span class="hljs-selector-tag">html</span> …&gt;
+   …
+   &lt;<span class="hljs-selector-tag">body</span>&gt;
+    &nbsp; &lt;<span class="hljs-selector-tag">section</span>&gt;
+    &nbsp; &nbsp; &nbsp;&lt;<span class="hljs-selector-tag">h2</span>&gt;
+            <span class="hljs-selector-tag">Section</span> <span class="hljs-number">1.1</span> - Conquest
+         &lt;/<span class="hljs-selector-tag">h2</span>&gt;
+    &nbsp; &nbsp; &nbsp;
+    &nbsp; &nbsp; &nbsp;&lt;<span class="hljs-selector-tag">section</span>&gt;
+    &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&lt;<span class="hljs-selector-tag">h3</span>&gt;
+               <span class="hljs-selector-tag">Section</span> <span class="hljs-number">1.1</span>.<span class="hljs-number">1</span> - First Encounter
+            &lt;/<span class="hljs-selector-tag">h3</span>&gt;
+    &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;…
+    &nbsp; &nbsp; &nbsp;&lt;/<span class="hljs-selector-tag">section</span>&gt;
+    &nbsp; &nbsp; &nbsp;
+    &nbsp; &nbsp; &nbsp;&lt;<span class="hljs-selector-tag">section</span>&gt;
+    &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&lt;<span class="hljs-selector-tag">h3</span>&gt;
+               <span class="hljs-selector-tag">Section</span> <span class="hljs-number">1.1</span>.<span class="hljs-number">2</span> - Tensions Rise
+            &lt;/<span class="hljs-selector-tag">h3</span>&gt;
+    &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;…
+    &nbsp; &nbsp; &nbsp;&lt;/<span class="hljs-selector-tag">section</span>&gt;
+    &nbsp; &lt;/<span class="hljs-selector-tag">section</span>&gt;
+   &lt;/<span class="hljs-selector-tag">body</span>&gt;
+&lt;/<span class="hljs-selector-tag">html</span>&gt;</code></pre>
+						<pre aria-busy="false"><code class="hljs css">&lt;<span class="hljs-selector-tag">html</span> …&gt;
+   …
+   &lt;<span class="hljs-selector-tag">body</span>&gt;
+    &nbsp; &lt;<span class="hljs-selector-tag">section</span>&gt;
+    &nbsp; &nbsp; &nbsp;&lt;<span class="hljs-selector-tag">h3</span>&gt;
+            <span class="hljs-selector-tag">Section</span> <span class="hljs-number">1.1</span>.<span class="hljs-number">3</span> - War
+         &lt;/<span class="hljs-selector-tag">h3</span>&gt;
+    &nbsp; &nbsp; &nbsp;…
+    &nbsp; &lt;/<span class="hljs-selector-tag">section</span>&gt;
+    &nbsp; 
+    &nbsp; &lt;<span class="hljs-selector-tag">section</span>&gt;
+    &nbsp; &nbsp; &nbsp;&lt;<span class="hljs-selector-tag">h3</span>&gt;
+            <span class="hljs-selector-tag">Section</span> <span class="hljs-number">1.1</span>.<span class="hljs-number">4</span> - Aftermath
+         &lt;/<span class="hljs-selector-tag">h3</span>&gt;
+    &nbsp; &nbsp; &nbsp;…
+    &nbsp; &lt;/<span class="hljs-selector-tag">section</span>&gt;
+   &lt;/<span class="hljs-selector-tag">body</span>&gt;
+&lt;/<span class="hljs-selector-tag">html</span>&gt;</code></pre>
+					</aside>
+				</section>
+
+				<section id="titles-003">
+					<h4 id="x4-4-3-heading-topic-or-purpose"><bdi class="secno">4.4.3 </bdi>標題的主題或目的<a class="self-link" href="#titles-003" aria-label="Permalink for Section 4.4.3"></a></h4>
+
+					<p> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">WCAG2</a></cite>] <a href="https://www.w3.org/TR/WCAG2/#non-text-content">成功標準2.4.6</a>目前敘述了所有標題必需描述其主題或者目的。例如，這描述可以意指一本小說中的所有章節，如果有主題或者目的的話，那麼章節的標題都能精確地反映其主題或者目的。但實際上並不是所有的案例都通用，這項成功標準也讓使用章節編號作為標題變得困難，因為該標題不具備主題。</p>
+
+					<p>經過與<a href="https://github.com/w3c/wcag/issues/2039">無障礙輔助性準則工作小組在議題追蹤器</a>上的討論，而能在<a href="https://www.w3.org/WAI/WCAG21/Understanding/headings-and-labels">2.4.6理解文件</a>中澄清，比目前字面上更明確地掌握該成功標準的意圖 — 也就是，此項對標題的規定，僅是為了給內容建立固有的脈絡。</p>
+
+					<p>按此解釋，出版品中的標題只要為固有，應該都能直接提供。</p>
+
+					<p>也能預期該成功標準的用詞會更新，更能準確地反映該固有性規定，由於更改目前的WCAG 2用語較為複雜，比較可能會在未來的WCAG 3版變更。</p>
+				</section>
+			</section>
+
+			<section id="sec-wcag-descriptions">
+				<h3 id="x4-5-descriptions"><bdi class="secno">4.5 </bdi>描述<a class="self-link" href="#sec-wcag-descriptions" aria-label="Permalink for Section 4.5"></a></h3>
+
+				<section id="desc-001">
+					<h4 id="x4-5-1-include-alternative-text-descriptions"><bdi class="secno">4.5.1 </bdi>包含替代文字描述<a class="self-link" href="#desc-001" aria-label="Permalink for Section 4.5.1"></a></h4>
+
+					<p>本技巧於初版時，僅要求無論其複雜程度，為圖片提供替代文字。現在此項例外不再有效。</p>
+
+					<p>EPUB製作者現在必需確保由影像所構成的內容符合 [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">WCAG2</a></cite>] 的替代文字以及延伸描述規定，才能符合 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-a11y-11" title="EPUB Accessibility 1.1">EPUB-A11Y-11</a></cite>] 。</p>
+
+					<section id="sec-desc-001-res">
+						<h5 id="x4-5-1-1-helpful-resources"><bdi class="secno">4.5.1.1 </bdi>有用的資源<a class="self-link" href="#sec-desc-001-res" aria-label="Permalink for Section 4.5.1.1"></a></h5>
+
+						<p>以下文件提供包含延伸描述的指引：</p>
+
+						<ul>
+							<li>
+								<p><a href="http://diagramcenter.org/59-image-guidelines-for-epub-3.html">DIAGRAM EPUB 3影像指引</a>&nbsp;— 推薦包含替代文字以及延伸說明。</p>
+							</li>
+						</ul>
+					</section>
+				</section>
+			</section>
+
+			<section id="sec-wcag-language">
+				<h3 id="x4-6-language"><bdi class="secno">4.6 </bdi>語言<a class="self-link" href="#sec-wcag-language" aria-label="Permalink for Section 4.6"></a></h3>
+
+				<section id="lang-001">
+					<h4 id="x4-6-1-language-of-package-document"><bdi class="secno">4.6.1 </bdi>包裝文件的語言<a class="self-link" href="#lang-001" aria-label="Permalink for Section 4.6.1"></a></h4>
+
+					<p> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">WCAG2</a></cite>] 成功標準<a href="https://www.w3.org/TR/WCAG2/#language-of-page">3.1.1</a>和<a href="https://www.w3.org/TR/WCAG2/#language-of-parts">3.1.2</a>分別處理頁面使用的語言，以及其中的語言變更。</p>
+
+					<p>對EPUB出版品而言，包裝文件也是重要關於該出版品的詮釋資料資訊來源。舉個例子，閱讀系統使用這些資訊在其書架上呈現該出版品的細節。</p>
+
+					<p>所以，有必要提供包裝文件中所有文字內容的語言以合乎這些WCAG成功標準。最簡單達成此項規定的方法就是在根<a href="https://www.w3.org/TR/epub/#sec-package-elem"><code>package</code>元素 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-3" title="EPUB 3">EPUB-3</a></cite>] 中增加一項<code>xml:lang</code>屬性。</p>
+
+					<aside class="example" id="example-all-text-declared-to-be-in-japanese-by-default"><div class="marker">
+    <a class="self-link" href="#example-all-text-declared-to-be-in-japanese-by-default">範例<bdi> 13</bdi></a><span class="example-title">: 宣告所有文字預設為日文</span>
+  </div>
+						<pre><code aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">package</span> … <span class="hljs-attr">xml:lang</span>=<span class="hljs-string">"jp"</span>&gt;</span>
+   …
+<span class="hljs-tag">&lt;/<span class="hljs-name">package</span>&gt;</span></code></pre>
+					</aside>
+
+					<p>如果包裝文件中的個別詮釋資料欄位使不同語言表達，同樣需要透過在該欄位元素中加入一個<code>xml:lang</code>屬性以供識別語言變更。</p>
+
+					<aside class="example" id="example-overriding-the-default-language-for-a-title"><div class="marker">
+    <a class="self-link" href="#example-overriding-the-default-language-for-a-title">範例<bdi> 14</bdi></a><span class="example-title">: 變更title使用的預設語言</span>
+  </div>
+						<pre><code aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">package</span> … <span class="hljs-attr">xml:lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">metadata</span> …&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">dc:title</span> <span class="hljs-attr">xml:lang</span>=<span class="hljs-string">"fr"</span>&gt;</span>Mon premier guide de cuisson, un Mémoire<span class="hljs-tag">&lt;/<span class="hljs-name">dc:title</span>&gt;</span>
+      …
+   <span class="hljs-tag">&lt;/<span class="hljs-name">metadata</span>&gt;</span>
+   …
+<span class="hljs-tag">&lt;/<span class="hljs-name">package</span>&gt;</span></code></pre>
+					</aside>
+
+					<p>提供此項資訊可使閱讀系統以適合的語言對使用者呈現文字內容。</p>
+
+					<div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-4" aria-level="5"><span>注意事項</span></div><p class="">在包裝文件中指定語言不會影響到個別EPUB內容文件（即為，每一份文件的語言必須使用所其提供的語言表述機制進行指定）。</p></div>
+				</section>
+
+				<section id="lang-002">
+					<h4 id="x4-6-2-language-of-the-epub-publication"><bdi class="secno">4.6.2 </bdi>EPUB出版品的語言<a class="self-link" href="#lang-002" aria-label="Permalink for Section 4.6.2"></a></h4>
+
+					<p>在表達文字內容使用的語言之外，包裝文件也能透過<a href="https://www.w3.org/TR/epub/#sec-opf-dclanguage"><code>dc:language</code>元素</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-3" title="EPUB 3">EPUB-3</a></cite>] 讓EPUB製作者識別該EPUB出版品使用的語言。</p>
+
+					<aside class="example" id="example-setting-the-language-of-an-epub-publication-to-italian"><div class="marker">
+    <a class="self-link" href="#example-setting-the-language-of-an-epub-publication-to-italian">範例<bdi> 15</bdi></a><span class="example-title">: 設定EPUB出版品語言為義大利文</span>
+  </div>
+						<pre><code aria-busy="false" class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">package</span> …&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">metadata</span> …&gt;</span>
+      …
+      <span class="hljs-tag">&lt;<span class="hljs-name">dc:language</span>&gt;</span>it<span class="hljs-tag">&lt;/<span class="hljs-name">dc:language</span>&gt;</span>
+      …
+   <span class="hljs-tag">&lt;/<span class="hljs-name">metadata</span>&gt;</span>
+   …
+<span class="hljs-tag">&lt;/<span class="hljs-name">package</span>&gt;</span></code></pre>
+					</aside>
+
+					<p>儘管設置此項資訊並不符合 [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">WCAG2</a></cite>] <a href="https://www.w3.org/TR/WCAG2/#language-of-page">成功標準3.1.1</a>的嚴格要求，僅為參考性。但在此欄位填入適當的語言資訊還是可以被當作最佳實踐範例（請注意EPUB 3要求一定要指定語言，忽略此欄位在驗證時會違反規定）。</p>
+
+					<p>雖然閱讀系統並不會使用該項語言資訊來處理EPUB出版品中的文字內容，但會被應用在對使用者提供最佳化閱讀體驗上（例如，預先載入文字轉換語音引擎，在合成時使用者不會感受到延遲）。</p>
+
+					<div class="note" role="note" id="issue-container-generatedID-5"><div role="heading" class="note-title marker" id="h-note-5" aria-level="5"><span>注意事項</span></div><p class="">在包裝文件中指定語言不會影響到個別EPUB內容文件（即為，每一份文件的語言必須使用所其提供的語言表述機制進行指定）。</p></div>
+				</section>
+			</section>
+
+			<section id="sec-wcag-text">
+				<h3 id="x4-7-text"><bdi class="secno">4.7 </bdi>文字<a class="self-link" href="#sec-wcag-text" aria-label="Permalink for Section 4.7"></a></h3>
+
+				<section id="text-001">
+					<h4 id="x4-7-1-use-unicode-for-text-content"><bdi class="secno">4.7.1 </bdi>文字內容使用Unicode<a class="self-link" href="#text-001" aria-label="Permalink for Section 4.7.1"></a></h4>
+
+					<p> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">WCAG2</a></cite>] <a href="https://www.w3.org/TR/WCAG2/#non-text-content">成功標準1.1.1</a>要求為所有非文字的內容提供對等的文字才能符合A等級。在一些區域（例如亞洲）經常會發現許多把個別文字做成圖片的狀況，無論其在Unicode中是否對應的文字。會採用這種做法有許多原因，像是容易從舊文件上轉換，以及跨閱讀系統時能夠相容。然而，在多數的狀況中，這種圖片的應用方式使得非視覺的使用者無法存取文字內容。</p>
+
+					<p>當個別的文字被圖片所取代時，必然會對文字轉換語音播放造成負面影響（如果一個詞中的單一文字被圖片所取代，詞就不會被視為文字的組合被朗讀出來）。對於視覺使用者來說也有問題，因為圖片通常放大以後品質欠佳，同時文字也無法變成成其他的字體以符合使用者偏好。</p>
+
+					<p>所有文字內容都使用Unicode文字的話，可以避免這樣的問題，讓內容能夠成功地符合A等級的最低規定。</p>
+
+					<p>為了達到AA等級，EPUB製作者將要面對<a href="https://www.w3.org/TR/WCAG2/#images-of-text">成功標準1.4.5</a>，更進一步把文字做成圖片限制於必要的用途上。</p>
+				</section>
+			</section>
+
+			<section id="sec-wcag-alt">
+				<h3 id="x4-8-accessible-alternatives"><bdi class="secno">4.8 </bdi>無障礙輔助替代方式<a class="self-link" href="#sec-wcag-alt" aria-label="Permalink for Section 4.8"></a></h3>
+
+				<p>由於EPUB出版品可以由超過一個的內容釋義所構成，不同版本的內容可能提供不一樣的無障礙輔助性。例如，由圖像構成版本的內容缺少替代文字或者描述，但可以和一份符合WCAG的文字序列一起提供。這種無障礙輔助的同捆方式可以被接受，就像 [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">WCAG2</a></cite>] 允許不合規的內容提供一項<a href="https://www.w3.org/TR/WCAG2/#dfn-conforming-alternate-version">合規的替代版本</a>一樣。</p>
+
+				<p> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epubmultiplerenditions-10" title="EPUB Multiple-Rendition Publications 1.0">EPUBMultipleRenditions-10</a></cite>] 規格中定義了一組功能用來創建這種EPUB出版品。其指定了一組屬性，能讓閱讀系統自動選擇一項偏好的內容釋義給使用者，或者提供給使用者選擇，自行在可用的選項中挑選。這項功能技術上符合 [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">WCAG2</a></cite>] 之規定，確保使用者能夠存取具無障礙輔助的版本。</p>
+
+				<p>然而，實際上 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epubmultiplerenditions-10" title="EPUB Multiple-Rendition Publications 1.0">EPUBMultipleRenditions-10</a></cite>] 規格在發布時並未廣泛地受到閱讀系統所支援。結果上而言，使用者獲得一份包含一個以上內容釋義的EPUB出版品時，僅能存取預設的。除非預設的內容釋義具備無障礙輔助性，不然他們就無法閱讀該EPUB出版品。</p>
+
+				<p>EPUB製作者在實作此項功能以符合無障礙輔助性規定時，需要做出最謹慎的考量。包含多重內容釋義的的EPUB出版品，只要其中一項內容釋義符合所有的內容規定，就符合 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-a11y-11" title="EPUB Accessibility 1.1">EPUB-A11Y-11</a></cite>] 規格，但是EPUB製作者至少需要在其<a href="#meta-005">無障礙輔助摘要</a>中註明閱讀系統需要支援多重內容釋義。EPUB製作者推薦可使用其他任何方式來明示此需求（例如包含在<a href="#dist-002">遞送詮釋資料</a>中）。</p>
+
+				<p>當閱讀系統對多重內容釋義的支援更加完善時，本章節也會進行更新，以推薦使用該方法。</p>
+			</section>
+		</section>
+		<section id="sec-epub">
+			<h2 id="x5-epub-techniques"><bdi class="secno">5. </bdi>EPUB技巧<a class="self-link" href="#sec-epub" aria-label="Permalink for Section 5."></a></h2>
+
+			<section id="sec-epub-page-markers">
+				<h3 id="x5-1-page-markers"><bdi class="secno">5.1 </bdi>頁面標記<a class="self-link" href="#sec-epub-page-markers" aria-label="Permalink for Section 5.1"></a></h3>
+
+				<section id="page-001">
+					<h4 id="x5-1-1-provide-page-break-markers"><bdi class="secno">5.1.1 </bdi>提供分頁點標記<a class="self-link" href="#page-001" aria-label="Permalink for Section 5.1.1"></a></h4>
+
+					<p>EPUB結構語意用語 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-ssv" title="EPUB Structural Semantics Vocabulary">EPUB-SSV</a></cite>] 以及數位出版WAI-ARIA 1.0模組 [<cite><a class="bibref" data-link-type="biblio" href="#bib-dpub-aria-1.0" title="Digital Publishing WAI-ARIA Module 1.0">DPUB-ARIA-1.0</a></cite>] ，兩者都分別提供了供靜態分頁點的語意：<a href="https://www.w3.org/TR/epub/#pagebreak">pagebreak</a>和 <a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-pagebreak">doc-pagebreak</a>。</p>
+
+					<p>推薦同時在EPUB 3內容中應用兩種語意，以確保對閱讀系統和輔助科技的最大相容性。</p>
+
+					<aside class="example" id="example-expressing-a-page-break"><div class="marker">
+    <a class="self-link" href="#example-expressing-a-page-break">範例<bdi> 16</bdi></a><span class="example-title">: 表達一個分頁點</span>
+  </div>
+						<p>本範本中，EPUB製作者將一個HTML <code>span</code>元素識別為分頁點。\</p>
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>
+    <span class="hljs-attr">id</span>=<span class="hljs-string">"page001"</span>
+    <span class="hljs-attr">epub:type</span>=<span class="hljs-string">"pagebreak"</span>
+    <span class="hljs-attr">role</span>=<span class="hljs-string">"doc-pagebreak"</span>
+    <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"1"</span>/&gt;</span></code></pre>
+					</aside>
+
+					<p>元素需要一個<code>title</code>或<code>aria-label</code>屬性來將該值宣讀給使用者。請不要在文字內容包含頁碼，這種做法會強制使用者在遇見時聽見其宣讀（也就是在句子中間無脈絡地出現）。</p>
+
+					<p>EPUB 2不能在內容中包含識別靜態分頁點的標記。僅可以提供分頁標的進行超連結，但只能透過<a href="#page-003">頁面列表</a>讓使用者跳往該位置。</p>
+
+					<aside class="example" id="example-adding-a-hyperlink-destination"><div class="marker">
+    <a class="self-link" href="#example-adding-a-hyperlink-destination">範例<bdi> 17</bdi></a><span class="example-title">: 增添一個超連結目標</span>
+  </div>
+						<p>在本範例中，EPUB製作者增添一個XHTML 1.1 <code>span</code>元素作為超連結標的。</p>
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> …&gt;</span>
+   …
+   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+      …
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"page001"</span>/&gt;</span>
+      …
+   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+					</aside>
+
+					<p>請勿在EPUB 3出版品中使用 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">HTML</a></cite>] <a href="https://html.spec.whatwg.org/multipage/#the-a-element"><code>a</code>元素</a>來識別分頁點位置。儘管本元素之前被定義為供超連結目標使用的錨點，但其用途在 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">HTML</a></cite>] 中已經改變，僅供連結使用。</p>
+				</section>
+
+				<section id="page-002">
+					<h4 id="x5-1-2-identify-pages-in-audio-playback"><bdi class="secno">5.1.2 </bdi>在聲音播放中識別頁碼<a class="self-link" href="#page-002" aria-label="Permalink for Section 5.1.2"></a></h4>
+
+					<p>讀者很少會停下閱讀來檢視每一份新頁面的頁碼，所以一本出版品透過聲音播放時，若頁碼也被一併唸出，不僅會讓人分心，也會感到困惑（例如在一個句子的中間唸出數字）。</p>
+
+					<p>為了降低這種對讀者可能的打擾，EPUB製作者需要在EPUB 3媒體覆蓋文件中有頁碼宣讀時，進行識別。識別可以讓閱讀系統自動跳過頁碼以提供較好的播放體驗。</p>
+
+					<p>要在EPUB 3出版品中識別頁碼，可為媒體覆蓋文件中每一個<a href="https://www.w3.org/TR/epub/#sec-smil-par-elem"><code>par</code>元素</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-3" title="EPUB 3">EPUB-3</a></cite>] 附加一個<code>epub:type</code>屬性，其值為「<a href="https://www.w3.org/TR/epub/#pagebreak"><code>pagebreak</code></a>」 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-ssv" title="EPUB Structural Semantics Vocabulary">EPUB-SSV</a></cite>] ，作為頁碼識別。</p>
+
+					<aside class="example" id="example-a-page-number-identified-in-a-media-overlays-document"><div class="marker">
+    <a class="self-link" href="#example-a-page-number-identified-in-a-media-overlays-document">範例<bdi> 18</bdi></a><span class="example-title">: 在媒體覆蓋文件中識別頁碼</span>
+  </div>
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">smil</span>
+    <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/ns/SMIL"</span> 
+    <span class="hljs-attr">xmlns:epub</span>=<span class="hljs-string">"http://www.idpf.org/2007/ops"</span>
+    <span class="hljs-attr">version</span>=<span class="hljs-string">"3.0"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- a paragraph --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">par</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"id1"</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">text</span>
+             <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter1.xhtml#para1"</span>/&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">audio</span>
+             <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter1_audio.mp3"</span>
+             <span class="hljs-attr">clipBegin</span>=<span class="hljs-string">"0:23:22.000"</span>
+             <span class="hljs-attr">clipEnd</span>=<span class="hljs-string">"0:24:15.000"</span>/&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">par</span>&gt;</span>
+
+      <span class="hljs-comment">&lt;!-- a page number --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">par</span>
+            <span class="hljs-attr">id</span>=<span class="hljs-string">"id2"</span>
+            <span class="hljs-attr">epub:type</span>=<span class="hljs-string">"pagebreak"</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">text</span>
+             <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter1.xhtml#pgbreak1"</span>/&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">audio</span>
+             <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter1_audio.mp3"</span>
+             <span class="hljs-attr">clipBegin</span>=<span class="hljs-string">"0:24:15.000"</span>
+             <span class="hljs-attr">clipEnd</span>=<span class="hljs-string">"0:24:18.123"</span>/&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">par</span>&gt;</span>
+
+      <span class="hljs-comment">&lt;!-- another paragraph --&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">par</span>
+            <span class="hljs-attr">id</span>=<span class="hljs-string">"id3"</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">text</span>
+             <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter1.xhtml#para2"</span>/&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">audio</span>
+             <span class="hljs-attr">src</span>=<span class="hljs-string">"chapter1_audio.mp3"</span>
+             <span class="hljs-attr">clipBegin</span>=<span class="hljs-string">"0:24:18.123"</span>
+             <span class="hljs-attr">clipEnd</span>=<span class="hljs-string">"0:25:28.530"</span>/&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">par</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">smil</span>&gt;</span></code></pre>
+					</aside>
+
+					<p>請注意，EPUB 3不提供文字與聲音同步播放，而不適用此技巧。</p>
+				</section>
+
+				<section id="page-003">
+					<h4 id="x5-1-3-provide-a-page-list"><bdi class="secno">5.1.3 </bdi>提供頁面列表<a class="self-link" href="#page-003" aria-label="Permalink for Section 5.1.3"></a></h4>
+
+					<p>頁面列表 — 一份包含指向靜態分頁點位址超連結的列表 — 是讓使用者找到靜態頁面位置最有效率的方式。若沒有頁面列表，使用者得要在文字中尋找每一個分頁標記，前提是如果有，而且閱讀系統也提供這種功能。</p>
+
+					<p>當有一份頁面列表時，閱讀系統可以讓使用者直接存取該列表，或者應用於提供自動跳往頁面的功能。</p>
+
+					<p>EPUB導覽文件允許包含一份<a href="https://www.w3.org/TR/epub/#sec-nav-pagelist"><code>page-list</code> <code>nav</code></a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-3" title="EPUB 3">EPUB-3</a></cite>] ，同時EPUB 2的NCX檔案也可以透過<a href="http://www.idpf.org/epub/20/spec/OPF_2.0.1_draft.htm#Section2.4.1.2"><code>pageList</code>元素</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-opf-201" title="Open Packaging Format 2.0.1">OPF-201</a></cite>] 提供相同的功能。</p>
+
+					<aside class="example" id="example-a-page-list-nav-element"><div class="marker">
+    <a class="self-link" href="#example-a-page-list-nav-element">範例<bdi> 19</bdi></a><span class="example-title">: page-list nav 元素</span>
+  </div>
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span>
+    <span class="hljs-attr">epub:type</span>=<span class="hljs-string">"page-list"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>
+             <span class="hljs-attr">href</span>=<span class="hljs-string">"georgia.xhtml#page001"</span>&gt;</span>
+            1
+         <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>
+             <span class="hljs-attr">href</span>=<span class="hljs-string">"georgia.xhtml#page002"</span>&gt;</span>
+            2
+         <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>
+             <span class="hljs-attr">href</span>=<span class="hljs-string">"georgia.xhtml#page003"</span>&gt;</span>
+            3
+         <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      …
+   <span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></code></pre>
+					</aside>
+
+					<aside class="example" id="example-a-page-list-in-the-ncx"><div class="marker">
+    <a class="self-link" href="#example-a-page-list-in-the-ncx">範例<bdi> 20</bdi></a><span class="example-title">: NCX中的頁面列表</span>
+  </div>
+						<p>在此範例中，<code>pageList</code>元素包含了一份分頁點位置列表。</p>
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ncx</span>
+    <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.daisy.org/z3986/2005/ncx/"</span>
+    <span class="hljs-attr">version</span>=<span class="hljs-string">"2005-1"</span>
+    <span class="hljs-attr">xml:lang</span>=<span class="hljs-string">"en-US"</span>&gt;</span>
+   …
+   <span class="hljs-tag">&lt;<span class="hljs-name">pageList</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">pageTarget</span>
+          <span class="hljs-attr">id</span>=<span class="hljs-string">"p1"</span>
+          <span class="hljs-attr">type</span>=<span class="hljs-string">"normal"</span>
+          <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">navLabel</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+         <span class="hljs-tag">&lt;/<span class="hljs-name">navLabel</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">content</span>
+             <span class="hljs-attr">src</span>=<span class="hljs-string">"content.html#p001"</span>/&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">pageTarget</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">pageTarget</span>
+          <span class="hljs-attr">id</span>=<span class="hljs-string">"p2"</span>
+          <span class="hljs-attr">type</span>=<span class="hljs-string">"normal"</span>
+          <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">navLabel</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">text</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">text</span>&gt;</span>
+         <span class="hljs-tag">&lt;/<span class="hljs-name">navLabel</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">content</span>
+             <span class="hljs-attr">src</span>=<span class="hljs-string">"content.html#p002"</span>/&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">pageTarget</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">pageList</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ncx</span>&gt;</span></code></pre>
+					</aside>
+				</section>
+
+				<section id="page-004">
+					<h4 id="x5-1-4-identify-the-pagination-source"><bdi class="secno">5.1.4 </bdi>識別分頁來源<a class="self-link" href="#page-004" aria-label="Permalink for Section 5.1.4"></a></h4>
+
+					<p>使用者一般會想知道在一本EPUB出版品中，分頁點標記的來源是哪一份靜態媒體。其考量包括版次刷次、由哪一家出版社的何品牌，以及分頁是來自精裝或者平裝版，這都會影響判斷其用處（例如，頁碼是否能準確對應到教室裡所使用的印刷書）。</p>
+
+					<p>為了讓使用者可以判斷分頁是否適用，在包裝文件的詮釋資料中識別其來源作品的ISBN。</p>
+
+					<aside class="example" id="example-expressing-the-source-of-pagination"><div class="marker">
+    <a class="self-link" href="#example-expressing-the-source-of-pagination">範例<bdi> 21</bdi></a><span class="example-title">: 表達分頁來源</span>
+  </div>
+						<p>在此範例中，<code>dc:source</code>元素包含了分頁的印刷來源之ISBN。此範例對EPUB 2與3都有效。</p>
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">metadata</span> …&gt;</span>
+   …
+   <span class="hljs-tag">&lt;<span class="hljs-name">dc:source</span>&gt;</span>
+      urn:isbn:9780375704024
+   <span class="hljs-tag">&lt;/<span class="hljs-name">dc:source</span>&gt;</span>
+   …
+<span class="hljs-tag">&lt;/<span class="hljs-name">metadata</span>&gt;</span></code></pre>
+					</aside>
+
+					<p>EPUB 3允許分頁來源可以使用<a href="https://www.w3.org/TR/epub/#source-of"><code>source-of</code>特性</a>，值為「<code>pagination</code>」 [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-3" title="EPUB 3">EPUB-3</a></cite>] ，以做到更明確的識別。</p>
+
+					<aside class="example" id="example-adding-a-source-of-declaration"><div class="marker">
+    <a class="self-link" href="#example-adding-a-source-of-declaration">範例<bdi> 22</bdi></a><span class="example-title">: 增添一個source-of宣告</span>
+  </div>
+						<p>在此範例中，<code>dc:source</code>元素明確地識別分頁來源。<code>refines</code>屬性用於識別其修飾<code>source-of</code>特性的元素ID。</p>
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">metadata</span> …&gt;</span>
+   …
+   <span class="hljs-tag">&lt;<span class="hljs-name">dc:source</span>
+       <span class="hljs-attr">id</span>=<span class="hljs-string">"pg-src"</span>&gt;</span>
+      urn:isbn:9780375704024
+   <span class="hljs-tag">&lt;/<span class="hljs-name">dc:source</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">meta</span>
+       <span class="hljs-attr">property</span>=<span class="hljs-string">"source-of"</span>
+       <span class="hljs-attr">refines</span>=<span class="hljs-string">"#pg-src"</span>&gt;</span>
+      pagination
+   <span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+   …
+<span class="hljs-tag">&lt;/<span class="hljs-name">metadata</span>&gt;</span></code></pre>
+					</aside>
+
+					<p>當一本EPUB出版品有著多個來源時，<code>source-of</code>特性特別有助於辨別分頁來自於何者。</p>
+
+					<p>如果來源沒有ISBN，可以盡可能多地包含來源出版品的資訊（例如，出版社、出版日期、版本、以及裝幀）。</p>
+
+					<aside class="example" id="example-text-description-of-the-source"><div class="marker">
+    <a class="self-link" href="#example-text-description-of-the-source">範例<bdi> 23</bdi></a><span class="example-title">: 以文字描述來源</span>
+  </div>
+						<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">metadata</span> …&gt;</span>
+   …
+   <span class="hljs-tag">&lt;<span class="hljs-name">dc:source</span>&gt;</span>
+      ACME Publishing, 1945, 2nd Edition, Softcover
+   <span class="hljs-tag">&lt;/<span class="hljs-name">dc:source</span>&gt;</span>
+   …
+<span class="hljs-tag">&lt;/<span class="hljs-name">metadata</span>&gt;</span></code></pre>
+					</aside>
+
+					<p>如果分頁點標記為該EPUB出版品所固有（譯注：也就是不來自任何印刷等靜態分頁來源），就不要提供印刷來源。</p>
+				</section>
+			</section>
+		</section>
+		<section id="sec-distribution">
+			<h2 id="x6-distribution-techniques"><bdi class="secno">6. </bdi>遞送技巧<a class="self-link" href="#sec-distribution" aria-label="Permalink for Section 6."></a></h2>
+
+			<section id="dist-001">
+				<h3 id="x6-1-do-not-restrict-access-through-digital-rights-management"><bdi class="secno">6.1 </bdi>不要透過數位權利管理機制限制存取<a class="self-link" href="#dist-001" aria-label="Permalink for Section 6.1"></a></h3>
+
+				<p>EPUB出版品一般在遞送時，需要保護出版社以及作者的智慧財產權（也就是，這樣才可能透過線上書店進行販售，或者透過圖書館系統派送）。滿足這項需求最常見的方法是透過應用數位權利管理（digital rights management, DRM）綱要於包裝好的EPUB出版品上。DRM可啟動各種安全功能，其並非EPUB格式所原生，像是限制僅讓單一使用者存取，以及限制可存取該出版品的時間（例如圖書館借閱）。</p>
+
+				<p>一般而言，DRM可和輔助科技共存，但在DRM限制移除對EPUB出版品的直接存取，或者限制對其中內容的存取時，就會產生問題。除非閱讀系統實作的DRM提供API層級對內容的存取，不然就有困難或者近乎不可能進行文字轉換語音播放，或者供可更新的點字顯示去存取底層文字，也會造成其他的無障礙輔助性問題。</p>
+
+				<p>因此，應用DRM不能對具有權利存取EPUB出版品的使用者，減弱或者妨害輔助科技的功能性。</p>
+			</section>
+
+			<section id="dist-002">
+				<h3 id="x6-2-include-accessibility-metadata-in-distribution-records"><bdi class="secno">6.2 </bdi>在遞送紀錄中包含無障礙輔助詮釋資料<a class="self-link" href="#dist-002" aria-label="Permalink for Section 6.2"></a></h3>
+
+				<p>當一本EPUB出版品被送進遞送系統，像是書店或者圖書館，通常會另外提供一份詮釋資料紀錄給遞送方。在這些狀況中，所使用的詮釋資料一般而言，自身就能提供出版品的發現性，而不需要從包裝文件的詮釋資料中取得。</p>
+
+				<p>結論上，在遞送資料用語准許的範圍內，也需要盡可能地包含無障礙輔助詮釋資料。</p>
+
+				<div class="note" role="note" id="issue-container-generatedID-6"><div role="heading" class="note-title marker" id="h-note-6" aria-level="4"><span>注意事項</span></div><div class="">
+					<p>使用遞送紀錄，不會取代在包裝文件中包含無障礙輔助詮釋資料之規定。包裝文件中的詮釋資料確保無障礙輔助資訊永遠可以和該出版品一起取得。</p>
+				</div></div>
+
+				<aside class="example" id="example-onix-accessibility-metadata"><div class="marker">
+    <a class="self-link" href="#example-onix-accessibility-metadata">範例<bdi> 24</bdi></a><span class="example-title">: ONIX無障礙輔助詮釋資料</span>
+  </div>
+					<p>在此範例中，ONIX紀錄包含了無障礙輔助詮釋資料陳述了該EPUB出版品沒有任何無障礙輔助功能關閉(10)，包含目錄(11)以及有正確的閱讀順序(13)。</p>
+					<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ONIXMessage</span> <span class="hljs-attr">release</span>=<span class="hljs-string">"3.0"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">Header</span>&gt;</span>
+      …
+   <span class="hljs-tag">&lt;/<span class="hljs-name">Header</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">Product</span>&gt;</span>
+      …
+      <span class="hljs-tag">&lt;<span class="hljs-name">DescriptiveDetail</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">ProductFormFeature</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ProductFormFeatureType</span>&gt;</span>
+               09
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ProductFormFeatureType</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ProductFormFeatureValue</span>&gt;</span>
+               10
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ProductFormFeatureValue</span>&gt;</span>
+         <span class="hljs-tag">&lt;/<span class="hljs-name">ProductFormFeature</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">ProductFormFeature</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ProductFormFeatureType</span>&gt;</span>
+               09
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ProductFormFeatureType</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ProductFormFeatureValue</span>&gt;</span>
+               11
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ProductFormFeatureValue</span>&gt;</span>
+         <span class="hljs-tag">&lt;/<span class="hljs-name">ProductFormFeature</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">ProductFormFeature</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ProductFormFeatureType</span>&gt;</span>
+               09
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ProductFormFeatureType</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ProductFormFeatureValue</span>&gt;</span>
+               13
+            <span class="hljs-tag">&lt;/<span class="hljs-name">ProductFormFeatureValue</span>&gt;</span>
+         <span class="hljs-tag">&lt;/<span class="hljs-name">ProductFormFeature</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">DescriptiveDetail</span>&gt;</span>
+      …
+      <span class="hljs-tag">&lt;<span class="hljs-name">TitleDetail</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">TitleType</span>&gt;</span>
+            01
+         <span class="hljs-tag">&lt;/<span class="hljs-name">TitleType</span>&gt;</span>
+         <span class="hljs-tag">&lt;<span class="hljs-name">TitleElement</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">TitleElementLevel</span>&gt;</span>
+               01
+            <span class="hljs-tag">&lt;/<span class="hljs-name">TitleElementLevel</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">TitleText</span>&gt;</span>
+               Accessible EPUB 3
+            <span class="hljs-tag">&lt;/<span class="hljs-name">TitleText</span>&gt;</span>
+         <span class="hljs-tag">&lt;/<span class="hljs-name">TitleElement</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">TitleDetail</span>&gt;</span>
+      …
+   <span class="hljs-tag">&lt;/<span class="hljs-name">Product</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ONIXMessage</span>&gt;</span></code></pre>
+				</aside>
+
+				<section id="sec-dist-002-res">
+					<h4 id="x6-2-1-helpful-resources"><bdi class="secno">6.2.1 </bdi>有用的資源<a class="self-link" href="#sec-dist-002-res" aria-label="Permalink for Section 6.2.1"></a></h4>
+
+					<p>請見以下資源已獲得關於在遞送紀錄中包含無障礙輔助詮釋資料的更多資訊：</p>
+
+					<ul>
+						<li>
+							<p>
+								<a href="https://w3c.github.io/a11y-discov-vocab/crosswalk/">Schema.org 無障礙輔助性特性</a>
+							</p>
+						</li>
+						<li>
+							<p>
+								<a href="https://ns.editeur.org/onix/en/196">ONIX代碼列表196</a>
+							</p>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</section>
+		<section id="change-log" class="appendix">
+			<h2 id="a-change-log"><bdi class="secno">A. </bdi>變更紀錄<a class="self-link" href="#change-log" aria-label="Permalink for Appendix A."></a></h2>
+
+			<p>請注意，本變更紀錄僅用於辨識自<a href="http://idpf.org/epub/a11y/techniques/">EPUB無障礙輔助性技巧1.0</a>以來根本性的變更 — 這些變更會影響到EPUB出版品的適用性，或具同樣的重要性。</p>
+
+			<p>若要取得在改版過程中所有議題的列表，請參考<a href="https://github.com/w3c/epub-specs/issues?q=is%3Aissue+is%3Aclosed+sort%3Aupdated-desc+label%3ASpec-AccessibilityTechs+label%3AAccessibility11+">工作小組的議題追蹤器</a>。</p>
+
+			<ul>
+				<li>10-Nov-2021: 新增在包裝文件中設定語言的技巧。請見<a href="https://github.com/w3c/epub-specs/issues/1842">issue 1842</a>。</li>
+				<li>25-Oct-2021: 為每一章節移除一般技巧標籤。請見<a href="https://github.com/w3c/epub-specs/issues/1866">issue 1866</a>。</li>
+				<li>29-Sep-2021: 新增<a href="#titles-003">TITLES-003</a>以解釋標題僅需要為固有，並非定義該章節的主題或者目的。請見<a href="https://github.com/w3c/epub-specs/issues/1810">issue 1810</a>。</li>
+				<li>10-June-2021: 釐清確保在跨頁時內容順序具意義的序列技巧，而與書脊中文件排列無關。請見<a href="https://github.com/w3c/epub-specs/issues/1695">issue 1695</a>。</li>
+				<li>25-May-2021: 更新ARIA roles章節以釐清不需使用<code>epub:type</code>屬性進行協調，也就是在使用<code>epub:type</code>處roles不為必要。</li>
+				<li>13-Apr-2021: 新增在EPUB 3使用<code>source-of</code>特性的範例，以識別哪一個<code>dc:source</code>是分頁來源。請見<a href="https://github.com/w3c/epub-specs/issues/1600">issue 1600</a>。</li>
+				<li>19-Feb-2021: 更新對WCAG 2.0的參考，改為無日期版的WCAG 2（除了某些為了合規性而特別指定WCAG 2.0之處）。</li>
+				<li>08-Jan-2021: 新增技巧以推薦<a href="#access-003">目錄順序</a>要與線性閱讀順序一致。</li>
+				<li>16-Nov-2020: 供<a href="#meta-007">無障礙輔助性控制</a>以及<a href="#meta-006">API</a>的技巧被描述所取代，所以這些特性無需設置。請見<a href="https://github.com/w3c/epub-specs/issues/1286">issue 1286</a>。</li>
+			</ul>
+		</section>
+		<section id="ack" class="appendix informative">
+    <h2 id="b-acknowledgements"><bdi class="secno">B. </bdi>致謝<a class="self-link" href="#ack" aria-label="Permalink for Appendix B."></a></h2><p><em>本章節為非規範性。</em></p>
+
+    <p>以下EPUB 3工作小組的成員對本規格的產製有所貢獻：</p>
+
+    <ul class="ack">
+                <li>Juliette Alexandria (Access2online Inc.)</li>
+        <li>Luc Audrain (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Expert)</li>
+        <li>Will AWAD (Newgen Knowledgeworks)</li>
+        <li>Sofia Bautista (Legible Media Inc.)</li>
+        <li>Laura Brady (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Expert)</li>
+        <li>Leah Brochu (National Network for Equitable Library Service)</li>
+        <li>Matthew C. Chan (House of Anansi Press)</li>
+        <li>Yu-Wei Chang (Taiwan Digital Publishing Forum)</li>
+        <li>Fred Chasen (Scribd)</li>
+        <li>Garth Conboy (Google LLC)</li>
+        <li>Juan Corona (Legible Media Inc.)</li>
+        <li>Dave Cramer (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Expert, chair)</li>
+        <li>Romain Deltour (DAISY Consortium)</li>
+        <li>Marisa DeMeglio (DAISY Consortium)</li>
+        <li>Brady Duga (Google LLC)</li>
+        <li>Reinaldo Ferraz (NIC.br - Brazilian Network Information Center)</li>
+        <li>John Foliot (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Expert)</li>
+        <li>Teenya Franklin (Pearson plc)</li>
+        <li>Hadrien Gardeur (EDRLab)</li>
+        <li>Matt Garrish (DAISY Consortium)</li>
+        <li>Jen Goulden (Crawford Technologies)</li>
+        <li>Ivan Herman (<abbr title="World Wide Web Consortium">W3C</abbr>, staff contact)</li>
+        <li>Tetsu Hoshino (Kodansha, Publishers, Ltd.)</li>
+        <li>Norikazu Ishizu (Kadokawa Corporation)</li>
+        <li>Norihito IYENAGA (Kodansha, Publishers, Ltd.)</li>
+        <li>Ken Jones (Circular Software)</li>
+        <li>Deborah Kaplan (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Expert)</li>
+        <li>Bill Kasdorf (Book Industry Study Group)</li>
+        <li>George Kerscher (DAISY Consortium)</li>
+        <li>Kazuhito Kidachi (Mitsue-Links Co., Ltd.)</li>
+        <li>Masakazu Kitahara (Voyager Japan, Inc.)</li>
+        <li>Toshiaki Koike (Voyager Japan, Inc.)</li>
+        <li>Ryo Kuroda (ACCESS CO., LTD.)</li>
+        <li>Charles LaPierre (Benetech)</li>
+        <li>Dan Lazin (Google LLC)</li>
+        <li>Laurent Le Meur (EDRLab)</li>
+        <li>Farrah Little (National Network for Equitable Library Service)</li>
+        <li>Karan  Malhotra (Newgen Knowledgeworks)</li>
+        <li>Makoto Murata (DAISY Consortium)</li>
+        <li>Cristina Mussinelli (Fondazione LIA)</li>
+        <li>Yoichiro Nagao (Kodansha, Publishers, Ltd.)</li>
+        <li>Yoshinori Ohmura (SHUEISHA Inc.)</li>
+        <li>Rachel Osolen (National Network for Equitable Library Service)</li>
+        <li>Gregorio Pellegrino (Fondazione LIA)</li>
+        <li>Vijaya Gowri Perumal (Newgen Knowledgeworks)</li>
+        <li>Wendy Reid (Rakuten, Inc., chair)</li>
+        <li>Leonard Rosenthol (Adobe)</li>
+        <li>Shinobu Sato (Kadokawa Corporation)</li>
+        <li>Ben Schroeter (Pearson plc)</li>
+        <li>Daihei Shiohama (MEDIA DO Co., Ltd.)</li>
+        <li>Tzviya Siegman (Wiley)</li>
+        <li>Avneesh Singh (DAISY Consortium)</li>
+        <li>MOTOI SUZUKI (SHUEISHA Inc.)</li>
+        <li>Yutaka Suzuki (Kadokawa Corporation)</li>
+        <li>Kyrce Swenson (Pearson plc)</li>
+        <li>Shinya Takami (Kadokawa Corporation, chair)</li>
+        <li>Mateus Teixeira (W. W. Norton &amp; Company)</li>
+        <li>Yukio Tomikura (Kodansha, Publishers, Ltd.)</li>
+        <li>Aimee Ubbink (Crawford Technologies)</li>
+        <li>Daniel Weck (DAISY Consortium)</li>
+        <li>Zheng Xu (Gardenia Corp, Rakuten, Inc.)</li>
+        <li>Fuqiao Xue (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+        <li>Evan Yamanishi (W. W. Norton &amp; Company)</li>
+        <li>Osamu Yoshiba (Kodansha, Publishers, Ltd.)</li>
+        <li>Junichi Yoshii (Kodansha, Publishers, Ltd.)</li>
+        <li>Naomi Yoshizawa (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+    </ul>
+    
+</section>
+
+
+	
+
+<section id="references" class="appendix"><h2 id="c-references"><bdi class="secno">C. </bdi>參考資料<a class="self-link" href="#references" aria-label="Permalink for Appendix C."></a></h2><section id="informative-references">
+    <h3 id="c-1-informative-references"><bdi class="secno">C.1 </bdi>參考性文件<a class="self-link" href="#informative-references" aria-label="Permalink for Appendix C.1"></a></h3>
+    <dl class="bibliography"><dt id="bib-a11y-discov-vocab"> [A11Y-DISCOV-VOCAB] </dt><dd><a href="https://www.w3.org/2021/a11y-discov-vocab/latest/"><cite>Schema.org Accessibility Properties for Discoverability Vocabulary</cite></a>. URL: <a href="https://www.w3.org/2021/a11y-discov-vocab/latest/">https://www.w3.org/2021/a11y-discov-vocab/latest/</a></dd><dt id="bib-dcterms"> [DCTERMS] </dt><dd><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"><cite>DCMI Metadata Terms</cite></a>. DCMI Usage Board.  DCMI. 20 January 2020. DCMI Recommendation. URL: <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">https://www.dublincore.org/specifications/dublin-core/dcmi-terms/</a></dd><dt id="bib-dpub-accessibility"> [DPUB-Accessibility] </dt><dd><a href="https://www.w3.org/TR/dpub-accessibility/"><cite>Digital Publishing and Accessibility in W3C Documents</cite></a>. Deborah Kaplan; Charles LaPierre.  W3C. 3 May 2016. W3C Working Group Note. URL: <a href="https://www.w3.org/TR/dpub-accessibility/">https://www.w3.org/TR/dpub-accessibility/</a></dd><dt id="bib-dpub-aria-1.0"> [DPUB-ARIA-1.0] </dt><dd><a href="https://www.w3.org/TR/dpub-aria-1.0/"><cite>Digital Publishing WAI-ARIA Module 1.0</cite></a>. Matt Garrish; Tzviya Siegman; Markus Gylling; Shane McCarron.  W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/dpub-aria-1.0/">https://www.w3.org/TR/dpub-aria-1.0/</a></dd><dt id="bib-epub-3"> [EPUB-3] </dt><dd><a href="https://www.w3.org/TR/epub/"><cite>EPUB 3</cite></a>.  W3C. URL: <a href="https://www.w3.org/TR/epub/">https://www.w3.org/TR/epub/</a></dd><dt id="bib-epub-a11y-11"> [EPUB-A11Y-11] </dt><dd><a href="https://www.w3.org/TR/epub-a11y-11/"><cite>EPUB Accessibility 1.1</cite></a>. Matt Garrish; George Kerscher; Charles LaPierre; Gregorio Pellegrino; Avneesh Singh.  W3C. 25 November 2021. W3C Working Draft. URL: <a href="https://www.w3.org/TR/epub-a11y-11/">https://www.w3.org/TR/epub-a11y-11/</a></dd><dt id="bib-epub-ssv"> [EPUB-SSV] </dt><dd><a href="http://www.idpf.org/epub/vocab/structure/"><cite>EPUB Structural Semantics Vocabulary</cite></a>.  IDPF. URL: <a href="http://www.idpf.org/epub/vocab/structure/">http://www.idpf.org/epub/vocab/structure/</a></dd><dt id="bib-epubmultiplerenditions-10"> [EPUBMultipleRenditions-10] </dt><dd><a href="http://www.idpf.org/epub/renditions/multiple/epub-multiple-renditions-20150826.html"><cite>EPUB Multiple-Rendition Publications 1.0</cite></a>. Jim Lester; Takeshi Kania; Matt Garrish.  IDPF. 26 August 2015. URL: <a href="http://www.idpf.org/epub/renditions/multiple/epub-multiple-renditions-20150826.html">http://www.idpf.org/epub/renditions/multiple/epub-multiple-renditions-20150826.html</a></dd><dt id="bib-html"> [HTML] </dt><dd><a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Anne van Kesteren; Domenic Denicola; Ian Hickson; Philip Jägenstedt; Simon Pieters.  WHATWG. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a></dd><dt id="bib-iso24751-3"> [ISO24751-3] </dt><dd><a href="http://www.iso.org/iso/catalogue_detail?csnumber=43604"><cite> ISO/IEC 24751-3:2008 Information technology -- Individualized adaptability and accessibility in e-learning, education and training -- Part 3: "Access for all" digital resource description</cite></a>. 2008-10-01. URL: <a href="http://www.iso.org/iso/catalogue_detail?csnumber=43604">http://www.iso.org/iso/catalogue_detail?csnumber=43604</a></dd><dt id="bib-opf-201"> [OPF-201] </dt><dd><a href="http://www.idpf.org/epub/20/spec/OPF_2.0.1_draft.htm"><cite>Open Packaging Format 2.0.1</cite></a>.  IDPF. 04 September 2010. URL: <a href="http://www.idpf.org/epub/20/spec/OPF_2.0.1_draft.htm">http://www.idpf.org/epub/20/spec/OPF_2.0.1_draft.htm</a></dd><dt id="bib-schema-org"> [schema-org] </dt><dd><a href="https://schema.org/"><cite>Schema.org</cite></a>. W3C Schema.org Community Group.  W3C. 6.0. URL: <a href="https://schema.org/">https://schema.org/</a></dd><dt id="bib-swf"> [SWF] </dt><dd><a href="https://www.adobe.com/content/dam/acom/en/devnet/pdf/swf-file-format-spec.pdf"><cite>SWF File Format Specification Version 19</cite></a>. 2012. URL: <a href="https://www.adobe.com/content/dam/acom/en/devnet/pdf/swf-file-format-spec.pdf">https://www.adobe.com/content/dam/acom/en/devnet/pdf/swf-file-format-spec.pdf</a></dd><dt id="bib-wai-aria-1.1"> [WAI-ARIA-1.1] </dt><dd><a href="https://www.w3.org/TR/wai-aria-1.1/"><cite>Accessible Rich Internet Applications (WAI-ARIA) 1.1</cite></a>. Joanmarie Diggs; Shane McCarron; Michael Cooper; Richard Schwerdtfeger; James Craig.  W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria-1.1/">https://www.w3.org/TR/wai-aria-1.1/</a></dd><dt id="bib-wcag2"> [WCAG2] </dt><dd><a href="https://www.w3.org/TR/WCAG2/"><cite>Web Content Accessibility Guidelines (WCAG) 2</cite></a>.  W3C. URL: <a href="https://www.w3.org/TR/WCAG2/">https://www.w3.org/TR/WCAG2/</a></dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not( [data-cite] ), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not( [hidden] )")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects [0] .height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a [href] ");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const  [record]  = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter:  ["hidden"]  });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>

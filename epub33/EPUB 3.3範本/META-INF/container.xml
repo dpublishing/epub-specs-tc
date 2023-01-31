@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" ?>
+<!-- EPUB規格中，可以在container.xml中設定多個rootfile元素來指向包裝文件.opf），在過去的規格中稱為內容釋義Rendition。但實際上支援這樣規格的閱讀程式不多，以至於這項功能在EPUB改版中，獨立分出「EPUB 3多重內容釋義出版品」規格。保留這項規格以及在不同內容釋義中切換的機制。而EPUB3.3本身預設僅有一個包裝文件。 -->
+<container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">
+  <rootfiles>
+    <rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml" />
+  </rootfiles>
+</container>

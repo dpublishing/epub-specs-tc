@@ -1,0 +1,3700 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW" xml:lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 32.2.2">
+<meta name="viewport" content="width=device-width、initial-scale=1、shrink-to-fit=no">
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+		
+		
+<title>EPUB 3結構語意用語集 1.1</title>
+		
+		
+		
+		
+<style>
+
+			section#structure-vocab dd > p:first-child {
+				margin-top: 1rem !important;
+			}
+			
+			section#structure-vocab dd + dd {
+				font-size: 90%;
+			}
+			
+			.subproplabel {
+				font-style: normal;
+				font-family: serif;
+			}
+		
+</style>
+	
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<style>
+
+ul.nomark,
+ol.nomark {
+    list-style-type: none;
+}
+
+ol.cmt,
+ul.flat {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+ol.cmt {
+	margin: 0;
+}
+
+dl.elemdef {
+    border-left: 0.5em solid rgb(145,200,255);
+    background-color: rgb(236,246,255);
+    padding: 0.5em 1em;
+	margin-bottom: 2em;
+}
+
+dl.elemdef ul.nomark {
+	padding-left: 1em;
+}
+
+dl.elemdef > dd > ul.nomark:first-child {
+	padding-left: 0 !important;
+}
+
+dl.conformance-list > dd {
+    margin-top: 0.7em;
+}
+
+dl.elemdef > dt,
+table.tabledef th {
+	font-weight: normal;
+	font-style: italic;
+}
+
+dl.elemdef > dt {
+	margin-bottom: 0.5em;
+}
+
+dl.elemdef dfn {
+	font-style: normal;
+}
+
+/*  EBNF tables */
+
+
+table.productionset {
+    border: none;
+    border-left: 5px solid rgb(145,200,255);
+    background-color: rgb(236,246,255);
+}
+
+table.productionset caption {
+	text-align: left;
+	font-size: 80%;
+	font-style: normal;
+}
+
+table.productionset tbody tr {
+    border: none;
+}
+
+table.productionset tbody tr td {
+    border: none;
+    padding: 0.5em;
+    border-bottom: 1px solid #ddd;
+}
+
+table.productionset tbody tr td a {
+    text-decoration: none;
+    border-bottom: 1px dotted #000090;
+}
+
+table.productionset tbody tr td a:hover {
+    text-decoration: underline;
+}
+
+table.productionset tbody tr td a:visited,
+table.productionset tbody tr td a:active,
+table.productionset tbody tr td a:hover {
+    color: #000090;
+}
+
+a.deprecated,
+a.legacy {
+	font-size: 85%;
+	text-transform: uppercase;
+}
+
+/* styles for core media types */
+
+table#tbl-core-media-types {
+    border-spacing: 0px;
+    padding: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 2em;    
+}
+
+table#tbl-core-media-types th {
+    border-bottom: 1px solid #005A9C;
+    font-weight: bold;
+    padding: 0.5em;
+    font-weight: bold;
+    color: #000090;
+    font-size: 90%
+}
+
+table#tbl-core-media-types td {
+    border-bottom: 1px solid #005A9C;
+    border-right: 1px solid #efefef;
+    padding: 0.5em;
+    text-align: left
+}
+
+table#tbl-core-media-types tr td:last-child {
+    border-right: none;
+}
+
+table#tbl-core-media-types td *、table#tbl-core-media-types td > * {
+    text-align: left;
+}
+
+table#tbl-core-media-types、table#tbl-core-media-types tbody {
+    padding: 0;
+}
+
+table#tbl-core-media-types caption {
+    text-align: left;
+    font-size: 90%
+}
+
+.tbl-group {
+	text-align: left;
+	border-bottom: none;
+	color: rgb(0、0、0);
+	background-color: rgb(240、248、255);
+}
+
+table#tbl-core-media-types > thead > tr > th {
+    background-color: rgb(240,240,240);
+    text-align: left;
+    white-space:nowrap;
+}
+
+table#tbl-core-media-types > tbody > tr > th {    
+    text-align: left;
+    font-weight: normal;
+    font-style: italic;
+    padding: 3px;
+}
+
+table#tbl-core-media-types td、table#tbl-core-media-types th、table#tbl-core-media-types tr {
+    border-color: #005A9C;
+    margin: 0em;
+}
+
+table#tbl-core-media-types td code、table#tbl-core-media-types td a {
+    white-space:nowrap;
+}
+
+td[headers="tbl-cmt-appl"] {
+    font-size: .9em;
+}
+
+
+
+
+/****************************************************/
+/*  property tables                                 */
+/****************************************************/
+
+/* ensure confomity of width for property tables */
+table.tabledef {
+	border-spacing: 0px;
+	border: none;
+	font-size: 1em;
+	width: 100%
+}
+
+table.tabledef td、table.tabledef th {
+	border: none;
+	background-color: rgb(236,246,255);
+	color: rgb(0,0,0);
+	padding: 0.3em;
+	vertical-align: top;
+}
+
+table.tabledef th {
+    text-align: left;
+	vertical-align: top;
+    width: 8em;
+    padding-left: 1em;
+}
+
+table.tabledef th {
+    border-left: 5px solid rgb(145,200,255);
+}
+
+table.tabledef td {
+    padding: 3px 3px 3px 10px;
+}
+
+table.tabledef td > p:first-child {
+	padding: 0em;
+	margin: 0em
+}
+
+
+/* Reserved prefix tables */
+
+table.prefix {
+    border-spacing: 0px;
+    padding: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 2em;    
+}
+table.prefix th {
+    border-bottom: 1px solid #005A9C;
+    font-weight: bold;
+    padding: 0.5em;
+    font-weight: bold;
+    color: #000090;
+    font-size: 90%
+}
+table.prefix td {
+    border-bottom: 1px solid #005A9C;
+    border-right: 1px solid #efefef;
+    padding: 0.5em;
+    text-align: left
+}
+table.prefix tr td:last-child {
+    border-right: none;
+}
+table.prefix td *、table.prefix td > * {
+    text-align: left;
+}
+table.prefix、table.prefix tbody {
+    padding: 0;
+}
+
+table.prefix caption {
+    text-align: left;
+    font-size: 90%
+}
+
+
+/* Table zebra style... */
+
+table.zebra {
+    font-size:inherit;
+    font:90%;
+    margin:1em;
+}
+
+table.zebra td {
+    padding-left: 0.3em;
+}
+
+table.zebra th {
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(0,0,128) !important;
+    font-size: 110%;
+    background: hsl(180、30%、50%);
+    color: #fff;
+}
+
+table.zebra th a:link {
+  color: #fff;
+}
+
+table.zebra th a:visited {
+  color: #aaa;
+}
+
+table.zebra tr:nth-child(even) {
+    background-color: hsl(180、30%、93%) !important;
+}
+
+table.zebra th{border-bottom:1px solid #bbb;padding:.2em 1em;}
+table.zebra td{border-bottom:1px solid #ddd;padding:.2em 1em;}
+
+
+p.support {
+	border-left: 0.4rem solid rgb(255,255,0);
+	background-color: rgb(255,255,230);
+	padding: 0.7rem;
+}
+
+p.caution、div.caution {
+	padding: 0.5rem;
+	border-left: 0.5rem solid rgb(255,140,0);
+	background-color: rgb(254,236,207);
+}
+
+div.caution-title > span {
+	color: rgb(140,40,0);
+	text-transform: uppercase;
+}
+
+details.desc {
+	margin-top: -2.5rem !important;
+	margin-left: 3rem !important;
+}
+
+details.explanation、details.desc {
+	background-color: rgb(245,245,245);
+	border-left: 0.3em solid rgb(200,200,200);
+	padding: 0.3em;
+}
+
+details.explanation > summary、details.desc > summary {
+	font-size: small;
+	text-align: left;
+    font-weight: normal !important;
+    font-style: italic;
+}
+
+</style>
+<style>
+/*中文翻譯版添加樣式*/
+dfn {font-style: normal;}
+em {font-family: serif; font-style: normal;}
+em.rfc2119 {font-family: sans-serif; font-weight: bold; text-decoration: underline;}
+code {color: red;}
+p {text-align: justify;line-height: 1.8;}
+</style>
+
+<meta name="description" content="This vocabulary、a part of EPUB® 3、defines a set of properties relating to the description of structural
+				semantics of written works.">
+<link rel="canonical" href="https://www.w3.org/TR/epub-ssv-11/">
+<style>
+var{position:relative;cursor:pointer}
+var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "group": "epub",
+  "wgPublicList": "public-epub3",
+  "specStatus": "NOTE",
+  "shortName": "epub-ssv-11",
+  "edDraftURI": "https://w3c.github.io/epub-specs/epub33/ssv/",
+  "noRecTrack": true,
+  "editors": [
+    {
+      "name": "Ivan Herman",
+      "url": "https://www.w3.org/People/Ivan/",
+      "company": "W3C",
+      "w3cid": 7382,
+      "orcid": "https://orcid.org/0000-0003-0782-2704",
+      "companyURL": "https://www.w3.org"
+    },
+    {
+      "name": "Matt Garrish",
+      "company": "DAISY Consortium",
+      "companyURL": "https://daisy.org",
+      "w3cid": 51655
+    }
+  ],
+  "formerEditors": [
+    {
+      "name": "Tzviya Siegman",
+      "company": "John Wiley & Sons",
+      "companyURL": "http://wiley.com",
+      "w3cid": 65542
+    },
+    {
+      "name": "Markus Gylling",
+      "company": "International Digital Publishing Forum (IDPF)",
+      "companyURL": "http://idpf.org",
+      "w3cid": 106061
+    }
+  ],
+  "localBiblio": {
+    "epub-dict-10": {
+      "title": "EPUB Dictionaries and Glossaries 1.0",
+      "href": "http://idpf.org/epub/dict",
+      "editors": [
+        "Jeffrey Alexander",
+        "Romain Deltour"
+      ],
+      "date": "26 August 2015",
+      "publisher": "IDPF",
+      "id": "epub-dict-10"
+    },
+    "epub-indexes-10": {
+      "title": "EPUB Indexes 1.0",
+      "href": "http://idpf.org/epub/idx",
+      "editors": [
+        "Michele Combs",
+        "Tzviya Siegman"
+      ],
+      "date": "26 August 2015",
+      "publisher": "IDPF",
+      "id": "epub-indexes-10"
+    },
+    "epub-region-nav-10": {
+      "title": "EPUB Region-Based Navigation 1.0",
+      "href": "http://idpf.org/epub/renditions/region-nav",
+      "editors": [
+        "Matthieu Kopp",
+        "Brady Kroupa",
+        "Jim Lester",
+        "Matt Garrish"
+      ],
+      "date": "26 August 2015",
+      "publisher": "IDPF",
+      "id": "epub-region-nav-10"
+    }
+  },
+  "includePermalinks": true,
+  "permalinkEdge": true,
+  "permalinkHide": false,
+  "diffTool": "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
+  "github": {
+    "repoURL": "https://github.com/w3c/epub-specs",
+    "branch": "main"
+  },
+  "xref": {
+    "profile": "web-platform",
+    "specs": [
+      "epub-rs-33",
+      "epub-33"
+    ]
+  },
+  "preProcess": [
+    null
+  ],
+  "publishDate": "2022-08-10",
+  "previousMaturity": "NOTE",
+  "previousPublishDate": "2022-07-24",
+  "publishISODate": "2022-08-10T00:00:00.000Z",
+  "generatedSubtitle": "W3C Group Note 10 August 2022"
+}</script>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-NOTE"></head>
+	<body class="h-entry informative" data-cite="epub-rs-33 epub-33 HTML INFRA URL WEBIDL DOM FETCH"><div class="head">
+    <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
+  </a></p>
+    <h1 id="title" class="title">EPUB 3 結構語意用語集 1.1</h1> 
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#NOTE">W3C小組備忘</a> <time class="dt-published" datetime="2022-08-10">10 August 2022</time></p>
+    <details open="">
+      <summary>更多關於此份文件的細節</summary>
+      <dl>
+        <dt>本版本：</dt><dd>
+                <a class="u-url" href="https://www.w3.org/TR/2022/NOTE-epub-ssv-11-20220810/">https://www.w3.org/TR/2022/NOTE-epub-ssv-11-20220810/</a>
+              </dd>
+        <dt>最新發佈版本：</dt><dd>
+                <a href="https://www.w3.org/TR/epub-ssv-11/">https://www.w3.org/TR/epub-ssv-11/</a>
+              </dd>
+        <dt>最新編輯草稿：</dt><dd><a href="https://w3c.github.io/epub-specs/epub33/ssv/">https://w3c.github.io/epub-specs/epub33/ssv/</a></dd>
+        <dt>歷史：</dt><dd>
+                    <a href="https://www.w3.org/standards/history/epub-ssv-11">https://www.w3.org/standards/history/epub-ssv-11</a>
+                  </dd><dd>
+                    <a href="https://github.com/w3c/epub-specs/commits/main">發布歷程</a>
+                  </dd>
+        
+        
+        
+        
+        
+        <dt>編輯者：</dt><dd class="editor p-author h-card vcard" data-editor-id="7382">
+    <a class="u-url url p-name fn" href="https://www.w3.org/People/Ivan/">Ivan Herman</a><a class="p-name orcid" href="https://orcid.org/0000-0003-0782-2704"><svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <style>
+
+    .st1 {
+      fill: #fff;
+    }
+  
+</style>
+  <path d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z" fill="#a6ce39"></path>
+  <path class="st1" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7C191.7 111.2 178 93 148 93h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.6 10.1 10.1z"></path>
+</svg></a> (<a class="p-org org h-org" href="https://www.w3.org">W3C</a>)
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="51655">
+    <span class="p-name fn">Matt Garrish</span> (<a class="p-org org h-org" href="https://daisy.org">DAISY Consortium</a>)
+  </dd>
+        <dt>前任編輯：</dt><dd class="editor p-author h-card vcard" data-editor-id="65542">
+    <span class="p-name fn">Tzviya Siegman</span> (<a class="p-org org h-org" href="http://wiley.com">John Wiley &amp; Sons</a>)
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="106061">
+    <span class="p-name fn">Markus Gylling</span> (<a class="p-org org h-org" href="http://idpf.org">International Digital Publishing Forum (IDPF)</a>)
+  </dd>
+        
+        <dt>提出回饋：</dt><dd>
+        <a href="https://github.com/w3c/epub-specs/">GitHub w3c/epub-specs</a>
+        (<a href="https://github.com/w3c/epub-specs/pulls/">提交請求</a>,
+        <a href="https://github.com/w3c/epub-specs/issues/new/choose">新主題</a>,
+        <a href="https://github.com/w3c/epub-specs/issues/">開放主題</a>)
+      </dd><dd>以郵件主旨<kbd>[epub-ssv-11] <em>… 主題資訊 …</em></kbd>寄到<a href="mailto:public-epub3@w3.org?subject=%5Bepub-ssv-11%5D%20YOUR%20TOPIC%20HERE">public-epub3@w3.org</a>(<a rel="discussion" href="https://lists.w3.org/Archives/Public/public-epub3">存檔</a>)</dd>
+        
+        
+      </dl>
+    </details>
+    
+    
+    <p class="copyright">
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+    ©
+    2022
+    
+    <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+    <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>、<a href="https://www.keio.ac.jp/">Keio</a>,
+    <a href="https://ev.buaa.edu.cn/">Beihang</a>). W3C
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+    <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document" title="W3C Software and Document Notice and License">permissive document license</a> rules apply.
+  </p>
+    <hr title="Separator for header">
+  </div>
+		<section id="abstract" class="introductory"><h2>摘要</h2>
+			<p>本用語集為EPUB® 3標準的一部分，定義了一組特性用於描述文字作品的結構性語意。</p>
+		</section>
+		<section id="sotd" class="introductory">
+			<h2>本文件狀態</h2>
+			
+			<p><em>本章節描述了本文件在其發表時的狀態。目前<abbr title="World Wide Web Consortium">W3C</abbr>出版品及此技術報告的最新改版之列表皆列於<a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr>技術報告索引</a>，網址為：https://www.w3.org/TR/</em></p>
+			
+			<p>本文件由<a href="https://www.w3.org/groups/wg/epub">EPUB 3工作小組</a>按照<a href="https://www.w3.org/2021/Process-20211102/#recs-and-notes">備忘流程</a>，發布為小組備忘。</p>
+			
+			<p>小組備忘不受<abbr title="World Wide Web Consortium">W3C</abbr>及其會員背書。</p>
+			
+			<p>本文件為草稿，而且可能會隨時更新，被其他文件所取代或淘汰。編輯作業尚未完成前，不適宜引用本文件。</p>
+			
+			<p data-deliverer="125377"> <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr>專利政策</a>不對此文件做任何授權需求與承諾。</p>
+			
+			<p>本文件受<a id="w3c_process_revision" href="https://www.w3.org/2021/Process-20211102/">2021年11月2日<abbr title="World Wide Web Consortium">W3C</abbr>流程文件</a>所規範。</p>
+		</section>
+	<nav id="toc"><h2 class="introductory" id="table-of-contents">目次</h2><ol class="toc">
+<li class="tocline"><a class="tocxref" href="#abstract">摘要</a></li>
+<li class="tocline"><a class="tocxref" href="#sotd">本文件狀態</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-introduction"><bdi class="secno">1. </bdi>導論</a><ol class="toc">
+<li class="tocline"><a class="tocxref" href="#structure-vocab"><bdi class="secno">1.1 </bdi>關於此用語集</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#sec-partitions"><bdi class="secno">2. </bdi>文件分塊（partitions）</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-divisions"><bdi class="secno">3. </bdi>文件分區（divisions）</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-sections"><bdi class="secno">4. </bdi>文件章節（sections）以及元件（components）</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-navigation"><bdi class="secno">5. </bdi>文件導覽（navigation）</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-document-references"><bdi class="secno">6. </bdi>文件參考章節（reference sections）</a><ol class="toc">
+<li class="tocline"><a class="tocxref" href="#h_bibliographies"><bdi class="secno">6.1 </bdi>書目</a></li>
+<li class="tocline"><a class="tocxref" href="#dictionaries"><bdi class="secno">6.2 </bdi>字辭典</a></li>
+<li class="tocline"><a class="tocxref" href="#h_glossaries"><bdi class="secno">6.3 </bdi>詞彙表</a></li>
+<li class="tocline"><a class="tocxref" href="#h_indexes"><bdi class="secno">6.4 </bdi>索引</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#sec-preliminary"><bdi class="secno">7. </bdi>正文前章節（sections）以及元件（components）</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-complementary"><bdi class="secno">8. </bdi>附加內容</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-titles"><bdi class="secno">9. </bdi>書名與標題</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-educational"><bdi class="secno">10. </bdi>教育用內容</a><ol class="toc">
+<li class="tocline"><a class="tocxref" href="#h_learning-obj"><bdi class="secno">10.1 </bdi>學習目標</a></li>
+<li class="tocline"><a class="tocxref" href="#h_testing"><bdi class="secno">10.2 </bdi>測驗</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#sec-comics"><bdi class="secno">11. </bdi>漫畫</a></li>
+<li class="tocline"><a class="tocxref" href="#notes"><bdi class="secno">12. </bdi>注意事項與註釋</a></li>
+<li class="tocline"><a class="tocxref" href="#links"><bdi class="secno">13. </bdi>參考資料</a></li>
+<li class="tocline"><a class="tocxref" href="#document-text"><bdi class="secno">14. </bdi>文件內文</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-pagination"><bdi class="secno">15. </bdi>分頁</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-tables"><bdi class="secno">16. </bdi>表格</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-lists"><bdi class="secno">17. </bdi>列表</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-figures"><bdi class="secno">18. </bdi>圖片</a></li>
+<li class="tocline"><a class="tocxref" href="#sec-asides"><bdi class="secno">19. </bdi>次要內容（Asides）</a></li>
+<li class="tocline"><a class="tocxref" href="#ack"><bdi class="secno">A. </bdi>致謝</a></li>
+<li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>參考資料</a><ol class="toc">
+<li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">B.1 </bdi>規範性文件</a></li></ol></li></ol></nav>
+		<section id="sec-introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>導論</h2><a class="self-link" href="#sec-introduction" aria-label="Permalink for Section 1."></a></div>
+			
+
+			<p>結構語意能為HTML（或SVG）元素添加指定結構目的相關的額外意義。透過<code><a data-type="element-attr" href="https://www.w3.org/TR/epub-33/#dfn-epub-type">epub:type</a></code>屬性[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>]在<a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-epub-content-document">EPUB內容文件</a>以及<a data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-media-overlay-document">媒體層疊文件</a>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>]中使用，以表述該領域專屬的語意，這些用語能夠補足結構性資訊。</p>
+
+			<p>元素添加這些語意，能精緻化其意義，同時不會改變供輔助技術使用的性質，若使用類似的<code><a data-type="element-attr" href="https://html.spec.whatwg.org/multipage/infrastructure.html#attr-aria-role">role</a></code>屬性[<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>]就會產生影響。這些屬性不會增進內容的無障礙輔助性，換句話說，只為提供提示目的使用。</p>
+
+			<p>語意後設資料能豐富化內容，供出版工作流程或者作者定義的用途所用。也能讓閱讀系統對文件的內容以及結構有更多理解（像是能在<a data-type="dfn" href="https://www.w3.org/TR/epub-33/#dfn-media-overlay-document">媒體層疊文件</a>中啟動<a href="https://www.w3.org/TR/epub-33/#sec-behaviors-skip-escape">可跳過性(skippability)和可跳出性(escapability)</a>）。</p>
+
+			<p>[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>]規格定義了使用屬性軸線來添增結構語意的方法：而不添加新元素。EPUB製作者可以在現成的元素中透過附加<code>epub:type</code>屬性來添加想要的語意。本文件定義了一系列的特性與值，也就是用語集，能供本目的使用。</p>
+
+			<section id="structure-vocab"><div class="header-wrapper"><h3 id="x1-1-about-this-vocabulary"><bdi class="secno">1.1 </bdi>關於此用語集</h3><a class="self-link" href="#structure-vocab" aria-label="Permalink for Section 1.1"></a></div>
+				
+
+				<p>EPUB結構語意用語集與所依附的語言無關，但主要用於為HTML中各元素增加語意變化。</p>
+
+				<p>「<em>HTML用法脈絡（<i>HTML usage context</i>）</em>」欄位用來指示：該特性在脈絡上與HTML文件的哪些部分相關。EPUB製作者可以將這些特性用於沒被列舉的HTML標記元素上，但必須確認所表達的語意為該元素語意的子集，且不能將既有元素的意義附加在一個語意中立的元素上。</p>
+
+				<p>「<em>DPUB-ARIA角色（<i>DPUB-ARIA role</i>）</em>」欄位用來指示：[<cite><a class="bibref" data-link-type="biblio" href="#bib-dpub-aria-1.0" title="Digital Publishing WAI-ARIA Module 1.0">dpub-aria-1.0</a></cite>]可以額外為[<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>]添加<code>role</code>屬性以提升無障礙輔助性。這些role可能有更多使用脈絡上的限制，也就是說，在可以使用<code><a data-type="element-attr" href="https://www.w3.org/TR/epub-33/#dfn-epub-type">epub:type</a></code>屬性[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>]之地方使用role可能會不合規。請參考[<cite><a class="bibref" data-link-type="biblio" href="#bib-html-aria" title="ARIA in HTML">html-aria</a></cite>]以獲得更多關於role使用方式的資訊。</p>
+
+				<p>當處理HTML文件時，除非其用法脈絡被明確更新，或者從主規格進行延伸，不然閱讀系統可以忽略這類不合規的特性。</p>
+
+				<p>當有「<em>用法細節（<i>Usage details</i>）</em>」欄位時，其用途為指出定義、使用這些特性的規格。除非規則適用於所有EPUB出版品，作者若不遵從這些用法細節，所製作的內容就無法合乎指定規格中的規定。除此之外，特性可以在需要時任意使用。</p>
+			</section>
+		</section>
+		<section id="sec-partitions"><div class="header-wrapper"><h2 id="x2-document-partitions"><bdi class="secno">2. </bdi>文件分塊（partitions）</h2><a class="self-link" href="#sec-partitions" aria-label="Permalink for Section 2."></a></div>
+			
+
+			<dl>
+				<dt id="backmatter">backmatter</dt>
+				<dd>
+					<p>在一本出版品的主要內容之後的補充性內容，像是索引、附錄等。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡（HTML usage context）：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#the-body-element">body</a>
+					</p>
+				</dd>
+
+				<dt id="bodymatter">bodymatter</dt>
+				<dd>
+					<p>一本出版品的主要內容。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#the-body-element">body</a>
+					</p>
+				</dd>
+
+				<dt id="cover">cover</dt>
+				<dd>
+					<p>用於介紹該作品的區塊，通常包含一張行銷用的影像、書名、作者以及出版社，和挑選的摘要及評論。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#the-body-element">body</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色（DPUB-ARIA role）：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-cover">doc-cover</a>（僅允許用於cover image標籤）</p>
+				</dd>
+
+				<dt id="frontmatter">frontmatter</dt>
+				<dd>
+					<p>在一本出版品的主要內容之前的材料，像是目次、獻詞等。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#the-body-element">body</a>
+					</p>
+				</dd>
+			</dl>
+		</section>
+		<section id="sec-divisions"><div class="header-wrapper"><h2 id="x3-document-divisions"><bdi class="secno">3. </bdi>文件分區（divisions）</h2><a class="self-link" href="#sec-divisions" aria-label="Permalink for Section 3."></a></div>
+			
+
+			<dl>
+				<dt id="chapter">chapter</dt>
+				<dd>
+					<p>一部作品中內容的主要主題區塊。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#the-body-element">body</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-chapter">doc-chapter</a>
+					</p>
+				</dd>
+
+				<dt id="division">division</dt>
+				<dd>
+					<p>作為主要結構用的區塊，也可以作為一部（Part）的子結構（特別用於法律條文）。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#the-body-element">body</a>
+					</p>
+				</dd>
+
+				<dt id="subchapter">subchapter<span class="status deprecated"> [不再推薦]</span></dt>
+				<dd>
+					<p>一個章節（Chapter）的主要子區塊。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#the-body-element">body</a>
+					</p>
+				</dd>
+
+				<dt id="part">part</dt>
+				<dd>
+					<p>一部作品中的主要結構區塊，其包含了一組相關的區塊用於處理特定主題、故事線或者對相似主題做集結。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#the-body-element">body</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-part">doc-part</a>
+					</p>
+				</dd>
+
+				<dt id="volume">volume</dt>
+				<dd>
+					<p>組成彙編（Collection）的一部分。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#the-body-element">body</a>
+					</p>
+				</dd>
+			</dl>
+		</section>
+		<section id="sec-sections"><div class="header-wrapper"><h2 id="x4-document-sections-and-components"><bdi class="secno">4. </bdi>文件章節（sections）以及元件（components）</h2><a class="self-link" href="#sec-sections" aria-label="Permalink for Section 4."></a></div>
+			
+
+			<p>章節與元件一般出現在出版品的bodymatter中。</p>
+
+			<dl>
+				<dt id="abstract-1">abstract<span class="status draft"> [草稿]</span>
+				</dt>
+				<dd>
+					<p>對於作品或者一章節或者內容摘錄之主要想法、概念以及結論的短摘要。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容（grouping content）</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-abstract">doc-abstract</a>
+					</p>
+				</dd>
+
+				<dt id="afterword">afterword</dt>
+				<dd>
+					<p>由作者或者重要人物書寫的結尾敘述，主要提供解析說明作品是怎麼被寫下的、其重要性，以及透露其時間線上的相關事件。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-afterword">doc-afterword</a>
+					</p>
+				</dd>
+
+				<dt id="conclusion">conclusion</dt>
+				<dd>
+					<p>總結性的章節或者聲明，用於對作品做出摘要或者結束故事敘述。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-conclusion">doc-conclusion</a>
+					</p>
+				</dd>
+
+				<dt id="epigraph">epigraph</dt>
+				<dd>
+					<p>在作品或者一章節開始處的一組引言，用於建構主題或者鋪陳氣氛。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-epigraph">doc-epigraph</a>
+					</p>
+				</dd>
+
+				<dt id="epilogue">epilogue</dt>
+				<dd>
+					<p>用於結束故事敘述的結論章節，或者對該作品的事件或者行動提出說明，一般從未來的角度敘述。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-epilogue">doc-epilogue</a>
+					</p>
+				</dd>
+
+				<dt id="foreword">foreword</dt>
+				<dd>
+					<p>在作品之前的介紹性章節，一般不由該作品的作者所書寫。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-foreword">doc-foreword</a>
+					</p>
+				</dd>
+
+				<dt id="introduction">introduction</dt>
+				<dd>
+					<p>前導章節，一般介紹該作品的特性或者目的。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-introduction">doc-introduction</a>
+					</p>
+				</dd>
+
+				<dt id="preamble">preamble</dt>
+				<dd>
+					<p>作品開始的章節，一般包含了介紹及/或說明文字，關於該作品內容的特性或者目的。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+
+				<dt id="preface">preface</dt>
+				<dd>
+					<p>在作品之前的介紹性章節，一般由作品作者所書寫。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-preface">doc-preface</a>
+					</p>
+				</dd>
+
+				<dt id="prologue">prologue</dt>
+				<dd>
+					<p>介紹性章節，用於設定作品的背景，一般為故事敘述的一部分。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-prologue">doc-prologue</a>
+					</p>
+				</dd>
+			</dl>
+		</section>
+		<section id="sec-navigation"><div class="header-wrapper"><h2 id="x5-document-navigation"><bdi class="secno">5. </bdi>文件導覽（navigation）</h2><a class="self-link" href="#sec-navigation" aria-label="Permalink for Section 5."></a></div>
+			
+
+			<dl>
+				<dt id="landmarks">landmarks</dt>
+				<dd>
+					<p>出版品內常見或重複出現元件的參照集合。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容（sectioning content）</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">用法細節（Usage details）：</span>
+						<a href="https://www.w3.org/TR/epub-33/#sec-nav-landmarks"><code>landmarks nav</code>元素</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>]
+					</p>
+				</dd>
+
+				<dt id="loa">loa</dt>
+				<dd>
+					<p>作品中所包含聲音片段的列表。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a> </p>
+				</dd>
+
+				<dt id="loi">loi</dt>
+				<dd>
+					<p>作品中所包含圖片的列表。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a> </p>
+				</dd>
+
+				<dt id="lot">lot</dt>
+				<dd>
+					<p>作品中所包含表格的列表。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a> </p>
+				</dd>
+
+				<dt id="lov">lov</dt>
+				<dd>
+					<p>作品中所包含影片片段的列表。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a> </p>
+				</dd>
+
+				<dt id="toc-1">toc</dt>
+				<dd>
+					<p>一份有排序的連結列表，指向內容中的主要章節標題，以提供導覽用輔助。目次可能涵蓋整份作品，或者僅作品中較小的一塊區塊。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-toc">doc-toc</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">用法細節：</span>
+						<a href="https://www.w3.org/TR/epub-33/#sec-nav-toc"><code>toc nav</code>元素</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>] </p>
+				</dd>
+
+				<dt id="toc-brief">toc-brief<span class="status draft"> [草稿]</span></dt>
+				<dd>
+					<p>目次的刪節版本。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a> </p>
+				</dd>
+			</dl>
+		</section>
+		<section id="sec-document-references"><div class="header-wrapper"><h2 id="x6-document-reference-sections"><bdi class="secno">6. </bdi>Document reference sections</h2><a class="self-link" href="#sec-document-references" aria-label="Permalink for Section 6."></a></div>
+			
+
+			<dl>
+				<dt id="appendix">appendix</dt>
+				<dd>
+					<p>補充資訊的區塊，其位於主要內容之後。目的用於提供非主要的資訊。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-appendix">doc-appendix</a>
+					</p>
+				</dd>
+
+				<dt id="colophon">colophon</dt>
+				<dd>
+					<p>用於提供該版本製作資訊的短區塊（例如，說明使用的字體），通常位於作品最末。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-colophon">doc-colophon</a>
+					</p>
+				</dd>
+
+				<dt id="credits">credits<span class="status draft"> [草稿]</span></dt>
+				<dd>
+					<p><a href="#credit">貢獻者（credit）</a>的集合。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-credits">doc-credits</a>
+					</p>
+				</dd>
+
+				<dt id="keywords">keywords<span class="status draft"> [草稿]</span></dt>
+				<dd>
+					<p><a href="#keyword">關鍵字（keyword）</a>的集合。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+			</dl>
+
+			<section id="bibliographies"><div class="header-wrapper"><h3 id="h_bibliographies"><bdi class="secno">6.1 </bdi>書目</h3><a class="self-link" href="#h_bibliographies" aria-label="Permalink for Section 6.1"></a></div>
+				
+
+				<dl>
+					<dt id="biblioentry">biblioentry</dt>
+					<dd>
+						<p>在<a href="#bibliography">書目（bibliography）</a>中參照外部來源的一個項目。biblioentry一般來說，比在內容中提及時提供了更多的細節資訊（例如，書名全名、作者、出版社、出版日期等）。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡（Required parent context）：</span>
+							<span class="subpropref">
+								<a href="#bibliography">bibliography</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span>
+							<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">DPUB-ARIA角色：</span>
+							<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-biblioentry">doc-biblioentry</a> (不再推薦)</p>
+					</dd>
+					<dt id="bibliography">bibliography</dt>
+					<dd>
+						<p>作品中引述到的外部參考資料列表，可為印刷或者數位來源。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">DPUB-ARIA角色：</span>
+							<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-bibliography">doc-bibliography</a>
+						</p>
+					</dd>
+				</dl>
+			</section>
+
+			<section id="dictionaries"><div class="header-wrapper"><h3 id="x6-2-dictionaries"><bdi class="secno">6.2 </bdi>字辭典</h3><a class="self-link" href="#dictionaries" aria-label="Permalink for Section 6.2"></a></div>
+				
+
+				<dl>
+					<dt id="antonym-group">antonym-group</dt>
+					<dd>
+						<p>一組詞彙，每一項都有一個對立或者近似對立意義的詞語或者俚語。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的上層脈絡（Required ancestor context）：</span>
+							<span class="subpropref">
+								<a href="#dictentry">dictentry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容（flow content）</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.9.2">Antonym Groups</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+
+					<dt id="condensed-entry">condensed-entry</dt>
+					<dd>
+						<p>壓縮的字典詞條，設計於顯示區域受限的環境使用。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡：</span>
+							<span class="subpropref">
+								<a href="#dictentry">dictentry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">aside</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.2.2.2">The Condensed Entry</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+
+					<dt id="def">def</dt>
+					<dd>
+						<p>一個詞語或者俚語專屬意義的定義。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的上層脈絡：</span>
+							<span class="subpropref">
+								<a href="#dictentry">dictentry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容（Flow Content）</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.7.6">Definitions</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+
+					<dt id="dictentry">dictentry</dt>
+					<dd>
+						<p>一則字典詞條。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡：</span>
+							<span class="subpropref">
+								<a href="#dictionary">dictionary</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">article</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.2.1">The Dictionary Entry</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+
+					<dt id="dictionary">dictionary</dt>
+					<dd>
+						<p>一組字典詞條。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span>
+							<a href="https://html.spec.whatwg.org/multipage/#the-body-element">body</a>或<a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.1">The Dictionary Container</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+
+					<dt id="etymology">etymology</dt>
+					<dd>
+						<p>解釋詞語之歷史來源。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的上層脈絡：</span>
+							<span class="subpropref">
+								<a href="#dictentry">dictentry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.6">Etymologies</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+
+					<dt id="example">example</dt>
+					<dd>
+						<p>說明定義術語或者片語使用方式的範本。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的上層脈絡：</span>
+							<span class="subpropref">
+								<a href="#dictentry">dictentry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.8.3">Examples</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>]
+						</p>
+					</dd>
+
+					<dt id="gram-info">gram-info</dt>
+					<dd>
+						<p>與詞語相關的補充文法資訊，修改詞性或指出特殊意義。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的上層脈絡：</span>
+							<span class="subpropref">
+								<a href="#dictentry">dictentry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.5.2">Related Grammatical
+								Information</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+
+					<dt id="idiom">idiom</dt>
+					<dd>
+						<p>定義片語的實例。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡：</span>
+							<span class="subpropref">
+								<a href="#dictentry">dictentry</a>或<a href="#phrase-group">phrase-group</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element">dfn</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.8.2">Idioms</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>]
+						</p>
+					</dd>
+
+					<dt id="part-of-speech">part-of-speech</dt>
+					<dd>
+						<p>詞語的文法功能。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的上層脈絡：</span>
+							<span class="subpropref">
+								<a href="#dictentry">dictentry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容</a></p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.1">The Dictionary Container</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+
+					<dt id="part-of-speech-list">part-of-speech-list</dt>
+					<dd>
+						<p>一個字典詞條中的詞性群組列表。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的上層脈絡：</span>
+							<span class="subpropref">
+								<a href="#dictentry">dictentry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element">ol</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.7.2">Part of Speech Lists</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+
+					<dt id="part-of-speech-group">part-of-speech-group</dt>
+					<dd>
+						<p>與詞性相關的單位，內有關聯的意義與片語群組。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的上層脈絡：</span>
+							<span class="subpropref">
+								<a href="#dictentry">dictentry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.7.3">Part of Speech Groups</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+
+					<dt id="phonetic-transcription">phonetic-transcription</dt>
+					<dd>
+						<p>一個字典詞條中的詞語或其他元素發音的音標。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的上層脈絡：</span>
+							<span class="subpropref">
+								<a href="#dictentry">dictentry</a>或<a href="#glossary">glossary</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.4">Phonetic Transcriptions</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+
+					<dt id="phrase-list">phrase-list</dt>
+					<dd>
+						<p>一則字典詞條中的片語群組列表。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的上層脈絡：</span>
+							<span class="subpropref">
+								<a href="#dictentry">dictentry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element">ol</a>或<a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element">ul</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.8.4">Phrase Lists</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+
+					<dt id="phrase-group">phrase-group</dt>
+					<dd>
+						<p>用於組織從屬於一個俚語或範例之資訊的單位。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的上層脈絡：</span>
+							<span class="subpropref">
+								<a href="#dictentry">dictentry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.8.5">Phrase Groups</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+
+					<dt id="sense-list">sense-list</dt>
+					<dd>
+						<p>一個字典詞條中意義群組的列表。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的上層脈絡：</span>
+							<span class="subpropref">
+								<a href="#dictentry">dictentry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element">ol</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.7.4">Sense Lists</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+
+					<dt id="sense-group">sense-group</dt>
+					<dd>
+						<p>用於組織從屬於一個詞語或俚語之特殊意義資訊的單位。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的上層脈絡：</span>
+							<span class="subpropref">
+								<a href="#dictentry">dictentry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.7.5">Sense Groups</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+
+					<dt id="synonym-group">synonym-group</dt>
+					<dd>
+						<p>一組詞彙，每一項都有一個一致或者近似的意義的詞語或者俚語。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的上層脈絡：</span>
+							<span class="subpropref">
+								<a href="#dictentry">dictentry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.9.1">Synonym Groups</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+
+					<dt id="tran">tran</dt>
+					<dd>
+						<p>將來源語言詞語、俚語或者範例之特殊意義轉換到目標語言的翻譯。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的上層脈絡：</span>
+							<span class="subpropref">
+								<a href="#dictentry">dictentry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.7.7">Translations</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+
+					<dt id="tran-info">tran-info</dt>
+					<dd>
+						<p>與翻譯相關的文法或者用法資訊。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的上層脈絡：</span>
+							<span class="subpropref">
+								<a href="#tran">tran</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.2.7.8">Translation-Related
+								Information</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+				</dl>
+			</section>
+
+			<section id="glossaries"><div class="header-wrapper"><h3 id="h_glossaries"><bdi class="secno">6.3 </bdi>詞彙表</h3><a class="self-link" href="#h_glossaries" aria-label="Permalink for Section 6.3"></a></div>
+				
+
+				<dl>
+					<dt id="glossary">glossary</dt>
+					<dd>
+						<p>簡要的詞彙表，包含內容中出現過之新穎、罕見、特殊的術語。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element">dl</a>、<a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">DPUB-ARIA角色：</span>
+							<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-glossary">doc-glossary</a>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.3.1">The Glossary Container</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+
+					<dt id="glossdef">glossdef</dt>
+					<dd>
+						<p><a href="#glossterm">詞彙表中術語</a>的定義。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡：</span>
+							<span class="subpropref">
+								<a href="#glossary">glossary</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span>glossdef特性套用於<a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dd-element">dd</a>元素，其位於有著<a href="#glossary">glossary</a>特性的<a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element">dl</a>中。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.3.2">Glossary Terms and
+								Definitions</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+
+					<dt id="glossterm">glossterm</dt>
+					<dd>
+						<p>詞彙表中的一個術語。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡：</span>
+							<span class="subpropref">
+								<a href="#glossary">glossary</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span>glossterm特性套用於<a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dd-element">dd</a>元素，其位於有著<a href="#glossary">glossary</a>特性的<a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element">dl</a>中。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/dict/epub-dict.html#sec-2.3.2">Glossary Terms and
+								Definitions</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-dict-10" title="EPUB Dictionaries and Glossaries 1.0">epub-dict-10</a></cite>] </p>
+					</dd>
+				</dl>
+			</section>
+
+			<section id="indexes"><div class="header-wrapper"><h3 id="h_indexes"><bdi class="secno">6.4 </bdi>索引</h3><a class="self-link" href="#h_indexes" aria-label="Permalink for Section 6.4"></a></div>
+				
+
+				<dl>
+					<dt id="index">index</dt>
+					<dd>
+						<p>一組供導覽目的使用，有詳細資料的連結列表，其指向關鍵主題、名稱以及其他作品所涵蓋的重點。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a>、<a href="https://html.spec.whatwg.org/multipage/#the-body-element">body</a>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/idx/epub-indexes.html#bb-index">index property</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-indexes-10" title="EPUB Indexes 1.0">epub-indexes-10</a></cite>] </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">DPUB-ARIA角色：</span>
+							<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-index">doc-index</a>
+						</p>
+					</dd>
+
+					<dt id="index-editor-note">index-editor-note</dt>
+					<dd>
+						<p>與單一條目有關的編輯說明。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡：</span>
+							<span class="subpropref">
+								<a href="#index-entry">index-entry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/idx/epub-indexes.html#bb-editor-note">index-editor-note
+								property</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-indexes-10" title="EPUB Indexes 1.0">epub-indexes-10</a></cite>] </p>
+					</dd>
+
+					<dt id="index-entry">index-entry</dt>
+					<dd>
+						<p>一個術語，伴隨著附屬的子條目、位址、相互參照，及/或編輯說明。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡：</span>
+							<span class="subpropref">
+								<a href="#index-entry-list">index-entry-list</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">li</a>;套用此特性時，母ul元素類別需為index-entry-list (內隱或者外顯)</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/idx/epub-indexes.html#bb-entry">index-entry property</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-indexes-10" title="EPUB Indexes 1.0">epub-indexes-10</a></cite>] </p>
+					</dd>
+
+					<dt id="index-entry-list">index-entry-list</dt>
+					<dd>
+						<p>一組連續主條目或次條目之集合。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡：</span>
+							<span class="subpropref">
+								<a href="#index-entry">index-entry</a>
+							</span>、<span class="subpropref">
+								<a href="#index-group">index-group</a>、</span>及<span class="subpropref">
+								<a href="#index">index</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element">ul</a>; 套用此特性時，其原型需為index，卻不該在index-headnotes中。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/idx/epub-indexes.html#bb-entry-list">index-entry-list
+								property</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-indexes-10" title="EPUB Indexes 1.0">epub-indexes-10</a></cite>] </p>
+					</dd>
+
+					<dt id="index-group">index-group</dt>
+					<dd>
+						<p>一組連續的主條目，其具備相同的特徵，例如以同一個字母開頭的主條目。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡：</span>
+							<span class="subpropref">
+								<a href="#index">index</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/idx/epub-indexes.html#bb-group">index-group property</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-indexes-10" title="EPUB Indexes 1.0">epub-indexes-10</a></cite>] </p>
+					</dd>
+
+					<dt id="index-headnotes">index-headnotes</dt>
+					<dd>
+						<p>敘述性或者其他種類的內容，用於協助使用者使用本索引。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡：</span>
+							<span class="subpropref">
+								<a href="#index">index</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a>、<a href="https://html.spec.whatwg.org/multipage/#the-header-element">header</a>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/idx/epub-indexes.html#bb-headnotes">index-headnotes
+								property</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-indexes-10" title="EPUB Indexes 1.0">epub-indexes-10</a></cite>] </p>
+					</dd>
+
+					<dt id="index-legend">index-legend</dt>
+					<dd>
+						<p>索引中使用的符號、縮寫或特別格式及其意義的列表。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡：</span>
+							<span class="subpropref">
+								<a href="#index-headnotes">index-headnotes</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a>、<a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element">dl</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/idx/epub-indexes.html#bb-legend">index-legend property</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-indexes-10" title="EPUB Indexes 1.0">epub-indexes-10</a></cite>] </p>
+					</dd>
+
+					<dt id="index-locator">index-locator</dt>
+					<dd>
+						<p>出版品中被索引內容出現位址的參照。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡：</span>
+							<span class="subpropref">
+								<a href="#index-entry">index-entry</a>
+							</span>、<span class="subpropref">
+								<a href="#index-locator-list">index-locator-list</a>
+							</span>、及<span class="subpropref">
+								<a href="#index-locator-range">index-locator-range</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">a</a>; 套用此特性時，其上層脈絡需為index-locator-list或index-locator-range。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/idx/epub-indexes.html#bb-locator">index-locator property</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-indexes-10" title="EPUB Indexes 1.0">epub-indexes-10</a></cite>] </p>
+					</dd>
+
+					<dt id="index-locator-list">index-locator-list</dt>
+					<dd>
+						<p>序列位址或位址範圍的集合。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡：</span>
+							<span class="subpropref">
+								<a href="#index-entry">index-entry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element">ul</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/idx/epub-indexes.html#bb-locator-list">index-locator-list
+								property</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-indexes-10" title="EPUB Indexes 1.0">epub-indexes-10</a></cite>] </p>
+					</dd>
+
+					<dt id="index-locator-range">index-locator-range</dt>
+					<dd>
+						<p>一組位址連結術語到一段內容範圍，而非單一定點。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡：</span>
+							<span class="subpropref">
+								<a href="#index-locator-list">index-locator-list</a>
+							</span> and <span class="subpropref">
+								<a href="#index-entry">index-entry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/idx/epub-indexes.html#bb-locator-range">index-locator-range
+								property</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-indexes-10" title="EPUB Indexes 1.0">epub-indexes-10</a></cite>] </p>
+					</dd>
+
+					<dt id="index-term">index-term</dt>
+					<dd>
+						<p>單字、片語、字串、字形或者圖像，用於表達可被索引的內容。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡：</span>
+							<span class="subpropref">
+								<a href="#index-xref-related">index-xref-related</a>
+							</span>、<span class="subpropref">
+								<a href="#index-entry">index-entry</a>
+							</span>及<span class="subpropref">
+								<a href="#index-xref-preferred">index-xref-preferred</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">片語內容（phrasing content）</a>;  一般為
+							<a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-span-element">span</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/idx/epub-indexes.html#bb-term">index-term property</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-indexes-10" title="EPUB Indexes 1.0">epub-indexes-10</a></cite>] </p>
+					</dd>
+
+					<dt id="index-term-categories">index-term-categories</dt>
+					<dd>
+						<p>索引內術語分類列表的外包裝。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡：</span>
+							<span class="subpropref">
+								<a href="#index-xref-related">index-xref-related</a>
+							</span>及<span class="subpropref">
+								<a href="#index-xref-preferred">index-xref-preferred</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">a</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/idx/epub-indexes.html#bb-term-categories">index-term-categories property</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-indexes-10" title="EPUB Indexes 1.0">epub-indexes-10</a></cite>] </p>
+					</dd>
+
+					<dt id="index-term-category">index-term-category</dt>
+					<dd>
+						<p>單字、片語、字串、字形或者圖像，用於表達索引內的術語分類。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡：</span>
+							<span class="subpropref">
+								<a href="#index-xref-related">index-xref-related</a>
+							</span>及<span class="subpropref">
+								<a href="#index-xref-preferred">index-xref-preferred</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">a</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/idx/epub-indexes.html#bb-term-category">index-term-category
+								property</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-indexes-10" title="EPUB Indexes 1.0">epub-indexes-10</a></cite>] </p>
+					</dd>
+
+					<dt id="index-xref-preferred">index-xref-preferred</dt>
+					<dd>
+						<p>讓索引內一個術語能夠參照一或多個偏好的術語或者術語分類（等同於「請見xxx」）。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡：</span>
+							<span class="subpropref">
+								<a href="#index-entry">index-entry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/idx/epub-indexes.html#bb-xref">index-xref-preferred
+								property</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-indexes-10" title="EPUB Indexes 1.0">epub-indexes-10</a></cite>] </p>
+					</dd>
+
+					<dt id="index-xref-related">index-xref-related</dt>
+					<dd>
+						<p>讓索引內一個術語能夠參照一或多個相關的術語或者術語分類（等同於「也請參照xxx」）。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">必需的母脈絡：</span>
+							<span class="subpropref">
+								<a href="#index-entry">index-entry</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">用法細節：</span>
+							<a href="http://idpf.org/epub/idx/epub-indexes.html#bb-xref">index-xref-related property</a>
+							[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-indexes-10" title="EPUB Indexes 1.0">epub-indexes-10</a></cite>] </p>
+					</dd>
+				</dl>
+			</section>
+		</section>
+		<section id="sec-preliminary"><div class="header-wrapper"><h2 id="x7-preliminary-sections-and-components"><bdi class="secno">7. </bdi>正文前章節（sections）以及元件（components）</h2><a class="self-link" href="#sec-preliminary" aria-label="Permalink for Section 7."></a></div>
+			
+
+			<p>正文前的章節以及元件，一般出現在出版品中的frontmatter。</p>
+
+			<dl>
+				<dt id="acknowledgments">acknowledgments</dt>
+				<dd>
+					<p>一章節或者一份聲明用於對該作品問世有明顯貢獻的個人、組織、政府以及其他實體組織。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-acknowledgments">doc-acknowledgments</a>
+					</p>
+				</dd>
+
+				<dt id="contributors">contributors</dt>
+				<dd>
+					<p>對該作品有貢獻者的列表。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+
+				<dt id="copyright-page">copyright-page</dt>
+				<dd>
+					<p>作品的版權頁。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+
+				<dt id="dedication">dedication</dt>
+				<dd>
+					<p>作品前的獻詞，一般用來稱頌與作者親近的一或多人。
+</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-dedication">doc-dedication</a>
+					</p>
+				</dd>
+
+				<dt id="errata">errata</dt>
+				<dd>
+					<p>在作品最初發表後發現錯誤的各項更正，通常稱為「勘誤表（corrigenda）」。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">aside</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-errata">doc-errata</a>
+					</p>
+				</dd>
+
+				<dt id="halftitlepage">halftitlepage</dt>
+				<dd>
+					<p>作品的半扉頁（譯注：僅包含書名的頁面）。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+
+				<dt id="imprimatur">imprimatur</dt>
+				<dd>
+					<p>正式授權作品出版的聲明。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+
+				<dt id="imprint">imprint</dt>
+				<dd>
+					<p>與作品出版發行相關的資訊。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+
+				<dt id="other-credits">other-credits</dt>
+				<dd>
+					<p>對作品先前發表部分的致謝、像插畫或圖片作者致敬，以及摘要有版權內容的許可。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+
+				<dt id="revision-history">revision-history</dt>
+				<dd>
+					<p>作品改版紀錄。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+
+				<dt id="seriespage">seriespage <span class="status draft"> [草稿]</span></dt>
+				<dd>
+					<p>用於表列相關出版品的行銷區塊。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+
+				<dt id="titlepage">titlepage</dt>
+				<dd>
+					<p>作品的標題扉頁。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+			</dl>
+		</section>
+		<section id="sec-complementary"><div class="header-wrapper"><h2 id="x8-complementary-content"><bdi class="secno">8. </bdi>附加內容</h2><a class="self-link" href="#sec-complementary" aria-label="Permalink for Section 8."></a></div>
+			
+
+			<dl>
+				<dt id="case-study">case-study<span class="status draft"> [草稿]</span></dt>
+				<dd>
+					<p>對特定主題的詳細分析。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">繼承於（Inherits from）：</span>
+						<span class="subpropref">
+							<a href="http://www.w3.org/1999/xhtml/vocab/#complementary">xhv:complementary</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a> </p>
+				</dd>
+
+				<dt id="help">help<span class="status deprecated"> [不再推薦]</span></dt>
+				<dd>
+					<p>用於釐清內容某些面向或者輔助理解的有用資訊。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">繼承於：</span>
+						<span class="subpropref">
+							<a href="http://www.w3.org/1999/xhtml/vocab/#complementary">xhv:complementary</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">aside</a>、<a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">片語內容</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">被以下取代（Replaced by）：</span>
+						<span class="subpropref">
+							<a href="#tip">tip</a>
+						</span>
+					</p>
+				</dd>
+
+				<dt id="marginalia">marginalia<span class="status deprecated"> [不再推薦]</span></dt>
+				<dd>
+					<p>跨出邊界（譯註：即為出血）的內容，不分文字還是圖像。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">繼承於：</span>
+						<span class="subpropref">
+							<a href="http://www.w3.org/1999/xhtml/vocab/#complementary">xhv:complementary</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">aside</a>、<a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">片語內容</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">被以下取代：</span>
+						<span class="subpropref"> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">aside</a> </span>
+					</p>
+				</dd>
+
+				<dt id="notice">notice</dt>
+				<dd>
+					<p>告知使用者某個動作或者事件會引起的後果。例如包含警告、提醒以及危險事項。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-notice">doc-notice</a>
+					</p>
+				</dd>
+
+				<dt id="pullquote">pullquote<span class="status draft"> [草稿]</span></dt>
+				<dd>
+					<p>由目前內容摘出語句，以顯著的方式排設或者強調，目的是為了引起對主題的注意或者對重點進行強調。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">繼承於：</span>
+						<span class="subpropref">
+							<a href="http://www.w3.org/1999/xhtml/vocab/#complementary">xhv:complementary</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">aside</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-pullquote">doc-pullquote</a>
+					</p>
+				</dd>
+
+				<dt id="sidebar">sidebar<span class="status deprecated"> [不再推薦]</span></dt>
+				<dd>
+					<p>次要或補充性的內容，一般以盒狀或者插頁格式呈現。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">繼承於：</span>
+						<span class="subpropref">
+							<a href="http://www.w3.org/1999/xhtml/vocab/#complementary">xhv:complementary</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">aside</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">被以下取代：</span>
+						<span class="subpropref"> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">aside</a> </span>
+					</p>
+				</dd>
+
+				<dt id="tip">tip</dt>
+				<dd>
+					<p>用於釐清內容某些面向或者輔助理解的有用資訊。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">繼承於：</span>
+						<span class="subpropref">
+							<a href="http://www.w3.org/1999/xhtml/vocab/#complementary">xhv:complementary</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">aside</a>、<a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">片語內容</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-tip">doc-tip</a>
+					</p>
+				</dd>
+
+				<dt id="warning">warning<span class="status deprecated"> [不再推薦]</span></dt>
+				<dd>
+					<p>警告。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">section</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">被以下取代：</span>
+						<span class="subpropref">
+							<a href="#notice">notice</a>
+						</span>
+					</p>
+				</dd>
+			</dl>
+		</section>
+		<section id="sec-titles"><div class="header-wrapper"><h2 id="x9-titles-and-headings"><bdi class="secno">9. </bdi>書名與標題</h2><a class="self-link" href="#sec-titles" aria-label="Permalink for Section 9."></a></div>
+			
+
+			<dl>
+				<dt id="bridgehead">bridgehead <span class="status deprecated">[不再推薦]</span></dt>
+				<dd>
+					<p>結構上明確的標題，但不供作品樹狀架構內容使用。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容</a>、 一般用於<a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element">p</a>,
+						<a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">div</a>或<a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-span-element">span</a> </p>
+				</dd>
+
+				<dt id="covertitle">covertitle</dt>
+				<dd>
+					<p>作品的標題，如作品封面所呈現。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">繼承於：</span>
+						<span class="subpropref">
+							<a href="#doc-title">title</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#heading-content-2">標題內容（Heading Content）</a>。本特性在文件範圍內應該只出現一次。</p>
+				</dd>
+
+				<dt id="fulltitle">fulltitle</dt>
+				<dd>
+					<p>作品的完整標題，可以簡單，就和標題（<a href="#doc-title">title</a>）一樣；或者複雜，包含主標（<a href="#doc-title">title</a>）以及副標（<a href="#subtitle">subtitle</a>）。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">繼承於：</span>
+						<span class="subpropref">
+							<a href="#doc-title">title</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">等同於（Same as）：</span>
+						<span class="subpropref">
+							<a href="http://purl.org/dc/terms/title">http://purl.org/dc/terms/title</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#heading-content-2">標題內容</a>。本特性在文件範圍內應該只出現一次。</p>
+				</dd>
+
+				<dt id="halftitle">halftitle</dt>
+				<dd>
+					<p>在作品第一頁或者在文字之前出現的標題。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">繼承於：</span>
+						<span class="subpropref">
+							<a href="#doc-title">title</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#heading-content-2">標題內容</a>。本特性在文件範圍內應該只出現一次。</p>
+				</dd>
+
+				<dt id="label">label<span class="status draft"> [草稿]</span></dt>
+				<dd>
+					<p>用來處理部件標題順序（<a href="#ordinal">ordinal</a>）的文字標籤（也就是「章(chapter)」、「部(Part)」、「圖片(Figure)」、「表格(Table)」）。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">繼承於：</span>
+						<span class="subpropref">
+							<a href="#doc-title">title</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">片語內容</a>、<a href="https://html.spec.whatwg.org/multipage/#heading-content">標題內容</a>的子項、<a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">li</a>及<a href="https://html.spec.whatwg.org/multipage/#the-figcaption-element">figcaption</a>
+					</p>
+				</dd>
+
+				<dt id="ordinal">ordinal<span class="status draft"> [草稿]</span></dt>
+				<dd>
+					<p>在一系列元件中用於指示順序的識別（也就是「1」、「４」、「B-1」）。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">繼承於：</span>
+						<span class="subpropref">
+							<a href="#doc-title">title</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">片語內容</a>、<a href="https://html.spec.whatwg.org/multipage/#heading-content">標題內容</a>的子項、<a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">li</a>及<a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figcaption-element">figcaption</a> </p>
+				</dd>
+
+				<dt id="subtitle">subtitle</dt>
+				<dd>
+					<p>作品解釋性或者另外的標題，或者其中的一章節或者元件。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">繼承於：</span>
+						<span class="subpropref">
+							<a href="#doc-title">title</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#heading-content-2">heading content</a>、<a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">片語內容</a>、<a href="https://html.spec.whatwg.org/multipage/#heading-content">標題內容</a>的子項、<a data-lt="p" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element">paragraphs</a>、<a data-link-type="dfn" data-lt="div" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">divs</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-subtitle">doc-subtitle</a>
+					</p>
+				</dd>
+
+				<dt id="doc-title">title</dt>
+				<dd>
+					<p>文件元件的主要名稱，像是一份列表、表格或者圖片。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#heading-content-2">標題內容</a>、<a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">片語內容</a><a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#heading-content-2">標題內容</a>的子項。</p>
+				</dd>
+			</dl>
+		</section>
+		<section id="sec-educational"><div class="header-wrapper"><h2 id="x10-educational-content"><bdi class="secno">10. </bdi>教育用內容</h2><a class="self-link" href="#sec-educational" aria-label="Permalink for Section 10."></a></div>
+			
+
+			<section id="learning-obj"><div class="header-wrapper"><h3 id="h_learning-obj"><bdi class="secno">10.1 </bdi>Learning objectives</h3><a class="self-link" href="#h_learning-obj" aria-label="Permalink for Section 10.1"></a></div>
+				
+
+				<dl>
+					<dt id="learning-objective">learning-objective</dt>
+					<dd>
+						<p>學習目標的明確項目或者描述，或者對明確學習目標的參照。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容</a>、<a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">片語內容</a> </p>
+					</dd>
+
+					<dt id="learning-objectives">learning-objectives<span class="status draft"> [草稿]</span></dt>
+					<dd>
+						<p>一組學習目標（<a href="#learning-objective">learning-objectives</a>）。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+						</p>
+					</dd>
+
+					<dt id="learning-outcome">learning-outcome<span class="status draft"> [草稿]</span></dt>
+					<dd>
+						<p>課程或者活動後，學生預期能達成的能力或者理解結果。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容</a> </p>
+					</dd>
+
+					<dt id="learning-outcomes">learning-outcomes<span class="status draft"> [草稿]</span></dt>
+					<dd>
+						<p>一組學習成果（<a href="#learning-outcome">learning-outcomes</a>）。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+						</p>
+					</dd>
+
+					<dt id="learning-resource">learning-resource</dt>
+					<dd>
+						<p>供協助學習使用的資源，或者對這樣資源的參照。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動內容</a> </p>
+					</dd>
+
+					<dt id="learning-resources">learning-resources<span class="status draft"> [草稿]</span></dt>
+					<dd>
+						<p>一組學習資源（<a href="#learning-resource">learning-resources</a>）。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+						</p>
+					</dd>
+
+					<dt id="learning-standard">learning-standard<span class="status draft"> [草稿]</span></dt>
+					<dd>
+						<p>一般由政府或者標準制定機關所提出的正式需求或者期望。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a>、<a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">片語內容</a> </p>
+					</dd>
+
+					<dt id="learning-standards">learning-standards<span class="status draft"> [草稿]</span></dt>
+					<dd>
+						<p>一組學習標準（<a href="#learning-standard">learning-standards</a>）。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+						</p>
+					</dd>
+				</dl>
+			</section>
+
+			<section id="testing"><div class="header-wrapper"><h3 id="h_testing"><bdi class="secno">10.2 </bdi>測驗</h3><a class="self-link" href="#h_testing" aria-label="Permalink for Section 10.2"></a></div>
+				
+
+				<dl>
+					<dt id="answer">answer<span class="status draft"> [草稿]</span></dt>
+					<dd>
+						<p>自我評價問題的組件，用於提供問題的答案。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">aside</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+						</p>
+					</dd>
+
+					<dt id="answers">answers<span class="status draft"> [草稿]</span></dt>
+					<dd>
+						<p>一組答案（<a href="#answer">answers</a>）。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+						</p>
+					</dd>
+
+					<dt id="assessment">assessment</dt>
+					<dd>
+						<p>一項測驗、考試、或者其他有助於評量學生對剛教導內容理解的活動。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a> </p>
+					</dd>
+
+					<dt id="assessments">assessments<span class="status draft"> [草稿]</span></dt>
+					<dd>
+						<p>一組測驗（<a href="#assessment">assessments</a>）。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a> </p>
+					</dd>
+
+					<dt id="feedback">feedback<span class="status draft"> [草稿]</span></dt>
+					<dd>
+						<p>給讀者基於測驗結果的程序。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span>
+							<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>、<a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">片語內容</a> </p>
+					</dd>
+
+					<dt id="fill-in-the-blank-problem">fill-in-the-blank-problem<span class="status draft">
+							[草稿]</span></dt>
+					<dd>
+						<p>要求讀者輸入文字答案來完善句子、文章之類的問題。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">aside</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+						</p>
+					</dd>
+
+					<dt id="general-problem">general-problem<span class="status draft"> [草稿]</span></dt>
+					<dd>
+						<p>以自由形式提供答案的問題。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">aside</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+						</p>
+					</dd>
+
+					<dt id="match-problem">match-problem<span class="status draft"> [草稿]</span></dt>
+					<dd>
+						<p>要求讀者從一份列表中的內容，選出與另一項列表中相呼應項目的問題。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">aside</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+						</p>
+					</dd>
+
+					<dt id="multiple-choice-problem">multiple-choice-problem<span class="status draft">
+						[草稿]</span></dt>
+					<dd>
+						<p>提供一系列可能的答案供挑選，其中部分、全部，或者都不是正確答案的問題。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">aside</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+						</p>
+					</dd>
+
+					<dt id="practice">practice<span class="status draft"> [草稿]</span></dt>
+					<dd>
+						<p>複習用的習題或者範例。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">請參見：</span>
+							<span class="subpropref">
+								<a href="#practices">practices</a>
+							</span>
+						</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">aside</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+						</p>
+					</dd>
+
+					<dt id="practices">practices<span class="status draft"> [草稿]</span></dt>
+					<dd>
+						<p>一組練習題（<a href="#practice">practices</a>）。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a> </p>
+					</dd>
+
+					<dt id="qna">qna</dt>
+					<dd>
+						<p>內容的一章節，由一系列問題與答案所構成，像是訪談或者常見問題列表。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span>lists or <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a> </p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">DPUB-ARIA角色：</span>
+							<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-qna">doc-qna</a>
+						</p>
+					</dd>
+
+					<dt id="question">question<span class="status draft"> [草稿]</span></dt>
+					<dd>
+						<p>自我評價問題的組件，提出要被解決的問題。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span>
+							<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+						</p>
+					</dd>
+
+					<dt id="true-false-problem">true-false-problem<span class="status draft"> [草稿]</span></dt>
+					<dd>
+						<p>答案為是或非的問題。</p>
+					</dd>
+					<dd>
+						<p>
+							<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">aside</a>、<a href="https://html.spec.whatwg.org/multipage/#grouping-content">群組內容</a>
+						</p>
+					</dd>
+				</dl>
+			</section>
+		</section>
+		<section id="sec-comics"><div class="header-wrapper"><h2 id="x11-comics"><bdi class="secno">11. </bdi>漫畫</h2><a class="self-link" href="#sec-comics" aria-label="Permalink for Section 11."></a></div>
+			
+
+			<dl>
+				<dt id="balloon">balloon</dt>
+				<dd>
+					<p>漫畫格（<a href="#panel">panel</a>）中的區塊，內包含角色的話語、對白或者想法。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">li</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">用法細節：</span>
+						<a href="http://idpf.org/epub/renditions/region-nav">EPUB Region-Based Navigation</a>
+						[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-region-nav-10" title="EPUB Region-Based Navigation 1.0">epub-region-nav-10</a></cite>] </p>
+				</dd>
+
+				<dt id="panel">panel</dt>
+				<dd>
+					<p>獨立的圖格或者一張圖。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">li</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">用法細節：</span>
+						<a href="http://idpf.org/epub/renditions/region-nav">EPUB Region-Based Navigation</a>
+						[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-region-nav-10" title="EPUB Region-Based Navigation 1.0">epub-region-nav-10</a></cite>] </p>
+				</dd>
+
+				<dt id="panel-group">panel-group</dt>
+				<dd>
+					<p>一組圖格（<a href="#panel">panels</a>）（例如，四格漫畫）。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">li</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">用法細節：</span>
+						<a href="http://idpf.org/epub/renditions/region-nav">EPUB Region-Based Navigation</a>
+						[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-region-nav-10" title="EPUB Region-Based Navigation 1.0">epub-region-nav-10</a></cite>] </p>
+				</dd>
+
+				<dt id="sound-area">sound-area</dt>
+				<dd>
+					<p>漫畫圖格（<a href="#panel">panel</a>）中的文字區域，其用於表達聲音。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">li</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">用法細節：</span>
+						<a href="http://idpf.org/epub/renditions/region-nav">EPUB Region-Based Navigation</a>
+						[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-region-nav-10" title="EPUB Region-Based Navigation 1.0">epub-region-nav-10</a></cite>] </p>
+				</dd>
+
+				<dt id="text-area">text-area</dt>
+				<dd>
+					<p>漫畫圖格（<a href="#panel">panel</a>）中的文字區域，用於表達標題、描述性文字、角色對話（在氣球（<a href="#balloon">balloon</a>）中或者不在）之類。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">li</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">用法細節：</span>
+						<a href="http://idpf.org/epub/renditions/region-nav">EPUB Region-Based Navigation</a>
+						[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-region-nav-10" title="EPUB Region-Based Navigation 1.0">epub-region-nav-10</a></cite>] </p>
+				</dd>
+			</dl>
+		</section>
+		<section id="notes"><div class="header-wrapper"><h2 id="x12-notes-and-annotations"><bdi class="secno">12. </bdi>注意事項與註釋</h2><a class="self-link" href="#notes" aria-label="Permalink for Section 12."></a></div>
+			
+
+			<dl>
+				<dt id="annotation">annotation<span class="status deprecated"> [不再推薦]</span></dt>
+				<dd>
+					<p>對作品中段落的解釋性資訊。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">繼承於：</span>
+						<span class="subpropref">
+							<a href="http://www.w3.org/1999/xhtml/vocab/#complementary">xhv:complementary</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">aside</a>、<a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">片語內容</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">被以下取代：</span>
+						<span class="subpropref">
+							<a href="http://idpf.org/epub/oa">Open Annotation in EPUB</a>
+						</span>
+					</p>
+				</dd>
+
+				<dt id="endnote">endnote</dt>
+				<dd>
+					<p>一組註釋的集合，其位於作品或者章節末，用於對對應的文字段落提供額外的脈絡。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">請參見（See also）：</span>
+						<span class="subpropref">
+							<a href="#endnotes">endnotes</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span>用於<a href="https://html.spec.whatwg.org/multipage/#the-aside-element">aside</a>元素作為單一尾註，或者區塊內容的子項作為群組中的個別尾註（請參考<a href="#footnotes">footnotes</a>與<a href="#endnotes">endnotes</a>）。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-endnote">doc-endnote</a> (不再推薦)</p>
+				</dd>
+
+				<dt id="endnotes">endnotes</dt>
+				<dd>
+					<p>一組尾註的集合，其位於作品或者章節末。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">請參見：</span>
+						<span class="subpropref">
+							<a href="#endnote">endnote</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-endnotes">doc-endnotes</a>
+					</p>
+				</dd>
+
+				<dt id="footnote">footnote</dt>
+				<dd>
+					<p>補充性資訊，像是摘要或者補述，用於對對應的文字段落提供額外的脈絡。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">請參見：</span>
+						<span class="subpropref">
+							<a href="#footnotes">footnotes</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span>用<a href="https://html.spec.whatwg.org/multipage/#the-aside-element">aside</a>元素作為單一腳註，或者區塊內容的子項作為群組中的個別腳註（請參考<a href="#footnotes">footnotes</a>與<a href="#endnotes">endnotes</a>）。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-footnote">doc-footnote</a>
+					</p>
+				</dd>
+
+				<dt id="footnotes">footnotes</dt>
+				<dd>
+					<p>一組腳註（<a href="#footnote">footnotes</a>）的集合。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">請參見：</span>
+						<span class="subpropref">
+							<a href="#footnote">footnote</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a> </p>
+				</dd>
+
+				<dt id="note">note<span class="status deprecated"> [不再推薦]</span></dt>
+				<dd>
+					<p>註，此特性不包含空間定位語意，不像<a href="#footnote">footnote</a>與<a href="#endnote">endnote</a>特性。可以用於識別註解、尾註、旁註、行內註以及其他傳統命名無法對應的註解。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span>HTML用法脈絡: 用於<a href="https://html.spec.whatwg.org/multipage/#the-aside-element">aside</a>元素作為單一註，或者區塊內容的子項作為群組中的個別註（請參考<a href="#footnotes">footnotes</a>與<a href="#endnotes">endnotes</a>）。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">被以下取代：</span>
+						<span class="subpropref">
+							<a href="#footnote">footnote</a>、<a href="#endnote">endnote</a>
+						</span>
+					</p>
+				</dd>
+
+				<dt id="rearnote">rearnote<span class="status deprecated"> [不再推薦]</span></dt>
+				<dd>
+					<p>出現在章節結束或者作品後方（backmatter）的註解。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">請參見：</span>
+						<span class="subpropref">
+							<a href="#rearnotes">rearnotes</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span>用於 <a href="https://html.spec.whatwg.org/multipage/#the-aside-element">aside</a>元素作為單一後註，或者區塊內容的子項作為群組中的個別後註（請參考<a href="#footnotes">footnotes</a>與<a href="#rearnotes">rearnotes</a>）。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">被以下取代：</span>
+						<span class="subpropref">
+							<a href="#endnote">endnote</a>
+						</span>
+					</p>
+				</dd>
+
+				<dt id="rearnotes">rearnotes<span class="status deprecated"> [不再推薦]</span></dt>
+				<dd>
+					<p>一組出現在章節結束或者作品後方（backmatter）的註解。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">請參見：</span>
+						<span class="subpropref">
+							<a href="#rearnote">rearnote</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">被以下取代：</span>
+						<span class="subpropref">
+							<a href="#endnotes">endnotes</a>
+						</span>
+					</p>
+				</dd>
+			</dl>
+		</section>
+		<section id="links"><div class="header-wrapper"><h2 id="x13-references"><bdi class="secno">13. </bdi>參考資料</h2><a class="self-link" href="#links" aria-label="Permalink for Section 13."></a></div>
+			
+
+			<dl>
+				<dt id="annoref">annoref<span class="status deprecated"> [不再推薦]</span></dt>
+				<dd>
+					<p>一則註釋的參照。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">繼承於：</span>
+						<span class="subpropref">
+							<a href="http://www.w3.org/1999/xhtml/vocab/#link">xhv:link</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">請參見：</span>
+						<span class="subpropref">
+							<a href="#annotation">annotation</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">a</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">被以下取代：</span>
+						<span class="subpropref">
+							<a href="http://idpf.org/epub/oa">Open Annotation in EPUB</a>
+						</span>
+					</p>
+				</dd>
+
+				<dt id="backlink">backlink<span class="status draft"> [草稿]</span></dt>
+				<dd>
+					<p>一個允許使用者回到內容相關位置的連結（例如，從腳註（<a href="#footnote">footnote</a>）回到參照的位置，或者詞彙表定義從<a href="#glossdef">（glossary definition）</a>回到該術語出現的位置）。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">繼承於：</span>
+						<span class="subpropref">
+							<a href="http://www.w3.org/1999/xhtml/vocab/#link">xhv:link</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">a</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-backlink">doc-backlink</a>
+					</p>
+				</dd>
+
+				<dt id="biblioref">biblioref<span class="status draft"> [草稿]</span></dt>
+				<dd>
+					<p>一筆書目資料（ <a href="#biblioentry">bibliography entry</a>）的參照。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">繼承於：</span>
+						<span class="subpropref">
+							<a href="http://www.w3.org/1999/xhtml/vocab/#link">xhv:link</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">a</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-biblioref">doc-biblioref</a>
+					</p>
+				</dd>
+
+				<dt id="glossref">glossref<span class="status draft"> [草稿]</span></dt>
+				<dd>
+					<p>一項詞彙表定義（<a href="#glossdef">glossary definition</a>）的參照。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">繼承於：</span>
+						<span class="subpropref">
+							<a href="http://www.w3.org/1999/xhtml/vocab/#link">xhv:link</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">a</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-glossref">doc-glossref</a>
+					</p>
+				</dd>
+
+				<dt id="noteref">noteref</dt>
+				<dd>
+					<p>一則註解的參照，一般以上標數字或者符號出現在內文之中。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">繼承於：</span>
+						<span class="subpropref">
+							<a href="http://www.w3.org/1999/xhtml/vocab/#link">xhv:link</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">請參見：</span>
+						<span class="subpropref">
+							<a href="#note">note</a>
+						</span>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="element" href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">a</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-noteref">doc-noteref</a>
+					</p>
+				</dd>
+			</dl>
+		</section>
+		<section id="document-text"><div class="header-wrapper"><h2 id="x14-document-text"><bdi class="secno">14. </bdi>文件內文</h2><a class="self-link" href="#document-text" aria-label="Permalink for Section 14."></a></div>
+			
+
+			<p>用於說明片語層級元件的術語。</p>
+
+			<dl>
+				<dt id="concluding-sentence">concluding-sentence</dt>
+				<dd>
+					<p>片語或者句子，用於對所包含段落做出結論性摘要。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">片語內容</a> </p>
+				</dd>
+
+				<dt id="credit">credit<span class="status draft"> [草稿]</span></dt>
+				<dd>
+					<p>對整體內容來自第三方來源之素材，像是照片，的致謝。一般用來識別作者、著作權，以及任何再利用的的限制。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">片語內容</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-credit">doc-credit</a>
+					</p>
+				</dd>
+
+				<dt id="keyword">keyword</dt>
+				<dd>
+					<p>一個關鍵字或者片語。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">片語內容</a> </p>
+				</dd>
+
+				<dt id="topic-sentence">topic-sentence</dt>
+				<dd>
+					<p>片語或者句子，用於對所包含段落做出介紹性摘要。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">片語內容</a> </p>
+				</dd>
+			</dl>
+		</section>
+		<section id="sec-pagination"><div class="header-wrapper"><h2 id="x15-pagination"><bdi class="secno">15. </bdi>分頁</h2><a class="self-link" href="#sec-pagination" aria-label="Permalink for Section 15."></a></div>
+			
+
+			<dl>
+				<dt id="page-list">page-list</dt>
+				<dd>
+					<p>一組有詳細資料的連結列表供導覽目的使用，其指向內容中的分頁點（<a href="#pagebreak">pagebreaks</a>）。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#sectioning-content-2">區塊內容</a> </p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-pagelist">doc-pagelist</a>
+					</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">用法細節：</span>
+						<a href="https://www.w3.org/TR/epub-33/#sec-nav-pagelist"><code>page-list nav</code>元素</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>]
+					</p>
+				</dd>
+
+				<dt id="pagebreak">pagebreak</dt>
+				<dd>
+					<p>一個分隔點，用於指示在固定分頁的內容版本中，該位址為連續兩頁面的換頁點。</p>
+					<p>換頁位址也常用來在純數位出版品（也就是沒有固定翻頁的版本存在）提供固定標記。這些標記，無論字體或者螢幕尺寸等會影響動態內容分頁的因素變化，都能提供恆定的導覽。</p>
+					<p>EPUB製作者必須確保分頁點名稱為終端使用者能使用的頁碼，與開始的頁碼相同。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span> <a data-link-type="dfn" data-lt="片語內容" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2">片語</a>與<a data-link-type="dfn" data-lt="流動內容" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#flow-content-2">流動</a>內容、使用的元素其title屬性值遞增，以用於呈現pagebreak的值。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">DPUB-ARIA角色：</span>
+						<a href="https://www.w3.org/TR/dpub-aria-1.0/#doc-pagebreak">doc-pagebreak</a>
+					</p>
+				</dd>
+			</dl>
+		</section>
+		<section id="sec-tables"><div class="header-wrapper"><h2 id="x16-tables"><bdi class="secno">16. </bdi>表格</h2><a class="self-link" href="#sec-tables" aria-label="Permalink for Section 16."></a></div>
+			
+
+			<dl>
+				<dt id="table">table</dt>
+				<dd>
+					<p>以表格形式包含資料或者內容的結構。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span>不允許</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">媒體層疊使用脈絡（Media overlays usage context）：</span>用於識別<code><a data-type="element" href="https://www.w3.org/TR/epub-33/#dfn-seq">seq</a></code>或<code><a data-type="element" href="https://www.w3.org/TR/epub-33/#dfn-par">par</a></code>是否為可跳出或可跳過的表格結構。</p>
+				</dd>
+
+				<dt id="table-row">table-row</dt>
+				<dd>
+					<p>一個表格結構中的一列資料或者內容。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span>不允許</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">媒體層疊使用脈絡：</span>用於識別<code><a data-type="element" href="https://www.w3.org/TR/epub-33/#dfn-seq">seq</a></code>或<code><a data-type="element" href="https://www.w3.org/TR/epub-33/#dfn-par">par</a></code>是否為可跳出或可跳過的表格列。</p>
+				</dd>
+
+				<dt id="table-cell">table-cell</dt>
+				<dd>
+					<p>單一表格資料或者內容的儲存格。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span>不允許</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">媒體層疊使用脈絡：</span>用於識別<code><a data-type="element" href="https://www.w3.org/TR/epub-33/#dfn-seq">seq</a></code>或<code><a data-type="element" href="https://www.w3.org/TR/epub-33/#dfn-par">par</a></code>是否為可跳出或可跳過的表格儲存格。</p>
+				</dd>
+			</dl>
+		</section>
+		<section id="sec-lists"><div class="header-wrapper"><h2 id="x17-lists"><bdi class="secno">17. </bdi>列表</h2><a class="self-link" href="#sec-lists" aria-label="Permalink for Section 17."></a></div>
+			
+
+			<dl>
+				<dt id="list">list</dt>
+				<dd>
+					<p>包含列舉相關內容項目的結構。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span>不允許</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">媒體層疊使用脈絡：</span>用於識別<code><a data-type="element" href="https://www.w3.org/TR/epub-33/#dfn-seq">seq</a></code>或<code><a data-type="element" href="https://www.w3.org/TR/epub-33/#dfn-par">par</a></code>是否為可跳出或可跳過的列表結構。</p>
+				</dd>
+
+				<dt id="list-item">list-item</dt>
+				<dd>
+					<p>序列中的單一項目。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span>不允許</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">媒體層疊使用脈絡：</span>用於識別<code><a data-type="element" href="https://www.w3.org/TR/epub-33/#dfn-seq">seq</a></code>或<code><a data-type="element" href="https://www.w3.org/TR/epub-33/#dfn-par">par</a></code>是否為可跳出或可跳過的列表項目。</p>
+				</dd>
+			</dl>
+		</section>
+		<section id="sec-figures"><div class="header-wrapper"><h2 id="x18-figures"><bdi class="secno">18. </bdi>圖片</h2><a class="self-link" href="#sec-figures" aria-label="Permalink for Section 18."></a></div>
+			
+
+			<dl>
+				<dt id="figure">figure</dt>
+				<dd>
+					<p>一則插畫、圖表、照片、代碼列表與類似內容，與作品的內容互相對照，並且通常伴隨著標題、圖說及/或作者資訊作為說明。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span>不允許</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">媒體層疊使用脈絡：</span>用於識別<code><a data-type="element" href="https://www.w3.org/TR/epub-33/#dfn-seq">seq</a></code>或<code><a data-type="element" href="https://www.w3.org/TR/epub-33/#dfn-par">par</a></code>是否為可跳出或可跳過的圖片。</p>
+				</dd>
+			</dl>
+		</section>
+		<section id="sec-asides"><div class="header-wrapper"><h2 id="x19-asides"><bdi class="secno">19. </bdi>次要內容（Asides）</h2><a class="self-link" href="#sec-asides" aria-label="Permalink for Section 19."></a></div>
+			
+
+			<dl>
+				<dt id="aside">aside</dt>
+				<dd>
+					<p>次要或者補充的內容。</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">HTML用法脈絡：</span>不允許</p>
+				</dd>
+				<dd>
+					<p>
+						<span class="subproplabel">媒體層疊使用脈絡：</span>用於識別<code><a data-type="element" href="https://www.w3.org/TR/epub-33/#dfn-seq">seq</a></code>或<code><a data-type="element" href="https://www.w3.org/TR/epub-33/#dfn-par">par</a></code>是否為可跳出或可跳過的次要內容。</p>
+				</dd>
+			</dl>
+		</section>
+		<section id="ack" class="appendix informative"><div class="header-wrapper"><h2 id="a-acknowledgements"><bdi class="secno">A. </bdi>致謝</h2><a class="self-link" href="#ack" aria-label="Permalink for Appendix A."></a></div><p><em>本章節為非規範性。
+</em></p>
+    
+
+    <p>以下EPUB 3工作小組的成員對本規格的產製有所貢獻：</p>
+
+    <ul class="ack">
+                <li>Will AWAD (Newgen Knowledgeworks)</li>
+        <li>Sofia Bautista (Legible Media Inc.)</li>
+        <li>Laura Brady (Legible Media Inc.)</li>
+        <li>Leah Brochu (National Network for Equitable Library Service)</li>
+        <li>Matthew C. Chan (House of Anansi Press)</li>
+        <li>Yu-Wei Chang (Taiwan Digital Publishing Forum)</li>
+        <li>Fred Chasen (Scribd)</li>
+        <li>Juan Corona (Legible Media Inc.)</li>
+        <li>Dave Cramer (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Expert、chair)</li>
+        <li>Romain Deltour (DAISY Consortium)</li>
+        <li>Marisa DeMeglio (DAISY Consortium)</li>
+        <li>Brady Duga (Google LLC)</li>
+        <li>Reinaldo Ferraz (NIC.br - Brazilian Network Information Center)</li>
+        <li>John Foliot (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Expert)</li>
+        <li>Teenya Franklin (Pearson plc)</li>
+        <li>Hadrien Gardeur (EDRLab)</li>
+        <li>Matt Garrish (DAISY Consortium)</li>
+        <li>Jen Goulden (Crawford Technologies)</li>
+        <li>Ivan Herman (<abbr title="World Wide Web Consortium">W3C</abbr>、staff contact)</li>
+        <li>Tetsu Hoshino (Kodansha、Publishers、Ltd.)</li>
+        <li>Norikazu Ishizu (Kadokawa Corporation)</li>
+        <li>Norihito IYENAGA (Kodansha、Publishers、Ltd.)</li>
+        <li>Rick Johnson (VitalSource Technologies)</li>
+        <li>Ken Jones (Circular Software)</li>
+        <li>Antonio Kamiya (Dentsu Group Inc.)</li>
+        <li>Deborah Kaplan (<abbr title="World Wide Web Consortium">W3C</abbr> Invited Expert)</li>
+        <li>Bill Kasdorf (Book Industry Study Group)</li>
+        <li>George Kerscher (DAISY Consortium)</li>
+        <li>Kazuhito Kidachi (Mitsue-Links Co.、Ltd.)</li>
+        <li>Masakazu Kitahara (Voyager Japan、Inc.)</li>
+        <li>Toshiaki Koike (Voyager Japan、Inc.)</li>
+        <li>Ryo Kuroda (ACCESS CO.、LTD.)</li>
+        <li>Charles LaPierre (Benetech)</li>
+        <li>Dan Lazin (Google LLC)</li>
+        <li>Laurent Le Meur (EDRLab)</li>
+        <li>Victoria Lee (Apple、Inc.)</li>
+        <li>Farrah Little (National Network for Equitable Library Service)</li>
+        <li>Victor Lopes (Apple、Inc.)</li>
+        <li>Karan  Malhotra (Newgen Knowledgeworks)</li>
+        <li>Makoto Murata (DAISY Consortium)</li>
+        <li>Cristina Mussinelli (Fondazione LIA)</li>
+        <li>Yoichiro Nagao (Kodansha、Publishers、Ltd.)</li>
+        <li>Theresa O'Connor (Apple、Inc.)</li>
+        <li>Yoshinori Ohmura (SHUEISHA Inc.)</li>
+        <li>Rachel Osolen (National Network for Equitable Library Service)</li>
+        <li>Gregorio Pellegrino (Fondazione LIA)</li>
+        <li>Vijaya Gowri Perumal (Newgen Knowledgeworks)</li>
+        <li>Wendy Reid (Rakuten Group、Inc.、chair)</li>
+        <li>John Roque (Apple、Inc.)</li>
+        <li>Leonard Rosenthol (Adobe)</li>
+        <li>Shinobu Sato (Kadokawa Corporation)</li>
+        <li>Ben Schroeter (Pearson plc)</li>
+        <li>Daihei Shiohama (MEDIA DO Co.、Ltd.)</li>
+        <li>Tzviya Siegman (Wiley)</li>
+        <li>Avneesh Singh (DAISY Consortium)</li>
+        <li>MOTOI SUZUKI (SHUEISHA Inc.)</li>
+        <li>Yutaka Suzuki (Kadokawa Corporation)</li>
+        <li>Kyrce Swenson (Pearson plc)</li>
+        <li>Shinya Takami (Kadokawa Corporation、chair)</li>
+        <li>Mateus Teixeira (W. W. Norton &amp; Company)</li>
+        <li>Yukio Tomikura (Kodansha、Publishers、Ltd.)</li>
+        <li>Aimee Ubbink (Crawford Technologies)</li>
+        <li>Daniel Weck (DAISY Consortium)</li>
+        <li>Zheng Xu (Gardenia Corp)</li>
+        <li>Fuqiao Xue (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+        <li>Evan Yamanishi (W. W. Norton &amp; Company)</li>
+        <li>Osamu Yoshiba (Kodansha、Publishers、Ltd.)</li>
+        <li>Junichi Yoshii (Kodansha、Publishers、Ltd.)</li>
+        <li>Naomi Yoshizawa (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+        <li>Laurence Zaysser (EDRLab)</li>
+    </ul>
+    
+</section>
+
+
+	
+
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="b-references"><bdi class="secno">B. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix B."></a></div><section id="informative-references"><div class="header-wrapper"><h3 id="b-1-informative-references"><bdi class="secno">B.1 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix B.1"></a></div>
+    
+    <dl class="bibliography"><dt id="bib-dpub-aria-1.0">[dpub-aria-1.0]</dt><dd>
+      <a href="https://www.w3.org/TR/dpub-aria-1.0/"><cite>Digital Publishing WAI-ARIA Module 1.0</cite></a>. Matt Garrish; Tzviya Siegman; Markus Gylling; Shane McCarron.  W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/dpub-aria-1.0/">https://www.w3.org/TR/dpub-aria-1.0/</a>
+    </dd><dt id="bib-epub-33">[epub-33]</dt><dd>
+      <a href="https://www.w3.org/TR/epub-33/"><cite>EPUB 3.3</cite></a>. Matt Garrish; Ivan Herman; Dave Cramer.  W3C. 7 August 2022. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/epub-33/">https://www.w3.org/TR/epub-33/</a>
+    </dd><dt id="bib-epub-dict-10">[epub-dict-10]</dt><dd>
+      <a href="http://idpf.org/epub/dict"><cite>EPUB Dictionaries and Glossaries 1.0</cite></a>.  IDPF. 26 August 2015. URL: <a href="http://idpf.org/epub/dict">http://idpf.org/epub/dict</a>
+    </dd><dt id="bib-epub-indexes-10">[epub-indexes-10]</dt><dd>
+      <a href="http://idpf.org/epub/idx"><cite>EPUB Indexes 1.0</cite></a>.  IDPF. 26 August 2015. URL: <a href="http://idpf.org/epub/idx">http://idpf.org/epub/idx</a>
+    </dd><dt id="bib-epub-region-nav-10">[epub-region-nav-10]</dt><dd>
+      <a href="http://idpf.org/epub/renditions/region-nav"><cite>EPUB Region-Based Navigation 1.0</cite></a>.  IDPF. 26 August 2015. URL: <a href="http://idpf.org/epub/renditions/region-nav">http://idpf.org/epub/renditions/region-nav</a>
+    </dd><dt id="bib-html">[html]</dt><dd>
+      <a href="https://html.spec.whatwg.org/multipage/"><cite>HTML Standard</cite></a>. Anne van Kesteren; Domenic Denicola; Ian Hickson; Philip Jägenstedt; Simon Pieters.  WHATWG. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/">https://html.spec.whatwg.org/multipage/</a>
+    </dd><dt id="bib-html-aria">[html-aria]</dt><dd>
+      <a href="https://www.w3.org/TR/html-aria/"><cite>ARIA in HTML</cite></a>. Steve Faulkner; Scott O'Hara; Patrick Lauke.  W3C. 9 December 2021. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html-aria/">https://www.w3.org/TR/html-aria/</a>
+    </dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown"、listener);
+  document.body.addEventListener("click"、listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target、type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys、we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn、.index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn、panel、coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates、so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX、y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x、y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite])、.index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number、y: number }} clickPosition
+ */
+function displayPanel(dfn、panel、{ x、y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top、bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth、window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN、x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog、we trap focus.
+  // TODO: when <dialog> becomes a implemented、we should really
+  // use that.
+  trapFocus(panel、dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel、dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors、panel、dfn);
+  panel.addEventListener("keydown"、trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown"、trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel、{ attributes: true、attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors、panel、dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>

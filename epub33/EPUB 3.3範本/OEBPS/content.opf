@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="identifier0" version="3.0" prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/">
+<!--EPUB 3.3版中，版本號依然為"3.0"。用於控制固定版面的Rendition:作為預設用語，無需於package元素中宣告，另外可以使用客製化處理屬性，需定義字首，如此處ibooks:。EPUB 3.3閱讀系統中提供了一套展開字首的演算法，但實際上除非具備功能，不然無需真正連結到展開後的URL，僅用於驗證-->
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<dc:identifier id="identifier0">urn:uuid:39610b48-f318-48be-980a-2743e8963529</dc:identifier>
+	<!--後設資料中「必要」的識別碼，可接受uuid/isbn/DOI等，建議除非改版，不然不要變更EPUB中的識別碼，可用meta標籤配合identifier-type特性來說明其性質。-->
+	<dc:title id="title0">一桿稱仔</dc:title>
+	<!--後設資料中「必要」的書名。過去EPUB建議將書名、副標等以多個dc:title表示，但實務上只建議閱讀系統抓取第一個顯示在書架上-->
+	<dc:language>zh-TW</dc:language>
+	<!--後設資料中「必要」的語言，不會用於解析內容文件-->
+	<meta property="dcterms:modified">2023-01-01T12:00:00Z</meta>
+	<!--後設資料中「必要」的更新時間，EPUB 3.3不再將識別碼與更新時間結合來建立發布識別碼，但為了相容性而為必要-->
+	<!--以上為EPUB必要的後設資料-->
+	<dc:creator id="creator0">賴和</dc:creator>
+	<!--後設資料中「選擇性」的書名。過去EPUB建議將作者等以多個dc:creator分列，但實務上只建議閱讀系統抓取第一個顯示在書架上-->
+	<meta property="ibooks:specified-fonts">true</meta>
+	<!--此為Apple Books的客製化處理屬性，可指定Apple系統中的字體，保留齊行設定，字首ibooks在前面package元素中有宣告-->
+</metadata>
+<manifest>
+<!--EPUB 3.3中為資源定義了三個平面，「宣告平面」分為出版品資源、連結的資源與遠端資源。所有在此宣告的資源皆為出版品資源；而連結的資源像連到網站的超連結（例如開啟YouTube網址），不需宣告；遠端資源僅限聲音、影片、字型等較大的資源，可以放在網路上，但限定使用https協定連結-->
+<item media-type="image/jpeg" href="cover.jpg" id="_cover.jpg" properties="cover-image" />
+<!--宣告特性（properties）cover-image指示為EPUB的封面圖片-->
+<item media-type="image/webp" href="cover.webp" id="_cover.webp" />
+<!--「內容平面」分為閱讀系統得支援的「核心媒體類別資源」、之外的「外圍資源」、以及支不支援無妨的「豁免資源」。webp為Google制定的圖片格式，在EPUB 3.3版中加入核心媒體類別，所以是核心媒體類別資源-->
+<item media-type="text/css" href="style.css" id="_style.css" />
+<!--「內容平面」的豁免資源包括字型、影片、字幕軌，以及透過link連結的資源。CSS樣式表在內容中以link連結，所以是豁免資源-->
+<item media-type="application/xhtml+xml" href="cover.xhtml" id="_cover.xhtml" properties="svg" />
+<!--此為承載封面圖片的XHTML內容文件，由於使用SVG包裝來確保圖片佔用一頁的空間，所以在特性中需要指示svg，另外內容若有Javascript，則需指示scripted；有mathML，則需指示mathml；若外連資源，則需指示remote-resources-->
+<item media-type="application/xhtml+xml" href="nav.xhtml" id="_nav.xhtml" properties="nav" />
+<!--此為EPUB導覽文件，即為目錄，在包裝文件中必須要有一份文件特性指示nav-->
+<item media-type="application/pdf" href="libra.pdf" id="_libra.pdf" fallback="_bodymatter_0_0.xhtml"/>
+<!--PDF並非EPUB核心媒體類別，所以在「內容平面」分類上，這是一份外圍資源，外圍資源必須指定「回退」（fallback）到核心媒體類別資源上，此稱為「宣告回退」，宣告回退可以連續指定多份資源，稱為「宣告回退鏈」-->
+<item media-type="application/xhtml+xml" href="bodymatter_0_0.xhtml" id="_bodymatter_0_0.xhtml" />
+<item media-type="application/xhtml+xml" href="bodymatter_0_1.xhtml" id="_bodymatter_0_1.xhtml" />
+<item media-type="image/jpeg" href="laiho.jpg" id="_laiho.jpg" />
+<item media-type="image/tiff" href="laiho.tiff" id="_laiho.tiff" />
+<!--TIFF圖片格式並非核心媒體類別資源，為外圍資源，但因為在HTML中有原生的回退機制，所以不需在宣告中回退-->
+<item media-type="application/x-dtbncx+xml" href="toc.ncx" id="_toc.ncx" />
+<!--NCX為EPUB 2.0的目錄，由於現在EPUB 3.0已經普及，所以被稱為「遺存（legacy）功能」未來將不再支援，也不建議現在使用-->
+</manifest>
+<spine page-progression-direction="rtl" toc="_toc.ncx">
+<!--spine沒有太多變更，直排書需制定行頁方向page-progression-direction為rtl-->
+<itemref idref="_cover.xhtml" linear="no" />
+<!--在「書脊平面」中，只有XHTML與SVG為EPUB內容文件，-->
+<itemref idref="_nav.xhtml" />
+<itemref idref="_bodymatter_0_0.xhtml"/>
+<itemref idref="_libra.pdf"/>
+<itemref idref="_bodymatter_0_1.xhtml"/>
+
+</spine>
+</package>
