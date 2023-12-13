@@ -1,0 +1,174 @@
+@charset "UTF-8";
+@namespace "http://www.w3.org/1999/xhtml";
+@namespace epub "http://www.idpf.org/2007/ops";
+
+html {
+  -ms-writing-mode: tb-rl;
+  -epub-writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+  font-family: "宋體-繁", "Songti TC", "Ming", serif;
+  margin: 0;
+  padding: 0;
+}
+
+.hori { 
+  -epub-writing-mode: horizontal-tb; 
+  writing-mode: horizontal-tb;
+  -webkit-writing-mode: horizontal-tb;
+}
+
+.hori hr {
+  margin: 1.25em 0;
+}
+
+body {
+  text-align: justify;
+  text-justify: inter-ideograph;
+  vertical-align: baseline;
+  word-wrap: break-word;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: serif, sans-serif;
+  font-weight: normal;
+  color: inherit;
+}
+
+h1 {
+  font-size: 2em;
+  font-family: "宋體-繁", "Songti TC", "Ming", serif;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+h2 {
+  font-size: 1.4em;
+  font-family: "宋體-繁", "Songti TC", "Ming", serif;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0 1rem 0 3rem;
+
+}
+
+h3 {
+  font-size: 1.2em;
+  font-family: "宋體-繁", "Songti TC", "Ming", serif;
+  font-weight: bold;
+  margin: 0 2.1rem 0 2.1rem;
+}
+
+h4 {
+  font-size: 1em;
+  font-family: sans-serif;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+
+h6 {
+  font-family: "宋體-繁", "Songti TC", "Ming", serif;
+  font-size: 1.2em;
+  margin:  0 0 0.5rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid black;
+}
+
+p {
+  font-family: "宋體-繁", "Songti TC", "Ming", serif;
+  margin: 0;
+  line-height: 1.8; 
+}
+
+p, li, dt, dd {
+  line-height: 1.8; 
+}
+
+.tcy {
+  -epub-text-combine: horizontal;
+  -webkit-text-combine: horizontal;
+  -ms-text-combine-horizontal: all;
+  text-combine-horizontal: all;
+  text-combine-upright: all;
+}
+
+.footnotes hr {
+  margin-right: 1.25em;
+  margin-left: 1.25em;
+}
+
+.footnote p {
+  margin-top: 1em;
+  text-indent: -1em;
+  font-size: 0.875em;
+  margin-left: 0;
+}
+
+a.noteref {
+  display: inline-block;
+  border: none;
+  font-size: 0.75em;
+  line-height: 1;
+  vertical-align: super;
+  -epub-text-combine: horizontal;
+  -webkit-text-combine: horizontal;
+  -ms-text-combine-horizontal: all;
+  text-combine-horizontal: all;
+  text-combine-upright: all;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+em {
+  font-style: normal;
+  font-family: "楷體-繁", "標楷體", "Kaiti TC", "Biaukai", sans-serif;
+}
+
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+.text-justify        { text-align: justify; }
+.text-pre-wrap       { white-space: pre-wrap; }
+
+.byline {
+  font-size: 1.4em;
+  font-family: "宋體-繁", "Songti TC", "Ming", serif;
+  font-weight: bold;
+  text-align: right;
+  margin: 0 -3rem 0 3rem;
+}
+
+.note {
+  margin: 0 7.2em 0 0;
+}
+
+.note p {
+  font-size: 0.9em;
+}
+
+.note hr {
+  height: 8em;
+}
+
+.copy p {
+  line-height: 1.4;
+  font-size: 0.9em;
+}
+
+code {
+  padding: 0.25em 0;
+  margin: 0.25em 0;
+  background-color: rgb(220,220,220);
+  border-radius: 3px;
+}
+
+pre {
+  display: inline-block;
+  margin: 1em;
+  padding: 1em;
+  background-color: rgb(220,220,220);
+}

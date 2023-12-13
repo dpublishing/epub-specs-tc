@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="zh-TW" lang="zh-TW">
+    <head>
+        <meta charset="utf-8"/>
+        
+        <link rel="stylesheet" href="style-standard.css" type="text/css"/>
+
+        <link rel="stylesheet" href="style-advance.css" type="text/css"/>
+
+        <link rel="stylesheet" href="book-style.css" type="text/css"/>
+
+        
+        <title>噢！父親</title>
+    </head>
+    <body class="bodymatter vrtl" epub:type="bodymatter">
+        <h2 id="toc_index_1">電子書與印刷書頁碼對應技術解說</h2>
+
+<p class="byline">董福興</p>
+
+<h3 id="toc_index_2">為什麼電子書需要印刷書頁碼</h3>
+
+<p>　　電子書與印刷書在傳遞、顯示、銷售的形式上不同，但所乘載的內容卻相同。而電子書具備著容易攜帶、能夠以語音朗讀及點字輸出等方式提供無障礙輔助，讓視覺障礙者、閱讀障礙者也能藉此讀到內容。</p>
+
+<p>　　所以會有許多情境，例如在課堂上，學生同時閱讀印刷書以及該書的電子版本；或者在讀書會中，參與者購買的版本不同。這時若需翻到指定頁數，對於印刷書而言輕而易舉；但電子書使用者就不曉得要怎麼辦了，僅能透過輸入該頁的詞句來進行搜尋。</p>
+
+<p>　　同樣，在學術研究上需要引用文獻時，若閱讀的版本為電子書，就不曉得所引用段落所在之印刷書頁碼為何。</p>
+
+<p>　　所以如果能在電子書中加入印刷書頁碼，對教育、研究以及共讀活動都能有所助益。</p>
+
+<p>　　EPUB 3版本從最初版本就已經考量這些情境，而提供了Page-list，「頁面列表」功能，來讓電子書也可以對應到印刷書頁碼，得以得知、搜尋、快速翻頁，以滿足以上情境需求。</p>
+
+<p>　　然而如同EPUB 3所提供的各項功能，頁面列表功能僅供電子書製作者、閱讀程式開發者作為選擇性支援。目前支援這項功能的電子書銷售平台與閱讀程式包括：Apple Books（原Apple iBookstore）、Google Play Books，以及Amazon Kindle。在電子書逐漸普及的現狀下，此項功能的需求應也會日益增加。</p>
+
+<h3 id="toc_index_3">如何在電子書中加入印刷頁碼</h3>
+
+<p>　　這項功能主要應用於Reflow（文字重排、流式）電子書，因為流式電子書由於閱讀程式和閱讀載體螢幕尺寸，所給予的頁碼會有所改變，才需要提供印刷頁碼。</p>
+
+<p>　　提供頁碼的方式則需要在內文的XHTML中，在印刷書頁起之處，透過HTML標籤<code>&lt;div&gt;</code>以及<code>&lt;span&gt;</code>來加入分頁點。</p>
+
+<p>　　若分頁點正好位於兩個段落<code>&lt;p&gt;</code>之間，則建議使用<code>&lt;div&gt;</code>；若分頁點位於文內<code>&lt;p&gt;</code>與<code>&lt;/p&gt;</code>之間，則建議使用<code>&lt;span&gt;</code>，由於這些標籤沒有內容，所以在標籤末需以<code>/</code>關閉，以下提供範例：</p>
+
+<h4 id="toc_index_4">區塊(block)分頁點，使用<code>&lt;div&gt;</code>標籤</h4>
+
+<pre><code>&lt;div id="pagenum_24" epub:type="pagebreak" role="doc-pagebreak"  aria-label="24"/&gt;</code></pre>
+
+<h4 id="toc_index_5">文內（inline）分頁點，使用<code>&lt;span&gt;</code>標籤</h4>
+
+<pre><code>&lt;span id="pagenum_24" epub:type="pagebreak" role="doc-pagebreak"  aria-label="24"/&gt;</code></pre>
+
+<p>　　其中<code>id</code>為必須，可自由命名，按照HTML 5規則，必須包含一個字母、不得包含空白，以及在同一份文件中不得重複；另建議包含所指定頁碼。</p>
+
+<p>　　而<code>epub:type="pagebreak"</code>為EPUB 3.0版本時推薦用於結構上的用語，但隨著與網頁技術整合，現在推薦使用<code>role="doc-pagebreak"</code>，當然兩者也可以共存。</p>
+
+<p>　　此外<code>aria-label="24"</code>為網頁應用程式無障礙標準中的一項屬性，在透過網頁瀏覽器開啟電子書，並且以螢幕閱讀程式閱讀時，能夠播報出頁碼數字。</p>
+
+<p>　　另可以加入class來透過CSS隱藏這些標籤。</p>
+
+<p>　　以上語法在EPUB Check中都不會視為錯誤。</p>
+
+<p>　　請注意，印刷書中會有許多調整用的空白頁，請盡可能連空白頁頁碼一併標示，避免頁碼不連貫造成問題。</p>
+
+<p>　　此外，印刷書中註釋會以跨頁註方式呈現，在電子書結構中不易將註釋文字包含在頁碼範圍內。故建議將註釋置放於該章節末，或者獨立章節來處理。當在指定註釋所在頁碼時才能正確導向</p>
+  
+<p><br /></p>
+
+<p>　　內文標註頁碼後，請於導覽文件（即系統目錄，包含<code>epub:type="toc"</code>屬性的<code>&lt;nav&gt;</code>所在的XHTML檔案）中以此方式建立頁面導覽清單，範例如：</p>
+
+<pre><code>
+&lt;nav id="page-list" class="page-list" epub:type="page-list"&gt;
+　&lt;h2&gt;印刷書頁面索引&lt;/h2&gt;
+　&lt;ol&gt;
+　　&lt;li&gt;&lt;a href="bodymatter_0_0.xhtml#pagenum_1"&gt;&lt;span&gt;1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+　　&lt;li&gt;&lt;a href="bodymatter_0_1.xhtml#pagenum_2"&gt;&lt;span&gt;2&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+...
+　&lt;/ol&gt;
+&lt;/nav&gt;
+
+</code></pre>
+
+<p>　　提供各頁碼所在之XHTML與ID的連結，即可作為索引。</p>
+
+<p>　　由於目前支援頁碼的閱讀程式有限，當使用導覽文件作為讀者可見的目錄時，建議不要隱藏（如加入<code>hidden="hidden"</code>屬性），讓讀者可點擊連結跳到所欲前往的頁面。</p>
+
+<h3 id="toc_index_6">閱讀程式支援</h3>
+
+<p>　　閱讀程式支援的方式各有不同，目前閱讀程式採用的顯示方式如下：</p>
+
+<ul>
+<li>讓分頁點顯示在內文中。（如舊版Apple Books）</li>
+<li>以印刷書頁數取代閱讀程式生成的頁碼（如Google Play Books）</li>
+<li>讓使用者可自由切換印刷書及電子書頁碼（如現在版本的Apple Books）</li>
+<li>一併顯示印刷書與電子書頁碼（如Amazon Kindle）</li>
+<li>另外在閱讀程式中提供頁面列表選單。</li>
+</ul>
+
+<p>　　若閱讀程式提供搜尋功能，建議可輸入頁碼，搜尋後呈現連結讓使用者點選換頁。</p>
+
+<h3 id="toc_index_7">在metadata中標示分頁來源</h3>
+
+<p>　　在EPUB無障礙技巧中，建議在OPF檔案的<code>&lt;metadata&gt;</code>中，加入註記來說明頁碼所參照的印刷書之ISBN。由於印刷書可能有多種版本，所以加入此項資料，可以確保印刷書與電子書之關聯。</p>
+
+<p>範例：</p>
+
+<pre><code>&lt;dc:source id="pg-src"&gt;urn:isbn:9789571352077&lt;/dc:source&gt;
+  &lt;meta property="source-of" refines="#pg-src"&gt;pagination&lt;/meta&gt;
+</code></pre>
+
+<p>　　可完整複製使用，僅需修改ISBN。</p>
+    </body>
+</html>

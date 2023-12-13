@@ -1,0 +1,419 @@
+@charset "UTF-8";
+/* でんでんコンバーターテンプレート用 */
+@namespace "http://www.w3.org/1999/xhtml";
+@namespace epub "http://www.idpf.org/2007/ops";
+html {
+  -ms-writing-mode: lr-tb;
+  -epub-writing-mode: horizontal-tb;
+  -webkit-writing-mode: horizontal-tb;
+  writing-mode: horizontal-tb;
+  font-family: sans-serif, serif;
+}
+
+body {
+  text-align: justify;
+  text-justify: inter-ideograph;
+  vertical-align: baseline;
+  word-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  font-weight: bold;
+  color: inherit;
+}
+
+h1 {
+  font-size: 2em;
+  margin-top: 0.625em;
+  margin-bottom: 0.625em;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-top: 0.83333em;
+  margin-bottom: 0.83333em;
+}
+
+h3 {
+  font-size: 1.125em;
+  margin-top: 1.11111em;
+  margin-bottom: 1.11111em;
+}
+
+h4 {
+  font-size: 1em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+h5 {
+  font-size: 0.875em;
+  margin-top: 1.42857em;
+  margin-bottom: 1.42857em;
+}
+
+h6 {
+  font-size: 0.75em;
+  margin-top: 1.66667em;
+  margin-bottom: 1.66667em;
+}
+
+p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  line-height: 1.8;
+}
+
+p, li, dt, dd {
+  line-height: 1.8;
+}
+
+b, strong, dt, caption, figcaption, th {
+  font-family: sans-serif, serif;
+}
+
+blockquote, ul,
+fieldset, form,
+ol, dl, menu {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  padding: 0;
+}
+
+blockquote blockquote, blockquote ol, blockquote ul, blockquote dl, ol blockquote, ol ol, ol ul, ol dl, ul blockquote, ul ol, ul ul, ul dl, dl blockquote, dl ol, dl ul, dl dl {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+ol, ul, menu, dd {
+  margin-left: 2em;
+}
+
+a {
+  color: #0538b2;
+}
+a:hover {
+  color: #b2058e;
+}
+a:active {
+  color: #b27f05;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+hr {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+rt {
+  font-family: serif, sans-serif;
+}
+
+.tcy {
+  -epub-text-combine: horizontal;
+  -webkit-text-combine: horizontal;
+  -ms-text-combine-horizontal: all;
+  text-combine-horizontal: all;
+  text-combine-upright: all;
+}
+
+.sideways {
+  -epub-text-orientation: sideways;
+  text-orientation: sideways;
+}
+
+.upright {
+  -epub-text-orientation: rotate-right;
+  -epub-text-orientation: upright;
+  -webkit-text-orientation: upright;
+  -epub-text-combine: horizontal;
+  -webkit-text-combine: horizontal;
+  -ms-text-combine-horizontal: all;
+  text-combine-horizontal: all;
+  text-combine-upright: all;
+}
+
+.pagenum {
+  color: gray;
+  font-size: 0.8em;
+}
+
+.footnotes hr {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+.footnotes ol {
+  margin-left: 2em;
+}
+.footnotes li {
+  font-size: 0.875em;
+}
+
+a.noteref {
+  display: inline-block;
+  border: none;
+  font-size: 0.75em;
+  line-height: 1;
+  vertical-align: super;
+  -epub-text-combine: horizontal;
+  -webkit-text-combine: horizontal;
+  -ms-text-combine-horizontal: all;
+  text-combine-horizontal: all;
+  text-combine-upright: all;}
+a.noteref:before {
+  content: "[";
+}
+a.noteref:after {
+  content: "]";
+}
+
+nav#toc, nav#landmarks, nav#loi, nav#lot, nav#page-list {
+  margin-bottom: 2.5em;
+}
+nav#toc ol, nav#landmarks ol, nav#loi ol, nav#lot ol, nav#page-list ol {
+  margin-left: 1em;
+}
+
+.-epub-media-overlay-active {
+  background-color: yellow;
+}
+
+body.cover .container img {
+  width: 100%;
+}
+
+body.titlepage .container img {
+  width: 100%;
+}
+
+.titlepage {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.titlepage .titlepage-container {
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+  padding: 1.25em;
+  min-width: 80%;
+}
+
+.titlepage-collectiontitle {
+  margin: 0;
+  font-size: 0.875em;
+  line-height: 1.25;
+  font-family: sans-serif, serif;
+  margin-top: 1.42857em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 1.42857em;
+  color: #999;
+}
+
+.titlepage-collectiontitle-placeholder {
+  min-height: 1.09375em;
+  margin-top: 1.42857em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 1.42857em;
+}
+
+.titlepage-maintitle {
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1.2;
+  font-weight: normal;
+}
+
+.titlepage-subtitle {
+  margin: 0;
+  font-size: 1.125em;
+  line-height: 1.25;
+  margin-top: 1.11111em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 1.11111em;
+}
+
+.titlepage-subtitle-placeholder {
+  min-height: 1.40625em;
+  margin-top: 1.11111em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 1.11111em;
+}
+
+.titlepage-creator {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: serif, sans-serif;
+}
+
+.titlepage-creator-placeholder {
+  min-height: 1.5em;
+  margin-top: 1.25em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 1.25em;
+}
+
+.titlepage-publisher {
+  font-size: 0.875em;
+  line-height: 1.42857em;
+  margin-top: 2.85714em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 1.42857em;
+}
+
+.colophon-container {
+  text-align: center;
+  margin: 1em;
+}
+
+.colophon {
+  padding: 1em;
+  min-width: 80%;
+  display: inline-block;
+  text-align: center;
+}
+.colophon p {
+  margin: 0;
+}
+
+.colophon .titles {
+  min-width: 100%;
+  margin-top: 1.25em;
+  padding-top: 0.3125em;
+  padding-bottom: 0.3125em;
+  margin-bottom: 0em;
+  border-bottom: 1px solid #999;
+}
+
+.colophon .main-title {
+  font-size: 1em;
+  line-height: 1.25em;
+  font-weight: bold;
+}
+
+.colophon .collection-title {
+  font-size: 0.875em;
+  line-height: 1.42857em;
+}
+
+.colophon .subtitle {
+  font-size: 0.875em;
+  line-height: 1.42857em;
+  font-family: sans-serif, serif;
+}
+
+.colophon .creators {
+  margin-top: 0em;
+  padding-top: 0.3125em;
+  padding-bottom: 0.3125em;
+  margin-bottom: 0em;
+}
+
+.colophon .publishers {
+  margin-top: 0em;
+  padding-top: 0.3125em;
+  padding-bottom: 0.3125em;
+  margin-bottom: 0em;
+}
+
+.colophon .publisher {
+  font-size: 1em;
+  line-height: 1.25em;
+}
+
+.colophon .copyright-div {
+  font-size: 1em;
+  line-height: 1.25em;
+  margin-top: 0em;
+  padding-top: 0.3125em;
+  padding-bottom: 0.3125em;
+  margin-bottom: 0em;
+  border-top: 1px solid #999;
+}
+
+.colophon .copyright {
+  font-size: 0.75em;
+  line-height: 1.66667em;
+  font-style: italic;
+}
+
+.colophon .isbn {
+  font-size: 0.75em;
+  line-height: 1.66667em;
+}
+
+.colophon dl {
+  margin-top: 0em;
+  padding-top: 0.3125em;
+  padding-bottom: 0.3125em;
+  margin-bottom: 0em;
+}
+
+.colophon dd {
+  margin: 0;
+}
+
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+.text-justify        { text-align: justify; }
+.text-pre-wrap       { white-space: pre-wrap; }
+
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+@media print {
+  h1 {
+    page-break-before: always;
+  }
+
+  h1, h2, h3,
+  h4, h5, h6 {
+    page-break-after: avoid;
+  }
+
+  ul, ol, dl {
+    page-break-before: avoid;
+  }
+}

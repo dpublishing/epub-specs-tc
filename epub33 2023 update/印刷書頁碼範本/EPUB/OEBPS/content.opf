@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package
+ xmlns="http://www.idpf.org/2007/opf"
+ version="3.0"
+ xml:lang="zh-TW"
+ unique-identifier="identifier0"
+ prefix="rendition: http://www.idpf.org/vocab/rendition/#
+		 ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/"
+>
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<dc:identifier id="identifier0">urn:isbn:9789869206129</dc:identifier>
+	<meta refines="#identifier0" property="identifier-type" scheme="onix:codelist5">15</meta>
+	<dc:title id="title0">噢！父親</dc:title>
+	<dc:creator id="creator0">法蘭茲・卡夫卡</dc:creator>
+	<dc:publisher>群星文化、台灣數位出版聯盟</dc:publisher>
+	<dc:format>application/epub+zip</dc:format>
+	<dc:language>zh-TW</dc:language>
+	<meta property="ibooks:specified-fonts">true</meta>
+	<dc:source id="pg-src">urn:isbn:9789869206129</dc:source>
+	<meta property="source-of" refines="#pg-src">pagination</meta>
+	<meta property="dcterms:modified">2023-12-13T15:03:09Z</meta>
+	<meta name="cover" content="_cover.jpg" />
+</metadata>
+<manifest>
+	<item media-type="text/css" href="book-style.css" id="_book-style.css" />
+	<item media-type="image/jpeg" href="cover.jpg" id="_cover.jpg" properties="cover-image" />
+	<item media-type="text/css" href="template.css" id="_template.css" />
+	<item media-type="text/css" href="style-standard.css" id="_style-standard.css" />
+	<item media-type="text/css" href="style-advance.css" id="_style-advance.css" />
+	<item media-type="application/xhtml+xml" href="cover.xhtml" id="_cover.xhtml" properties="svg" />
+	<item media-type="application/xhtml+xml" href="nav.xhtml" id="_nav.xhtml" properties="nav" />
+	<item media-type="application/xhtml+xml" href="bodymatter_0_0.xhtml" id="_bodymatter_0_0.xhtml" />
+	<item media-type="application/xhtml+xml" href="bodymatter_0_1.xhtml" id="_bodymatter_0_1.xhtml" />
+	<item media-type="application/xhtml+xml" href="bodymatter_0_2.xhtml" id="_bodymatter_0_2.xhtml" />
+	<item media-type="image/jpeg" href="001.jpg" id="_001.jpg" />
+	<item media-type="application/xhtml+xml" href="bodymatter_0_3.xhtml" id="_bodymatter_0_3.xhtml" properties="svg" />
+	<item media-type="image/jpeg" href="002.jpg" id="_002.jpg" />
+	<item media-type="application/xhtml+xml" href="bodymatter_0_4.xhtml" id="_bodymatter_0_4.xhtml" properties="svg" />
+	<item media-type="image/jpeg" href="003.jpg" id="_003.jpg" />
+	<item media-type="application/xhtml+xml" href="bodymatter_0_5.xhtml" id="_bodymatter_0_5.xhtml" properties="svg" />
+	<item media-type="image/jpeg" href="004.jpg" id="_004.jpg" />
+	<item media-type="application/xhtml+xml" href="bodymatter_0_6.xhtml" id="_bodymatter_0_6.xhtml" properties="svg" />
+	<item media-type="image/jpeg" href="005.jpg" id="_005.jpg" />
+	<item media-type="application/xhtml+xml" href="bodymatter_0_7.xhtml" id="_bodymatter_0_7.xhtml" properties="svg" />
+	<item media-type="image/jpeg" href="006.jpg" id="_006.jpg" />
+	<item media-type="application/xhtml+xml" href="bodymatter_0_8.xhtml" id="_bodymatter_0_8.xhtml" properties="svg" />
+	<item media-type="application/xhtml+xml" href="bodymatter_0_9.xhtml" id="_bodymatter_0_9.xhtml" />
+	<item media-type="application/xhtml+xml" href="bodymatter_0_10.xhtml" id="_bodymatter_0_10.xhtml" />
+	<item media-type="application/xhtml+xml" href="bodymatter_0_11.xhtml" id="_bodymatter_0_11.xhtml" />
+	<item media-type="application/xhtml+xml" href="bodymatter_0_12.xhtml" id="_bodymatter_0_12.xhtml" />
+	<item media-type="application/xhtml+xml" href="bodymatter_0_13.xhtml" id="_bodymatter_0_13.xhtml" />
+</manifest>
+<spine page-progression-direction="rtl">
+	<itemref idref="_cover.xhtml" properties="rendition:layout-pre-paginated rendition:spread-none rendition:page-spread-center" />
+	<itemref idref="_bodymatter_0_0.xhtml" />
+	<itemref idref="_bodymatter_0_1.xhtml" />
+	<itemref idref="_nav.xhtml" />
+	<itemref idref="_bodymatter_0_2.xhtml" />
+	<itemref idref="_bodymatter_0_3.xhtml" properties="rendition:layout-pre-paginated rendition:spread-auto page-spread-right" />
+	<itemref idref="_bodymatter_0_4.xhtml" properties="rendition:layout-pre-paginated rendition:spread-auto page-spread-left" />
+	<itemref idref="_bodymatter_0_5.xhtml" properties="rendition:layout-pre-paginated rendition:spread-auto page-spread-right" />
+	<itemref idref="_bodymatter_0_6.xhtml" properties="rendition:layout-pre-paginated rendition:spread-auto page-spread-left" />
+	<itemref idref="_bodymatter_0_7.xhtml" properties="rendition:layout-pre-paginated rendition:spread-auto page-spread-right" />
+	<itemref idref="_bodymatter_0_8.xhtml" properties="rendition:layout-pre-paginated rendition:spread-auto page-spread-left" />
+	<itemref idref="_bodymatter_0_9.xhtml" />
+	<itemref idref="_bodymatter_0_10.xhtml" />
+	<itemref idref="_bodymatter_0_11.xhtml" />
+	<itemref idref="_bodymatter_0_12.xhtml" />
+	<itemref idref="_bodymatter_0_13.xhtml" />
+</spine>
+</package>
