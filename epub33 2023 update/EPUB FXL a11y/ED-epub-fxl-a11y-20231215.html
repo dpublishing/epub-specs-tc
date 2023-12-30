@@ -1,0 +1,1374 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 34.2.2">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+span.example-title{text-transform:none}
+:is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
+div.illegal-example{color:red}
+div.illegal-example p{color:#000}
+:is(aside,div).example{border-left-width:.5em;border-left-style:solid;border-color:#e0cb52;background:#fcfaee}
+aside.example div.example{border-left-width:.1em;border-color:#999;background:#fff}
+.example pre{background-color:rgba(0,0,0,.03)}
+</style>
+<style>
+.issue-label{text-transform:initial}
+.warning>p:first-child{margin-top:0}
+.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
+span.warning{padding:.1em .5em .15em}
+.issue.closed span.issue-number{text-decoration:line-through}
+.issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
+.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}
+.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
+li.task-list-item{list-style:none}
+input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
+.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
+</style>
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+		
+		
+<title>EPUB固定版面可及性</title>
+		
+<style type="text/css">
+
+</style>
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+		
+		
+		
+        
+        
+<style>
+ /*prevent examples from horizontal scrolling*/
+			pre {
+				white-space: break-spaces !important;
+			}
+        
+</style>
+	
+<style>
+
+ul.nomark,
+ol.nomark {
+    list-style-type: none;
+}
+
+ol.cmt,
+ul.flat {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+ol.cmt {
+	margin: 0;
+}
+
+dl.elemdef {
+    border-left: 0.5em solid rgb(145,200,255);
+    background-color: rgb(236,246,255);
+    padding: 0.5em 1em;
+	margin-bottom: 2em;
+}
+
+dl.elemdef ul.nomark {
+	padding-left: 1em;
+}
+
+dl.elemdef > dd > ul.nomark:first-child {
+	padding-left: 0 !important;
+}
+
+dl.conformance-list > dd {
+    margin-top: 0.7em;
+}
+
+dl.elemdef > dt,
+table.tabledef th {
+	font-weight: normal;
+	font-style: italic;
+}
+
+dl.elemdef > dt {
+	margin-bottom: 0.5em;
+}
+
+dl.elemdef dfn {
+	font-style: normal;
+}
+
+/*  EBNF tables */
+
+
+table.productionset {
+    border: none;
+    border-left: 5px solid rgb(145,200,255);
+    background-color: rgb(236,246,255);
+}
+
+table.productionset caption {
+	text-align: left;
+	font-size: 80%;
+	font-style: normal;
+}
+
+table.productionset tbody tr {
+    border: none;
+}
+
+table.productionset tbody tr td {
+    border: none;
+    padding: 0.5em;
+    border-bottom: 1px solid #ddd;
+}
+
+table.productionset tbody tr td a {
+    text-decoration: none;
+    border-bottom: 1px dotted #000090;
+}
+
+table.productionset tbody tr td a:hover {
+    text-decoration: underline;
+}
+
+table.productionset tbody tr td a:visited,
+table.productionset tbody tr td a:active,
+table.productionset tbody tr td a:hover {
+    color: #000090;
+}
+
+a.deprecated,
+a.legacy {
+	font-size: 85%;
+	text-transform: uppercase;
+}
+
+/* styles for core media types */
+
+table#tbl-core-media-types {
+    border-spacing: 0px;
+    padding: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 2em;    
+}
+
+table#tbl-core-media-types th {
+    border-bottom: 1px solid #005A9C;
+    font-weight: bold;
+    padding: 0.5em;
+    font-weight: bold;
+    color: #000090;
+    font-size: 90%
+}
+
+table#tbl-core-media-types td {
+    border-bottom: 1px solid #005A9C;
+    border-right: 1px solid #efefef;
+    padding: 0.5em;
+    text-align: left
+}
+
+table#tbl-core-media-types tr td:last-child {
+    border-right: none;
+}
+
+table#tbl-core-media-types td *, table#tbl-core-media-types td > * {
+    text-align: left;
+}
+
+table#tbl-core-media-types, table#tbl-core-media-types tbody {
+    padding: 0;
+}
+
+table#tbl-core-media-types caption {
+    text-align: left;
+    font-size: 90%
+}
+
+.tbl-group {
+	text-align: left;
+	border-bottom: none;
+	color: rgb(0, 0, 0);
+	background-color: rgb(240, 248, 255);
+}
+
+table#tbl-core-media-types > thead > tr > th {
+    background-color: rgb(240,240,240);
+    text-align: left;
+    white-space:nowrap;
+}
+
+table#tbl-core-media-types > tbody > tr > th {    
+    text-align: left;
+    font-weight: normal;
+    font-style: italic;
+    padding: 3px;
+}
+
+table#tbl-core-media-types td, table#tbl-core-media-types th, table#tbl-core-media-types tr {
+    border-color: #005A9C;
+    margin: 0em;
+}
+
+table#tbl-core-media-types td code, table#tbl-core-media-types td a {
+    white-space:nowrap;
+}
+
+td[headers="tbl-cmt-appl"] {
+    font-size: .9em;
+}
+
+
+
+
+/****************************************************/
+/*  property tables                                 */
+/****************************************************/
+
+/* ensure confomity of width for property tables */
+table.tabledef {
+	border-spacing: 0px;
+	border: none;
+	font-size: 1em;
+	width: 100%
+}
+
+table.tabledef td, table.tabledef th {
+	border: none;
+	background-color: rgb(236,246,255);
+	color: rgb(0,0,0);
+	padding: 0.3em;
+	vertical-align: top;
+}
+
+table.tabledef th {
+    text-align: left;
+	vertical-align: top;
+    width: 8em;
+    padding-left: 1em;
+}
+
+table.tabledef th {
+    border-left: 5px solid rgb(145,200,255);
+}
+
+table.tabledef td {
+    padding: 3px 3px 3px 10px;
+}
+
+table.tabledef td > p:first-child {
+	padding: 0em;
+	margin: 0em
+}
+
+
+/* Reserved prefix tables */
+
+table.prefix {
+    border-spacing: 0px;
+    padding: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 2em;    
+}
+table.prefix th {
+    border-bottom: 1px solid #005A9C;
+    font-weight: bold;
+    padding: 0.5em;
+    font-weight: bold;
+    color: #000090;
+    font-size: 90%
+}
+table.prefix td {
+    border-bottom: 1px solid #005A9C;
+    border-right: 1px solid #efefef;
+    padding: 0.5em;
+    text-align: left
+}
+table.prefix tr td:last-child {
+    border-right: none;
+}
+table.prefix td *, table.prefix td > * {
+    text-align: left;
+}
+table.prefix, table.prefix tbody {
+    padding: 0;
+}
+
+table.prefix caption {
+    text-align: left;
+    font-size: 90%
+}
+
+
+/* Table zebra style... */
+
+table.zebra {
+    font-size:inherit;
+    font:90%;
+    margin:1em;
+}
+
+table.zebra td {
+    padding-left: 0.3em;
+}
+
+table.zebra th {
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(0,0,128) !important;
+    font-size: 110%;
+    background: hsl(180, 30%, 50%);
+    color: #fff;
+}
+
+table.zebra th a:link {
+  color: #fff;
+}
+
+table.zebra th a:visited {
+  color: #aaa;
+}
+
+table.zebra tr:nth-child(even) {
+    background-color: hsl(180, 30%, 93%) !important;
+}
+
+table.zebra th{border-bottom:1px solid #bbb;padding:.2em 1em;}
+table.zebra td{border-bottom:1px solid #ddd;padding:.2em 1em;}
+
+
+p.support {
+	border-left: 0.4rem solid rgb(255,255,0);
+	background-color: rgb(255,255,230);
+	padding: 0.7rem;
+}
+
+p.caution, div.caution {
+	padding: 0.5rem;
+	border-left: 0.5rem solid rgb(255,140,0);
+	background-color: rgb(254,236,207);
+}
+
+div.caution-title > span {
+	color: rgb(140,40,0);
+	text-transform: uppercase;
+}
+
+details.desc {
+	margin-top: -2.5rem !important;
+	margin-left: 3rem !important;
+}
+
+details.explanation, details.desc {
+	background-color: rgb(245,245,245);
+	border-left: 0.3em solid rgb(200,200,200);
+	padding: 0.3em;
+}
+
+details.explanation > summary, details.desc > summary {
+	font-size: small;
+	text-align: left;
+    font-weight: normal !important;
+    font-style: italic;
+}
+
+/* Give a slightly different aspect to epubcheck test references */
+a.epubcheck {
+    background-color: antiquewhite ;
+}
+
+<style>
+/*中文翻譯版添加樣式*/
+dfn {font-style: normal;}
+em {font-family: serif; font-style: normal;}
+em.rfc2119 {font-family: sans-serif; font-weight: bold; text-decoration: underline;}
+code {color: red;}
+p {text-align: justify;line-height: 1.8;}
+</style>
+
+
+</style>
+<meta name="description" content="本文件〈固定版面可及性〉在認知到為固定版面格式提供可及性為一項獨特挑戰的前提下，勾勒出EPUB固定版面書籍的無障礙需達到的目的。">
+<style>
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
+.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
+.hljs-literal{color:#0b76c5}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
+.hljs-link{text-decoration:underline}
+</style>
+<style>
+var{position:relative;cursor:pointer}
+var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "group": "pm",
+  "wgPublicList": "public-pm-wg",
+  "specStatus": "ED",
+  "shortName": "epub-fxl-a11y",
+  "edDraftURI": "https://w3c.github.io/epub-specs/epub33/fxl-a11y/",
+  "previousPublishDate": "2021-04-27",
+  "previousMaturity": "NOTE",
+  "copyrightStart": "2021",
+  "noRecTrack": true,
+  "editors": [
+    {
+      "name": "Wendy Reid",
+      "company": "Rakuten Kobo",
+      "companyURL": "https://www.kobo.com",
+      "w3cid": 102009
+    }
+  ],
+  "includePermalinks": true,
+  "permalinkEdge": true,
+  "permalinkHide": false,
+  "github": {
+    "repoURL": "https://github.com/w3c/epub-specs",
+    "branch": "main"
+  },
+  "pluralize": true,
+  "localBiblio": {
+    "wcag2": {
+      "title": "Web Content Accessibility Guidelines (WCAG) 2",
+      "href": "https://www.w3.org/TR/WCAG2/",
+      "publisher": "W3C",
+      "id": "wcag2"
+    }
+  },
+  "preProcess": [
+    null
+  ],
+  "publishISODate": "2023-12-15T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 15 December 2023"
+}</script>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
+<body data-include-format="markdown" class="h-entry informative"><div class="head">
+    <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
+  </a></p>
+    <h1 id="title" class="title">EPUB固定版面可及性</h1> 
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C編輯草稿</a> <time class="dt-published" datetime="2023-12-15">2023年12月15日</time></p>
+    <details open="">
+      <summary>有關本文件的更多詳細訊息</summary>
+      <dl>
+        <dt>本版本：</dt><dd>
+                <a class="u-url" href="https://w3c.github.io/epub-specs/epub33/fxl-a11y/">https://w3c.github.io/epub-specs/epub33/fxl-a11y/</a>
+              </dd>
+        <dt>最新發布版本：</dt><dd>
+                <a href="https://www.w3.org/TR/epub-fxl-a11y/">https://www.w3.org/TR/epub-fxl-a11y/</a>
+              </dd>
+        <dt>最新編輯草稿：</dt><dd><a href="https://w3c.github.io/epub-specs/epub33/fxl-a11y/">https://w3c.github.io/epub-specs/epub33/fxl-a11y/</a></dd>
+        <dt>歷史：</dt><dd>
+                    <a href="https://github.com/w3c/epub-specs/commits/main">發布歷程</a>
+                  </dd>
+        
+        
+        
+        
+        
+        <dt>編輯者：</dt><dd class="editor p-author h-card vcard" data-editor-id="102009">
+    <span class="p-name fn">Wendy Reid</span> (<a class="p-org org h-org" href="https://www.kobo.com">Rakuten Kobo</a>)
+  </dd>
+        
+        
+        <dt>回饋：</dt><dd>
+        <a href="https://github.com/w3c/epub-specs/">GitHub w3c/epub-specs</a>
+        (<a href="https://github.com/w3c/epub-specs/pulls/">pull requests</a>,
+        <a href="https://github.com/w3c/epub-specs/issues/new/choose">new issue</a>,
+        <a href="https://github.com/w3c/epub-specs/issues/">open issues</a>)
+      </dd><dd>以郵件主旨<kbd>[epub-fxl-a11y]<em>…主題資訊…</em></kbd>寄到<a href="mailto:public-pm-wg@w3.org?subject=%5Bepub-fxl-a11y%5D%20YOUR%20TOPIC%20HERE">public-pm-wg@w3.org</a> (<a rel="discussion" href="https://lists.w3.org/Archives/Public/public-pm-wg">存檔</a>)</dd>
+        
+        
+      </dl>
+    </details>
+    
+    
+    <p class="copyright">
+    <a href="https://www.w3.org/policies/#copyright">Copyright</a>
+    ©
+    2021-2023
+    
+    <a href="https://www.w3.org/">World Wide Web Consortium</a>.
+    <abbr title="World Wide Web Consortium">W3C</abbr><sup>®</sup>
+    <a href="https://www.w3.org/policies/#Legal_Disclaimer">liability</a>,
+    <a href="https://www.w3.org/policies/#W3C_Trademarks">trademark</a> and
+    <a rel="license" href="https://www.w3.org/copyright/software-license-2023/" title="W3C Software and Document Notice and License">permissive document license</a> rules apply.
+  </p>
+    <hr title="Separator for header">
+  </div>
+    <section id="abstract" class="introductory"><h2>摘要</h2>
+        <p>本文件〈固定版面可及性〉在認知到為固定版面格式提供可及性為一項獨特挑戰的前提下，勾勒出EPUB固定版面書籍的無障礙需達到的目的。</p>
+    </section>
+
+    <section id="sotd" class="introductory"><h2>本文件的狀態</h2><p><em>本節介紹本文件發布時的狀態。這可以在<abbr title="World Wide Web Consortium">W3C</abbr>技術報告索引（<abbr title="World Wide Web Consortium">W3C</abbr> technical reports index）（<a href="https://www.w3.org/TR/">https://www.w3.org/TR/</a>）找到當前W3C出版物列表和本技術報告的最新版本。</em></p>
+<p>這是<a href="https://www.w3.org/groups/wg/pm">出版維護工作小組（Publishing Maintenance Working Group）</a>所發佈的編輯草稿。</p>
+<p>文件在以工作草稿發表階段，不代表受到<abbr title="World Wide Web Consortium">W3C</abbr>與其會員所背書。</p>
+<p>本文件為草稿，而且可能會隨時會被其他文件更新、取代、淘汰。編輯作業尚未完成前，不適宜引用本文件。</p>
+<p>本文件由 <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr>專利政策</a>下運作的團隊所製作。 <abbr title="World Wide Web Consortium">W3C</abbr>維護與該組織的可交付成果相關的<a rel="disclosure" href="https://www.w3.org/groups/wg/pm/ipr">任何專利揭露的公開清單</a>；該頁面還包括揭露專利的說明。個人（個體）對專利具備實際知識而該個人（個體）認為其包含 <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">基本要求</a>時， 必須根據<a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure"><abbr title="World Wide Web Consortium">W3C</abbr>專利政策第6節</a>揭露該資訊。</p>
+<p>本文件受<a id="w3c_process_revision" href="https://www.w3.org/2023/Process-20231103/">2023年6月12日<abbr title="World Wide Web Consortium">W3C</abbr>流程文件</a></a>所管控。</p></section>
+    <nav id="toc"><h2 class="introductory" id="table-of-contents">目次</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">摘要</a></li>
+<li class="tocline"><a class="tocxref" href="#sotd">本文件的狀態</a></li>
+<li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>介紹</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#intro-overview"><bdi class="secno">1.1 </bdi>概要</a></li>
+<li class="tocline"><a class="tocxref" href="#intro-limits"><bdi class="secno">1.2 </bdi>固定版面可及性的限制</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#content-a11y"><bdi class="secno">2. </bdi>內容可及性</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#development-considerations"><bdi class="secno">2.1 </bdi>固定版面內容產製時的考量</a></li>
+<li class="tocline"><a class="tocxref" href="#reading-order"><bdi class="secno">2.2 </bdi>閱讀順序</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#reading-order-altering"><bdi class="secno">2.2.1 </bdi>變更閱讀順序</a></li>
+<li class="tocline"><a class="tocxref" href="#reading-order-removing"><bdi class="secno">2.2.2 </bdi>從閱讀順序中移除項目</a></li>
+<li class="tocline"><a class="tocxref" href="#reading-order-spreads"><bdi class="secno">2.2.3 </bdi>「折疊」中的閱讀順序</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#images"><bdi class="secno">2.3 </bdi>固定版面中的圖片</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#images-overview"><bdi class="secno">2.3.1 </bdi>概要</a></li>
+<li class="tocline"><a class="tocxref" href="#images-alt-text"><bdi class="secno">2.3.2 </bdi>替代文字與圖片描述</a></li>
+<li class="tocline"><a class="tocxref" href="#images-complex-desc"><bdi class="secno">2.3.3 </bdi>複雜的圖片描述</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#useful-resources-for-image-descriptions"><bdi class="secno">2.3.3.1 </bdi>供圖片描述的可用資源</a></li></ol></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#navigation"><bdi class="secno">2.4 </bdi>導覽</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#navigation-epub"><bdi class="secno">2.4.1 </bdi>EPUB導覽文件</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#navigation-epub-toc"><bdi class="secno">2.4.1.1 </bdi>目次</a></li>
+<li class="tocline"><a class="tocxref" href="#navigation-epub-pagelist"><bdi class="secno">2.4.1.2 </bdi>頁面列表</a></li>
+<li class="tocline"><a class="tocxref" href="#navigation-epub-landmarks"><bdi class="secno">2.4.1.3 </bdi>地標</a></li></ol></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#legibility"><bdi class="secno">2.5 </bdi>視認性與視覺呈現</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#legibility-adjustment"><bdi class="secno">2.5.1 </bdi>視覺調整</a></li>
+<li class="tocline"><a class="tocxref" href="#legibility-visual"><bdi class="secno">2.5.2 </bdi>視覺設計</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#legibility-visual-relationships"><bdi class="secno">2.5.2.1 </bdi>跨版面的相關內容</a></li>
+<li class="tocline"><a class="tocxref" href="#legibility-visual-color"><bdi class="secno">2.5.2.2 </bdi>使用色彩</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#legibility-images"><bdi class="secno">2.5.3 </bdi>非文字內容或圖片中的文字</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#media-overlays"><bdi class="secno">2.6 </bdi>媒體層疊</a></li>
+<li class="tocline"><a class="tocxref" href="#tables"><bdi class="secno">2.7 </bdi>表格</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#tables-aria"><bdi class="secno">2.7.1 </bdi>ARIA供表格使用的roles</a></li></ol></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#package-metadata"><bdi class="secno">3. </bdi>包裝後設資料</a></li>
+<li class="tocline"><a class="tocxref" href="#a11y-metadata"><bdi class="secno">4. </bdi>可及性後設資料</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#a11y-metadata-features"><bdi class="secno">4.1 </bdi>可及性功能</a></li>
+<li class="tocline"><a class="tocxref" href="#a11y-metadata-accessmode"><bdi class="secno">4.2 </bdi>存取模式</a></li>
+<li class="tocline"><a class="tocxref" href="#a11y-metadata-sufficient"><bdi class="secno">4.3 </bdi>必要存取模式</a></li>
+<li class="tocline"><a class="tocxref" href="#a11y-metadata-summary"><bdi class="secno">4.4 </bdi>可及性摘要</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#rs-a11y"><bdi class="secno">5. </bdi>供閱讀系統使用的固定版面可及性指引</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#rs-a11y-intro"><bdi class="secno">5.1 </bdi>介紹</a></li>
+<li class="tocline"><a class="tocxref" href="#rs-a11y-requirements"><bdi class="secno">5.2 </bdi>閱讀系統可及性規定</a></li>
+<li class="tocline"><a class="tocxref" href="#rs-a11y-display-html"><bdi class="secno">5.3 </bdi>如何為HTML內容提供最佳化顯示</a></li>
+<li class="tocline"><a class="tocxref" href="#rs-a11y-display-svg"><bdi class="secno">5.4 </bdi>如何為SVG內容提供最佳化顯示</a></li>
+<li class="tocline"><a class="tocxref" href="#rs-a11y-display-image"><bdi class="secno">5.5 </bdi>如何為以圖片為主的內容提供最佳化顯示</a></li>
+<li class="tocline"><a class="tocxref" href="#rs-a11y-features"><bdi class="secno">5.6 </bdi>供閱讀系統使用的可及性功能</a></li>
+<li class="tocline"><a class="tocxref" href="#rs-a11y-scripting"><bdi class="secno">5.7 </bdi>腳本</a></li></ol></li>
+<li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>參考</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.1 </bdi>規範性參考文獻</a></li></ol></li></ol></nav>
+
+    <section id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>介紹</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div>
+        
+
+        <section id="intro-overview"><div class="header-wrapper"><h3 id="x1-1-overview"><bdi class="secno">1.1 </bdi>概要</h3><a class="self-link" href="#intro-overview" aria-label="Permalink for Section 1.1"></a></div>
+            
+
+            <p>EPUB固定版面（fixed layout, 簡寫為FXL）出版品，或在本文件中稱為「出版品」，在數位版本中保留了印刷書的版面。制定完成時間早於EPUB 3.0.1版。這些出版品涵蓋了多書種與類型，包括漫畫書、食譜、童書等等。</p>
+
+            <p>要為固定版面EPUB檔案提供可及性，需要符合網頁內容可及性指引2（WCAG 2)中AA等級[<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">wcag2</a></cite>]，以及EPUB可及性1.1[cite><a class="bibref" data-link-type="biblio" href="#bib-epub-a11y-11" title="EPUB Accessibility 1.1">epub-a11y-11</a></cite>]中的可及性規定，包含了色彩對比、閱讀順序、字形排版、結構導覽、後設資料，以及替代文字。</p>
+
+            <p>製作固定版面出版品的主要動機是需要保存印刷書的版面，可能是因為版面對文字而言很重要（例如：複雜圖表），也可能是出於設計目的（例如：手繪文字）。然而，這些書對於無法閱讀印刷書的障礙者而言，通常無法取用部分或者全部的內容。</p>
+
+            <p>本文件目的為協助 <a href="https://www.w3.org/TR/epub-33/#dfn-epub-creator">EPUB製作者</a>、出版社，以及閱讀系統，描述一些固定版面內容中常見的可及性問題，包括：導覽、閱讀順序，以及替代文字。本文件為EPUB可及性1.1[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-a11y-11" title="EPUB Accessibility 1.1">epub-a11y-11</a></cite>]的附件，專供固定版面出版品使用。適用EPUB可及性1.1[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-a11y-11" title="EPUB Accessibility 1.1">epub-a11y-11</a></cite>]、EPUB 3.3[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>]以及EPUB閱讀系統3.3[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-rs-33" title="EPUB Reading Systems 3.3">epub-rs-33</a></cite>]中的推薦項目，並且在本文件中延伸說明。</p>
+
+            <p>除了本文件中的推薦項目以外，出版維護工作小組下的固定版面可及性任務組正在製作一份隨附的<a href="https://w3c.github.io/epub-specs/epub33/fxl-a11y-tech">技巧文件</a>，以提供固定版面可及性的技術面資訊。</p>
+        </section>
+
+        <section id="intro-limits"><div class="header-wrapper"><h3 id="x1-2-the-limits-of-fixed-layout-accessibility"><bdi class="secno">1.2 </bdi>固定版面可及性的限制/h3><a class="self-link" href="#intro-limits" aria-label="Permalink for Section 1.2"></a></div>
+            
+
+            <p>固定版面出版品為提供可及性，需要面對一些特殊的挑戰。EPUB可及性1.1[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-a11y-11" title="EPUB Accessibility 1.1">epub-a11y-11</a></cite>]中規定推薦達到WCAG 2 AA等級[cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">wcag2</a></cite>]，但對於固定版面的內容而言，若不做出調整就可能無法達成。</p>
+
+            <p>特別是弱視或者學習障礙者有著調整文字的需求（例如：閱讀障礙），固定版面內容幾乎不可能提供。考量到此點的EPUB製作者，可能不會選擇使用固定版面製作。</p>
+
+            <p>我們希望理解這是對EPUB製作者的挑戰，並且在這份文件中列舉各種供製作更易於取用固定版面內容的推薦項目。我們鼓勵EPUB製作者探索各種能夠提供數位出版品近用性的可能，就算在製作固定版面出版品時亦然。</p>
+
+            <p>閱讀系統在呈現易存取內容時也有其角色。本文件將列舉閱讀系統處理固定版面近用性時的特殊考量，以及閱讀系統可以使用哪些方法來讓內容更易於存取。</p>
+        </section>
+    </section>
+
+    <section id="content-a11y"><div class="header-wrapper"><h2 id="x2-content-accessibility"><bdi class="secno">2. </bdi>內容可及性</h2><a class="self-link" href="#content-a11y" aria-label="Permalink for Section 2."></a></div>
+        
+
+        <section id="development-considerations"><div class="header-wrapper"><h3 id="x2-1-considerations-for-fixed-layout-content-development"><bdi class="secno">2.1 </bdi>固定版面內容產製時的考量</h3><a class="self-link" href="#development-considerations" aria-label="Permalink for Section 2.1"></a></div>
+            
+
+            <p>EPUB 3.3[[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-33" title="EPUB 3.3">epub-33</a></cite>]提供多種製作內容的方式，特別是固定版面內容。組成EPUB內容文件的兩種主要方法為使用XHTML與SVG。多數EPUB FXL書籍採用第三種方法：在EPUB檔案的書脊中參照圖片檔案。我們在本文件中，將討論這三種方法的近用性考量。</p>
+        </section>
+
+        <section id="reading-order"><div class="header-wrapper"><h3 id="x2-2-reading-order"><bdi class="secno">2.2 </bdi>閱讀順序</h3><a class="self-link" href="#reading-order" aria-label="Permalink for Section 2.2"></a></div>
+            
+
+            <blockquote>EPUB的關鍵概念為：一本EPUB出版品由多重資源所組成，並且提供完整導覽，並且可以由個人或者程式以某些指定順序閱讀——出自EPUB 3.3概要[<cite><a class="bibref" data-link-type="biblio" href="#bib-epub-overview-33" title="EPUB 3 Overview">epub-overview-33</a></cite>]的1.2.1閱讀順序章節。</blockquote>
+
+            <p>相較於流動排版出版品有著明確的閱讀順序，或者貫穿內容的邏輯進程；固定版面出版品通常在設計與版面上更為複雜，同時可能在同一頁中包含多個可閱讀的物件。</p>
+
+            <p>讀者閱讀視覺頁面時，可以透過各種視覺提示來推測閱讀順序，包括：</p>
+
+            <ul>
+                <li>所使用字型的尺寸與樣式</li>
+                <li>設計特色，例如以圖片或者色彩作為背景</li>
+                <li>頁面中由上到下，由左到右（或者按照使用語言，由右而左）的位置</li>
+            </ul>
+
+            <p>此外，在固定版面頁面中可能會有一些額外的文字或者圖片物件，不需要包含在閱讀順序之中，像是：</p>
+
+            <ul>
+                <li>頁碼</li>
+                <li>頁眉（Running headers）</li>
+                <li>其他純裝飾用的物件</li>
+            </ul>
+
+            <section id="reading-order-altering"><div class="header-wrapper"><h4 id="x2-2-1-altering-the-reading-order"><bdi class="secno">2.2.1 </bdi>變更閱讀順序</h4><a class="self-link" href="#reading-order-altering" aria-label="Permalink for Section 2.2.1"></a></div>
+                
+
+                <blockquote>試想一位視障使用者透過螢幕閱讀器，依原始碼順序閱讀頁面，就像視力正常的使用者按照視覺順序一般閱讀頁面，當他們遇到資訊以不同順序呈現時，可能會感到混亂。弱視使用者以螢幕放大鏡配合螢幕閱讀器閱讀時，如果閱讀順序在螢幕上跳動，可能也會感到混亂。鍵盤使用者面對原始碼順序與視覺順序不對應時，可能會難以預測下一個焦點的位置。- <a href="https://www.w3.org/WAI/WCAG21/Techniques/css/C27">匹配DOM順序與視覺順序</a></blockquote>
+
+            </section>
+
+            <section id="reading-order-removing"><div class="header-wrapper"><h4 id="x2-2-2-removing-items-from-the-reading-order"><bdi class="secno">2.2.2 </bdi>從閱讀順序中移除項目</h4><a class="self-link" href="#reading-order-removing" aria-label="Permalink for Section 2.2.2"></a></div>
+                
+
+                <p>有些狀況，像是頁面中非必要的文字，加到閱讀順序中會重複或者造成其他困擾。像是：頁碼、章節標題，已經包含在出版品結構中，或者用於提供視覺效果的文字。</p>
+            </section>
+
+            <section id="reading-order-spreads"><div class="header-wrapper"><h4 id="x2-2-3-reading-order-across-the-fold"><bdi class="secno">2.2.3 </bdi>「折疊」中的閱讀順序</h4><a class="self-link" href="#reading-order-spreads" aria-label="Permalink for Section 2.2.3"></a></div>
+                
+
+                <p>固定版面文件可以同步跨頁的方式呈現，由左頁與右頁一起呈現為跨頁。由於每一張固定版面文件頁面都是分離的XHTML文件，（當使用由左而右的行頁方向時）其閱讀順序預期由文件的左側往右側閱讀，而不可能讓閱讀順序由左到右以後，再回到左頁。</p>
+
+                <p>如果文字一定要以此方式閱讀，唯一能夠維持正確閱讀順序的解法是把兩張跨頁頁面合併成單一橫向頁面，其包含全部的跨頁內容，讓EPUB能被處理成單一頁面。</p>
+            </section>
+        </section>
+
+        <section id="images"><div class="header-wrapper"><h3 id="x2-3-images-in-fixed-layout"><bdi class="secno">2.3 </bdi>固定版面中的圖片</h3><a class="self-link" href="#images" aria-label="Permalink for Section 2.3"></a></div>
+            
+
+            <section id="images-overview"><div class="header-wrapper"><h4 id="x2-3-1-overview"><bdi class="secno">2.3.1 </bdi>概要</h4><a class="self-link" href="#images-overview" aria-label="Permalink for Section 2.3.1"></a></div>
+                
+
+                <p>圖片經常是固定版面出版品不可欠缺的元件。固定版面出版品有時全部由圖片所構成，像是漫畫；或者可能將圖片用於故事背景圖片，像是童書。無論固定版面內容中圖片用於內容或者版面構件，都給在乎近用性的EPUB製作者給出了大難題。</p>
+
+                <p>製作固定版面時若要盡可能地使其易於存取，優先順序最高的目標就是確保圖片所傳達的資訊，可以讓不能夠感知圖片、或難以認知圖片的使用者取得。</p>
+
+                <p>對於 <a href="http://kb.daisy.org/publishing/docs/html/images.html">所有圖片的基本要求</a>就是：當這些圖片包含理解出版品的必要資訊時，提供替代文字以及延伸說明。例如，當讀者閱讀故事中以文字顯示的對話時，只能透過圖片上的位置來提供哪個角色說了什麼的脈絡。</p>
+
+                <p>固定版面的一項挑戰就是尋找提供圖片描述的方法，以及在頁面上沒有多餘空間能讓使用者互動時，如何置放提供脈絡的描述。其他對內容的挑戰則像是把文字像素化作為圖片的一部分，當文字為圖片的一部分，或者文字為手繪時，這些內容則不可避免地得如此處理。</p>
+
+                <p>透過圖片描述與替代文字轉譯圖片內容為文字也有其限制，這些限制包括：適當地將頁面上的動作對應到文字的能力、或者將視覺效果轉譯為對等文字的能力。這領域目前正在嘗試提升體驗的方法，我們也會在下面章節指出目前無法達成的部份。</p>
+
+            </section>
+
+            <section id="images-alt-text"><div class="header-wrapper"><h4 id="x2-3-2-alternative-text-and-image-descriptions"><bdi class="secno">2.3.2 </bdi>替代文字與圖片描述/h4><a class="self-link" href="#images-alt-text" aria-label="Permalink for Section 2.3.2"></a></div>
+                
+
+                <p>在固定版面書中描述圖片，有時需要視圖片的書籍類型而定。例如描述一本兒童繪本可能會和描述一本固定版面的圖像小說，例如漫畫，有所不同。</p>
+
+                <div class="note" id="issue-container-generatedID"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="5"><span>編輯筆記</span></div><aside class="">關於圖片描述，如果想要取得最新的最佳實踐，建議到<a href="http://kb.daisy.org/publishing/docs/fxl/img.html">DAISY知識庫</a>，已將其中固定版面圖片描述的章節複製到這裡。 </aside></div>
+            </section>
+
+            <section id="images-complex-desc"><div class="header-wrapper"><h4 id="x2-3-3-complex-image-descriptions"><bdi class="secno">2.3.3 </bdi>複雜的圖片描述</h4><a class="self-link" href="#images-complex-desc" aria-label="Permalink for Section 2.3.3"></a></div>
+                
+
+                <p>根據圖片的複雜程度，可能需要採以下格式提供複雜的描述：</p>
+
+                <ul>
+                    <li><a href="https://www.w3.org/WAI/WCAG21/Techniques/general/G74">WCAG技巧：在非文字內容附近提供長描述，在短描述中參照長描述所在位置。</a></li>
+                    <li><a href="https://www.w3.org/WAI/WCAG21/Techniques/general/G73">WCAG技巧：在其他位置提供長描述，並且在緊鄰非文字內容處提供連結。</a></li>
+                    <li><a href="https://www.w3.org/WAI/WCAG21/Techniques/general/G92">WCAG技巧：為非文字內容提供長描述，其能達到相同功能以及提供相同資訊。</a></li>
+                    <li><a href="http://kb.daisy.org/publishing/docs/html/images-desc.html#ex-02">DAISY的範例2：詳細的延伸描述</a></li>
+                    <li><a href="http://kb.daisy.org/publishing/docs/html/images-desc.html#ex-04">DAISY的範例4：隱藏的描述</a></li>
+                </ul>
+
+                <p>如果圖片分割位於兩頁，將完整的圖片描述置於兩張圖片的第一張，並且讓第二張圖片參照回第一張。請見<a href="http://kb.daisy.org/publishing/docs/fxl/spreads.html">多頁跨頁</a>。</p>
+
+                <p>如果為一組有順序的圖片，你僅需在第一張圖片中描述細節。在後續的圖片描述哪些部分改變。</p>
+
+                <p>為圖片書寫替代文字時，不需要寫出所有細節，需要描述哪些得由脈絡來判斷。例如，如果一張圖片附近有描述的文字，你僅需要在替代文字中做簡單描述。</p>
+
+                <section id="useful-resources-for-image-descriptions"><div class="header-wrapper"><h5 id="x2-3-3-1-useful-resources-for-image-descriptions"><bdi class="secno">2.3.3.1 </bdi>供圖片描述的可用資源</h5><a class="self-link" href="#useful-resources-for-image-descriptions" aria-label="Permalink for Section 2.3.3.1"></a></div>
+
+                <ul>
+                    <li><a href="https://www.w3.org/WAI/alt/"><abbr title="World Wide Web Consortium">W3C</abbr> - 圖片替代文字資源</a></li>
+                    <li><a href="http://diagramcenter.org/table-of-contents-2.html">DIAGRAM Center - 圖片描述指引</a></li>
+                    <li><a href="https://poet.diagramcenter.org">POET - 圖片描述訓練工具</a></li>
+                    <li><a href="https://github.com/benetech/AccessibleImageSampleBook">DIAGRAM - 無障礙圖片範本</a></li>
+                    <li><a href="https://youtu.be/oSdz6KZpLjs">NCAM YouTube - 如何描述複雜的圖片以提供近用性</a></li>
+                    <li><a href="https://www.accessiblepublishing.ca/a-guide-to-image-description/">Accessible Publishing Canada - 圖片描述指引</a></li>
+                </ul>
+
+            </section></section>
+        </section>
+
+        <section id="navigation"><div class="header-wrapper"><h3 id="x2-4-navigation"><bdi class="secno">2.4 </bdi>導覽</h3><a class="self-link" href="#navigation" aria-label="Permalink for Section 2.4"></a></div>
+            
+
+            <p>和流動排版EPUB一樣，為固定版面EPUB提供有效導覽，對近用性而言相當重要。許多在流動排版EPUB可用的EPUB近用性功能，固定版面依然適用。</p>
+
+            <section id="navigation-epub"><div class="header-wrapper"><h4 id="x2-4-1-epub-navigation-document"><bdi class="secno">2.4.1 </bdi>EPUB導覽文件</h4><a class="self-link" href="#navigation-epub" aria-label="Permalink for Section 2.4.1"></a></div>
+                
+
+                <blockquote>EPUB導覽文件為EPUB包裝中的必要元件。可以讓EPUB製作者包含供人類與機器閱讀的全域導覽層，以此確保能為使用者提供更好的易用性與近用性。——<a href="https://www.w3.org/TR/epub/#sec-nav-intro">出自EPUB 3.3的7.1節</a></blockquote>                
+            
+                <section id="navigation-epub-toc"><div class="header-wrapper"><h5 id="x2-4-1-1-table-of-contents"><bdi class="secno">2.4.1.1 </bdi>目次</h5><a class="self-link" href="#navigation-epub-toc" aria-label="Permalink for Section 2.4.1.1"></a></div>
+                    
+
+                    <p>較長且較為複雜的視覺出版品，通常具有跨多個EPUB頁面的目次，並且必須為了導覽提供額外的目次。</p>
+
+                    <p>EPUB中一定要有導覽文件；建議為了近用性，為目次提供額外的內容以及結構層級。請見<a href="https://www.w3.org/TR/epub/#sec-nav-toc">EPUB 3.3之7.4.2節toc nav元素</a>。</p>
+                </section>
+
+                <section id="navigation-epub-pagelist"><div class="header-wrapper"><h5 id="x2-4-1-2-page-lists"><bdi class="secno">2.4.1.2 </bdi>頁面列表</h5><a class="self-link" href="#navigation-epub-pagelist" aria-label="Permalink for Section 2.4.1.2"></a></div>
+                    
+
+                    <p>由於在固定版面EPUB中，每一頁都是不同的HTML文件，產生頁面列表相對容易，並且可以常用的固定版面製作程式自動生成。請見<a href="https://www.w3.org/TR/epub/#sec-nav-pagelist">EPUB 3.3之7.4.3 page-list nav元素</a>。</p>
+                </section>
+
+                <section id="navigation-epub-landmarks"><div class="header-wrapper"><h5 id="x2-4-1-3-landmarks"><bdi class="secno">2.4.1.3 </bdi>地標</h5><a class="self-link" href="#navigation-epub-landmarks" aria-label="Permalink for Section 2.4.1.3"></a></div>
+                    
+
+                    <p>可以透過添加章節標記以及用於辨別出版品中各區塊的地標來進一步強化固定版面EPUB的導覽。例如：封面圖片、目次，以及主要內文的開始位置。請見<a href="https://www.w3.org/TR/epub/#sec-nav-landmarks">EPUB 3.3之7.4.4章節 landmarks nav元素</a>。</p>
+                </section>
+            </section>
+        </section>
+
+        <section id="legibility"><div class="header-wrapper"><h3 id="x2-5-legibility-and-visual-presentation"><bdi class="secno">2.5 </bdi>視認性與視覺呈現</h3><a class="self-link" href="#legibility" aria-label="Permalink for Section 2.5"></a></div>
+            
+
+            <p>固定版面內容的視認性，或稱易讀性，對其近用性而言是重要的因素之一，特別對弱視、認知或者學習障礙者。由於固定版面文件中的文字無法調整，在製作清晰易讀的文件時，考量最佳實踐相當重要。需要提醒EPUB製作者：書可能在不同螢幕尺寸的各種裝置上被閱讀，許多螢幕可能會比印刷版本的頁面來得小。設計固定版面內容時，應該考量到較小的螢幕對視認性與版面造成的影響。本章節將關注於建構更易於視認的固定版面出版品所需考量的要素。</p>
+
+            <p>網頁內容可及性指引WCAG [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag2" title="Web Content Accessibility Guidelines (WCAG) 2">wcag2</a></cite>] 有一系列與內容顯示相關的的成功準則：</p>
+
+            <ul>
+                <li>1.1.1 非文字內容 (A)</li>
+                <li>1.3.1 資訊與關連性 (A)</li>
+                <li>1.3.2 有意義的序列 (A)</li>
+                <li>1.3.4 螢幕方向 (AA)</li>
+                <li>1.4.1 色彩使用 (A)</li>
+                <li>1.4.3 對比值（最小） (AA)</li>
+                <li>1.4.4 調整文字尺寸 (AA)</li>
+                <li>1.4.5 影像文字 (AA)</li>
+                <li>1.4.10 流動排版 (AA)</li>
+                <li>1.4.11 非文字對比 (AA)</li>
+                <li>1.4.12 文字間距 (AA)</li>
+                <li>2.4.6 標題與標籤 (AA)</li>
+                <li>3.2.4 一致的識別 (AA)</li>
+            </ul>
+
+            <section id="legibility-adjustment"><div class="header-wrapper"><h4 id="x2-5-1-visual-adjustments"><bdi class="secno">2.5.1 </bdi>視覺調整</h4><a class="self-link" href="#legibility-adjustment" aria-label="Permalink for Section 2.5.1"></a></div>
+                
+
+                <p>由於固定版面內容呈現上的格式限制，有一些內容呈現相關的成功準則很難、或者不可能達成。</p>
+
+                <p>以下成功準則與視覺可調整程度或內容版面有關：</p>
+
+                <ul>
+                    <li>1.3.4 螢幕方向 (AA)</li>
+                    <li>1.4.4 調整文字尺寸 (AA)</li>
+                    <li>1.4.10 流動排版 (AA)</li>
+                    <li>1.4.12 文字間距 (AA)</li>
+                </ul>
+
+                <p>除了能夠縮放（zoom）外，大多數固定版面閱讀系統不允許讀者以變更文字尺寸或者調整文字排版（字母、單詞、行距或邊界）的方式來改變視覺呈現。但EPUB製作者能為固定版面EPUB書籍指定呈現方向。</p>
+
+                <p>EPUB閱讀系統如何顯示固定版面內容的限制意味著這些內容可以免除於部分規定，特別是1.3.4與1.4.10。這些限制自動無法達到1.4.4與1.4.12。這些限制意味著EPUB製作者在設計內容時，應該盡可能地考量這些規定。EPUB製作者可以考量以下事項：</p>
+
+                <ul>
+                    <li>呈現方向：可以利用包裝後設資料中的orientations特性來指定固定版面內容的固定呈現方向。許多閱讀系統會尊重這項設定，但允許使用者自行調整偏好取而代之。</li>
+                    <li>文字尺寸：由於文字尺寸無法調整，可以考慮適於在各種螢幕尺寸上閱讀的基礎文字尺寸。</li>
+                    <li>文字間距：固定版面EPUB無法調整邊界、字母、單詞以及行距，所以在設計內容時可以考量適於在各種螢幕尺寸上閱讀的間距。</li>
+                </ul>
+
+            </section>
+
+            <section id="legibility-visual"><div class="header-wrapper"><h4 id="x2-5-2-visual-design"><bdi class="secno">2.5.2 </bdi>視覺設計</h4><a class="self-link" href="#legibility-visual" aria-label="Permalink for Section 2.5.2"></a></div>
+                
+
+                <p>許多前述的成功準則關注於內容是否透過程式處理提供給使用者（可供輔助科技存取），不過與程式溝通的原則也能適用於視覺傳遞。例如，大多數內容設計上會讓標題與本文有著視覺上的區分，作為彼此關係的視覺指示。程式上，我們會使用像<code>&lt;h1&gt;</code>和<code>&lt;p&gt;</code>等元素來達成此目標；視覺上，我們則會在標題上使用較大的文字、不同的色彩或者不同字體。</p>
+
+                <p>以下成功準則可以透過有意識的視覺設計達成：</p>
+
+                <ul>
+                    <li>1.3.1 資訊與關連性 (A)</li>
+                    <li>1.3.2 有意義的序列 (A)</li>
+                    <li>1.4.1 色彩使用(A)</li>
+                    <li>1.4.3 對比值（最小） (AA)</li>
+                    <li>2.4.6 標題與標籤 (AA)</li>
+                    <li>3.2.4 一致的識別 (AA)</li>
+                </ul>
+
+                <section id="legibility-visual-relationships"><div class="header-wrapper"><h5 id="x2-5-2-1-relating-content-through-placement"><bdi class="secno">2.5.2.1 </bdi>跨版面的相關內容</h5><a class="self-link" href="#legibility-visual-relationships" aria-label="Permalink for Section 2.5.2.1"></a></div>
+                    
+
+                    <p>成功準則1.3.1、1.3.2、2.4.6以及3.2.4皆涵蓋確保內容能在程式上有所關聯，並且能被辨識如視覺上的呈現。視覺呈現對於所有內容而言都極為重要，但對固定版面EPUB來說，會更顯得重要。</p>
+
+                    <p>由於固定版面呈現上的限制，以及可能會使用固定版面內容的裝置，EPUB製作者需要考量內容視覺設計呈現對弱視、認知或者學習障礙使用者造成的挑戰。</p>
+
+                    <p>當設計內容時，需考量以下事項：</p>
+
+                    <ul>
+                        <li>接近性（Proximity）：相關內容（例如：標題與內文）位置應該彼此相鄰，讀者才能理解其關係。</li>
+                        <li>閱讀順序：頁面上內容的閱讀順序應該遵從內容所使用的語言的標準模式（例如：英文預期的模式為由左到右、由上到下）。</li>
+                        <li>恆定性（Consistency）：當配置組件的視覺處理（例如：標題、旁註、圖表）時，確保設計上恆定，如此一來讀者才能透過視覺線索理解其目的。</li>
+                    </ul>
+
+                    <p>EPUB製作者也應該考量在設計與製作過程中，在不同的螢幕尺寸與縮放層級上進行測試，以協助理解讀者可能要面對的潛在挑戰。</p>
+                </section>
+
+                <section id="legibility-visual-color"><div class="header-wrapper"><h5 id="x2-5-2-2-use-of-color"><bdi class="secno">2.5.2.2 </bdi>使用色彩</h5><a class="self-link" href="#legibility-visual-color" aria-label="Permalink for Section 2.5.2.2"></a></div>
+                    
+
+                    <p>色彩為視覺設計的重要要素，若妥善使用，可有助於視認性及理解。成功準則1.4.1及1.4.3要求適當地使用色彩，並且提供充足的對比。</p>
+
+                    <p>內容設計使用色彩時，需考量以下事項：</p>
+
+                    <ul>
+                        <li>色彩不能作為用來識別某項事物的唯一手段（例如，以綠色文字識別一組問題的正確答案）。應該額外使用色彩以外的視覺區分，像是圖示、文字裝飾（底線、粗體、斜體），或者文字內容本身可供識別（例如正確答案開頭加上「答案：」）。</li>
+                        <li>用於文字、視覺組件，以及背景的色彩，應該提供充足的對比。大的文字元素或者組件，對其邊框或背景的最小對比為3:1。文字的最小對比值為4.5:1。</li>
+                        <li>當決定要使用哪一種色彩時，透過色彩反轉設定、高反差模式，以及能展示不同種類色彩認知狀態（紅色盲、綠色盲）的濾鏡來進行測試很重要。你所使用的色彩組合可能符合對比規定，但是透過這些方式觀看時可能不甚理想。</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section id="legibility-images"><div class="header-wrapper"><h4 id="x2-5-3-non-text-content-or-images-of-text"><bdi class="secno">2.5.3 </bdi>非文字內容或圖片中的文字</h4><a class="self-link" href="#legibility-images" aria-label="Permalink for Section 2.5.3"></a></div>
+                
+
+                <p>非文字內容像是圖片、影片、視覺化或者圖表，可以作為理解書籍內容的關鍵。對於某些讀者而言，非文字內容可以增強他們理解或整合文本內容或主題的能力。當設計書籍時考量這些內容的格式與位置，最大程度地讓讀者得益相當重要。</p>
+
+                <p>為符合成功準則1.1.1及1.4.5，必須為內容提供文字性質的替代品。特別對1.4.5，重要的是思考圖片中的文字內容是否一定要為圖片，或者可以合併到周圍的內容中。</p>
+
+                <p>對以視覺方式投入內容的使用者而言，思索以下項目是重要的：</p>
+
+                <ul>
+                    <li>使用的色彩以及色彩對比</li>
+                    <li>適應性（Adaptability），使用者在對圖片或者視覺化放大時，不會在品質與視認性上有所丟失</li>
+                    <li>目的，內容是否一定要為圖片或者影片，或者可以另一種方式做到更好的整合</li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="media-overlays"><div class="header-wrapper"><h3 id="x2-6-media-overlays"><bdi class="secno">2.6 </bdi>媒體層疊</h3><a class="self-link" href="#media-overlays" aria-label="Permalink for Section 2.6"></a></div>
+            
+
+            <p>待完善</p>
+        </section>
+
+        <section id="tables"><div class="header-wrapper"><h3 id="x2-7-tables"><bdi class="secno">2.7 </bdi>表格</h3><a class="self-link" href="#tables" aria-label="Permalink for Section 2.7"></a></div>
+            
+
+            <p>製作易存取表格的最佳方式就是以結構化資料呈現。此做法在DAISY知識庫中已經有文件提供為<a href="http://kb.daisy.org/publishing/docs/html/tables.html">表格製作語意標籤</a>的指示。</p>
+
+            <p>如果表格需要以圖片處理時，另一個選項是使用替代文字以及caption，或者使用ARIA roles來以邏輯閱讀順序描述資料。caption可以用以作為表格的摘要，替代文字則可以更為深入。你可以從描述標題列有些什麼開始，然後接著說明每一列有什麼內容。你可以更近一步按照閱讀順序列出所有資料。</p>
+
+            <p>按照圖片的複雜程度，可能需要以下列格式之一提供複雜描述：</p>
+
+            <ul>
+                <li>在非文字內容附近以文字提供長描述，在短描述中參照到長描述所在的位置</li>
+                <li>在另外一個位置提供長描述，並且在非文字內容旁邊附上連結</li>
+                <li>為非文字內容提供長描述，其能達到相同目的以及呈現相同資訊</li>
+                <li>具細節的延伸描述</li>
+                <li>使用隱藏描述</li>
+            </ul>
+
+            <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note" aria-level="4"><span>註釋</span></div><aside class="">使應該謹慎考量用隱藏描述，如範例4中展示隱藏描述的結果會讓其澈底隱藏，僅能透過輔助科技取用。而使學習或認知障礙者無法由此技巧中得益。</aside></div>
+
+            <section id="tables-aria"><div class="header-wrapper"><h4 id="x2-7-1-aria-roles-for-tables"><bdi class="secno">2.7.1 </bdi>ARIA供表格使用的roles</h4><a class="self-link" href="#tables-aria" aria-label="Permalink for Section 2.7.1"></a></div>
+                
+
+                <p>可以使用 <a href="https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA15">aria-describedby</a>或<code>aria-details</code>為表格提供延伸描述。</p>
+
+                <p><code>aria-details</code>比<code>aria-describedby</code>好的地方在於其允許使用者存取連結到描述的標籤（例如，如果你可以把table放在一個detail元素中來進行折疊）。然而，缺點是目前對該屬性的支援尚不完善。在固定版面頁面中展開details元素，需要使用者點擊，也可能會造成混亂（除非你能在螢幕之外找到適合的位置，但也限制了誰能夠存取）。</p>
+
+                <p>aria-describedby屬性的大缺點就是會把描述轉換成一段很長的文字串，使用者非得聽完不可。也沒有提供行與列的導覽，或者讀出標題的方法。所以除了非常簡單及非常小的表格外，使用者可能難以理解。</p>
+            </section>
+        </section>
+    </section>
+
+    <section id="package-metadata"><div class="header-wrapper"><h2 id="x3-package-metadata"><bdi class="secno">3. </bdi>包裝後設資料</h2><a class="self-link" href="#package-metadata" aria-label="Permalink for Section 3."></a></div>
+        
+
+        <p>EPUB中的 <a href="https://www.w3.org/TR/epub-33/#sec-fxl-package">包裝後設資料</a>是供閱讀系統判斷內容為固定版面或者流動內容的主要方法。此外透過<code>rendition:layout</code>來辨識分頁模式，包裝後設資料也可以讓EPUB製作者對其他顯示特徵做出一些控制。</p>
+
+        <p>這些顯示特徵包含：</p>
+
+        <ul>
+            <li><code>rendition:orientation</code> - 書的頁面方向，可以為<code>landscape</code>（橫寬直窄）、<code>portrait</code>（直寬橫窄）或者<code>auto</code></li>
+            <li><code>rendition:spread</code> - 書的跨頁設定，可以為<code>none</code>、<code>landscape</code> （橫寬直窄）、<code>both</code>或者<code>auto</code></li>
+            <li><code>rendition:page-spread-*</code> - 針對個別書脊項目的跨頁設定，可以為<code>left</code>、<code>right</code>以及<code>center</code></li>
+        </ul>
+
+        <p><code>orientation</code>以及<code>spread</code>特性的預設值為<code>auto</code>，代表使用閱讀系統設定或者預設值。</p>
+
+        <p>建議EPUB製作者不得指定特定的<code>orientation</code>特性，會干擾到使用者裝置的預設值，其符合<a href="https://www.w3.org/TR/WCAG22/#orientation">WCAG成功準則1.3.4</a>。對於無法改變裝置方向來對應內容設定的使用者而言，此項格外重要。</p>
+
+        <aside class="example" id="example-package-metadata-for-a-fixed-layout-publication-example"><div class="marker">
+    <a class="self-link" href="#example-package-metadata-for-a-fixed-layout-publication-example">範例<bdi> 1</bdi></a><span class="example-title">: 供固定版面出版品使用的包裝後設資料範本</span>
+  </div>
+            <p>一份供固定版面出版品使用的包裝後設資料範本。</p>
+            <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"rendition:layout"</span>&gt;</span>pre-paginated<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"rendition:orientation"</span>&gt;</span>auto<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"rendition:spread"</span>&gt;</span>auto<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></code></pre>
+        </aside>
+    </section>
+
+    <section id="a11y-metadata"><div class="header-wrapper"><h2 id="x4-accessibility-metadata"><bdi class="secno">4. </bdi>可及性後設資料</h2><a class="self-link" href="#a11y-metadata" aria-label="Permalink for Section 4."></a></div>
+        
+
+        <p>具備無障礙元素的書需要透過後設資料來指示如何易於存取，以及是否會將危害呈現給讀者。</p>
+
+        <section id="a11y-metadata-features"><div class="header-wrapper"><h3 id="x4-1-accessibility-features"><bdi class="secno">4.1 </bdi>可及性功能</h3><a class="self-link" href="#a11y-metadata-features" aria-label="Permalink for Section 4.1"></a></div>
+            
+
+            <p>使用schema.org特<code>accessibilityFeature</code>來定義書中所有可及性功能。</p>
+
+            <p有少數可以適用於固定版面的值為：</p>
+
+            <ul>
+                <li><code>alternativeText</code> - 圖片以替代文字描述</li>
+                <li><code>longDescriptions</code> - 複雜圖片有描述細節</li>
+                <li><code>readingOrder</code> - 視覺與非視覺元素之間的閱讀順序一致</li>
+            </ul>
+
+            <p>某些<code>accessibilityFeature</code>特性，像是<code>displayTransformability</code>不應該用於固定版面內容。</p>
+
+            <aside class="example" id="example-accessibility-feature-example"><div class="marker">
+    <a class="self-link" href="#example-accessibility-feature-example">範例<bdi> 2</bdi></a><span class="example-title">: 近用性特性範本</span>
+  </div>
+                <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessibilityFeature"</span>&gt;</span>
+alternativeText
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessibilityFeature"</span>&gt;</span>
+readingOrder
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></code></pre>
+            </aside>
+        </section>
+
+        <section id="a11y-metadata-accessmode"><div class="header-wrapper"><h3 id="x4-2-access-mode"><bdi class="secno">4.2 </bdi>存取模式</h3><a class="self-link" href="#a11y-metadata-accessmode" aria-label="Permalink for Section 4.2"></a></div>
+            
+
+            <p>使用schema.org特性<code>accessMode</code>來定義該書可以<code>visual</code>（視覺）、<code>textual</code>（文字）、<code>auditory</code>（聽覺）或<code>tactile</code>（觸覺）來消費。</p>
+
+            <p>沒有「活」的文字的圖像書僅能提供<code>accessMode</code>：<code>visual</code>。</p>
+
+            <aside class="example" id="example-single-access-mode-example"><div class="marker">
+    <a class="self-link" href="#example-single-access-mode-example">範例<bdi> 3</bdi></a><span class="example-title">: 單一存取模式範本</span>
+  </div>
+                <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessMode"</span>&gt;</span>
+visual
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></code></pre>
+                </aside>
+
+            <p>一本固定版面書籍包含文字與圖片，可以定義兩種各自獨立的<code>accessMode</code>。</p>
+
+            <aside class="example" id="example-multiple-access-mode-example"><div class="marker">
+    <a class="self-link" href="#example-multiple-access-mode-example">範例<bdi> 4</bdi></a><span class="example-title">: 多重存取模式範本</span>
+  </div>
+                <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessMode"</span>&gt;</span>
+visual
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessMode"</span>&gt;</span>
+textual
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></code></pre>
+            </aside>  
+        </section>
+
+        <section id="a11y-metadata-sufficient"><div class="header-wrapper"><h3 id="x4-3-access-mode-sufficient"><bdi class="secno">4.3 </bdi>必要存取模式</h3><a class="self-link" href="#a11y-metadata-sufficient" aria-label="Permalink for Section 4.3"></a></div>
+            
+
+            <p>使用schema.org特性<code>accessModeSufficient</code>來定義該書可被消費之存取模式，為<code>visual</code>（視覺）、<code>textual</code>（文字）、<code>auditory</code>（聽覺）或<code>tactile</code>（觸覺）的組合。</p>
+
+            <p>一本沒有文字或者沒有替代文字的圖片書，消費的方式只能完全仰賴視覺，所以僅能將<code>accessModeSufficient</code>定義為<code>visual</code>。</p>
+
+            <aside class="example" id="example-single-access-mode-sufficient-visual-example"><div class="marker">
+    <a class="self-link" href="#example-single-access-mode-sufficient-visual-example">範例<bdi> 5</bdi></a><span class="example-title">:  僅有一個必要存取模式visual的範本</span>
+  </div>
+                <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessModeSufficient"</span>&gt;</span>
+visual
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></code></pre>
+            </aside>
+
+            <p>有著visual與textual元素的固定版面書籍就適合將<code>accessModeSufficient</code>設定為<code>visual,textual</code>。此外，如果該固定版面書籍主要由有完整描述的圖片所構成，也可以適用<code>textual</code>，意味著該書對螢幕閱讀器友善並且可以透過輔助科技完整閱讀。</p>
+
+            <aside class="example" id="example-multiple-access-mode-sufficient-example"><div class="marker">
+    <a class="self-link" href="#example-multiple-access-mode-sufficient-example">範例<bdi> 6</bdi></a><span class="example-title">: 多重必要存取模式的範本</span>
+  </div>
+                <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessModeSufficient"</span>&gt;</span>
+visual,textual
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></code></pre>
+            </aside>
+
+            <p>如果一本固定版面書籍所有圖片都有完整描述，那麼適合將<code>accessModeSufficient</code>設定為<code>textual</code>，意味著該書對螢幕閱讀器友善並且可以透過輔助科技完整閱讀。</p>
+
+            <aside class="example" id="example-access-mode-sufficient-textual-example"><div class="marker">
+    <a class="self-link" href="#example-access-mode-sufficient-textual-example">範例<bdi> 7</bdi></a><span class="example-title">: 必要存取模式為textual的範本</span>
+  </div>
+                <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessModeSufficient"</span>&gt;</span>
+textual
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></code></pre>
+            </aside>
+        </section>
+
+        <section id="a11y-metadata-summary"><div class="header-wrapper"><h3 id="x4-4-accessibility-summary"><bdi class="secno">4.4 </bdi>可及性摘要</h3><a class="self-link" href="#a11y-metadata-summary" aria-label="Permalink for Section 4.4"></a></div>
+            
+
+            <p>schema.org特性<code>accessibilitySummary</code>為供人類閱讀的陳述，表達該書易於存取與不易存取的狀態。</p>
+
+            <aside class="example" id="example-accessibility-summary-example"><div class="marker">
+    <a class="self-link" href="#example-accessibility-summary-example">範例<bdi> 8</bdi></a><span class="example-title">: 可及性摘要範本</span>
+  </div>
+                <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">property</span>=<span class="hljs-string">"schema:accessibilitySummary"</span>&gt;</span>
+這本固定版面EPUB包含了許多圖片可能橫跨兩頁的視覺格式。所有圖片都擁有文字描述以提供可及性。
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></code></pre>
+            </aside>
+        </section>
+    </section>
+
+    <section id="rs-a11y"><div class="header-wrapper"><h2 id="x5-fixed-layout-accessibility-guidance-for-reading-systems"><bdi class="secno">5. </bdi>供閱讀系統使用的固定版面可及性指引</h2><a class="self-link" href="#rs-a11y" aria-label="Permalink for Section 5."></a></div>
+        
+
+        <section id="rs-a11y-intro"><div class="header-wrapper"><h3 id="x5-1-introduction"><bdi class="secno">5.1 </bdi>介紹</h3><a class="self-link" href="#rs-a11y-intro" aria-label="Permalink for Section 5.1"></a></div>
+            
+
+            <p>EPUB閱讀系統可有多種型態。例如，可以是一塊呈現內容給使用者的視覺顯示區域，或者可以僅提供內容的音訊播放。因此，沒有一組固定的規則可以適用於所有閱讀系統。</p>
+        </section>
+
+        <section id="rs-a11y-requirements"><div class="header-wrapper"><h3 id="x5-2-reading-system-accessibility-requirements"><bdi class="secno">5.2 </bdi>閱讀系統可及性規定</h3><a class="self-link" href="#rs-a11y-requirements" aria-label="Permalink for Section 5.2"></a></div>
+            
+
+            <ul>
+                <li>閱讀系統應該支援EPUB的目次、頁面清單與地標。</li>
+                <li>閱讀系統應該讓輔助科技能存取每一頁的內容。</li>
+                <li>閱讀系統應該支援固定版面的SVG頁面。</li>
+                <li>閱讀系統在沒有輔助科技的狀況下應該能放大頁面至200%，並且不應丟失內容或者影響功能性。</li>
+                <li>閱讀系統應該能讓圖片全螢幕顯示。</li>
+                <li>閱讀系統應該能存取替代文字與複雜圖片描述</li>
+                <li>閱讀系統應該支援EPUB媒體層疊。</li>
+                <li>閱讀系統應該顯示EPUB內提供的近用性後設資料。</li>
+            </ul>
+        </section>
+
+        <section id="rs-a11y-display-html"><div class="header-wrapper"><h3 id="x5-3-how-to-best-display-html-content"><bdi class="secno">5.3 </bdi>如何為HTML內容提供最佳化顯示</h3><a class="self-link" href="#rs-a11y-display-html" aria-label="Permalink for Section 5.3"></a></div>
+            
+        </section>
+
+        <section id="rs-a11y-display-svg"><div class="header-wrapper"><h3 id="x5-4-how-to-best-display-svg-content"><bdi class="secno">5.4 </bdi>如何為SVG內容提供最佳化顯示</h3><a class="self-link" href="#rs-a11y-display-svg" aria-label="Permalink for Section 5.4"></a></div>
+            
+        </section>
+
+        <section id="rs-a11y-display-image"><div class="header-wrapper"><h3 id="x5-5-how-to-best-display-image-based-content"><bdi class="secno">5.5 </bdi>如何為以圖片為主的內容提供最佳化顯示</h3><a class="self-link" href="#rs-a11y-display-image" aria-label="Permalink for Section 5.5"></a></div>
+            
+        </section>
+
+        <section id="rs-a11y-features"><div class="header-wrapper"><h3 id="x5-6-accessibility-features-for-reading-systems"><bdi class="secno">5.6 </bdi>供閱讀系統使用的可及性功能</h3><a class="self-link" href="#rs-a11y-features" aria-label="Permalink for Section 5.6"></a></div>
+            
+        </section>
+
+        <section id="rs-a11y-scripting"><div class="header-wrapper"><h3 id="x5-7-scripting"><bdi class="secno">5.7 </bdi>腳本</h3><a class="self-link" href="#rs-a11y-scripting" aria-label="Permalink for Section 5.7"></a></div>
+            
+        </section>
+    </section>
+
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-references"><bdi class="secno">A. </bdi>參考</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="informative-references"><div class="header-wrapper"><h3 id="a-1-informative-references"><bdi class="secno">A.1 </bdi>規範性參考文獻</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix A.1"></a></div>
+    
+    <dl class="bibliography"><dt id="bib-epub-33">[epub-33]</dt><dd>
+      <a href="https://www.w3.org/TR/epub-33/"><cite>EPUB 3.3</cite></a>. Ivan Herman; Matt Garrish; Dave Cramer.  W3C. 25 May 2023. W3C Recommendation. URL: <a href="https://www.w3.org/TR/epub-33/">https://www.w3.org/TR/epub-33/</a>
+    </dd><dt id="bib-epub-a11y-11">[epub-a11y-11]</dt><dd>
+      <a href="https://www.w3.org/TR/epub-a11y-11/"><cite>EPUB Accessibility 1.1</cite></a>. George Kerscher; Matt Garrish; Charles LaPierre; Avneesh Singh; Gregorio Pellegrino.  W3C. 25 May 2023. W3C Recommendation. URL: <a href="https://www.w3.org/TR/epub-a11y-11/">https://www.w3.org/TR/epub-a11y-11/</a>
+    </dd><dt id="bib-epub-overview-33">[epub-overview-33]</dt><dd>
+      <a href="https://www.w3.org/TR/epub-overview-33/"><cite>EPUB 3 Overview</cite></a>. Matt Garrish; Ivan Herman.  W3C. 19 May 2023. W3C Working Group Note. URL: <a href="https://www.w3.org/TR/epub-overview-33/">https://www.w3.org/TR/epub-overview-33/</a>
+    </dd><dt id="bib-epub-rs-33">[epub-rs-33]</dt><dd>
+      <a href="https://www.w3.org/TR/epub-rs-33/"><cite>EPUB Reading Systems 3.3</cite></a>. Ivan Herman; Matt Garrish; Dave Cramer.  W3C. 25 May 2023. W3C Recommendation. URL: <a href="https://www.w3.org/TR/epub-rs-33/">https://www.w3.org/TR/epub-rs-33/</a>
+    </dd><dt id="bib-wcag2">[wcag2]</dt><dd>
+      <a href="https://www.w3.org/TR/WCAG2/"><cite>Web Content Accessibility Guidelines (WCAG) 2</cite></a>.  W3C. URL: <a href="https://www.w3.org/TR/WCAG2/">https://www.w3.org/TR/WCAG2/</a>
+    </dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>

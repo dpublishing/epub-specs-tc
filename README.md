@@ -2,13 +2,25 @@
 
 ## 2023年度更新
 
+### 新翻譯文件
+
+- EPUB固定版面可及性（原文：[EPUB Fixed Layout Accessibility](https://w3c.github.io/epub-specs/epub33/fxl-a11y/)）
+
 ### 範本
 
 2023年更新兩項範本
 
-1. 印刷書頁碼範本
+1. [印刷書頁碼範本](https://github.com/dpublishing/epub-specs-tc/blob/master/epub33%202023%20update/印刷書頁碼範本/印刷書頁碼範本.epub)
 
 內容為群星文化授權之卡夫卡《噢！父親》，其中包含使用EPUB Page-list（頁面列表）功能對應印刷書頁數，以及如何製作、閱讀系統可支援項目之說明。
+
+- EPUB製作者（出版社、排版公司）可用於製作時參考。
+- 電子書平台可在考量支援頁面列表時以本範本測試。
+
+### DAISY ACE 1.3.2中文化
+
+- [1.3.2版中文化Repo](https://github.com/dpublishing/ace)
+- [要求合併的Pull Request](https://github.com/daisy/ace/pull/399)
 
 ## 2022年度更新
 
