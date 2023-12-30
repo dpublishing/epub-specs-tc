@@ -2,13 +2,27 @@
 
 ## 2023年度更新
 
+### 文件更新
+
+〈EPUB 3.3〉、〈EPUB 3.3閱讀系統〉與〈EPUB近用性1.1〉於2023年5月通過W3C推薦流程成為正式推薦標準，同時數位發展部將提出〈網頁內容可及性規範（WCAG）2.1〉至W3C作為正式繁體中文翻譯版，故將這三份文件更新至推薦版本，並且在詞彙用語上以數位發展部WCAG 2.1版之翻譯進行更新。
+
+-   [EPUB 3.3](https://dpublishing.github.io/epub-specs-tc/epub33_update/EPUB33.html)（原文：[EPUB 3.3](https://www.w3.org/TR/epub-33/)）
+
+-   [EPUB 3.3 閱讀系統](https://dpublishing.github.io/epub-specs-tc/epub33_update/EPUBrs33.html)（原文：[EPUB 3.3 Reading
+    Systems](https://www.w3.org/TR/epub-rs-33/)）
+
+-   [EPUB近用性 1.1](https://dpublishing.github.io/epub-specs-tc/epub33_update/EPUBa11y11.html) （原文：[EPUB Accessibility
+    1.1](https://www.w3.org/TR/epub-a11y-11/)）
+
 ### 新翻譯文件
 
-- EPUB固定版面可及性（原文：[EPUB Fixed Layout Accessibility](https://w3c.github.io/epub-specs/epub33/fxl-a11y/)）
+EPUB固定版面可及性文件為目前W3C出版維護小組正在進行中的文件，固定版面多以圖片為主，所以能夠提供的可及性功能較少，這份文件講明可以支援、應該考量的特別事項。
+
+- [EPUB固定版面可及性](https://dpublishing.github.io/epub-specs-tc/epub33_2023/EPUB_fxl_a11y/epub_fxl_a11y.html)（原文：[EPUB Fixed Layout Accessibility](https://w3c.github.io/epub-specs/epub33/fxl-a11y/)）
 
 ### 範本
 
-2023年更新兩項範本
+更新兩項範本
 
 1. [印刷書頁碼範本](https://github.com/dpublishing/epub-specs-tc/blob/master/epub33%202023%20update/印刷書頁碼範本/印刷書頁碼範本.epub)
 
