@@ -6,7 +6,7 @@
 
 〈EPUB 3.3〉、〈EPUB 3.3閱讀系統〉與〈EPUB近用性1.1〉於2023年5月通過W3C推薦流程成為正式推薦標準，同時數位發展部將提出〈網頁內容可及性規範（WCAG）2.1〉至W3C作為正式繁體中文翻譯版，故將這三份文件更新至推薦版本，並且在詞彙用語上以數位發展部WCAG 2.1版之翻譯進行更新。
 
--   [EPUB 3.3](https://dpublishing.github.io/epub-specs-tc/epub33_update/EPUB33.html)（原文：[EPUB 3.3](https://www.w3.org/TR/epub-33/)）
+-   [EPUB 3.3](https://dpublishing.github.io/epub-specs-tc/epub33_2023/EPUB_update/EPUB33.html)（原文：[EPUB 3.3](https://www.w3.org/TR/epub-33/)）
 
 -   [EPUB 3.3 閱讀系統](https://dpublishing.github.io/epub-specs-tc/epub33_update/EPUBrs33.html)（原文：[EPUB 3.3 Reading
     Systems](https://www.w3.org/TR/epub-rs-33/)）
