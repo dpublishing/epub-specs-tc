@@ -6,7 +6,7 @@
 
 〈EPUB 3.3〉、〈EPUB 3.3閱讀系統〉與〈EPUB近用性1.1〉於2023年5月通過W3C推薦流程成為正式推薦標準，同時數位發展部將提出〈網頁內容可及性規範（WCAG）2.1〉至W3C作為正式繁體中文翻譯版，故將這三份文件更新至推薦版本，並且在詞彙用語上以數位發展部WCAG 2.1版之翻譯進行更新。
 
--   [EPUB 3.3](https://dpublishing.github.io/epub-specs-tc/epub33_update/EPUB33.html)（原文：[EPUB 3.3](https://www.w3.org/TR/epub-33/)）
+-   [EPUB 3.3](https://dpublishing.github.io/epub-specs-tc/epub33_2023/EPUB_update/EPUB33.html)（原文：[EPUB 3.3](https://www.w3.org/TR/epub-33/)）
 
 -   [EPUB 3.3 閱讀系統](https://dpublishing.github.io/epub-specs-tc/epub33_update/EPUBrs33.html)（原文：[EPUB 3.3 Reading
     Systems](https://www.w3.org/TR/epub-rs-33/)）
@@ -24,7 +24,7 @@ EPUB固定版面可及性文件為目前W3C出版維護小組正在進行中的�
 
 更新兩項範本
 
-1. [印刷書頁碼範本](https://github.com/dpublishing/epub-specs-tc/blob/master/epub33%202023%20update/印刷書頁碼範本/印刷書頁碼範本.epub)
+1. [印刷書頁碼範本](https://github.com/dpublishing/epub-specs-tc/tree/master/epub33_2023/印刷書頁碼範本/印刷書頁碼範本.epub)
 
 內容為群星文化授權之卡夫卡《噢！父親》，其中包含使用EPUB Page-list（頁面列表）功能對應印刷書頁數，以及如何製作、閱讀系統可支援項目之說明。
 
