@@ -815,7 +815,7 @@ var [data-type] :hover::after,var [data-type] :hover::before{opacity:1}
 <p><abbr title="World Wide Web Consortium">W3C</abbr>建議書是經過廣泛達成共識後得到<abbr title="World Wide Web Consortium">W3C</abbr>及其成員認可的規範，並得到工作小組成員對實施<a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Requirements">免版稅許可</a>的承諾。本建議書的未來更新可能會包含<a href="https://www.w3.org/2021/Process-20211102/#allow-new-features">新功能</a>。</p>
 <p>本文件由<a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr>專利政策</a>運作的團隊製作。<abbr title="World Wide Web Consortium">W3C</abbr> 維護與該組織的可交付成果相關的 <a rel="disclosure" href="https://www.w3.org/groups/wg/epub/ipr">任何專利揭露的公開清單</a>；該頁面還包括揭露專利的說明。個人（個體）對專利具備實際知識而該個人（個體）認為其包含<a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">基本要求</a>時， 必須根據<abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">專利政策第6節</a>揭露該資訊。</p>
 <p>本文件受<a id="w3c_process_revision" href="https://www.w3.org/2021/Process-20211102/">2021年11月2日<abbr title="World Wide Web Consortium">W3C</abbr>流程文件</a>之管控。</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">目次</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">摘要</a></li>
-<li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li>
+<li class="tocline"><a class="tocxref" href="#sotd">本文件的狀態</a></li>
 <li class="tocline"><a class="tocxref" href="#sec-introduction"><bdi class="secno">1. </bdi>介紹</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#sec-intro-overview"><bdi class="secno">1.1 </bdi>概要</a></li>
 <li class="tocline"><a class="tocxref" href="#sec-intro-spec-org"><bdi class="secno">1.2 </bdi>構成</a></li>
 <li class="tocline"><a class="tocxref" href="#sec-intro-relations"><bdi class="secno">1.3 </bdi>與其他規格之關係</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#sec-overview-relations-html"><bdi class="secno">1.3.1 </bdi>與HTML的關係</a></li>
@@ -2139,7 +2139,7 @@ var [data-type] :hover::after,var [data-type] :hover::before{opacity:1}
 				<ul>
 					<li>在製作EPUB出版品的準備階段，OCF可以被作為容器格式使用，用於將製作途中的出版品在不同個人以及/或者不同組織間傳送。</li>
 					<li>當一本EPUB出版品從出版社或者製作公司處提供到配布或銷售通路，OCF則為推薦的容器格式作為運輸格式使用。</li>
-					<li>當將最終版EPUB出版品遞送到 <a data-link-type="dfn|abstract-op" href="#dfn-epub-reading-system" class="internalDFN" id="ref-for-dfn-epub-reading-system-14">EPUB閱讀系統</a>或給使用者時，容器必須使用OCF格式以掌握構成出版品的所有素材。</li>
+					<li>當將最終版EPUB出版品配布到 <a data-link-type="dfn|abstract-op" href="#dfn-epub-reading-system" class="internalDFN" id="ref-for-dfn-epub-reading-system-14">EPUB閱讀系統</a>或給使用者時，容器必須使用OCF格式以掌握構成出版品的所有素材。</li>
 				</ul>
 
 				<p>本章節定義以抽象方式建構檔案集合的規則：「抽象容器」。也定義了在一個ZIP封存檔中呈現本抽象容器的規則：「物理容器」。ZIP物理容器的規則建構於由 [<cite><a class="bibref" data-link-type="biblio" href="#bib-odf" title="Open Document Format for Office Applications (OpenDocument) v1.0">odf</a></cite>] 使用的ZIP技術。</p>
@@ -6126,7 +6126,7 @@ XHTML：
 						<p id="confreq-nav-a">具有順序列表中的每一項列表項目都代表了一個標題、結構、或者其他領域的項目。子元素<code>a</code>描述連結該指向的目標，同時一個<code>span</code>元素用來當作標頭以將列表區分為明顯的群組（例如，EPUB製作者可以將一個大的插畫列表區分為多個列表，每一章各一份）。</p>
 					</li>
 					<li>
-						<p id="confreq-nav-a-cnt"><code>a</code>或<code>span</code>元素<em class="rfc2119">必須</em>在連接所有子內容，並且使用空白正規劃規則裡後，提供為非零長度的文字標籤。當要判斷是否合於此規定時，整合後的標籤<em class="rfc2119">必須</em>為非文字的子元素使用<code>title</code>或<code>alt</code>屬性來包含文字內容。</p>
+						<p id="confreq-nav-a-cnt"><code>a</code>或<code>span</code>元素<em class="rfc2119">必須</em>在連接所有子內容，並且使用空白正規化規則裡後，提供為非零長度的文字標籤。當要判斷是否合於此規定時，整合後的標籤<em class="rfc2119">必須</em>為非文字的子元素使用<code>title</code>或<code>alt</code>屬性來包含文字內容。</p>
 					</li>
 					<li>
 						<p id="confreq-nav-a-title">如果一個<code>a</code>或<code>span</code>元素包含<a data-link-type="dfn|abstract-op" data-lt="embedded content" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#embedded-content-category" id="ref-for-index-term-embedded-content-3">HTML嵌入內容</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>] 的實例，由於無法以固有方式提供替代文字，該元素<em class="rfc2119">必須</em>也包含一個<code>title</code>屬性提供處理連結標籤使用的替代文字。</p>
