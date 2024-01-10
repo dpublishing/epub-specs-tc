@@ -11,7 +11,7 @@
 -   [EPUB 3.3 閱讀系統](https://dpublishing.github.io/epub-specs-tc/epub33_update/EPUBrs33.html)（原文：[EPUB 3.3 Reading
     Systems](https://www.w3.org/TR/epub-rs-33/)）
 
--   [EPUB近用性 1.1](https://dpublishing.github.io/epub-specs-tc/epub33_update/EPUBa11y11.html) （原文：[EPUB Accessibility
+-   [EPUB近用性 1.1](https://dpublishing.github.io/epub-specs-tc/epub33_2023/EPUB_update/EPUBa11y11.html) （原文：[EPUB Accessibility
     1.1](https://www.w3.org/TR/epub-a11y-11/)）
 
 ### 新翻譯文件
