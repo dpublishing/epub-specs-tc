@@ -16,8 +16,17 @@
 	<dc:format>application/epub+zip</dc:format>
 	<dc:language>zh-TW</dc:language>
 	<meta property="ibooks:specified-fonts">true</meta>
+	<!-- 提供分頁點印刷書ISBN -->
 	<dc:source id="pg-src">urn:isbn:9789869206129</dc:source>
 	<meta property="source-of" refines="#pg-src">pagination</meta>
+	<!-- 無障礙後設資料 -->
+	<meta property="schema:accessMode">textual</meta>
+	<meta property="schema:accessibilityFeature">alternativeText</meta>
+	<meta property="schema:accessibilityFeature">pageBreakMarkers</meta>
+	<meta property="schema:accessibilityFeature">pageNavigation</meta>
+	<meta property="schema:accessibilityHazard">none</meta>
+	<meta property="schema:accessibilitySummary" xml:lang="zh-TW">圖片頁面採用SVG Wrap方式製作，按照固定版面無障礙技巧建議，以title元素加入替代文字，不是每一款閱讀程式都會唸出title元素中的元素。</meta>
+	<meta property="schema:accessModeSufficient">textual</meta>
 	<meta property="dcterms:modified">2023-12-13T15:03:09Z</meta>
 	<meta name="cover" content="_cover.jpg" />
 </metadata>
