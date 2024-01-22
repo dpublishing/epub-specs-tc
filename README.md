@@ -8,7 +8,7 @@
 
 -   [EPUB 3.3](https://dpublishing.github.io/epub-specs-tc/epub33_2023/EPUB_update/EPUB33.html)（原文：[EPUB 3.3](https://www.w3.org/TR/epub-33/)）
 
--   [EPUB 3.3 閱讀系統](https://dpublishing.github.io/epub-specs-tc/epub33_update/EPUBrs33.html)（原文：[EPUB 3.3 Reading
+-   [EPUB 3.3 閱讀系統](https://dpublishing.github.io/epub-specs-tc/epub33_2023/EPUB_update/EPUBrs33.html)（原文：[EPUB 3.3 Reading
     Systems](https://www.w3.org/TR/epub-rs-33/)）
 
 -   [EPUB近用性 1.1](https://dpublishing.github.io/epub-specs-tc/epub33_2023/EPUB_update/EPUBa11y11.html) （原文：[EPUB Accessibility
