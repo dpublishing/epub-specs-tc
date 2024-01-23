@@ -89,9 +89,7 @@ EPUB固定版面可及性文件為目前W3C出版維護小組正在進行中的�
 
 然而，回退機制自EPUB 3.0開始已經存在，但閱讀系統對其支援並不佳。所以本範本可以通過EPUB檢查工具檢驗，合乎規定，但側載到閱讀程式中時，不保證能夠正常運作。
 
------
-
-## 2022年更新
+## 2021年進度
 
 ### 文件說明
 
@@ -103,8 +101,6 @@ EPUB固定版面可及性文件為目前W3C出版維護小組正在進行中的�
 - 這是一份由台灣數位出版聯盟自願翻譯之文件，本文件可能會因翻譯出現錯誤或語句不通順之處。如有發現錯誤或不妥之處，歡迎與台灣數位出版聯盟聯繫或直接於此GitHub儲存庫建立issue。
 
 ### 文件清單
-
---------
 
 - [EPUB 3 總覽](https://dpublishing.github.io/epub-specs-tc/epub32/epub-overview.html)（原文：[EPUB 3 Overview](https://www.w3.org/publishing/epub3/epub-overview.html)）
 - [EPUB 3.2 規格](https://dpublishing.github.io/epub-specs-tc/epub32/epub-spec.html)（原文：[EPUB 3.2 Specification](https://www.w3.org/publishing/epub3/epub-spec.html)）
