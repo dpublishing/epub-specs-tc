@@ -1928,8 +1928,8 @@ var [data-type] :hover::after,var [data-type] :hover::before{opacity:1}
 							<div class="note" role="note" id="issue-container-generatedID-14"><div role="heading" class="note-title marker" id="h-note-14" aria-level="5"><span>註釋</span></div><div class="">
 								<p>內容回退原來的目的是用於指定 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>] <code><a data-link-type="element" data-type="element" href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element" id="ref-for-index-term-img-element-1">img</a></code> 元素的回退圖片。但現在HTML有了固有的圖片回退機制，就強烈不建議使用內容回退。EPUB製作者應該優先使用 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>] 與 [<cite><a class="bibref" data-link-type="biblio" href="#bib-svg" title="SVG">svg</a></cite>] 固有的回退能力來提供回退內容。</p>
 							</div></div>
-							<p>EPUB製作者在參照<a data-link-type="dfn|abstract-op" href="#dfn-foreign-resource" class="internalDFN" id="ref-for-dfn-foreign-resource-7">外圍資源</a>的元素沒有固有回退能力時， <em class="rfc2119">必須</em>為提供其提供內容回退。在這種案例中，回退鏈<em class="rfc2119">必須</em>包含至少一個<a data-link-type="dfn|abstract-op" href="#dfn-core-media-type-resource" class="internalDFN" id="ref-for-dfn-core-media-type-resource-6">核心媒體類型資源</a>。</p>
-							<p>EPUB製作者 <em class="rfc2119">可以</em>為核心媒體類型資源提供宣告回退（例如，讓閱讀系統從多個圖片格式中選擇一種）。</p>
+							<p>EPUB製作者在參照<a data-link-type="dfn|abstract-op" href="#dfn-foreign-resource" class="internalDFN" id="ref-for-dfn-foreign-resource-7">外圍資源</a>的元素沒有固有回退能力時，<em class="rfc2119">必須</em>為提供其提供內容回退。在這種案例中，回退鏈<em class="rfc2119">必須</em>包含至少一個<a data-link-type="dfn|abstract-op" href="#dfn-core-media-type-resource" class="internalDFN" id="ref-for-dfn-core-media-type-resource-6">核心媒體類型資源</a>。</p>
+							<p>EPUB製作者<em class="rfc2119">可以</em>為核心媒體類型資源提供宣告回退（例如，讓閱讀系統從多個圖片格式中選擇一種）。</p>
 						</dd>
 					</dl>
 
@@ -2014,7 +2014,7 @@ var [data-type] :hover::after,var [data-type] :hover::before{opacity:1}
 					</li>
 				</ul>
 
-				<p>EPUB製作者 <em class="rfc2119">必須</em>將所有其他的資源儲存在EPUB容器內。</p>
+				<p>EPUB製作者<em class="rfc2119">必須</em>將所有其他的資源儲存在EPUB容器內。</p>
 
 				<p>強烈建議只要可行，盡量將所有資源儲存在EPUB容器內，才能無論連線狀態如何，都能讓使用者存取到所有的內容。</p>
 
@@ -2245,7 +2245,7 @@ var [data-type] :hover::after,var [data-type] :hover::before{opacity:1}
 							<p id="ocf-pn-length">OCF抽象容器中任何目錄或檔案的檔案路徑<em class="rfc2119">不得</em>超過65535位元組。</p>
 						</li>
 						<li>
-							<p id="ocf-fn-chars">檔案名稱 <em class="rfc2119">不得</em>使用以下 [<cite><a class="bibref" data-link-type="biblio" href="#bib-unicode" title="The Unicode Standard">unicode</a></cite>] 字元，主要因為常見的作業系統對這些字元的支援不穩定：</p>
+							<p id="ocf-fn-chars">檔案名稱<em class="rfc2119">不得</em>使用以下 [<cite><a class="bibref" data-link-type="biblio" href="#bib-unicode" title="The Unicode Standard">unicode</a></cite>] 字元，主要因為常見的作業系統對這些字元的支援不穩定：</p>
 							<ul>
 								<li>
 									<p>SOLIDUS: <code>/</code> (<code>U+002F</code>)</p>
@@ -2321,7 +2321,7 @@ var [data-type] :hover::after,var [data-type] :hover::before{opacity:1}
 							<p id="ocf-fn-space">為相容於較舊的<a data-link-type="dfn|abstract-op" href="#dfn-epub-reading-system" class="internalDFN" id="ref-for-dfn-epub-reading-system-16">閱讀系統</a>，檔案名稱<em class="rfc2119">不應</em>包含SPACE (U+0020)字元。</p>
 						</li>
 						<li>
-							<p id="ocf-fn-cn">所有在同一個目錄中的檔案名稱 <em class="rfc2119">必須</em>在遵從Unicode等價正規化（canonical normalization） [<cite><a class="bibref" data-link-type="biblio" href="#bib-uax15" title="Unicode Normalization Forms">uax15</a></cite>] ，以及完整大寫轉換（case folding） [<cite><a class="bibref" data-link-type="biblio" href="#bib-unicode" title="The Unicode Standard">unicode</a></cite>] 後為獨特（請參見<a href="https://www.w3.org/TR/charmod-norm/#CanonicalFoldNormalizationStep" id="ref-for-index-term-unicode-canonical-case-fold-normalization-step-1">Unicode等價大寫轉換正規化步驟</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-charmod-norm" title="Character Model for the World Wide Web: String Matching">charmod-norm</a></cite>] 以獲得更多資訊）。</p>
+							<p id="ocf-fn-cn">所有在同一個目錄中的檔案名稱<em class="rfc2119">必須</em>在遵從Unicode等價正規化（canonical normalization） [<cite><a class="bibref" data-link-type="biblio" href="#bib-uax15" title="Unicode Normalization Forms">uax15</a></cite>] ，以及完整大寫轉換（case folding） [<cite><a class="bibref" data-link-type="biblio" href="#bib-unicode" title="The Unicode Standard">unicode</a></cite>] 後為獨特（請參見<a href="https://www.w3.org/TR/charmod-norm/#CanonicalFoldNormalizationStep" id="ref-for-index-term-unicode-canonical-case-fold-normalization-step-1">Unicode等價大寫轉換正規化步驟</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-charmod-norm" title="Character Model for the World Wide Web: String Matching">charmod-norm</a></cite>] 以獲得更多資訊）。</p>
 						</li>
 					</ul>
 					<div class="note" role="note" id="issue-container-generatedID-24"><div role="heading" class="note-title marker" id="h-note-24" aria-level="5"><span>註釋</span></div><div class="">
@@ -2430,7 +2430,7 @@ var [data-type] :hover::after,var [data-type] :hover::before{opacity:1}
 						<li>回報為<var>false</var>。</li>
 					</ol>
 
-					<p id="urls-in-ocf-constraints">在OCF抽象容器中，任何URL字 <em class="rfc2119">必須</em>為一個<a data-link-type="dfn|abstract-op" data-type="dfn" href="https://url.spec.whatwg.org/#absolute-url-with-fragment-string" id="ref-for-index-term-absolute-url-with-fragment-string-1">絕對-位址-具-片段（absolute-url-with-fragment）字串</a>或者為一個<a data-link-type="dfn|abstract-op" href="#dfn-valid-relative-container-url-with-fragment-string" class="internalDFN" id="ref-for-dfn-valid-relative-container-url-with-fragment-string-1">有效的合規-相對-ocf-位址-有-片段（valid-relative-ocf-URL-with-fragment）字串</a>。</p>
+					<p id="urls-in-ocf-constraints">在OCF抽象容器中，任何URL字串<em class="rfc2119">必須</em>為一個<a data-link-type="dfn|abstract-op" data-type="dfn" href="https://url.spec.whatwg.org/#absolute-url-with-fragment-string" id="ref-for-index-term-absolute-url-with-fragment-string-1">絕對-位址-具-片段（absolute-url-with-fragment）字串</a>或者為一個<a data-link-type="dfn|abstract-op" href="#dfn-valid-relative-container-url-with-fragment-string" class="internalDFN" id="ref-for-dfn-valid-relative-container-url-with-fragment-string-1">有效的合規-相對-ocf-位址-有-片段（valid-relative-ocf-URL-with-fragment）字串</a>。</p>
 
 					<p>此外，所有<a data-link-type="dfn|abstract-op" data-type="dfn" href="https://url.spec.whatwg.org/#relative-url-with-fragment-string" id="ref-for-index-term-relative-url-with-fragment-strings-1">相對-位址-具-片段</（relative-URL-with-fragment）字串</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-url" title="URL Standard">url</a></cite>] 在<a data-lt="url parser" data-type="dfn" href="https://url.spec.whatwg.org/#concept-url-parser" id="ref-for-index-term-url-parser-7">解析</a>之後，<em class="rfc2119">必須</em>等於OCF抽象容器中一個存在檔案的內容URL。</p>
 
@@ -2892,7 +2892,7 @@ var [data-type] :hover::after,var [data-type] :hover::before{opacity:1}
 
 								<p>EPUB製作者<em class="rfc2119">不應</em>在加密壓縮<a data-link-type="dfn|abstract-op" href="#dfn-codec" class="internalDFN" id="ref-for-dfn-codec-1">編碼（codec）</a>內容類型資料流前進行壓縮。在這些案例中額外的壓縮會造成不必要的處理程序延長製作時間（尤其在處理大型資源檔案時）並且在閱讀時影響影音播放效能。在某些案例中某些加密綱要遇上壓縮時，可能會降低<a data-link-type="dfn|abstract-op" href="#dfn-epub-reading-system" class="internalDFN" id="ref-for-dfn-epub-reading-system-19">閱讀系統</a>處理部分內容要求的能力（例如HTTP位元組範圍byte range），原因是技術上無法在媒體播放前判斷完整資源的長度（例如HTTP內容長度檔頭Content-Length header）。</p>
 
-								<p>當EPUB製作者在加密前壓縮資料流時，他們 <em class="rfc2119">應該</em>提供額外的<code>EncryptionProperties</code>後設資料來指定資源初始大小（即為，在壓縮與加密之前），如以下定義的<code>Compression</code> XML元素。當EPUB製作者不在加密前壓縮資料流時，他們<em class="rfc2119">可以</em>提供額外的<code>EncryptionProperties</code>後設資料來指定初始資源初始大小（即為，在壓縮之前）。</p>
+								<p>當EPUB製作者在加密前壓縮資料流時，他們<em class="rfc2119">應該</em>提供額外的<code>EncryptionProperties</code>後設資料來指定資源初始大小（即為，在壓縮與加密之前），如以下定義的<code>Compression</code> XML元素。當EPUB製作者不在加密前壓縮資料流時，他們<em class="rfc2119">可以</em>提供額外的<code>EncryptionProperties</code>後設資料來指定初始資源初始大小（即為，在壓縮之前）。</p>
 
 								<dl class="elemdef" id="elemdef-enc-Compression">
 									<dt>元素名稱：</dt>
@@ -3162,7 +3162,7 @@ var [data-type] :hover::after,var [data-type] :hover::before{opacity:1}
 							<p id="confreq-zip-abstr"><a href="#sec-container-abstract">OCF ZIP容器</a>的內容<em class="rfc2119">必須</em>為合規的OCF抽象容器。</p>
 						</li>
 						<li>
-							<p id="confreq-zip-mult">OCF ZIP容器 <em class="rfc2119">不得</em>使用ZIP應用程式附註 [<cite><a class="bibref" data-link-type="biblio" href="#bib-zip" title=".ZIP File Format Specification">zip</a></cite>] 中的功能以讓ZIP檔案跨多個儲存媒介或者分割成多個檔案。</p>
+							<p id="confreq-zip-mult">OCF ZIP容器<em class="rfc2119">不得</em>使用ZIP應用程式附註 [<cite><a class="bibref" data-link-type="biblio" href="#bib-zip" title=".ZIP File Format Specification">zip</a></cite>] 中的功能以讓ZIP檔案跨多個儲存媒介或者分割成多個檔案。</p>
 						</li>
 						<li>
 							<p id="confreq-zip-comp">OCF ZIP容器<em class="rfc2119">必須</em>在ZIP封存檔中僅包括儲存（無壓縮的）以及使用Deflate方式壓縮的ZIP資料。</p>
@@ -3171,7 +3171,7 @@ var [data-type] :hover::after,var [data-type] :hover::before{opacity:1}
 							<p id="confreq-zip-64">OCF ZIP容器<em class="rfc2119">可以</em>使用定義在ZIP應用程式附註 [<cite><a class="bibref" data-link-type="biblio" href="#bib-zip" title=".ZIP File Format Specification">zip</a></cite>] 章節V，子章節G「version 1」的ZIP64延伸，以及<em class="rfc2119">應該</em>僅在內容需要時使用這些延伸。</p>
 						</li>
 						<li>
-							<p id="confreq-zip-enc">OCF ZIP容器 <em class="rfc2119">不得</em>使用定義在ZIP格式中的加密功能；相對之下，加密<em class="rfc2119">必須</em>使用在<a href="#sec-container-metainf-encryption.xml" class="sec-ref"><bdi class="secno">4.2.6.3.2 </bdi>加密檔案</a>（<code>encryption.xml</code>）中說明的功能。</p>
+							<p id="confreq-zip-enc">OCF ZIP容器<em class="rfc2119">不得</em>使用定義在ZIP格式中的加密功能；相對之下，加密<em class="rfc2119">必須</em>使用在<a href="#sec-container-metainf-encryption.xml" class="sec-ref"><bdi class="secno">4.2.6.3.2 </bdi>加密檔案</a>（<code>encryption.xml</code>）中說明的功能。</p>
 						</li>
 						<li>
 							<p id="confreq-zip-utf8">OCF ZIP容器<em class="rfc2119">必須</em>使用UTF-8 [<cite><a class="bibref" data-link-type="biblio" href="#bib-unicode" title="The Unicode Standard">unicode</a></cite>] 編碼檔案系統名稱。</p>
@@ -3321,7 +3321,7 @@ var [data-type] :hover::after,var [data-type] :hover::before{opacity:1}
 
 					<p><a data-link-type="dfn|abstract-op" href="#dfn-epub-creator" class="internalDFN" id="ref-for-dfn-epub-creator-41">EPUB製作者</a><em class="rfc2119">必須</em>為每一個模糊化字型指定一個<code>EncryptedData</code>元素。每一個<code>EncryptedData</code>元素<em class="rfc2119">必須</em>包含一個<code>EncryptionMethod</code>子元素，其<code>Algorithm</code>屬性有值<code>http://www.idpf.org/2008/embedding</code>。本屬性存在指示使用了本規格所描述的演算法。</p>
 
-					<p>EPUB製作者 <em class="rfc2119">必須</em><code>CipherData</code>元素中的子<code>CipherReference</code>條列模糊化字型的路徑。由於模糊化演算法限制用於字型，<code>CipherReference</code>元素的<code>URI</code>屬性<em class="rfc2119">必須</em>參照一個<a href="#cmt-grp-font">字型的核心媒體類型資源</a>。</p>
+					<p>EPUB製作者<em class="rfc2119">必須</em><code>CipherData</code>元素中的子<code>CipherReference</code>條列模糊化字型的路徑。由於模糊化演算法限制用於字型，<code>CipherReference</code>元素的<code>URI</code>屬性<em class="rfc2119">必須</em>參照一個<a href="#cmt-grp-font">字型的核心媒體類型資源</a>。</p>
 
 					<aside class="example" id="example-an-entry-for-an-obfuscated-font"><div class="marker">
     <a class="self-link" href="#example-an-entry-for-an-obfuscated-font">範例<bdi> 10</bdi></a><span class="example-title">: 一份模糊化字型的登錄資料</span>
@@ -3527,7 +3527,7 @@ var [data-type] :hover::after,var [data-type] :hover::before{opacity:1}
 				<section id="attrdef-refines" data-epubcheck="true" data-tests="https://w3c.github.io/epub-structural-tests/#05-package-document_package-document.feature_L60,https://w3c.github.io/epub-structural-tests/#05-package-document_package-document.feature_L73,https://w3c.github.io/epub-structural-tests/#05-package-document_package-document.feature_L80"><div class="header-wrapper"><h4 id="x5-3-6-the-refines-attribute"><bdi class="secno">5.3.6 </bdi><code>refines</code>屬性</h4><a class="self-link" href="#attrdef-refines" aria-label="Permalink for Section 5.3.6"></a></div>
 					
 
-					<p>為元素或者以該值識別的元素，建立與現行表述的關聯。<a data-link-type="dfn|abstract-op" href="#dfn-epub-creator" class="internalDFN" id="ref-for-dfn-epub-creator-43">EPUB製作者</a> <em class="rfc2119">必須</em>使用<a data-link-type="dfn|abstract-op" data-type="dfn" href="https://url.spec.whatwg.org/#path-relative-scheme-less-url-string" id="ref-for-index-term-path-relative-scheme-less-url-string-4">路徑-相對-無-綱要-位址（path-relative-scheme-less-URL）字串</a>，選擇性地在<code>U+0023&nbsp;(#)</code>之後，以及透過一個<a data-link-type="dfn|abstract-op" data-type="dfn" href="https://url.spec.whatwg.org/#url-fragment-string" id="ref-for-index-term-url-fragment-string-2">位址-片段（URL-fragment）字串</a>來參照其所描述的資源或者元素。</p>
+					<p>為元素或者以該值識別的元素，建立與現行表述的關聯。<a data-link-type="dfn|abstract-op" href="#dfn-epub-creator" class="internalDFN" id="ref-for-dfn-epub-creator-43">EPUB製作者</a><em class="rfc2119">必須</em>使用<a data-link-type="dfn|abstract-op" data-type="dfn" href="https://url.spec.whatwg.org/#path-relative-scheme-less-url-string" id="ref-for-index-term-path-relative-scheme-less-url-string-4">路徑-相對-無-綱要-位址（path-relative-scheme-less-URL）字串</a>，選擇性地在<code>U+0023&nbsp;(#)</code>之後，以及透過一個<a data-link-type="dfn|abstract-op" data-type="dfn" href="https://url.spec.whatwg.org/#url-fragment-string" id="ref-for-index-term-url-fragment-string-2">位址-片段（URL-fragment）字串</a>來參照其所描述的資源或者元素。</p>
 
 					<aside class="example" id="example-specifying-that-a-creator-is-the-illustrator"><div class="marker">
     <a class="self-link" href="#example-specifying-that-a-creator-is-the-illustrator">範例<bdi> 16</bdi></a><span class="example-title">: 將一位製作者指定為插畫師</span>
@@ -5704,7 +5704,7 @@ XHTML：
 						<dl class="conformance-list">
 							<dt id="math-pres">顯示用MathML</dt>
 							<dd>
-								<p id="confreq-mathml-pres"><code>math</code>元素 <em class="rfc2119">必須</em>僅包含<a href="https://www.w3.org/TR/MathML3/chapter3.html#" id="ref-for-index-term-presentation-mathml-1">顯示用MathML</a>，除了在<code>annotation-xml</code>元素內。</p>
+								<p id="confreq-mathml-pres"><code>math</code>元素<em class="rfc2119">必須</em>僅包含<a href="https://www.w3.org/TR/MathML3/chapter3.html#" id="ref-for-index-term-presentation-mathml-1">顯示用MathML</a>，除了在<code>annotation-xml</code>元素內。</p>
 							</dd>
 
 							<dt id="math-cont">內容MathML</dt>
@@ -6007,7 +6007,7 @@ XHTML：
 					<section id="sec-scripted-fallbacks"><div class="header-wrapper"><h5 id="confreq-cd-scripted-flbk"><bdi class="secno">6.3.2.5 </bdi>腳本回退</h5><a class="self-link" href="#confreq-cd-scripted-flbk" aria-label="Permalink for Section 6.3.2.5"></a></div>
 						
 
-						<p id="confreq-cd-scripted-fallback">包含腳本的<a data-link-type="dfn|abstract-op" href="#dfn-epub-content-document" class="internalDFN" id="ref-for-dfn-epub-content-document-30">EPUB內容文件</a> <em class="rfc2119">可以</em>提供對這些內容的回退，無論使用固有的回退機制（像是 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>] 的<code><a data-link-type="element" data-type="element" href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element" id="ref-for-index-term-object-type-3">object</a></code>以及<code><a data-link-type="element" data-type="element" href="https://html.spec.whatwg.org/multipage/canvas.html#canvas" id="ref-for-index-term-canvas-element-1">canvas</a></code>元素就有提供）或者，當不能使用固有回退時，可以使用<a href="#sec-manifest-fallbacks">宣告層級回退</a>。</p>
+						<p id="confreq-cd-scripted-fallback">包含腳本的<a data-link-type="dfn|abstract-op" href="#dfn-epub-content-document" class="internalDFN" id="ref-for-dfn-epub-content-document-30">EPUB內容文件</a><em class="rfc2119">可以</em>提供對這些內容的回退，無論使用固有的回退機制（像是 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>] 的<code><a data-link-type="element" data-type="element" href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element" id="ref-for-index-term-object-type-3">object</a></code>以及<code><a data-link-type="element" data-type="element" href="https://html.spec.whatwg.org/multipage/canvas.html#canvas" id="ref-for-index-term-canvas-element-1">canvas</a></code>元素就有提供）或者，當不能使用固有回退時，可以使用<a href="#sec-manifest-fallbacks">宣告層級回退</a>。</p>
 
 						<p id="confreq-cd-scripted-foreign-resources"><a data-link-type="dfn|abstract-op" href="#dfn-epub-creator" class="internalDFN" id="ref-for-dfn-epub-creator-84">EPUB製作者</a><em class="rfc2119">必須</em>確保腳本僅生成<a href="#sec-core-media-types">核心媒體類型資源</a>或者片段等。</p>
 					</section>
@@ -6192,7 +6192,7 @@ XHTML：
 					<p>儘管在<code>nav</code>元素中的標題與連結允許使用任何 [<cite><a class="bibref" data-link-type="biblio" href="#bib-html" title="HTML Standard">html</a></cite>] <a data-link-type="dfn|abstract-op" data-type="dfn" href="https://html.spec.whatwg.org/multipage/dom.html#phrasing-content-2" id="ref-for-index-term-phrasing-content-2">段落型內容</a>，App形式的閱讀系統經常只會處理間單的文字標籤。因為這些App建構自己的導覽小工具，並非基於HTML處理，這些工具通常無法保留嵌入圖片或者多媒體、MathML與行內樣式和其他基於元素或者屬性的處理程序。EPUB製作者應該避免使用這些類型的元素，因為無法顯示會產生易用性問題。</p>
 				</div>
 
-				<p id="confreq-cd-nav-docprops-spine">作為合規的<a data-link-type="dfn|abstract-op" href="#dfn-xhtml-content-document" class="internalDFN" id="ref-for-dfn-xhtml-content-document-26">XHTML內容文件</a>，EPUB製作者 <em class="rfc2119">可以</em>將EPUB導覽文件包含在<a data-link-type="dfn|abstract-op" data-lt="EPUB spine" href="#dfn-epub-spine" class="internalDFN" id="ref-for-dfn-epub-spine-17">書脊</a>之中。</p>
+				<p id="confreq-cd-nav-docprops-spine">作為合規的<a data-link-type="dfn|abstract-op" href="#dfn-xhtml-content-document" class="internalDFN" id="ref-for-dfn-xhtml-content-document-26">XHTML內容文件</a>，EPUB製作者<em class="rfc2119">可以</em>將EPUB導覽文件包含在<a data-link-type="dfn|abstract-op" data-lt="EPUB spine" href="#dfn-epub-spine" class="internalDFN" id="ref-for-dfn-epub-spine-17">書脊</a>之中。</p>
 
 				<p id="confreq-nav-ol-style">在本規格的脈絡中，<code>nav</code>元素中列表項目的預設顯示樣式等同於<a href="https://www.w3.org/TR/CSS2/generate.html#propdef-list-style"><code>list-style:</code>
 				<code>none</code>特性</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-csssnapshot" title="CSS Snapshot">csssnapshot</a></cite>] 。EPUB製作者<em class="rfc2119">可以</em>使用CSS指定替代的列表樣式供文件放書脊中處理使用。</p>
@@ -6278,9 +6278,9 @@ XHTML：
 
 					<p><code>landmarks nav</code>元素在<a data-link-type="dfn|abstract-op" href="#dfn-epub-navigation-document" class="internalDFN" id="ref-for-dfn-epub-navigation-document-10">EPUB導覽文件</a>中為<em class="rfc2119">選擇性</em>，並且<em class="rfc2119">不得</em>出現多於一次。</p>
 
-					<p><code>landmarks nav</code>元素<em class="rfc2119">應該</em>包含唯一一個<code>ol</code>子項（也就是不得有巢狀子列表）。i.e., no nested sublists).</p>
+					<p><code>landmarks nav</code>元素<em class="rfc2119">應該</em>包含唯一一個<code>ol</code>子項（也就是不得有巢狀子列表）。</p>
 
-					<p><code>landmarks nav</code>元素的子<code>a</code>元素中，><a data-link-type="element-attr" href="#dfn-epub-type" class="internalDFN" id="ref-for-dfn-epub-type-5"><code>epub:type</code></a>屬性為 <em class="rfc2119">必要</em>。在<code>landmarks nav</code>元素中連結標的的結構化語義由該屬性的值所決定。</p>
+					<p><code>landmarks nav</code>元素的子<code>a</code>元素中，<a data-link-type="element-attr" href="#dfn-epub-type" class="internalDFN" id="ref-for-dfn-epub-type-5"><code>epub:type</code></a>屬性為<em class="rfc2119">必要</em>。在<code>landmarks nav</code>元素中連結標的的結構化語義由該屬性的值所決定。</p>
 
 					<aside class="example" id="example-a-basic-landmarks-nav"><div class="marker">
     <a class="self-link" href="#example-a-basic-landmarks-nav">範例<bdi> 51</bdi></a><span class="example-title">:  一個基本的landmarks nav</span>
@@ -6634,7 +6634,7 @@ XHTML：
 								<dd>指定閱讀系統應該將該書脊項目以portrait方向處理。</dd>
 							</dl>
 
-							<p>EPUB製作者 <em class="rfc2119">不得</em>在任何書脊項目中使用多於一個的覆寫。</p>
+							<p>EPUB製作者<em class="rfc2119">不得</em>在任何書脊項目中使用多於一個的覆寫。</p>
 						</section>
 					</section>
 
@@ -7667,7 +7667,7 @@ XHTML：
 										<p>指定物理媒體的偏移量之時鐘值，呼應到一個聲音片段的結束點。</p>
 										<p><em class="rfc2119">必須</em>為一個 [<cite><a class="bibref" data-link-type="biblio" href="#bib-smil3" title="Synchronized Multimedia Integration Language (SMIL 3.0)">smil3</a></cite>] <a href="https://www.w3.org/TR/SMIL3/smil-timing.html#q22" id="ref-for-index-term-clock-value-2">時鐘值</a>。</p>
 										<p>請見<a href="#clock-examples" class="sec-ref"><bdi class="secno">H.4 </bdi>時鐘值</a>。</p>
-										<p>結束位址在時序上的偏移值 <em class="rfc2119">必須</em>在<code>clipBegin</code>屬性中所指定的開始偏移值之後。</p>
+										<p>結束位址在時序上的偏移值<em class="rfc2119">必須</em>在<code>clipBegin</code>屬性中所指定的開始偏移值之後。</p>
 									</dd>
 								</dl>
 							</dd>
@@ -8619,7 +8619,7 @@ XHTML：
 
 			<p>以下表格列出允許用於<a href="https://www.w3.org/TR/xml/#dt-doctype" id="ref-for-index-term-document-type-declaration-2">文件類型宣告</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-xml" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">xml</a></cite>] 的<a aria-label="public identifiers" href="https://www.w3.org/TR/xml/#dt-pubid" id="ref-for-index-term-public-1">公用</a>以及<a href="https://www.w3.org/TR/xml/#dt-sysid" id="ref-for-index-term-system-identifiers-1">系統識別碼</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-xml" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">xml</a></cite>] 。</p>
 
-			<p><a data-link-type="dfn|abstract-op" href="#dfn-epub-creator" class="internalDFN" id="ref-for-dfn-epub-creator-128">EPUB製作者</a> <em class="rfc2119">可以</em>將這些外部識別碼使用於具備列表中媒體類型 [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2046" title="Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types">rfc2046</a></cite>] 的<a data-link-type="dfn|abstract-op" href="#dfn-publication-resource" class="internalDFN" id="ref-for-dfn-publication-resource-34">出版品資源</a>，在其<a data-link-type="dfn|abstract-op" data-lt="EPUB manifest" href="#dfn-epub-manifest" class="internalDFN" id="ref-for-dfn-epub-manifest-14">宣告</a>項目中進行指定（請參見<a href="#sec-xml-constraints" class="sec-ref"><bdi class="secno">3.9 </bdi>XML符合性</a>以獲得更多資訊）。</p>
+			<p><a data-link-type="dfn|abstract-op" href="#dfn-epub-creator" class="internalDFN" id="ref-for-dfn-epub-creator-128">EPUB製作者</a><em class="rfc2119">可以</em>將這些外部識別碼使用於具備列表中媒體類型 [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2046" title="Multipurpose Internet Mail Extensions (MIME) Part Two: Media Types">rfc2046</a></cite>] 的<a data-link-type="dfn|abstract-op" href="#dfn-publication-resource" class="internalDFN" id="ref-for-dfn-publication-resource-34">出版品資源</a>，在其<a data-link-type="dfn|abstract-op" data-lt="EPUB manifest" href="#dfn-epub-manifest" class="internalDFN" id="ref-for-dfn-epub-manifest-14">宣告</a>項目中進行指定（請參見<a href="#sec-xml-constraints" class="sec-ref"><bdi class="secno">3.9 </bdi>XML符合性</a>以獲得更多資訊）。</p>
 
 			<table class="zebra">
 				<thead>
