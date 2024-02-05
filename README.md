@@ -36,7 +36,7 @@ EPUB固定版面可及性文件為目前W3C出版維護小組正在進行中的�
 2021年時，台灣數位出版聯盟已經製作了兩份EPUB[可及性範本](https://github.com/dpublishing/epub-a11y-samples)。
 今年提供新範本主要針對內容為達到WCAG A或AA等級，需要達成的成功準則的各種規定。
 
-### 提出ACE by DAISY 1.3.2版正體中文地區化
+### 四、提出ACE by DAISY 1.3.2版正體中文地區化
 
 - [1.3.2版中文化Repo](https://github.com/dpublishing/ace)
 - [要求合併的Pull Request](https://github.com/daisy/ace/pull/399)
