@@ -1,8 +1,8 @@
-# EPUB 3.3規格文件中文翻譯版本與範本
+# EPUB規格正體中文翻譯與範本
 
 ## 2023年度更新
 
-### 文件更新
+### 一、更新翻譯文件至推薦標準版
 
 〈EPUB 3.3〉、〈EPUB 3.3閱讀系統〉與〈EPUB可及性1.1〉於2023年5月通過W3C推薦流程成為正式推薦標準，同時數位發展部將提出〈網頁內容可及性規範（WCAG）2.1〉至W3C作為正式繁體中文翻譯版，故將這三份文件更新至推薦版本，並且在詞彙用語上以數位發展部WCAG 2.1版之翻譯進行更新。
 
@@ -14,15 +14,15 @@
 -   [EPUB可及性 1.1](https://dpublishing.github.io/epub-specs-tc/epub33_2023/EPUB_update/EPUBa11y11.html) （原文：[EPUB Accessibility
     1.1](https://www.w3.org/TR/epub-a11y-11/)）
 
-### 新翻譯文件
+### 二、新增翻譯文件
 
 EPUB固定版面可及性文件為目前W3C出版維護小組正在進行中的文件，固定版面多以圖片為主，所以能夠提供的可及性功能較少，這份文件講明可以支援、應該考量的特別事項。
 
 - [EPUB固定版面可及性](https://dpublishing.github.io/epub-specs-tc/epub33_2023/EPUB_fxl_a11y/epub_fxl_a11y.html)（原文：[EPUB Fixed Layout Accessibility](https://w3c.github.io/epub-specs/epub33/fxl-a11y/)）
 
-### 範本
+### 三、新增範本
 
-更新三項範本
+更新兩項範本
 
 1. [印刷書頁碼範本](https://github.com/dpublishing/epub-specs-tc/tree/master/epub33_2023/印刷書頁碼範本/印刷書頁碼範本.epub)
 
@@ -31,21 +31,17 @@ EPUB固定版面可及性文件為目前W3C出版維護小組正在進行中的�
 - EPUB製作者（出版社、排版公司）可用於製作時參考。
 - 電子書平台可在考量支援頁面列表時以本範本測試。
 
+2. [EPUB可及性性符合WCAG規定說明與範本](https://github.com/dpublishing/epub-specs-tc/tree/master/epub33_2023/EPUB近用性符合WCAG規定說明與範本)
+
 2021年時，台灣數位出版聯盟已經製作了兩份EPUB[可及性範本](https://github.com/dpublishing/epub-a11y-samples)。
-今年針對製作上的細節，另外提供兩本範本說明細節，以求在製作上更能滿足可及性需求。
+今年提供新範本主要針對內容為達到WCAG A或AA等級，需要達成的成功準則的各種規定。
 
-2. [EPUB可及性符合WCAG規定說明與範本](https://github.com/dpublishing/epub-specs-tc/tree/master/epub33_2023/EPUB近用性符合WCAG規定說明與範本)
-
-本範本主要針對內容為達到WCAG A或AA等級，需要達成的成功準則的各種規定。
-
-3. EPUB DAISY無障礙功能說明範本
-
-本範本主要針對DAISY知識庫中各項適用於EPUB的`accessibilityFeature`進行說明，以讓製作者知悉能以何種方式提升內容可及性，並且在書中宣告。
-
-### DAISY ACE 1.3.2中文化
+### 提出ACE by DAISY 1.3.2版正體中文地區化
 
 - [1.3.2版中文化Repo](https://github.com/dpublishing/ace)
 - [要求合併的Pull Request](https://github.com/daisy/ace/pull/399)
+
+--------
 
 ## 2022年度更新
 
@@ -64,8 +60,6 @@ EPUB固定版面可及性文件為目前W3C出版維護小組正在進行中的�
 過去有一些EPUB規格中的功能並未受到廣泛實作，所以在此次改版時，將這些內容分到其他文件，希望能更進一步完善這些功能，並且鼓勵實作，包括：
 
 ### 文件清單
-
---------
 
 -  [EPUB 3.3
     總覽](https://dpublishing.github.io/epub-specs-tc/epub33/epub-overview-33-20221004.html)（原文：[EPUB
@@ -100,13 +94,15 @@ EPUB固定版面可及性文件為目前W3C出版維護小組正在進行中的�
 
 然而，回退機制自EPUB 3.0開始已經存在，但閱讀系統對其支援並不佳。所以本範本可以通過EPUB檢查工具檢驗，合乎規定，但側載到閱讀程式中時，不保證能夠正常運作。
 
-## 2021年進度
+--------
+
+## 2021年度
 
 ### 文件說明
 
 本清單中之文件是台灣數位出版聯盟基於W3C EPUB3 最終社群小組規格（Final Community Group Specification）2019年05月08日公告版本之中文翻譯版。
 
-#### 注意
+#### 注意事項
 
 - 以下規格文件清單之正式版本請以括弧內W3C網站連結公布之英文版為準。
 - 這是一份由台灣數位出版聯盟自願翻譯之文件，本文件可能會因翻譯出現錯誤或語句不通順之處。如有發現錯誤或不妥之處，歡迎與台灣數位出版聯盟聯繫或直接於此GitHub儲存庫建立issue。
