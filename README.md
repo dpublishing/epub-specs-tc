@@ -4,14 +4,14 @@
 
 ### 文件更新
 
-〈EPUB 3.3〉、〈EPUB 3.3閱讀系統〉與〈EPUB近用性1.1〉於2023年5月通過W3C推薦流程成為正式推薦標準，同時數位發展部將提出〈網頁內容可及性規範（WCAG）2.1〉至W3C作為正式繁體中文翻譯版，故將這三份文件更新至推薦版本，並且在詞彙用語上以數位發展部WCAG 2.1版之翻譯進行更新。
+〈EPUB 3.3〉、〈EPUB 3.3閱讀系統〉與〈EPUB可及性1.1〉於2023年5月通過W3C推薦流程成為正式推薦標準，同時數位發展部將提出〈網頁內容可及性規範（WCAG）2.1〉至W3C作為正式繁體中文翻譯版，故將這三份文件更新至推薦版本，並且在詞彙用語上以數位發展部WCAG 2.1版之翻譯進行更新。
 
 -   [EPUB 3.3](https://dpublishing.github.io/epub-specs-tc/epub33_2023/EPUB_update/EPUB33.html)（原文：[EPUB 3.3](https://www.w3.org/TR/epub-33/)）
 
 -   [EPUB 3.3 閱讀系統](https://dpublishing.github.io/epub-specs-tc/epub33_2023/EPUB_update/EPUBrs33.html)（原文：[EPUB 3.3 Reading
     Systems](https://www.w3.org/TR/epub-rs-33/)）
 
--   [EPUB近用性 1.1](https://dpublishing.github.io/epub-specs-tc/epub33_2023/EPUB_update/EPUBa11y11.html) （原文：[EPUB Accessibility
+-   [EPUB可及性 1.1](https://dpublishing.github.io/epub-specs-tc/epub33_2023/EPUB_update/EPUBa11y11.html) （原文：[EPUB Accessibility
     1.1](https://www.w3.org/TR/epub-a11y-11/)）
 
 ### 新翻譯文件
@@ -30,6 +30,11 @@ EPUB固定版面可及性文件為目前W3C出版維護小組正在進行中的�
 
 - EPUB製作者（出版社、排版公司）可用於製作時參考。
 - 電子書平台可在考量支援頁面列表時以本範本測試。
+
+2. [EPUB可及性性符合WCAG規定說明與範本](https://github.com/dpublishing/epub-specs-tc/tree/master/epub33_2023/EPUB近用性符合WCAG規定說明與範本)
+
+2021年時，台灣數位出版聯盟已經製作了兩份EPUB[可及性範本](https://github.com/dpublishing/epub-a11y-samples)。
+今年提供新範本主要針對內容為達到WCAG A或AA等級，需要達成的成功準則的各種規定。
 
 ### DAISY ACE 1.3.2中文化
 
