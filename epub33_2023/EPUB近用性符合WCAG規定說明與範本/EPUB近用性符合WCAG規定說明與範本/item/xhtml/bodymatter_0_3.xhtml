@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+    <meta charset="utf-8"/>
+    <title>EPUB近用性符合WCAG規定說明與範本</title>    
+    <link rel="stylesheet" href="../style/style-standard.css" type="text/css"/>
+    <link rel="stylesheet" href="../style/style-advance.css" type="text/css"/>
+    <link rel="stylesheet" href="../style/book-style.css" type="text/css"/>
+</head>
+    <body class="p-text" epub:type="bodymatter">
+        <h2 id="toc_index_1">各項成功準則說明</h2>
+
+<h3 id="toc_index_2" class="gfont w3cblue">成功準則1.1.1：非文字內容（Non-text Content）</h3>
+
+<ul>
+<li><p class="gfont w3cblue">可感知-替代文字</p></li>
+<li><p class="gfont w3cblue">A等級</p></li>
+<li><p class="gfont w3cblue">說明：所有呈現給使用者的非文字內容，都具有作為相同目的之替代文字。以下所列的情況除外：控制，輸入、時序媒體、測驗、感官、 驗證碼、 裝飾、格式排版及非可視。</p></li>
+</ul>
+
+<h5 id="toc_index_3">達成方式</h5>
+
+<ol>
+<li><p>在<code>&lt;img&gt;</code>標籤中使用<code>alt=""</code>屬性提供替代文字。</p></li>
+<li><p>使用W3C提供的決策樹來判斷圖片是否需要提供替代文字。</p></li>
+<li><p>使用<code>aria-describedBy</code>屬性或<code>&lt;figure&gt;</code>與<code>&lt;figcaption&gt;</code>組合等其他手段提供替代文字指示。</p></li>
+</ol>
+
+<h5 id="toc_index_4">解釋</h5>
+
+<p class="indent-2em">在EPUB格式電子書中，使用HTML <code>&lt;img&gt;</code>標籤時，一定要有<code>alt=""</code>屬性。但在一般製作時不會填入任何文字，輔助技術遇到這樣的圖片時，無法傳達圖片所代表的意義，所以應該填入替代文字。</p>
+
+<p class="indent-2em">然而，並非所有圖片都需要填入替代文字，這時可以利用W3C所提供的<a href="https://www.w3.org/WAI/tutorials/images/decision-tree/">替代文字決策樹</a>來判斷是否需要提供替代文字：</p>
+
+<table id="table_index_1">
+<tbody>
+<tr>
+  <td colspan="2" class="qu">問題一：圖片裡有沒有文字？</td>
+</tr>
+<tr>
+  <td class="ans">有，文字和附近內文文字一致</td>
+  <td>→<b class="gfont">【裝飾圖】</b>，alt留空</td>
+</tr>
+<tr>
+  <td class="ans">有，文字只是視覺效果</td>
+  <td>→<b class="gfont">【裝飾圖】</b>，alt留空</td>
+</tr>
+<tr>
+  <td class="ans">有，文字提供特定功能，例如圖示</td>
+  <td>→<b class="gfont">【功能圖】</b>，alt提供功能說明</td>
+</tr>
+<tr>
+  <td class="ans">有，文字和附近內文文字一致</td>
+  <td>→<b class="gfont">【影像文字】</b>（請參考<a href="bodymatter_0_8.xhtml">1.4.5影像文字</a>），alt提供圖片中的文字</td>
+</tr>
+<tr>
+  <td colspan="2" class="qu">無。<br />問題二：該圖片是否用於連結或按鍵，如果沒有該圖片，會不會很難或無法理解連結或按鍵的目的？</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="ans">是</td>
+  <td>→<b class="gfont">【功能圖】</b>，alt提供連結目標，或者按下後的動作說明</td>
+</tr>
+<tr>
+  <td colspan="2" class="qu">否。<br />問題三：該圖片是否對這一頁或整體內容而言有意義？</td>
+</tr>
+<tr>
+  <td class="ans">是，內容是簡單的圖像或者照片</td>
+  <td>→<b class="gfont">【資訊性圖片】</b>，alt提供圖片簡單的描述，能夠傳達意涵。</td>
+</tr>
+<tr>
+  <td class="ans">是，內容是圖表或者包含複雜資訊</td>
+  <td>→<b class="gfont">【複雜圖片】</b>，alt指向頁面中其他地方提及圖片資訊之處</td>
+</tr>
+<tr>
+  <td class="ans">是，內容為附近內文內容的額外資訊</td>
+  <td>→<b class="gfont">【功能圖】</b>，alt留空</td>
+</tr>
+<tr>
+  <td colspan="2" class="qu">否。<br />問題四：該圖片為裝飾，或者並非要提供給使用者</td>
+</tr>
+<tr>
+  <td class="ans">是，內容是簡單的圖像或者照片</td>
+  <td>→<b class="gfont">【裝飾圖】</b>，alt留空</td>
+</tr>
+<tr>
+  <td colspan="2" class="qu">否。<br />本決策樹無法包含所有案例，請參考：<a href="https://www.w3.org/WAI/tutorials/images/">https://www.w3.org/WAI/tutorials/images/</a></td>
+</tr>
+</tbody>
+</table>
+
+<p class="indent-2em">根據以上決策樹，可以發現較為複雜的圖片為<b class="gfont">【資訊性圖片】</b>以及<b class="gfont">【複雜圖片】</b>，<b class="gfont">【資訊性圖片】</b>主要目的為敘述圖片提供的資訊，可以簡單描述呈現的物品、形象、特徵、情感等，這些內容未來應該可以透過AI協助辨識圖片，產生替代文字。</p>
+
+<p class="indent-2em"><b class="gfont">【複雜圖片】</b>則有程度上的差異，例如僅要描述圖片的意義，或者進行詳盡的解釋。然而在書籍的脈絡下，大多可以在內文中找到對應的片段，來使用其他方式描述。</p>
+
+<p class="indent-2em">例如使用<code>aria-descriptedBy</code>，在內文中有提到該圖片內容的段落，給予一個<code>id</code>，然後在圖片內加入此屬性導向該<code>id</code>，以建立關聯的方式描述圖片要表達的內容。</p>
+
+<p>如：</p>
+
+<pre><code>/*圖片使用aria-descriptedBy屬性指向id deerskinexport*/
+  <br /><br />
+  &lt;img src="011.jpg" alt="圖2.4：台灣鹿皮出口數量（張）來源：Koo（2011）。" aria-descriptedBy="deerskinexport"/&gt;
+<br /><br />
+  /*內文相關段落以span給予id deerskinexport*/
+<br /><br />
+&lt;p&gt;　　大員議會也注意到朱諾斯牧師所提出的問題，因而採取一系列的對策。&lt;span id="deerskinexport"&gt;1638與1639兩個年期的鹿皮出口大增，主要是中國獵人使用陷阱捕鹿。1638年5月，荷蘭人禁止中國獵人在4月底之後獵鹿。以4月底為期限的理由是，母鹿通常在4–5月生小鹿。翌年5月，荷蘭人規定，中國獵人不得再設陷坑捕鹿；1645年起則全面禁止中國人捕鹿。&lt;/span&gt;&lt;/p&gt;
+</code></pre>
+
+<p class="indent-2em">或者使用HTML 5圖片與圖說的標準組合，也就是在一個<code>&lt;figure&gt;</code>標籤內，以<code>&lt;img&gt;</code>放置圖片後，加上<code>&lt;figcaption&gt;</code>來提供文字圖說。</p>
+
+<p class="indent-2em">然而在直排的中文書中，通常圖說為橫排置於圖片下方，這麼一來可能會超出頁面範圍外而無法閱讀。僅能在橫排書中以此方法設計，由於並非所有電子書零售平台都支援，所以目前不推薦使用，而建議將印刷書的圖與圖說做成一張圖片，將圖說作為替代文字置入<code>alt=""</code>中亦可達到相同目的。</p>
+
+<pre><code>
+  &lt;figure&gt;<br />
+  　　&lt;img src="011.jpg" alt="一張描述西元1635到1661年台灣鹿皮出口量的圖。"/&gt;<br />
+  　　&lt;figcaption&gt;<br />
+  　　　　圖2.4：台灣鹿皮出口數量（張）來源：Koo（2011）<br />
+  　　&lt;/figcaption&gt;<br />
+  &lt;/figure&gt;
+</code></pre>
+
+<p class="indent-2em">另外還有多種方式提供替代文字。</p>
+    </body>
+</html>

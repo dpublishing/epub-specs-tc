@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+    <meta charset="utf-8"/>
+    <title>EPUB近用性符合WCAG規定說明與範本</title>    
+    <link rel="stylesheet" href="../style/style-standard.css" type="text/css"/>
+    <link rel="stylesheet" href="../style/style-advance.css" type="text/css"/>
+    <link rel="stylesheet" href="../style/book-style.css" type="text/css"/>
+</head>
+    <body class="p-text" epub:type="bodymatter">
+        <h3 id="toc_index_1" class="gfont w3cblue">成功準則1.2.2：字幕(預錄)（Captions (Prerecorded) ）</h3>
+
+<ul>
+<li><p class="gfont w3cblue">可感知-時序媒體</p></li>
+<li><p class="gfont w3cblue">A等級</p></li>
+<li><p class="gfont w3cblue">說明：除非在同步媒體中，預先錄製的音訊內容是文字內容的替代媒體，並且有明確地標示出來，否則就應該為所有的音訊內容提供字幕。</p></li>
+</ul>
+
+<h5 id="toc_index_2">達成方式</h5>
+
+<p class="indent-2em">說明中描述「為所有的音訊內容提供字幕」，但純粹聲音播放時，沒有可供文字顯示的空間，所以此項專為「影片中的聲音」而規劃。</p>
+
+<p class="indent-2em">影片中的字幕可以兩種方式提供，一種是烙印（burned-in）在影片上的「開放字幕（Open Caption）」；另一種是透過字幕軌提供的「隱藏字幕（Closed Caption）」，WCAG並未指定應以哪種方式提供。</p>
+
+<p class="indent-2em">隱藏字幕可以使用多種格式，像是專業串流平台使用的<a href="https://www.w3.org/TR/2018/REC-ttml2-20181108/">TTML</a>，或者是網路上常見，過去稱為SRT，經過W3C接受成為標準格式的<a href="https://developer.mozilla.org/zh-TW/docs/Web/API/WebVTT_API">WebVTT</a>皆可。</p>
+
+<p class="indent-2em">隱藏字幕可以利用影片處理工具，直接嵌入影片檔案中作為字幕軌，也可以利用HTML 5的<code>&lt;video&gt;</code>與<code>&lt;track&gt;</code>元素來將獨立字幕檔案加進影片中：</p>
+
+<pre><code>
+&lt;video&gt;<br />
+　　&lt;source src="speech.mp4" type="video/mp4"/&gt;<br />
+　　&lt;track src="captions.vtt" kind="captions" srclang="en"<br />
+　　　label="English for the hard of hearing"/&gt;<br />
+&lt;/video&gt;
+</code></pre>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+    <meta charset="utf-8"/>
+    <title>EPUB近用性符合WCAG規定說明與範本</title>    
+    <link rel="stylesheet" href="../style/style-standard.css" type="text/css"/>
+    <link rel="stylesheet" href="../style/style-advance.css" type="text/css"/>
+    <link rel="stylesheet" href="../style/book-style.css" type="text/css"/>
+</head>
+    <body class="p-text" epub:type="bodymatter">
+        <h3 id="toc_index_1" class="gfont w3cblue">成功準則3.1.2：局部語言（Language of Parts）</h3>
+
+<ul>
+<li><p class="gfont w3cblue">可理解-可讀性</p></li>
+<li><p class="gfont w3cblue">AA等級</p></li>
+<li><p class="gfont w3cblue">說明：除非是專有名詞、科技術語、不知名語言的字詞、接鄰文字的方言部分等情況，否則每一個段落或片語中所使用的人類語言，都可以程式化的方式判讀。</p></li>
+</ul>
+
+<h5 id="toc_index_2">達成方式</h5>
+
+<p class="indent-2em">中文EPUB書中通常會在每一份內容文件的<code>html</code>中宣告整份文件所使用的語文為<code>zh-TW</code>。</p>
+
+<p class="indent-2em">而翻譯書中經常會有部分其他語文文字，像是日文、英文、德文、法文……對於輔助技術而言，就需要以不同的方式處理，像是以不同的點字格式輸出、以不同的語音合成引擎處理，這時就會依循標註中指示的語言。</p>
+
+<p class="indent-2em">可以使用<code>lang=""</code>屬性為各種語文文字做出標註，語文代碼可參考<a href="https://en.wikipedia.org/wiki/IETF_language_tag">IETF BCP47</a>。</p>
+
+<p class="indent-2em">未來應該會有AI工具來進行語文的自動標記。</p>
+
+<p class="indent-2em">範例如下：</p>
+
+<pre><code>&lt;p&gt;「&lt;span lang="ja"&gt;あか&lt;/span&gt;」是紅、「&lt;span lang="ja"&gt;き&lt;/span&gt;」是黃、「&lt;span lang="ja"&gt;くろ&lt;/span&gt;」是黑。&lt;/p&gt;
+</code></pre>
+    </body>
+</html>

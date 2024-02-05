@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+    <meta charset="utf-8"/>
+    <title>EPUB近用性符合WCAG規定說明與範本</title>    
+    <link rel="stylesheet" href="../style/style-standard.css" type="text/css"/>
+    <link rel="stylesheet" href="../style/style-advance.css" type="text/css"/>
+    <link rel="stylesheet" href="../style/book-style.css" type="text/css"/>
+</head>
+    <body class="p-text" epub:type="bodymatter">
+        <h3 id="toc_index_1" class="gfont w3cblue">成功準則1.4.3：對比值(最小)（Contrast (Minimum)）</h3>
+
+<ul>
+<li><p class="gfont w3cblue">可感知-可辨識</p></li>
+<li><p class="gfont w3cblue">AA等級</p></li>
+<li><p class="gfont w3cblue">說明：文字及影像文字的視覺呈現，至少要有4.5:1的對比值。但下列各款之情形不在此限：大尺寸文字（大尺寸的文字及大尺寸的影像文字至少要有3:1的對比值）附帶內容、企業識別標誌</p></li>
+</ul>
+
+<h5 id="toc_index_2">達成方式</h5>
+
+<p class="indent-2em">可以使用<a href="https://webaim.org/resources/contrastchecker/">對比檢驗工具</a>輸入背景色彩與前景/文字色彩來獲得對比值。DAISY提供的<a href="https://daisy.github.io/ace/getting-started/ace-app/#where-can-i-download-the-ace-app">ACE檢驗工具</a>也能檢驗出CSS設計的對比是否滿足此項要求。</p>
+
+<p class="indent-2em">多數鮮豔色彩在配合對比度最高的白色背景時，大多不能滿足4.5:1的對比值，例如CSS指定<code>color="red"</code>色彩代碼為<span class="color-red">#FF0000</span>，背景為#FFFFFF，對比就僅有3.99:1。而一般電子書閱讀程式無法指定背景色彩，預設背景色無論偏黃或者偏灰，其對比值會更低而不會更高。同時在e-ink電子墨水閱讀器上，螢幕底色大多並非純白，而會偏灰，對比也會因而更低。就算通過檢測，實際閱讀時也可能會發生文字過淡而難以辨識的狀況。</p>
+
+<p class="indent-2em">建議的做法是將書當作單色的印刷書來設計，以灰階作為基礎，但灰色僅能在#000（黑）～<span class="g666">#666</span>之間，<span class="g666">#666</span>～#FFF（白）的灰度會使得對比值不足。使用色彩時，務必使用檢驗工具檢查對比值。</p>
+    </body>
+</html>

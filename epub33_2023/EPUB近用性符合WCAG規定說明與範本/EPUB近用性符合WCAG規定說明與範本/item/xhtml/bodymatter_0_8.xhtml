@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+    <meta charset="utf-8"/>
+    <title>EPUB近用性符合WCAG規定說明與範本</title>    
+    <link rel="stylesheet" href="../style/style-standard.css" type="text/css"/>
+    <link rel="stylesheet" href="../style/style-advance.css" type="text/css"/>
+    <link rel="stylesheet" href="../style/book-style.css" type="text/css"/>
+</head>
+    <body class="p-text" epub:type="bodymatter">
+        <h3 id="toc_index_1" class="gfont w3cblue">成功準則1.4.5：影像文字（Images of Text）</h3>
+
+<ul>
+<li><p class="gfont w3cblue">可感知-可辨識</p></li>
+<li><p class="gfont w3cblue">AA等級</p></li>
+<li><p class="gfont w3cblue">說明：如果所運用的科技能夠達成所需的視覺呈現，應以文字來傳遞資訊，而不要用影像文字。但下列各款之情形不在此限：客製化、必要性。</p></li>
+</ul>
+
+<h5 id="toc_index_2">達成方式</h5>
+
+<p class="indent-2em">在EPUB電子書中，會需要將文字做成圖片（如JPG、PNG格式圖片）的主要原因有二：</p>
+
+<ol>
+<li><p>外文（如阿拉伯文、藏文等）與中文罕用字缺字</p></li>
+<li><p>章節名稱或標題設計</p></li>
+</ol>
+
+<p class="indent-2em">遇到1.缺字的狀況，按照《<a href="https://github.com/dpublishing/epub3guide">台灣EPUB 3製作指引</a>》的推薦做法，如果是阿拉伯文、泰文、越南文等外語文字，建議使用Unicode字碼，若系統字體無法顯示，則建議在EPUB中嵌入開放授權字體來呈現，如<a href="https://fonts.google.com/noto">Google Noto</a>，目前多數電子書閱讀程式都支援此項顯示方式。</p>
+
+<img src="../image/01.png" alt="" class="width-4em"/>
+
+<p class="indent-2em">但若是罕用漢字，如上圖在〈<a href="https://language.moe.gov.tw/result.aspx?classify_sn=46&amp;subclassify_sn=496&amp;content_sn=90">臺灣本土語言用字參考字表</a>〉中的字，則建議做成缺字圖片嵌入內文，並且提供替代文字：</p>
+
+<ul>
+<li>若要說明讀音，則可在<code>alt=""</code>中輸入同音字「哥」</li>
+<li>若要說明字形，則可在<code>alt=""</code>中輸入說明「這是一個罕用字，部首為病字的疒部，裏頭一個兄長的哥字」</li>
+</ul>
+
+<p class="indent-2em">若是2.的狀況，則建議在不影響文字結構下，使用不需替代文字的圖片配合CSS設計，做出近似的標題設計，而不要將整個標題以圖片呈現。如果不得不使用PNG、JPEG等點陣圖片，則可在圖片替代文字中輸入圖片上的文字，如「第二章」、「第四節」等。或者使用包含文字標籤的SVG格式圖片亦可。</p>
+    </body>
+</html>

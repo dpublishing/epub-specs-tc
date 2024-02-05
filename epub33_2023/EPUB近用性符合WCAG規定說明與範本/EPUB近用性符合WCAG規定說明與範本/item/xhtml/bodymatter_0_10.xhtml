@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+    <meta charset="utf-8"/>
+    <title>EPUB近用性符合WCAG規定說明與範本</title>    
+    <link rel="stylesheet" href="../style/style-standard.css" type="text/css"/>
+    <link rel="stylesheet" href="../style/style-advance.css" type="text/css"/>
+    <link rel="stylesheet" href="../style/book-style.css" type="text/css"/>
+</head>
+    <body class="p-text" epub:type="bodymatter">
+        <h3 id="toc_index_1" class="gfont w3cblue">成功準則2.4.5：多種方式（Multiple Ways）<br/>成功準則2.4.6：標題和標籤（Headings and Labels）</h3>
+
+<ul>
+<li><p class="gfont w3cblue">可操作-可導覽</p></li>
+<li><p class="gfont w3cblue">AA等級</p></li>
+<li><p class="gfont w3cblue">說明：<br />2.4.5 提供多種方法指出某一網頁在一組網頁之中的位置，除非此網頁是某個程序或步驟的結果。<br />2.4.6 用標題及標籤來描述主旨或目的。</p></li>
+</ul>
+
+<h5 id="toc_index_2">達成方式</h5>
+
+<p class="indent-2em">EPUB電子書中，由於具備「書脊（spine）」，所以從頭翻到尾可以到達每一份內容文件（若沒有使用<code>linear="no"</code>隱藏）。但是實務上會遇到兩種狀況：</p>
+
+<ol>
+<li><p><b class="gfont">【刪除過多標題】</b>有些書具有詳細的篇、章、節結構，但是印刷書的目次頁僅列出主要標題，如章名。電子書在製作時，也會配合印刷書目次刪除對次要標題的連結，以致於無法透過目次頁或系統目次到達各小節的位置。</p></li>
+<li><p><b class="gfont">【標題結構不足】</b>有些書不具章節編號，或僅有粗略的分「部」、分「冊」。例如從頭到尾沒有標題分段、也沒有章節編號的小說作品；或者印刷版本分數冊的小說，如分為「上冊」、「下冊」而已。</p></li>
+</ol>
+
+<p class="indent-2em">1.的狀況通常在使用轉換工具產生EPUB時，會將所有篇、章、節的各層級標題都整理到「導覽文件」中，建議將自動生成的這些標題結構「予以保留」。如果要將導覽文件作為顯示用的目次頁，則可以針對不在印刷書目次中的次要標題，使用<code>hidden="hidden"</code>屬性予以隱藏。</p>
+
+<p class="indent-2em">這種做法可以讓內頁顯示的目次與印刷書結構相同，但是透過系統目次能夠取得完整目次結構，具有較多的結構層次，容易讓讀者查找、定位、切換。</p>
+
+<p class="indent-2em">2.的狀況對於電子書而言，由於沒有可判斷位置的紙頁，而會不曉得自己的閱讀進度。則建議針對電子書額外加入簡單的數字標題，或者「第一章」、「第二章」等分段，可以透過系統目次使用。在內頁中則可使用<code>hidden="hidden"</code>屬性來隱藏，讓視覺呈現與印刷書一致。</p>
+    </body>
+</html>
