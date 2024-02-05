@@ -22,8 +22,6 @@ EPUB固定版面可及性文件為目前W3C出版維護小組正在進行中的�
 
 ### 三、新增範本
 
-更新兩項範本
-
 1. [印刷書頁碼範本](https://github.com/dpublishing/epub-specs-tc/tree/master/epub33_2023/印刷書頁碼範本/印刷書頁碼範本.epub)
 
 內容為群星文化授權之卡夫卡《噢！父親》，其中包含使用EPUB Page-list（頁面列表）功能對應印刷書頁數，以及如何製作、閱讀系統可支援項目之說明。
@@ -31,10 +29,15 @@ EPUB固定版面可及性文件為目前W3C出版維護小組正在進行中的�
 - EPUB製作者（出版社、排版公司）可用於製作時參考。
 - 電子書平台可在考量支援頁面列表時以本範本測試。
 
+2021年時，台灣數位出版聯盟已經製作了兩份EPUB[可及性範本](https://github.com/dpublishing/epub-a11y-samples)。
+
 2. [EPUB可及性性符合WCAG規定說明與範本](https://github.com/dpublishing/epub-specs-tc/tree/master/epub33_2023/EPUB近用性符合WCAG規定說明與範本)
 
-2021年時，台灣數位出版聯盟已經製作了兩份EPUB[可及性範本](https://github.com/dpublishing/epub-a11y-samples)。
-今年提供新範本主要針對內容為達到WCAG A或AA等級，需要達成的成功準則的各種規定。
+新範本主要針對內容為達到WCAG A或AA等級，需要達成的成功準則的各種規定。
+
+3. EPUB DAISY無障礙功能說明範本
+
+新範本主要針對EPUB可及性中必須的`accessibilityFeature`項目，說明DAISY知識庫中可供EPUB使用的各項功能，讓製作者用於在書中宣告，也能參考用於製作更具可及性的內容。
 
 ### 四、提出ACE by DAISY 1.3.2版正體中文地區化
 
