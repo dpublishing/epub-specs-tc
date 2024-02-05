@@ -37,7 +37,7 @@ EPUB固定版面可及性文件為目前W3C出版維護小組正在進行中的�
 
 3. EPUB DAISY無障礙功能說明範本
 
-新範本主要針對EPUB可及性中[必須的`accessibilityFeature`](https://dpublishing.github.io/epub-specs-tc/epub33_2023/EPUB_update/EPUBa11y11.html#sec-disc-package)，說明DAISY知識庫中可供EPUB使用的各項功能，讓製作者用於在書中宣告，也能參考用於製作更具可及性的內容。
+新範本主要針對EPUB可及性中[必須的`accessibilityFeature`](https://dpublishing.github.io/epub-specs-tc/epub33_2023/EPUB_update/EPUBa11y11.html#sec-disc-package)，說明[DAISY知識庫](http://kb.daisy.org/publishing/docs/metadata/schema.org/accessibilityFeature.html)中可供EPUB使用的各項功能，讓製作者用於在書中宣告，也能參考用於製作更具可及性的內容。
 
 ### 四、提出ACE by DAISY 1.3.2版正體中文地區化
 
