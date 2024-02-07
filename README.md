@@ -31,7 +31,7 @@ EPUB固定版面可及性文件為目前W3C出版維護小組正在進行中的�
 
 2021年時，台灣數位出版聯盟已經製作了兩份EPUB[可及性範本](https://github.com/dpublishing/epub-a11y-samples)。
 
-2. [EPUB可及性性符合WCAG規定說明與範本](https://github.com/dpublishing/epub-specs-tc/tree/master/epub33_2023/EPUB近用性符合WCAG規定說明與範本)
+2. [EPUB可及性性符合WCAG規定說明與範本](https://github.com/dpublishing/epub-specs-tc/tree/master/epub33_2023/EPUB可及性符合WCAG規定說明與範本)
 
 新範本主要針對內容為達到WCAG A或AA等級，需要達成的成功準則的各種規定。
 
