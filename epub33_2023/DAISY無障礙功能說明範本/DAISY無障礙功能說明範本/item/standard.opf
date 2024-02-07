@@ -11,7 +11,7 @@
 <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
 
 <!-- 作品名 -->
-<dc:title id="title">EPUB可及性符合WCAG規定說明與範本</dc:title>
+<dc:title id="title0">EPUB DAISY無障礙功能說明範本</dc:title>
 
 <!-- 作者名 -->
 <dc:creator id="creator01">董福興</dc:creator>
@@ -25,14 +25,13 @@
 <dc:language>zh-TW</dc:language>
 
 <!-- 檔案id -->
-<dc:identifier id="unique-id">urn:uuid:9e9311f5-22a2-4007-9867-7340fc4f19bf</dc:identifier>
+<dc:identifier id="unique-id">urn:uuid:df564a38-ae49-4cb9-b99b-ca9b3e29c307</dc:identifier>
 
 <!-- 更新時間 -->
-<meta property="dcterms:modified">2024-02-05T02:23:04Z</meta>
+<meta property="dcterms:modified">2024-02-07T01:51:30Z</meta>
 
 <!-- iBook指定字體 -->
 <meta property="ibooks:specified-fonts">true</meta>
-
 
 </metadata>
 <manifest>
@@ -51,8 +50,6 @@
 <item media-type="image/jpeg" id="cover"      href="image/cover.jpg" properties="cover-image"/>
 <item media-type="image/png" id="tdpf"      href="image/tdpf.png" />
 <item media-type="image/png" id="moc"      href="image/moc.png" />
-<item media-type="image/png" id="_01"      href="image/01.png" />
-<item media-type="image/png" id="_02"      href="image/02.png" />
 
 <!-- xhtml -->
 <item media-type="application/xhtml+xml" href="xhtml/cover.xhtml" id="_cover.xhtml" properties="svg" />
@@ -69,6 +66,25 @@
 <item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_10.xhtml" id="_bodymatter_0_10.xhtml" />
 <item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_11.xhtml" id="_bodymatter_0_11.xhtml" />
 <item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_12.xhtml" id="_bodymatter_0_12.xhtml" />
+<item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_13.xhtml" id="_bodymatter_0_13.xhtml" />
+<item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_14.xhtml" id="_bodymatter_0_14.xhtml" />
+<item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_15.xhtml" id="_bodymatter_0_15.xhtml" />
+<item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_16.xhtml" id="_bodymatter_0_16.xhtml" />
+<item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_17.xhtml" id="_bodymatter_0_17.xhtml" />
+<item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_18.xhtml" id="_bodymatter_0_18.xhtml" />
+<item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_19.xhtml" id="_bodymatter_0_19.xhtml" />
+<item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_20.xhtml" id="_bodymatter_0_20.xhtml" />
+<item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_21.xhtml" id="_bodymatter_0_21.xhtml" />
+<item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_22.xhtml" id="_bodymatter_0_22.xhtml" />
+<item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_23.xhtml" id="_bodymatter_0_23.xhtml" />
+<item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_24.xhtml" id="_bodymatter_0_24.xhtml" />
+<item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_25.xhtml" id="_bodymatter_0_25.xhtml" />
+<item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_26.xhtml" id="_bodymatter_0_26.xhtml" />
+<item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_27.xhtml" id="_bodymatter_0_27.xhtml" />
+<item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_28.xhtml" id="_bodymatter_0_28.xhtml" />
+<item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_29.xhtml" id="_bodymatter_0_29.xhtml" />
+<item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_30.xhtml" id="_bodymatter_0_30.xhtml" />
+<item media-type="application/xhtml+xml" href="xhtml/bodymatter_0_31.xhtml" id="_bodymatter_0_31.xhtml" />
 
 </manifest>
 <spine>
@@ -90,7 +106,25 @@
 <itemref linear="yes" idref="_bodymatter_0_10.xhtml"   properties="page-spread-left" />
 <itemref linear="yes" idref="_bodymatter_0_11.xhtml"   properties="page-spread-left" />
 <itemref linear="yes" idref="_bodymatter_0_12.xhtml"   properties="page-spread-left" />
+<itemref linear="yes" idref="_bodymatter_0_13.xhtml"   properties="page-spread-left" />
+<itemref linear="yes" idref="_bodymatter_0_14.xhtml"   properties="page-spread-left" />
+<itemref linear="yes" idref="_bodymatter_0_15.xhtml"   properties="page-spread-left" />
+<itemref linear="yes" idref="_bodymatter_0_16.xhtml"   properties="page-spread-left" />
+<itemref linear="yes" idref="_bodymatter_0_17.xhtml"   properties="page-spread-left" />
+<itemref linear="yes" idref="_bodymatter_0_18.xhtml"   properties="page-spread-left" />
+<itemref linear="yes" idref="_bodymatter_0_19.xhtml"   properties="page-spread-left" />
+<itemref linear="yes" idref="_bodymatter_0_20.xhtml"   properties="page-spread-left" />
+<itemref linear="yes" idref="_bodymatter_0_21.xhtml"   properties="page-spread-left" />
+<itemref linear="yes" idref="_bodymatter_0_22.xhtml"   properties="page-spread-left" />
+<itemref linear="yes" idref="_bodymatter_0_23.xhtml"   properties="page-spread-left" />
+<itemref linear="yes" idref="_bodymatter_0_24.xhtml"   properties="page-spread-left" />
+<itemref linear="yes" idref="_bodymatter_0_25.xhtml"   properties="page-spread-left" />
+<itemref linear="yes" idref="_bodymatter_0_26.xhtml"   properties="page-spread-left" />
+<itemref linear="yes" idref="_bodymatter_0_27.xhtml"   properties="page-spread-left" />
+<itemref linear="yes" idref="_bodymatter_0_28.xhtml"   properties="page-spread-left" />
+<itemref linear="yes" idref="_bodymatter_0_29.xhtml"   properties="page-spread-left" />
+<itemref linear="yes" idref="_bodymatter_0_30.xhtml"   properties="page-spread-left" />
+<itemref linear="yes" idref="_bodymatter_0_31.xhtml"   properties="page-spread-left" />
 
 </spine>
-
 </package>

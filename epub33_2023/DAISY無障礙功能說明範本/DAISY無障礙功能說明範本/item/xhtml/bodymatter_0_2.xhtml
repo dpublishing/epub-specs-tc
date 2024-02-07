@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+        <meta charset="utf-8"/>
+        
+    <link rel="stylesheet" href="../style/style-standard.css" type="text/css"/>
+    <link rel="stylesheet" href="../style/style-advance.css" type="text/css"/>
+    <link rel="stylesheet" href="../style/book-style.css" type="text/css"/>
+
+        
+        <title>EPUB DAISY無障礙功能說明範本</title>
+    </head>
+    <body class="p-text" epub:type="bodymatter">
+        <h2 id="toc_index_1">DAISY的無障礙功能是什麼</h2>
+
+<p class="indent-2em">在EPUB可及性1.1發現性的「<a href="https://dpublishing.github.io/epub-specs-tc/epub33_2023/EPUB_update/EPUBa11y11.html#sec-disc-package">包裝後設資料</a>」一節中，要求EPUB出版品必須在包裝文件的<code>&lt;metadata&gt;</code>中，以<code>&lt;meta&gt;</code>元素至少加入一筆<code>accessibilityFeature</code>資料，如：</p>
+
+<pre><code>&lt;package&gt;<br />
+　&lt;metadata&gt;<br />
+　　&lt;meta property="schema:accessibilityFeature"&gt;alternativeText&lt;/meta&gt;<br />
+　　...<br />
+　&lt;/metadata&gt;<br />
+　...<br />
+&lt;/package&gt;<br />
+</code></pre>
+
+<p class="indent-2em">所有無障礙後設資料皆有指定的值（例如<code>accessibilityHazard</code>），或者開放撰寫供人閱讀的內容（例如<code>accessibilitySummary</code>）。僅有<code>accessibilityFeature</code>項目，並未告知能填入哪些無障礙功能。</p>
+
+<p class="indent-2em">DAISY Consortium對EPUB規格與可及性規格貢獻甚大，該組織提供了一個<a href="http://kb.daisy.org/publishing/docs/">線上知識庫</a>，其中就包含了相當豐富的資料，也包含所有可供<code>accessibilityFeature</code>項目<a href="http://kb.daisy.org/publishing/docs/metadata/schema.org/accessibilityFeature.html">使用的功能</a>。</p>
+
+<p class="indent-2em">這些功能並非專為EPUB格式所制定，本範本介紹所有適用於EPUB 3格式的功能（有些專供其他格式使用的功能則不介紹），並且按照功能分類索引，讓您知道分別適用於哪些種類的內容。</p>
+
+<p class="indent-2em">也可以藉由閱讀本範本中的各項功能，理解有哪些無障礙功能，分別能提供怎麼樣的協助。在製作電子書時，可以放在心上多做一些，避免讓身心障礙者不方便。</p>
+    </body>
+</html>

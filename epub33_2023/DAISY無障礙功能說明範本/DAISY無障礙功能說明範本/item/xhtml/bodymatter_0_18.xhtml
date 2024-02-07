@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+ xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:epub="http://www.idpf.org/2007/ops"
+ xml:lang="zh-TW" lang="zh-TW"
+ class="hltr"
+>
+<head>
+        <meta charset="utf-8"/>
+        
+    <link rel="stylesheet" href="../style/style-standard.css" type="text/css"/>
+    <link rel="stylesheet" href="../style/style-advance.css" type="text/css"/>
+    <link rel="stylesheet" href="../style/book-style.css" type="text/css"/>
+
+        
+        <title>EPUB DAISY無障礙功能說明範本</title>
+    </head>
+    <body class="bodymatter hltr" epub:type="bodymatter">
+        <h3 id="toc_index_1">15. pageBreakMarkers 分頁點標記</h3>
+
+<blockquote>
+  <p>書中具有印刷版本的分頁點標記時，就可以標註具此功能。</p>
+</blockquote>
+
+<p class="indent-2em">在書中以以下方式提供印刷書的分頁點標記：</p>
+
+<pre><code>&lt;span role="doc-pagebreak" epub:type="pagebreak" id="pg24" aria-label="24"/&gt;<br /> 
+<br />
+或者<br />
+<br />
+ &lt;div role="doc-pagebreak" epub:type="pagebreak" id="pg24" aria-label="24"&gt;24&lt;/div&gt; 
+</code></pre>
+
+<p class="indent-2em">時，就具此功能，通常會與<code>pageNavigation</code>同時出現。</p>
+    </body>
+</html>
